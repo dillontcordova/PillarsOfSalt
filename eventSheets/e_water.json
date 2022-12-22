@@ -133,6 +133,14 @@
 											}
 										},
 										{
+											"callFunction": "playSound",
+											"sid": 877816511234140,
+											"parameters": [
+												"\"stepWaterSplash\"",
+												false
+											]
+										},
+										{
 											"id": "spawn-another-object",
 											"objectClass": "spr_boxFloat",
 											"sid": 473486637442011,
@@ -337,6 +345,14 @@
 														}
 													],
 													"actions": [
+														{
+															"callFunction": "playSound",
+															"sid": 640074897558135,
+															"parameters": [
+																"\"dunkWaterSplash\"",
+																false
+															]
+														},
 														{
 															"id": "applyForce",
 															"objectClass": "tb_water",

@@ -23,6 +23,14 @@
 			],
 			"actions": [
 				{
+					"callFunction": "playSound",
+					"sid": 422276310485678,
+					"parameters": [
+						"\"switch\"",
+						false
+					]
+				},
+				{
 					"callFunction": "cameraShake",
 					"sid": 445036173675366,
 					"parameters": [
@@ -57,6 +65,14 @@
 					],
 					"actions": [
 						{
+							"callFunction": "playSound",
+							"sid": 207598111022472,
+							"parameters": [
+								"\"doorOpen1\"",
+								false
+							]
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "doors",
 							"sid": 332806197341572,
@@ -83,6 +99,14 @@
 				}
 			],
 			"actions": [
+				{
+					"callFunction": "playSound",
+					"sid": 251411649115438,
+					"parameters": [
+						"\"doorOpen2\"",
+						false
+					]
+				},
 				{
 					"id": "set-animation",
 					"objectClass": "doors",
