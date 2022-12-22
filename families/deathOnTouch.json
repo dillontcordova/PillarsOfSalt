@@ -3,13 +3,7 @@
 	"plugin-id": "TiledBg",
 	"sid": 883728379088902,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 743920176056887
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
 		"tb_spikes",

@@ -1156,11 +1156,6 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "every-tick",
-													"objectClass": "System",
-													"sid": 172188769930371
-												},
-												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "spr_playerActual",
 													"sid": 679241083753662,
@@ -1316,21 +1311,12 @@
 											"functionDescription": "",
 											"functionCategory": "",
 											"functionReturnType": "none",
-											"functionCopyPicked": false,
+											"functionCopyPicked": true,
 											"functionIsAsync": false,
 											"functionParameters": [],
 											"eventType": "function-block",
 											"conditions": [],
-											"actions": [
-												{
-													"callFunction": "playerTakeDamage",
-													"sid": 334251233727770,
-													"parameters": [
-														"1",
-														false
-													]
-												}
-											],
+											"actions": [],
 											"sid": 431606241026714,
 											"children": [
 												{
@@ -1346,6 +1332,14 @@
 														}
 													],
 													"actions": [
+														{
+															"callFunction": "playerTakeDamage",
+															"sid": 938379617114814,
+															"parameters": [
+																"1",
+																false
+															]
+														},
 														{
 															"id": "set-object-time-scale",
 															"objectClass": "System",

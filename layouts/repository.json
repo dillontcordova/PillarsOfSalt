@@ -1359,14 +1359,7 @@
 					},
 					"uid": 179,
 					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 344,
 						"y": 164,

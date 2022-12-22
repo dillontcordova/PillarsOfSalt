@@ -302,6 +302,29 @@
 							]
 						},
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-state-changed",
+									"objectClass": "spr_playerSingleton",
+									"sid": 215430227606035,
+									"behaviorType": "FSM"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_playerActual",
+									"sid": 781264205468514,
+									"parameters": {
+										"instance-variable": "lockState",
+										"value": "spr_playerSingleton.FSM.CurrentState"
+									}
+								}
+							],
+							"sid": 358446569519301
+						},
+						{
 							"eventType": "group",
 							"disabled": false,
 							"title": "stateFns",

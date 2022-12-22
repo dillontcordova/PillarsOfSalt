@@ -506,14 +506,7 @@
 					},
 					"uid": 180,
 					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 360,
 						"y": 616,
@@ -588,14 +581,7 @@
 					},
 					"uid": 182,
 					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 64,
 						"y": 680,
@@ -628,14 +614,7 @@
 					},
 					"uid": 71,
 					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 40,
 						"y": 680,
@@ -848,12 +827,6 @@
 					"uid": 183,
 					"instanceVariables": {},
 					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
-							}
-						},
 						"Water": {
 							"properties": {
 								"tension": 0.005,
@@ -999,14 +972,7 @@
 					},
 					"uid": 192,
 					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 368,
 						"y": 624,
@@ -2513,8 +2479,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 144,
-						"y": 64,
+						"x": 520,
+						"y": 488,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,
