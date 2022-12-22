@@ -1,5 +1,5 @@
 {
-	"name": "gameWorld",
+	"name": "caveLand",
 	"layers": [
 		{
 			"name": "bg",
@@ -1964,5 +1964,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "e_grassLand"
+	"eventSheet": "e_caveLand"
 }

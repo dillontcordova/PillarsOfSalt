@@ -1,0 +1,86 @@
+{
+	"name": "e_caveLand",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_main"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 805203750533620
+				}
+			],
+			"actions": [],
+			"sid": 235479409033213
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 661014507974596,
+					"parameters": {
+						"interval-seconds": "0.4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 774247103227852,
+					"parameters": {
+						"object-to-create": "Leaf",
+						"layer": "\"fgCharacters\"",
+						"x": "ViewportLeft(\"fgCharacters\") + random(427)",
+						"y": "ViewportTop(\"fgCharacters\") - random(64)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Leaf",
+					"sid": 416189424433434,
+					"disabled": true,
+					"parameters": {
+						"scale": ".5"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Leaf",
+					"sid": 616567772490445,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "115"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Leaf",
+					"sid": 616685664614779,
+					"parameters": {
+						"animation": "choose(\"Default\",\"Default2\")",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-speed",
+					"objectClass": "Leaf",
+					"sid": 524280240600772,
+					"parameters": {
+						"speed": "3 + random(10)"
+					}
+				}
+			],
+			"sid": 189452850215417
+		}
+	],
+	"sid": 399379974611065
+}
