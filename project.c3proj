@@ -563,11 +563,12 @@
 	"layouts": {
 		"items": [
 			"construct splash",
+			"titleScreen",
+			"grassLand",
 			"caveLand",
 			"HUD",
 			"repository",
-			"Pause",
-			"grassLand"
+			"Pause"
 		],
 		"subfolders": []
 	},
@@ -583,7 +584,8 @@
 			"e_doorsAndKeys",
 			"e_singleton",
 			"e_water",
-			"e_pauseMenu"
+			"e_pauseMenu",
+			"e_titleScreen"
 		],
 		"subfolders": [
 			{
@@ -604,7 +606,7 @@
 		"sound": {
 			"items": [
 				{
-					"name": "enemy_damage.webm",
+					"name": "enemyDamage.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 402611019405095,
 					"file-info": {
@@ -612,7 +614,7 @@
 					}
 				},
 				{
-					"name": "hero_cut_grass.webm",
+					"name": "_heroCutGrass.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 945995204055886,
 					"file-info": {
@@ -620,7 +622,7 @@
 					}
 				},
 				{
-					"name": "hero_damage.webm",
+					"name": "heroDamage.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 395343111721506,
 					"file-info": {
@@ -628,7 +630,7 @@
 					}
 				},
 				{
-					"name": "hero_dash.webm",
+					"name": "heroDash.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 297694103748117,
 					"file-info": {
@@ -636,7 +638,7 @@
 					}
 				},
 				{
-					"name": "hero_death_v2.webm",
+					"name": "heroAbsorb.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 639346516907833,
 					"file-info": {
@@ -644,7 +646,7 @@
 					}
 				},
 				{
-					"name": "hero_death.webm",
+					"name": "heroDeath.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 892685419164113,
 					"file-info": {
@@ -652,7 +654,7 @@
 					}
 				},
 				{
-					"name": "hero_jump.webm",
+					"name": "heroJump.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 328865870379758,
 					"file-info": {
@@ -660,7 +662,7 @@
 					}
 				},
 				{
-					"name": "hero_land.webm",
+					"name": "heroLand.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 466109295130122,
 					"file-info": {
@@ -668,7 +670,7 @@
 					}
 				},
 				{
-					"name": "hero_run_footsteps_grass.webm",
+					"name": "_hero_run_footsteps_grass.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 429730814148085,
 					"file-info": {
@@ -676,7 +678,7 @@
 					}
 				},
 				{
-					"name": "hero_run_footsteps_stone.webm",
+					"name": "_heroFootstepsRunStone.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 113335562085052,
 					"file-info": {
@@ -684,7 +686,7 @@
 					}
 				},
 				{
-					"name": "hero_sword_1.webm",
+					"name": "heroSword1.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 186055651499586,
 					"file-info": {
@@ -692,7 +694,7 @@
 					}
 				},
 				{
-					"name": "hero_sword_2.webm",
+					"name": "heroSword2.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 764578346609005,
 					"file-info": {
@@ -700,7 +702,7 @@
 					}
 				},
 				{
-					"name": "hero_sword_3.webm",
+					"name": "heroSword3.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 414599702155520,
 					"file-info": {
@@ -708,7 +710,7 @@
 					}
 				},
 				{
-					"name": "hero_wall_jump.webm",
+					"name": "heroWallJump.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 791493192135155,
 					"file-info": {
@@ -716,9 +718,25 @@
 					}
 				},
 				{
-					"name": "hero_wall_slide.webm",
+					"name": "heroWallSlide.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 682280224184828,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "heroSwordHitWall1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 292811865809296,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "heroSwordHitWall2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 971792610153341,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -729,7 +747,7 @@
 		"music": {
 			"items": [
 				{
-					"name": "TitleTheme.webm",
+					"name": "titleTheme.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 646085301799504,
 					"file-info": {
@@ -737,7 +755,7 @@
 					}
 				},
 				{
-					"name": "CaveTheme.webm",
+					"name": "caveTheme.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 799496194140161,
 					"file-info": {
@@ -745,7 +763,7 @@
 					}
 				},
 				{
-					"name": "GrassTheme.webm",
+					"name": "grassTheme.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 195885692896863,
 					"file-info": {

@@ -819,7 +819,7 @@
 						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "ReactAnimationInput",
+							"title": "ReactInput",
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [
@@ -851,16 +851,44 @@
 											],
 											"actions": [
 												{
+													"callFunction": "playSoundVariable",
+													"sid": 230372393840460,
+													"parameters": [
+														"\"heroLand\""
+													]
+												},
+												{
 													"callFunction": "setAnimation",
 													"sid": 763930979318949,
+													"disabled": true,
 													"parameters": [
 														"\"land\"",
 														"-1"
 													]
 												}
 											],
-											"sid": 403147167220198,
-											"disabled": true
+											"sid": 403147167220198
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-jump",
+													"objectClass": "spr_playerActual",
+													"sid": 407457388161421,
+													"behaviorType": "Platform"
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playSoundVariable",
+													"sid": 523034711227424,
+													"parameters": [
+														"\"heroJump\""
+													]
+												}
+											],
+											"sid": 421049633404599
 										},
 										{
 											"eventType": "block",
@@ -1316,7 +1344,16 @@
 											"functionParameters": [],
 											"eventType": "function-block",
 											"conditions": [],
-											"actions": [],
+											"actions": [
+												{
+													"callFunction": "playerTakeDamage",
+													"sid": 602109042388001,
+													"parameters": [
+														"1",
+														false
+													]
+												}
+											],
 											"sid": 431606241026714,
 											"children": [
 												{
@@ -1332,14 +1369,6 @@
 														}
 													],
 													"actions": [
-														{
-															"callFunction": "playerTakeDamage",
-															"sid": 938379617114814,
-															"parameters": [
-																"1",
-																false
-															]
-														},
 														{
 															"id": "set-object-time-scale",
 															"objectClass": "System",
@@ -1508,7 +1537,7 @@
 											"eventType": "variable",
 											"name": "orbTime",
 											"type": "number",
-											"initialValue": "0.8",
+											"initialValue": "2.5",
 											"comment": "",
 											"isStatic": false,
 											"isConstant": false,
@@ -1576,6 +1605,14 @@
 											"eventType": "function-block",
 											"conditions": [],
 											"actions": [
+												{
+													"callFunction": "playSound",
+													"sid": 730160065985367,
+													"parameters": [
+														"\"heroAbsorb\"",
+														false
+													]
+												},
 												{
 													"id": "set-group-active",
 													"objectClass": "System",
@@ -2164,6 +2201,14 @@
 													],
 													"actions": [
 														{
+															"callFunction": "playSound",
+															"sid": 406873558513256,
+															"parameters": [
+																"\"heroDash\"",
+																false
+															]
+														},
+														{
 															"id": "set-animation",
 															"objectClass": "dolls",
 															"sid": 594563527692783,
@@ -2460,14 +2505,26 @@
 																			}
 																		}
 																	],
-																	"actions": [
-																		{
-																			"callFunction": "startWallSlide",
-																			"sid": 231034849934114
-																		}
-																	],
+																	"actions": [],
 																	"sid": 631538326980473,
 																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "trigger-once-while-true",
+																					"objectClass": "System",
+																					"sid": 214497219471437
+																				}
+																			],
+																			"actions": [
+																				{
+																					"callFunction": "startWallSlide",
+																					"sid": 477050431239836
+																				}
+																			],
+																			"sid": 830882081942341
+																		},
 																		{
 																			"eventType": "block",
 																			"conditions": [
@@ -2612,6 +2669,13 @@
 											"conditions": [],
 											"actions": [
 												{
+													"callFunction": "stopSound",
+													"sid": 793964544232955,
+													"parameters": [
+														"\"heroWallSlide\""
+													]
+												},
+												{
 													"id": "set-max-fall-speed",
 													"objectClass": "spr_playerActual",
 													"sid": 559021462966677,
@@ -2650,6 +2714,14 @@
 											"eventType": "function-block",
 											"conditions": [],
 											"actions": [
+												{
+													"callFunction": "playSound",
+													"sid": 337774072708908,
+													"parameters": [
+														"\"heroWallSlide\"",
+														true
+													]
+												},
 												{
 													"id": "set-max-fall-speed",
 													"objectClass": "spr_playerActual",
@@ -2709,7 +2781,16 @@
 											"functionParameters": [],
 											"eventType": "function-block",
 											"conditions": [],
-											"actions": [],
+											"actions": [
+												{
+													"callFunction": "playSound",
+													"sid": 734394034538185,
+													"parameters": [
+														"\"heroWallJump\"",
+														false
+													]
+												}
+											],
 											"sid": 891727404908831,
 											"children": [
 												{
@@ -4696,6 +4777,14 @@
 													],
 													"actions": [
 														{
+															"callFunction": "playSound",
+															"sid": 921766044056422,
+															"parameters": [
+																"\"heroDamage\"",
+																false
+															]
+														},
+														{
 															"id": "goto-state",
 															"objectClass": "spr_playerActual",
 															"sid": 780636379466200,
@@ -5357,6 +5446,14 @@
 															],
 															"actions": [
 																{
+																	"callFunction": "playSound",
+																	"sid": 765593627566992,
+																	"parameters": [
+																		"choose(\"heroSword1\", \"heroSword2\", \"heroSword3\")",
+																		false
+																	]
+																},
+																{
 																	"id": "set-boolean-instvar",
 																	"objectClass": "spr_playerActual",
 																	"sid": 748789292545318,
@@ -5513,6 +5610,13 @@
 											"eventType": "function-block",
 											"conditions": [],
 											"actions": [
+												{
+													"callFunction": "playSoundVariable",
+													"sid": 365740320761246,
+													"parameters": [
+														"choose(\"heroSwordHitWall1\", \"heroSwordHitWall2\")"
+													]
+												},
 												{
 													"id": "set-instvar-value",
 													"objectClass": "spr_meleeSlash",
@@ -5811,6 +5915,22 @@
 										}
 									],
 									"actions": [
+										{
+											"callFunction": "playSound",
+											"sid": 742970180867642,
+											"parameters": [
+												"\"heroDeath\"",
+												false
+											]
+										},
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "spr_playerActual",
+											"sid": 462607238049142,
+											"parameters": {
+												"collisions": "disabled"
+											}
+										},
 										{
 											"id": "set-ignoring-input",
 											"objectClass": "spr_playerActual",

@@ -1402,6 +1402,14 @@
 											],
 											"actions": [
 												{
+													"callFunction": "playSound",
+													"sid": 402299098901833,
+													"parameters": [
+														"\"enemyDamage\"",
+														false
+													]
+												},
+												{
 													"id": "set-boolean-instvar",
 													"objectClass": "actuals",
 													"sid": 936655490584206,

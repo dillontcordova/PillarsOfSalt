@@ -9,6 +9,50 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 210296338743527
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 446989102649033,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 915957254251853,
+					"parameters": {
+						"audio-file": "grassTheme",
+						"loop": "looping",
+						"volume": "-20",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 278354560923689,
+					"parameters": {
+						"tag": "\"music\"",
+						"db": "0",
+						"duration": "5",
+						"ending": "keep-playing"
+					}
+				}
+			],
+			"sid": 428698937269611
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
 					"sid": 982261057009261,

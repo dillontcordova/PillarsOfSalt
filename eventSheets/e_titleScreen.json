@@ -1,0 +1,50 @@
+{
+	"name": "e_titleScreen",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 248337602773374
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 877620751494450,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 187681878789006,
+					"parameters": {
+						"audio-file": "titleTheme",
+						"loop": "looping",
+						"volume": "-20",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 109927675764588,
+					"parameters": {
+						"tag": "\"music\"",
+						"db": "0",
+						"duration": "5",
+						"ending": "keep-playing"
+					}
+				}
+			],
+			"sid": 576731049452773
+		}
+	],
+	"sid": 848361008467525
+}

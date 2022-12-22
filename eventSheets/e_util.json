@@ -488,6 +488,228 @@
 				}
 			],
 			"sid": 339713216380384
+		},
+		{
+			"functionName": "stopSound",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "soundTag",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 861457856817160
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 214472271041002,
+					"parameters": {
+						"tag": "soundTag"
+					}
+				}
+			],
+			"sid": 402664379593475
+		},
+		{
+			"functionName": "playSound",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "soundName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 725264778016152
+				},
+				{
+					"name": "isLooping",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 803727359911214
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 343078412585139,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 999619496366537,
+							"parameters": {
+								"variable": "isLooping"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 152520243378792,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 926386945151040,
+									"parameters": {
+										"tag": "soundName"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 277214994762934,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "soundName",
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "soundName"
+									}
+								}
+							],
+							"sid": 631334471257516
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 218726568687958
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 687973363503034,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "soundName",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "soundName"
+							}
+						}
+					],
+					"sid": 425458238140999
+				}
+			]
+		},
+		{
+			"functionName": "playSoundVariable",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "soundName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 976347792276338
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 989361540563209,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "soundName",
+						"loop": "not-looping",
+						"volume": "choose(-2, -10, -7)",
+						"stereo-pan": "0",
+						"tag-optional": "soundName"
+					}
+				}
+			],
+			"sid": 508725564848640
+		},
+		{
+			"functionName": "playMusic",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "musicName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 481954438157684
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 289377414853560,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 968357000262745,
+					"parameters": {
+						"folder": "music",
+						"audio-file-name": "musicName",
+						"loop": "looping",
+						"volume": "-20",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 446418792746144,
+					"parameters": {
+						"tag": "\"music\"",
+						"db": "0",
+						"duration": "5",
+						"ending": "keep-playing"
+					}
+				}
+			],
+			"sid": 845895071227416
 		}
 	],
 	"sid": 705044040744188

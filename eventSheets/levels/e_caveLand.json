@@ -14,7 +14,15 @@
 					"sid": 805203750533620
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"callFunction": "playMusic",
+					"sid": 759847383954664,
+					"parameters": [
+						"\"caveTheme\""
+					]
+				}
+			],
 			"sid": 235479409033213
 		},
 		{
