@@ -1,0 +1,47 @@
+{
+	"name": "dolls",
+	"plugin-id": "Sprite",
+	"sid": 887365811818796,
+	"instanceVariables": [
+		{
+			"name": "startW",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 102017566850469
+		},
+		{
+			"name": "startH",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 714030255882424
+		},
+		{
+			"name": "stepping",
+			"type": "number",
+			"desc": "set to 1 when in animation step",
+			"show": true,
+			"sid": 378506876616822
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 959144605616680
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 985924802284023
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_slugDoll",
+		"spr_playerDoll",
+		"spr_goblinKnifeDoll",
+		"spr_blobEnemyDoll"
+	]
+}

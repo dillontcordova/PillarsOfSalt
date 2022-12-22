@@ -1,0 +1,19 @@
+{
+	"name": "singletons",
+	"plugin-id": "Sprite",
+	"sid": 198650835573267,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aaXe_FSM",
+			"name": "FSM",
+			"sid": 580586507158048
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_playerSingleton",
+		"spr_gameSingleton",
+		"spr_gamepadSingleton"
+	]
+}

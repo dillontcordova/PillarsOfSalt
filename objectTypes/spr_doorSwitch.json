@@ -1,0 +1,100 @@
+{
+	"name": "spr_doorSwitch",
+	"plugin-id": "Sprite",
+	"sid": 983469819183166,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1222121,
+						"collisionPoly": {
+							"points": [
+								0.8125,
+								0.8125,
+								0.5,
+								0.6875,
+								0.375,
+								0.5625,
+								0.3125,
+								0.5,
+								0.9375,
+								0.9375,
+								0.5,
+								0.9375,
+								0,
+								0.9375,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 774728111655221,
+				"name": "off",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5693934,
+						"collisionPoly": {
+							"points": [
+								0.5625,
+								0.5625,
+								0.5,
+								0.625,
+								0.125,
+								0.8125,
+								0.8125,
+								0.5,
+								0.9375,
+								0.9375,
+								0.5,
+								0.9375,
+								0,
+								0.9375,
+								0.625,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 133320107751025,
+				"name": "on",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

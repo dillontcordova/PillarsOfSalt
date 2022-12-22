@@ -1,0 +1,20 @@
+{
+	"name": "txt_logo",
+	"plugin-id": "Text",
+	"sid": 201843015949680,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 764804226497739
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 453887711446645
+		}
+	],
+	"effectTypes": []
+}

@@ -1,0 +1,19 @@
+{
+	"name": "deathOnTouch",
+	"plugin-id": "TiledBg",
+	"sid": 883728379088902,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 743920176056887
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"tb_spikes",
+		"tb_water",
+		"tb_spikesCave"
+	]
+}

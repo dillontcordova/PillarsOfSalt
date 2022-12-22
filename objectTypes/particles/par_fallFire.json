@@ -1,0 +1,26 @@
+{
+	"name": "par_fallFire",
+	"plugin-id": "Particles",
+	"sid": 798927215040224,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 116052100118012
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 5,
+		"height": 5,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8496361,
+		"useCollisionPoly": true
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "damageOnTouch",
+	"plugin-id": "Sprite",
+	"sid": 385003893263657,
+	"instanceVariables": [
+		{
+			"name": "damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 789135830954795
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyGround",
+		"spr_enemyGoblinKnife",
+		"spr_enemyBlob"
+	]
+}

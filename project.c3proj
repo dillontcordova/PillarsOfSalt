@@ -1,0 +1,750 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 31702,
+	"name": "Pillars of Salt",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "gamepad",
+			"name": "Gamepad",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "aekiroWater",
+			"name": "Water",
+			"author": "Aekiro",
+			"version": "1.0.0.1",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "custom",
+			"name": "Custom",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "aaXe_FSM",
+			"name": "FSM",
+			"author": "Loïc Morvan, piranha305",
+			"version": "1.3.0.0",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "overlay",
+			"name": "Overlay",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "Mikal_LinearLight",
+			"name": "LinearLight",
+			"author": "Mikal",
+			"version": "1.0.0.0",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "skendpow",
+			"name": "SkendPow",
+			"author": "Somebody / Mikal / skymen",
+			"version": "1.5.0",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "pixellate",
+			"name": "Pixellate",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "n8bngjs1j57",
+	"objectTypes": {
+		"items": [
+			"spr_vegetation",
+			"spr_scythe",
+			"9patch_grassLand",
+			"spr_fallCheck",
+			"spr_key",
+			"sf_healthHUD",
+			"sf_jumpHUD",
+			"Sprite2",
+			"BigPlant",
+			"spr_platformBridge",
+			"spr_chest",
+			"spr_movingPlatformV",
+			"spr_shootFire",
+			"Leaf",
+			"spr_vialBg",
+			"spr_door",
+			"spr_doorSwitch",
+			"Browser"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Keyboard",
+					"Gamepad",
+					"Audio"
+				],
+				"subfolders": [],
+				"name": "input"
+			},
+			{
+				"items": [
+					"spr_boundaryExit",
+					"spr_camera",
+					"spr_gear"
+				],
+				"subfolders": [],
+				"name": "sprites"
+			},
+			{
+				"items": [
+					"tb_fade",
+					"tb_spikes",
+					"tb_spikesCave"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"tb_moonBackground",
+							"tb_clouds"
+						],
+						"subfolders": [],
+						"name": "staryNight"
+					},
+					{
+						"items": [],
+						"subfolders": [],
+						"name": "grassLand"
+					},
+					{
+						"items": [
+							"TiledBackground5",
+							"TiledBackground6",
+							"TiledBackground7",
+							"TiledBackground8"
+						],
+						"subfolders": [],
+						"name": "cave"
+					}
+				],
+				"name": "tiledBackgrounds"
+			},
+			{
+				"items": [
+					"txt_debugFPS",
+					"txt_logo",
+					"sf_inGameText",
+					"txt_debug"
+				],
+				"subfolders": [],
+				"name": "text"
+			},
+			{
+				"items": [
+					"par_rain",
+					"par_upgrade",
+					"par_fallFire",
+					"par_smoke",
+					"par_upgrade2",
+					"par_fireflies",
+					"par_hit",
+					"par_snow",
+					"Particles_splash"
+				],
+				"subfolders": [],
+				"name": "particles"
+			},
+			{
+				"items": [
+					"spr_playerDoll",
+					"spr_slugDoll",
+					"spr_goblinKnifeDoll",
+					"spr_blobEnemyDoll"
+				],
+				"subfolders": [],
+				"name": "dolls"
+			},
+			{
+				"items": [
+					"tm_grassLand",
+					"tm_platform",
+					"tm_staryNight"
+				],
+				"subfolders": [],
+				"name": "tileMaps"
+			},
+			{
+				"items": [
+					"spr_logoBullet",
+					"spr_logoSplash"
+				],
+				"subfolders": [],
+				"name": "splash"
+			},
+			{
+				"items": [
+					"spr_enemyGround",
+					"spr_enemyGoblinKnife",
+					"spr_enemyBlob"
+				],
+				"subfolders": [],
+				"name": "enemies"
+			},
+			{
+				"items": [
+					"spr_playerActual",
+					"spr_visibilityBounding",
+					"spr_meleeSlash",
+					"spr_hitMark"
+				],
+				"subfolders": [],
+				"name": "player"
+			},
+			{
+				"items": [
+					"spr_playerSpawn",
+					"spr_enemyGroundSpawn",
+					"spr_hudSpawn",
+					"spr_enemyGoblinKnifeSpawn",
+					"spr_enemyBlobSpawn"
+				],
+				"subfolders": [],
+				"name": "spawnPoints"
+			},
+			{
+				"items": [
+					"spr_gameSingleton",
+					"spr_playerSingleton",
+					"spr_gamepadSingleton",
+					"dict_states"
+				],
+				"subfolders": [],
+				"name": "stateMachine"
+			},
+			{
+				"items": [
+					"spr_heartIcon",
+					"spr_orbIcon"
+				],
+				"subfolders": [],
+				"name": "icons"
+			},
+			{
+				"items": [
+					"spr_jumpOrb",
+					"spr_healthOrb",
+					"spr_poundOrb",
+					"spr_shootOrb",
+					"spr_dashOrb",
+					"spr_wallJumpOrb"
+				],
+				"subfolders": [],
+				"name": "upgrades"
+			},
+			{
+				"items": [
+					"Light",
+					"Darkness",
+					"spr_plantAreaLight",
+					"spr_playerAreaLight"
+				],
+				"subfolders": [],
+				"name": "light"
+			},
+			{
+				"items": [
+					"spr_healthLight2",
+					"spr_healthLight",
+					"spr_boardHUD",
+					"spr_vialFg"
+				],
+				"subfolders": [],
+				"name": "HUD"
+			},
+			{
+				"items": [
+					"spr_quitGameBtn",
+					"spr_resumeGameBtn",
+					"sf_pauseText",
+					"spr_menuSelector",
+					"TiledBackground9"
+				],
+				"subfolders": [],
+				"name": "pauseMenu"
+			},
+			{
+				"items": [
+					"tb_water",
+					"tb_physicsBorder",
+					"spr_boxFloat"
+				],
+				"subfolders": [],
+				"name": "physics"
+			},
+			{
+				"items": [
+					"tb_cameraZoom",
+					"tb_zoneControl"
+				],
+				"subfolders": [],
+				"name": "zones"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"actuals",
+			"dolls",
+			"upgrades",
+			"destructibles",
+			"enemies",
+			"spawnPoints",
+			"enemyPatrol",
+			"damageOnTouch",
+			"bounceOnEnemies",
+			"singletons",
+			"enemyChase",
+			"doors",
+			"keys",
+			"deathOnTouch"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"construct splash",
+			"gameWorld",
+			"HUD",
+			"repository",
+			"Pause",
+			"grassLand"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"e_util",
+			"e_squashAndStretch",
+			"e_main",
+			"e_camera",
+			"e_player",
+			"e_splashScreen",
+			"e_enemies",
+			"e_doorsAndKeys",
+			"e_singleton",
+			"e_water",
+			"e_pauseMenu"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"e_grassLand"
+				],
+				"subfolders": [],
+				"name": "levels"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 707991267841414,
+					"icon-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 656732438659070,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 147530933724753,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 350444875122431,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 576068060856790,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 242683323418865,
+					"icon-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 225978363304942,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "Dillon Cordova",
+		"authorEmail": "dillontcordova@gmail.com",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": true,
+		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "none",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "flat"
+	},
+	"viewportWidth": 320,
+	"viewportHeight": 180,
+	"firstLayout": "construct splash"
+}

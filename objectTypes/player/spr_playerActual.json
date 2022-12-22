@@ -1,0 +1,176 @@
+{
+	"name": "spr_playerActual",
+	"plugin-id": "Sprite",
+	"sid": 953674646425271,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "gravity",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 522125760744732
+		},
+		{
+			"name": "gShifting",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 911991418163062
+		},
+		{
+			"name": "zoneId",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 726163464936936
+		},
+		{
+			"name": "isWalking",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 135687943935256
+		},
+		{
+			"name": "canJump",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 282351109850345
+		},
+		{
+			"name": "dblJumpEnabled",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 713888605742747
+		},
+		{
+			"name": "isPounding",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 133260863079197
+		},
+		{
+			"name": "animationLock",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 778975227064829
+		},
+		{
+			"name": "isSafe",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 536607835110198
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 779339969289337
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 952342632890869
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 15,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7648466,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.5,
+								"y": 0.0625
+							},
+							{
+								"name": "top",
+								"x": 0.5,
+								"y": 0
+							},
+							{
+								"name": "shoot",
+								"x": 1,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 616026931038071,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 9,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1558687,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0.00014071994357638118,
+								1,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.5,
+								"y": 0.1111111111111111
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 457555315536752,
+				"name": "crouch",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}

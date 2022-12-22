@@ -1,0 +1,464 @@
+{
+	"name": "e_water",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Water",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 263687429531510,
+							"parameters": {
+								"variable": "isPlayerInGame"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "tb_water",
+							"sid": 734841900148009,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-world-gravity",
+							"objectClass": "spr_boxFloat",
+							"sid": 496335561539086,
+							"disabled": true,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "spr_boxFloat",
+							"sid": 648233133657420,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "disabled"
+							}
+						}
+					],
+					"sid": 272873106860442,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 282773847546829
+						}
+					],
+					"actions": [
+						{
+							"id": "set-world-gravity",
+							"objectClass": "spr_boxFloat",
+							"sid": 598087788820349,
+							"disabled": true,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "10"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "spr_boxFloat",
+							"sid": 704251380626461,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						}
+					],
+					"sid": 336458257924094,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "platerWater",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "spr_playerActual",
+											"sid": 330360624246266,
+											"parameters": {
+												"object": "spr_boxFloat",
+												"offset-x": "0",
+												"offset-y": "5"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 505821353923769
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-force",
+											"objectClass": "spr_boxFloat",
+											"sid": 534913794468037,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force-x": "0",
+												"force-y": "10000 / ((spr_boxFloat.BBoxRight - spr_boxFloat.BBoxLeft) * (spr_boxFloat.BBoxBottom - spr_boxFloat.BBoxTop))",
+												"image-point": "0"
+											}
+										},
+										{
+											"id": "applyForce",
+											"objectClass": "tb_water",
+											"sid": 294210173272396,
+											"behaviorType": "Water",
+											"parameters": {
+												"x": "spr_playerActual.X",
+												"force": "-3",
+												"surface": "10"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "spr_boxFloat",
+											"sid": 473486637442011,
+											"parameters": {
+												"object": "Particles_splash",
+												"layer": "spr_boxFloat.LayerName",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Particles_splash",
+											"sid": 864569825811851,
+											"parameters": {
+												"angle": "270"
+											}
+										}
+									],
+									"sid": 286342071071603
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "spr_playerActual",
+											"sid": 164188899981157,
+											"parameters": {
+												"object": "tb_water"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 107727004302876
+										}
+									],
+									"actions": [
+										{
+											"id": "applyForce",
+											"objectClass": "tb_water",
+											"sid": 823259897407396,
+											"behaviorType": "Water",
+											"parameters": {
+												"x": "spr_playerActual.X",
+												"force": "-6",
+												"surface": "10"
+											}
+										}
+									],
+									"sid": 539893370004174,
+									"disabled": true
+								}
+							],
+							"sid": 432468087344805
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "floatObjects",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "make the boxes bob in the water a little..."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 344298793497757,
+											"parameters": {
+												"first-value": "abs(spr_boxFloat.Physics.VelocityY)",
+												"comparison": 2,
+												"second-value": "0.5"
+											}
+										},
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 318157409671496,
+											"parameters": {
+												"interval-seconds": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-force-at-angle",
+											"objectClass": "spr_boxFloat",
+											"sid": 677997240239884,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force": "Self.Width*Self.Height/500",
+												"angle": "-90",
+												"image-point": "0"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "this version allows for object to spin n bob"
+										},
+										{
+											"id": "apply-force-at-angle",
+											"objectClass": "spr_boxFloat",
+											"sid": 134739762103394,
+											"disabled": true,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force": "Self.Width*Self.Height/500",
+												"angle": "-90",
+												"image-point": "choose(0,1,2,3,4)"
+											}
+										}
+									],
+									"sid": 211422866138695
+								},
+								{
+									"eventType": "comment",
+									"text": "damping to reduce bouncyness"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 121349495019997,
+											"parameters": {
+												"object": "spr_boxFloat"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 690548637559422,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "spr_boxFloat",
+													"sid": 849263599227389,
+													"parameters": {
+														"object": "tb_water"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 715905641822599,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "use imagepoints to devide the object into four areas.  The result is now there's torque as well"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "repeat",
+															"objectClass": "System",
+															"sid": 625445326061355,
+															"parameters": {
+																"count": "4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "apply-force",
+															"objectClass": "spr_boxFloat",
+															"sid": 241129082624863,
+															"behaviorType": "Physics",
+															"parameters": {
+																"force-x": "0",
+																"force-y": "-0.006*spr_boxFloat.Width/2*clamp(spr_boxFloat.ImagePointY(1+loopindex)+spr_boxFloat.Height/4-tb_water.Water.surfaceY(spr_boxFloat.ImagePointY(1+loopindex)), 0, spr_boxFloat.Height/2)",
+																"image-point": "1+loopindex"
+															}
+														}
+													],
+													"sid": 862729027621061
+												},
+												{
+													"eventType": "comment",
+													"text": "initially hitting the water"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "spr_boxFloat",
+															"sid": 430510237140659,
+															"parameters": {
+																"instance-variable": "inWater"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "applyForce",
+															"objectClass": "tb_water",
+															"sid": 945886785393332,
+															"behaviorType": "Water",
+															"parameters": {
+																"x": "spr_boxFloat.X",
+																"force": "-(spr_boxFloat.BBoxRight-spr_boxFloat.BBoxLeft)*(spr_boxFloat.BBoxBottom-spr_boxFloat.BBoxTop)*0.0012",
+																"surface": "spr_boxFloat.BBoxRight-spr_boxFloat.BBoxLeft"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "spr_boxFloat",
+															"sid": 528163104276571,
+															"parameters": {
+																"object": "Particles_splash",
+																"layer": "spr_boxFloat.LayerName",
+																"image-point": "\"splash\"",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "Particles_splash",
+															"sid": 428600983688076,
+															"parameters": {
+																"angle": "270"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "spr_boxFloat",
+															"sid": 565138978522090,
+															"parameters": {
+																"instance-variable": "inWater",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-linear-damping",
+															"objectClass": "spr_boxFloat",
+															"sid": 142980967954901,
+															"behaviorType": "Physics",
+															"parameters": {
+																"linear-damping": "0.5"
+															}
+														},
+														{
+															"id": "set-angular-damping",
+															"objectClass": "spr_boxFloat",
+															"sid": 963346720707082,
+															"behaviorType": "Physics",
+															"parameters": {
+																"angular-damping": "0.8"
+															}
+														},
+														{
+															"id": "set-velocity",
+															"objectClass": "spr_boxFloat",
+															"sid": 593041314818398,
+															"behaviorType": "Physics",
+															"parameters": {
+																"x-component": "self.Physics.VelocityX/3",
+																"y-component": "self.Physics.VelocityY/3"
+															}
+														}
+													],
+													"sid": 187970258344198
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 892020434713818
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "spr_boxFloat",
+													"sid": 354193718512776,
+													"parameters": {
+														"instance-variable": "inWater",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-linear-damping",
+													"objectClass": "spr_boxFloat",
+													"sid": 862805317550230,
+													"behaviorType": "Physics",
+													"parameters": {
+														"linear-damping": "0"
+													}
+												},
+												{
+													"id": "set-angular-damping",
+													"objectClass": "spr_boxFloat",
+													"sid": 582330561446373,
+													"behaviorType": "Physics",
+													"parameters": {
+														"angular-damping": "0.01"
+													}
+												}
+											],
+											"sid": 211947532887471
+										}
+									]
+								}
+							],
+							"sid": 322798178311170
+						}
+					]
+				}
+			],
+			"sid": 153741920274642
+		}
+	],
+	"sid": 541411540323326
+}

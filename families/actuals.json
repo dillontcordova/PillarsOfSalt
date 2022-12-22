@@ -1,0 +1,71 @@
+{
+	"name": "actuals",
+	"plugin-id": "Sprite",
+	"sid": 300714457548183,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 850506035118891
+		},
+		{
+			"name": "isInvincible",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 577493474893203
+		},
+		{
+			"name": "isAttacking",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 423453846903031
+		},
+		{
+			"name": "isSolid",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 317757995550536
+		},
+		{
+			"name": "lockState",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 464198939583175
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 869741416334595
+		},
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 692512583191078
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 151254389898463
+		},
+		{
+			"behaviorId": "aaXe_FSM",
+			"name": "FSM",
+			"sid": 746821681919570
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_playerActual",
+		"spr_enemyGround",
+		"spr_enemyGoblinKnife",
+		"spr_enemyBlob"
+	]
+}

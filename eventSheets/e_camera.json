@@ -1,0 +1,1182 @@
+{
+	"name": "e_camera",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_util"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Camera",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "cameraShake",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "mag",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 817717529186504
+						},
+						{
+							"name": "dur",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 149443594825049
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "shake",
+							"objectClass": "spr_camera",
+							"sid": 606640765338357,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "mag",
+								"duration": "dur",
+								"mode": "reducing-magnitude"
+							}
+						}
+					],
+					"sid": 805035416086193,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-gamepads",
+									"objectClass": "Gamepad",
+									"sid": 793512978872991
+								}
+							],
+							"actions": [
+								{
+									"id": "reset-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 204774373491177,
+									"parameters": {
+										"gamepad": "0"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 504263529689499,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "dur * 1000",
+										"weak-magnitude": "mag",
+										"strong-magnitude": "mag"
+									}
+								}
+							],
+							"sid": 135523976844853
+						}
+					]
+				},
+				{
+					"functionName": "visibiltyBounding",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "spr_camera",
+							"sid": 270462820582913,
+							"parameters": {
+								"object": "spr_visibilityBounding",
+								"layer": "Self.LayerName",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "spr_visibilityBounding",
+							"sid": 959597010574055,
+							"parameters": {
+								"width": "ViewportWidth(Self.LayerNumber) + ViewportWidth(Self.LayerNumber) / 2",
+								"height": "ViewportHeight(Self.LayerNumber) + ViewportHeight(Self.LayerNumber) / 2"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "spr_visibilityBounding",
+							"sid": 517137364741110,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "spr_camera",
+							"sid": 886885245899572,
+							"parameters": {
+								"child": "spr_visibilityBounding",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 802123568107915
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "spr_camera",
+							"sid": 321813689682697
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "visibiltyBounding",
+							"sid": 374499379331399
+						}
+					],
+					"sid": 460705779811769
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "CameraZoom",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "IMPORTANT NOTE: Anything that is should not scale (like backgrounds) should have their \"Scale Rates\" set to 0"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "spr_playerActual",
+									"sid": 496987453751226,
+									"parameters": {
+										"object": "tb_cameraZoom"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layout-scale",
+									"objectClass": "System",
+									"sid": 852573677107209,
+									"parameters": {
+										"scale": "lerp(LayoutScale, tb_cameraZoom.zoom, 4 * dt)"
+									}
+								}
+							],
+							"sid": 277819826002592
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 721910939780465
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layout-scale",
+									"objectClass": "System",
+									"sid": 918004323862723,
+									"parameters": {
+										"scale": "lerp(LayoutScale, 1, 4 * dt)"
+									}
+								}
+							],
+							"sid": 206083328649227
+						}
+					],
+					"sid": 956128725911680
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "CameraClamp",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "vpW",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 560105505540027
+						},
+						{
+							"eventType": "variable",
+							"name": "vpH",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 392595923018421
+						},
+						{
+							"eventType": "variable",
+							"name": "init",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "First Tick has taken place and rendered once",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 763486799528671
+						},
+						{
+							"eventType": "variable",
+							"name": "cameraTarget",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 191114759090743
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 400255661910618
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 479744592330685,
+									"parameters": {
+										"variable": "vpW",
+										"value": "ViewportWidth(0)/2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 887974798479359,
+									"parameters": {
+										"variable": "vpH",
+										"value": "ViewportHeight(0)/2"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "wait 1 frame to allow it to render once before init true"
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 709406984037054,
+									"parameters": {
+										"seconds": ".015"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 157395011550812,
+									"parameters": {
+										"variable": "init",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 901157536621516,
+									"parameters": {
+										"variable": "cameraTarget",
+										"value": "spr_playerActual.UID"
+									}
+								}
+							],
+							"sid": 701895513444916,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 214111284794320,
+											"parameters": {
+												"object": "tb_zoneControl"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 616035936163316,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-height",
+													"objectClass": "tb_zoneControl",
+													"sid": 301434684969219,
+													"parameters": {
+														"comparison": 2,
+														"height": "ViewportHeight(0)"
+													}
+												},
+												{
+													"id": "compare-width",
+													"objectClass": "tb_zoneControl",
+													"sid": 801881453477917,
+													"parameters": {
+														"comparison": 2,
+														"width": "ViewportWidth(0)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "throw",
+													"sid": 105717417360241,
+													"parameters": [
+														"\"\"",
+														"\"\"",
+														"\"Error: zone \" & tb_zoneControl.UID & \" does not meet the minimum viewport width/height requirements\""
+													]
+												}
+											],
+											"sid": 929844923221296,
+											"isOrBlock": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Camera Types",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "scrollTo set to camera,\ncamera following player,\ncamera lerp clamped to zone XY"
+								},
+								{
+									"eventType": "variable",
+									"name": "isLerp",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 184731367723468
+								},
+								{
+									"eventType": "variable",
+									"name": "isClamp",
+									"type": "boolean",
+									"initialValue": "true",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 992761630911206
+								},
+								{
+									"eventType": "variable",
+									"name": "isZoneCamera",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 492792175877084
+								},
+								{
+									"eventType": "variable",
+									"name": "isScreenSwitch",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": true,
+									"isConstant": false,
+									"sid": 892888462019102
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 828558541262730,
+											"parameters": {
+												"variable": "cameraMode",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 575512473000533,
+											"parameters": {
+												"variable": "isScreenSwitch",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 145615031111696,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 183087880849298,
+											"parameters": {
+												"variable": "cameraMode",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 192270392793182,
+											"parameters": {
+												"variable": "isLerp",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 670681883026537,
+											"parameters": {
+												"variable": "isScreenSwitch",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 162437316759747,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 744336144629080,
+											"parameters": {
+												"variable": "cameraMode",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 474032909616138,
+											"parameters": {
+												"variable": "isZoneCamera",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 713175056831659,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 698722625235878,
+											"parameters": {
+												"variable": "cameraMode",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 776495118721287,
+											"parameters": {
+												"variable": "isLerp",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 867874280642018,
+											"parameters": {
+												"variable": "isZoneCamera",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 331091928168835,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 237646300126568,
+											"parameters": {
+												"variable": "cameraMode",
+												"comparison": 0,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 740115825993932,
+											"parameters": {
+												"variable": "isScreenSwitch",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 716836064393762,
+											"parameters": {
+												"variable": "isClamp",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 879554138036445,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 861233303207860,
+											"parameters": {
+												"variable": "cameraMode",
+												"comparison": 0,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 146678662762619,
+											"parameters": {
+												"variable": "isScreenSwitch",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 694340130147953,
+											"parameters": {
+												"variable": "isClamp",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 958013622213702,
+											"parameters": {
+												"variable": "isLerp",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 819296362057784,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 447541620121661,
+											"parameters": {
+												"variable": "isZoneCamera"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 748812898070681,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "spr_playerActual",
+													"sid": 125919518264532,
+													"parameters": {
+														"object": "tb_zoneControl"
+													}
+												},
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 470774782065214,
+													"parameters": {
+														"variable": "init"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "spr_playerActual",
+													"sid": 105562998753219,
+													"parameters": {
+														"instance-variable": "zoneId",
+														"comparison": 1,
+														"value": "tb_zoneControl.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "spr_playerActual",
+													"sid": 398852683896788,
+													"parameters": {
+														"instance-variable": "zoneId",
+														"value": "tb_zoneControl.UID"
+													}
+												}
+											],
+											"sid": 228838421829182,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "spr_playerActual",
+															"sid": 516194359305832,
+															"parameters": {
+																"instance-variable": "zoneId",
+																"comparison": 0,
+																"value": "-1"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-object-time-scale",
+															"objectClass": "System",
+															"sid": 106346796000102,
+															"parameters": {
+																"object": "actuals",
+																"time-scale": "0"
+															}
+														},
+														{
+															"id": "set-object-time-scale",
+															"objectClass": "System",
+															"sid": 250556903252283,
+															"parameters": {
+																"object": "dolls",
+																"time-scale": "0"
+															}
+														},
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 368838493059743,
+															"parameters": {
+																"variable": "isPlayerInGame",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 257320550217271,
+															"parameters": {
+																"variable": "isScreenSwitch",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "tb_fade",
+															"sid": 543511845232473,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "restart-fade",
+															"objectClass": "tb_fade",
+															"sid": 337902811744264,
+															"behaviorType": "Fade"
+														}
+													],
+													"sid": 478450946566834
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-fade-in-finished",
+													"objectClass": "tb_fade",
+													"sid": 209084886015369,
+													"behaviorType": "Fade"
+												},
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 919323087929984,
+													"parameters": {
+														"variable": "isScreenSwitch"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 831893807061814,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "move player to clamp xy of zone"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "tb_zoneControl",
+															"sid": 762990123940049,
+															"parameters": {
+																"unique-id": "spr_playerActual.zoneId"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-position",
+															"objectClass": "spr_playerActual",
+															"sid": 886074979307864,
+															"parameters": {
+																"x": "clamp(spr_playerActual.X, tb_zoneControl.X +spr_playerActual.Width, tb_zoneControl.X + tb_zoneControl.Width - spr_playerActual.Width)",
+																"y": "clamp(spr_playerActual.Y, tb_zoneControl.BBoxTop + spr_playerActual.Height+1, tb_zoneControl.BBoxBottom - spr_playerActual.Height)"
+															}
+														},
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 985375280573583,
+															"parameters": {
+																"variable": "isScreenSwitch",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 237021192871059
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-fade-out-finished",
+													"objectClass": "tb_fade",
+													"sid": 381550104684694,
+													"behaviorType": "Fade"
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 409585360043927,
+													"parameters": {
+														"variable": "isPlayerInGame",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-object-time-scale",
+													"objectClass": "System",
+													"sid": 248228693022884,
+													"parameters": {
+														"object": "actuals",
+														"time-scale": "1"
+													}
+												},
+												{
+													"id": "set-object-time-scale",
+													"objectClass": "System",
+													"sid": 831637591707678,
+													"parameters": {
+														"object": "dolls",
+														"time-scale": "1"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "tb_fade",
+													"sid": 897998065552289,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 936978760299591
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 352437146117240
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Function1",
+											"sid": 120515615062474
+										}
+									],
+									"sid": 677819618029796
+								},
+								{
+									"functionName": "Function1",
+									"functionDescription": "",
+									"functionCategory": "",
+									"functionReturnType": "none",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 857188421850481,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "lowerZoneX",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 849180530649963
+										},
+										{
+											"eventType": "variable",
+											"name": "higherZoneX",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 563189887531101
+										},
+										{
+											"eventType": "variable",
+											"name": "lowerZoneY",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 896215837131608
+										},
+										{
+											"eventType": "variable",
+											"name": "higherZoneY",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 383057617815248
+										},
+										{
+											"eventType": "variable",
+											"name": "newX",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 348362864225412
+										},
+										{
+											"eventType": "variable",
+											"name": "newY",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 119698550882285
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 364745768859525,
+													"parameters": {
+														"variable": "isScreenSwitch"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 603161709855676,
+													"parameters": {
+														"unique-id": "cameraTarget"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 946190857284300,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "actuals",
+															"sid": 463416468096022,
+															"parameters": {
+																"object": "tb_zoneControl"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 319056437809583,
+															"parameters": {
+																"variable": "lowerZoneX",
+																"value": "tb_zoneControl.X + vpW"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 838372113098589,
+															"parameters": {
+																"variable": "higherZoneX",
+																"value": "tb_zoneControl.X + tb_zoneControl.Width - vpW"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 302199630331232,
+															"parameters": {
+																"variable": "lowerZoneY",
+																"value": "tb_zoneControl.Y + vpH"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 272916220450694,
+															"parameters": {
+																"variable": "higherZoneY",
+																"value": "tb_zoneControl.Y + tb_zoneControl.Height - vpH"
+															}
+														},
+														{
+															"id": "set-position-to-another-object",
+															"objectClass": "spr_camera",
+															"sid": 443702264418099,
+															"parameters": {
+																"object": "actuals",
+																"image-point-optional": "1"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 551666701183044,
+															"parameters": {
+																"variable": "newX",
+																"value": "spr_camera.X"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 966598238048833,
+															"parameters": {
+																"variable": "newY",
+																"value": "spr_camera.Y"
+															}
+														}
+													],
+													"sid": 162073100358434,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 985746347884805,
+																	"parameters": {
+																		"variable": "isClamp"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 357553216750834,
+																	"parameters": {
+																		"variable": "newX",
+																		"value": "clamp(spr_camera.X, lowerZoneX, higherZoneX)"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 994389171703633,
+																	"parameters": {
+																		"variable": "newY",
+																		"value": "clamp(spr_camera.Y, lowerZoneY, higherZoneY)"
+																	}
+																}
+															],
+															"sid": 235895105102176
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 427874642979778,
+																	"parameters": {
+																		"variable": "isLerp"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-position",
+																	"objectClass": "spr_camera",
+																	"sid": 748927455985048,
+																	"parameters": {
+																		"x": "lerp(scrollx, newX, 0.1 * 60 * dt)",
+																		"y": "lerp(scrolly, newY, 0.1 * 60 * dt)"
+																	}
+																}
+															],
+															"sid": 212831160860793
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 535692934442306
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-position",
+																	"objectClass": "spr_camera",
+																	"sid": 847092033241732,
+																	"parameters": {
+																		"x": "newX",
+																		"y": "newY"
+																	}
+																}
+															],
+															"sid": 819331225701494
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 940666732207819
+						}
+					],
+					"sid": 639863154866789
+				}
+			],
+			"sid": 828974923109118
+		}
+	],
+	"sid": 953317644321337
+}

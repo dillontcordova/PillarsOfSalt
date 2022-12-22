@@ -1,0 +1,48 @@
+{
+	"name": "spr_logoBullet",
+	"plugin-id": "Sprite",
+	"sid": 940533399619560,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 421287847342173
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 165362755359681
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 18,
+						"originX": 0.625,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4273982,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 703133421995530,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}

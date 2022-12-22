@@ -1,0 +1,1397 @@
+{
+	"name": "e_singleton",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Singleton",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "playerSingleton",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "initStateMachine",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 746360302836123,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-double-jump-enabled",
+											"objectClass": "spr_playerActual",
+											"sid": 539856428770791,
+											"behaviorType": "Platform"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "spr_playerSingleton",
+											"sid": 111223483332824,
+											"parameters": {
+												"instance-variable": "isDblHumpEnabled",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 838993128032303
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 269221325714462
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "spr_playerSingleton",
+											"sid": 655009032604322,
+											"parameters": {
+												"instance-variable": "isDblHumpEnabled",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 492359627084694
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "spr_playerSingleton",
+											"sid": 551385715258690,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "spr_playerSingleton",
+											"sid": 431015575395003,
+											"parameters": {
+												"collisions": "disabled"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerSingleton",
+											"sid": 494060879523103,
+											"parameters": {
+												"instance-variable": "defaultGravity",
+												"value": "spr_playerActual.Platform.Gravity"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerSingleton",
+											"sid": 364031438462577,
+											"parameters": {
+												"instance-variable": "defaultMaxFallSpeed",
+												"value": "spr_playerActual.Platform.MaxFallSpeed"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerSingleton",
+											"sid": 304954834621485,
+											"parameters": {
+												"instance-variable": "defaultMaxSpeed",
+												"value": "spr_playerActual.Platform.MaxSpeed"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerSingleton",
+											"sid": 173054199987450,
+											"parameters": {
+												"instance-variable": "defaultAcceleration",
+												"value": "spr_playerActual.Platform.Acceleration"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerSingleton",
+											"sid": 854915386475352,
+											"parameters": {
+												"instance-variable": "defaultDeceleration",
+												"value": "spr_playerActual.Platform.Deceleration"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerSingleton",
+											"sid": 250068532659849,
+											"parameters": {
+												"instance-variable": "defaultJumpStrength",
+												"value": "spr_playerActual.Platform.JumpStrength"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerSingleton",
+											"sid": 706045282937148,
+											"parameters": {
+												"instance-variable": "defaultJumpSustain",
+												"value": "spr_playerActual.Platform.JumpSustain"
+											}
+										},
+										{
+											"id": "goto-state",
+											"objectClass": "spr_playerSingleton",
+											"sid": 613052931095660,
+											"behaviorType": "FSM",
+											"parameters": {
+												"name0": "\"\""
+											}
+										}
+									],
+									"sid": 617516574798974
+								}
+							]
+						},
+						{
+							"functionName": "initStateDict",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 719819914227916,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 249397311912506,
+											"parameters": {
+												"object-to-create": "dict_states",
+												"layer": "0",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 792273844781156,
+											"parameters": {
+												"key": "\"idle\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 976602728653931,
+											"parameters": {
+												"key": "\"walk\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 224007460138125,
+											"parameters": {
+												"key": "\"wallSliding\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 187797610332935,
+											"parameters": {
+												"key": "\"groundPounding\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 482440503446209,
+											"disabled": true,
+											"parameters": {
+												"key": "\"shooting\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 197360415409525,
+											"disabled": true,
+											"parameters": {
+												"key": "\"jumping\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 774761204581199,
+											"disabled": true,
+											"parameters": {
+												"key": "\"falling\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 705823112175168,
+											"disabled": true,
+											"parameters": {
+												"key": "\"sleep\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 539097564396964,
+											"disabled": true,
+											"parameters": {
+												"key": "\"chase\"",
+												"value": "dict_states.KeyCount"
+											}
+										},
+										{
+											"id": "add-key",
+											"objectClass": "dict_states",
+											"sid": 756790205880621,
+											"parameters": {
+												"key": "\"attack\"",
+												"value": "dict_states.KeyCount"
+											}
+										}
+									],
+									"sid": 408264996336807
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "stateFns",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"functionName": "resetLockState",
+									"functionDescription": "",
+									"functionCategory": "state",
+									"functionReturnType": "none",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "state",
+											"type": "string",
+											"initialValue": "REPLACE ME",
+											"comment": "",
+											"sid": 820507523767012
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 683951307792618,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-current-state",
+													"objectClass": "spr_playerSingleton",
+													"sid": 603089502019086,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "state"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "goto-state",
+													"objectClass": "spr_playerSingleton",
+													"sid": 671624441796052,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "\"\""
+													}
+												}
+											],
+											"sid": 538638073554823
+										}
+									]
+								},
+								{
+									"functionName": "getIsLockedState",
+									"functionDescription": "",
+									"functionCategory": "state",
+									"functionReturnType": "any",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "setDebugText",
+											"sid": 733890388874913,
+											"disabled": true,
+											"parameters": [
+												"spr_playerSingleton.FSM.CurrentState"
+											]
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "txt_debug",
+											"sid": 914778944043984,
+											"disabled": true,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "txt_debug",
+											"sid": 423155823465822,
+											"disabled": true,
+											"parameters": {
+												"text": "spr_playerSingleton.FSM.CurrentState"
+											}
+										}
+									],
+									"sid": 780846339816875,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "isLocked",
+											"type": "boolean",
+											"initialValue": "true",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 182612249877102
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-current-state",
+													"objectClass": "spr_playerSingleton",
+													"sid": 350762684726559,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 359048410184909,
+													"parameters": {
+														"variable": "isLocked",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 306787725619805
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 461290856042737,
+													"parameters": {
+														"value": "isLocked"
+													}
+												}
+											],
+											"sid": 984580642857094
+										}
+									]
+								},
+								{
+									"functionName": "setStateGateway",
+									"functionDescription": "",
+									"functionCategory": "state",
+									"functionReturnType": "any",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "state",
+											"type": "string",
+											"initialValue": "",
+											"comment": "",
+											"sid": 753035524373184
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 161680135405186,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "canSetState",
+											"type": "boolean",
+											"initialValue": "true",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 248684056356094
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-current-state",
+													"objectClass": "spr_playerSingleton",
+													"sid": 631681718800968,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "\"\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 786202101202125,
+													"parameters": {
+														"variable": "canSetState",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 686325756197004,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-current-state",
+															"objectClass": "spr_playerSingleton",
+															"sid": 733321460792565,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"death\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [],
+													"sid": 271387993462513,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 245130144988329,
+																	"parameters": {
+																		"variable": "state",
+																		"comparison": 0,
+																		"value": "\"dash\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 979848449176950,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 297631074320996,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"groundPound\""
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 681314271993548,
+																			"parameters": {
+																				"variable": "canSetState",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 628482974661729
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 422360598714832
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 736427454688542,
+																	"parameters": {
+																		"variable": "state",
+																		"comparison": 0,
+																		"value": "\"wallSlide\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 334487318076602,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 323509388028033,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"groundPound\""
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 857682504706764,
+																			"parameters": {
+																				"variable": "canSetState",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 878967735670248
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 894689092112204
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 997803387888168,
+																	"parameters": {
+																		"variable": "state",
+																		"comparison": 0,
+																		"value": "\"groundPound\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 535107248902911,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 228715026725240,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"wallSlide\""
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 669981420249266,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"dash\""
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 482350169942312,
+																			"parameters": {
+																				"variable": "canSetState",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 274996145534307
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 221350741436962
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 532275434508830,
+																	"parameters": {
+																		"variable": "state",
+																		"comparison": 0,
+																		"value": "\"takeDamage\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 830807739610953,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 520843196069749,
+																			"parameters": {
+																				"variable": "canSetState",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 311656191446830
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 222094324038535
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 417143500324072,
+																	"parameters": {
+																		"variable": "state",
+																		"comparison": 0,
+																		"value": "\"attackMelee\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 345146209822456,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 262079556543700,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"groundPound\""
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 969227603558829,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"wallSlide\""
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 400906349221010,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"dash\""
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 933257872493117,
+																			"parameters": {
+																				"variable": "canSetState",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 720107156763455
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 542681797891303
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 116799772334068,
+																	"parameters": {
+																		"variable": "canSetState",
+																		"value": "true"
+																	}
+																}
+															],
+															"sid": 177445596847654
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 689574747258013,
+													"parameters": {
+														"variable": "canSetState"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "goto-state",
+													"objectClass": "spr_playerSingleton",
+													"sid": 928523985435427,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "state"
+													}
+												}
+											],
+											"sid": 352109577927389
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 716671620795480,
+													"parameters": {
+														"value": "canSetState"
+													}
+												}
+											],
+											"sid": 746047373033188
+										}
+									]
+								}
+							],
+							"sid": 186862504102680
+						}
+					],
+					"sid": 553898129339667
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "chaseSingleton",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-state-changed",
+									"objectClass": "actuals",
+									"sid": 555711314977436,
+									"behaviorType": "FSM"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "actuals",
+									"sid": 105418309965246,
+									"parameters": {
+										"instance-variable": "lockState",
+										"value": "Self.FSM.CurrentState"
+									}
+								}
+							],
+							"sid": 240525846136241
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "stateFns2",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"functionName": "resetLockState2",
+									"functionDescription": "",
+									"functionCategory": "state",
+									"functionReturnType": "none",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "state",
+											"type": "string",
+											"initialValue": "REPLACE ME",
+											"comment": "",
+											"sid": 810694041765891
+										},
+										{
+											"name": "uid",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 334386214994119
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 569451545222150,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 611330349391220,
+													"parameters": {
+														"unique-id": "uid"
+													}
+												},
+												{
+													"id": "compare-current-state",
+													"objectClass": "actuals",
+													"sid": 573195666034362,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "state"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "goto-state",
+													"objectClass": "actuals",
+													"sid": 319381934414646,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "\"\""
+													}
+												}
+											],
+											"sid": 129774339859319
+										}
+									]
+								},
+								{
+									"functionName": "getIsLockedState2",
+									"functionDescription": "",
+									"functionCategory": "state",
+									"functionReturnType": "any",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "uid",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 756764800279996
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 819641343015834,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "isLocked",
+											"type": "boolean",
+											"initialValue": "true",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 199271193720033
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 258992567257750,
+													"parameters": {
+														"unique-id": "uid"
+													}
+												},
+												{
+													"id": "compare-current-state",
+													"objectClass": "actuals",
+													"sid": 781111237894140,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "\"\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 777330394649003,
+													"parameters": {
+														"variable": "isLocked",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "txt_debug",
+													"sid": 582047571698012,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-text",
+													"objectClass": "txt_debug",
+													"sid": 418476819790605,
+													"parameters": {
+														"text": "actuals.FSM.CurrentState"
+													}
+												}
+											],
+											"sid": 163310623245744
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 921911292439543,
+													"parameters": {
+														"value": "isLocked"
+													}
+												}
+											],
+											"sid": 469654462444439
+										}
+									]
+								},
+								{
+									"functionName": "resetState",
+									"functionDescription": "",
+									"functionCategory": "state",
+									"functionReturnType": "none",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "uid",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 333113869398399
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 567372001345754,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 947488882351581,
+													"parameters": {
+														"unique-id": "uid"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "goto-state",
+													"objectClass": "actuals",
+													"sid": 801514211052722,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "actuals.FSM.PreviousState"
+													}
+												}
+											],
+											"sid": 126680722926449
+										}
+									]
+								},
+								{
+									"functionName": "setState",
+									"functionDescription": "",
+									"functionCategory": "state",
+									"functionReturnType": "none",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "state",
+											"type": "string",
+											"initialValue": "",
+											"comment": "",
+											"sid": 170826307177724
+										},
+										{
+											"name": "uid",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 710776155840048
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 343137119486120,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "canSetState",
+											"type": "boolean",
+											"initialValue": "true",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 975910793629998
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 767934970130520,
+													"parameters": {
+														"unique-id": "uid"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 186273587268173,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 559206424887669,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 671959418499167,
+															"parameters": {
+																"variable": "canSetState",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 949949536824747,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 334659895401045,
+																	"parameters": {
+																		"variable": "state",
+																		"comparison": 0,
+																		"value": "\"patrol\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 610583692344343,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 572663405201628,
+																			"parameters": {
+																				"variable": "canSetState",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 488909893614620
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 283539078188192
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 154022050330007,
+																	"parameters": {
+																		"variable": "state",
+																		"comparison": 0,
+																		"value": "\"alert\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 122500377950977,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "actuals",
+																			"sid": 532287488122104,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"patrol\""
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 185858481553851,
+																			"parameters": {
+																				"variable": "canSetState",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 287692026246494
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 748393677020685
+																},
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 376697203270868,
+																	"parameters": {
+																		"variable": "state",
+																		"comparison": 0,
+																		"value": "\"charge\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 396980376432797,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "actuals",
+																			"sid": 430327010732226,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"alert\""
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 474744720720066,
+																			"parameters": {
+																				"variable": "canSetState",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 602652556803644
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 857233913653448
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 228813023780619,
+																	"parameters": {
+																		"variable": "canSetState",
+																		"value": "true"
+																	}
+																}
+															],
+															"sid": 227736673877030
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 332305811850137,
+															"parameters": {
+																"variable": "canSetState"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "goto-state",
+															"objectClass": "actuals",
+															"sid": 387865672557601,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "state"
+															}
+														}
+													],
+													"sid": 942376630307783
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 328183029967398
+						}
+					],
+					"sid": 944149332022883
+				}
+			],
+			"sid": 185855583221563
+		}
+	],
+	"sid": 572834153962486
+}

@@ -1,0 +1,494 @@
+{
+	"name": "e_util",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "isDebugMode",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 583028158818439
+		},
+		{
+			"eventType": "variable",
+			"name": "cameraMode",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 227486963170810
+		},
+		{
+			"eventType": "variable",
+			"name": "isPlayerInGame",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 784720915378164
+		},
+		{
+			"eventType": "variable",
+			"name": "isGfxHigh",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 606905077391526
+		},
+		{
+			"eventType": "variable",
+			"name": "thrownError",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 842400830437401
+		},
+		{
+			"eventType": "variable",
+			"name": "dbgMsg",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 181000926429917
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 947203567409154,
+					"parameters": {
+						"variable": "isDebugMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "txt_debugFPS",
+					"sid": 734959463581162,
+					"parameters": {
+						"text": "(isGfxHigh ? \"High\": \"Low\") & \" GFX, \" & fps & \" FPS, \" & round(cpuutilisation * 100) & \"% CPU, \" & round(gpuutilisation * 100) & \"% GPU\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txt_debug",
+					"sid": 852039766275073,
+					"disabled": true,
+					"parameters": {
+						"text": "dbgMsg"
+					}
+				}
+			],
+			"sid": 583082006542787
+		},
+		{
+			"functionName": "throw",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "expression1",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 455827677938847
+				},
+				{
+					"name": "expression2",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 208958008790830
+				},
+				{
+					"name": "msg",
+					"type": "string",
+					"initialValue": "error message",
+					"comment": "",
+					"sid": 729589197453317
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 173167470320725,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 733761261137876,
+							"parameters": {
+								"first-value": "expression1",
+								"comparison": 0,
+								"second-value": "expression2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 824974661929426,
+							"parameters": {
+								"variable": "thrownError",
+								"value": "msg"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txt_debugFPS",
+							"sid": 140029545601644,
+							"parameters": {
+								"text": "thrownError"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "txt_debugFPS",
+							"sid": 429269088751543,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 836286847769526,
+							"parameters": {
+								"time-scale": "0"
+							}
+						}
+					],
+					"sid": 180083542535589
+				}
+			]
+		},
+		{
+			"functionName": "setDebugText",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "msg",
+					"type": "string",
+					"initialValue": "error message",
+					"comment": "",
+					"sid": 289857513250055
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "txt_debug",
+					"sid": 450557674135965,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 737663017364098,
+					"parameters": {
+						"variable": "dbgMsg",
+						"value": "msg"
+					}
+				}
+			],
+			"sid": 129528095355371
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Fade",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "fade",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "fadeIn",
+							"sid": 497640162052749,
+							"parameters": [
+								"1"
+							]
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 981995104550099
+						},
+						{
+							"callFunction": "fadeOut",
+							"sid": 190117474571495,
+							"parameters": [
+								"1"
+							]
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 267037524250745
+						}
+					],
+					"sid": 697023674531401
+				},
+				{
+					"functionName": "fadeIn",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "dur",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"sid": 907199810243730
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "tb_fade",
+							"sid": 112567545514589,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "tb_fade",
+							"sid": 731972416979683,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "tb_fade",
+							"sid": 761816353527087,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "dur",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 489637449461278
+				},
+				{
+					"functionName": "fadeOut",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "dur",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"sid": 985221230744583
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "tb_fade",
+							"sid": 444105559557911,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "tb_fade",
+							"sid": 482887423673627,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "tb_fade",
+							"sid": 977414558744389,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "dur",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 674461177791697
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "tb_fade",
+							"sid": 464200613113836,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 486195317584341
+				}
+			],
+			"sid": 431312089206206
+		},
+		{
+			"functionName": "pixellateHUD",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [
+				{
+					"name": "dur",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 306809776239579
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-layer-effect-enabled",
+					"objectClass": "System",
+					"sid": 669470062257218,
+					"parameters": {
+						"layer": "\"HUD\"",
+						"mode": "enable",
+						"effect": "\"Pixellate\""
+					}
+				},
+				{
+					"id": "set-layer-effect-parameter",
+					"objectClass": "System",
+					"sid": 799006869200136,
+					"parameters": {
+						"layer": "\"HUD\"",
+						"effect": "\"Pixellate\"",
+						"parameter-index": "0",
+						"value": "35"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 441463743161931,
+					"parameters": {
+						"seconds": "dur / 3"
+					}
+				},
+				{
+					"id": "set-layer-effect-parameter",
+					"objectClass": "System",
+					"sid": 594344801034698,
+					"parameters": {
+						"layer": "\"HUD\"",
+						"effect": "\"Pixellate\"",
+						"parameter-index": "0",
+						"value": "75"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 931697807766144,
+					"parameters": {
+						"seconds": "dur / 3"
+					}
+				},
+				{
+					"id": "set-layer-effect-parameter",
+					"objectClass": "System",
+					"sid": 393205036817390,
+					"parameters": {
+						"layer": "\"HUD\"",
+						"effect": "\"Pixellate\"",
+						"parameter-index": "0",
+						"value": "35"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 395735546109110,
+					"parameters": {
+						"seconds": "dur / 3"
+					}
+				},
+				{
+					"id": "set-layer-effect-enabled",
+					"objectClass": "System",
+					"sid": 677064442226213,
+					"parameters": {
+						"layer": "\"HUD\"",
+						"mode": "disable",
+						"effect": "\"Pixellate\""
+					}
+				}
+			],
+			"sid": 339713216380384
+		}
+	],
+	"sid": 705044040744188
+}

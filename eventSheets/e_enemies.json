@@ -1,0 +1,2095 @@
+{
+	"name": "e_enemies",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemies",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "enemies",
+							"sid": 359408953851842
+						}
+					],
+					"actions": [],
+					"sid": 747876638462075,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "actuals",
+									"sid": 808467361400636,
+									"parameters": {
+										"unique-id": "enemies.UID"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "enemies",
+									"sid": 338060491134351,
+									"parameters": {
+										"child": "dolls",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "goto-state",
+									"objectClass": "actuals",
+									"sid": 884613549733874,
+									"behaviorType": "FSM",
+									"parameters": {
+										"name0": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "dolls",
+									"sid": 253343090584038,
+									"parameters": {
+										"frame-number": "random(dolls.AnimationFrameCount)"
+									}
+								}
+							],
+							"sid": 875657443403876
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "enemies",
+							"sid": 469213950974081,
+							"parameters": {
+								"object": "deathOnTouch"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 161196058970736,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "actuals",
+									"sid": 942310943511147,
+									"parameters": {
+										"unique-id": "enemies.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "enemyDeath",
+									"sid": 869746921166929
+								}
+							],
+							"sid": 118509342019134
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "AI",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "turnAroundToState",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "nextState",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 104686164810918
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-vector-x",
+									"objectClass": "actuals",
+									"sid": 729212241414568,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-x": "0"
+									}
+								}
+							],
+							"sid": 404625174806867,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "dolls",
+											"sid": 825073397270684,
+											"parameters": {
+												"animation": "\"turnAround\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "dolls",
+											"sid": 335852875673983,
+											"parameters": {
+												"animation": "\"turnAround\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 748649748584725
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 271202941577820
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "dolls",
+											"sid": 607960830700025,
+											"parameters": {
+												"animation": "\"turnAround\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "dolls",
+											"sid": 195065711674755,
+											"parameters": {
+												"comparison": 0,
+												"number": "dolls.AnimationFrameCount - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "toggle-boolean-instvar",
+											"objectClass": "enemies",
+											"sid": 785416380855673,
+											"parameters": {
+												"instance-variable": "isRight"
+											}
+										},
+										{
+											"callFunction": "setState",
+											"sid": 872985086942751,
+											"parameters": [
+												"nextState",
+												"enemies.UID"
+											]
+										}
+									],
+									"sid": 613476324758861
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Ground",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "enemyPatrol",
+											"sid": 544303009989746
+										}
+									],
+									"actions": [],
+									"sid": 538497447418413,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 730160002711105,
+													"parameters": {
+														"unique-id": "enemyPatrol.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "actuals",
+													"sid": 944321523342200,
+													"behaviorType": "Platform",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"id": "goto-state",
+													"objectClass": "actuals",
+													"sid": 223853009569336,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "\"patrol\""
+													}
+												}
+											],
+											"sid": 651618943456809
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 184584084835877,
+											"parameters": {
+												"object": "enemyPatrol"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 980301921097709,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "enemies",
+													"sid": 152813561042696,
+													"parameters": {
+														"unique-id": "enemyPatrol.UID"
+													}
+												},
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 945935158146168,
+													"parameters": {
+														"unique-id": "enemyPatrol.UID"
+													}
+												},
+												{
+													"id": "pick-children",
+													"objectClass": "actuals",
+													"sid": 216169955457645,
+													"parameters": {
+														"child": "dolls",
+														"which": "own"
+													}
+												},
+												{
+													"id": "is-on-floor",
+													"objectClass": "actuals",
+													"sid": 122138848539774,
+													"behaviorType": "Platform"
+												}
+											],
+											"actions": [],
+											"sid": 408743118116193,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 552290229530561,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"turnAround\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "turnAroundToState",
+															"sid": 292419971333526,
+															"parameters": [
+																"\"patrol\""
+															]
+														}
+													],
+													"sid": 687468606891193
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 366972184676442,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"patrol\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation",
+															"objectClass": "dolls",
+															"sid": 708817673562919,
+															"parameters": {
+																"animation": "\"walk\"",
+																"from": "current-frame"
+															}
+														},
+														{
+															"callFunction": "enemyGroundMove",
+															"sid": 215271962409657
+														}
+													],
+													"sid": 211258394987314,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 618783916715508,
+																	"parameters": {
+																		"value": "Functions.patrolCheck"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "setState",
+																	"sid": 975408632240456,
+																	"parameters": [
+																		"\"turnAround\"",
+																		"actuals.UID"
+																	]
+																}
+															],
+															"sid": 984046049044112
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"functionName": "patrolCheck",
+									"functionDescription": "",
+									"functionCategory": "enemy",
+									"functionReturnType": "any",
+									"functionCopyPicked": true,
+									"functionIsAsync": false,
+									"functionParameters": [],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 537671241341579,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "turnAround",
+											"type": "boolean",
+											"initialValue": "false",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 336007554702555
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "enemies",
+													"sid": 296911830056682,
+													"parameters": {
+														"child": "spr_fallCheck",
+														"which": "bottom"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 611294034623973,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-on-floor",
+															"objectClass": "spr_fallCheck",
+															"sid": 845320612156359,
+															"behaviorType": "Platform",
+															"isInverted": true
+														},
+														{
+															"id": "is-by-wall",
+															"objectClass": "spr_fallCheck",
+															"sid": 655935936741512,
+															"behaviorType": "Platform",
+															"parameters": {
+																"side": "left"
+															}
+														},
+														{
+															"id": "is-by-wall",
+															"objectClass": "spr_fallCheck",
+															"sid": 687552045253882,
+															"behaviorType": "Platform",
+															"parameters": {
+																"side": "right"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 758423613226774,
+															"parameters": {
+																"variable": "turnAround",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 676360575519657,
+													"isOrBlock": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 917285863133490,
+															"parameters": {
+																"value": "turnAround"
+															}
+														}
+													],
+													"sid": 262158356057673
+												}
+											]
+										}
+									]
+								},
+								{
+									"functionName": "enemyGroundMove",
+									"functionDescription": "",
+									"functionCategory": "enemy",
+									"functionReturnType": "none",
+									"functionCopyPicked": true,
+									"functionIsAsync": false,
+									"functionParameters": [],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "dolls",
+											"sid": 588716578988729,
+											"parameters": {
+												"animation": "\"walk\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 175264670557835,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "enemies",
+													"sid": 869887624782254,
+													"parameters": {
+														"instance-variable": "isRight"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "dolls",
+													"sid": 283294021650594,
+													"parameters": {
+														"state": "not-mirrored"
+													}
+												},
+												{
+													"id": "simulate-control",
+													"objectClass": "actuals",
+													"sid": 590015873685003,
+													"behaviorType": "Platform",
+													"parameters": {
+														"control": "right"
+													}
+												}
+											],
+											"sid": 320667814744748
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 139345776937076
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "dolls",
+													"sid": 271103688398265,
+													"parameters": {
+														"state": "mirrored"
+													}
+												},
+												{
+													"id": "simulate-control",
+													"objectClass": "actuals",
+													"sid": 683004886314097,
+													"behaviorType": "Platform",
+													"parameters": {
+														"control": "left"
+													}
+												}
+											],
+											"sid": 545141344369261
+										}
+									]
+								}
+							],
+							"sid": 787033590243397
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "EnemyChase",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "alertCool",
+									"type": "number",
+									"initialValue": "0.75",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": true,
+									"sid": 759249987863145
+								},
+								{
+									"eventType": "variable",
+									"name": "atkCool",
+									"type": "number",
+									"initialValue": "0.75",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": true,
+									"sid": 597833024610026
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "enemyChase",
+											"sid": 308333486692785
+										}
+									],
+									"actions": [
+										{
+											"id": "add-obstacle",
+											"objectClass": "enemyChase",
+											"sid": 547651024406986,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"obstacle": "spr_playerActual"
+											}
+										}
+									],
+									"sid": 698433668015415,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 186126143173126,
+													"parameters": {
+														"unique-id": "enemyChase.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "actuals",
+													"sid": 382750782312916,
+													"behaviorType": "Platform",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"id": "goto-state",
+													"objectClass": "actuals",
+													"sid": 720387536567992,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "\"patrol\""
+													}
+												}
+											],
+											"sid": 878382524310247
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "enemies",
+											"sid": 975712934115660,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"alertCooldown\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 814900585443645,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyChase",
+													"sid": 792975732680159,
+													"parameters": {
+														"unique-id": "enemies.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "enemyChase",
+													"sid": 545811220760416,
+													"parameters": {
+														"instance-variable": "chargeStartPos",
+														"value": "Self.X"
+													}
+												},
+												{
+													"callFunction": "setState",
+													"sid": 177669978978480,
+													"parameters": [
+														"\"charge\"",
+														"enemies.UID"
+													]
+												}
+											],
+											"sid": 672307517994090
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "enemies",
+											"sid": 883078368779478,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"chaseAttackCooldown\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setState",
+											"sid": 740281749310089,
+											"parameters": [
+												"\"patrol\"",
+												"enemies.UID"
+											]
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "enemies",
+											"sid": 804250080471384,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "enemyChase.patrolCool",
+												"type": "once",
+												"tag": "\"patrolCooldown\""
+											}
+										}
+									],
+									"sid": 413101059553528
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 786112731793003,
+											"parameters": {
+												"object": "enemyChase"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 837622742556995,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 781110016533836,
+													"parameters": {
+														"unique-id": "enemyChase.UID"
+													}
+												},
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "enemies",
+													"sid": 561353422718475,
+													"parameters": {
+														"unique-id": "enemyChase.UID"
+													}
+												},
+												{
+													"id": "pick-children",
+													"objectClass": "enemyChase",
+													"sid": 871548785084445,
+													"parameters": {
+														"child": "dolls",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 275324621760350,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 254215668893842,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"turnAround\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "turnAroundToState",
+															"sid": 193520250995950,
+															"parameters": [
+																"\"patrol\""
+															]
+														}
+													],
+													"sid": 177514579690330
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 459575336596985,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"patrol\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "enemyGroundMove",
+															"sid": 385570678903668
+														}
+													],
+													"sid": 634009216157499,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 665599467529480,
+																	"parameters": {
+																		"value": "Functions.patrolCheck"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "setState",
+																	"sid": 909262398224385,
+																	"parameters": [
+																		"\"turnAround\"",
+																		"actuals.UID"
+																	]
+																}
+															],
+															"sid": 344650283914100
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-timer-running",
+																	"objectClass": "enemies",
+																	"sid": 321502305719742,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"tag": "\"patrolCooldown\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [],
+															"sid": 761002031684502,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-mirrored",
+																			"objectClass": "dolls",
+																			"sid": 978586045556298
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "cast-ray",
+																			"objectClass": "enemyChase",
+																			"sid": 186140211677336,
+																			"behaviorType": "LineOfSight",
+																			"parameters": {
+																				"from-x": "Self.X",
+																				"from-y": "Self.Y",
+																				"to-x": "Self.X - Self.sightRange",
+																				"to-y": "Self.Y",
+																				"use-collision-cells": true
+																			}
+																		}
+																	],
+																	"sid": 828421666269122
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 352729937711692
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "cast-ray",
+																			"objectClass": "enemyChase",
+																			"sid": 219868049177738,
+																			"behaviorType": "LineOfSight",
+																			"parameters": {
+																				"from-x": "Self.X",
+																				"from-y": "Self.Y",
+																				"to-x": "Self.X + Self.sightRange",
+																				"to-y": "Self.Y",
+																				"use-collision-cells": true
+																			}
+																		}
+																	],
+																	"sid": 617788476710250
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "ray-intersected",
+																			"objectClass": "enemyChase",
+																			"sid": 727787021998867,
+																			"behaviorType": "LineOfSight"
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "setState",
+																			"sid": 342867660212255,
+																			"parameters": [
+																				"\"alert\"",
+																				"actuals.UID"
+																			]
+																		}
+																	],
+																	"sid": 994986461644903
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 691317818079081
+														},
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 894424789909884,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"alert\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 682477624885776,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-timer-running",
+																	"objectClass": "enemies",
+																	"sid": 901173556354371,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"tag": "\"alertCooldown\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation",
+																	"objectClass": "dolls",
+																	"sid": 576995370347057,
+																	"parameters": {
+																		"animation": "\"alert\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "start-timer",
+																	"objectClass": "enemies",
+																	"sid": 970535395459001,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"duration": "alertCool",
+																		"type": "once",
+																		"tag": "\"alertCooldown\""
+																	}
+																}
+															],
+															"sid": 471368596004612
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 271996139415780
+														},
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 828262624313074,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"charge\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-max-speed",
+															"objectClass": "actuals",
+															"sid": 556247663742604,
+															"behaviorType": "Platform",
+															"parameters": {
+																"max-speed": "100"
+															}
+														}
+													],
+													"sid": 251138535370681,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 479345391513825,
+																	"parameters": {
+																		"value": "Functions.patrolCheck"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "cancelChargeAtPlayer",
+																	"sid": 574815866770285,
+																	"parameters": [
+																		false
+																	]
+																}
+															],
+															"sid": 675135789482303,
+															"isOrBlock": true
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 446779047060080
+																},
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 682612195987977,
+																	"parameters": {
+																		"value": "abs(abs(enemyChase.chargeStartPos) - abs(enemyChase.X)) > abs(enemyChase.chaseRange)"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "cancelChargeAtPlayer",
+																	"sid": 575282356917807,
+																	"parameters": [
+																		true
+																	]
+																}
+															],
+															"sid": 706594461159225
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 450071842325217
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "enemyGroundMove",
+																	"sid": 149633802164261
+																}
+															],
+															"sid": 223097423154798
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "on-collision-with-another-object",
+																	"objectClass": "enemyChase",
+																	"sid": 812543748441062,
+																	"parameters": {
+																		"object": "spr_playerActual"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "cancelChargeAtPlayer",
+																	"sid": 725973087697267,
+																	"parameters": [
+																		false
+																	]
+																}
+															],
+															"sid": 520293124515533,
+															"isOrBlock": true
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"functionName": "cancelChargeAtPlayer",
+									"functionDescription": "",
+									"functionCategory": "",
+									"functionReturnType": "none",
+									"functionCopyPicked": true,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "softCancel",
+											"type": "boolean",
+											"initialValue": "false",
+											"comment": "",
+											"sid": 391525073590302
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-max-speed",
+											"objectClass": "actuals",
+											"sid": 120992887689861,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-speed": "35"
+											}
+										},
+										{
+											"id": "set-vector-x",
+											"objectClass": "actuals",
+											"sid": 130459244775566,
+											"behaviorType": "Platform",
+											"parameters": {
+												"vector-x": "0"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "dolls",
+											"sid": 350700011339118,
+											"parameters": {
+												"animation": "\"attack\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 913603526112196,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 711957865939725,
+													"parameters": {
+														"variable": "softCancel"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "dolls",
+													"sid": 523482447263909,
+													"parameters": {
+														"animation": "\"idle\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 179397769878817,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 674171811076665
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "dolls",
+													"sid": 850062337509399,
+													"parameters": {
+														"animation": "\"attack\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 541515998380907,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "setState",
+													"sid": 652260829730888,
+													"parameters": [
+														"\"attack\"",
+														"enemyChase.UID"
+													]
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "enemies",
+													"sid": 104274644289368,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "atkCool",
+														"type": "once",
+														"tag": "\"chaseAttackCooldown\""
+													}
+												}
+											],
+											"sid": 304792039126278
+										}
+									]
+								}
+							],
+							"sid": 160225283932558
+						}
+					],
+					"sid": 938914698929342
+				},
+				{
+					"functionName": "enemyHit",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "damage",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 775676094447054
+						},
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 699098287176866
+						},
+						{
+							"name": "enemyUid",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 306674424528714
+						},
+						{
+							"name": "isKnockBack",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 416902939649450
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 762753835400455,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "actuals",
+									"sid": 270917594503848,
+									"parameters": {
+										"unique-id": "enemyUid"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 552508309613191,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "actuals",
+											"sid": 706791863169029,
+											"parameters": {
+												"instance-variable": "health",
+												"comparison": 4,
+												"value": "0"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 532801399458425,
+											"parameters": {
+												"variable": "damage",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 828420261989457,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "actuals",
+													"sid": 485659479703761,
+													"parameters": {
+														"instance-variable": "isInvincible"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "actuals",
+													"sid": 936655490584206,
+													"disabled": true,
+													"parameters": {
+														"instance-variable": "isInvincible",
+														"value": "true"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "actuals",
+													"sid": 948722317141900,
+													"parameters": {
+														"instance-variable": "health",
+														"value": "damage"
+													}
+												}
+											],
+											"sid": 796547494518310,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 222043873528819,
+															"parameters": {
+																"variable": "isKnockBack"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "knockbackCall",
+															"sid": 998719524960571,
+															"parameters": [
+																"enemyUid",
+																"playerUid"
+															]
+														}
+													],
+													"sid": 149512683437254
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "actuals",
+															"sid": 672983158050952,
+															"parameters": {
+																"child": "dolls",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-default-color",
+															"objectClass": "dolls",
+															"sid": 383196790389259,
+															"parameters": {
+																"color": "rgbEx(255,0,0)"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 581872912819000,
+															"parameters": {
+																"seconds": ".05"
+															}
+														},
+														{
+															"id": "wait-for-previous-actions",
+															"objectClass": "System",
+															"sid": 827359598390245
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "dolls",
+															"sid": 352251849279027,
+															"parameters": {
+																"color": "rgbEx(100,100,100)"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "actuals",
+															"sid": 544593426184080,
+															"disabled": true,
+															"parameters": {
+																"instance-variable": "isInvincible",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 881790608235332
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "actuals",
+											"sid": 524091344922725,
+											"parameters": {
+												"instance-variable": "health",
+												"comparison": 2,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "enemyDeath",
+											"sid": 813914134210156
+										}
+									],
+									"sid": 270958224715507
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "knockback",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "deacceleration on platform obj affects how far something can be pushed before coming to a hault"
+						},
+						{
+							"functionName": "knockbackCall",
+							"functionDescription": "",
+							"functionCategory": "knockback",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "knockedActualUid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 159110161856202
+								},
+								{
+									"name": "atkActualUid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 497110048443562
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 105990714222968,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemyPatrol",
+											"sid": 782197561725322,
+											"parameters": {
+												"unique-id": "knockedActualUid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "knockBackPatrol",
+											"sid": 726768770587801,
+											"parameters": [
+												"knockedActualUid",
+												"atkActualUid"
+											]
+										}
+									],
+									"sid": 142164366605348
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 441474707450241
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemyChase",
+											"sid": 679006877927027,
+											"parameters": {
+												"unique-id": "knockedActualUid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "knockBackChase",
+											"sid": 721195060802660,
+											"parameters": [
+												"knockedActualUid",
+												"atkActualUid"
+											]
+										}
+									],
+									"sid": 156436929766384
+								}
+							]
+						},
+						{
+							"functionName": "knockBackChase",
+							"functionDescription": "",
+							"functionCategory": "knockback",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "knockedActualUid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 407373848535658
+								},
+								{
+									"name": "atkActualUid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 499473777472736
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 599996117106582,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "knockback",
+									"type": "number",
+									"initialValue": "200",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 126922605959362
+								},
+								{
+									"eventType": "variable",
+									"name": "atkBboxLeft",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 585025730100554
+								},
+								{
+									"eventType": "variable",
+									"name": "atkBboxRight",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 492097564945946
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "actuals",
+											"sid": 246044526035261,
+											"parameters": {
+												"unique-id": "atkActualUid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 387567293174596,
+											"parameters": {
+												"variable": "atkBboxLeft",
+												"value": "actuals.BBoxLeft"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 977788247495088,
+											"parameters": {
+												"variable": "atkBboxRight",
+												"value": "actuals.BBoxRight"
+											}
+										}
+									],
+									"sid": 296627555760847
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "actuals",
+											"sid": 353893299244175,
+											"parameters": {
+												"unique-id": "knockedActualUid"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 335328201719005,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 688245317577076,
+													"parameters": {
+														"value": "atkBboxLeft < actuals.BBoxLeft & atkBboxRight < actuals.BBoxRight"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-x",
+													"objectClass": "actuals",
+													"sid": 767983424020915,
+													"behaviorType": "Platform",
+													"parameters": {
+														"vector-x": "knockback"
+													}
+												}
+											],
+											"sid": 552544822054192
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 347913495300702
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-x",
+													"objectClass": "actuals",
+													"sid": 758940733609164,
+													"behaviorType": "Platform",
+													"parameters": {
+														"vector-x": "-knockback"
+													}
+												}
+											],
+											"sid": 759344301758854
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "knockBackPatrol",
+							"functionDescription": "",
+							"functionCategory": "knockback",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "knockedActualUid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 633469450064303
+								},
+								{
+									"name": "atkActualUid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 829749224316695
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 645316309331068,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "knockback",
+									"type": "number",
+									"initialValue": "250",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 837955477635832
+								},
+								{
+									"eventType": "variable",
+									"name": "atkBboxLeft",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 356443632115848
+								},
+								{
+									"eventType": "variable",
+									"name": "atkBboxRight",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 571452056730525
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "actuals",
+											"sid": 353977974084016,
+											"parameters": {
+												"unique-id": "atkActualUid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 816424428444174,
+											"parameters": {
+												"variable": "atkBboxLeft",
+												"value": "actuals.BBoxLeft"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 566767147040945,
+											"parameters": {
+												"variable": "atkBboxRight",
+												"value": "actuals.BBoxRight"
+											}
+										}
+									],
+									"sid": 406537209599602
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "actuals",
+											"sid": 441763440572683,
+											"parameters": {
+												"unique-id": "knockedActualUid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "actuals",
+											"sid": 122954836142488,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "jump"
+											}
+										}
+									],
+									"sid": 494284367601509,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 420352857323031,
+													"parameters": {
+														"value": "atkBboxLeft < actuals.BBoxLeft & atkBboxRight < actuals.BBoxRight"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-x",
+													"objectClass": "actuals",
+													"sid": 335565802416659,
+													"behaviorType": "Platform",
+													"parameters": {
+														"vector-x": "knockback"
+													}
+												}
+											],
+											"sid": 163706121311274
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 985193046490953
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-x",
+													"objectClass": "actuals",
+													"sid": 633131534045537,
+													"behaviorType": "Platform",
+													"parameters": {
+														"vector-x": "-knockback"
+													}
+												}
+											],
+											"sid": 489634092017836
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 851881018092445
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "enemy death",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "enemyDeath",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "setState",
+									"sid": 942364334225211,
+									"parameters": [
+										"\"death\"",
+										"actuals.UID"
+									]
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "actuals",
+									"sid": 856909832325564,
+									"parameters": {
+										"instance-variable": "isSolid",
+										"value": "false"
+									}
+								},
+								{
+									"callFunction": "setAnimation",
+									"sid": 918536306146490,
+									"parameters": [
+										"\"death\"",
+										"actuals.UID"
+									]
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "actuals",
+									"sid": 529411205835450,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "actuals",
+									"sid": 187805101828255,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								}
+							],
+							"sid": 738274488002088,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "actuals",
+											"sid": 574217908612865,
+											"parameters": {
+												"child": "dolls",
+												"which": "own"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemies",
+											"sid": 990245071331839,
+											"parameters": {
+												"unique-id": "actuals.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-all-timers",
+											"objectClass": "enemies",
+											"sid": 305118905081016,
+											"behaviorType": "Timer"
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 868005082639463,
+											"parameters": {
+												"seconds": "(1 / dolls.AnimationSpeed) * dolls.AnimationFrameCount"
+											}
+										}
+									],
+									"sid": 635207060950305,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-parent",
+													"objectClass": "dolls",
+													"sid": 392975830213319,
+													"parameters": {
+														"parent": "actuals",
+														"which": "top"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "actuals",
+													"sid": 301712184498913
+												}
+											],
+											"sid": 548620294793208
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 340440513545161
+				}
+			],
+			"sid": 350394261840241
+		}
+	],
+	"sid": 678556384417626
+}

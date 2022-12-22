@@ -1,0 +1,425 @@
+{
+	"name": "e_pauseMenu",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 647643387156133
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 521256802226742,
+							"parameters": {
+								"layer": "\"pauseMenu\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 563353785464228,
+							"parameters": {
+								"group-name": "\"PauseMenuControls\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "spr_menuSelector",
+							"sid": 601703058153609,
+							"parameters": {
+								"x": "spr_resumeGameBtn.ImagePointX(0)",
+								"y": "spr_resumeGameBtn.ImagePointY(0)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_menuSelector",
+							"sid": 300520075795792,
+							"parameters": {
+								"instance-variable": "selected",
+								"value": "\"resume\""
+							}
+						}
+					],
+					"sid": 178756445001280
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 584543216356566,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 941687513793083,
+							"parameters": {
+								"group-name": "\"PauseMenuControls\"",
+								"state": "toggle-active"
+							}
+						}
+					],
+					"sid": 488258518567961,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 828430830039224,
+									"parameters": {
+										"variable": "isPlayerInGame"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "pause",
+									"sid": 798934435020170
+								}
+							],
+							"sid": 151891376239719
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 495059772532355
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "unpause",
+									"sid": 447053595866619
+								}
+							],
+							"sid": 509141802842260
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "PauseMenuControls",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 138139054258425
+								}
+							],
+							"actions": [],
+							"sid": 953753836796635,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 744448633420777,
+											"parameters": {
+												"key": 27
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 349194688666656,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "spr_menuSelector",
+													"sid": 178969570642296,
+													"parameters": {
+														"instance-variable": "selected",
+														"comparison": 0,
+														"value": "\"resume\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "spr_menuSelector",
+													"sid": 846490587210327,
+													"parameters": {
+														"instance-variable": "selected",
+														"value": "\"quit\""
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "spr_menuSelector",
+													"sid": 198401121990886,
+													"parameters": {
+														"x": "spr_resumeGameBtn.ImagePointX(0)",
+														"y": "spr_resumeGameBtn.ImagePointY(0)"
+													}
+												}
+											],
+											"sid": 576952569995301
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 416559189950421
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "spr_menuSelector",
+													"sid": 509068008365006,
+													"parameters": {
+														"instance-variable": "selected",
+														"value": "\"resume\""
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "spr_menuSelector",
+													"sid": 785668143638154,
+													"parameters": {
+														"x": "spr_quitGameBtn.ImagePointX(0)",
+														"y": "spr_quitGameBtn.ImagePointY(0)"
+													}
+												}
+											],
+											"sid": 842236673856501
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 997466253512198,
+									"parameters": {
+										"key": 13
+									}
+								}
+							],
+							"actions": [],
+							"sid": 361152327170477,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_menuSelector",
+											"sid": 875595941355392,
+											"parameters": {
+												"instance-variable": "selected",
+												"comparison": 0,
+												"value": "\"resume\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "unpause",
+											"sid": 643478091915051
+										}
+									],
+									"sid": 966853584959022
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 903879428881710
+										}
+									],
+									"actions": [
+										{
+											"id": "close",
+											"objectClass": "Browser",
+											"sid": 502335929231036
+										}
+									],
+									"sid": 450700526795101
+								}
+							]
+						}
+					],
+					"sid": 266176140459897
+				}
+			],
+			"sid": 460544892476411
+		},
+		{
+			"functionName": "pause",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 966899637881425,
+					"parameters": {
+						"variable": "isPlayerInGame",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 958040586372733,
+					"parameters": {
+						"layer": "\"pauseMenu\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "tb_fade",
+					"sid": 142185171995460,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "tb_fade",
+					"sid": 619874430089236,
+					"parameters": {
+						"opacity": "75"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 812108092115251,
+					"parameters": {
+						"time-scale": "0"
+					}
+				},
+				{
+					"id": "set-object-time-scale",
+					"objectClass": "System",
+					"sid": 665974914439870,
+					"parameters": {
+						"object": "sf_pauseText",
+						"time-scale": "1.0"
+					}
+				},
+				{
+					"id": "set-object-time-scale",
+					"objectClass": "System",
+					"sid": 255610081283410,
+					"parameters": {
+						"object": "TiledBackground9",
+						"time-scale": "1.0"
+					}
+				}
+			],
+			"sid": 153794668843150
+		},
+		{
+			"functionName": "unpause",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 975269854462185,
+					"parameters": {
+						"variable": "isPlayerInGame",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 891953289232265,
+					"parameters": {
+						"layer": "\"pauseMenu\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "tb_fade",
+					"sid": 227115796270466,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "tb_fade",
+					"sid": 446076156245405,
+					"parameters": {
+						"opacity": "0"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 568436651342589,
+					"parameters": {
+						"time-scale": "1"
+					}
+				}
+			],
+			"sid": 790003982929360
+		}
+	],
+	"sid": 603114626919739
+}

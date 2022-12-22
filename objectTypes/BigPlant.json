@@ -1,0 +1,37 @@
+{
+	"name": "BigPlant",
+	"plugin-id": "Sprite",
+	"sid": 365918494365025,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 48,
+						"height": 48,
+						"originX": 0.47265625,
+						"originY": 0.9453125,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3757148,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 633391370019975,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

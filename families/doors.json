@@ -1,0 +1,30 @@
+{
+	"name": "doors",
+	"plugin-id": "Sprite",
+	"sid": 399547532204695,
+	"instanceVariables": [
+		{
+			"name": "doorName",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 884335112608964
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 475748302018963
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 345666366496991
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_door"
+	]
+}

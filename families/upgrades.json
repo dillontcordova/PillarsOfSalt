@@ -1,0 +1,30 @@
+{
+	"name": "upgrades",
+	"plugin-id": "Sprite",
+	"sid": 763320791594402,
+	"instanceVariables": [
+		{
+			"name": "upgrade",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 404701107350970
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 160899606002016
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_jumpOrb",
+		"spr_healthOrb",
+		"spr_poundOrb",
+		"spr_shootOrb",
+		"spr_dashOrb",
+		"spr_wallJumpOrb"
+	]
+}

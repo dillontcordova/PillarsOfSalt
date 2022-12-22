@@ -1,0 +1,35 @@
+{
+	"name": "tb_zoneControl",
+	"plugin-id": "TiledBg",
+	"sid": 215620043824488,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "area",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 119308066019968
+		},
+		{
+			"name": "hasVisited",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 899851525379416
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 100,
+		"height": 100,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 7708375,
+		"useCollisionPoly": true
+	}
+}

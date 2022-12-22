@@ -1,0 +1,723 @@
+{
+	"name": "e_squashAndStretch",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Squash and stretch works most effectively with image sprites that are separate from the collision and when the animations are all the same size"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_util"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "playerSet",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "spr_playerActual",
+							"sid": 903515736644638,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 614247529329608,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "spr_playerActual",
+									"sid": 247186472127063,
+									"parameters": {
+										"child": "dolls",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "squashLanded",
+									"sid": 754186711660293,
+									"parameters": [
+										"dolls.UID"
+									]
+								}
+							],
+							"sid": 821288647790435
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "spr_playerActual",
+							"sid": 278679705388478,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 374678544691192,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "spr_playerActual",
+									"sid": 799292015678200,
+									"parameters": {
+										"child": "dolls",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "squashJump",
+									"sid": 218313569130127,
+									"parameters": [
+										"dolls.UID"
+									]
+								}
+							],
+							"sid": 184033754133674
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fall",
+							"objectClass": "spr_playerActual",
+							"sid": 802012404860944,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 800141545689110,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "spr_playerActual",
+									"sid": 294596708364202,
+									"parameters": {
+										"child": "dolls",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "squashFall",
+									"sid": 719966969464336,
+									"parameters": [
+										"dolls.UID"
+									]
+								}
+							],
+							"sid": 751314696580480
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "spr_playerActual",
+							"sid": 602596805074286,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "spr_playerActual",
+							"sid": 293310920658099,
+							"parameters": {
+								"instance-variable": "isWalking"
+							}
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "spr_playerActual",
+							"sid": 149656126413749,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 202663095904541,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "spr_playerActual",
+									"sid": 286808297367545,
+									"parameters": {
+										"child": "dolls",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "squashMove",
+									"sid": 838534775632366,
+									"parameters": [
+										"dolls.UID",
+										".2"
+									]
+								}
+							],
+							"sid": 276460777907250
+						}
+					]
+				}
+			],
+			"sid": 811558025536010
+		},
+		{
+			"functionName": "squash",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [
+				{
+					"name": "mod_h",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 666479189012689
+				},
+				{
+					"name": "mod_w",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 916879126423562
+				},
+				{
+					"name": "dur",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 797265079330211
+				},
+				{
+					"name": "hold",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 750482052193516
+				},
+				{
+					"name": "sprUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 350568033377170
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 460208536957282,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "modHeight",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 374519009305735
+				},
+				{
+					"eventType": "variable",
+					"name": "startWidth",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 304033254516084
+				},
+				{
+					"eventType": "variable",
+					"name": "startHeight",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 211436499763138
+				},
+				{
+					"eventType": "variable",
+					"name": "modWidth",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 846384286079325
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "dolls",
+							"sid": 161495182337630,
+							"parameters": {
+								"unique-id": "sprUid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 273721739321557,
+							"parameters": {
+								"variable": "modHeight",
+								"value": "mod_h"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 620949076907177,
+							"parameters": {
+								"variable": "modWidth",
+								"value": "mod_w"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 285760875967782,
+							"parameters": {
+								"variable": "startHeight",
+								"value": "dolls.startH"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 484347666839966,
+							"parameters": {
+								"variable": "startWidth",
+								"value": "dolls.startW"
+							}
+						}
+					],
+					"sid": 492130695187960,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "dolls",
+									"sid": 615406005455972
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 658030509180624,
+									"parameters": {
+										"variable": "modWidth",
+										"value": "-mod_w"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 873424355055309,
+									"parameters": {
+										"variable": "startWidth",
+										"value": "-dolls.startW"
+									}
+								}
+							],
+							"sid": 730317327381332
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-flipped",
+									"objectClass": "dolls",
+									"sid": 874498219929176
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 192010738142191,
+									"parameters": {
+										"variable": "modHeight",
+										"value": "-mod_h"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 226549160312504,
+									"parameters": {
+										"variable": "startHeight",
+										"value": "-dolls.startH"
+									}
+								}
+							],
+							"sid": 589659514415090
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 159167393719694,
+									"parameters": {
+										"variable": "hold"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "dolls",
+									"sid": 257258887654551,
+									"parameters": {
+										"width": "startWidth + modWidth",
+										"height": "startHeight + modHeight"
+									}
+								}
+							],
+							"sid": 499008703799660
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 622781003800026
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "dolls",
+									"sid": 511528510653016,
+									"parameters": {
+										"width": "startWidth + modWidth",
+										"height": "startHeight + modHeight"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 112437700885228,
+									"parameters": {
+										"seconds": "dur"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "dolls",
+									"sid": 276809523676483,
+									"parameters": {
+										"width": "startWidth",
+										"height": "startHeight"
+									}
+								}
+							],
+							"sid": 340558669433024
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "squashFall",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 910998846585340
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 221317389052624,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "dolls",
+							"sid": 795830825240058,
+							"parameters": {
+								"unique-id": "uid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "squash",
+							"sid": 918706134657677,
+							"parameters": [
+								"(dolls.startH*.08)",
+								"-(dolls.startW*.08)",
+								"0.1",
+								true,
+								"uid"
+							]
+						}
+					],
+					"sid": 544572241807228
+				}
+			]
+		},
+		{
+			"functionName": "squashJump",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 157132694535602
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 562222981804313,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "dolls",
+							"sid": 856227345453667,
+							"parameters": {
+								"unique-id": "uid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "squash",
+							"sid": 399178035002184,
+							"parameters": [
+								"-(dolls.startH*.16)",
+								"(dolls.startW*.16)",
+								"0.1",
+								false,
+								"uid"
+							]
+						}
+					],
+					"sid": 166117359024312
+				}
+			]
+		},
+		{
+			"functionName": "squashLanded",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 444547346450910
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 310348707171823,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "dolls",
+							"sid": 776460237048559,
+							"parameters": {
+								"unique-id": "uid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "squash",
+							"sid": 356521206845920,
+							"parameters": [
+								"-(dolls.startH*.16)",
+								"(dolls.startW*.33)",
+								"0.1",
+								false,
+								"uid"
+							]
+						}
+					],
+					"sid": 645934116194961
+				}
+			]
+		},
+		{
+			"functionName": "squashMove",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 959186403177662
+				},
+				{
+					"name": "squashSpeed",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"sid": 957468770538960
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 347382885996015,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "dolls",
+							"sid": 399613543538125,
+							"parameters": {
+								"unique-id": "uid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 898370864409652,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "dolls",
+									"sid": 115854684037167,
+									"parameters": {
+										"instance-variable": "stepping",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "dolls",
+									"sid": 666980982111027,
+									"parameters": {
+										"instance-variable": "stepping",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "squash",
+									"sid": 829951737870212,
+									"parameters": [
+										"-(dolls.startH*.08)",
+										"(dolls.startW*.16)",
+										"squashSpeed/2",
+										false,
+										"uid"
+									]
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 412095140962081
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 450697661978104,
+									"parameters": {
+										"seconds": "squashSpeed/2"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "dolls",
+									"sid": 528342642351051,
+									"parameters": {
+										"instance-variable": "stepping",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 252219147026515
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 685586051255281
+}

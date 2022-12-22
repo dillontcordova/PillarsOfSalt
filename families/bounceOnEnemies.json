@@ -1,0 +1,13 @@
+{
+	"name": "bounceOnEnemies",
+	"plugin-id": "Sprite",
+	"sid": 273752701945370,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyGround",
+		"spr_enemyGoblinKnife",
+		"spr_enemyBlob"
+	]
+}

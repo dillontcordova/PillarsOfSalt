@@ -1,0 +1,20 @@
+{
+	"name": "sf_pauseText",
+	"plugin-id": "Spritefont2",
+	"sid": 946697753564756,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 70,
+		"height": 35,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8143472,
+		"useCollisionPoly": true
+	}
+}

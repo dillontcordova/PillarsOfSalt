@@ -1,0 +1,12 @@
+{
+	"name": "enemyPatrol",
+	"plugin-id": "Sprite",
+	"sid": 280006351516595,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyGround",
+		"spr_enemyBlob"
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"name": "tb_physicsBorder",
+	"plugin-id": "TiledBg",
+	"sid": 420116935835238,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 645246042494329
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 32,
+		"height": 32,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6035917,
+		"useCollisionPoly": true
+	}
+}

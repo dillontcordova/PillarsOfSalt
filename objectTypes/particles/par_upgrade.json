@@ -1,0 +1,20 @@
+{
+	"name": "par_upgrade",
+	"plugin-id": "Particles",
+	"sid": 690209031087883,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 3,
+		"height": 3,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2728005,
+		"useCollisionPoly": true
+	}
+}

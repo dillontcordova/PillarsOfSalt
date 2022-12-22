@@ -1,0 +1,120 @@
+{
+	"name": "spr_meleeSlash",
+	"plugin-id": "Sprite",
+	"sid": 723722273400651,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "lastHitUid",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 342273234519390
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 427897685153907
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 15,
+						"height": 10,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6852404,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "contact",
+								"x": 0.9333333333333333,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 15,
+						"height": 10,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4637085,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "contact",
+								"x": 0.9333333333333333,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 15,
+						"height": 10,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6839457,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "contact",
+								"x": 0.9333333333333333,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 15,
+						"height": 10,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6423385,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "contact",
+								"x": 0.9333333333333333,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 924610017096919,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 20
+			}
+		],
+		"subfolders": []
+	}
+}

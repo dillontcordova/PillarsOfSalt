@@ -1,0 +1,153 @@
+{
+	"name": "e_main",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_camera"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_squashAndStretch"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_util"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_player"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_enemies"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_doorsAndKeys"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_singleton"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_water"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_pauseMenu"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 334077243048525
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fadeOut",
+					"sid": 318373565851608,
+					"parameters": [
+						"1"
+					]
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 552232193168147
+				}
+			],
+			"sid": 227348477188163
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "singletons",
+					"sid": 192263346208000
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "singletons",
+					"sid": 408224110042771,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 932351874623567
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "dolls",
+					"sid": 395416652990183
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "dolls",
+					"sid": 565441487975990,
+					"parameters": {
+						"instance-variable": "startH",
+						"value": "Self.Height"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "dolls",
+					"sid": 331458470589276,
+					"parameters": {
+						"instance-variable": "startW",
+						"value": "Self.Width"
+					}
+				}
+			],
+			"sid": 526958667038601
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "spr_visibilityBounding",
+					"sid": 737638759637401,
+					"parameters": {
+						"object": "spawnPoints"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object-by-name",
+					"objectClass": "System",
+					"sid": 115221569695478,
+					"parameters": {
+						"object-name": "spawnPoints.spawnName",
+						"layer": "spawnPoints.LayerName",
+						"x": "spawnPoints.X",
+						"y": "spawnPoints.Y",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "spawnPoints",
+					"sid": 515425277686045
+				}
+			],
+			"sid": 282673794829724
+		}
+	],
+	"sid": 809440588065565
+}

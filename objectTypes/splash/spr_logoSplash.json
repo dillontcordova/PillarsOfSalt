@@ -1,0 +1,72 @@
+{
+	"name": "spr_logoSplash",
+	"plugin-id": "Sprite",
+	"sid": 218420958686025,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 948734215687205
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 381159225677672
+		},
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 111547299951792
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 66,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5634558,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.890625,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 64,
+						"height": 66,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4499509,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 163738222575385,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

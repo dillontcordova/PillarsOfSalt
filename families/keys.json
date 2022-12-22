@@ -1,0 +1,19 @@
+{
+	"name": "keys",
+	"plugin-id": "Sprite",
+	"sid": 337695460001256,
+	"instanceVariables": [
+		{
+			"name": "doorName",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 888297229009113
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_doorSwitch"
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"name": "spawnPoints",
+	"plugin-id": "Sprite",
+	"sid": 355067306979717,
+	"instanceVariables": [
+		{
+			"name": "spawnName",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 341660968818506
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyGroundSpawn",
+		"spr_playerSpawn",
+		"spr_enemyGoblinKnifeSpawn",
+		"spr_enemyBlobSpawn"
+	]
+}

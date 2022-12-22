@@ -1,0 +1,20 @@
+{
+	"name": "sf_healthHUD",
+	"plugin-id": "Spritefont2",
+	"sid": 924130802828286,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 70,
+		"height": 35,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3074047,
+		"useCollisionPoly": true
+	}
+}

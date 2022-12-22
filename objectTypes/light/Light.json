@@ -1,0 +1,43 @@
+{
+	"name": "Light",
+	"plugin-id": "Sprite",
+	"sid": 857152707004310,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 728049679673442
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Henrrique\\Documents\\Henrique\\Meus Games\\Bundle Games Assets\\assets\\light0.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2290460,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 821064986172562,
+				"name": "Default",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}

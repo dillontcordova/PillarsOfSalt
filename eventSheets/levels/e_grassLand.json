@@ -1,0 +1,74 @@
+{
+	"name": "e_grassLand",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_main"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 982261057009261,
+					"parameters": {
+						"interval-seconds": "0.4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 976394487648418,
+					"parameters": {
+						"object-to-create": "Leaf",
+						"layer": "\"fgCharacters\"",
+						"x": "ViewportLeft(\"fgCharacters\") + random(427)",
+						"y": "ViewportTop(\"fgCharacters\") - random(64)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Leaf",
+					"sid": 987317880555690,
+					"disabled": true,
+					"parameters": {
+						"scale": ".5"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Leaf",
+					"sid": 834538293482612,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "115"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Leaf",
+					"sid": 386569520250616,
+					"parameters": {
+						"animation": "choose(\"Default\",\"Default2\")",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-speed",
+					"objectClass": "Leaf",
+					"sid": 959924832923520,
+					"parameters": {
+						"speed": "3 + random(10)"
+					}
+				}
+			],
+			"sid": 137425984290210
+		}
+	],
+	"sid": 747973494409028
+}

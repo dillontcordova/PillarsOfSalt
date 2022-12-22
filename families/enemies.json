@@ -1,0 +1,27 @@
+{
+	"name": "enemies",
+	"plugin-id": "Sprite",
+	"sid": 281581477004902,
+	"instanceVariables": [
+		{
+			"name": "isRight",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 288245469305186
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 679063605780205
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyGround",
+		"spr_enemyGoblinKnife",
+		"spr_enemyBlob"
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"name": "enemyChase",
+	"plugin-id": "Sprite",
+	"sid": 585386055083139,
+	"instanceVariables": [
+		{
+			"name": "sightRange",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 362315055789070
+		},
+		{
+			"name": "patrolCool",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 104154623050150
+		},
+		{
+			"name": "chaseRange",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 781690469213869
+		},
+		{
+			"name": "chargeStartPos",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 642073623239077
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 900806492940719
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyGoblinKnife"
+	]
+}

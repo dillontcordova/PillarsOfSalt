@@ -1,0 +1,121 @@
+{
+	"name": "e_doorsAndKeys",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "spr_meleeSlash",
+					"sid": 212938808210855,
+					"parameters": {
+						"object": "keys"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "keys",
+					"sid": 369092595242869,
+					"parameters": {
+						"animation": "\"off\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "cameraShake",
+					"sid": 445036173675366,
+					"parameters": [
+						"1",
+						".2"
+					]
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "keys",
+					"sid": 770345312719099,
+					"parameters": {
+						"animation": "\"on\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 113701509245980,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 201570735206612,
+							"parameters": {
+								"object": "doors",
+								"expression": "doors.doorName = keys.doorName"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "doors",
+							"sid": 332806197341572,
+							"parameters": {
+								"animation": "\"unlocking\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 340337813760225
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "doors",
+					"sid": 641165780695527,
+					"parameters": {
+						"animation": "\"unlocking\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "doors",
+					"sid": 367121727981194,
+					"parameters": {
+						"animation": "\"opening\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 163414098831380
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "doors",
+					"sid": 146386633408804,
+					"parameters": {
+						"animation": "\"opening\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "doors",
+					"sid": 764523766071612
+				}
+			],
+			"sid": 894583428266513
+		}
+	],
+	"sid": 236429756228590
+}

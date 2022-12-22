@@ -1,0 +1,103 @@
+{
+	"name": "spr_boxFloat",
+	"plugin-id": "Sprite",
+	"sid": 405885000368998,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "inWater",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 496566765686786
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 484133531508347
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 569956634196424
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4515656,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								0.9285714285714286,
+								0,
+								1,
+								0.5,
+								1,
+								1,
+								0.5,
+								1,
+								0,
+								1,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "q1",
+								"x": 0.21428571428571427,
+								"y": 0.21428571428571427
+							},
+							{
+								"name": "q2",
+								"x": 0.7857142857142857,
+								"y": 0.21428571428571427
+							},
+							{
+								"name": "q3",
+								"x": 0.7857142857142857,
+								"y": 0.7857142857142857
+							},
+							{
+								"name": "q4",
+								"x": 0.21428571428571427,
+								"y": 0.7857142857142857
+							},
+							{
+								"name": "splash",
+								"x": 0.5,
+								"y": 1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 622794979967659,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

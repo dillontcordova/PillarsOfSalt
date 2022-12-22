@@ -1,0 +1,148 @@
+{
+	"name": "spr_playerSingleton",
+	"plugin-id": "Sprite",
+	"sid": 899779846197203,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "dir",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 712558196459628
+		},
+		{
+			"name": "animationState",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 641070459478404
+		},
+		{
+			"name": "state",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 859430316652517
+		},
+		{
+			"name": "prevState",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 620419225346117
+		},
+		{
+			"name": "defaultGravity",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 398566429853532
+		},
+		{
+			"name": "defaultMaxFallSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 268172031176534
+		},
+		{
+			"name": "defaultMaxSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 779003580128421
+		},
+		{
+			"name": "defaultAcceleration",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 878205116691337
+		},
+		{
+			"name": "defaultDeceleration",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 634143779687234
+		},
+		{
+			"name": "defaultJumpStrength",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 550907676032330
+		},
+		{
+			"name": "defaultJumpSustain",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 382212039615874
+		},
+		{
+			"name": "isDblHumpEnabled",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 440615306390067
+		},
+		{
+			"name": "lastSafeSpaceX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 498079504612149
+		},
+		{
+			"name": "lastSafeSpaceY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 395492221583637
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4670453,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 785484269597022,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}
