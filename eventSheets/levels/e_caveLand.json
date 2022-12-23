@@ -43,7 +43,7 @@
 					"objectClass": "System",
 					"sid": 774247103227852,
 					"parameters": {
-						"object-to-create": "Leaf",
+						"object-to-create": "spr_leafAtmos",
 						"layer": "\"fgCharacters\"",
 						"x": "ViewportLeft(\"fgCharacters\") + random(427)",
 						"y": "ViewportTop(\"fgCharacters\") - random(64)",
@@ -53,7 +53,7 @@
 				},
 				{
 					"id": "set-scale",
-					"objectClass": "Leaf",
+					"objectClass": "spr_leafAtmos",
 					"sid": 416189424433434,
 					"disabled": true,
 					"parameters": {
@@ -62,7 +62,7 @@
 				},
 				{
 					"id": "set-angle-of-motion",
-					"objectClass": "Leaf",
+					"objectClass": "spr_leafAtmos",
 					"sid": 616567772490445,
 					"behaviorType": "Bullet",
 					"parameters": {
@@ -71,7 +71,7 @@
 				},
 				{
 					"id": "set-animation",
-					"objectClass": "Leaf",
+					"objectClass": "spr_leafAtmos",
 					"sid": 616685664614779,
 					"parameters": {
 						"animation": "choose(\"Default\",\"Default2\")",
@@ -80,7 +80,7 @@
 				},
 				{
 					"id": "set-animation-speed",
-					"objectClass": "Leaf",
+					"objectClass": "spr_leafAtmos",
 					"sid": 524280240600772,
 					"parameters": {
 						"speed": "3 + random(10)"

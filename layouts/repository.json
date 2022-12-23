@@ -2636,7 +2636,7 @@
 					}
 				},
 				{
-					"type": "Leaf",
+					"type": "spr_leafAtmos",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",

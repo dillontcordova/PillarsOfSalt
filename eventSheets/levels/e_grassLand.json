@@ -16,35 +16,11 @@
 			],
 			"actions": [
 				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 446989102649033,
-					"parameters": {
-						"tag": "\"music\""
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 915957254251853,
-					"parameters": {
-						"audio-file": "grassTheme",
-						"loop": "looping",
-						"volume": "-20",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
-					}
-				},
-				{
-					"id": "fade-volume",
-					"objectClass": "Audio",
-					"sid": 278354560923689,
-					"parameters": {
-						"tag": "\"music\"",
-						"db": "0",
-						"duration": "5",
-						"ending": "keep-playing"
-					}
+					"callFunction": "playMusic",
+					"sid": 787869064542490,
+					"parameters": [
+						"\"grassTheme\""
+					]
 				}
 			],
 			"sid": 428698937269611
@@ -67,7 +43,7 @@
 					"objectClass": "System",
 					"sid": 976394487648418,
 					"parameters": {
-						"object-to-create": "Leaf",
+						"object-to-create": "spr_leafAtmos",
 						"layer": "\"fgCharacters\"",
 						"x": "ViewportLeft(\"fgCharacters\") + random(427)",
 						"y": "ViewportTop(\"fgCharacters\") - random(64)",
@@ -77,7 +53,7 @@
 				},
 				{
 					"id": "set-scale",
-					"objectClass": "Leaf",
+					"objectClass": "spr_leafAtmos",
 					"sid": 987317880555690,
 					"disabled": true,
 					"parameters": {
@@ -86,7 +62,7 @@
 				},
 				{
 					"id": "set-angle-of-motion",
-					"objectClass": "Leaf",
+					"objectClass": "spr_leafAtmos",
 					"sid": 834538293482612,
 					"behaviorType": "Bullet",
 					"parameters": {
@@ -95,7 +71,7 @@
 				},
 				{
 					"id": "set-animation",
-					"objectClass": "Leaf",
+					"objectClass": "spr_leafAtmos",
 					"sid": 386569520250616,
 					"parameters": {
 						"animation": "choose(\"Default\",\"Default2\")",
@@ -104,7 +80,7 @@
 				},
 				{
 					"id": "set-animation-speed",
-					"objectClass": "Leaf",
+					"objectClass": "spr_leafAtmos",
 					"sid": 959924832923520,
 					"parameters": {
 						"speed": "3 + random(10)"
