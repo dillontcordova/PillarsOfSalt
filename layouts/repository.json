@@ -1294,6 +1294,9 @@
 								"bullet": false,
 								"enabled": true
 							}
+						},
+						"Persist": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -1326,7 +1329,11 @@
 					"instanceVariables": {
 						"doorName": "null"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 376,
 						"y": 130,
@@ -2386,6 +2393,9 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Persist": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -2432,6 +2442,9 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Persist": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -2478,6 +2491,9 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Persist": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -2524,6 +2540,9 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Persist": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -2570,6 +2589,9 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Persist": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -2616,6 +2638,9 @@
 								"enabled": true,
 								"live-preview": false
 							}
+						},
+						"Persist": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -2780,6 +2805,37 @@
 							1
 						],
 						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_sceneExitLeft",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 50,
+					"instanceVariables": {
+						"gotoUid": -1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 412,
+						"y": 180,
+						"width": 16,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}

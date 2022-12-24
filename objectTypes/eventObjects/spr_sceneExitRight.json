@@ -1,0 +1,44 @@
+{
+	"name": "spr_sceneExitRight",
+	"plugin-id": "Sprite",
+	"sid": 616392570665384,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4301679,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "spawn",
+								"x": -0.5,
+								"y": 0.8333333333333334
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 523251908186477,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,302 @@
+{
+	"name": "e_eventPoints",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "EventPoints",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_playerActual",
+							"sid": 962977138256894,
+							"parameters": {
+								"object": "spr_endGame"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-nextprevious-layout",
+							"objectClass": "System",
+							"sid": 347575345937249,
+							"parameters": {
+								"which": "next"
+							}
+						}
+					],
+					"sid": 914174680596911
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_playerActual",
+							"sid": 136800202381412,
+							"parameters": {
+								"object": "exitScenes"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 393152634132395,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "dir",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 488860954773015
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 169272342271678,
+									"parameters": {
+										"variable": "dir",
+										"value": "replace(exitScenes.ObjectTypeName, \"spr_sceneExit\", \"\")"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_playerSingleton",
+									"sid": 615845195055494,
+									"parameters": {
+										"instance-variable": "gotoSpawnUid",
+										"value": "exitScenes.gotoUid"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_playerSingleton",
+									"sid": 993271998114894,
+									"parameters": {
+										"instance-variable": "spawnDir",
+										"value": "dir"
+									}
+								},
+								{
+									"callFunction": "fadeOut",
+									"sid": 262391928173377,
+									"parameters": [
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 961152504681327
+								}
+							],
+							"sid": 424807472086969,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "add logic to check a dbl array of the map and add to the XY element position to change to that layout"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 845654994923500,
+											"parameters": {
+												"variable": "dir",
+												"comparison": 0,
+												"value": "\"Left\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 109994238371699,
+											"parameters": {
+												"layout": "grassLand"
+											}
+										}
+									],
+									"sid": 675016148366902
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 315489211338039,
+											"parameters": {
+												"variable": "dir",
+												"comparison": 0,
+												"value": "\"Right\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 455924964907391,
+											"parameters": {
+												"layout": "caveLand"
+											}
+										}
+									],
+									"sid": 110004255306995
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 282395835445308,
+											"parameters": {
+												"variable": "dir",
+												"comparison": 0,
+												"value": "\"Up\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-nextprevious-layout",
+											"objectClass": "System",
+											"sid": 810108855125247,
+											"parameters": {
+												"which": "next"
+											}
+										}
+									],
+									"sid": 113168866774600
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 859297208024045,
+											"parameters": {
+												"variable": "dir",
+												"comparison": 0,
+												"value": "\"Down\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-nextprevious-layout",
+											"objectClass": "System",
+											"sid": 848531133566275,
+											"parameters": {
+												"which": "next"
+											}
+										}
+									],
+									"sid": 701636299952924
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 149163454200003
+		},
+		{
+			"functionName": "spawnPlayerIntoScene",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object-by-name",
+					"objectClass": "System",
+					"sid": 781029252843167,
+					"parameters": {
+						"object-name": "spr_playerSpawn.spawnName",
+						"layer": "spr_playerSpawn.LayerName",
+						"x": "spr_playerSpawn.X",
+						"y": "spr_playerSpawn.Y",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "spr_playerSpawn",
+					"sid": 647468544547241
+				}
+			],
+			"sid": 366845901153930,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "spr_playerSingleton",
+							"sid": 316352855033138,
+							"parameters": {
+								"instance-variable": "gotoSpawnUid",
+								"comparison": 1,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 404825353343940,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 687217468531268,
+									"parameters": {
+										"object": "exitScenes",
+										"expression": "exitScenes.gotoUid=spr_playerSingleton.gotoSpawnUid"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_playerActual",
+									"sid": 815927512529405,
+									"parameters": {
+										"x": "exitScenes.ImagePointX(\"spawn\")",
+										"y": "exitScenes.ImagePointY(\"spawn\")"
+									}
+								}
+							],
+							"sid": 501212838321786
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 334542059923885
+}

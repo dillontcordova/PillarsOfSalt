@@ -256,6 +256,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Persist",
+			"name": "Persist",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "LOS",
 			"name": "Line of sight",
 			"author": "Scirra",
@@ -323,7 +331,8 @@
 			"spr_vialBg",
 			"spr_door",
 			"spr_doorSwitch",
-			"Browser"
+			"Browser",
+			"spr_gear"
 		],
 		"subfolders": [
 			{
@@ -337,12 +346,13 @@
 			},
 			{
 				"items": [
-					"spr_boundaryExit",
+					"spr_endGame",
 					"spr_camera",
-					"spr_gear"
+					"spr_sceneExitLeft",
+					"spr_sceneExitRight"
 				],
 				"subfolders": [],
-				"name": "sprites"
+				"name": "eventObjects"
 			},
 			{
 				"items": [
@@ -559,7 +569,8 @@
 			"enemyChase",
 			"doors",
 			"keys",
-			"deathOnTouch"
+			"deathOnTouch",
+			"exitScenes"
 		],
 		"subfolders": []
 	},
@@ -588,7 +599,8 @@
 			"e_singleton",
 			"e_water",
 			"e_pauseMenu",
-			"e_titleScreen"
+			"e_titleScreen",
+			"e_eventPoints"
 		],
 		"subfolders": [
 			{

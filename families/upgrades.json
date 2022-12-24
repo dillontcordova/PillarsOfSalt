@@ -16,6 +16,11 @@
 			"behaviorId": "Sin",
 			"name": "Sine",
 			"sid": 160899606002016
+		},
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 694262059431210
 		}
 	],
 	"effectTypes": [],

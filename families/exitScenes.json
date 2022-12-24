@@ -1,0 +1,20 @@
+{
+	"name": "exitScenes",
+	"plugin-id": "Sprite",
+	"sid": 198334509097821,
+	"instanceVariables": [
+		{
+			"name": "gotoUid",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 656559871761061
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_sceneExitLeft",
+		"spr_sceneExitRight"
+	]
+}

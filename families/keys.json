@@ -11,7 +11,13 @@
 			"sid": 888297229009113
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 711511959840452
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"spr_doorSwitch"

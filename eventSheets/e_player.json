@@ -43,22 +43,8 @@
 					],
 					"actions": [
 						{
-							"id": "create-object-by-name",
-							"objectClass": "System",
-							"sid": 772588741844814,
-							"parameters": {
-								"object-name": "spr_playerSpawn.spawnName",
-								"layer": "spr_playerSpawn.LayerName",
-								"x": "spr_playerSpawn.X",
-								"y": "spr_playerSpawn.Y",
-								"create-hierarchy": true,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "spr_playerSpawn",
-							"sid": 231156018962078
+							"callFunction": "spawnPlayerIntoScene",
+							"sid": 877537389565302
 						}
 					],
 					"sid": 689851337090403
@@ -174,30 +160,6 @@
 						}
 					],
 					"sid": 686348066628238
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "spr_playerActual",
-							"sid": 392313851696064,
-							"parameters": {
-								"object": "spr_boundaryExit"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-nextprevious-layout",
-							"objectClass": "System",
-							"sid": 553117817332975,
-							"parameters": {
-								"which": "next"
-							}
-						}
-					],
-					"sid": 286878849581859
 				},
 				{
 					"eventType": "block",
@@ -1405,7 +1367,7 @@
 															],
 															"actions": [
 																{
-																	"callFunction": "fadeIn",
+																	"callFunction": "fadeOut",
 																	"sid": 159349041295902,
 																	"parameters": [
 																		"1"
@@ -1460,7 +1422,7 @@
 																	}
 																},
 																{
-																	"callFunction": "fadeOut",
+																	"callFunction": "fadeIn",
 																	"sid": 475473837300323,
 																	"parameters": [
 																		"1"
@@ -1741,23 +1703,12 @@
 													],
 													"actions": [
 														{
-															"id": "set-jump-strength",
-															"objectClass": "spr_playerActual",
-															"sid": 266214141462442,
-															"disabled": true,
-															"behaviorType": "Platform",
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 635318433161383,
 															"parameters": {
-																"jump-strength": "spr_playerActual.Platform.JumpStrength + jumpShift*2"
-															}
-														},
-														{
-															"id": "set-jump-sustain",
-															"objectClass": "spr_playerActual",
-															"sid": 294610929521837,
-															"disabled": true,
-															"behaviorType": "Platform",
-															"parameters": {
-																"jump-sustain": "spr_playerActual.Platform.JumpSustain + jumpShift/4"
+																"variable": "powCount",
+																"value": "1"
 															}
 														},
 														{
@@ -1776,15 +1727,6 @@
 															"behaviorType": "Platform",
 															"parameters": {
 																"jump-sustain": "spr_playerActual.Platform.JumpSustain + jumpShift*.7"
-															}
-														},
-														{
-															"id": "add-to-eventvar",
-															"objectClass": "System",
-															"sid": 468907401427828,
-															"parameters": {
-																"variable": "powCount",
-																"value": "1"
 															}
 														}
 													],
@@ -5845,7 +5787,7 @@
 									],
 									"actions": [
 										{
-											"callFunction": "fadeIn",
+											"callFunction": "fadeOut",
 											"sid": 162677829857858,
 											"parameters": [
 												"1"
@@ -5865,6 +5807,11 @@
 											"id": "reset-global-variables",
 											"objectClass": "System",
 											"sid": 651444513149081
+										},
+										{
+											"id": "reset-persisted-objects",
+											"objectClass": "System",
+											"sid": 732581824929501
 										},
 										{
 											"id": "restart-layout",

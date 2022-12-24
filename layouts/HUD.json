@@ -634,9 +634,11 @@
 								"defaultDeceleration": 0,
 								"defaultJumpStrength": 0,
 								"defaultJumpSustain": 0,
-								"isDblHumpEnabled": false,
+								"isDblJumpEnabled": false,
 								"lastSafeSpaceX": 0,
-								"lastSafeSpaceY": 0
+								"lastSafeSpaceY": 0,
+								"gotoSpawnUid": -1,
+								"spawnDir": ""
 							},
 							"behaviors": {
 								"FSM": {

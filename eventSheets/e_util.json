@@ -240,7 +240,7 @@
 					"conditions": [],
 					"actions": [
 						{
-							"callFunction": "fadeIn",
+							"callFunction": "fadeOut",
 							"sid": 497640162052749,
 							"parameters": [
 								"1"
@@ -252,7 +252,7 @@
 							"sid": 981995104550099
 						},
 						{
-							"callFunction": "fadeOut",
+							"callFunction": "fadeIn",
 							"sid": 190117474571495,
 							"parameters": [
 								"1"
@@ -267,7 +267,7 @@
 					"sid": 697023674531401
 				},
 				{
-					"functionName": "fadeIn",
+					"functionName": "fadeOut",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -285,6 +285,15 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 576723450521986,
+							"parameters": {
+								"group-name": "\"Input\"",
+								"state": "deactivated"
+							}
+						},
 						{
 							"id": "set-opacity",
 							"objectClass": "tb_fade",
@@ -321,7 +330,7 @@
 					"sid": 489637449461278
 				},
 				{
-					"functionName": "fadeOut",
+					"functionName": "fadeIn",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -339,6 +348,15 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 409337929139478,
+							"parameters": {
+								"group-name": "\"Input\"",
+								"state": "deactivated"
+							}
+						},
 						{
 							"id": "set-opacity",
 							"objectClass": "tb_fade",
@@ -382,6 +400,15 @@
 							"sid": 464200613113836,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 680948501410833,
+							"parameters": {
+								"group-name": "\"Input\"",
+								"state": "activated"
 							}
 						}
 					],

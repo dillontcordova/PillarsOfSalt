@@ -21,6 +21,11 @@
 			"behaviorId": "Physics",
 			"name": "Physics",
 			"sid": 345666366496991
+		},
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 335647481571939
 		}
 	],
 	"effectTypes": [],

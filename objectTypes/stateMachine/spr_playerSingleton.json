@@ -2,7 +2,7 @@
 	"name": "spr_playerSingleton",
 	"plugin-id": "Sprite",
 	"sid": 899779846197203,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [
 		{
 			"name": "dir",
@@ -36,53 +36,53 @@
 			"name": "defaultGravity",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 398566429853532
 		},
 		{
 			"name": "defaultMaxFallSpeed",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 268172031176534
 		},
 		{
 			"name": "defaultMaxSpeed",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 779003580128421
 		},
 		{
 			"name": "defaultAcceleration",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 878205116691337
 		},
 		{
 			"name": "defaultDeceleration",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 634143779687234
 		},
 		{
 			"name": "defaultJumpStrength",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 550907676032330
 		},
 		{
 			"name": "defaultJumpSustain",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 382212039615874
 		},
 		{
-			"name": "isDblHumpEnabled",
+			"name": "isDblJumpEnabled",
 			"type": "boolean",
 			"desc": "",
 			"show": true,
@@ -101,6 +101,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 395492221583637
+		},
+		{
+			"name": "gotoSpawnUid",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 798975647637252
+		},
+		{
+			"name": "spawnDir",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 845318718902543
 		}
 	],
 	"behaviorTypes": [],
