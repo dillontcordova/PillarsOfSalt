@@ -1743,7 +1743,8 @@
 														{
 															"id": "set-jump-strength",
 															"objectClass": "spr_playerActual",
-															"sid": 229937023938458,
+															"sid": 266214141462442,
+															"disabled": true,
 															"behaviorType": "Platform",
 															"parameters": {
 																"jump-strength": "spr_playerActual.Platform.JumpStrength + jumpShift*2"
@@ -1752,10 +1753,29 @@
 														{
 															"id": "set-jump-sustain",
 															"objectClass": "spr_playerActual",
-															"sid": 341699051108944,
+															"sid": 294610929521837,
+															"disabled": true,
 															"behaviorType": "Platform",
 															"parameters": {
-																"jump-sustain": "spr_playerActual.Platform.JumpSustain + jumpShift/2"
+																"jump-sustain": "spr_playerActual.Platform.JumpSustain + jumpShift/4"
+															}
+														},
+														{
+															"id": "set-jump-strength",
+															"objectClass": "spr_playerActual",
+															"sid": 525150129890487,
+															"behaviorType": "Platform",
+															"parameters": {
+																"jump-strength": "spr_playerActual.Platform.JumpStrength + jumpShift*1.7"
+															}
+														},
+														{
+															"id": "set-jump-sustain",
+															"objectClass": "spr_playerActual",
+															"sid": 878871776768051,
+															"behaviorType": "Platform",
+															"parameters": {
+																"jump-sustain": "spr_playerActual.Platform.JumpSustain + jumpShift*.7"
 															}
 														},
 														{
@@ -5052,7 +5072,8 @@
 																			]
 																		}
 																	],
-																	"sid": 956059639399612
+																	"sid": 956059639399612,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -5060,7 +5081,8 @@
 																		{
 																			"id": "else",
 																			"objectClass": "System",
-																			"sid": 369559976770942
+																			"sid": 369559976770942,
+																			"disabled": true
 																		},
 																		{
 																			"id": "pick-by-unique-id",
