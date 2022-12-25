@@ -384,15 +384,6 @@
 											}
 										},
 										{
-											"id": "set-enabled",
-											"objectClass": "spr_playerActual",
-											"sid": 570446187284678,
-											"behaviorType": "MoveTo",
-											"parameters": {
-												"enabled": false
-											}
-										},
-										{
 											"id": "set-gravity",
 											"objectClass": "spr_playerActual",
 											"sid": 667747069405733,

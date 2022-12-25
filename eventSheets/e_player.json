@@ -5935,7 +5935,6 @@
 							"id": "evaluate-expression",
 							"objectClass": "System",
 							"sid": 831246731879452,
-							"disabled": true,
 							"parameters": {
 								"value": "Functions.setStateGateway(\"cutScene\")"
 							}
@@ -6024,7 +6023,6 @@
 						{
 							"callFunction": "resetLockState",
 							"sid": 657442499540462,
-							"disabled": true,
 							"parameters": [
 								"\"cutScene\""
 							]
