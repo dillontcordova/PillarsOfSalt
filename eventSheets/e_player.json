@@ -228,6 +228,14 @@
 										"instance-variable": "dir",
 										"value": "\"\""
 									}
+								},
+								{
+									"id": "set-height",
+									"objectClass": "spr_healthBar",
+									"sid": 343725843205340,
+									"parameters": {
+										"height": "spr_healthBar.ImageHeight *  (spr_playerActual.health / spr_playerSingleton.maxHealth)"
+									}
 								}
 							],
 							"sid": 761613322422770
@@ -5965,6 +5973,7 @@
 							"id": "set-vector-x",
 							"objectClass": "spr_playerActual",
 							"sid": 168272581227855,
+							"disabled": true,
 							"behaviorType": "Platform",
 							"parameters": {
 								"vector-x": "0"
@@ -5974,6 +5983,7 @@
 							"id": "set-vector-y",
 							"objectClass": "spr_playerActual",
 							"sid": 735999437604043,
+							"disabled": true,
 							"behaviorType": "Platform",
 							"parameters": {
 								"vector-y": "0"

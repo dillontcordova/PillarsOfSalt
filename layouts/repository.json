@@ -405,7 +405,7 @@
 					},
 					"uid": 47,
 					"instanceVariables": {
-						"health": 5,
+						"health": 15,
 						"isInvincible": false,
 						"isAttacking": false,
 						"isSolid": true,

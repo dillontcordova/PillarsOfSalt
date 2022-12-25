@@ -157,6 +157,15 @@
 											}
 										},
 										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerSingleton",
+											"sid": 716694456440058,
+											"parameters": {
+												"instance-variable": "maxHealth",
+												"value": "spr_playerActual.health"
+											}
+										},
+										{
 											"id": "goto-state",
 											"objectClass": "spr_playerSingleton",
 											"sid": 613052931095660,

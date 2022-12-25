@@ -170,7 +170,7 @@
 									}
 								},
 								{
-									"type": "spr_healthLight2",
+									"type": "spr_healthBar",
 									"properties": {
 										"initially-visible": true,
 										"initial-animation": "Animation 1",
@@ -182,8 +182,8 @@
 									"instanceVariables": {},
 									"behaviors": {},
 									"world": {
-										"x": 16,
-										"y": 0,
+										"x": 28,
+										"y": 24,
 										"width": 12,
 										"height": 24,
 										"originX": 0,
@@ -194,7 +194,7 @@
 											1,
 											0.6
 										],
-										"angle": 0,
+										"angle": 3.141592653589793,
 										"zElevation": 0
 									}
 								}
@@ -521,7 +521,8 @@
 								"lastSafeSpaceX": 0,
 								"lastSafeSpaceY": 0,
 								"gotoSpawnUid": -1,
-								"spawnDir": ""
+								"spawnDir": "",
+								"maxHealth": 1
 							},
 							"behaviors": {
 								"FSM": {
