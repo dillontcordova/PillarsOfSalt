@@ -13,12 +13,12 @@
 					{
 						"width": 12,
 						"height": 5,
-						"originX": 0.5,
-						"originY": -5,
+						"originX": 0.3333333333333333,
+						"originY": -4.8,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5390248,
+						"imageSpriteId": 2394686,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

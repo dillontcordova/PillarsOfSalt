@@ -286,18 +286,13 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 576723450521986,
-							"parameters": {
-								"group-name": "\"Input\"",
-								"state": "deactivated"
-							}
+							"callFunction": "immobilizePlayer",
+							"sid": 489682096634659
 						},
 						{
 							"id": "set-opacity",
 							"objectClass": "tb_fade",
-							"sid": 112567545514589,
+							"sid": 654083935798110,
 							"parameters": {
 								"opacity": "0"
 							}
@@ -305,7 +300,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "tb_fade",
-							"sid": 731972416979683,
+							"sid": 912512803550129,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -313,7 +308,7 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "tb_fade",
-							"sid": 761816353527087,
+							"sid": 793218686760150,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -349,18 +344,13 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 409337929139478,
-							"parameters": {
-								"group-name": "\"Input\"",
-								"state": "deactivated"
-							}
+							"callFunction": "immobilizePlayer",
+							"sid": 855190227000702
 						},
 						{
 							"id": "set-opacity",
 							"objectClass": "tb_fade",
-							"sid": 444105559557911,
+							"sid": 391393484208647,
 							"parameters": {
 								"opacity": "100"
 							}
@@ -368,7 +358,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "tb_fade",
-							"sid": 482887423673627,
+							"sid": 536344712857199,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -376,7 +366,7 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "tb_fade",
-							"sid": 977414558744389,
+							"sid": 978587727482722,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -392,24 +382,19 @@
 						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
-							"sid": 674461177791697
+							"sid": 883113248832404
 						},
 						{
 							"id": "set-visible",
 							"objectClass": "tb_fade",
-							"sid": 464200613113836,
+							"sid": 851990232569999,
 							"parameters": {
 								"visibility": "invisible"
 							}
 						},
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 680948501410833,
-							"parameters": {
-								"group-name": "\"Input\"",
-								"state": "activated"
-							}
+							"callFunction": "mobilizePlayer",
+							"sid": 653383575509499
 						}
 					],
 					"sid": 486195317584341

@@ -12,13 +12,13 @@
 				"frames": [
 					{
 						"width": 12,
-						"height": 25,
-						"originX": 0.5,
-						"originY": 1,
+						"height": 24,
+						"originX": 0,
+						"originY": 0,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9592678,
+						"imageSpriteId": 8024090,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

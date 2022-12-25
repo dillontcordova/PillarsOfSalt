@@ -302,6 +302,175 @@
 							]
 						},
 						{
+							"functionName": "playerToDefaultState",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 204786013151369,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "spr_playerSingleton",
+											"sid": 102369630606931,
+											"parameters": {
+												"instance-variable": "isDblJumpEnabled"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-double-jump",
+											"objectClass": "spr_playerActual",
+											"sid": 868002995840315,
+											"behaviorType": "Platform",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 875791109386820
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 960024904915022
+										}
+									],
+									"actions": [
+										{
+											"id": "set-double-jump",
+											"objectClass": "spr_playerActual",
+											"sid": 763895448716344,
+											"behaviorType": "Platform",
+											"parameters": {
+												"state": "disabled"
+											}
+										}
+									],
+									"sid": 540913410238246
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "spr_playerActual",
+											"sid": 601365454917944,
+											"parameters": {
+												"instance-variable": "canDash",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "spr_playerActual",
+											"sid": 168189585200433,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "spr_playerActual",
+											"sid": 570446187284678,
+											"behaviorType": "MoveTo",
+											"parameters": {
+												"enabled": false
+											}
+										},
+										{
+											"id": "set-gravity",
+											"objectClass": "spr_playerActual",
+											"sid": 667747069405733,
+											"behaviorType": "Platform",
+											"parameters": {
+												"gravity": "spr_playerSingleton.defaultGravity"
+											}
+										},
+										{
+											"id": "set-max-fall-speed",
+											"objectClass": "spr_playerActual",
+											"sid": 255558827432097,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-fall-speed": "spr_playerSingleton.defaultMaxFallSpeed"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "spr_playerActual",
+											"sid": 222282248944146,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-speed": "spr_playerSingleton.defaultMaxSpeed"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "spr_playerActual",
+											"sid": 415211064358064,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-speed": "spr_playerSingleton.defaultAcceleration"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "spr_playerActual",
+											"sid": 719821439614412,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-speed": "spr_playerSingleton.defaultDeceleration"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "spr_playerActual",
+											"sid": 437734363949273,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-speed": "spr_playerSingleton.defaultJumpStrength"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "spr_playerActual",
+											"sid": 157626820227874,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-speed": "spr_playerSingleton.defaultJumpSustain"
+											}
+										},
+										{
+											"id": "goto-state",
+											"objectClass": "spr_playerSingleton",
+											"sid": 144504767188153,
+											"disabled": true,
+											"behaviorType": "FSM",
+											"parameters": {
+												"name0": "\"\""
+											}
+										}
+									],
+									"sid": 223286559944742
+								}
+							]
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{

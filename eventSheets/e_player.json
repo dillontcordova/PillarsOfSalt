@@ -1578,10 +1578,10 @@
 												{
 													"id": "set-group-active",
 													"objectClass": "System",
-													"sid": 967665667035349,
+													"sid": 350481776892299,
 													"parameters": {
 														"group-name": "\"Input\"",
-														"state": "toggle-active"
+														"state": "deactivated"
 													}
 												},
 												{
@@ -1655,10 +1655,10 @@
 												{
 													"id": "set-group-active",
 													"objectClass": "System",
-													"sid": 681304478076394,
+													"sid": 875909489298459,
 													"parameters": {
 														"group-name": "\"Input\"",
-														"state": "toggle-active"
+														"state": "activated"
 													}
 												}
 											],
@@ -1877,41 +1877,11 @@
 									"disabled": false,
 									"title": "dash",
 									"description": "",
-									"isActiveOnStart": false,
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "comment",
 											"text": "TODO: use player instance vars"
-										},
-										{
-											"eventType": "variable",
-											"name": "isDashing",
-											"type": "boolean",
-											"initialValue": "false",
-											"comment": "",
-											"isStatic": true,
-											"isConstant": false,
-											"sid": 188297364193370
-										},
-										{
-											"eventType": "variable",
-											"name": "canDash",
-											"type": "boolean",
-											"initialValue": "true",
-											"comment": "",
-											"isStatic": true,
-											"isConstant": false,
-											"sid": 656537157384378
-										},
-										{
-											"eventType": "variable",
-											"name": "oldGravity",
-											"type": "number",
-											"initialValue": "0",
-											"comment": "",
-											"isStatic": true,
-											"isConstant": false,
-											"sid": 223056191670271
 										},
 										{
 											"eventType": "variable",
@@ -1961,11 +1931,11 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 962694141891527,
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "spr_playerActual",
+															"sid": 140613221564826,
 															"parameters": {
-																"variable": "canDash"
+																"instance-variable": "canDash"
 															}
 														}
 													],
@@ -2066,12 +2036,6 @@
 																		}
 																	],
 																	"sid": 819677771815304
-																},
-																{
-																	"eventType": "block",
-																	"conditions": [],
-																	"actions": [],
-																	"sid": 813768031178305
 																}
 															]
 														}
@@ -2084,11 +2048,11 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 638640877382070,
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "spr_playerActual",
+													"sid": 895836937107780,
 													"parameters": {
-														"variable": "isDashing"
+														"instance-variable": "isDashing"
 													}
 												}
 											],
@@ -2207,30 +2171,21 @@
 															}
 														},
 														{
-															"id": "set-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 534600471226800,
+															"id": "set-boolean-instvar",
+															"objectClass": "spr_playerActual",
+															"sid": 280991486723953,
 															"parameters": {
-																"variable": "canDash",
+																"instance-variable": "canDash",
 																"value": "false"
 															}
 														},
 														{
-															"id": "set-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 649806080853064,
+															"id": "set-boolean-instvar",
+															"objectClass": "spr_playerActual",
+															"sid": 546970129617360,
 															"parameters": {
-																"variable": "isDashing",
+																"instance-variable": "isDashing",
 																"value": "true"
-															}
-														},
-														{
-															"id": "set-eventvar-value",
-															"objectClass": "System",
-															"sid": 984958692225426,
-															"parameters": {
-																"variable": "oldGravity",
-																"value": "spr_playerActual.Platform.Gravity"
 															}
 														},
 														{
@@ -2269,11 +2224,11 @@
 															}
 														},
 														{
-															"id": "set-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 670665112271674,
+															"id": "set-boolean-instvar",
+															"objectClass": "spr_playerActual",
+															"sid": 457498817714737,
 															"parameters": {
-																"variable": "isDashing",
+																"instance-variable": "isDashing",
 																"value": "false"
 															}
 														},
@@ -2312,10 +2267,10 @@
 												{
 													"id": "set-gravity",
 													"objectClass": "spr_playerActual",
-													"sid": 656506088250637,
+													"sid": 312028986506534,
 													"behaviorType": "Platform",
 													"parameters": {
-														"gravity": "oldGravity"
+														"gravity": "spr_playerSingleton.defaultGravity"
 													}
 												},
 												{
@@ -2328,24 +2283,44 @@
 													}
 												},
 												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 639284335665033,
+													"id": "start-timer",
+													"objectClass": "spr_playerActual",
+													"sid": 112737243801932,
+													"behaviorType": "Timer",
 													"parameters": {
-														"seconds": "timeout"
-													}
-												},
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 146283648941578,
-													"parameters": {
-														"variable": "canDash",
-														"value": "true"
+														"duration": "timeout",
+														"type": "once",
+														"tag": "\"dashCoolDown\""
 													}
 												}
 											],
 											"sid": 637956355178291
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "spr_playerActual",
+													"sid": 564403607141464,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"dashCoolDown\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "spr_playerActual",
+													"sid": 500717615390711,
+													"parameters": {
+														"instance-variable": "canDash",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 952736137321599
 										}
 									],
 									"sid": 463706135395542,
@@ -2361,7 +2336,7 @@
 									"disabled": false,
 									"title": "wallJump",
 									"description": "",
-									"isActiveOnStart": false,
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "variable",
@@ -5945,6 +5920,117 @@
 						}
 					],
 					"sid": 673736933873361
+				},
+				{
+					"functionName": "immobilizePlayer",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 831246731879452,
+							"disabled": true,
+							"parameters": {
+								"value": "Functions.setStateGateway(\"cutScene\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 412960317407620,
+							"parameters": {
+								"group-name": "\"Input\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"callFunction": "playerToDefaultState",
+							"sid": 800495311421295
+						},
+						{
+							"id": "stop-all-timers",
+							"objectClass": "spr_playerActual",
+							"sid": 450268715119427,
+							"disabled": true,
+							"behaviorType": "Timer"
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "spr_playerActual",
+							"sid": 168272581227855,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "0"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "spr_playerActual",
+							"sid": 735999437604043,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "0"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "spr_playerActual",
+							"sid": 789725483268192,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						}
+					],
+					"sid": 321814976245802
+				},
+				{
+					"functionName": "mobilizePlayer",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 946296869763190,
+							"parameters": {
+								"group-name": "\"Input\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "spr_playerActual",
+							"sid": 472023730154183,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						},
+						{
+							"callFunction": "resetLockState",
+							"sid": 657442499540462,
+							"disabled": true,
+							"parameters": [
+								"\"cutScene\""
+							]
+						}
+					],
+					"sid": 998455569627122
 				}
 			],
 			"sid": 109624234821311

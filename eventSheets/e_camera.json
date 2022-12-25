@@ -757,133 +757,107 @@
 															}
 														},
 														{
-															"id": "set-visible",
-															"objectClass": "tb_fade",
-															"sid": 543511845232473,
-															"parameters": {
-																"visibility": "visible"
-															}
+															"callFunction": "fadeOut",
+															"sid": 786673870247954,
+															"parameters": [
+																".6"
+															]
 														},
 														{
-															"id": "restart-fade",
-															"objectClass": "tb_fade",
-															"sid": 337902811744264,
-															"behaviorType": "Fade"
-														}
-													],
-													"sid": 478450946566834
-												}
-											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-fade-in-finished",
-													"objectClass": "tb_fade",
-													"sid": 209084886015369,
-													"behaviorType": "Fade"
-												},
-												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 919323087929984,
-													"parameters": {
-														"variable": "isScreenSwitch"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 831893807061814,
-											"children": [
-												{
-													"eventType": "comment",
-													"text": "move player to clamp xy of zone"
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-unique-id",
-															"objectClass": "tb_zoneControl",
-															"sid": 762990123940049,
-															"parameters": {
-																"unique-id": "spr_playerActual.zoneId"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-position",
-															"objectClass": "spr_playerActual",
-															"sid": 886074979307864,
-															"parameters": {
-																"x": "clamp(spr_playerActual.X, tb_zoneControl.X +spr_playerActual.Width, tb_zoneControl.X + tb_zoneControl.Width - spr_playerActual.Width)",
-																"y": "clamp(spr_playerActual.Y, tb_zoneControl.BBoxTop + spr_playerActual.Height+1, tb_zoneControl.BBoxBottom - spr_playerActual.Height)"
-															}
-														},
-														{
-															"id": "set-boolean-eventvar",
+															"id": "wait-for-previous-actions",
 															"objectClass": "System",
-															"sid": 985375280573583,
-															"parameters": {
-																"variable": "isScreenSwitch",
-																"value": "false"
-															}
+															"sid": 921851238491648
 														}
 													],
-													"sid": 237021192871059
+													"sid": 478450946566834,
+													"children": [
+														{
+															"eventType": "comment",
+															"text": "move player to clamp xy of zone"
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-unique-id",
+																	"objectClass": "tb_zoneControl",
+																	"sid": 984501176770587,
+																	"parameters": {
+																		"unique-id": "spr_playerActual.zoneId"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-position",
+																	"objectClass": "spr_playerActual",
+																	"sid": 824922344949697,
+																	"parameters": {
+																		"x": "clamp(spr_playerActual.X, tb_zoneControl.X +spr_playerActual.Width, tb_zoneControl.X + tb_zoneControl.Width - spr_playerActual.Width)",
+																		"y": "clamp(spr_playerActual.Y, tb_zoneControl.BBoxTop + spr_playerActual.Height+1, tb_zoneControl.BBoxBottom - spr_playerActual.Height)"
+																	}
+																},
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 119675269518317,
+																	"parameters": {
+																		"variable": "isScreenSwitch",
+																		"value": "false"
+																	}
+																}
+															],
+															"sid": 753946745797920,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"callFunction": "fadeIn",
+																			"sid": 484333838765113,
+																			"parameters": [
+																				".6"
+																			]
+																		},
+																		{
+																			"id": "wait-for-previous-actions",
+																			"objectClass": "System",
+																			"sid": 469051121017098
+																		},
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 353157150837066,
+																			"parameters": {
+																				"variable": "isPlayerInGame",
+																				"value": "true"
+																			}
+																		},
+																		{
+																			"id": "restore-object-time-scale",
+																			"objectClass": "System",
+																			"sid": 234830241841552,
+																			"parameters": {
+																				"object": "actuals"
+																			}
+																		},
+																		{
+																			"id": "restore-object-time-scale",
+																			"objectClass": "System",
+																			"sid": 591950578190438,
+																			"parameters": {
+																				"object": "dolls"
+																			}
+																		}
+																	],
+																	"sid": 654136156165638
+																}
+															]
+														}
+													]
 												}
 											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-fade-out-finished",
-													"objectClass": "tb_fade",
-													"sid": 381550104684694,
-													"behaviorType": "Fade"
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 409585360043927,
-													"parameters": {
-														"variable": "isPlayerInGame",
-														"value": "true"
-													}
-												},
-												{
-													"id": "set-object-time-scale",
-													"objectClass": "System",
-													"sid": 248228693022884,
-													"parameters": {
-														"object": "actuals",
-														"time-scale": "1"
-													}
-												},
-												{
-													"id": "set-object-time-scale",
-													"objectClass": "System",
-													"sid": 831637591707678,
-													"parameters": {
-														"object": "dolls",
-														"time-scale": "1"
-													}
-												},
-												{
-													"id": "set-visible",
-													"objectClass": "tb_fade",
-													"sid": 897998065552289,
-													"parameters": {
-														"visibility": "invisible"
-													}
-												}
-											],
-											"sid": 936978760299591
 										}
 									],
 									"isOrBlock": true
@@ -899,14 +873,14 @@
 									],
 									"actions": [
 										{
-											"callFunction": "Function1",
+											"callFunction": "positionCamera",
 											"sid": 120515615062474
 										}
 									],
 									"sid": 677819618029796
 								},
 								{
-									"functionName": "Function1",
+									"functionName": "positionCamera",
 									"functionDescription": "",
 									"functionCategory": "",
 									"functionReturnType": "none",

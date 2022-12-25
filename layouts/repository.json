@@ -418,7 +418,9 @@
 						"dblJumpEnabled": false,
 						"isPounding": false,
 						"animationLock": false,
-						"isSafe": true
+						"isSafe": true,
+						"canDash": true,
+						"isDashing": false
 					},
 					"behaviors": {
 						"MoveTo": {

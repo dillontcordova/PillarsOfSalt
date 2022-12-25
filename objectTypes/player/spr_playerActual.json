@@ -66,6 +66,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 536607835110198
+		},
+		{
+			"name": "canDash",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 417551587518286
+		},
+		{
+			"name": "isDashing",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 454119673439912
 		}
 	],
 	"behaviorTypes": [
