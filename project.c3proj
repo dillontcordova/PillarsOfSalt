@@ -242,8 +242,8 @@
 			"type": "behavior",
 			"id": "aaXe_FSM",
 			"name": "FSM",
-			"author": "Loïc Morvan, piranha305",
-			"version": "1.3.0.0",
+			"author": "aaXe",
+			"version": "1.0.0.0",
 			"bundled": false
 		},
 		{
@@ -332,7 +332,9 @@
 			"spr_door",
 			"spr_doorSwitch",
 			"Browser",
-			"spr_gear"
+			"spr_gear",
+			"Sprite",
+			"Text"
 		],
 		"subfolders": [
 			{
@@ -456,7 +458,8 @@
 					"spr_playerActual",
 					"spr_visibilityBounding",
 					"spr_meleeSlash",
-					"spr_hitMark"
+					"spr_hitMark",
+					"spr_playerSingleton"
 				],
 				"subfolders": [],
 				"name": "player"
@@ -475,7 +478,6 @@
 			{
 				"items": [
 					"spr_gameSingleton",
-					"spr_playerSingleton",
 					"spr_gamepadSingleton",
 					"dict_states"
 				],
@@ -514,7 +516,7 @@
 			},
 			{
 				"items": [
-					"spr_healthLight2",
+					"spr_healthBar",
 					"spr_healthLight",
 					"spr_boardHUD",
 					"spr_vialFg"

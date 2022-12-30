@@ -14,30 +14,6 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "spr_playerActual",
-							"sid": 962977138256894,
-							"parameters": {
-								"object": "spr_endGame"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-nextprevious-layout",
-							"objectClass": "System",
-							"sid": 347575345937249,
-							"parameters": {
-								"which": "next"
-							}
-						}
-					],
-					"sid": 914174680596911
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "spr_playerActual",
 							"sid": 136800202381412,
 							"parameters": {
 								"object": "exitScenes"
@@ -82,7 +58,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "spr_playerSingleton",
-									"sid": 993271998114894,
+									"sid": 194703966606993,
 									"parameters": {
 										"instance-variable": "spawnDir",
 										"value": "dir"
@@ -90,7 +66,7 @@
 								},
 								{
 									"callFunction": "fadeOut",
-									"sid": 262391928173377,
+									"sid": 867134004359053,
 									"parameters": [
 										"1"
 									]
@@ -98,7 +74,7 @@
 								{
 									"id": "wait-for-previous-actions",
 									"objectClass": "System",
-									"sid": 961152504681327
+									"sid": 459537586789662
 								}
 							],
 							"sid": 424807472086969,
@@ -214,6 +190,42 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_playerActual",
+							"sid": 658129260529186,
+							"parameters": {
+								"object": "spr_endGame"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "fadeOut",
+							"sid": 755993208709899,
+							"parameters": [
+								"4"
+							]
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 538112487124217
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 557504234691362,
+							"parameters": {
+								"layout": "titleScreen"
+							}
+						}
+					],
+					"sid": 664321568767843
 				}
 			],
 			"sid": 149163454200003

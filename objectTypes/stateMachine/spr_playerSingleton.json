@@ -115,6 +115,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 845318718902543
+		},
+		{
+			"name": "maxHealth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 342499389652614
 		}
 	],
 	"behaviorTypes": [],

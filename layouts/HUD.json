@@ -170,7 +170,7 @@
 									}
 								},
 								{
-									"type": "spr_healthLight2",
+									"type": "spr_healthBar",
 									"properties": {
 										"initially-visible": true,
 										"initial-animation": "Animation 1",
@@ -182,8 +182,8 @@
 									"instanceVariables": {},
 									"behaviors": {},
 									"world": {
-										"x": 16,
-										"y": 0,
+										"x": 28,
+										"y": 24,
 										"width": 12,
 										"height": 24,
 										"originX": 0,
@@ -194,7 +194,7 @@
 											1,
 											0.6
 										],
-										"angle": 0,
+										"angle": 3.141592653589793,
 										"zElevation": 0
 									}
 								}
@@ -481,59 +481,6 @@
 							"world": {
 								"x": 28,
 								"y": -40,
-								"width": 16,
-								"height": 16,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "spr_playerSingleton",
-							"properties": {
-								"initially-visible": false,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": false,
-								"live-preview": false
-							},
-							"uid": 66,
-							"instanceVariables": {
-								"dir": "",
-								"animationState": "",
-								"state": "",
-								"prevState": "",
-								"defaultGravity": 0,
-								"defaultMaxFallSpeed": 0,
-								"defaultMaxSpeed": 0,
-								"defaultAcceleration": 0,
-								"defaultDeceleration": 0,
-								"defaultJumpStrength": 0,
-								"defaultJumpSustain": 0,
-								"isDblJumpEnabled": false,
-								"lastSafeSpaceX": 0,
-								"lastSafeSpaceY": 0,
-								"gotoSpawnUid": -1,
-								"spawnDir": ""
-							},
-							"behaviors": {
-								"FSM": {
-									"properties": {
-										"active": true,
-										"start-state": "Off"
-									}
-								}
-							},
-							"world": {
-								"x": 28,
-								"y": -20,
 								"width": 16,
 								"height": 16,
 								"originX": 0.5,

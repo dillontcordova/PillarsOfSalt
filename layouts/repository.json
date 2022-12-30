@@ -405,7 +405,7 @@
 					},
 					"uid": 47,
 					"instanceVariables": {
-						"health": 5,
+						"health": 15,
 						"isInvincible": false,
 						"isAttacking": false,
 						"isSolid": true,
@@ -887,7 +887,7 @@
 					},
 					"uid": 94,
 					"instanceVariables": {
-						"health": 5,
+						"health": 6,
 						"isInvincible": false,
 						"isAttacking": false,
 						"isSolid": true,
@@ -1376,6 +1376,62 @@
 						"height": 22,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_playerSingleton",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 66,
+					"instanceVariables": {
+						"dir": "",
+						"animationState": "",
+						"state": "",
+						"prevState": "",
+						"defaultGravity": 0,
+						"defaultMaxFallSpeed": 0,
+						"defaultMaxSpeed": 0,
+						"defaultAcceleration": 0,
+						"defaultDeceleration": 0,
+						"defaultJumpStrength": 0,
+						"defaultJumpSustain": 0,
+						"isDblJumpEnabled": false,
+						"lastSafeSpaceX": 0,
+						"lastSafeSpaceY": 0,
+						"gotoSpawnUid": -1,
+						"spawnDir": "",
+						"maxHealth": 15,
+						"isInit": false,
+						"curHealth": 1
+					},
+					"behaviors": {
+						"FSM": {
+							"properties": {
+								"active": true,
+								"start-state": "Off"
+							}
+						}
+					},
+					"world": {
+						"x": 366,
+						"y": -42,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -1891,7 +1947,7 @@
 					},
 					"uid": 111,
 					"instanceVariables": {
-						"health": 2,
+						"health": 3,
 						"isInvincible": false,
 						"isAttacking": false,
 						"isSolid": true,

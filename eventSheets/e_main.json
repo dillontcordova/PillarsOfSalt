@@ -47,13 +47,13 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 334077243048525
+					"sid": 429249629267115
 				}
 			],
 			"actions": [
 				{
 					"callFunction": "fadeIn",
-					"sid": 318373565851608,
+					"sid": 160849029032326,
 					"parameters": [
 						"1"
 					]
@@ -61,10 +61,10 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 552232193168147
+					"sid": 212723785322964
 				}
 			],
-			"sid": 227348477188163
+			"sid": 107338852329282
 		},
 		{
 			"eventType": "block",

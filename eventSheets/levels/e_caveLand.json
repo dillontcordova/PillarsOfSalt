@@ -39,52 +39,8 @@
 			],
 			"actions": [
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 774247103227852,
-					"parameters": {
-						"object-to-create": "spr_leafAtmos",
-						"layer": "\"fgCharacters\"",
-						"x": "ViewportLeft(\"fgCharacters\") + random(427)",
-						"y": "ViewportTop(\"fgCharacters\") - random(64)",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "spr_leafAtmos",
-					"sid": 416189424433434,
-					"disabled": true,
-					"parameters": {
-						"scale": ".5"
-					}
-				},
-				{
-					"id": "set-angle-of-motion",
-					"objectClass": "spr_leafAtmos",
-					"sid": 616567772490445,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"angle": "115"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "spr_leafAtmos",
-					"sid": 616685664614779,
-					"parameters": {
-						"animation": "choose(\"Default\",\"Default2\")",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-animation-speed",
-					"objectClass": "spr_leafAtmos",
-					"sid": 524280240600772,
-					"parameters": {
-						"speed": "3 + random(10)"
-					}
+					"callFunction": "fallingLeaves",
+					"sid": 520651745759310
 				}
 			],
 			"sid": 189452850215417
