@@ -29,14 +29,14 @@
 			"name": "isWalking",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 135687943935256
 		},
 		{
 			"name": "canJump",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 282351109850345
 		},
 		{
@@ -50,7 +50,7 @@
 			"name": "isPounding",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 133260863079197
 		},
 		{
@@ -71,14 +71,14 @@
 			"name": "canDash",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 417551587518286
 		},
 		{
 			"name": "isDashing",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 454119673439912
 		}
 	],

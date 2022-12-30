@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "cameraMode",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "2",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -62,164 +62,426 @@
 			"sid": 181000926429917
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 947203567409154,
-					"parameters": {
-						"variable": "isDebugMode"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "txt_debugFPS",
-					"sid": 734959463581162,
-					"parameters": {
-						"text": "(isGfxHigh ? \"High\": \"Low\") & \" GFX, \" & fps & \" FPS, \" & round(cpuutilisation * 100) & \"% CPU, \" & round(gpuutilisation * 100) & \"% GPU\""
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "txt_debug",
-					"sid": 852039766275073,
-					"disabled": true,
-					"parameters": {
-						"text": "dbgMsg"
-					}
-				}
-			],
-			"sid": 583082006542787
-		},
-		{
-			"functionName": "throw",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "expression1",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 455827677938847
-				},
-				{
-					"name": "expression2",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 208958008790830
-				},
-				{
-					"name": "msg",
-					"type": "string",
-					"initialValue": "error message",
-					"comment": "",
-					"sid": 729589197453317
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 173167470320725,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Debug",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-two-values",
+							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 733761261137876,
+							"sid": 819421724783322,
 							"parameters": {
-								"first-value": "expression1",
-								"comparison": 0,
-								"second-value": "expression2"
+								"variable": "isDebugMode"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 824974661929426,
+							"id": "set-text",
+							"objectClass": "txt_debugFPS",
+							"sid": 164163545805333,
 							"parameters": {
-								"variable": "thrownError",
-								"value": "msg"
+								"text": "(isGfxHigh ? \"High\": \"Low\") & \" GFX, \" & fps & \" FPS, \" & round(cpuutilisation * 100) & \"% CPU, \" & round(gpuutilisation * 100) & \"% GPU\""
 							}
 						},
 						{
 							"id": "set-text",
-							"objectClass": "txt_debugFPS",
-							"sid": 140029545601644,
+							"objectClass": "txt_debug",
+							"sid": 242141099870022,
+							"disabled": true,
 							"parameters": {
-								"text": "thrownError"
+								"text": "dbgMsg"
 							}
+						}
+					],
+					"sid": 140790086670328
+				},
+				{
+					"functionName": "throw",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "expression1",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 455827677938847
 						},
 						{
+							"name": "expression2",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 208958008790830
+						},
+						{
+							"name": "msg",
+							"type": "string",
+							"initialValue": "error message",
+							"comment": "",
+							"sid": 729589197453317
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 613982554565916,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 347609826567322,
+									"parameters": {
+										"first-value": "expression1",
+										"comparison": 0,
+										"second-value": "expression2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 563221631666328,
+									"parameters": {
+										"variable": "thrownError",
+										"value": "msg"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "txt_debugFPS",
+									"sid": 849795174734461,
+									"parameters": {
+										"text": "thrownError"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "txt_debugFPS",
+									"sid": 322677598837646,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 886192805474937,
+									"parameters": {
+										"time-scale": "0"
+									}
+								}
+							],
+							"sid": 370488929431400
+						}
+					]
+				},
+				{
+					"functionName": "setDebugText",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "msg",
+							"type": "string",
+							"initialValue": "error message",
+							"comment": "",
+							"sid": 289857513250055
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
 							"id": "set-visible",
-							"objectClass": "txt_debugFPS",
-							"sid": 429269088751543,
+							"objectClass": "txt_debug",
+							"sid": 246500839776696,
 							"parameters": {
 								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-time-scale",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 836286847769526,
+							"sid": 718791005895967,
 							"parameters": {
-								"time-scale": "0"
+								"variable": "dbgMsg",
+								"value": "msg"
 							}
 						}
 					],
-					"sid": 180083542535589
+					"sid": 989290169163868
 				}
-			]
+			],
+			"sid": 881481778346380
 		},
 		{
-			"functionName": "setDebugText",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "SFX",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"name": "msg",
-					"type": "string",
-					"initialValue": "error message",
-					"comment": "",
-					"sid": 289857513250055
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "txt_debug",
-					"sid": 450557674135965,
-					"parameters": {
-						"visibility": "visible"
-					}
+					"functionName": "stopSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "soundTag",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 861457856817160
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 189975929506154,
+							"parameters": {
+								"tag": "soundTag"
+							}
+						}
+					],
+					"sid": 494233317443603
 				},
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 737663017364098,
-					"parameters": {
-						"variable": "dbgMsg",
-						"value": "msg"
-					}
+					"functionName": "playSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "soundName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 725264778016152
+						},
+						{
+							"name": "isLooping",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 803727359911214
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 388825943997193,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 756443154775410,
+									"parameters": {
+										"variable": "isLooping"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 307806168133309,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 286057889489042,
+											"parameters": {
+												"tag": "soundName"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 275168451895633,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "soundName",
+												"loop": "looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "soundName"
+											}
+										}
+									],
+									"sid": 815666848576059
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 639381350102932
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 863883302580549,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "soundName",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "soundName"
+									}
+								}
+							],
+							"sid": 543317704056644
+						}
+					]
+				},
+				{
+					"functionName": "playSoundVariable",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "soundName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 976347792276338
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 174077428999142,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "soundName",
+								"loop": "not-looping",
+								"volume": "choose(-2, -10, -7)",
+								"stereo-pan": "0",
+								"tag-optional": "soundName"
+							}
+						}
+					],
+					"sid": 412037473724308
+				},
+				{
+					"functionName": "playMusic",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "musicName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 481954438157684
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "fade-volume",
+							"objectClass": "Audio",
+							"sid": 220983822692797,
+							"parameters": {
+								"tag": "\"music\"",
+								"db": "-20",
+								"duration": "2",
+								"ending": "stop"
+							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 361235834332645,
+							"parameters": {
+								"folder": "music",
+								"audio-file-name": "musicName",
+								"loop": "looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
+							"id": "schedule-next-play",
+							"objectClass": "Audio",
+							"sid": 716232912816126,
+							"disabled": true,
+							"parameters": {
+								"time": "2"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 636389115568818,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "fade-volume",
+							"objectClass": "Audio",
+							"sid": 877109973639358,
+							"parameters": {
+								"tag": "\"music\"",
+								"db": "0",
+								"duration": "5",
+								"ending": "keep-playing"
+							}
+						}
+					],
+					"sid": 905312934408413
 				}
 			],
-			"sid": 129528095355371
+			"sid": 592066672679262
 		},
 		{
 			"eventType": "group",
@@ -241,7 +503,7 @@
 					"actions": [
 						{
 							"callFunction": "fadeOut",
-							"sid": 497640162052749,
+							"sid": 591246371941180,
 							"parameters": [
 								"1"
 							]
@@ -249,11 +511,11 @@
 						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
-							"sid": 981995104550099
+							"sid": 817197757878923
 						},
 						{
 							"callFunction": "fadeIn",
-							"sid": 190117474571495,
+							"sid": 905874039873874,
 							"parameters": [
 								"1"
 							]
@@ -261,10 +523,10 @@
 						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
-							"sid": 267037524250745
+							"sid": 310730458817535
 						}
 					],
-					"sid": 697023674531401
+					"sid": 101382153708397
 				},
 				{
 					"functionName": "fadeOut",
@@ -284,45 +546,64 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 684459860019167,
+					"children": [
 						{
-							"callFunction": "immobilizePlayer",
-							"sid": 489682096634659
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "tb_fade",
-							"sid": 654083935798110,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "tb_fade",
-							"sid": 912512803550129,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "tb_fade",
-							"sid": 793218686760150,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "dur",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "tb_fade",
+									"sid": 480231575482196,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"fade\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "immobilizePlayer",
+									"sid": 264154869291933
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "tb_fade",
+									"sid": 333790609154440,
+									"parameters": {
+										"opacity": "0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "tb_fade",
+									"sid": 105270733726370,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "tb_fade",
+									"sid": 393998225014494,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"fade\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "dur",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								}
+							],
+							"sid": 357826171012443
 						}
-					],
-					"sid": 489637449461278
+					]
 				},
 				{
 					"functionName": "fadeIn",
@@ -342,386 +623,254 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"callFunction": "immobilizePlayer",
-							"sid": 855190227000702
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "tb_fade",
-							"sid": 391393484208647,
-							"parameters": {
-								"opacity": "100"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "tb_fade",
-							"sid": 536344712857199,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "tb_fade",
-							"sid": 978587727482722,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "dur",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 883113248832404
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "tb_fade",
-							"sid": 851990232569999,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"callFunction": "mobilizePlayer",
-							"sid": 653383575509499
-						}
-					],
-					"sid": 486195317584341
-				}
-			],
-			"sid": 431312089206206
-		},
-		{
-			"functionName": "pixellateHUD",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": true,
-			"functionParameters": [
-				{
-					"name": "dur",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 306809776239579
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-layer-effect-enabled",
-					"objectClass": "System",
-					"sid": 669470062257218,
-					"parameters": {
-						"layer": "\"HUD\"",
-						"mode": "enable",
-						"effect": "\"Pixellate\""
-					}
-				},
-				{
-					"id": "set-layer-effect-parameter",
-					"objectClass": "System",
-					"sid": 799006869200136,
-					"parameters": {
-						"layer": "\"HUD\"",
-						"effect": "\"Pixellate\"",
-						"parameter-index": "0",
-						"value": "35"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 441463743161931,
-					"parameters": {
-						"seconds": "dur / 3"
-					}
-				},
-				{
-					"id": "set-layer-effect-parameter",
-					"objectClass": "System",
-					"sid": 594344801034698,
-					"parameters": {
-						"layer": "\"HUD\"",
-						"effect": "\"Pixellate\"",
-						"parameter-index": "0",
-						"value": "75"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 931697807766144,
-					"parameters": {
-						"seconds": "dur / 3"
-					}
-				},
-				{
-					"id": "set-layer-effect-parameter",
-					"objectClass": "System",
-					"sid": 393205036817390,
-					"parameters": {
-						"layer": "\"HUD\"",
-						"effect": "\"Pixellate\"",
-						"parameter-index": "0",
-						"value": "35"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 395735546109110,
-					"parameters": {
-						"seconds": "dur / 3"
-					}
-				},
-				{
-					"id": "set-layer-effect-enabled",
-					"objectClass": "System",
-					"sid": 677064442226213,
-					"parameters": {
-						"layer": "\"HUD\"",
-						"mode": "disable",
-						"effect": "\"Pixellate\""
-					}
-				}
-			],
-			"sid": 339713216380384
-		},
-		{
-			"functionName": "stopSound",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "soundTag",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 861457856817160
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 214472271041002,
-					"parameters": {
-						"tag": "soundTag"
-					}
-				}
-			],
-			"sid": 402664379593475
-		},
-		{
-			"functionName": "playSound",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "soundName",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 725264778016152
-				},
-				{
-					"name": "isLooping",
-					"type": "boolean",
-					"initialValue": "false",
-					"comment": "",
-					"sid": 803727359911214
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 343078412585139,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 999619496366537,
-							"parameters": {
-								"variable": "isLooping"
-							}
-						}
-					],
 					"actions": [],
-					"sid": 152520243378792,
+					"sid": 668074090963396,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-tag-playing",
-									"objectClass": "Audio",
-									"sid": 926386945151040,
+									"id": "is-playing",
+									"objectClass": "tb_fade",
+									"sid": 182718946667918,
+									"behaviorType": "Tween",
 									"parameters": {
-										"tag": "soundName"
+										"tags": "\"fade\""
 									},
 									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 277214994762934,
+									"callFunction": "immobilizePlayer",
+									"sid": 456255714884343
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "tb_fade",
+									"sid": 845362058945680,
 									"parameters": {
-										"folder": "sounds",
-										"audio-file-name": "soundName",
-										"loop": "looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "soundName"
+										"opacity": "100"
 									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "tb_fade",
+									"sid": 346988081804561,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "tb_fade",
+									"sid": 106030696402677,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"fade\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "dur",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 854044473028215
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "tb_fade",
+									"sid": 151834076879464,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"callFunction": "mobilizePlayer",
+									"sid": 902755722021546
 								}
 							],
-							"sid": 631334471257516
+							"sid": 913618338135800
 						}
 					]
-				},
+				}
+			],
+			"sid": 781722648050493
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Effects",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 218726568687958
-						}
-					],
+					"functionName": "fallingLeaves",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
 					"actions": [
 						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 687973363503034,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 972056829498764,
 							"parameters": {
-								"folder": "sounds",
-								"audio-file-name": "soundName",
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "soundName"
+								"object-to-create": "spr_leafAtmos",
+								"layer": "\"fgCharacters\"",
+								"x": "ViewportLeft(\"fgCharacters\") + random(427)",
+								"y": "ViewportTop(\"fgCharacters\") - random(64)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "spr_leafAtmos",
+							"sid": 831566205486825,
+							"parameters": {
+								"scale": "random(.7, .85, 1)"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "spr_leafAtmos",
+							"sid": 442953692669586,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "115"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "spr_leafAtmos",
+							"sid": 175274373491012,
+							"parameters": {
+								"animation": "choose(\"Default\",\"Default2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "spr_leafAtmos",
+							"sid": 277882373731581,
+							"parameters": {
+								"speed": "3 + random(10)"
 							}
 						}
 					],
-					"sid": 425458238140999
-				}
-			]
-		},
-		{
-			"functionName": "playSoundVariable",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "soundName",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 976347792276338
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "play-by-name",
-					"objectClass": "Audio",
-					"sid": 989361540563209,
-					"parameters": {
-						"folder": "sounds",
-						"audio-file-name": "soundName",
-						"loop": "not-looping",
-						"volume": "choose(-2, -10, -7)",
-						"stereo-pan": "0",
-						"tag-optional": "soundName"
-					}
-				}
-			],
-			"sid": 508725564848640
-		},
-		{
-			"functionName": "playMusic",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "musicName",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 481954438157684
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 289377414853560,
-					"parameters": {
-						"tag": "\"music\""
-					}
+					"sid": 270299245864074
 				},
 				{
-					"id": "play-by-name",
-					"objectClass": "Audio",
-					"sid": 968357000262745,
-					"parameters": {
-						"folder": "music",
-						"audio-file-name": "musicName",
-						"loop": "looping",
-						"volume": "-20",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
-					}
-				},
-				{
-					"id": "fade-volume",
-					"objectClass": "Audio",
-					"sid": 446418792746144,
-					"parameters": {
-						"tag": "\"music\"",
-						"db": "0",
-						"duration": "5",
-						"ending": "keep-playing"
-					}
+					"functionName": "pixellateHUD",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "dur",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 306809776239579
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layer-effect-enabled",
+							"objectClass": "System",
+							"sid": 290922842819247,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"mode": "enable",
+								"effect": "\"Pixellate\""
+							}
+						},
+						{
+							"id": "set-layer-effect-parameter",
+							"objectClass": "System",
+							"sid": 129665659261261,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"effect": "\"Pixellate\"",
+								"parameter-index": "0",
+								"value": "35"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 415463476151650,
+							"parameters": {
+								"seconds": "dur / 3"
+							}
+						},
+						{
+							"id": "set-layer-effect-parameter",
+							"objectClass": "System",
+							"sid": 304321665857750,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"effect": "\"Pixellate\"",
+								"parameter-index": "0",
+								"value": "75"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 445520122925623,
+							"parameters": {
+								"seconds": "dur / 3"
+							}
+						},
+						{
+							"id": "set-layer-effect-parameter",
+							"objectClass": "System",
+							"sid": 151114949695120,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"effect": "\"Pixellate\"",
+								"parameter-index": "0",
+								"value": "35"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 706373927803645,
+							"parameters": {
+								"seconds": "dur / 3"
+							}
+						},
+						{
+							"id": "set-layer-effect-enabled",
+							"objectClass": "System",
+							"sid": 346325581962574,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"mode": "disable",
+								"effect": "\"Pixellate\""
+							}
+						}
+					],
+					"sid": 419591460016814
 				}
 			],
-			"sid": 845895071227416
+			"sid": 971677484167875
 		}
 	],
 	"sid": 705044040744188

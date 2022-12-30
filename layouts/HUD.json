@@ -496,60 +496,6 @@
 							}
 						},
 						{
-							"type": "spr_playerSingleton",
-							"properties": {
-								"initially-visible": false,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": false,
-								"live-preview": false
-							},
-							"uid": 66,
-							"instanceVariables": {
-								"dir": "",
-								"animationState": "",
-								"state": "",
-								"prevState": "",
-								"defaultGravity": 0,
-								"defaultMaxFallSpeed": 0,
-								"defaultMaxSpeed": 0,
-								"defaultAcceleration": 0,
-								"defaultDeceleration": 0,
-								"defaultJumpStrength": 0,
-								"defaultJumpSustain": 0,
-								"isDblJumpEnabled": false,
-								"lastSafeSpaceX": 0,
-								"lastSafeSpaceY": 0,
-								"gotoSpawnUid": -1,
-								"spawnDir": "",
-								"maxHealth": 1
-							},
-							"behaviors": {
-								"FSM": {
-									"properties": {
-										"active": true,
-										"start-state": "Off"
-									}
-								}
-							},
-							"world": {
-								"x": 28,
-								"y": -20,
-								"width": 16,
-								"height": 16,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
 							"type": "spr_gamepadSingleton",
 							"properties": {
 								"initially-visible": false,

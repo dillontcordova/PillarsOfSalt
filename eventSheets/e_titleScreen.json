@@ -41,6 +41,13 @@
 						"duration": "5",
 						"ending": "keep-playing"
 					}
+				},
+				{
+					"callFunction": "fadeIn",
+					"sid": 309548374825463,
+					"parameters": [
+						"1"
+					]
 				}
 			],
 			"sid": 576731049452773
