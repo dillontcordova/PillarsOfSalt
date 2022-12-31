@@ -405,7 +405,7 @@
 					},
 					"uid": 47,
 					"instanceVariables": {
-						"health": 15,
+						"health": 20,
 						"isInvincible": false,
 						"isAttacking": false,
 						"isSolid": true,
@@ -1413,7 +1413,7 @@
 						"lastSafeSpaceY": 0,
 						"gotoSpawnUid": -1,
 						"spawnDir": "",
-						"maxHealth": 15,
+						"maxHealth": 20,
 						"isInit": false,
 						"curHealth": 1
 					},

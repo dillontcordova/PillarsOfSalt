@@ -2432,6 +2432,24 @@
 																		"comparison": 1,
 																		"value": "0"
 																	}
+																},
+																{
+																	"id": "is-button-down",
+																	"objectClass": "Gamepad",
+																	"sid": 743480291544201,
+																	"parameters": {
+																		"gamepad": "0",
+																		"button": "d-pad-left"
+																	}
+																},
+																{
+																	"id": "is-button-down",
+																	"objectClass": "Gamepad",
+																	"sid": 584505834252572,
+																	"parameters": {
+																		"gamepad": "0",
+																		"button": "d-pad-right"
+																	}
 																}
 															],
 															"actions": [],
@@ -5301,6 +5319,15 @@
 													"id": "on-any-animation-finished",
 													"objectClass": "spr_meleeSlash",
 													"sid": 209571379066783
+												},
+												{
+													"id": "on-timer",
+													"objectClass": "spr_playerActual",
+													"sid": 784383088436024,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"playerAtkDelay\""
+													}
 												}
 											],
 											"actions": [
@@ -5326,7 +5353,8 @@
 													]
 												}
 											],
-											"sid": 730199452669219
+											"sid": 730199452669219,
+											"isOrBlock": true
 										},
 										{
 											"eventType": "block",
@@ -5795,11 +5823,6 @@
 											"sid": 592535246760623
 										},
 										{
-											"id": "restart-layout",
-											"objectClass": "System",
-											"sid": 544292635670738
-										},
-										{
 											"type": "comment",
 											"text": "e_main does a fadeIn on start of layout"
 										}
@@ -5923,33 +5946,47 @@
 									"sid": 553735945449043
 								}
 							]
+						},
+						{
+							"functionName": "gameOver",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "spr_playerSingleton",
+									"sid": 656695829969707
+								},
+								{
+									"id": "reset-persisted-objects",
+									"objectClass": "System",
+									"sid": 962144803155140
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 544292635670738,
+									"disabled": true
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 727856101287059,
+									"parameters": {
+										"layout": "grassLand"
+									}
+								}
+							],
+							"sid": 262391256242940
 						}
 					],
 					"sid": 673736933873361
-				},
-				{
-					"functionName": "gameOver",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "spr_playerSingleton",
-							"sid": 234605296128637
-						},
-						{
-							"id": "reset-persisted-objects",
-							"objectClass": "System",
-							"sid": 868177763045325
-						}
-					],
-					"sid": 662757733681186
 				},
 				{
 					"functionName": "immobilizePlayer",

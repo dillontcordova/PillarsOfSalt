@@ -1814,7 +1814,7 @@
 						}
 					},
 					"world": {
-						"x": 896,
+						"x": 888,
 						"y": 496,
 						"width": 6,
 						"height": 6,
@@ -2993,6 +2993,68 @@
 					"world": {
 						"x": 64,
 						"y": 448,
+						"width": 4,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyBlobSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 244,
+					"instanceVariables": {
+						"spawnName": "spr_enemyBlob"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1072,
+						"y": 848,
+						"width": 4,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyBlobSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 245,
+					"instanceVariables": {
+						"spawnName": "spr_enemyBlob"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1248,
+						"y": 608,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,
