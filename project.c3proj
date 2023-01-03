@@ -342,7 +342,8 @@
 			"Browser",
 			"spr_gear",
 			"Sprite",
-			"Text"
+			"Text",
+			"par_refresh"
 		],
 		"subfolders": [
 			{

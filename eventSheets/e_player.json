@@ -1904,7 +1904,7 @@
 											"eventType": "variable",
 											"name": "timeout",
 											"type": "number",
-											"initialValue": "0.8",
+											"initialValue": "0.5",
 											"comment": "",
 											"isStatic": true,
 											"isConstant": false,
@@ -2324,6 +2324,32 @@
 													"parameters": {
 														"instance-variable": "canDash",
 														"value": "true"
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "spr_playerActual",
+													"sid": 936725496909477,
+													"parameters": {
+														"object": "par_refresh",
+														"layer": "\"fgCharacters\"",
+														"image-point": "\"center\"",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "spr_playerActual",
+													"sid": 784300564423819,
+													"parameters": {
+														"child": "par_refresh",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": true,
+														"transform-h": false,
+														"transform-a": true,
+														"transform-z-elevation": false,
+														"destroy-with-parent": true
 													}
 												}
 											],
@@ -3944,18 +3970,32 @@
 													"id": "is-on-floor",
 													"objectClass": "spr_playerActual",
 													"sid": 903237176407710,
-													"behaviorType": "Platform",
-													"isInverted": true
+													"behaviorType": "Platform"
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 421398291249175,
+													"disabled": true
 												}
 											],
 											"actions": [
 												{
 													"id": "set-acceleration",
 													"objectClass": "spr_playerActual",
-													"sid": 249512186774013,
+													"sid": 343784670813166,
 													"behaviorType": "Platform",
 													"parameters": {
-														"acceleration": "400"
+														"acceleration": "spr_playerSingleton.defaultAcceleration"
+													}
+												},
+												{
+													"id": "set-deceleration",
+													"objectClass": "spr_playerActual",
+													"sid": 582429988220800,
+													"behaviorType": "Platform",
+													"parameters": {
+														"deceleration": "spr_playerSingleton.defaultDeceleration"
 													}
 												}
 											],
@@ -3974,10 +4014,19 @@
 												{
 													"id": "set-acceleration",
 													"objectClass": "spr_playerActual",
-													"sid": 976240212706442,
+													"sid": 699416815395661,
 													"behaviorType": "Platform",
 													"parameters": {
-														"acceleration": "spr_playerSingleton.defaultAcceleration"
+														"acceleration": "400"
+													}
+												},
+												{
+													"id": "set-deceleration",
+													"objectClass": "spr_playerActual",
+													"sid": 937411310352547,
+													"behaviorType": "Platform",
+													"parameters": {
+														"deceleration": "500"
 													}
 												}
 											],

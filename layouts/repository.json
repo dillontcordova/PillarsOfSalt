@@ -160,7 +160,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 32,
-						"y": 64,
+						"y": 56,
 						"width": 16,
 						"height": 16,
 						"originX": 0,
@@ -2894,6 +2894,51 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "par_refresh",
+					"properties": {
+						"rate": 20,
+						"spray-cone": 360,
+						"type": "one-shot",
+						"object": -1,
+						"live-preview": false,
+						"speed": 50,
+						"size": 2,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 0,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 0,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 0,
+						"acceleration": 0,
+						"gravity": 0,
+						"angle-randomiser": 30,
+						"life-speed-randomiser": 800,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 0.4
+					},
+					"uid": 231,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -80,
+						"y": 90,
+						"width": 8,
+						"height": 8,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
 						"zElevation": 0
 					}
 				}
