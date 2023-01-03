@@ -1904,7 +1904,7 @@
 											"eventType": "variable",
 											"name": "timeout",
 											"type": "number",
-											"initialValue": "0.8",
+											"initialValue": "0.5",
 											"comment": "",
 											"isStatic": true,
 											"isConstant": false,
@@ -2325,6 +2325,32 @@
 														"instance-variable": "canDash",
 														"value": "true"
 													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "spr_playerActual",
+													"sid": 936725496909477,
+													"parameters": {
+														"object": "par_refresh",
+														"layer": "\"fgCharacters\"",
+														"image-point": "\"center\"",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "spr_playerActual",
+													"sid": 784300564423819,
+													"parameters": {
+														"child": "par_refresh",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": true,
+														"transform-h": false,
+														"transform-a": true,
+														"transform-z-elevation": false,
+														"destroy-with-parent": true
+													}
 												}
 											],
 											"sid": 952736137321599
@@ -2431,6 +2457,24 @@
 																		"axis": "left-analog-x-axis",
 																		"comparison": 1,
 																		"value": "0"
+																	}
+																},
+																{
+																	"id": "is-button-down",
+																	"objectClass": "Gamepad",
+																	"sid": 743480291544201,
+																	"parameters": {
+																		"gamepad": "0",
+																		"button": "d-pad-left"
+																	}
+																},
+																{
+																	"id": "is-button-down",
+																	"objectClass": "Gamepad",
+																	"sid": 584505834252572,
+																	"parameters": {
+																		"gamepad": "0",
+																		"button": "d-pad-right"
 																	}
 																}
 															],
@@ -3926,18 +3970,32 @@
 													"id": "is-on-floor",
 													"objectClass": "spr_playerActual",
 													"sid": 903237176407710,
-													"behaviorType": "Platform",
-													"isInverted": true
+													"behaviorType": "Platform"
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 421398291249175,
+													"disabled": true
 												}
 											],
 											"actions": [
 												{
 													"id": "set-acceleration",
 													"objectClass": "spr_playerActual",
-													"sid": 249512186774013,
+													"sid": 343784670813166,
 													"behaviorType": "Platform",
 													"parameters": {
-														"acceleration": "400"
+														"acceleration": "spr_playerSingleton.defaultAcceleration"
+													}
+												},
+												{
+													"id": "set-deceleration",
+													"objectClass": "spr_playerActual",
+													"sid": 582429988220800,
+													"behaviorType": "Platform",
+													"parameters": {
+														"deceleration": "spr_playerSingleton.defaultDeceleration"
 													}
 												}
 											],
@@ -3956,10 +4014,19 @@
 												{
 													"id": "set-acceleration",
 													"objectClass": "spr_playerActual",
-													"sid": 976240212706442,
+													"sid": 699416815395661,
 													"behaviorType": "Platform",
 													"parameters": {
-														"acceleration": "spr_playerSingleton.defaultAcceleration"
+														"acceleration": "400"
+													}
+												},
+												{
+													"id": "set-deceleration",
+													"objectClass": "spr_playerActual",
+													"sid": 937411310352547,
+													"behaviorType": "Platform",
+													"parameters": {
+														"deceleration": "500"
 													}
 												}
 											],
@@ -5301,6 +5368,15 @@
 													"id": "on-any-animation-finished",
 													"objectClass": "spr_meleeSlash",
 													"sid": 209571379066783
+												},
+												{
+													"id": "on-timer",
+													"objectClass": "spr_playerActual",
+													"sid": 784383088436024,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"playerAtkDelay\""
+													}
 												}
 											],
 											"actions": [
@@ -5326,7 +5402,8 @@
 													]
 												}
 											],
-											"sid": 730199452669219
+											"sid": 730199452669219,
+											"isOrBlock": true
 										},
 										{
 											"eventType": "block",
@@ -5795,11 +5872,6 @@
 											"sid": 592535246760623
 										},
 										{
-											"id": "restart-layout",
-											"objectClass": "System",
-											"sid": 544292635670738
-										},
-										{
 											"type": "comment",
 											"text": "e_main does a fadeIn on start of layout"
 										}
@@ -5923,33 +5995,47 @@
 									"sid": 553735945449043
 								}
 							]
+						},
+						{
+							"functionName": "gameOver",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "spr_playerSingleton",
+									"sid": 656695829969707
+								},
+								{
+									"id": "reset-persisted-objects",
+									"objectClass": "System",
+									"sid": 962144803155140
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 544292635670738,
+									"disabled": true
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 727856101287059,
+									"parameters": {
+										"layout": "grassLand"
+									}
+								}
+							],
+							"sid": 262391256242940
 						}
 					],
 					"sid": 673736933873361
-				},
-				{
-					"functionName": "gameOver",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "spr_playerSingleton",
-							"sid": 234605296128637
-						},
-						{
-							"id": "reset-persisted-objects",
-							"objectClass": "System",
-							"sid": 868177763045325
-						}
-					],
-					"sid": 662757733681186
 				},
 				{
 					"functionName": "immobilizePlayer",

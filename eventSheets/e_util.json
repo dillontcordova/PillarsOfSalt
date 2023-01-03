@@ -62,6 +62,16 @@
 			"sid": 181000926429917
 		},
 		{
+			"eventType": "variable",
+			"name": "nextSong",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 924911977229371
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Debug",
@@ -424,64 +434,170 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 905312934408413,
+					"children": [
 						{
-							"id": "fade-volume",
-							"objectClass": "Audio",
-							"sid": 220983822692797,
-							"parameters": {
-								"tag": "\"music\"",
-								"db": "-20",
-								"duration": "2",
-								"ending": "stop"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 871727903681465,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 708908106158596,
+									"parameters": {
+										"variable": "nextSong",
+										"value": "musicName"
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 358519743299666,
+									"parameters": {
+										"tag": "\"music\"",
+										"db": "-20",
+										"duration": "2",
+										"ending": "stop"
+									}
+								}
+							],
+							"sid": 892862524096793
 						},
 						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 361235834332645,
-							"parameters": {
-								"folder": "music",
-								"audio-file-name": "musicName",
-								"loop": "looping",
-								"volume": "-20",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
-						},
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 959907313559839
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 416476065872758,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "musicName",
+										"loop": "looping",
+										"volume": "-20",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 740280321026218,
+									"parameters": {
+										"tag": "\"music\"",
+										"db": "0",
+										"duration": "5",
+										"ending": "keep-playing"
+									}
+								}
+							],
+							"sid": 126701760670150
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
 						{
-							"id": "schedule-next-play",
+							"id": "is-tag-playing",
 							"objectClass": "Audio",
-							"sid": 716232912816126,
-							"disabled": true,
+							"sid": 194750641495315,
 							"parameters": {
-								"time": "2"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 636389115568818,
-							"parameters": {
-								"seconds": "2"
-							}
-						},
-						{
-							"id": "fade-volume",
-							"objectClass": "Audio",
-							"sid": 877109973639358,
-							"parameters": {
-								"tag": "\"music\"",
-								"db": "0",
-								"duration": "5",
-								"ending": "keep-playing"
-							}
+								"tag": "\"music\""
+							},
+							"isInverted": true
 						}
 					],
-					"sid": 905312934408413
+					"actions": [],
+					"sid": 130502399206607,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 703860685230598,
+									"parameters": {
+										"variable": "nextSong",
+										"comparison": 1,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 805981957686746,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "nextSong",
+										"loop": "looping",
+										"volume": "-20",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 990385277881229,
+									"parameters": {
+										"tag": "\"music\"",
+										"db": "0",
+										"duration": "5",
+										"ending": "keep-playing"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 490803287195890,
+									"parameters": {
+										"variable": "nextSong",
+										"value": "\"\""
+									}
+								}
+							],
+							"sid": 826239582474010
+						}
+					]
 				}
 			],
 			"sid": 592066672679262
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-fade-ended",
+					"objectClass": "Audio",
+					"sid": 387502369440480,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 501709216141887
 		},
 		{
 			"eventType": "group",

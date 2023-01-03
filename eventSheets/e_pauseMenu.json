@@ -346,19 +346,19 @@
 				{
 					"id": "set-object-time-scale",
 					"objectClass": "System",
-					"sid": 665974914439870,
+					"sid": 979870719057845,
 					"parameters": {
 						"object": "sf_pauseText",
-						"time-scale": "1.0"
+						"time-scale": "1"
 					}
 				},
 				{
 					"id": "set-object-time-scale",
 					"objectClass": "System",
-					"sid": 255610081283410,
+					"sid": 271378443357810,
 					"parameters": {
 						"object": "TiledBackground9",
-						"time-scale": "1.0"
+						"time-scale": "1"
 					}
 				}
 			],
