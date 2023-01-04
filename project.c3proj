@@ -610,9 +610,9 @@
 			"e_doorsAndKeys",
 			"e_singleton",
 			"e_water",
-			"e_pauseMenu",
 			"e_titleScreen",
-			"e_eventPoints"
+			"e_eventPoints",
+			"e_pauseMenu"
 		],
 		"subfolders": [
 			{

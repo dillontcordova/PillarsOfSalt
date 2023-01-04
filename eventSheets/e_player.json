@@ -1335,9 +1335,10 @@
 																},
 																{
 																	"callFunction": "setInvincible",
-																	"sid": 242309913500156,
+																	"sid": 931090047851395,
 																	"parameters": [
-																		"1"
+																		"1.5",
+																		"0.5"
 																	]
 																},
 																{
@@ -1356,6 +1357,15 @@
 																	"behaviorType": "Platform",
 																	"parameters": {
 																		"vector-y": "0"
+																	}
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "dolls",
+																	"sid": 693622852800536,
+																	"parameters": {
+																		"animation": "\"idle\"",
+																		"from": "beginning"
 																	}
 																},
 																{
@@ -1378,9 +1388,9 @@
 																},
 																{
 																	"callFunction": "fadeIn",
-																	"sid": 475473837300323,
+																	"sid": 368965469338343,
 																	"parameters": [
-																		"1"
+																		".5"
 																	]
 																},
 																{
@@ -4667,6 +4677,13 @@
 													"initialValue": "1",
 													"comment": "",
 													"sid": 264293766292804
+												},
+												{
+													"name": "delay",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"sid": 125728883071431
 												}
 											],
 											"eventType": "function-block",
@@ -4682,14 +4699,22 @@
 													}
 												},
 												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 377426366131244,
+													"parameters": {
+														"seconds": "delay"
+													}
+												},
+												{
 													"id": "flash",
 													"objectClass": "dolls",
-													"sid": 478963570411749,
+													"sid": 104759835946685,
 													"behaviorType": "Flash",
 													"parameters": {
 														"on-time": "0.1",
 														"off-time": "0.1",
-														"duration": "dur"
+														"duration": "dur - delay"
 													}
 												}
 											],
@@ -4899,7 +4924,8 @@
 																					"callFunction": "setInvincible",
 																					"sid": 713216178690457,
 																					"parameters": [
-																						"1"
+																						"1",
+																						"0"
 																					]
 																				}
 																			],
@@ -5111,6 +5137,16 @@
 									"description": "",
 									"isActiveOnStart": true,
 									"children": [
+										{
+											"eventType": "variable",
+											"name": "playerAtkDelay",
+											"type": "number",
+											"initialValue": "0.35",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": true,
+											"sid": 400843017252438
+										},
 										{
 											"functionName": "isDblCollisionAtk",
 											"functionDescription": "",
@@ -5365,9 +5401,12 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "on-any-animation-finished",
+													"id": "on-animation-finished",
 													"objectClass": "spr_meleeSlash",
-													"sid": 209571379066783
+													"sid": 990488134931098,
+													"parameters": {
+														"animation": "\"idle\""
+													}
 												},
 												{
 													"id": "on-timer",
@@ -5496,10 +5535,10 @@
 																{
 																	"id": "start-timer",
 																	"objectClass": "spr_playerActual",
-																	"sid": 112941846859267,
+																	"sid": 364883201311069,
 																	"behaviorType": "Timer",
 																	"parameters": {
-																		"duration": ".4",
+																		"duration": "playerAtkDelay",
 																		"type": "once",
 																		"tag": "\"playerAtkDelay\""
 																	}

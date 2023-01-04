@@ -585,21 +585,6 @@
 			"sid": 592066672679262
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-fade-ended",
-					"objectClass": "Audio",
-					"sid": 387502369440480,
-					"parameters": {
-						"tag": "\"music\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 501709216141887
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Fade",
@@ -759,7 +744,12 @@
 							"actions": [
 								{
 									"callFunction": "immobilizePlayer",
-									"sid": 456255714884343
+									"sid": 456255714884343,
+									"disabled": true
+								},
+								{
+									"callFunction": "mobilizePlayer",
+									"sid": 702046429609486
 								},
 								{
 									"id": "set-opacity",
@@ -805,10 +795,6 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
-								},
-								{
-									"callFunction": "mobilizePlayer",
-									"sid": 902755722021546
 								}
 							],
 							"sid": 913618338135800
