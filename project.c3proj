@@ -111,6 +111,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
@@ -343,7 +351,8 @@
 			"spr_gear",
 			"Sprite",
 			"Text",
-			"par_refresh"
+			"par_refresh",
+			"Array"
 		],
 		"subfolders": [
 			{
@@ -469,7 +478,8 @@
 					"spr_visibilityBounding",
 					"spr_meleeSlash",
 					"spr_hitMark",
-					"spr_playerSingleton"
+					"spr_playerSingleton",
+					"spr_meleeSlashTileMap"
 				],
 				"subfolders": [],
 				"name": "player"
@@ -582,7 +592,8 @@
 			"doors",
 			"keys",
 			"deathOnTouch",
-			"exitScenes"
+			"exitScenes",
+			"tileMaps"
 		],
 		"subfolders": []
 	},

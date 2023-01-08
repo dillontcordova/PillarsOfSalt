@@ -1,0 +1,13 @@
+{
+	"name": "tileMaps",
+	"plugin-id": "Tilemap",
+	"sid": 132419448610557,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"tm_grassLand",
+		"tm_staryNight",
+		"tm_platform"
+	]
+}
