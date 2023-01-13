@@ -42,6 +42,7 @@
 		"spr_slugDoll",
 		"spr_playerDoll",
 		"spr_goblinKnifeDoll",
-		"spr_blobEnemyDoll"
+		"spr_blobEnemyDoll",
+		"spr_enemyBatDoll"
 	]
 }

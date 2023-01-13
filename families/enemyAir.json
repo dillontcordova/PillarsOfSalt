@@ -1,0 +1,47 @@
+{
+	"name": "enemyAir",
+	"plugin-id": "Sprite",
+	"sid": 921621502132044,
+	"instanceVariables": [
+		{
+			"name": "origX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 388404346846482
+		},
+		{
+			"name": "origY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 399333009859521
+		},
+		{
+			"name": "mindlessRange",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 482458076562243
+		},
+		{
+			"name": "nextX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 559322314294086
+		},
+		{
+			"name": "nextY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 249135674470671
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyBat"
+	]
+}

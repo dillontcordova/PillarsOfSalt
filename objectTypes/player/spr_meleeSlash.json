@@ -26,13 +26,13 @@
 				"frames": [
 					{
 						"width": 23,
-						"height": 10,
+						"height": 18,
 						"originX": 0.34782608695652173,
-						"originY": 0.5,
+						"originY": 0.7222222222222222,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6709108,
+						"imageSpriteId": 5490923,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -44,19 +44,24 @@
 								"name": "center",
 								"x": 0.5,
 								"y": 0.5
+							},
+							{
+								"name": "top",
+								"x": 0.6956521739130435,
+								"y": 0
 							}
 						],
 						"duration": 1
 					},
 					{
 						"width": 23,
-						"height": 10,
+						"height": 18,
 						"originX": 0.34782608695652173,
-						"originY": 0.5,
+						"originY": 0.7222222222222222,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 771225,
+						"imageSpriteId": 1073880,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -68,19 +73,24 @@
 								"name": "contact",
 								"x": 0.9565217391304348,
 								"y": 0.5
+							},
+							{
+								"name": "top",
+								"x": 0.6956521739130435,
+								"y": 0
 							}
 						],
 						"duration": 1
 					},
 					{
 						"width": 23,
-						"height": 10,
+						"height": 18,
 						"originX": 0.34782608695652173,
-						"originY": 0.5,
+						"originY": 0.7222222222222222,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7386272,
+						"imageSpriteId": 6298396,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -92,19 +102,24 @@
 								"name": "center",
 								"x": 0.5,
 								"y": 0.5
+							},
+							{
+								"name": "top",
+								"x": 0.6956521739130435,
+								"y": 0
 							}
 						],
 						"duration": 1
 					},
 					{
 						"width": 23,
-						"height": 10,
+						"height": 18,
 						"originX": 0.34782608695652173,
-						"originY": 0.5,
+						"originY": 0.7222222222222222,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7085671,
+						"imageSpriteId": 4090601,
 						"collisionPoly": {
 							"points": [
 								0.2608695652173913,
@@ -128,6 +143,11 @@
 								"name": "center",
 								"x": 0.5,
 								"y": 0.5
+							},
+							{
+								"name": "top",
+								"x": 0.6956521739130435,
+								"y": 0
 							}
 						],
 						"duration": 1
@@ -135,232 +155,6 @@
 				],
 				"sid": 448625156571740,
 				"name": "idle",
-				"isLooping": false,
-				"isPingPong": false,
-				"repeatCount": 1,
-				"repeatTo": 0,
-				"speed": 20
-			},
-			{
-				"frames": [
-					{
-						"width": 23,
-						"height": 10,
-						"originX": 0.34782608695652173,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 4637215,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "center",
-								"x": 0.5,
-								"y": 0.5
-							},
-							{
-								"name": "contact",
-								"x": 0.9565217391304348,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					},
-					{
-						"width": 23,
-						"height": 10,
-						"originX": 0.34782608695652173,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 4680174,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "contact",
-								"x": 0.9565217391304348,
-								"y": 0.5
-							},
-							{
-								"name": "center",
-								"x": 0.5,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					},
-					{
-						"width": 23,
-						"height": 10,
-						"originX": 0.34782608695652173,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 4956486,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "contact",
-								"x": 0.9565217391304348,
-								"y": 0.5
-							},
-							{
-								"name": "center",
-								"x": 0.5,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					},
-					{
-						"width": 23,
-						"height": 10,
-						"originX": 0.34782608695652173,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 8959744,
-						"collisionPoly": {
-							"points": [
-								0.2608695652173913,
-								0,
-								0.43478260869565216,
-								0,
-								0.43478260869565216,
-								1,
-								0.2608695652173913,
-								1
-							]
-						},
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "contact",
-								"x": 0.9565217391304348,
-								"y": 0.5
-							},
-							{
-								"name": "center",
-								"x": 0.5,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					}
-				],
-				"sid": 924610017096919,
-				"name": "idle2",
-				"isLooping": false,
-				"isPingPong": false,
-				"repeatCount": 1,
-				"repeatTo": 0,
-				"speed": 20
-			},
-			{
-				"frames": [
-					{
-						"width": 15,
-						"height": 10,
-						"originX": 0,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 5290937,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "contact",
-								"x": 0.9333333333333333,
-								"y": 0.5
-							},
-							{
-								"name": "center",
-								"x": 0.5,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					},
-					{
-						"width": 15,
-						"height": 10,
-						"originX": 0,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 9481086,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "center",
-								"x": 0.5,
-								"y": 0.5
-							},
-							{
-								"name": "contact",
-								"x": 0.9333333333333333,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					},
-					{
-						"width": 15,
-						"height": 10,
-						"originX": 0,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 7552937,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "contact",
-								"x": 0.9333333333333333,
-								"y": 0.5
-							},
-							{
-								"name": "center",
-								"x": 0.5,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					},
-					{
-						"width": 15,
-						"height": 10,
-						"originX": 0,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 9234640,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "contact",
-								"x": 0.9333333333333333,
-								"y": 0.5
-							},
-							{
-								"name": "center",
-								"x": 0.5,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					}
-				],
-				"sid": 398287752102200,
-				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

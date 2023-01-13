@@ -4,7 +4,7 @@
 	"sid": 385003893263657,
 	"instanceVariables": [
 		{
-			"name": "damage",
+			"name": "touchDamage",
 			"type": "number",
 			"desc": "",
 			"show": true,
@@ -16,6 +16,7 @@
 	"members": [
 		"spr_enemyGround",
 		"spr_enemyGoblinKnife",
-		"spr_enemyBlob"
+		"spr_enemyBlob",
+		"spr_enemyBat"
 	]
 }

@@ -8,6 +8,7 @@
 	"members": [
 		"spr_enemyGround",
 		"spr_enemyGoblinKnife",
-		"spr_enemyBlob"
+		"spr_enemyBlob",
+		"spr_enemyBat"
 	]
 }

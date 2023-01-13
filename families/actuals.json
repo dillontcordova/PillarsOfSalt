@@ -59,6 +59,11 @@
 			"behaviorId": "aaXe_FSM",
 			"name": "FSM",
 			"sid": 746821681919570
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 200476498909142
 		}
 	],
 	"effectTypes": [],
@@ -66,6 +71,7 @@
 		"spr_playerActual",
 		"spr_enemyGround",
 		"spr_enemyGoblinKnife",
-		"spr_enemyBlob"
+		"spr_enemyBlob",
+		"spr_enemyBat"
 	]
 }

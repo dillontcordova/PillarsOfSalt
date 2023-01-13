@@ -111,6 +111,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
@@ -343,7 +351,8 @@
 			"spr_gear",
 			"Sprite",
 			"Text",
-			"par_refresh"
+			"par_refresh",
+			"Array"
 		],
 		"subfolders": [
 			{
@@ -432,7 +441,8 @@
 					"spr_playerDoll",
 					"spr_slugDoll",
 					"spr_goblinKnifeDoll",
-					"spr_blobEnemyDoll"
+					"spr_blobEnemyDoll",
+					"spr_enemyBatDoll"
 				],
 				"subfolders": [],
 				"name": "dolls"
@@ -458,7 +468,8 @@
 				"items": [
 					"spr_enemyGround",
 					"spr_enemyGoblinKnife",
-					"spr_enemyBlob"
+					"spr_enemyBlob",
+					"spr_enemyBat"
 				],
 				"subfolders": [],
 				"name": "enemies"
@@ -469,7 +480,8 @@
 					"spr_visibilityBounding",
 					"spr_meleeSlash",
 					"spr_hitMark",
-					"spr_playerSingleton"
+					"spr_playerSingleton",
+					"spr_meleeSlashTileMap"
 				],
 				"subfolders": [],
 				"name": "player"
@@ -480,7 +492,8 @@
 					"spr_enemyGroundSpawn",
 					"spr_hudSpawn",
 					"spr_enemyGoblinKnifeSpawn",
-					"spr_enemyBlobSpawn"
+					"spr_enemyBlobSpawn",
+					"spr_enemyAirBatSpawn"
 				],
 				"subfolders": [],
 				"name": "spawnPoints"
@@ -582,7 +595,9 @@
 			"doors",
 			"keys",
 			"deathOnTouch",
-			"exitScenes"
+			"exitScenes",
+			"tileMaps",
+			"enemyAir"
 		],
 		"subfolders": []
 	},

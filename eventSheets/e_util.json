@@ -973,6 +973,139 @@
 				}
 			],
 			"sid": 971677484167875
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "tileMaps",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "getTileFromXY",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "string",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 996124088520699
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 586307643316617
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 949414973528695,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "tileX",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 514289555475358
+						},
+						{
+							"eventType": "variable",
+							"name": "tileY",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 675673909203211
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 115993637445312,
+									"parameters": {
+										"variable": "tileX",
+										"value": "tileMaps.PositionToTileX(X)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 757986280259510,
+									"parameters": {
+										"variable": "tileY",
+										"value": "tileMaps.PositionToTileY(Y)"
+									}
+								}
+							],
+							"sid": 781317336002580
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "tileMaps",
+									"sid": 837115563540858,
+									"parameters": {
+										"tile-x": "tileX",
+										"tile-y": "tileY",
+										"comparison": 5,
+										"tile": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 973181093762777,
+									"parameters": {
+										"value": "tileX & \",\" & tileY"
+									}
+								}
+							],
+							"sid": 445583244009827
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 313299833030266
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 480540777970278,
+									"parameters": {
+										"value": "\"-1,-1\""
+									}
+								}
+							],
+							"sid": 555116104491400
+						}
+					]
+				}
+			],
+			"sid": 681113663432652
 		}
 	],
 	"sid": 705044040744188

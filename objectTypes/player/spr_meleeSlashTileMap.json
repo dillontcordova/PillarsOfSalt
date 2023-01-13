@@ -1,0 +1,109 @@
+{
+	"name": "spr_meleeSlashTileMap",
+	"plugin-id": "Sprite",
+	"sid": 964313622026665,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "lastHitUid",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 997121496627045
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 782613922632016
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 23,
+						"height": 9,
+						"originX": 0.34782608695652173,
+						"originY": 0.4444444444444444,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4628601,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "contact",
+								"x": 0.9565217391304348,
+								"y": 0
+							},
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0
+							},
+							{
+								"name": "top",
+								"x": 0.6956521739130435,
+								"y": -1
+							}
+						],
+						"duration": 3
+					},
+					{
+						"width": 23,
+						"height": 9,
+						"originX": 0.34782608695652173,
+						"originY": 0.4444444444444444,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3158262,
+						"collisionPoly": {
+							"points": [
+								0.2608695652173913,
+								0.2222222222222222,
+								0.34782608695652173,
+								0.2222222222222222,
+								0.34782608695652173,
+								0.8222222222222224,
+								0.2608695652173913,
+								0.8222222222222224
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "contact",
+								"x": 0.9565217391304348,
+								"y": 0
+							},
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0
+							},
+							{
+								"name": "top",
+								"x": 0.6956521739130435,
+								"y": -1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 497669497542581,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 20
+			}
+		],
+		"subfolders": []
+	}
+}
