@@ -17,6 +17,7 @@
 		"spr_enemyGroundSpawn",
 		"spr_playerSpawn",
 		"spr_enemyGoblinKnifeSpawn",
-		"spr_enemyBlobSpawn"
+		"spr_enemyBlobSpawn",
+		"spr_enemyAirBatSpawn"
 	]
 }

@@ -56,6 +56,16 @@
 						{
 							"id": "set-enabled",
 							"objectClass": "spr_playerActual",
+							"sid": 688597199384508,
+							"disabled": true,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"enabled": true
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "spr_playerActual",
 							"sid": 488963988003435,
 							"behaviorType": "Platform",
 							"parameters": {
@@ -5043,6 +5053,29 @@
 															"conditions": [
 																{
 																	"id": "pick-by-unique-id",
+																	"objectClass": "damageOnTouch",
+																	"sid": 662299751003781,
+																	"parameters": {
+																		"unique-id": "enemies.UID"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "playerHit",
+																	"sid": 547829110988126,
+																	"parameters": [
+																		"damageOnTouch.touchDamage"
+																	]
+																}
+															],
+															"sid": 406801400386839
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-unique-id",
 																	"objectClass": "bounceOnEnemies",
 																	"sid": 683117045454222,
 																	"parameters": {
@@ -5052,6 +5085,7 @@
 															],
 															"actions": [],
 															"sid": 476417927137758,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -5098,8 +5132,7 @@
 																		{
 																			"id": "else",
 																			"objectClass": "System",
-																			"sid": 369559976770942,
-																			"disabled": true
+																			"sid": 369559976770942
 																		},
 																		{
 																			"id": "pick-by-unique-id",
@@ -5115,11 +5148,12 @@
 																			"callFunction": "playerHit",
 																			"sid": 677422465445490,
 																			"parameters": [
-																				"damageOnTouch.damage"
+																				"damageOnTouch.touchDamage"
 																			]
 																		}
 																	],
-																	"sid": 979575174194840
+																	"sid": 979575174194840,
+																	"disabled": true
 																}
 															]
 														}
