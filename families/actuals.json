@@ -64,6 +64,11 @@
 			"behaviorId": "Sin",
 			"name": "Sine",
 			"sid": 200476498909142
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 705502713996718
 		}
 	],
 	"effectTypes": [],
@@ -72,6 +77,7 @@
 		"spr_enemyGround",
 		"spr_enemyGoblinKnife",
 		"spr_enemyBlob",
-		"spr_enemyBat"
+		"spr_enemyBat",
+		"spr_enemyWorm"
 	]
 }

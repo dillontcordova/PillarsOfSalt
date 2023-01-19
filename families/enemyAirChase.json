@@ -1,0 +1,17 @@
+{
+	"name": "enemyAirChase",
+	"plugin-id": "Sprite",
+	"sid": 328931655012002,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 446765963407602
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyBat"
+	]
+}

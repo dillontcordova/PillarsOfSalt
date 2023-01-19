@@ -1,0 +1,71 @@
+{
+	"name": "spr_enemyWorm",
+	"plugin-id": "Sprite",
+	"sid": 660512250348064,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2598035,
+						"collisionPoly": {
+							"points": [
+								1,
+								0,
+								1,
+								1,
+								0,
+								1,
+								0,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "R1",
+								"x": 0.6,
+								"y": 0.5
+							},
+							{
+								"name": "L1",
+								"x": 0.8,
+								"y": -0.375
+							},
+							{
+								"name": "LM",
+								"x": 0.5,
+								"y": -0.375
+							},
+							{
+								"name": "F",
+								"x": 0.9,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 957006281413127,
+				"name": "idle",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 12
+			}
+		],
+		"subfolders": []
+	}
+}

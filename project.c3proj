@@ -442,7 +442,8 @@
 					"spr_slugDoll",
 					"spr_goblinKnifeDoll",
 					"spr_blobEnemyDoll",
-					"spr_enemyBatDoll"
+					"spr_enemyBatDoll",
+					"spr_enemyWormDoll"
 				],
 				"subfolders": [],
 				"name": "dolls"
@@ -469,7 +470,8 @@
 					"spr_enemyGround",
 					"spr_enemyGoblinKnife",
 					"spr_enemyBlob",
-					"spr_enemyBat"
+					"spr_enemyBat",
+					"spr_enemyWorm"
 				],
 				"subfolders": [],
 				"name": "enemies"
@@ -493,7 +495,8 @@
 					"spr_hudSpawn",
 					"spr_enemyGoblinKnifeSpawn",
 					"spr_enemyBlobSpawn",
-					"spr_enemyAirBatSpawn"
+					"spr_enemyAirBatSpawn",
+					"spr_enemyWormSpawn"
 				],
 				"subfolders": [],
 				"name": "spawnPoints"
@@ -597,7 +600,9 @@
 			"deathOnTouch",
 			"exitScenes",
 			"tileMaps",
-			"enemyAir"
+			"enemyAir",
+			"enemyAirChase",
+			"enemyCrawler"
 		],
 		"subfolders": []
 	},

@@ -184,536 +184,35 @@
 							"isActiveOnStart": true,
 							"children": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-created",
-											"objectClass": "enemyAir",
-											"sid": 417827421273441
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "enemyAir",
-											"sid": 178010696733349,
-											"parameters": {
-												"instance-variable": "origX",
-												"value": "Self.X"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "enemyAir",
-											"sid": 826032600238137,
-											"parameters": {
-												"instance-variable": "origY",
-												"value": "Self.Y"
-											}
-										}
-									],
-									"sid": 868828836138281,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "actuals",
-													"sid": 602952791476396,
-													"parameters": {
-														"unique-id": "enemyAir.UID"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-active",
-													"objectClass": "actuals",
-													"sid": 414795115751101,
-													"behaviorType": "Sine",
-													"parameters": {
-														"state": "active"
-													}
-												},
-												{
-													"id": "set-enabled",
-													"objectClass": "actuals",
-													"sid": 197825746339250,
-													"behaviorType": "Platform",
-													"parameters": {
-														"state": "enabled"
-													}
-												},
-												{
-													"id": "set-ignoring-input",
-													"objectClass": "actuals",
-													"sid": 698842130732540,
-													"behaviorType": "Platform",
-													"parameters": {
-														"input": "start-ignoring"
-													}
-												},
-												{
-													"id": "set-enabled",
-													"objectClass": "actuals",
-													"sid": 798688253106622,
-													"behaviorType": "MoveTo",
-													"parameters": {
-														"enabled": true
-													}
-												},
-												{
-													"id": "set-stop-on-solids",
-													"objectClass": "actuals",
-													"sid": 478514813544414,
-													"behaviorType": "MoveTo",
-													"parameters": {
-														"enabled": true
-													}
-												},
-												{
-													"id": "set-max-speed",
-													"objectClass": "actuals",
-													"sid": 128304059261234,
-													"behaviorType": "MoveTo",
-													"parameters": {
-														"max-speed": "20"
-													}
-												},
-												{
-													"id": "goto-state",
-													"objectClass": "actuals",
-													"sid": 937981598166068,
-													"behaviorType": "FSM",
-													"parameters": {
-														"name0": "\"wondering\""
-													}
-												}
-											],
-											"sid": 148929031050545
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-arrived",
-											"objectClass": "actuals",
-											"sid": 482737996016093,
-											"behaviorType": "MoveTo"
-										},
-										{
-											"id": "on-hit-solid",
-											"objectClass": "actuals",
-											"sid": 624671128244030,
-											"behaviorType": "MoveTo"
-										}
-									],
-									"actions": [
-										{
-											"id": "stop",
-											"objectClass": "actuals",
-											"sid": 337697269886057,
-											"behaviorType": "MoveTo"
-										}
-									],
-									"sid": 961708662532877,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "enemyAir",
-													"sid": 105618995151526,
-													"parameters": {
-														"unique-id": "actuals.UID"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "setState",
-													"sid": 950230808187261,
-													"parameters": [
-														"\"hovering\"",
-														"enemyAir.UID"
-													]
-												}
-											],
-											"sid": 238396947858913
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-timer",
-											"objectClass": "enemies",
-											"sid": 342311702137323,
-											"behaviorType": "Timer",
-											"parameters": {
-												"tag": "\"hoverDelay\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 985739020212402,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "enemyAir",
-													"sid": 782167962982703,
-													"parameters": {
-														"unique-id": "enemies.UID"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "setState",
-													"sid": 589677553015038,
-													"parameters": [
-														"\"wondering\"",
-														"enemies.UID"
-													]
-												}
-											],
-											"sid": 596244584690322
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for-each",
-											"objectClass": "System",
-											"sid": 172792329442263,
-											"parameters": {
-												"object": "enemyAir"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 775201174104404,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "actuals",
-													"sid": 379251701112094,
-													"parameters": {
-														"unique-id": "enemyAir.UID"
-													}
-												},
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "enemies",
-													"sid": 968571335064642,
-													"parameters": {
-														"unique-id": "enemyAir.UID"
-													}
-												},
-												{
-													"id": "pick-children",
-													"objectClass": "enemyAir",
-													"sid": 573988174907922,
-													"parameters": {
-														"child": "dolls",
-														"which": "own"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 951788711265165,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-current-state",
-															"objectClass": "actuals",
-															"sid": 220068108232584,
-															"behaviorType": "FSM",
-															"parameters": {
-																"name0": "\"hovering\""
-															}
-														}
-													],
-													"actions": [],
-													"sid": 665737784796622,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-timer-running",
-																	"objectClass": "enemies",
-																	"sid": 222556080670752,
-																	"behaviorType": "Timer",
-																	"parameters": {
-																		"tag": "\"hoverDelay\""
-																	},
-																	"isInverted": true
-																}
-															],
-															"actions": [
-																{
-																	"id": "start-timer",
-																	"objectClass": "enemies",
-																	"sid": 802501868589648,
-																	"behaviorType": "Timer",
-																	"parameters": {
-																		"duration": "random(.25, 1.25)",
-																		"type": "once",
-																		"tag": "\"hoverDelay\""
-																	}
-																}
-															],
-															"sid": 992422291908772
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-current-state",
-															"objectClass": "actuals",
-															"sid": 950275261475647,
-															"behaviorType": "FSM",
-															"parameters": {
-																"name0": "\"wondering\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-instvar-value",
-															"objectClass": "enemyAir",
-															"sid": 541803012069221,
-															"parameters": {
-																"instance-variable": "nextX",
-																"value": "enemyAir.origX + (random(-enemyAir.mindlessRange, enemyAir.mindlessRange))"
-															}
-														},
-														{
-															"id": "set-instvar-value",
-															"objectClass": "enemyAir",
-															"sid": 585771643349832,
-															"parameters": {
-																"instance-variable": "nextY",
-																"value": "enemyAir.origY + (random(-enemyAir.mindlessRange, enemyAir.mindlessRange))"
-															}
-														}
-													],
-													"sid": 139409769320923,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-boolean-instance-variable-set",
-																	"objectClass": "enemies",
-																	"sid": 355515686683081,
-																	"parameters": {
-																		"instance-variable": "isRight"
-																	}
-																},
-																{
-																	"id": "compare-x",
-																	"objectClass": "enemyAir",
-																	"sid": 310620460103896,
-																	"parameters": {
-																		"comparison": 4,
-																		"x-co-ordinate": "Self.nextX"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "setState",
-																	"sid": 670312694996840,
-																	"parameters": [
-																		"\"turnAround\"",
-																		"actuals.UID"
-																	]
-																}
-															],
-															"sid": 720969106296239
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 609645913114959
-																},
-																{
-																	"id": "is-boolean-instance-variable-set",
-																	"objectClass": "enemies",
-																	"sid": 673098836859030,
-																	"parameters": {
-																		"instance-variable": "isRight"
-																	},
-																	"isInverted": true
-																},
-																{
-																	"id": "compare-x",
-																	"objectClass": "enemyAir",
-																	"sid": 392762187606066,
-																	"parameters": {
-																		"comparison": 2,
-																		"x-co-ordinate": "Self.nextX"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "setState",
-																	"sid": 385147335799678,
-																	"parameters": [
-																		"\"turnAround\"",
-																		"actuals.UID"
-																	]
-																}
-															],
-															"sid": 447903365430068
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 512974405314752
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "setState",
-																	"sid": 934168163243333,
-																	"parameters": [
-																		"\"moving\"",
-																		"actuals.UID"
-																	]
-																}
-															],
-															"sid": 660161283207761
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-current-state",
-															"objectClass": "actuals",
-															"sid": 245075916773213,
-															"behaviorType": "FSM",
-															"parameters": {
-																"name0": "\"turnAround\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "turnAroundToState",
-															"sid": 308230248696814,
-															"parameters": [
-																"\"moving\""
-															]
-														}
-													],
-													"sid": 695766646413440
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-current-state",
-															"objectClass": "actuals",
-															"sid": 145175666458615,
-															"behaviorType": "FSM",
-															"parameters": {
-																"name0": "\"moving\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "enemyAirMove",
-															"sid": 330545821291741
-														}
-													],
-													"sid": 404268251848030,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-moving",
-																	"objectClass": "actuals",
-																	"sid": 129062151623686,
-																	"behaviorType": "MoveTo",
-																	"isInverted": true
-																}
-															],
-															"actions": [
-																{
-																	"id": "move-to-position",
-																	"objectClass": "actuals",
-																	"sid": 843458274357539,
-																	"behaviorType": "MoveTo",
-																	"parameters": {
-																		"x": "enemyAir.nextX",
-																		"y": "enemyAir.nextY",
-																		"mode": "direct"
-																	}
-																}
-															],
-															"sid": 865323996689421
-														}
-													]
-												}
-											]
-										}
-									]
-								},
-								{
 									"functionName": "enemyAirMove",
 									"functionDescription": "",
 									"functionCategory": "enemy",
 									"functionReturnType": "none",
 									"functionCopyPicked": true,
 									"functionIsAsync": false,
-									"functionParameters": [],
+									"functionParameters": [
+										{
+											"name": "animation",
+											"type": "string",
+											"initialValue": "idle",
+											"comment": "",
+											"sid": 789508711834627
+										}
+									],
 									"eventType": "function-block",
 									"conditions": [],
 									"actions": [
 										{
 											"id": "set-animation",
 											"objectClass": "dolls",
-											"sid": 158821829296213,
+											"sid": 629790372895715,
 											"parameters": {
-												"animation": "\"idle\"",
+												"animation": "animation",
 												"from": "beginning"
 											}
 										}
 									],
-									"sid": 642019887638845,
+									"sid": 813324727732599,
 									"children": [
 										{
 											"eventType": "block",
@@ -721,7 +220,7 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "enemies",
-													"sid": 675891820831454,
+													"sid": 107297755101289,
 													"parameters": {
 														"instance-variable": "isRight"
 													}
@@ -731,13 +230,13 @@
 												{
 													"id": "set-mirrored",
 													"objectClass": "dolls",
-													"sid": 642278295403432,
+													"sid": 891664691677872,
 													"parameters": {
 														"state": "not-mirrored"
 													}
 												}
 											],
-											"sid": 149827533189394
+											"sid": 126433830269328
 										},
 										{
 											"eventType": "block",
@@ -745,22 +244,737 @@
 												{
 													"id": "else",
 													"objectClass": "System",
-													"sid": 407575945474435
+													"sid": 279039367633527
 												}
 											],
 											"actions": [
 												{
 													"id": "set-mirrored",
 													"objectClass": "dolls",
-													"sid": 497822905249358,
+													"sid": 706513767466975,
 													"parameters": {
 														"state": "mirrored"
 													}
 												}
 											],
-											"sid": 783264157888940
+											"sid": 661731131048942
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "enemyAir",
+											"sid": 461451196157525
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemyAir",
+											"sid": 890004725757701,
+											"parameters": {
+												"instance-variable": "origX",
+												"value": "Self.X"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemyAir",
+											"sid": 366677942241528,
+											"parameters": {
+												"instance-variable": "origY",
+												"value": "Self.Y"
+											}
+										}
+									],
+									"sid": 213068090384387,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 352882150698658,
+													"parameters": {
+														"unique-id": "enemyAir.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-active",
+													"objectClass": "actuals",
+													"sid": 902783951158570,
+													"behaviorType": "Sine",
+													"parameters": {
+														"state": "active"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "actuals",
+													"sid": 926154233765778,
+													"behaviorType": "Platform",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"id": "set-ignoring-input",
+													"objectClass": "actuals",
+													"sid": 668841066870390,
+													"behaviorType": "Platform",
+													"parameters": {
+														"input": "start-ignoring"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "actuals",
+													"sid": 488104042651498,
+													"behaviorType": "MoveTo",
+													"parameters": {
+														"enabled": true
+													}
+												},
+												{
+													"id": "set-stop-on-solids",
+													"objectClass": "actuals",
+													"sid": 416609779478470,
+													"behaviorType": "MoveTo",
+													"parameters": {
+														"enabled": true
+													}
+												},
+												{
+													"id": "set-max-speed",
+													"objectClass": "actuals",
+													"sid": 334733799147549,
+													"behaviorType": "MoveTo",
+													"parameters": {
+														"max-speed": "20"
+													}
+												},
+												{
+													"id": "goto-state",
+													"objectClass": "actuals",
+													"sid": 632353632252720,
+													"behaviorType": "FSM",
+													"parameters": {
+														"name0": "\"wondering\""
+													}
+												}
+											],
+											"sid": 727694297626646
+										}
+									]
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "basicIdleFlight",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-arrived",
+													"objectClass": "actuals",
+													"sid": 996530835048001,
+													"behaviorType": "MoveTo"
+												},
+												{
+													"id": "on-hit-solid",
+													"objectClass": "actuals",
+													"sid": 408876177946731,
+													"behaviorType": "MoveTo"
+												}
+											],
+											"actions": [],
+											"sid": 968593087326330,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "enemyAir",
+															"sid": 681450801722374,
+															"parameters": {
+																"unique-id": "actuals.UID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "setState",
+															"sid": 440860186425675,
+															"parameters": [
+																"\"hovering\"",
+																"enemyAir.UID"
+															]
+														}
+													],
+													"sid": 225545687682768
+												}
+											],
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "enemies",
+													"sid": 674757791841919,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"hoverDelay\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 916091609137634,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "enemyAir",
+															"sid": 138037689034296,
+															"parameters": {
+																"unique-id": "enemies.UID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "setState",
+															"sid": 315289103332030,
+															"parameters": [
+																"\"wondering\"",
+																"enemies.UID"
+															]
+														}
+													],
+													"sid": 399612956032016
+												}
+											],
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 772184354495655,
+													"parameters": {
+														"object": "enemyAir"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 336080614932810,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "actuals",
+															"sid": 914371443344376,
+															"parameters": {
+																"unique-id": "enemyAir.UID"
+															}
+														},
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "enemies",
+															"sid": 978499192308488,
+															"parameters": {
+																"unique-id": "enemyAir.UID"
+															}
+														},
+														{
+															"id": "pick-children",
+															"objectClass": "enemyAir",
+															"sid": 906606140595209,
+															"parameters": {
+																"child": "dolls",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 954387831532143,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-current-state",
+																	"objectClass": "actuals",
+																	"sid": 134086166367546,
+																	"behaviorType": "FSM",
+																	"parameters": {
+																		"name0": "\"hovering\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 288102601758639,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-timer-running",
+																			"objectClass": "enemies",
+																			"sid": 367752397691737,
+																			"behaviorType": "Timer",
+																			"parameters": {
+																				"tag": "\"hoverDelay\""
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "start-timer",
+																			"objectClass": "enemies",
+																			"sid": 693835903586584,
+																			"behaviorType": "Timer",
+																			"parameters": {
+																				"duration": "random(.25, 1.25)",
+																				"type": "once",
+																				"tag": "\"hoverDelay\""
+																			}
+																		}
+																	],
+																	"sid": 404968086144382
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-current-state",
+																	"objectClass": "actuals",
+																	"sid": 764062108002295,
+																	"behaviorType": "FSM",
+																	"parameters": {
+																		"name0": "\"wondering\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "enemyAir",
+																	"sid": 249344828192873,
+																	"parameters": {
+																		"instance-variable": "nextX",
+																		"value": "enemyAir.origX + (random(-enemyAir.mindlessRange, enemyAir.mindlessRange))"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "enemyAir",
+																	"sid": 495206032584353,
+																	"parameters": {
+																		"instance-variable": "nextY",
+																		"value": "enemyAir.origY + (random(-enemyAir.mindlessRange, enemyAir.mindlessRange))"
+																	}
+																}
+															],
+															"sid": 296182932171417,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-boolean-instance-variable-set",
+																			"objectClass": "enemies",
+																			"sid": 663327707807276,
+																			"parameters": {
+																				"instance-variable": "isRight"
+																			}
+																		},
+																		{
+																			"id": "compare-x",
+																			"objectClass": "enemyAir",
+																			"sid": 832074985163521,
+																			"parameters": {
+																				"comparison": 4,
+																				"x-co-ordinate": "Self.nextX"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "setState",
+																			"sid": 940863318292837,
+																			"parameters": [
+																				"\"turnAround\"",
+																				"actuals.UID"
+																			]
+																		}
+																	],
+																	"sid": 518846097377649
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 447383308624420
+																		},
+																		{
+																			"id": "is-boolean-instance-variable-set",
+																			"objectClass": "enemies",
+																			"sid": 146262255868480,
+																			"parameters": {
+																				"instance-variable": "isRight"
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-x",
+																			"objectClass": "enemyAir",
+																			"sid": 258713763889541,
+																			"parameters": {
+																				"comparison": 2,
+																				"x-co-ordinate": "Self.nextX"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "setState",
+																			"sid": 891855445616234,
+																			"parameters": [
+																				"\"turnAround\"",
+																				"actuals.UID"
+																			]
+																		}
+																	],
+																	"sid": 609611249396512
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 174612995810563
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "setState",
+																			"sid": 881837872345195,
+																			"parameters": [
+																				"\"moving\"",
+																				"actuals.UID"
+																			]
+																		}
+																	],
+																	"sid": 306201892518550
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-current-state",
+																	"objectClass": "actuals",
+																	"sid": 613187633983532,
+																	"behaviorType": "FSM",
+																	"parameters": {
+																		"name0": "\"turnAround\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "turnAroundToState",
+																	"sid": 857383443676915,
+																	"parameters": [
+																		"\"moving\""
+																	]
+																}
+															],
+															"sid": 466292361011760
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-current-state",
+																	"objectClass": "actuals",
+																	"sid": 772997361400998,
+																	"behaviorType": "FSM",
+																	"parameters": {
+																		"name0": "\"moving\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "enemyAirMove",
+																	"sid": 355116716031546,
+																	"parameters": [
+																		"\"idle\""
+																	]
+																}
+															],
+															"sid": 220841910228524,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-moving",
+																			"objectClass": "actuals",
+																			"sid": 160166447211764,
+																			"behaviorType": "MoveTo",
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "move-to-position",
+																			"objectClass": "actuals",
+																			"sid": 289761088262331,
+																			"behaviorType": "MoveTo",
+																			"parameters": {
+																				"x": "enemyAir.nextX",
+																				"y": "enemyAir.nextY",
+																				"mode": "direct"
+																			}
+																		}
+																	],
+																	"sid": 448213295108193
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									],
+									"sid": 392607270212795
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "chaseFlight",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-created",
+													"objectClass": "enemyAirChase",
+													"sid": 536781896224295
+												}
+											],
+											"actions": [],
+											"sid": 173465958366380,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 262246972924792,
+													"parameters": {
+														"object": "enemyAirChase"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 724801108558015,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "actuals",
+															"sid": 973903349634530,
+															"parameters": {
+																"unique-id": "enemyAirChase.UID"
+															}
+														},
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "enemies",
+															"sid": 500679507097678,
+															"parameters": {
+																"unique-id": "enemyAirChase.UID"
+															}
+														},
+														{
+															"id": "pick-children",
+															"objectClass": "enemyAirChase",
+															"sid": 486649923758844,
+															"parameters": {
+																"child": "dolls",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 893160683153431,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-current-state",
+																	"objectClass": "actuals",
+																	"sid": 110318005680875,
+																	"behaviorType": "FSM",
+																	"parameters": {
+																		"name0": "\"chase\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 263247562037463,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "has-los-to-object",
+																			"objectClass": "enemyAirChase",
+																			"sid": 785019638939984,
+																			"behaviorType": "LineOfSight",
+																			"parameters": {
+																				"object": "spr_playerActual",
+																				"image-point": "0"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "enemyAirMove",
+																			"sid": 160310803681850,
+																			"parameters": [
+																				"\"chase\""
+																			]
+																		},
+																		{
+																			"id": "move-to-position",
+																			"objectClass": "actuals",
+																			"sid": 886249995649328,
+																			"behaviorType": "MoveTo",
+																			"parameters": {
+																				"x": "spr_playerActual.ImagePointX(\"center\")",
+																				"y": "spr_playerActual.ImagePointY(\"center\")",
+																				"mode": "direct"
+																			}
+																		}
+																	],
+																	"sid": 639598763779648
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 592666289270775
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "stop",
+																			"objectClass": "actuals",
+																			"sid": 337949848104189,
+																			"behaviorType": "MoveTo"
+																		},
+																		{
+																			"callFunction": "setState",
+																			"sid": 402849442199871,
+																			"parameters": [
+																				"\"wondering\"",
+																				"enemyAirChase.UID"
+																			]
+																		}
+																	],
+																	"sid": 417447252306369
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-current-state",
+																	"objectClass": "actuals",
+																	"sid": 134337312504213,
+																	"behaviorType": "FSM",
+																	"parameters": {
+																		"name0": "\"death\""
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [],
+															"sid": 846080304257645,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "has-los-to-object",
+																			"objectClass": "enemyAirChase",
+																			"sid": 853720241861854,
+																			"behaviorType": "LineOfSight",
+																			"parameters": {
+																				"object": "spr_playerActual",
+																				"image-point": "0"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "setState",
+																			"sid": 670477309303331,
+																			"parameters": [
+																				"\"chase\"",
+																				"enemyAirChase.UID"
+																			]
+																		}
+																	],
+																	"sid": 714224063596351
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									],
+									"sid": 317219353850686
 								}
 							],
 							"sid": 435158985229605
@@ -1851,6 +2065,292 @@
 								}
 							],
 							"sid": 160225283932558
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "crawler",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "enemyCrawler",
+											"sid": 456483827882688
+										}
+									],
+									"actions": [],
+									"sid": 390442148943208,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 883920174643916,
+													"parameters": {
+														"unique-id": "enemyCrawler.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "actuals",
+													"sid": 571181824741113,
+													"behaviorType": "Tween",
+													"parameters": {
+														"mode": "enabled"
+													}
+												}
+											],
+											"sid": 687704413550997
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 888527454458269,
+											"parameters": {
+												"object": "enemyCrawler"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 527255141700965,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 729197206861898,
+													"parameters": {
+														"unique-id": "enemyCrawler.UID"
+													}
+												},
+												{
+													"id": "is-any-playing",
+													"objectClass": "actuals",
+													"sid": 559265148261911,
+													"behaviorType": "Tween",
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 134409009388087,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "move-at-angle",
+															"objectClass": "actuals",
+															"sid": 546787033827815,
+															"parameters": {
+																"angle": "Self.Angle",
+																"distance": ".5"
+															}
+														}
+													],
+													"sid": 965018310110524
+												},
+												{
+													"eventType": "comment",
+													"text": "Check if Left image point is NOT overlapping blocks - to maybe turn left"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-overlapping-point",
+															"objectClass": "System",
+															"sid": 786647590588621,
+															"parameters": {
+																"object": "tm_platform",
+																"x": "actuals.ImagePointX(\"LM\")",
+																"y": "actuals.ImagePointY(\"LM\")"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 435744479162599,
+													"children": [
+														{
+															"eventType": "variable",
+															"name": "rX",
+															"type": "number",
+															"initialValue": "0",
+															"comment": "",
+															"isStatic": false,
+															"isConstant": false,
+															"sid": 201416717125412
+														},
+														{
+															"eventType": "variable",
+															"name": "rY",
+															"type": "number",
+															"initialValue": "0",
+															"comment": "",
+															"isStatic": false,
+															"isConstant": false,
+															"sid": 912487403319860
+														},
+														{
+															"eventType": "comment",
+															"text": "If Forward image point IS overlapping block - \nturn right."
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-overlapping-point",
+																	"objectClass": "System",
+																	"sid": 949078184790903,
+																	"parameters": {
+																		"object": "tm_platform",
+																		"x": "actuals.ImagePointX(\"F\")",
+																		"y": "actuals.ImagePointY(\"F\")"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 718003420689919,
+																	"parameters": {
+																		"variable": "rX",
+																		"value": "actuals.ImagePointX(\"R1\")"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 118695275970960,
+																	"parameters": {
+																		"variable": "rY",
+																		"value": "actuals.ImagePointY(\"R1\")"
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "actuals",
+																	"sid": 650393020237171,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "position",
+																		"end-x": "rX",
+																		"end-y": "rY",
+																		"time": "enemyCrawler.rotateSpeed",
+																		"ease": "default",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "no"
+																	}
+																},
+																{
+																	"id": "tween-one-property",
+																	"objectClass": "actuals",
+																	"sid": 133167117029207,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "offsetAngle",
+																		"end-value": "actuals.Angle + 90",
+																		"time": "enemyCrawler.rotateSpeed",
+																		"ease": "default",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "no"
+																	}
+																}
+															],
+															"sid": 170498017389291
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 458083456904266
+														}
+													],
+													"actions": [],
+													"sid": 780949173143608,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-overlapping-point",
+																	"objectClass": "System",
+																	"sid": 499987634313450,
+																	"parameters": {
+																		"object": "tm_platform",
+																		"x": "actuals.ImagePointX(\"L1\")",
+																		"y": "actuals.ImagePointY(\"L1\")"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 195304138092719
+														},
+														{
+															"eventType": "comment",
+															"text": "turn left."
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 987633943999428
+																}
+															],
+															"actions": [
+																{
+																	"id": "tween-one-property",
+																	"objectClass": "actuals",
+																	"sid": 952194691316752,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "offsetAngle",
+																		"end-value": "actuals.Angle - 90",
+																		"time": "enemyCrawler.rotateSpeed",
+																		"ease": "default",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "no"
+																	}
+																}
+															],
+															"sid": 259550490218545
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 739373403283011
 						}
 					],
 					"sid": 938914698929342

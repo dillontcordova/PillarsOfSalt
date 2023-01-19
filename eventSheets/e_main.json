@@ -151,6 +151,28 @@
 				}
 			],
 			"sid": 282673794829724
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "tm_platform",
+					"sid": 868260022723215
+				}
+			],
+			"actions": [
+				{
+					"id": "set-tags",
+					"objectClass": "tm_platform",
+					"sid": 536187660514366,
+					"behaviorType": "Solid",
+					"parameters": {
+						"tags": "\"platform\""
+					}
+				}
+			],
+			"sid": 441132441068413
 		}
 	],
 	"sid": 809440588065565

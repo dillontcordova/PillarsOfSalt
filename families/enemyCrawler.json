@@ -1,0 +1,26 @@
+{
+	"name": "enemyCrawler",
+	"plugin-id": "Sprite",
+	"sid": 613205951896222,
+	"instanceVariables": [
+		{
+			"name": "rotateSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 521083216548659
+		},
+		{
+			"name": "speed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 328948868026784
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyWorm"
+	]
+}

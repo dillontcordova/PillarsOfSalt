@@ -2902,8 +2902,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 160,
-						"y": 0,
+						"x": 464,
+						"y": 176,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,
@@ -2966,6 +2966,68 @@
 					"world": {
 						"x": 80,
 						"y": 144,
+						"width": 4,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyWormSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 256,
+					"instanceVariables": {
+						"spawnName": "spr_enemyWorm"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 560,
+						"y": 240,
+						"width": 4,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyWormSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 257,
+					"instanceVariables": {
+						"spawnName": "spr_enemyWorm"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 352,
+						"y": 112,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,

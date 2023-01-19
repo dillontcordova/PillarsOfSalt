@@ -57,7 +57,6 @@
 							"id": "set-enabled",
 							"objectClass": "spr_playerActual",
 							"sid": 688597199384508,
-							"disabled": true,
 							"behaviorType": "MoveTo",
 							"parameters": {
 								"enabled": true
@@ -66,7 +65,7 @@
 						{
 							"id": "set-enabled",
 							"objectClass": "spr_playerActual",
-							"sid": 488963988003435,
+							"sid": 510228323814814,
 							"behaviorType": "Platform",
 							"parameters": {
 								"state": "enabled"

@@ -23,6 +23,7 @@
 		"spr_enemyGround",
 		"spr_enemyGoblinKnife",
 		"spr_enemyBlob",
-		"spr_enemyBat"
+		"spr_enemyBat",
+		"spr_enemyWorm"
 	]
 }
