@@ -326,7 +326,7 @@
 						{
 							"type": "tm_platform",
 							"properties": {
-								"initially-visible": false,
+								"initially-visible": true,
 								"tile-width": 16,
 								"tile-height": 16,
 								"tile-x-offset": 0,
@@ -415,7 +415,7 @@
 						{
 							"type": "tm_grassLand",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"tile-width": 16,
 								"tile-height": 16,
 								"tile-x-offset": 0,
@@ -2902,8 +2902,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 464,
-						"y": 176,
+						"x": 380,
+						"y": 184,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,

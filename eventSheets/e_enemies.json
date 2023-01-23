@@ -2106,6 +2106,14 @@
 													"parameters": {
 														"mode": "enabled"
 													}
+												},
+												{
+													"callFunction": "setState",
+													"sid": 367648405749263,
+													"parameters": [
+														"\"crawling\"",
+														"actuals.UID"
+													]
 												}
 											],
 											"sid": 687704413550997
@@ -2137,13 +2145,6 @@
 													"parameters": {
 														"unique-id": "enemyCrawler.UID"
 													}
-												},
-												{
-													"id": "is-any-playing",
-													"objectClass": "actuals",
-													"sid": 559265148261911,
-													"behaviorType": "Tween",
-													"isInverted": true
 												}
 											],
 											"actions": [],
@@ -2151,64 +2152,33 @@
 											"children": [
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 468329349442016,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"crawling\""
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "move-at-angle",
 															"objectClass": "actuals",
-															"sid": 546787033827815,
+															"sid": 322930161958214,
 															"parameters": {
 																"angle": "Self.Angle",
-																"distance": ".5"
+																"distance": "enemyCrawler.crawlSpeed* Self.dt"
 															}
 														}
 													],
-													"sid": 965018310110524
-												},
-												{
-													"eventType": "comment",
-													"text": "Check if Left image point is NOT overlapping blocks - to maybe turn left"
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-overlapping-point",
-															"objectClass": "System",
-															"sid": 786647590588621,
-															"parameters": {
-																"object": "tm_platform",
-																"x": "actuals.ImagePointX(\"LM\")",
-																"y": "actuals.ImagePointY(\"LM\")"
-															}
-														}
-													],
-													"actions": [],
-													"sid": 435744479162599,
+													"sid": 716754333080593,
 													"children": [
-														{
-															"eventType": "variable",
-															"name": "rX",
-															"type": "number",
-															"initialValue": "0",
-															"comment": "",
-															"isStatic": false,
-															"isConstant": false,
-															"sid": 201416717125412
-														},
-														{
-															"eventType": "variable",
-															"name": "rY",
-															"type": "number",
-															"initialValue": "0",
-															"comment": "",
-															"isStatic": false,
-															"isConstant": false,
-															"sid": 912487403319860
-														},
 														{
 															"eventType": "comment",
-															"text": "If Forward image point IS overlapping block - \nturn right."
+															"text": "Check if Left image point is NOT overlapping blocks - to maybe turn left"
 														},
 														{
 															"eventType": "block",
@@ -2216,103 +2186,81 @@
 																{
 																	"id": "pick-overlapping-point",
 																	"objectClass": "System",
-																	"sid": 949078184790903,
+																	"sid": 721652642926844,
 																	"parameters": {
 																		"object": "tm_platform",
-																		"x": "actuals.ImagePointX(\"F\")",
-																		"y": "actuals.ImagePointY(\"F\")"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "set-eventvar-value",
-																	"objectClass": "System",
-																	"sid": 718003420689919,
-																	"parameters": {
-																		"variable": "rX",
-																		"value": "actuals.ImagePointX(\"R1\")"
-																	}
-																},
-																{
-																	"id": "set-eventvar-value",
-																	"objectClass": "System",
-																	"sid": 118695275970960,
-																	"parameters": {
-																		"variable": "rY",
-																		"value": "actuals.ImagePointY(\"R1\")"
-																	}
-																},
-																{
-																	"id": "tween-two-properties",
-																	"objectClass": "actuals",
-																	"sid": 650393020237171,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"\"",
-																		"property": "position",
-																		"end-x": "rX",
-																		"end-y": "rY",
-																		"time": "enemyCrawler.rotateSpeed",
-																		"ease": "default",
-																		"destroy-on-complete": "no",
-																		"loop": "no",
-																		"ping-pong": "no"
-																	}
-																},
-																{
-																	"id": "tween-one-property",
-																	"objectClass": "actuals",
-																	"sid": 133167117029207,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"\"",
-																		"property": "offsetAngle",
-																		"end-value": "actuals.Angle + 90",
-																		"time": "enemyCrawler.rotateSpeed",
-																		"ease": "default",
-																		"destroy-on-complete": "no",
-																		"loop": "no",
-																		"ping-pong": "no"
-																	}
-																}
-															],
-															"sid": 170498017389291
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 458083456904266
-														}
-													],
-													"actions": [],
-													"sid": 780949173143608,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "pick-overlapping-point",
-																	"objectClass": "System",
-																	"sid": 499987634313450,
-																	"parameters": {
-																		"object": "tm_platform",
-																		"x": "actuals.ImagePointX(\"L1\")",
-																		"y": "actuals.ImagePointY(\"L1\")"
+																		"x": "actuals.ImagePointX(\"LM\")",
+																		"y": "actuals.ImagePointY(\"LM\")"
 																	}
 																}
 															],
 															"actions": [],
-															"sid": 195304138092719
-														},
-														{
-															"eventType": "comment",
-															"text": "turn left."
+															"sid": 754631866501824,
+															"children": [
+																{
+																	"eventType": "comment",
+																	"text": "If Forward image point IS overlapping block - \nturn right."
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-overlapping-point",
+																			"objectClass": "System",
+																			"sid": 508160621520380,
+																			"parameters": {
+																				"object": "tm_platform",
+																				"x": "actuals.ImagePointX(\"F\")",
+																				"y": "actuals.ImagePointY(\"F\")"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "tween-two-properties",
+																			"objectClass": "actuals",
+																			"sid": 197639661247564,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"\"",
+																				"property": "position",
+																				"end-x": "actuals.ImagePointX(\"F2\")",
+																				"end-y": "actuals.ImagePointY(\"F2\")",
+																				"time": "enemyCrawler.rotateSpeed",
+																				"ease": "default",
+																				"destroy-on-complete": "no",
+																				"loop": "no",
+																				"ping-pong": "no"
+																			}
+																		},
+																		{
+																			"id": "tween-one-property",
+																			"objectClass": "actuals",
+																			"sid": 107887025494176,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"\"",
+																				"property": "offsetAngle",
+																				"end-value": "actuals.Angle + 90",
+																				"time": "enemyCrawler.rotateSpeed",
+																				"ease": "default",
+																				"destroy-on-complete": "no",
+																				"loop": "no",
+																				"ping-pong": "no"
+																			}
+																		},
+																		{
+																			"callFunction": "setState",
+																			"sid": 441608283818996,
+																			"parameters": [
+																				"\"rotate\"",
+																				"actuals.UID"
+																			]
+																		}
+																	],
+																	"sid": 696922466924558
+																}
+															]
 														},
 														{
 															"eventType": "block",
@@ -2320,28 +2268,101 @@
 																{
 																	"id": "else",
 																	"objectClass": "System",
-																	"sid": 987633943999428
+																	"sid": 509649231872323
+																}
+															],
+															"actions": [],
+															"sid": 813622152308547,
+															"children": [
+																{
+																	"eventType": "comment",
+																	"text": "turn left."
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-overlapping-point",
+																			"objectClass": "System",
+																			"sid": 748129886257325,
+																			"parameters": {
+																				"object": "tm_platform",
+																				"x": "actuals.ImagePointX(\"L1\")",
+																				"y": "actuals.ImagePointY(\"L1\")"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "tween-one-property",
+																			"objectClass": "actuals",
+																			"sid": 798578722129971,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"rotate\"",
+																				"property": "offsetAngle",
+																				"end-value": "actuals.Angle - 90",
+																				"time": "enemyCrawler.rotateSpeed",
+																				"ease": "default",
+																				"destroy-on-complete": "no",
+																				"loop": "no",
+																				"ping-pong": "no"
+																			}
+																		},
+																		{
+																			"callFunction": "setState",
+																			"sid": 396468682049147,
+																			"parameters": [
+																				"\"rotate\"",
+																				"actuals.UID"
+																			]
+																		}
+																	],
+																	"sid": 293845861693770
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-current-state",
+															"objectClass": "actuals",
+															"sid": 503177196418569,
+															"behaviorType": "FSM",
+															"parameters": {
+																"name0": "\"rotate\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 746142498806694,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-any-playing",
+																	"objectClass": "actuals",
+																	"sid": 408454954636521,
+																	"behaviorType": "Tween",
+																	"isInverted": true
 																}
 															],
 															"actions": [
 																{
-																	"id": "tween-one-property",
-																	"objectClass": "actuals",
-																	"sid": 952194691316752,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"\"",
-																		"property": "offsetAngle",
-																		"end-value": "actuals.Angle - 90",
-																		"time": "enemyCrawler.rotateSpeed",
-																		"ease": "default",
-																		"destroy-on-complete": "no",
-																		"loop": "no",
-																		"ping-pong": "no"
-																	}
+																	"callFunction": "setState",
+																	"sid": 874102036128137,
+																	"parameters": [
+																		"\"crawling\"",
+																		"actuals.UID"
+																	]
 																}
 															],
-															"sid": 259550490218545
+															"sid": 795910002986823
 														}
 													]
 												}

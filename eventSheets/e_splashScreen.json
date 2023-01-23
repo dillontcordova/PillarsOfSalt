@@ -188,21 +188,21 @@
 									}
 								},
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 820387162471839,
-									"parameters": {
-										"variable": "loadedLogo",
-										"value": "true"
-									}
-								},
-								{
 									"id": "set-enabled",
 									"objectClass": "spr_logoBullet",
 									"sid": 225325167577299,
 									"behaviorType": "Rotate",
 									"parameters": {
 										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 288454624506752,
+									"parameters": {
+										"variable": "loadedLogo",
+										"value": "true"
 									}
 								}
 							],
@@ -226,6 +226,11 @@
 							"objectClass": "System",
 							"sid": 267653657921861,
 							"isInverted": true
+						},
+						{
+							"id": "preloads-complete",
+							"objectClass": "Audio",
+							"sid": 989365636805604
 						},
 						{
 							"id": "trigger-once-while-true",

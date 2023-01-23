@@ -352,7 +352,8 @@
 			"Sprite",
 			"Text",
 			"par_refresh",
-			"Array"
+			"Array",
+			"Sprite3"
 		],
 		"subfolders": [
 			{

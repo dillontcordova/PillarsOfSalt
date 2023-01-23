@@ -11,7 +11,7 @@
 			"sid": 521083216548659
 		},
 		{
-			"name": "speed",
+			"name": "crawlSpeed",
 			"type": "number",
 			"desc": "",
 			"show": true,
