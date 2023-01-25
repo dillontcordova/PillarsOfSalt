@@ -25,7 +25,13 @@
 										"image-offset-y": 0,
 										"image-scale-x": 1,
 										"image-scale-y": 1,
-										"image-angle": 0
+										"image-angle": 0,
+										"enable-tile-randomization": false,
+										"x-random": 1,
+										"y-random": 1,
+										"angle-random": 1,
+										"blend-margin-x": 0.1,
+										"blend-margin-y": 0.1
 									},
 									"uid": 48,
 									"instanceVariables": {},
@@ -92,7 +98,13 @@
 										"image-offset-y": 0,
 										"image-scale-x": 1,
 										"image-scale-y": 1,
-										"image-angle": 0
+										"image-angle": 0,
+										"enable-tile-randomization": false,
+										"x-random": 1,
+										"y-random": 1,
+										"angle-random": 1,
+										"blend-margin-x": 0.1,
+										"blend-margin-y": 0.1
 									},
 									"uid": 46,
 									"instanceVariables": {},
@@ -159,7 +171,13 @@
 										"image-offset-y": 0,
 										"image-scale-x": 1,
 										"image-scale-y": 1,
-										"image-angle": 0
+										"image-angle": 0,
+										"enable-tile-randomization": false,
+										"x-random": 1,
+										"y-random": 1,
+										"angle-random": 1,
+										"blend-margin-x": 0.1,
+										"blend-margin-y": 0.1
 									},
 									"uid": 45,
 									"instanceVariables": {},
@@ -260,7 +278,13 @@
 										"image-offset-y": 0,
 										"image-scale-x": 1,
 										"image-scale-y": 1,
-										"image-angle": 0
+										"image-angle": 0,
+										"enable-tile-randomization": false,
+										"x-random": 1,
+										"y-random": 1,
+										"angle-random": 1,
+										"blend-margin-x": 0.1,
+										"blend-margin-y": 0.1
 									},
 									"uid": 53,
 									"instanceVariables": {},
@@ -327,7 +351,13 @@
 										"image-offset-y": 0,
 										"image-scale-x": 1,
 										"image-scale-y": 1,
-										"image-angle": 0
+										"image-angle": 0,
+										"enable-tile-randomization": false,
+										"x-random": 1,
+										"y-random": 1,
+										"angle-random": 1,
+										"blend-margin-x": 0.1,
+										"blend-margin-y": 0.1
 									},
 									"uid": 203,
 									"instanceVariables": {},
@@ -394,7 +424,13 @@
 										"image-offset-y": 0,
 										"image-scale-x": 1,
 										"image-scale-y": 1,
-										"image-angle": 0
+										"image-angle": 0,
+										"enable-tile-randomization": false,
+										"x-random": 1,
+										"y-random": 1,
+										"angle-random": 1,
+										"blend-margin-x": 0.1,
+										"blend-margin-y": 0.1
 									},
 									"uid": 204,
 									"instanceVariables": {},
@@ -461,7 +497,13 @@
 										"image-offset-y": 0,
 										"image-scale-x": 1,
 										"image-scale-y": 1,
-										"image-angle": 0
+										"image-angle": 0,
+										"enable-tile-randomization": false,
+										"x-random": 1,
+										"y-random": 1,
+										"angle-random": 1,
+										"blend-margin-x": 0.1,
+										"blend-margin-y": 0.1
 									},
 									"uid": 205,
 									"instanceVariables": {},
@@ -1203,7 +1245,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 12,
 					"instanceVariables": {},
@@ -1236,7 +1284,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 14,
 					"instanceVariables": {},
@@ -1269,7 +1323,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 16,
 					"instanceVariables": {},
@@ -1302,7 +1362,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 21,
 					"instanceVariables": {},
@@ -1335,7 +1401,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 23,
 					"instanceVariables": {},
@@ -1368,7 +1440,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 24,
 					"instanceVariables": {},
@@ -1401,7 +1479,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 25,
 					"instanceVariables": {},
@@ -1434,7 +1518,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 29,
 					"instanceVariables": {},
@@ -1467,7 +1557,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 30,
 					"instanceVariables": {},
@@ -1841,7 +1937,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 226,
 					"instanceVariables": {},
@@ -1874,7 +1976,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 227,
 					"instanceVariables": {},
@@ -1907,7 +2015,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 228,
 					"instanceVariables": {},
@@ -1940,7 +2054,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 229,
 					"instanceVariables": {},
@@ -1973,7 +2093,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 219,
 					"instanceVariables": {},
@@ -2090,7 +2216,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 235,
 					"instanceVariables": {},
@@ -2123,7 +2255,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 236,
 					"instanceVariables": {},
@@ -2156,7 +2294,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 42,
 					"instanceVariables": {},
@@ -2273,7 +2417,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 243,
 					"instanceVariables": {},
@@ -3215,7 +3365,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 277,
 							"instanceVariables": {
@@ -3251,7 +3407,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 56,
 							"instanceVariables": {
@@ -3287,7 +3449,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 57,
 							"instanceVariables": {
@@ -3323,7 +3491,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 202,
 							"instanceVariables": {
@@ -3359,7 +3533,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 208,
 							"instanceVariables": {
@@ -3395,7 +3575,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 210,
 							"instanceVariables": {
@@ -3431,7 +3617,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 211,
 							"instanceVariables": {
@@ -3467,7 +3659,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 209,
 							"instanceVariables": {
@@ -3503,7 +3701,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 6,
 							"instanceVariables": {
@@ -3539,7 +3743,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 10,
 							"instanceVariables": {
@@ -3575,7 +3785,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 19,
 							"instanceVariables": {
@@ -3611,7 +3827,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 17,
 							"instanceVariables": {
@@ -3681,7 +3903,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 33,
 							"instanceVariables": {
@@ -3716,7 +3944,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 40,
 							"instanceVariables": {
@@ -3782,7 +4016,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 278,
 					"instanceVariables": {

@@ -1,0 +1,132 @@
+{
+	"name": "spr_woodenLantern",
+	"plugin-id": "Sprite",
+	"sid": 802186655177004,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 42,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3909818,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.11458333333333333,
+								0,
+								0.14583333333333334,
+								1,
+								0,
+								0.11904761904761904,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 42,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7502936,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.11458333333333333,
+								0,
+								0.14583333333333334,
+								1,
+								0,
+								0.11904761904761904,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 754719333186752,
+				"name": "on",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 9
+			},
+			{
+				"frames": [
+					{
+						"width": 42,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4556784,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.11458333333333333,
+								0,
+								0.14583333333333334,
+								1,
+								0,
+								0.11904761904761904,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 681057277215089,
+				"name": "off",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

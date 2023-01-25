@@ -1,5 +1,5 @@
 {
-	"name": "Sprite3",
+	"name": "spr_villageProps",
 	"plugin-id": "Sprite",
 	"sid": 915560862186765,
 	"isGlobal": false,
@@ -13,8 +13,8 @@
 					{
 						"width": 90,
 						"height": 49,
-						"originX": 3.8777777777777778,
-						"originY": 3.6122448979591835,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -45,8 +45,8 @@
 					{
 						"width": 45,
 						"height": 45,
-						"originX": 10.444444444444445,
-						"originY": 10.955555555555556,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -77,8 +77,8 @@
 					{
 						"width": 35,
 						"height": 35,
-						"originX": 11,
-						"originY": 13.8,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -109,8 +109,8 @@
 					{
 						"width": 42,
 						"height": 96,
-						"originX": -10.880952380952381,
-						"originY": 5.010416666666666,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -141,8 +141,8 @@
 					{
 						"width": 87,
 						"height": 91,
-						"originX": 5.517241379310345,
-						"originY": 3.8241758241758244,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -173,8 +173,8 @@
 					{
 						"width": 96,
 						"height": 39,
-						"originX": 4.999999999999999,
-						"originY": 5.230769230769231,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -205,8 +205,8 @@
 					{
 						"width": 85,
 						"height": 35,
-						"originX": 0.6941176470588236,
-						"originY": 12.085714285714285,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -241,7 +241,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 8
+				"speed": 0
 			}
 		],
 		"subfolders": []

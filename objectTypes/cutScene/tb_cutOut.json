@@ -1,0 +1,20 @@
+{
+	"name": "tb_cutOut",
+	"plugin-id": "TiledBg",
+	"sid": 468592413759485,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 64,
+		"height": 64,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 7895587,
+		"useCollisionPoly": true
+	}
+}

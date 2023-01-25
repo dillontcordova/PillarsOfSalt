@@ -277,7 +277,8 @@
 										"vertical-alignment": "center",
 										"wrapping": "word",
 										"initially-visible": true,
-										"origin": "top-left"
+										"origin": "top-left",
+										"read-aloud": false
 									},
 									"uid": 63,
 									"instanceVariables": {},
@@ -344,7 +345,8 @@
 										"vertical-alignment": "center",
 										"wrapping": "word",
 										"initially-visible": true,
-										"origin": "top-left"
+										"origin": "top-left",
+										"read-aloud": false
 									},
 									"uid": 64,
 									"instanceVariables": {},
@@ -587,7 +589,8 @@
 								"vertical-alignment": "top",
 								"wrapping": "word",
 								"initially-visible": false,
-								"origin": "top-left"
+								"origin": "top-left",
+								"read-aloud": false
 							},
 							"uid": 7,
 							"instanceVariables": {},
@@ -625,7 +628,8 @@
 								"vertical-alignment": "center",
 								"wrapping": "word",
 								"initially-visible": false,
-								"origin": "top-left"
+								"origin": "top-left",
+								"read-aloud": false
 							},
 							"uid": 37,
 							"instanceVariables": {},
@@ -667,7 +671,8 @@
 								"vertical-alignment": "top",
 								"wrapping": "word",
 								"initially-visible": false,
-								"origin": "top-left"
+								"origin": "top-left",
+								"read-aloud": false
 							},
 							"uid": 38,
 							"instanceVariables": {},
@@ -763,7 +768,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 181,
 							"instanceVariables": {},

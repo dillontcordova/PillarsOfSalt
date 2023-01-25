@@ -65,7 +65,8 @@
 								"ease": "easeinoutsine",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],
@@ -128,7 +129,8 @@
 										"ease": "easeinoutsine",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -144,7 +146,8 @@
 										"ease": "easeinoutsine",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -160,7 +163,8 @@
 										"ease": "easeinoutsine",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -269,7 +273,8 @@
 								"ease": "easeinoutsine",
 								"destroy-on-complete": "yes",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -285,7 +290,8 @@
 								"ease": "easeinoutsine",
 								"destroy-on-complete": "yes",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],

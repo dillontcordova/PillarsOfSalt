@@ -2,55 +2,337 @@
 	"name": "e_titleScreen",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "titleScreen",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 248337602773374
-				}
-			],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 877620751494450,
-					"parameters": {
-						"tag": "\"music\""
-					}
+					"eventType": "variable",
+					"name": "clampLow",
+					"type": "number",
+					"initialValue": "5",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 859516825436639
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 187681878789006,
-					"parameters": {
-						"audio-file": "titleTheme",
-						"loop": "looping",
-						"volume": "-20",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
-					}
+					"eventType": "variable",
+					"name": "clampHigh",
+					"type": "number",
+					"initialValue": "30",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 111171903390496
 				},
 				{
-					"id": "fade-volume",
-					"objectClass": "Audio",
-					"sid": 109927675764588,
-					"parameters": {
-						"tag": "\"music\"",
-						"db": "0",
-						"duration": "5",
-						"ending": "keep-playing"
-					}
+					"eventType": "variable",
+					"name": "isWhitening",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 553352073796534
 				},
 				{
-					"callFunction": "fadeIn",
-					"sid": 309548374825463,
-					"parameters": [
-						"1"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 600866170644963
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "playMusic",
+							"sid": 328138106363526,
+							"parameters": [
+								"\"titleTheme\""
+							]
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "spr_cutSceneSingleton",
+							"sid": 512675704310536,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "random(clampLow,clampHigh)",
+								"type": "once",
+								"tag": "\"spawn\""
+							}
+						}
+					],
+					"sid": 254474301156580
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "spr_cutSceneSingleton",
+							"sid": 918478532821888,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"spawn\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 683447686404521,
+							"parameters": {
+								"object-to-create": "spr_titleTrees",
+								"layer": "\"fg\"",
+								"x": "LayoutWidth-1",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "spr_titleTrees",
+							"sid": 425630085300692,
+							"parameters": {
+								"frame-number": "random(0, 7)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "spr_cutSceneSingleton",
+							"sid": 538790174774607,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "random(clampLow,clampHigh)",
+								"type": "once",
+								"tag": "\"spawn\""
+							}
+						}
+					],
+					"sid": 147317644716588
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "spr_titleTrees",
+							"sid": 210744227656542
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "spr_titleTrees",
+							"sid": 228900334402293,
+							"parameters": {
+								"angle": "180",
+								"distance": ".25"
+							}
+						}
+					],
+					"sid": 392418584368916
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 601046326731180
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "tb_titleBackground",
+							"sid": 629805564948238,
+							"parameters": {
+								"angle": "180",
+								"distance": ".1"
+							}
+						}
+					],
+					"sid": 653644522093418,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "tb_titleBackground",
+									"sid": 184653368287293
+								}
+							],
+							"actions": [],
+							"sid": 693970708371822,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 138181919833292
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 175818032096866,
+											"parameters": {
+												"object-to-create": "tb_titleBackground",
+												"layer": "0",
+												"x": "LayoutWidth-1",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 365866641349322
+								}
+							]
+						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 816061295707416,
+							"parameters": {
+								"key": 13
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 552400316160815,
+							"parameters": {
+								"variable": "isWhitening"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-opacity",
+							"objectClass": "System",
+							"sid": 351784511197177,
+							"parameters": {
+								"layer": "\"white\"",
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-layer-background-color",
+							"objectClass": "System",
+							"sid": 222843790081825,
+							"parameters": {
+								"layer": "\"white\"",
+								"color": "rgb(255,255,255)"
+							}
+						},
+						{
+							"id": "set-layer-transparent",
+							"objectClass": "System",
+							"sid": 658533686738490,
+							"parameters": {
+								"layer": "\"white\"",
+								"mode": "opaque"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 720237442874385,
+							"parameters": {
+								"variable": "isWhitening",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "bg_godlight",
+							"sid": 117064320170031,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 849670333289769
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 535288290769067
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 995230369510642,
+							"parameters": {
+								"variable": "isWhitening"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-transparent",
+							"objectClass": "System",
+							"sid": 331750355444157,
+							"disabled": true,
+							"parameters": {
+								"layer": "\"fade\"",
+								"mode": "opaque"
+							}
+						},
+						{
+							"id": "move-at-angle",
+							"objectClass": "bg_godlight",
+							"sid": 111716790570011,
+							"parameters": {
+								"angle": "180",
+								"distance": ".5"
+							}
+						},
+						{
+							"id": "move-at-angle",
+							"objectClass": "spr_playerCutScene",
+							"sid": 208197458995375,
+							"parameters": {
+								"angle": "0",
+								"distance": ".25"
+							}
+						},
+						{
+							"id": "set-layer-opacity",
+							"objectClass": "System",
+							"sid": 621850058759481,
+							"parameters": {
+								"layer": "\"white\"",
+								"opacity": "lerp(0,100, 4 * dt)"
+							}
+						}
+					],
+					"sid": 928485863052412
 				}
 			],
-			"sid": 576731049452773
+			"sid": 650999953493208
 		}
 	],
 	"sid": 848361008467525

@@ -21,7 +21,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 105,
 							"instanceVariables": {},
@@ -88,7 +94,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 104,
 							"instanceVariables": {},
@@ -155,7 +167,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 103,
 							"instanceVariables": {},
@@ -222,7 +240,13 @@
 								"image-offset-y": 0,
 								"image-scale-x": 1,
 								"image-scale-y": 1,
-								"image-angle": 0
+								"image-angle": 0,
+								"enable-tile-randomization": false,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
 							},
 							"uid": 102,
 							"instanceVariables": {},
@@ -584,7 +608,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 180,
 					"instanceVariables": {},
@@ -659,7 +689,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 182,
 					"instanceVariables": {},
@@ -692,7 +728,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 71,
 					"instanceVariables": {},
@@ -812,7 +854,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 187,
 					"instanceVariables": {},
@@ -860,7 +908,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 188,
 					"instanceVariables": {},
@@ -908,7 +962,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 183,
 					"instanceVariables": {},
@@ -958,7 +1018,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 190,
 					"instanceVariables": {},
@@ -1006,7 +1072,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 191,
 					"instanceVariables": {},
@@ -1054,7 +1126,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 192,
 					"instanceVariables": {},
@@ -4383,7 +4461,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 92,
 					"instanceVariables": {
@@ -4419,7 +4503,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 93,
 					"instanceVariables": {
@@ -4454,7 +4544,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 95,
 					"instanceVariables": {
@@ -4490,7 +4586,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 97,
 					"instanceVariables": {
@@ -4526,7 +4628,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 88,
 					"instanceVariables": {
@@ -4562,7 +4670,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 39,
 					"instanceVariables": {
@@ -4598,7 +4712,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 69,
 					"instanceVariables": {
@@ -4634,7 +4754,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 144,
 					"instanceVariables": {
@@ -4670,7 +4796,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 156,
 					"instanceVariables": {

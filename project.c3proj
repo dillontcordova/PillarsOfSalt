@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 31702,
+	"savedWithRelease": 32700,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -8,18 +8,9 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
-			"id": "Keyboard",
-			"name": "Keyboard",
+			"id": "Arr",
+			"name": "Array",
 			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "gamepad",
-			"name": "Gamepad",
-			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
@@ -27,79 +18,6 @@
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Touch",
-			"name": "Touch",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "TiledBg",
-			"name": "Tiled Background",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Spritefont2",
-			"name": "Sprite font",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Particles",
-			"name": "Particles",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Tilemap",
-			"name": "Tilemap",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Dictionary",
-			"name": "Dictionary",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "NinePatch",
-			"name": "9-patch",
-			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
@@ -107,63 +25,83 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Arr",
-			"name": "Array",
+			"id": "Dictionary",
+			"name": "Dictionary",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Fade",
-			"name": "Fade",
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Tween",
-			"name": "Tween",
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Pin",
-			"name": "Pin",
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Rotate",
-			"name": "Rotate",
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
 			"author": "Scirra",
-			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "gamepad",
+			"name": "Gamepad",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -171,95 +109,13 @@
 			"id": "Bullet",
 			"name": "Bullet",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "bound",
-			"name": "Bound to layout",
+			"id": "Fade",
+			"name": "Fade",
 			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Timer",
-			"name": "Timer",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Sin",
-			"name": "Sine",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "aekiroWater",
-			"name": "Water",
-			"author": "Aekiro",
-			"version": "1.0.0.1",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Physics",
-			"name": "Physics",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Platform",
-			"name": "Platform",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "jumpthru",
-			"name": "Jump-thru",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "custom",
-			"name": "Custom",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "destroy",
-			"name": "Destroy outside layout",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "MoveTo",
-			"name": "Move To",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "aaXe_FSM",
-			"name": "FSM",
-			"author": "aaXe",
-			"version": "1.0.0.0",
 			"bundled": false
 		},
 		{
@@ -267,15 +123,6 @@
 			"id": "Flash",
 			"name": "Flash",
 			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Persist",
-			"name": "Persist",
-			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
@@ -283,15 +130,127 @@
 			"id": "LOS",
 			"name": "Line of sight",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
-			"type": "effect",
-			"id": "overlay",
-			"name": "Overlay",
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
 			"author": "Scirra",
-			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Persist",
+			"name": "Persist",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "aaXe_FSM",
+			"name": "FSM",
+			"author": "Loïc Morvan, piranha305",
+			"bundled": false,
+			"version": "1.3.0.0"
+		},
+		{
+			"type": "behavior",
+			"id": "aekiroWater",
+			"name": "Water",
+			"author": "Aekiro",
+			"bundled": false,
+			"version": "1.0.0.1"
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "custom",
+			"name": "Custom",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -299,23 +258,21 @@
 			"id": "Mikal_LinearLight",
 			"name": "LinearLight",
 			"author": "Mikal",
-			"version": "1.0.0.0",
-			"bundled": false
-		},
-		{
-			"type": "effect",
-			"id": "skendpow",
-			"name": "SkendPow",
-			"author": "Somebody / Mikal / skymen",
-			"version": "1.5.0",
-			"bundled": false
+			"bundled": false,
+			"version": "1.0.0.0"
 		},
 		{
 			"type": "effect",
 			"id": "blurhorizontal",
 			"name": "Blur horizontal",
 			"author": "Scirra",
-			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "overlay",
+			"name": "Overlay",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -323,8 +280,15 @@
 			"id": "pixellate",
 			"name": "Pixellate",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "skendpow",
+			"name": "SkendPow",
+			"author": "Somebody / Mikal / skymen",
+			"bundled": false,
+			"version": "1.5.0"
 		}
 	],
 	"uniqueId": "n8bngjs1j57",
@@ -344,7 +308,6 @@
 			"spr_movingPlatformV",
 			"spr_shootFire",
 			"spr_leafAtmos",
-			"spr_vialBg",
 			"spr_door",
 			"spr_doorSwitch",
 			"Browser",
@@ -353,7 +316,7 @@
 			"Text",
 			"par_refresh",
 			"Array",
-			"Sprite3"
+			"bg_treeline_"
 		],
 		"subfolders": [
 			{
@@ -506,7 +469,8 @@
 				"items": [
 					"spr_gameSingleton",
 					"spr_gamepadSingleton",
-					"dict_states"
+					"dict_states",
+					"spr_cutSceneSingleton"
 				],
 				"subfolders": [],
 				"name": "stateMachine"
@@ -514,7 +478,8 @@
 			{
 				"items": [
 					"spr_heartIcon",
-					"spr_orbIcon"
+					"spr_orbIcon",
+					"spr_vialBg"
 				],
 				"subfolders": [],
 				"name": "icons"
@@ -578,6 +543,20 @@
 				],
 				"subfolders": [],
 				"name": "zones"
+			},
+			{
+				"items": [
+					"spr_villageProps",
+					"spr_playerCutScene",
+					"tb_cutOut",
+					"tb_titleBackground",
+					"spr_titleTrees",
+					"spr_woodenLantern",
+					"spr_fog",
+					"bg_godlight"
+				],
+				"subfolders": [],
+				"name": "cutScene"
 			}
 		]
 	},
@@ -989,6 +968,8 @@
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "none",
 		"preloadSounds": true,
