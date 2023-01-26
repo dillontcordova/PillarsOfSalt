@@ -1,0 +1,127 @@
+{
+	"name": "spr_btnTileScreen",
+	"plugin-id": "Sprite",
+	"sid": 876137170821510,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "btnId",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 292694261181055
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 48,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1870198,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 48,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1595963,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 719179865118184,
+				"name": "new",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 48,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4118341,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 48,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6791158,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 720504765953547,
+				"name": "resume",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 48,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9002906,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 48,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5656164,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 819050592222713,
+				"name": "quit",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

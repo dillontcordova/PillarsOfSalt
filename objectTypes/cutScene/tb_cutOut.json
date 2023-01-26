@@ -3,7 +3,15 @@
 	"plugin-id": "TiledBg",
 	"sid": 468592413759485,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "fadeDirection",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 285231540007161
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {

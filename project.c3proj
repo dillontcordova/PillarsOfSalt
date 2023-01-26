@@ -316,7 +316,8 @@
 			"Text",
 			"par_refresh",
 			"Array",
-			"bg_treeline_"
+			"bg_treeline_",
+			"spr_btnTileScreen"
 		],
 		"subfolders": [
 			{

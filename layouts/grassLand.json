@@ -439,7 +439,7 @@
 						{
 							"type": "tm_grassLand",
 							"properties": {
-								"initially-visible": false,
+								"initially-visible": true,
 								"tile-width": 16,
 								"tile-height": 16,
 								"tile-x-offset": 0,
