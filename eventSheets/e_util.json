@@ -412,6 +412,15 @@
 								"stereo-pan": "0",
 								"tag-optional": "soundName"
 							}
+						},
+						{
+							"id": "set-playback-rate",
+							"objectClass": "Audio",
+							"sid": 503626804803545,
+							"parameters": {
+								"tag": "soundName",
+								"playback-rate": "choose(.9, 1, 1.1, 1.2)"
+							}
 						}
 					],
 					"sid": 412037473724308
