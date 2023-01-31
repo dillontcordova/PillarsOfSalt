@@ -112,7 +112,7 @@
 					"sid": 140790086670328
 				},
 				{
-					"functionName": "throw",
+					"functionName": "throwIf",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -162,34 +162,22 @@
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 563221631666328,
-									"parameters": {
-										"variable": "thrownError",
-										"value": "msg"
-									}
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 939854104445486
 								},
 								{
-									"id": "set-text",
-									"objectClass": "txt_debugFPS",
-									"sid": 849795174734461,
+									"id": "alert",
+									"objectClass": "Browser",
+									"sid": 991379847549165,
 									"parameters": {
-										"text": "thrownError"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "txt_debugFPS",
-									"sid": 322677598837646,
-									"parameters": {
-										"visibility": "visible"
+										"message": "msg"
 									}
 								},
 								{
 									"id": "set-time-scale",
 									"objectClass": "System",
-									"sid": 886192805474937,
+									"sid": 234559209719872,
 									"parameters": {
 										"time-scale": "0"
 									}

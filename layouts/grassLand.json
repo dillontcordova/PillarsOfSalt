@@ -109,7 +109,7 @@
 								"x": 0,
 								"y": 0,
 								"width": 424,
-								"height": 176,
+								"height": 240,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -141,7 +141,7 @@
 					],
 					"isTransparent": true,
 					"parallaxX": 0.05,
-					"parallaxY": 0,
+					"parallaxY": 0.1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
 					"renderingMode": "3d",
@@ -182,7 +182,7 @@
 								"x": 0,
 								"y": 0,
 								"width": 704,
-								"height": 176,
+								"height": 288,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -214,7 +214,7 @@
 					],
 					"isTransparent": true,
 					"parallaxX": 0.3,
-					"parallaxY": 0,
+					"parallaxY": 0.2,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
 					"renderingMode": "3d",
@@ -255,7 +255,7 @@
 								"x": 0,
 								"y": 0,
 								"width": 960,
-								"height": 176,
+								"height": 432,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -287,7 +287,7 @@
 					],
 					"isTransparent": true,
 					"parallaxX": 0.5,
-					"parallaxY": 0,
+					"parallaxY": 0.4,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
 					"renderingMode": "3d",
@@ -4368,7 +4368,7 @@
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
@@ -4380,43 +4380,7 @@
 			"name": "fg",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "Sprite2",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 11",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 72,
-					"instanceVariables": {},
-					"behaviors": {},
-					"effects": {
-						"LinearLight": {
-							"isEnabled": false,
-							"parameters": {}
-						}
-					},
-					"world": {
-						"x": -328,
-						"y": 8,
-						"width": 320,
-						"height": 179,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 595812570111077,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

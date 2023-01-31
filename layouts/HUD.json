@@ -471,7 +471,9 @@
 								"live-preview": false
 							},
 							"uid": 61,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"levelDarkness": 0
+							},
 							"behaviors": {
 								"FSM": {
 									"properties": {

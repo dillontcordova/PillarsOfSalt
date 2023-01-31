@@ -100,27 +100,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-created",
-							"objectClass": "spr_playerAreaLight",
-							"sid": 398789324105373
-						}
-					],
-					"actions": [
-						{
-							"id": "move-to-layer",
-							"objectClass": "spr_playerAreaLight",
-							"sid": 818637291927079,
-							"parameters": {
-								"layer": "\"lights\""
-							}
-						}
-					],
-					"sid": 686348066628238
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 855920222381529,

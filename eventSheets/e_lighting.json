@@ -1,0 +1,432 @@
+{
+	"name": "e_lighting",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Group1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "lightingLayer",
+					"type": "string",
+					"initialValue": "lights",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 995677619125944
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "lighten",
+							"sid": 863824773540380
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "lighten",
+							"sid": 682848681703305,
+							"parameters": {
+								"object": "FogMask",
+								"layer": "lightingLayer",
+								"image-point": "\"center\"",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "lighten",
+							"sid": 711141307852371,
+							"parameters": {
+								"child": "FogMask",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "FogMask",
+							"sid": 740257839652692,
+							"disabled": true,
+							"parameters": {
+								"object": "FogGlow",
+								"layer": "lightingLayer",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "FogMask",
+							"sid": 114002053345785,
+							"disabled": true,
+							"parameters": {
+								"child": "FogGlow",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": false,
+								"transform-z-elevation": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 300481830049518,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Use a slightly bigger sprite for the player object, so it's definitely visible all the time."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 731106353644594,
+									"parameters": {
+										"first-value": "Lighten.ObjectTypeName",
+										"comparison": 0,
+										"second-value": "\"spr_playerActual\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "FogMask",
+									"sid": 269933927944737,
+									"parameters": {
+										"animation": "\"128\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "FogGlow",
+									"sid": 662181908417239,
+									"parameters": {
+										"animation": "\"128\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 460789168625838,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Use the smaller sprite for the rest of the objects."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 204290503028239
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "FogMask",
+									"sid": 598863744113043,
+									"parameters": {
+										"animation": "\"64\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "FogGlow",
+									"sid": 303728881891526,
+									"parameters": {
+										"animation": "\"64\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 637503263636521,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Use a slightly bigger sprite for the player object, so it's definitely visible all the time."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 171291837410358,
+									"parameters": {
+										"first-value": "Lighten.ObjectTypeName",
+										"comparison": 0,
+										"second-value": "\"spr_playerActual\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "FogMask",
+									"sid": 118798676549562,
+									"parameters": {
+										"animation": "\"128\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "FogGlow",
+									"sid": 201910388753258,
+									"parameters": {
+										"animation": "\"128\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 530399213874387,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Use the smaller sprite for the rest of the objects."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 465791330589037
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "FogMask",
+									"sid": 741633852970646,
+									"parameters": {
+										"animation": "\"64\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "FogGlow",
+									"sid": 976111181549609,
+									"parameters": {
+										"animation": "\"64\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 300679836322427,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "lighten",
+							"sid": 754028117457868
+						}
+					],
+					"actions": [],
+					"sid": 273425979670338,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "lighten",
+									"sid": 379244429296573,
+									"parameters": {
+										"child": "FogMask",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-value",
+									"objectClass": "FogMask",
+									"sid": 975130224750890,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"shrink\"",
+										"start-value": "1",
+										"end-value": "0",
+										"time": ".05",
+										"ease": "default",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 643082673963439
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "FogMask",
+							"sid": 797330173085342,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"shrink\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "FogMask",
+							"sid": 373970230498176,
+							"parameters": {
+								"scale": "Self.Tween.Value(\"shrink\")"
+							}
+						}
+					],
+					"sid": 142642966270613
+				},
+				{
+					"functionName": "initLights",
+					"functionDescription": "",
+					"functionCategory": "lighting",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "darkness",
+							"type": "number",
+							"initialValue": "10",
+							"comment": "",
+							"sid": 828351484032640
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layer-force-own-texture",
+							"objectClass": "System",
+							"sid": 378736821506307,
+							"parameters": {
+								"layer": "lightingLayer",
+								"mode": "on"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 631274173778286,
+							"parameters": {
+								"object-to-create": "tb_darkness",
+								"layer": "lightingLayer",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 842008762995693,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 784361768377986,
+									"parameters": {
+										"value": "LayerIndex(lightingLayer) = -1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "throwIf",
+									"sid": 521725161075914,
+									"parameters": [
+										"\"layerIndex >= 0\"",
+										"\"-1\"",
+										"\"Missing lighting layer '\"& lightingLayer & \"'\""
+									]
+								}
+							],
+							"sid": 233811989111626,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 306453846005836,
+									"parameters": {
+										"object": "tb_darkness"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "tb_darkness",
+									"sid": 847323743628715,
+									"parameters": {
+										"width": "LayoutWidth",
+										"height": "LayoutHeight"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "tb_darkness",
+									"sid": 222015014655864,
+									"parameters": {
+										"opacity": "darkness"
+									}
+								},
+								{
+									"id": "move-to-bottom",
+									"objectClass": "tb_darkness",
+									"sid": 166883866411312
+								}
+							],
+							"sid": 330661557677576
+						}
+					]
+				}
+			],
+			"sid": 564661993524078
+		}
+	],
+	"sid": 397859464194922
+}

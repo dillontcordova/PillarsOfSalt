@@ -6,6 +6,10 @@
 			"includeSheet": "e_main"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "e_lighting"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -20,6 +24,13 @@
 					"sid": 759847383954664,
 					"parameters": [
 						"\"caveTheme\""
+					]
+				},
+				{
+					"callFunction": "initLights",
+					"sid": 651780767431879,
+					"parameters": [
+						"60"
 					]
 				}
 			],

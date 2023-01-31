@@ -2,8 +2,16 @@
 	"name": "spr_gameSingleton",
 	"plugin-id": "Sprite",
 	"sid": 906502428621476,
-	"isGlobal": false,
-	"instanceVariables": [],
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "levelDarkness",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 613467609385968
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
