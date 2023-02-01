@@ -42,7 +42,7 @@
 						{
 							"id": "add-child",
 							"objectClass": "lighten",
-							"sid": 711141307852371,
+							"sid": 717715655380643,
 							"parameters": {
 								"child": "FogMask",
 								"transform-x": true,
@@ -51,7 +51,7 @@
 								"transform-h": false,
 								"transform-a": false,
 								"transform-z-elevation": false,
-								"destroy-with-parent": false
+								"destroy-with-parent": true
 							}
 						},
 						{
@@ -86,158 +86,97 @@
 					"sid": 300481830049518,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "Use a slightly bigger sprite for the player object, so it's definitely visible all the time."
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 731106353644594,
+									"id": "pick-children",
+									"objectClass": "lighten",
+									"sid": 563226156849925,
 									"parameters": {
-										"first-value": "Lighten.ObjectTypeName",
-										"comparison": 0,
-										"second-value": "\"spr_playerActual\""
+										"child": "FogMask",
+										"which": "own"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 691503530719233,
+							"children": [
 								{
-									"id": "set-animation",
-									"objectClass": "FogMask",
-									"sid": 269933927944737,
-									"parameters": {
-										"animation": "\"128\"",
-										"from": "beginning"
-									}
+									"eventType": "comment",
+									"text": "Use the smaller sprite for the rest of the objects."
 								},
 								{
-									"id": "set-animation",
-									"objectClass": "FogGlow",
-									"sid": 662181908417239,
-									"parameters": {
-										"animation": "\"128\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 460789168625838,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Use the smaller sprite for the rest of the objects."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 204290503028239
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "FogMask",
-									"sid": 598863744113043,
-									"parameters": {
-										"animation": "\"64\"",
-										"from": "beginning"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "actuals",
+											"sid": 617318997938656,
+											"parameters": {
+												"unique-id": "lighten.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "FogMask",
+											"sid": 881150713560531,
+											"parameters": {
+												"animation": "\"64\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "FogGlow",
+											"sid": 631240351943163,
+											"disabled": true,
+											"parameters": {
+												"animation": "\"64\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 326649439713804
 								},
 								{
-									"id": "set-animation",
-									"objectClass": "FogGlow",
-									"sid": 303728881891526,
-									"parameters": {
-										"animation": "\"64\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 637503263636521,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Use a slightly bigger sprite for the player object, so it's definitely visible all the time."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 171291837410358,
-									"parameters": {
-										"first-value": "Lighten.ObjectTypeName",
-										"comparison": 0,
-										"second-value": "\"spr_playerActual\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "FogMask",
-									"sid": 118798676549562,
-									"parameters": {
-										"animation": "\"128\"",
-										"from": "beginning"
-									}
+									"eventType": "comment",
+									"text": "Use a slightly bigger sprite for the player object, so it's definitely visible all the time."
 								},
 								{
-									"id": "set-animation",
-									"objectClass": "FogGlow",
-									"sid": 201910388753258,
-									"parameters": {
-										"animation": "\"128\"",
-										"from": "beginning"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 692787910609390
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "FogMask",
+											"sid": 419014529022121,
+											"parameters": {
+												"animation": "\"128\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "FogGlow",
+											"sid": 438133665099168,
+											"disabled": true,
+											"parameters": {
+												"animation": "\"128\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 513363686877860
 								}
-							],
-							"sid": 530399213874387,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Use the smaller sprite for the rest of the objects."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 465791330589037
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "FogMask",
-									"sid": 741633852970646,
-									"parameters": {
-										"animation": "\"64\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "FogGlow",
-									"sid": 976111181549609,
-									"parameters": {
-										"animation": "\"64\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 300679836322427,
-							"disabled": true
+							]
 						}
 					]
 				},
@@ -252,6 +191,7 @@
 					],
 					"actions": [],
 					"sid": 273425979670338,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -285,7 +225,8 @@
 									}
 								}
 							],
-							"sid": 643082673963439
+							"sid": 643082673963439,
+							"disabled": true
 						}
 					]
 				},
@@ -373,16 +314,15 @@
 							"actions": [
 								{
 									"callFunction": "throwIf",
-									"sid": 521725161075914,
+									"sid": 155736396936823,
 									"parameters": [
-										"\"layerIndex >= 0\"",
-										"\"-1\"",
+										"\"\"",
+										"\"\"",
 										"\"Missing lighting layer '\"& lightingLayer & \"'\""
 									]
 								}
 							],
-							"sid": 233811989111626,
-							"disabled": true
+							"sid": 233811989111626
 						},
 						{
 							"eventType": "block",

@@ -310,9 +310,9 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 170714373038454,
+							"sid": 633860775816263,
 							"parameters": {
-								"layout": "grassLand"
+								"layout": "titleScreen"
 							}
 						}
 					],

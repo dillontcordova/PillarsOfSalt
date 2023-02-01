@@ -18,6 +18,8 @@
 		"spr_jumpOrb",
 		"spr_poundOrb",
 		"spr_shootOrb",
-		"spr_wallJumpOrb"
+		"spr_wallJumpOrb",
+		"BigPlant",
+		"spr_doorSwitch"
 	]
 }

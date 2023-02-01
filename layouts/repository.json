@@ -1567,7 +1567,9 @@
 						"origY": -1,
 						"mindlessRange": 25,
 						"nextX": -1,
-						"nextY": -1
+						"nextY": -1,
+						"origSpeed": -1,
+						"chaseSpeed": 40
 					},
 					"behaviors": {
 						"MoveTo": {
@@ -1637,7 +1639,7 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "solids",
-								"range": 64,
+								"range": 96,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}

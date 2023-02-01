@@ -19,12 +19,6 @@
 								"variable": "isPlayerInGame"
 							},
 							"isInverted": true
-						},
-						{
-							"id": "is-on-screen",
-							"objectClass": "tb_water",
-							"sid": 734841900148009,
-							"isInverted": true
 						}
 					],
 					"actions": [

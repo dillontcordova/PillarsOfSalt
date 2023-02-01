@@ -6,6 +6,10 @@
 			"includeSheet": "e_main"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "e_lighting"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -20,6 +24,13 @@
 					"sid": 787869064542490,
 					"parameters": [
 						"\"grassTheme\""
+					]
+				},
+				{
+					"callFunction": "initLights",
+					"sid": 308402339832828,
+					"parameters": [
+						"40"
 					]
 				}
 			],

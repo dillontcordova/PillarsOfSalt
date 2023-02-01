@@ -360,6 +360,15 @@
 													}
 												},
 												{
+													"id": "set-instvar-value",
+													"objectClass": "enemyAir",
+													"sid": 720070184544680,
+													"parameters": {
+														"instance-variable": "origSpeed",
+														"value": "actuals.MoveTo.MaxSpeed"
+													}
+												},
+												{
 													"id": "goto-state",
 													"objectClass": "actuals",
 													"sid": 632353632252720,
@@ -577,6 +586,15 @@
 																}
 															],
 															"actions": [
+																{
+																	"id": "set-max-speed",
+																	"objectClass": "actuals",
+																	"sid": 379632437631872,
+																	"behaviorType": "MoveTo",
+																	"parameters": {
+																		"max-speed": "enemyAir.origSpeed"
+																	}
+																},
 																{
 																	"id": "set-instvar-value",
 																	"objectClass": "enemyAir",
@@ -880,6 +898,15 @@
 																			"parameters": [
 																				"\"chase\""
 																			]
+																		},
+																		{
+																			"id": "set-max-speed",
+																			"objectClass": "actuals",
+																			"sid": 659841771107635,
+																			"behaviorType": "MoveTo",
+																			"parameters": {
+																				"max-speed": "enemyAir.chaseSpeed"
+																			}
 																		},
 																		{
 																			"id": "move-to-position",

@@ -37,6 +37,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 249135674470671
+		},
+		{
+			"name": "origSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 185119318088111
+		},
+		{
+			"name": "chaseSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 647866911481649
 		}
 	],
 	"behaviorTypes": [],
