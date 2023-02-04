@@ -560,7 +560,8 @@
 					"spr_titleTrees",
 					"spr_woodenLantern",
 					"spr_fog",
-					"bg_godlight"
+					"bg_godlight",
+					"spr_woodenLantern2"
 				],
 				"subfolders": [],
 				"name": "cutScene"

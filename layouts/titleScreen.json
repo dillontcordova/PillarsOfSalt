@@ -156,6 +156,75 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "spr_woodenLantern2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 301,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 5,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 10,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 263,
+						"uid": 301,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 179,
+						"y": 54,
+						"width": 13,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "spr_playerCutScene",
 					"properties": {
 						"initially-visible": true,
@@ -337,7 +406,7 @@
 					"type": "spr_woodenLantern",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "on",
+						"initial-animation": "idle",
 						"initial-frame": 0,
 						"enable-collisions": false,
 						"live-preview": false
@@ -348,6 +417,21 @@
 					"sceneGraphData": {
 						"parent-uid": 242,
 						"uid": 263,
+						"children": [
+							{
+								"uid": 301,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -1069,8 +1153,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -1125,8 +1209,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -1181,8 +1265,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
