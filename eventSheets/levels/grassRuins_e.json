@@ -1,0 +1,66 @@
+{
+	"name": "grassRuins_e",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_main"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_lighting"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_traps"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 410231891437908
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "playMusic",
+					"sid": 105063358038383,
+					"parameters": [
+						"\"grassTheme\""
+					]
+				},
+				{
+					"callFunction": "initLights",
+					"sid": 284674853323728,
+					"parameters": [
+						"40"
+					]
+				}
+			],
+			"sid": 832436243497785
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 398451538314212,
+					"parameters": {
+						"interval-seconds": "0.4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fallingLeaves",
+					"sid": 985357308926438
+				}
+			],
+			"sid": 127485447786463,
+			"disabled": true
+		}
+	],
+	"sid": 787245052594195
+}

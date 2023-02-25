@@ -1105,6 +1105,470 @@
 				}
 			],
 			"sid": 681113663432652
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "misc",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "boids",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "createFlyBoids",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "x",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 851419591528965
+								},
+								{
+									"name": "y",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 454321434354639
+								},
+								{
+									"name": "range",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 694674014873018
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 135600123241076,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 821169894307560,
+											"parameters": {
+												"object-to-create": "spr_boids",
+												"layer": "\"bgCharacters\"",
+												"x": "x",
+												"y": "y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 363295885209017
+								}
+							]
+						},
+						{
+							"functionName": "boidsFlyAway",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "x",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 837647744879590
+								},
+								{
+									"name": "y",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 325643608158197
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 115769523637122,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 526936468029531,
+											"parameters": {
+												"angle-1": "0",
+												"within": "0.5",
+												"angle-2": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "spr_boids",
+											"sid": 161819673486478,
+											"parameters": {
+												"animation": "\"fly\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "move-to-position",
+											"objectClass": "spr_boids",
+											"sid": 205592980692787,
+											"behaviorType": "MoveTo",
+											"parameters": {
+												"x": "0",
+												"y": "0",
+												"mode": "direct"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "spr_boids",
+											"sid": 711086869148513,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "active"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "spr_boids",
+											"sid": 941337981939110,
+											"behaviorType": "Sine2",
+											"parameters": {
+												"state": "active"
+											}
+										}
+									],
+									"sid": 154491487968510
+								}
+							]
+						}
+					],
+					"sid": 887311890194858
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "currency",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-sleeping",
+									"objectClass": "spr_currency",
+									"sid": 274175375894335,
+									"behaviorType": "Physics"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "spr_currency",
+									"sid": 952957139347696,
+									"behaviorType": "Physics",
+									"parameters": {
+										"mode": "disabled"
+									}
+								}
+							],
+							"sid": 207428368955529
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "spr_moneyClip",
+									"sid": 899765047208321,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"vanish\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "spr_moneyClip",
+									"sid": 179030767636812
+								}
+							],
+							"sid": 555199321622069
+						},
+						{
+							"functionName": "dropCurrency",
+							"functionDescription": "",
+							"functionCategory": "Currency",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "x",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 136905927414076
+								},
+								{
+									"name": "y",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 654719212667132
+								},
+								{
+									"name": "amount",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 923671569093874
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 241733706663133,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 870364274608950,
+											"parameters": {
+												"variable": "amount",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 142299711569985,
+											"parameters": {
+												"object-to-create": "spr_moneyClip",
+												"layer": "0",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "spr_moneyClip",
+											"sid": 749443980528242,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "10",
+												"type": "once",
+												"tag": "\"vanish\""
+											}
+										}
+									],
+									"sid": 219359177536972,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 248306929262193,
+													"parameters": {
+														"name": "\"\"",
+														"start-index": "0",
+														"end-index": "amount"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 423612708628680,
+													"parameters": {
+														"object-to-create": "spr_currency",
+														"layer": "\"characters\"",
+														"x": "x",
+														"y": "y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "spr_moneyClip",
+													"sid": 763578949468400,
+													"parameters": {
+														"child": "spr_currency",
+														"transform-x": false,
+														"transform-y": false,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-z-elevation": false,
+														"destroy-with-parent": true
+													}
+												},
+												{
+													"id": "set-collisions-enabled",
+													"objectClass": "spr_currency",
+													"sid": 805305615064956,
+													"parameters": {
+														"collisions": "disabled"
+													}
+												},
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "spr_currency",
+													"sid": 736805010548284,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": ".01",
+														"angle": "random(195, 345)",
+														"image-point": "0"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 797615079704140,
+													"parameters": {
+														"seconds": ".1"
+													}
+												},
+												{
+													"id": "set-collisions-enabled",
+													"objectClass": "spr_currency",
+													"sid": 325442990165774,
+													"parameters": {
+														"collisions": "enabled"
+													}
+												},
+												{
+													"id": "enabledisable-collisions",
+													"objectClass": "spr_currency",
+													"sid": 452823231082266,
+													"behaviorType": "Physics",
+													"parameters": {
+														"object": "spr_currency",
+														"state": "disable"
+													}
+												}
+											],
+											"sid": 402069270025236
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "pickUpCurrency",
+							"functionDescription": "",
+							"functionCategory": "Currency",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 147411315678851,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-parent",
+											"objectClass": "spr_currency",
+											"sid": 951839192379885,
+											"parameters": {
+												"parent": "spr_moneyClip",
+												"which": "top"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 833427515370357,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-child-count",
+													"objectClass": "spr_moneyClip",
+													"sid": 800486958123995,
+													"parameters": {
+														"which": "all",
+														"comparison": 0,
+														"count": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "spr_moneyClip",
+													"sid": 170608693702438
+												}
+											],
+											"sid": 500021755160960
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 617838252710601
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "spr_currency",
+													"sid": 795888099639635
+												}
+											],
+											"sid": 126004014410993
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 222851724444939
+				}
+			],
+			"sid": 201876001038893
 		}
 	],
 	"sid": 705044040744188

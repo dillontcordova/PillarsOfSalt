@@ -8,6 +8,7 @@
 	"members": [
 		"tb_spikes",
 		"tb_water",
-		"tb_spikesCave"
+		"tb_spikesCave",
+		"tb_respawnTouchBox"
 	]
 }

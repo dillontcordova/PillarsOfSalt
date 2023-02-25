@@ -10,6 +10,10 @@
 			"includeSheet": "e_lighting"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "e_traps"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

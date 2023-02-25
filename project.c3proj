@@ -199,9 +199,9 @@
 			"type": "behavior",
 			"id": "aaXe_FSM",
 			"name": "FSM",
-			"author": "Loïc Morvan, piranha305",
+			"author": "aaXe",
 			"bundled": false,
-			"version": "1.3.0.0"
+			"version": "1.0.0.0"
 		},
 		{
 			"type": "behavior",
@@ -322,7 +322,8 @@
 			"Text",
 			"Array",
 			"bg_treeline_",
-			"spr_btnTileScreen"
+			"spr_btnTileScreen",
+			"zoneControl_9patch"
 		],
 		"subfolders": [
 			{
@@ -349,7 +350,8 @@
 				"items": [
 					"tb_fade",
 					"tb_spikes",
-					"tb_spikesCave"
+					"tb_spikesCave",
+					"tb_respawnTouchBox"
 				],
 				"subfolders": [
 					{
@@ -423,7 +425,8 @@
 				"items": [
 					"tm_grassLand",
 					"tm_platform",
-					"tm_staryNight"
+					"tm_staryNight",
+					"Tilemap"
 				],
 				"subfolders": [],
 				"name": "tileMaps"
@@ -574,6 +577,32 @@
 				],
 				"subfolders": [],
 				"name": "lighting"
+			},
+			{
+				"items": [
+					"spr_boids",
+					"Sprite2"
+				],
+				"subfolders": [],
+				"name": "fauna"
+			},
+			{
+				"items": [
+					"spr_currency",
+					"spr_moneyClip"
+				],
+				"subfolders": [],
+				"name": "currency"
+			},
+			{
+				"items": [
+					"spr_suspendedTrap",
+					"spr_trapHanger",
+					"9patch",
+					"spr_suspendedTrapSpawn"
+				],
+				"subfolders": [],
+				"name": "traps"
 			}
 		]
 	},
@@ -612,7 +641,8 @@
 			"caveLand",
 			"HUD",
 			"repository",
-			"Pause"
+			"Pause",
+			"grassRuins"
 		],
 		"subfolders": []
 	},
@@ -631,13 +661,15 @@
 			"e_titleScreen",
 			"e_eventPoints",
 			"e_pauseMenu",
-			"e_lighting"
+			"e_lighting",
+			"e_traps"
 		],
 		"subfolders": [
 			{
 				"items": [
 					"e_grassLand",
-					"e_caveLand"
+					"e_caveLand",
+					"grassRuins_e"
 				],
 				"subfolders": [],
 				"name": "levels"

@@ -1,0 +1,67 @@
+{
+	"name": "e_traps",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "traps",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "spr_suspendedTrapSpawn",
+							"sid": 875383651168003
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "spr_suspendedTrapSpawn",
+							"sid": 113915595446847,
+							"parameters": {
+								"object": "spr_trapHanger",
+								"layer": "\"bgCharacters\"",
+								"image-point": "0",
+								"create-hierarchy": true
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "spr_suspendedTrapSpawn",
+							"sid": 289677913015464
+						}
+					],
+					"sid": 741202654022565
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "spr_trapHanger",
+							"sid": 945291608063340
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "spr_trapHanger",
+							"sid": 873033653141881,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						}
+					],
+					"sid": 383712418036051
+				}
+			],
+			"sid": 536069839792915
+		}
+	],
+	"sid": 801083671271850
+}

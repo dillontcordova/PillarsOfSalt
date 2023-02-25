@@ -2,10 +2,6 @@
 	"name": "e_player",
 	"events": [
 		{
-			"eventType": "include",
-			"includeSheet": "e_singleton"
-		},
-		{
 			"eventType": "comment",
 			"text": "local static variables do not get reset by resetGlobalVariables"
 		},
@@ -218,17 +214,38 @@
 									"sid": 645024108522004,
 									"children": [
 										{
+											"eventType": "variable",
+											"name": "deadZone",
+											"type": "number",
+											"initialValue": "10",
+											"comment": "absolute from 0",
+											"isStatic": false,
+											"isConstant": true,
+											"sid": 252333910162082
+										},
+										{
 											"eventType": "block",
 											"conditions": [
 												{
 													"id": "compare-axis",
 													"objectClass": "Gamepad",
-													"sid": 284442164445943,
+													"sid": 272721221775019,
 													"parameters": {
 														"gamepad": "0",
 														"axis": "left-analog-x-axis",
-														"comparison": 1,
-														"value": "0"
+														"comparison": 3,
+														"value": "-deadZone"
+													}
+												},
+												{
+													"id": "compare-axis",
+													"objectClass": "Gamepad",
+													"sid": 251514457348768,
+													"parameters": {
+														"gamepad": "0",
+														"axis": "left-analog-x-axis",
+														"comparison": 5,
+														"value": "deadZone"
 													}
 												}
 											],
@@ -243,7 +260,8 @@
 													}
 												}
 											],
-											"sid": 776049346759339
+											"sid": 776049346759339,
+											"isOrBlock": true
 										},
 										{
 											"eventType": "block",
@@ -618,6 +636,11 @@
 											"parameters": {
 												"key": 219
 											}
+										},
+										{
+											"id": "on-tap",
+											"objectClass": "Touch",
+											"sid": 166486374296662
 										}
 									],
 									"actions": [
@@ -638,7 +661,8 @@
 											}
 										}
 									],
-									"sid": 783073903233234
+									"sid": 783073903233234,
+									"isOrBlock": true
 								},
 								{
 									"eventType": "block",
@@ -1049,6 +1073,36 @@
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "playerCurrency",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "spr_playerActual",
+													"sid": 536377984643377,
+													"parameters": {
+														"object": "spr_currency"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "pickUpCurrency",
+													"sid": 226213607896869
+												}
+											],
+											"sid": 187198571777118
+										}
+									],
+									"sid": 415987430931965
+								},
 								{
 									"eventType": "group",
 									"disabled": false,

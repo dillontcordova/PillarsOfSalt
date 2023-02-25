@@ -3416,6 +3416,15 @@
 											"parameters": {
 												"seconds": "(1 / dolls.AnimationSpeed) * dolls.AnimationFrameCount"
 											}
+										},
+										{
+											"callFunction": "dropCurrency",
+											"sid": 715492518034343,
+											"parameters": [
+												"actuals.X",
+												"actuals.Y",
+												"random(1, 5)"
+											]
 										}
 									],
 									"sid": 635207060950305,
