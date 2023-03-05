@@ -2379,7 +2379,7 @@
 						"y": 528,
 						"width": 32,
 						"height": 8,
-						"originX": 0.25,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -3890,7 +3890,8 @@
 					"uid": 92,
 					"instanceVariables": {
 						"area": "",
-						"hasVisited": false
+						"hasVisited": false,
+						"isTarget": false
 					},
 					"behaviors": {},
 					"world": {
@@ -3973,7 +3974,8 @@
 					"uid": 95,
 					"instanceVariables": {
 						"area": "",
-						"hasVisited": false
+						"hasVisited": false,
+						"isTarget": false
 					},
 					"behaviors": {},
 					"world": {
@@ -4015,7 +4017,8 @@
 					"uid": 97,
 					"instanceVariables": {
 						"area": "",
-						"hasVisited": false
+						"hasVisited": false,
+						"isTarget": false
 					},
 					"behaviors": {},
 					"world": {
@@ -4057,7 +4060,8 @@
 					"uid": 88,
 					"instanceVariables": {
 						"area": "",
-						"hasVisited": false
+						"hasVisited": false,
+						"isTarget": false
 					},
 					"behaviors": {},
 					"world": {
@@ -4099,7 +4103,8 @@
 					"uid": 39,
 					"instanceVariables": {
 						"area": "",
-						"hasVisited": false
+						"hasVisited": false,
+						"isTarget": false
 					},
 					"behaviors": {},
 					"world": {
@@ -4141,7 +4146,8 @@
 					"uid": 69,
 					"instanceVariables": {
 						"area": "",
-						"hasVisited": false
+						"hasVisited": false,
+						"isTarget": false
 					},
 					"behaviors": {},
 					"world": {
@@ -4183,7 +4189,8 @@
 					"uid": 144,
 					"instanceVariables": {
 						"area": "",
-						"hasVisited": false
+						"hasVisited": false,
+						"isTarget": false
 					},
 					"behaviors": {},
 					"world": {
@@ -4225,7 +4232,8 @@
 					"uid": 156,
 					"instanceVariables": {
 						"area": "",
-						"hasVisited": false
+						"hasVisited": false,
+						"isTarget": false
 					},
 					"behaviors": {},
 					"world": {

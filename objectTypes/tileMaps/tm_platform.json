@@ -18,14 +18,14 @@
 	],
 	"effectTypes": [],
 	"image": {
-		"width": 48,
+		"width": 80,
 		"height": 32,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6909509,
+		"imageSpriteId": 8342192,
 		"useCollisionPoly": true
 	},
 	"tile-collision-polys": {

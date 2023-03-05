@@ -32,9 +32,9 @@
 				},
 				{
 					"callFunction": "initLights",
-					"sid": 284674853323728,
+					"sid": 539115166211678,
 					"parameters": [
-						"40"
+						"30"
 					]
 				}
 			],

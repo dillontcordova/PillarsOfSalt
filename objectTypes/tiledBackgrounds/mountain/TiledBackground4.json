@@ -1,21 +1,20 @@
 {
-	"name": "Tilemap",
-	"plugin-id": "Tilemap",
-	"sid": 700280921136048,
+	"name": "TiledBackground4",
+	"plugin-id": "TiledBg",
+	"sid": 965950574010668,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 144,
-		"height": 1296,
+		"width": 512,
+		"height": 256,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 3717207,
+		"imageSpriteId": 9698732,
 		"useCollisionPoly": true
-	},
-	"tile-collision-polys": {}
+	}
 }

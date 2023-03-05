@@ -1,20 +1,20 @@
 {
-	"name": "zoneControl_9patch",
-	"plugin-id": "NinePatch",
-	"sid": 831885621394739,
+	"name": "TiledBackground11",
+	"plugin-id": "TiledBg",
+	"sid": 436832915432963,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 320,
-		"height": 180,
+		"width": 512,
+		"height": 256,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6398937,
+		"imageSpriteId": 386527,
 		"useCollisionPoly": true
 	}
 }

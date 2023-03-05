@@ -6,10 +6,6 @@
 			"text": "Squash and stretch works most effectively with image sprites that are separate from the collision and when the animations are all the same size"
 		},
 		{
-			"eventType": "include",
-			"includeSheet": "e_util"
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "playerSet",

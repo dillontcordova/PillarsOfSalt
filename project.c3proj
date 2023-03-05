@@ -321,9 +321,9 @@
 			"Sprite",
 			"Text",
 			"Array",
-			"bg_treeline_",
 			"spr_btnTileScreen",
-			"zoneControl_9patch"
+			"destructable_tb",
+			"destructableWood_spr"
 		],
 		"subfolders": [
 			{
@@ -351,7 +351,8 @@
 					"tb_fade",
 					"tb_spikes",
 					"tb_spikesCave",
-					"tb_respawnTouchBox"
+					"tb_respawnTouchBox",
+					"bg_treeline_"
 				],
 				"subfolders": [
 					{
@@ -361,11 +362,6 @@
 						],
 						"subfolders": [],
 						"name": "staryNight"
-					},
-					{
-						"items": [],
-						"subfolders": [],
-						"name": "grassLand"
 					},
 					{
 						"items": [
@@ -379,6 +375,15 @@
 						],
 						"subfolders": [],
 						"name": "cave"
+					},
+					{
+						"items": [
+							"TiledBackground4",
+							"TiledBackground10",
+							"TiledBackground11"
+						],
+						"subfolders": [],
+						"name": "mountain"
 					}
 				],
 				"name": "tiledBackgrounds"
@@ -426,7 +431,7 @@
 					"tm_grassLand",
 					"tm_platform",
 					"tm_staryNight",
-					"Tilemap"
+					"all_tm"
 				],
 				"subfolders": [],
 				"name": "tileMaps"
@@ -549,7 +554,9 @@
 			{
 				"items": [
 					"tb_cameraZoom",
-					"tb_zoneControl"
+					"tb_zoneControl",
+					"zoneCtrl_spr",
+					"camFollow_spr"
 				],
 				"subfolders": [],
 				"name": "zones"
@@ -603,6 +610,14 @@
 				],
 				"subfolders": [],
 				"name": "traps"
+			},
+			{
+				"items": [
+					"waterfall_spr",
+					"Sprite3"
+				],
+				"subfolders": [],
+				"name": "waterfall"
 			}
 		]
 	},
@@ -629,7 +644,8 @@
 			"enemyAir",
 			"enemyAirChase",
 			"enemyCrawler",
-			"lighten"
+			"lighten",
+			"cameraTargets"
 		],
 		"subfolders": []
 	},
@@ -641,10 +657,17 @@
 			"caveLand",
 			"HUD",
 			"repository",
-			"Pause",
-			"grassRuins"
+			"Pause"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"grassRuins"
+				],
+				"subfolders": [],
+				"name": "levels"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [

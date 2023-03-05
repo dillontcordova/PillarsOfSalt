@@ -8,6 +8,7 @@
 	"members": [
 		"tm_grassLand",
 		"tm_staryNight",
-		"tm_platform"
+		"tm_platform",
+		"all_tm"
 	]
 }

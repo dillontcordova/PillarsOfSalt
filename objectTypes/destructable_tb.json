@@ -1,0 +1,34 @@
+{
+	"name": "destructable_tb",
+	"plugin-id": "TiledBg",
+	"sid": 970279804744359,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 459213149919056
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 219045569424957
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 32,
+		"height": 32,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6511475,
+		"useCollisionPoly": true
+	}
+}

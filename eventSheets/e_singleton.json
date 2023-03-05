@@ -457,7 +457,16 @@
 										{
 											"id": "set-boolean-instvar",
 											"objectClass": "spr_playerActual",
-											"sid": 601365454917944,
+											"sid": 888667707953554,
+											"parameters": {
+												"instance-variable": "isWalking",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "spr_playerActual",
+											"sid": 846988422408261,
 											"parameters": {
 												"instance-variable": "canDash",
 												"value": "true"

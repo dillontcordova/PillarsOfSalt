@@ -1,0 +1,22 @@
+{
+	"name": "cameraTargets",
+	"plugin-id": "Sprite",
+	"sid": 611485219857051,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_door",
+		"spr_doorSwitch",
+		"spr_playerActual",
+		"spr_orbIcon",
+		"spr_dashOrb",
+		"spr_healthOrb",
+		"spr_poundOrb",
+		"spr_jumpOrb",
+		"spr_shootOrb",
+		"spr_wallJumpOrb",
+		"zoneCtrl_spr",
+		"camFollow_spr"
+	]
+}

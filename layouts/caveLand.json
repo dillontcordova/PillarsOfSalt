@@ -4894,7 +4894,8 @@
 							"uid": 277,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -4936,7 +4937,8 @@
 							"uid": 56,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -4978,7 +4980,8 @@
 							"uid": 57,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5020,7 +5023,8 @@
 							"uid": 202,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5062,7 +5066,8 @@
 							"uid": 208,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5104,7 +5109,8 @@
 							"uid": 210,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5146,7 +5152,8 @@
 							"uid": 211,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5188,7 +5195,8 @@
 							"uid": 209,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5230,7 +5238,8 @@
 							"uid": 6,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5272,7 +5281,8 @@
 							"uid": 10,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5314,7 +5324,8 @@
 							"uid": 19,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {
@@ -5356,7 +5367,8 @@
 							"uid": 17,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false
+								"hasVisited": false,
+								"isTarget": false
 							},
 							"behaviors": {},
 							"world": {

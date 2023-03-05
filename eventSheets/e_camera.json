@@ -328,14 +328,18 @@
 							"sid": 701895513444916,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "debug code, throws if a zone is not at least the size of the viewport"
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
 											"id": "for-each",
 											"objectClass": "System",
-											"sid": 214111284794320,
+											"sid": 990418043338316,
 											"parameters": {
-												"object": "tb_zoneControl"
+												"object": "zoneCtrl_spr"
 											}
 										}
 									],
@@ -347,8 +351,8 @@
 											"conditions": [
 												{
 													"id": "compare-height",
-													"objectClass": "tb_zoneControl",
-													"sid": 301434684969219,
+													"objectClass": "zoneCtrl_spr",
+													"sid": 983023693173230,
 													"parameters": {
 														"comparison": 2,
 														"height": "ViewportHeight(0)"
@@ -356,8 +360,8 @@
 												},
 												{
 													"id": "compare-width",
-													"objectClass": "tb_zoneControl",
-													"sid": 801881453477917,
+													"objectClass": "zoneCtrl_spr",
+													"sid": 633791832844557,
 													"parameters": {
 														"comparison": 2,
 														"width": "ViewportWidth(0)"
@@ -367,11 +371,11 @@
 											"actions": [
 												{
 													"callFunction": "throwIf",
-													"sid": 105717417360241,
+													"sid": 753174833463591,
 													"parameters": [
 														"\"\"",
 														"\"\"",
-														"\"Error: zone \" & tb_zoneControl.UID & \" does not meet the minimum viewport width/height requirements\""
+														"\"Error: zone \" & zoneCtrl_spr.UID & \" does not meet the minimum viewport width/height requirements\""
 													]
 												}
 											],
@@ -667,15 +671,15 @@
 												{
 													"id": "on-collision-with-another-object",
 													"objectClass": "spr_playerActual",
-													"sid": 125919518264532,
+													"sid": 451927393570732,
 													"parameters": {
-														"object": "tb_zoneControl"
+														"object": "zoneCtrl_spr"
 													}
 												},
 												{
 													"id": "compare-boolean-eventvar",
 													"objectClass": "System",
-													"sid": 470774782065214,
+													"sid": 890561833152797,
 													"parameters": {
 														"variable": "init"
 													}
@@ -683,11 +687,11 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "spr_playerActual",
-													"sid": 105562998753219,
+													"sid": 575755293908249,
 													"parameters": {
 														"instance-variable": "zoneId",
 														"comparison": 1,
-														"value": "tb_zoneControl.UID"
+														"value": "zoneCtrl_spr.UID"
 													}
 												}
 											],
@@ -695,15 +699,96 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "spr_playerActual",
-													"sid": 398852683896788,
+													"sid": 808078251448695,
 													"parameters": {
 														"instance-variable": "zoneId",
-														"value": "tb_zoneControl.UID"
+														"value": "zoneCtrl_spr.UID"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 434512950719617,
+													"parameters": {
+														"variable": "cameraTarget",
+														"value": "spr_playerActual.UID"
 													}
 												}
 											],
 											"sid": 228838421829182,
 											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "zoneCtrl_spr",
+															"sid": 199413556581571,
+															"parameters": {
+																"instance-variable": "isTarget"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 849321644045789,
+													"disabled": true,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-overlapping-another-object",
+																	"objectClass": "zoneCtrl_spr",
+																	"sid": 305255122985102,
+																	"parameters": {
+																		"object": "camFollow_spr"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 426916313875768,
+																	"parameters": {
+																		"variable": "cameraTarget",
+																		"value": "camFollow_spr.UID"
+																	}
+																}
+															],
+															"sid": 274461327654090,
+															"disabled": true
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "zoneCtrl_spr",
+															"sid": 252778029597866,
+															"parameters": {
+																"instance-variable": "mode",
+																"comparison": 4,
+																"value": "-1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 382816820517639,
+															"parameters": {
+																"variable": "cameraMode",
+																"value": "zoneCtrl_spr.mode"
+															}
+														}
+													],
+													"sid": 135431121907684,
+													"disabled": true
+												},
 												{
 													"eventType": "block",
 													"conditions": [
@@ -780,8 +865,8 @@
 															"conditions": [
 																{
 																	"id": "pick-by-unique-id",
-																	"objectClass": "tb_zoneControl",
-																	"sid": 984501176770587,
+																	"objectClass": "zoneCtrl_spr",
+																	"sid": 608081334498935,
 																	"parameters": {
 																		"unique-id": "spr_playerActual.zoneId"
 																	}
@@ -791,10 +876,10 @@
 																{
 																	"id": "set-position",
 																	"objectClass": "spr_playerActual",
-																	"sid": 824922344949697,
+																	"sid": 999921194659682,
 																	"parameters": {
-																		"x": "clamp(spr_playerActual.X, tb_zoneControl.X +spr_playerActual.Width, tb_zoneControl.X + tb_zoneControl.Width - spr_playerActual.Width)",
-																		"y": "clamp(spr_playerActual.Y, tb_zoneControl.BBoxTop + spr_playerActual.Height+1, tb_zoneControl.BBoxBottom - spr_playerActual.Height)"
+																		"x": "clamp(spr_playerActual.X, zoneCtrl_spr.X +spr_playerActual.Width, zoneCtrl_spr.X + zoneCtrl_spr.Width - spr_playerActual.Width)",
+																		"y": "clamp(spr_playerActual.Y, zoneCtrl_spr.BBoxTop + spr_playerActual.Height+1, zoneCtrl_spr.BBoxBottom - spr_playerActual.Height)"
 																	}
 																},
 																{
@@ -966,7 +1051,7 @@
 												},
 												{
 													"id": "pick-by-unique-id",
-													"objectClass": "actuals",
+													"objectClass": "cameraTargets",
 													"sid": 603161709855676,
 													"parameters": {
 														"unique-id": "cameraTarget"
@@ -981,10 +1066,10 @@
 													"conditions": [
 														{
 															"id": "is-overlapping-another-object",
-															"objectClass": "actuals",
-															"sid": 463416468096022,
+															"objectClass": "cameraTargets",
+															"sid": 579139621540140,
 															"parameters": {
-																"object": "tb_zoneControl"
+																"object": "zoneCtrl_spr"
 															}
 														}
 													],
@@ -992,37 +1077,37 @@
 														{
 															"id": "set-eventvar-value",
 															"objectClass": "System",
-															"sid": 319056437809583,
+															"sid": 991473311031522,
 															"parameters": {
 																"variable": "lowerZoneX",
-																"value": "tb_zoneControl.X + vpW"
+																"value": "zoneCtrl_spr.X + vpW"
 															}
 														},
 														{
 															"id": "set-eventvar-value",
 															"objectClass": "System",
-															"sid": 838372113098589,
+															"sid": 731263782501641,
 															"parameters": {
 																"variable": "higherZoneX",
-																"value": "tb_zoneControl.X + tb_zoneControl.Width - vpW"
+																"value": "zoneCtrl_spr.X + zoneCtrl_spr.Width - vpW"
 															}
 														},
 														{
 															"id": "set-eventvar-value",
 															"objectClass": "System",
-															"sid": 302199630331232,
+															"sid": 606825426106994,
 															"parameters": {
 																"variable": "lowerZoneY",
-																"value": "tb_zoneControl.Y + vpH"
+																"value": "zoneCtrl_spr.Y + vpH"
 															}
 														},
 														{
 															"id": "set-eventvar-value",
 															"objectClass": "System",
-															"sid": 272916220450694,
+															"sid": 740170658385207,
 															"parameters": {
 																"variable": "higherZoneY",
-																"value": "tb_zoneControl.Y + tb_zoneControl.Height - vpH"
+																"value": "zoneCtrl_spr.Y + zoneCtrl_spr.Height - vpH"
 															}
 														},
 														{
@@ -1030,7 +1115,7 @@
 															"objectClass": "spr_camera",
 															"sid": 443702264418099,
 															"parameters": {
-																"object": "actuals",
+																"object": "cameraTargets",
 																"image-point-optional": "1"
 															}
 														},

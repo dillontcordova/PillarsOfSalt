@@ -5367,7 +5367,8 @@
 														}
 													]
 												}
-											]
+											],
+											"isOrBlock": true
 										},
 										{
 											"eventType": "block",
@@ -5408,6 +5409,53 @@
 														}
 													],
 													"sid": 459282594870154
+												}
+											],
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "spr_meleeSlashTileMap",
+													"sid": 949230940868792,
+													"parameters": {
+														"object": "destructable_tb"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 749882772609317,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 506883693377472,
+															"parameters": {
+																"value": "Functions.isDblCollisionAtk(destructable_tb.UID)"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "meleeAtkJuice",
+															"sid": 509139584768526,
+															"parameters": [
+																"-1",
+																"destructable_tb.UID"
+															]
+														},
+														{
+															"callFunction": "hitDestructable",
+															"sid": 268154665200938
+														}
+													],
+													"sid": 821390560722775
 												}
 											],
 											"isOrBlock": true
@@ -5630,6 +5678,116 @@
 														}
 													],
 													"isOrBlock": true
+												}
+											]
+										},
+										{
+											"functionName": "hitDestructable",
+											"functionDescription": "",
+											"functionCategory": "",
+											"functionReturnType": "none",
+											"functionCopyPicked": false,
+											"functionIsAsync": false,
+											"functionParameters": [],
+											"eventType": "function-block",
+											"conditions": [],
+											"actions": [],
+											"sid": 360143237481874,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "cameraShake",
+															"sid": 462678920247928,
+															"parameters": [
+																"2",
+																".1"
+															]
+														}
+													],
+													"sid": 267655937945153,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "destructable_tb",
+																	"sid": 207341867011800,
+																	"parameters": {
+																		"instance-variable": "health",
+																		"comparison": 0,
+																		"value": "-1"
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "subtract-from-instvar",
+																	"objectClass": "destructable_tb",
+																	"sid": 880335398215028,
+																	"parameters": {
+																		"instance-variable": "health",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 815515735641257
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "destructable_tb",
+																	"sid": 489739207728141,
+																	"parameters": {
+																		"instance-variable": "health",
+																		"comparison": 2,
+																		"value": "1"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 197015289330488,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-parent",
+																			"objectClass": "destructable_tb",
+																			"sid": 357439967537593,
+																			"parameters": {
+																				"parent": "destructableWood_spr",
+																				"which": "top"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-animation",
+																			"objectClass": "destructableWood_spr",
+																			"sid": 419206347918923,
+																			"parameters": {
+																				"animation": "\"break\"",
+																				"from": "beginning"
+																			}
+																		},
+																		{
+																			"id": "destroy",
+																			"objectClass": "destructable_tb",
+																			"sid": 483850997959185
+																		}
+																	],
+																	"sid": 393574627144957
+																}
+															]
+														}
+													]
 												}
 											]
 										}
