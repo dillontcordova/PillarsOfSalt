@@ -192,6 +192,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -204,6 +206,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -278,6 +281,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -291,6 +296,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -304,6 +311,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -316,6 +325,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -328,6 +339,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -370,6 +382,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -382,6 +396,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -427,6 +442,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -439,6 +456,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -451,6 +470,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -527,6 +547,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -539,6 +561,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1052,6 +1075,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1065,6 +1090,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1078,6 +1105,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1090,6 +1119,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1102,6 +1133,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1146,6 +1178,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1158,6 +1192,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1202,6 +1237,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1214,6 +1251,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1258,6 +1296,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1270,6 +1310,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},

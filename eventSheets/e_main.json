@@ -45,6 +45,58 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "is-in-preview",
+					"objectClass": "System",
+					"sid": 213126961269959,
+					"isInverted": true
+				},
+				{
+					"id": "is-fullscreen",
+					"objectClass": "Browser",
+					"sid": 203142636545717,
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 768688139209811,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 527556332957128,
+							"parameters": {
+								"gamepad": "0"
+							}
+						},
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 919996359340354
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 762257526016650,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "hide"
+							}
+						}
+					],
+					"sid": 424915564339929,
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 429249629267115

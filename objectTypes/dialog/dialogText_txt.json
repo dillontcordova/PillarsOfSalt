@@ -1,0 +1,20 @@
+{
+	"name": "dialogText_txt",
+	"plugin-id": "Spritefont2",
+	"sid": 603833611072363,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 70,
+		"height": 35,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8780848,
+		"useCollisionPoly": true
+	}
+}

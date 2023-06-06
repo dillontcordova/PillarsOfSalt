@@ -1,5 +1,5 @@
 {
-	"name": "lighten",
+	"name": "glow",
 	"plugin-id": "Sprite",
 	"sid": 899719656294180,
 	"instanceVariables": [],
@@ -19,7 +19,6 @@
 		"spr_poundOrb",
 		"spr_shootOrb",
 		"spr_wallJumpOrb",
-		"BigPlant",
 		"spr_doorSwitch"
 	]
 }

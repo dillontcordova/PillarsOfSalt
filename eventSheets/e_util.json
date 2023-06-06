@@ -225,6 +225,75 @@
 						}
 					],
 					"sid": 989290169163868
+				},
+				{
+					"functionName": "error",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "errTxt",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 889652494415693
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 805808738613336,
+							"parameters": {
+								"object-to-create": "txt_debug",
+								"layer": "\"HUD\"",
+								"x": "OriginalViewportWidth/2",
+								"y": "OriginalViewportHeight/2",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 366461154370983,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 515206611793849,
+									"parameters": {
+										"object": "txt_debug"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "txt_debug",
+									"sid": 706149970237088,
+									"parameters": {
+										"text": "errTxt"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "txt_debug",
+									"sid": 770274603263909,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 398178646126809
+						}
+					]
 				}
 			],
 			"sid": 881481778346380
@@ -1434,7 +1503,9 @@
 														"transform-w": false,
 														"transform-h": false,
 														"transform-a": false,
+														"transform-o": false,
 														"transform-z-elevation": false,
+														"transform-visibility": false,
 														"destroy-with-parent": true
 													}
 												},

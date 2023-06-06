@@ -1,0 +1,7 @@
+{
+	"dillon": {
+		"intro": ["intro sad asd a sd asd asd asdasd ksdm km skddds fs df sdf sd f sdf sd fsd f sdf sd fsd  sdfsd f sdf sd f dsf sd fs df sd fs df sdf sd fs df", "the next dialog that doesnt show much", "end of intro dialog"],
+		"default": ["default stuff", "more random default", "other randomness"],
+		"random": false
+	}
+}

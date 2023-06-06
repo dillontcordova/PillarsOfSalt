@@ -1,0 +1,39 @@
+{
+	"name": "NPC",
+	"plugin-id": "Sprite",
+	"sid": 173007337008284,
+	"instanceVariables": [
+		{
+			"name": "name",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 938567181893468
+		},
+		{
+			"name": "convoCursor",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 389195865049894
+		},
+		{
+			"name": "hasMet",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 176821485757792
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 196555782835724
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"testNPC"
+	]
+}

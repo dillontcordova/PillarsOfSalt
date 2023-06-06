@@ -839,7 +839,14 @@
 									},
 									"uid": 11,
 									"instanceVariables": {},
-									"behaviors": {},
+									"behaviors": {
+										"Solid": {
+											"properties": {
+												"enabled": true,
+												"tags": ""
+											}
+										}
+									},
 									"ownData": {
 										"tilemapData": {
 											"width": 82,
@@ -3570,6 +3577,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -3601,6 +3609,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3613,6 +3623,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3641,6 +3652,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -3672,6 +3684,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3684,6 +3698,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3712,6 +3727,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -3743,6 +3759,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3755,6 +3773,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3783,6 +3802,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -3814,6 +3834,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3826,6 +3848,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3854,6 +3877,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -3885,6 +3909,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3897,6 +3923,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3925,6 +3952,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -3956,6 +3984,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3968,6 +3998,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3996,6 +4027,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -4027,6 +4059,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -4039,6 +4073,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -4067,6 +4102,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -4098,6 +4134,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -4110,6 +4148,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -4138,6 +4177,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -4169,6 +4209,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -4181,6 +4223,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -4209,6 +4252,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -4240,6 +4284,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -4252,6 +4298,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -4280,6 +4327,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -4311,6 +4359,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -4323,6 +4373,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -4351,6 +4402,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -4382,6 +4434,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -4394,6 +4448,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -4422,6 +4477,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -4453,6 +4509,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -4465,6 +4523,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -4493,6 +4552,7 @@
 						"spray-cone": 0,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 0,
 						"size": 4,
@@ -4538,6 +4598,7 @@
 						"spray-cone": 0,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 0,
 						"size": 4,
@@ -4583,6 +4644,7 @@
 						"spray-cone": 0,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 0,
 						"size": 4,
@@ -4628,6 +4690,7 @@
 						"spray-cone": 0,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 0,
 						"size": 4,
@@ -4673,6 +4736,7 @@
 						"spray-cone": 0,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 0,
 						"size": 4,
@@ -4718,6 +4782,7 @@
 						"spray-cone": 0,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 0,
 						"size": 4,
@@ -4763,6 +4828,7 @@
 						"spray-cone": 0,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 0,
 						"size": 4,

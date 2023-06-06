@@ -1,0 +1,773 @@
+{
+	"name": "dialog_e",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "dialogOpen",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 550832039941541
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Group2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 680428455069825
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 888481475502414,
+							"parameters": {
+								"tag": "\"dialog\"",
+								"file": "dialog.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 104689486244446
+						},
+						{
+							"id": "parse",
+							"objectClass": "speech_json",
+							"sid": 300433445403384,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 788720311922082
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 493532346598932
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "dialogBox_9patch",
+							"sid": 925410844330578,
+							"parameters": {
+								"instance-variable": "isOpen"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 246309729720012,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "dialogBox_9patch",
+									"sid": 965406637890155,
+									"parameters": {
+										"child": "dialogText_txt",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 903670138694156,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-running-typewriter-text",
+											"objectClass": "dialogText_txt",
+											"sid": 936891929030689
+										}
+									],
+									"actions": [
+										{
+											"id": "typewriter-finish",
+											"objectClass": "dialogText_txt",
+											"sid": 704364825112582
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 465284754643059,
+											"parameters": {
+												"tag": "\"type\""
+											}
+										}
+									],
+									"sid": 889864976410863
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 140166293430612
+										}
+									],
+									"actions": [],
+									"sid": 837619159603701,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "NPC",
+													"sid": 659931484177246,
+													"parameters": {
+														"unique-id": "dialogBox_9patch.npcUid"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-instvar",
+													"objectClass": "NPC",
+													"sid": 209046188829992,
+													"parameters": {
+														"instance-variable": "convoCursor",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "npcTalk",
+													"sid": 165367448721001
+												}
+											],
+											"sid": 313324202282124
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "dialogBox_9patch",
+							"sid": 358832733883368,
+							"parameters": {
+								"child": "dialogText_txt",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 203738886892820,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-typewriter-text-finished",
+									"objectClass": "dialogText_txt",
+									"sid": 848804261185212
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 879796590278830,
+									"parameters": {
+										"tag": "\"type\""
+									}
+								}
+							],
+							"sid": 828330844382774
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-running-typewriter-text",
+									"objectClass": "dialogText_txt",
+									"sid": 338839823972146
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 738238805313546,
+									"parameters": {
+										"tag": "\"type\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 992811009344414,
+									"parameters": {
+										"audio-file": "_hero_run_footsteps_grass",
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"type\""
+									}
+								}
+							],
+							"sid": 544933305970080
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "tmp replace with talk event system"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 792661792973274,
+							"parameters": {
+								"object": "NPC"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 150465656474212,
+							"parameters": {
+								"variable": "dialogOpen"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 610923849474845,
+							"parameters": {
+								"variable": "dialogOpen",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 903006364170481,
+							"parameters": {
+								"object-to-create": "dialogBox_9patch",
+								"layer": "0",
+								"x": "OriginalViewportWidth/2",
+								"y": "OriginalViewportHeight/2",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "dialogBox_9patch",
+							"sid": 227865060947482,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "dialogBox_9patch",
+							"sid": 909271359841450,
+							"parameters": {
+								"width": "64",
+								"height": "64"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "dialogBox_9patch",
+							"sid": 159310010125869,
+							"parameters": {
+								"instance-variable": "npcUid",
+								"value": "NPC.UID"
+							}
+						},
+						{
+							"callFunction": "openDialog",
+							"sid": 231404514218182
+						}
+					],
+					"sid": 224803287968660
+				},
+				{
+					"functionName": "openDialog",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 324162792945853,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "dialogBox_9patch",
+									"sid": 516088028516992,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"opacity\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": ".4",
+										"ease": "easeoutquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "dialogBox_9patch",
+									"sid": 461513084802346,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"y\"",
+										"property": "offsetY",
+										"end-value": "0",
+										"time": ".4",
+										"ease": "easeoutquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 744504381154475
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "dialogBox_9patch",
+									"sid": 719161203459662,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"width\"",
+										"property": "offsetWidth",
+										"end-value": "256",
+										"time": ".4",
+										"ease": "easeoutquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 333176157282707
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "dialogName_ptch",
+									"sid": 411269053921593,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "NPC",
+									"sid": 139438112630134,
+									"parameters": {
+										"instance-variable": "convoCursor",
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "npcTalk",
+									"sid": 204132855382324
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "dialogBox_9patch",
+									"sid": 241108856317742,
+									"parameters": {
+										"instance-variable": "isOpen",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 533357151506863,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "dialogName_ptch",
+											"sid": 603847607585344,
+											"parameters": {
+												"child": "dialogText_txt",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-one-property",
+											"objectClass": "dialogName_ptch",
+											"sid": 828508345580561,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"name\"",
+												"property": "offsetY",
+												"end-value": "Self.Y + 28",
+												"time": ".5",
+												"ease": "easeoutbounce",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 871948953472456
+										},
+										{
+											"id": "typewriter-text",
+											"objectClass": "dialogText_txt",
+											"sid": 524941084995864,
+											"parameters": {
+												"text": "NPC.name",
+												"duration": "1"
+											}
+										}
+									],
+									"sid": 112470023682144
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "closeDialog",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 907680132130888,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 756375957079246,
+									"parameters": {
+										"variable": "dialogOpen",
+										"value": "false"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "dialogBox_9patch",
+									"sid": 209507707397691
+								}
+							],
+							"sid": 129083298617829
+						}
+					]
+				},
+				{
+					"functionName": "npcTalk",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 976882459332416,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "listDefault",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 323818711831195
+						},
+						{
+							"eventType": "variable",
+							"name": "listIntro",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 425567822436054
+						},
+						{
+							"eventType": "variable",
+							"name": "hasRandDialog",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 454886909591310
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "dialogBox_9patch",
+									"sid": 689682335280733,
+									"parameters": {
+										"child": "dialogText_txt",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 731690137620779,
+									"parameters": {
+										"variable": "listIntro",
+										"value": "speech_json.ArraySize(NPC.name & \".intro\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 530429608446653,
+									"parameters": {
+										"variable": "listDefault",
+										"value": "speech_json.ArraySize(NPC.name & \".default\")\n"
+									}
+								}
+							],
+							"sid": 839694865588880,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "NPC",
+											"sid": 452937001645621,
+											"parameters": {
+												"instance-variable": "hasMet"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "typewriter-text",
+											"objectClass": "dialogText_txt",
+											"sid": 451380984005308,
+											"parameters": {
+												"text": "speech_json.Get(NPC.name & \".intro.\" & NPC.convoCursor)",
+												"duration": "2"
+											}
+										}
+									],
+									"sid": 184300272877677,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "NPC",
+													"sid": 548265922452515,
+													"parameters": {
+														"instance-variable": "convoCursor",
+														"comparison": 5,
+														"value": "listIntro"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "NPC",
+													"sid": 656724906490483,
+													"parameters": {
+														"instance-variable": "hasMet",
+														"value": "true"
+													}
+												},
+												{
+													"callFunction": "closeDialog",
+													"sid": 674831514009363
+												}
+											],
+											"sid": 841171634532789
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 757257414905765
+										}
+									],
+									"actions": [],
+									"sid": 621792792808085,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 331238307271199,
+													"parameters": {
+														"value": "speech_json.Get(NPC.name & \".random\")"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "typewriter-text",
+													"objectClass": "dialogText_txt",
+													"sid": 760903117864108,
+													"parameters": {
+														"text": "speech_json.Get(NPC.name & \".default.\" &  floor(random(0, listDefault)) )",
+														"duration": "2"
+													}
+												}
+											],
+											"sid": 131707218055149,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "NPC",
+															"sid": 288476181667986,
+															"parameters": {
+																"instance-variable": "convoCursor",
+																"comparison": 5,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "closeDialog",
+															"sid": 979281389720234
+														}
+													],
+													"sid": 902699508028114
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 187109215178489
+												}
+											],
+											"actions": [
+												{
+													"id": "typewriter-text",
+													"objectClass": "dialogText_txt",
+													"sid": 630098197062123,
+													"parameters": {
+														"text": "speech_json.Get(NPC.name & \".default.\" &  NPC.convoCursor)",
+														"duration": "2"
+													}
+												}
+											],
+											"sid": 437720592916712,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "NPC",
+															"sid": 979682910131244,
+															"parameters": {
+																"instance-variable": "convoCursor",
+																"comparison": 5,
+																"value": "listDefault"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "closeDialog",
+															"sid": 282245610256743
+														}
+													],
+													"sid": 885793146103056
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 474921076679985
+		}
+	],
+	"sid": 393959381453042
+}

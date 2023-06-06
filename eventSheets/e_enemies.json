@@ -2194,9 +2194,9 @@
 														{
 															"id": "move-at-angle",
 															"objectClass": "actuals",
-															"sid": 322930161958214,
+															"sid": 357457552104617,
 															"parameters": {
-																"angle": "Self.Angle",
+																"angle": "Self.Angle + 90",
 																"distance": "enemyCrawler.crawlSpeed* Self.dt"
 															}
 														}

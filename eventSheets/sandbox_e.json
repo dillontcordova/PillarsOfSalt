@@ -1,0 +1,46 @@
+{
+	"name": "sandbox_e",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_main"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_lighting"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_traps"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 412184678131226
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "playMusic",
+					"sid": 478111078590022,
+					"parameters": [
+						"\"grassTheme\""
+					]
+				},
+				{
+					"callFunction": "initLights",
+					"sid": 553026885648885,
+					"disabled": true,
+					"parameters": [
+						"30"
+					]
+				}
+			],
+			"sid": 455248073491616
+		}
+	],
+	"sid": 787448081261198
+}

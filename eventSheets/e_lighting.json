@@ -4,7 +4,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Group1",
+			"title": "Lighting",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -23,210 +23,122 @@
 					"conditions": [
 						{
 							"id": "on-created",
-							"objectClass": "lighten",
+							"objectClass": "glow",
 							"sid": 863824773540380
 						}
 					],
-					"actions": [
-						{
-							"id": "spawn-another-object",
-							"objectClass": "lighten",
-							"sid": 682848681703305,
-							"parameters": {
-								"object": "FogMask",
-								"layer": "lightingLayer",
-								"image-point": "\"center\"",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "add-child",
-							"objectClass": "lighten",
-							"sid": 717715655380643,
-							"parameters": {
-								"child": "FogMask",
-								"transform-x": true,
-								"transform-y": true,
-								"transform-w": false,
-								"transform-h": false,
-								"transform-a": false,
-								"transform-z-elevation": false,
-								"destroy-with-parent": true
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "FogMask",
-							"sid": 740257839652692,
-							"disabled": true,
-							"parameters": {
-								"object": "FogGlow",
-								"layer": "lightingLayer",
-								"image-point": "0",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "add-child",
-							"objectClass": "FogMask",
-							"sid": 114002053345785,
-							"disabled": true,
-							"parameters": {
-								"child": "FogGlow",
-								"transform-x": true,
-								"transform-y": true,
-								"transform-w": true,
-								"transform-h": true,
-								"transform-a": false,
-								"transform-z-elevation": false,
-								"destroy-with-parent": true
-							}
-						}
-					],
+					"actions": [],
 					"sid": 300481830049518,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "lighten",
-									"sid": 563226156849925,
-									"parameters": {
-										"child": "FogMask",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 691503530719233,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "Use the smaller sprite for the rest of the objects."
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-unique-id",
-											"objectClass": "actuals",
-											"sid": 617318997938656,
-											"parameters": {
-												"unique-id": "lighten.UID"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "FogMask",
-											"sid": 881150713560531,
-											"parameters": {
-												"animation": "\"64\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "FogGlow",
-											"sid": 631240351943163,
-											"disabled": true,
-											"parameters": {
-												"animation": "\"64\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 326649439713804
-								},
-								{
-									"eventType": "comment",
-									"text": "Use a slightly bigger sprite for the player object, so it's definitely visible all the time."
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 692787910609390
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "FogMask",
-											"sid": 419014529022121,
-											"parameters": {
-												"animation": "\"128\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "FogGlow",
-											"sid": 438133665099168,
-											"disabled": true,
-											"parameters": {
-												"animation": "\"128\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 513363686877860
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-destroyed",
-							"objectClass": "lighten",
-							"sid": 754028117457868
-						}
-					],
-					"actions": [],
-					"sid": 273425979670338,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "lighten",
-									"sid": 379244429296573,
-									"parameters": {
-										"child": "FogMask",
-										"which": "own"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
-									"id": "tween-value",
-									"objectClass": "FogMask",
-									"sid": 975130224750890,
-									"behaviorType": "Tween",
+									"id": "spawn-another-object",
+									"objectClass": "glow",
+									"sid": 770695814013915,
 									"parameters": {
-										"tags": "\"shrink\"",
-										"start-value": "1",
-										"end-value": "0",
-										"time": ".05",
-										"ease": "default",
-										"destroy-on-complete": "yes",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
+										"object": "FogMask",
+										"layer": "lightingLayer",
+										"image-point": "\"center\"",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "glow",
+									"sid": 666840338139019,
+									"parameters": {
+										"child": "FogMask",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-o": false,
+										"transform-z-elevation": false,
+										"transform-visibility": false,
+										"destroy-with-parent": true
 									}
 								}
 							],
-							"sid": 643082673963439,
-							"disabled": true
+							"sid": 308241552524465,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "glow",
+											"sid": 660339606294768,
+											"parameters": {
+												"child": "FogMask",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 358353854040604,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Use the smaller sprite for the rest of the objects."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "actuals",
+													"sid": 385925173068080,
+													"parameters": {
+														"unique-id": "glow.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "FogMask",
+													"sid": 631513265731994,
+													"parameters": {
+														"animation": "\"64\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 214660483776418
+										},
+										{
+											"eventType": "comment",
+											"text": "Use a slightly bigger sprite for the player object, so it's definitely visible all the time."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 950048536583492
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "FogMask",
+													"sid": 184299580933182,
+													"parameters": {
+														"animation": "\"128\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 168286095006739
+										}
+									]
+								}
+							]
 						}
 					]
 				},
@@ -273,30 +185,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "set-layer-force-own-texture",
-							"objectClass": "System",
-							"sid": 378736821506307,
-							"parameters": {
-								"layer": "lightingLayer",
-								"mode": "on"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 631274173778286,
-							"parameters": {
-								"object-to-create": "tb_darkness",
-								"layer": "lightingLayer",
-								"x": "0",
-								"y": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 842008762995693,
 					"children": [
 						{
@@ -326,43 +215,578 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
-									"sid": 306453846005836,
-									"parameters": {
-										"object": "tb_darkness"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
-									"id": "set-size",
-									"objectClass": "tb_darkness",
-									"sid": 847323743628715,
+									"id": "set-layer-force-own-texture",
+									"objectClass": "System",
+									"sid": 462233246365543,
 									"parameters": {
-										"width": "LayoutWidth",
-										"height": "LayoutHeight"
+										"layer": "lightingLayer",
+										"mode": "on"
 									}
 								},
 								{
-									"id": "set-opacity",
-									"objectClass": "tb_darkness",
-									"sid": 222015014655864,
+									"id": "set-layer-effect-enabled",
+									"objectClass": "System",
+									"sid": 869561477812762,
 									"parameters": {
-										"opacity": "darkness"
+										"layer": "lightingLayer",
+										"mode": "enable",
+										"effect": "\"Multiply\""
 									}
-								},
-								{
-									"id": "move-to-bottom",
-									"objectClass": "tb_darkness",
-									"sid": 166883866411312
 								}
 							],
-							"sid": 330661557677576
+							"sid": 636784214192288
 						}
 					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Rim Light",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "dynamic rim lights on dolls"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 307475680680771,
+									"parameters": {
+										"object": "dolls"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 855129072439736,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "lightSource",
+											"sid": 378529984696504,
+											"parameters": {
+												"which": "nearest",
+												"x": "dolls.X",
+												"y": "dolls.Y"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 641638283561479,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 591882820835669,
+													"parameters": {
+														"value": "distance(dolls.X, dolls.Y, lightSource.X, lightSource.Y) < 2 * lightSource.Width"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 498437755883241,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "has-los-to-object",
+															"objectClass": "lightSource",
+															"sid": 783661496144008,
+															"behaviorType": "LineOfSight",
+															"parameters": {
+																"object": "dolls",
+																"image-point": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-effect-enabled",
+															"objectClass": "dolls",
+															"sid": 723790126462962,
+															"parameters": {
+																"mode": "enable",
+																"effect": "\"RimLight\""
+															}
+														},
+														{
+															"callFunction": "drawRrimLight",
+															"sid": 897999754625165
+														},
+														{
+															"callFunction": "fadeInRimLight",
+															"sid": 519641251505890,
+															"disabled": true
+														}
+													],
+													"sid": 283521346362144
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 595247706911047
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "fadeOutRimLight",
+															"sid": 263143612442320
+														},
+														{
+															"id": "set-effect-enabled",
+															"objectClass": "dolls",
+															"sid": 643868518950841,
+															"disabled": true,
+															"parameters": {
+																"mode": "disable",
+																"effect": "\"RimLight\""
+															}
+														}
+													],
+													"sid": 593276458240534
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 392983262531292
+												}
+											],
+											"actions": [
+												{
+													"id": "set-effect-enabled",
+													"objectClass": "dolls",
+													"sid": 135420172461525,
+													"parameters": {
+														"mode": "disable",
+														"effect": "\"RimLight\""
+													}
+												}
+											],
+											"sid": 204940822431660
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "fadeOutRimLight",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 906690819894756,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "intensity",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 741509910948373
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-effect-enabled",
+											"objectClass": "dolls",
+											"sid": 435896201324982,
+											"parameters": {
+												"effect": "\"RimLight\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 775738686951644,
+											"disabled": true,
+											"parameters": {
+												"variable": "intensity",
+												"value": "Functions.getEffectValue(\"RimLight\", dolls.ObjectTypeName, 2)"
+											}
+										}
+									],
+									"sid": 324785639319951,
+									"children": [
+										{
+											"eventType": "script",
+											"script": "const typeObject = runtime.objects.dolls;\nconst pickedInstance = typeObject.getPickedInstances()[0];\n\nif (pickedInstance) {\n\tconst myEffect = pickedInstance.effects.find((e)=> e.name === 'RimLight' )\n \tif (myEffect) {\n\t\tlocalVars.intensity = myEffect.getParameter(2);\n\t}\n}"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 980912182214721,
+													"parameters": {
+														"first-value": "intensity",
+														"comparison": 4,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-effect-parameter",
+													"objectClass": "dolls",
+													"sid": 197097145344740,
+													"parameters": {
+														"effect": "\"RimLight\"",
+														"parameter-index": "2",
+														"value": "lerp(intensity, 0, 0.1 * 120 * dt)\n"
+													}
+												}
+											],
+											"sid": 877924086321924
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 859301996993811
+												}
+											],
+											"actions": [
+												{
+													"id": "set-effect-enabled",
+													"objectClass": "dolls",
+													"sid": 893773832645452,
+													"parameters": {
+														"mode": "disable",
+														"effect": "\"RimLight\""
+													}
+												}
+											],
+											"sid": 142836834548214
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "fadeInRimLight",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 405602998465186,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "curIntensity",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 352065970472392
+								},
+								{
+									"eventType": "variable",
+									"name": "potentialIntensity",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 731540843316779
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 980355673329453,
+											"parameters": {
+												"variable": "potentialIntensity",
+												"value": "clamp(1-(distance(dolls.X, dolls.Y, lightSource.X, lightSource.Y)*0.005), 0, .25)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 826798975740778,
+											"parameters": {
+												"variable": "curIntensity",
+												"value": "Functions.getEffectValue(\"RimLight\", dolls.ObjectTypeName, 2)"
+											}
+										}
+									],
+									"sid": 512019404869916
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 653994748261739,
+											"parameters": {
+												"first-value": "potentialIntensity",
+												"comparison": 4,
+												"second-value": "curIntensity +.05"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "dolls",
+											"sid": 782687431485300,
+											"parameters": {
+												"effect": "\"RimLight\"",
+												"parameter-index": "2",
+												"value": "lerp(curIntensity, potentialIntensity, 0.1 * 180 * dt)\n"
+											}
+										}
+									],
+									"sid": 175451084816536
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 264707499305745
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "drawRrimLight",
+											"sid": 697418279871128
+										}
+									],
+									"sid": 546423520202389
+								}
+							]
+						},
+						{
+							"functionName": "drawRrimLight",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 252479398774716,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "color"
+										},
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "dolls",
+											"sid": 639338332312629,
+											"parameters": {
+												"effect": "\"RimLight\"",
+												"parameter-index": "0",
+												"value": "lightSource.ColorValue"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "size"
+										},
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "dolls",
+											"sid": 636364225399303,
+											"parameters": {
+												"effect": "\"RimLight\"",
+												"parameter-index": "1",
+												"value": "clamp(\n5-(distance(Self.X, Self.Y, lightSource.X, lightSource.Y)*0.005), 0, 2)"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "intensity"
+										},
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "dolls",
+											"sid": 622129417835830,
+											"parameters": {
+												"effect": "\"RimLight\"",
+												"parameter-index": "2",
+												"value": "clamp(1-(distance(Self.X, Self.Y, lightSource.X, lightSource.Y)*0.005), 0, .25)"
+											}
+										}
+									],
+									"sid": 311681923460139,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "angle"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-mirrored",
+													"objectClass": "dolls",
+													"sid": 408915025767694,
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-effect-parameter",
+													"objectClass": "dolls",
+													"sid": 960812538127028,
+													"parameters": {
+														"effect": "\"RimLight\"",
+														"parameter-index": "3",
+														"value": "angle(Self.X, Self.Y, lightSource.X,lightSource.Y)"
+													}
+												}
+											],
+											"sid": 491221744393243
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 677366044175623
+												}
+											],
+											"actions": [
+												{
+													"id": "set-effect-parameter",
+													"objectClass": "dolls",
+													"sid": 468685278659868,
+													"parameters": {
+														"effect": "\"RimLight\"",
+														"parameter-index": "3",
+														"value": "(angle(Self.X, Self.Y, lightSource.X,lightSource.Y) * -1) + 180"
+													}
+												}
+											],
+											"sid": 592660806896543
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "getEffectValue",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "number",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "effectName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 135700939092375
+								},
+								{
+									"name": "objectType",
+									"type": "string",
+									"initialValue": "dolls",
+									"comment": "",
+									"sid": 671352863602088
+								},
+								{
+									"name": "effectParamNum",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 844671505732611
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 628991994633022,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "intensity",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 432378239814608
+								},
+								{
+									"eventType": "script",
+									"script": "const typeObject = runtime.objects[localVars.objectType];\nconst pickedInstances = typeObject.getPickedInstances()\ndebugger;\nconst pickedInstance = pickedInstances[0];\n\nif (pickedInstance) {\n\tconst myEffect = pickedInstance.effects.find((e)=> e.name === localVars.effectName )\n \tif (myEffect) {\n\t\tconst parameterValue = myEffect.getParameter(localVars.effectParamNum);\n\t\tlocalVars.intensity = parameterValue\n\t}\n}"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 114418769371493,
+											"parameters": {
+												"value": "intensity"
+											}
+										}
+									],
+									"sid": 630584594652553
+								}
+							]
+						}
+					],
+					"sid": 634265090156054
 				}
 			],
 			"sid": 564661993524078

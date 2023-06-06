@@ -1,0 +1,17 @@
+{
+	"name": "lightSource",
+	"plugin-id": "Sprite",
+	"sid": 871756531066212,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 755634709329249
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Sprite4"
+	]
+}

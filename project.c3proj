@@ -1,11 +1,18 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 32702,
+	"savedWithRelease": 34400,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
 	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
 		{
 			"type": "plugin",
 			"id": "Arr",
@@ -31,6 +38,13 @@
 			"type": "plugin",
 			"id": "Dictionary",
 			"name": "Dictionary",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -87,6 +101,13 @@
 			"type": "plugin",
 			"id": "Tilemap",
 			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Timeline",
+			"name": "Timeline controller",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -263,8 +284,23 @@
 		},
 		{
 			"type": "effect",
+			"id": "RichardLems_RimLight",
+			"name": "Rim Light",
+			"author": "Richard Lems",
+			"bundled": false,
+			"version": "1.0.0.0"
+		},
+		{
+			"type": "effect",
 			"id": "blurhorizontal",
 			"name": "Blur horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "multiply",
+			"name": "Multiply",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -323,7 +359,10 @@
 			"Array",
 			"spr_btnTileScreen",
 			"destructable_tb",
-			"destructableWood_spr"
+			"destructableWood_spr",
+			"TimelineController",
+			"testNPC",
+			"dust_par"
 		],
 		"subfolders": [
 			{
@@ -618,6 +657,24 @@
 				],
 				"subfolders": [],
 				"name": "waterfall"
+			},
+			{
+				"items": [
+					"dialogText_txt",
+					"speech_json",
+					"dialogName_ptch",
+					"dialogBox_9patch",
+					"AJAX"
+				],
+				"subfolders": [],
+				"name": "dialog"
+			},
+			{
+				"items": [
+					"Sprite4"
+				],
+				"subfolders": [],
+				"name": "sandbox"
 			}
 		]
 	},
@@ -644,8 +701,10 @@
 			"enemyAir",
 			"enemyAirChase",
 			"enemyCrawler",
-			"lighten",
-			"cameraTargets"
+			"glow",
+			"cameraTargets",
+			"NPC",
+			"lightSource"
 		],
 		"subfolders": []
 	},
@@ -657,7 +716,9 @@
 			"caveLand",
 			"HUD",
 			"repository",
-			"Pause"
+			"Pause",
+			"dialog",
+			"SANDBOX"
 		],
 		"subfolders": [
 			{
@@ -685,7 +746,9 @@
 			"e_eventPoints",
 			"e_pauseMenu",
 			"e_lighting",
-			"e_traps"
+			"e_traps",
+			"dialog_e",
+			"sandbox_e"
 		],
 		"subfolders": [
 			{
@@ -984,7 +1047,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "dialog.json",
+					"type": "application/json",
+					"sid": 543229968241999,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},

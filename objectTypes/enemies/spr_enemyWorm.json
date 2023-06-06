@@ -11,23 +11,23 @@
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 8,
-						"originX": 0.5,
-						"originY": 0,
+						"width": 8,
+						"height": 20,
+						"originX": 1,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2598035,
+						"imageSpriteId": 4689298,
 						"collisionPoly": {
 							"points": [
 								1,
-								0,
-								1,
 								1,
 								0,
 								1,
 								0,
+								0,
+								1,
 								0
 							]
 						},
@@ -35,23 +35,23 @@
 						"imagePoints": [
 							{
 								"name": "L1",
-								"x": 0.8,
-								"y": -0.375
+								"x": 1.375,
+								"y": 0.8
 							},
 							{
 								"name": "LM",
-								"x": 0.5,
-								"y": -0.375
+								"x": 1.375,
+								"y": 0.5
 							},
 							{
 								"name": "F",
-								"x": 0.9,
-								"y": 0.5
+								"x": 0.5,
+								"y": 0.9
 							},
 							{
 								"name": "F2",
-								"x": 0.85,
-								"y": 0.5
+								"x": 0.5,
+								"y": 0.85
 							}
 						],
 						"duration": 1

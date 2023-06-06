@@ -92,6 +92,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 200,
 						"size": 4,
@@ -137,6 +138,7 @@
 						"spray-cone": 360,
 						"type": "one-shot",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 200,
 						"size": 4,
@@ -182,6 +184,7 @@
 						"spray-cone": 60,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 45,
 						"size": 3,
@@ -233,6 +236,7 @@
 						"spray-cone": 180,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 20,
 						"size": 2,
@@ -369,6 +373,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -381,6 +387,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -393,6 +401,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -525,6 +534,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -537,6 +548,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -549,6 +562,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -602,6 +616,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -614,6 +630,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -626,6 +644,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -653,6 +672,7 @@
 						"spray-cone": 60,
 						"type": "one-shot",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 100,
 						"size": 4,
@@ -816,6 +836,7 @@
 						"spray-cone": 360,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 12,
 						"size": 8,
@@ -847,6 +868,8 @@
 							"w": false,
 							"h": false,
 							"a": false,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -859,6 +882,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -887,6 +911,7 @@
 						"spray-cone": 0,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 0,
 						"size": 4,
@@ -1064,6 +1089,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1076,6 +1103,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1088,6 +1117,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1133,6 +1163,22 @@
 							}
 						}
 					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0.25,
+								"angl": 180
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 94,
 						"uid": 96,
@@ -1146,6 +1192,8 @@
 									"w": true,
 									"h": false,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1158,6 +1206,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1170,6 +1220,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1227,6 +1278,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1240,6 +1293,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1252,6 +1307,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1264,6 +1321,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1291,6 +1349,7 @@
 						"spray-cone": 60,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 45,
 						"size": 3,
@@ -1328,6 +1387,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1340,6 +1401,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1658,6 +1720,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1670,6 +1734,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1682,6 +1748,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1761,6 +1828,22 @@
 							}
 						}
 					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0.25,
+								"angl": 180
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 15,
 						"uid": 32,
@@ -1774,6 +1857,8 @@
 									"w": true,
 									"h": false,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1786,6 +1871,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1798,6 +1885,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -1843,6 +1931,22 @@
 							}
 						}
 					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0.25,
+								"angl": 180
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 47,
 						"uid": 49,
@@ -1853,6 +1957,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1865,6 +1971,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2053,6 +2160,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2065,6 +2174,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2111,6 +2221,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2123,6 +2235,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2191,6 +2304,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -2204,6 +2319,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -2217,6 +2334,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -2229,6 +2348,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2241,6 +2362,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2293,6 +2415,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2305,6 +2429,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2396,6 +2521,8 @@
 							"w": true,
 							"h": false,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2408,6 +2535,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2465,6 +2593,8 @@
 							"w": true,
 							"h": false,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2477,6 +2607,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2719,6 +2850,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -2731,6 +2864,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2743,6 +2878,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2788,6 +2924,22 @@
 							}
 						}
 					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0.25,
+								"angl": 180
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 111,
 						"uid": 109,
@@ -2801,6 +2953,8 @@
 									"w": true,
 									"h": false,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -2813,6 +2967,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2825,6 +2981,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -2882,6 +3039,8 @@
 							"w": true,
 							"h": false,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2894,6 +3053,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3030,6 +3190,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3042,6 +3204,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3422,6 +3585,7 @@
 						"spray-cone": 90,
 						"type": "continuous-spray",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 10,
 						"size": 2,
@@ -3467,6 +3631,7 @@
 						"spray-cone": 60,
 						"type": "one-shot",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 200,
 						"size": 1,
@@ -3543,6 +3708,7 @@
 						"spray-cone": 360,
 						"type": "one-shot",
 						"object": -1,
+						"initially-visible": true,
 						"live-preview": false,
 						"speed": 50,
 						"size": 2,
@@ -3611,6 +3777,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3623,6 +3791,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3668,6 +3837,22 @@
 							}
 						}
 					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0.25,
+								"angl": 180
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 250,
 						"uid": 248,
@@ -3678,6 +3863,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3690,6 +3877,7 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
@@ -3841,6 +4029,8 @@
 									"w": true,
 									"h": true,
 									"a": true,
+									"o": false,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -3853,6 +4043,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3865,16 +4057,17 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
 					"world": {
-						"x": 128,
-						"y": 12,
-						"width": 20,
-						"height": 8,
-						"originX": 0.5,
-						"originY": 0,
+						"x": 132.05612833998623,
+						"y": 15.913808590263962,
+						"width": 8,
+						"height": 20,
+						"originX": 1,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -3941,6 +4134,22 @@
 							}
 						}
 					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0.25,
+								"angl": 180
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 253,
 						"uid": 255,
@@ -3951,6 +4160,8 @@
 							"w": true,
 							"h": true,
 							"a": true,
+							"o": false,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -3963,14 +4174,15 @@
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
+							"transformO": 0,
 							"previewSceneGraph": false
 						}
 					},
 					"world": {
 						"x": 128,
 						"y": 16,
-						"width": 20,
-						"height": 8,
+						"width": 8,
+						"height": 20,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -4100,6 +4312,326 @@
 							1,
 							1,
 							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "dialogName_ptch",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 10,
+						"bottom-margin": 10,
+						"edges": "tile",
+						"fill": "tile",
+						"initially-visible": false,
+						"origin": "top",
+						"seams": "exact"
+					},
+					"uid": 359,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 365,
+						"uid": 359,
+						"children": [
+							{
+								"uid": 367,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 186,
+						"y": -94,
+						"width": 100,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "dialogBox_9patch",
+					"properties": {
+						"left-margin": 32,
+						"right-margin": 32,
+						"top-margin": 32,
+						"bottom-margin": 32,
+						"edges": "tile",
+						"fill": "tile",
+						"initially-visible": true,
+						"origin": "top",
+						"seams": "exact"
+					},
+					"uid": 365,
+					"instanceVariables": {
+						"npcUid": 0,
+						"isOpen": false
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 365,
+						"children": [
+							{
+								"uid": 359,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 366,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 186,
+						"y": -126,
+						"width": 256,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "dialogText_txt",
+					"properties": {
+						"text": "",
+						"enable-bbcode": true,
+						"character-width": 7,
+						"character-height": 7,
+						"character-set": "0123456789abcdefghijklmnopqrstuvwxyz!?/",
+						"spacing-data": "",
+						"scale": 1,
+						"character-spacing": 0.5,
+						"line-height": 1,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 366,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 365,
+						"uid": 366,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 78,
+						"y": -116,
+						"width": 216,
+						"height": 44,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.4470588235294118,
+							0.3411764705882353,
+							0.8392156862745098,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "dialogText_txt",
+					"properties": {
+						"text": "",
+						"enable-bbcode": true,
+						"character-width": 7,
+						"character-height": 7,
+						"character-set": "0123456789abcdefghijklmnopqrstuvwxyz!?/",
+						"spacing-data": "",
+						"scale": 1,
+						"character-spacing": 0.5,
+						"line-height": 1,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 367,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 359,
+						"uid": 367,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 146,
+						"y": -86,
+						"width": 80,
+						"height": 12,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.4470588235294118,
+							0.3411764705882353,
+							0.8392156862745098,
 							1
 						],
 						"angle": 0,

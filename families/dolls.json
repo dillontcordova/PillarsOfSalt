@@ -37,7 +37,12 @@
 			"sid": 985924802284023
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "RichardLems_RimLight",
+			"name": "RimLight"
+		}
+	],
 	"members": [
 		"spr_slugDoll",
 		"spr_playerDoll",

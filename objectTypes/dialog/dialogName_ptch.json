@@ -1,0 +1,26 @@
+{
+	"name": "dialogName_ptch",
+	"plugin-id": "NinePatch",
+	"sid": 758570524209586,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 365640314404193
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 48,
+		"height": 30,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 4566211,
+		"useCollisionPoly": true
+	}
+}
