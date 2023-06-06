@@ -324,13 +324,16 @@
 															}
 														},
 														{
-															"callFunction": "drawRrimLight",
-															"sid": 897999754625165
+															"callFunction": "fadeInRimLight",
+															"sid": 519641251505890
 														},
 														{
-															"callFunction": "fadeInRimLight",
-															"sid": 519641251505890,
-															"disabled": true
+															"callFunction": "drawRrimLight",
+															"sid": 747723486794408,
+															"disabled": true,
+															"parameters": [
+																"-1"
+															]
 														}
 													],
 													"sid": 283521346362144
@@ -348,16 +351,6 @@
 														{
 															"callFunction": "fadeOutRimLight",
 															"sid": 263143612442320
-														},
-														{
-															"id": "set-effect-enabled",
-															"objectClass": "dolls",
-															"sid": 643868518950841,
-															"disabled": true,
-															"parameters": {
-																"mode": "disable",
-																"effect": "\"RimLight\""
-															}
 														}
 													],
 													"sid": 593276458240534
@@ -429,20 +422,15 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 775738686951644,
-											"disabled": true,
+											"sid": 503645300303417,
 											"parameters": {
 												"variable": "intensity",
-												"value": "Functions.getEffectValue(\"RimLight\", dolls.ObjectTypeName, 2)"
+												"value": "Functions.getEffectValue(\"RimLight\", 2, dolls.UID)"
 											}
 										}
 									],
 									"sid": 324785639319951,
 									"children": [
-										{
-											"eventType": "script",
-											"script": "const typeObject = runtime.objects.dolls;\nconst pickedInstance = typeObject.getPickedInstances()[0];\n\nif (pickedInstance) {\n\tconst myEffect = pickedInstance.effects.find((e)=> e.name === 'RimLight' )\n \tif (myEffect) {\n\t\tlocalVars.intensity = myEffect.getParameter(2);\n\t}\n}"
-										},
 										{
 											"eventType": "block",
 											"conditions": [
@@ -459,14 +447,11 @@
 											],
 											"actions": [
 												{
-													"id": "set-effect-parameter",
-													"objectClass": "dolls",
-													"sid": 197097145344740,
-													"parameters": {
-														"effect": "\"RimLight\"",
-														"parameter-index": "2",
-														"value": "lerp(intensity, 0, 0.1 * 120 * dt)\n"
-													}
+													"callFunction": "drawRrimLight",
+													"sid": 560115601112345,
+													"parameters": [
+														"lerp(intensity, 0, 0.1 * 120 * dt)"
+													]
 												}
 											],
 											"sid": 877924086321924
@@ -502,7 +487,7 @@
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
-							"functionCopyPicked": false,
+							"functionCopyPicked": true,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -510,6 +495,16 @@
 							"actions": [],
 							"sid": 405602998465186,
 							"children": [
+								{
+									"eventType": "variable",
+									"name": "intensity",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 817460346054495
+								},
 								{
 									"eventType": "variable",
 									"name": "curIntensity",
@@ -546,10 +541,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 826798975740778,
+											"sid": 618369850223288,
 											"parameters": {
 												"variable": "curIntensity",
-												"value": "Functions.getEffectValue(\"RimLight\", dolls.ObjectTypeName, 2)"
+												"value": "Functions.getEffectValue(\"RimLight\", 2, dolls.UID)"
 											}
 										}
 									],
@@ -571,13 +566,12 @@
 									],
 									"actions": [
 										{
-											"id": "set-effect-parameter",
-											"objectClass": "dolls",
-											"sid": 782687431485300,
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 254018420476398,
 											"parameters": {
-												"effect": "\"RimLight\"",
-												"parameter-index": "2",
-												"value": "lerp(curIntensity, potentialIntensity, 0.1 * 180 * dt)\n"
+												"variable": "intensity",
+												"value": "lerp(curIntensity, potentialIntensity, 0.1 * 180 * dt)"
 											}
 										}
 									],
@@ -585,17 +579,14 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 264707499305745
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"callFunction": "drawRrimLight",
-											"sid": 697418279871128
+											"sid": 982800200012483,
+											"parameters": [
+												"intensity"
+											]
 										}
 									],
 									"sid": 546423520202389
@@ -609,7 +600,15 @@
 							"functionReturnType": "none",
 							"functionCopyPicked": true,
 							"functionIsAsync": false,
-							"functionParameters": [],
+							"functionParameters": [
+								{
+									"name": "intensity",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 972677546869532
+								}
+							],
 							"eventType": "function-block",
 							"conditions": [],
 							"actions": [],
@@ -654,11 +653,11 @@
 										{
 											"id": "set-effect-parameter",
 											"objectClass": "dolls",
-											"sid": 622129417835830,
+											"sid": 499295060111331,
 											"parameters": {
 												"effect": "\"RimLight\"",
 												"parameter-index": "2",
-												"value": "clamp(1-(distance(Self.X, Self.Y, lightSource.X, lightSource.Y)*0.005), 0, .25)"
+												"value": "intensity > -1 ? intensity :  clamp(1-(distance(Self.X, Self.Y, lightSource.X, lightSource.Y)*0.005), 0, .25)"
 											}
 										}
 									],
@@ -667,6 +666,32 @@
 										{
 											"eventType": "comment",
 											"text": "angle"
+										},
+										{
+											"eventType": "variable",
+											"name": "angleDiffNum",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 880196493527183
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 857157199427194,
+													"parameters": {
+														"variable": "angleDiffNum",
+														"value": "floor( anglediff(0, dolls.Angle))"
+													}
+												}
+											],
+											"sid": 161487218256884
 										},
 										{
 											"eventType": "block",
@@ -682,11 +707,11 @@
 												{
 													"id": "set-effect-parameter",
 													"objectClass": "dolls",
-													"sid": 960812538127028,
+													"sid": 613843111160839,
 													"parameters": {
 														"effect": "\"RimLight\"",
 														"parameter-index": "3",
-														"value": "angle(Self.X, Self.Y, lightSource.X,lightSource.Y)"
+														"value": "angle(Self.X, Self.Y, lightSource.X,lightSource.Y) - angleDiffNum"
 													}
 												}
 											],
@@ -705,11 +730,11 @@
 												{
 													"id": "set-effect-parameter",
 													"objectClass": "dolls",
-													"sid": 468685278659868,
+													"sid": 756254947498285,
 													"parameters": {
 														"effect": "\"RimLight\"",
 														"parameter-index": "3",
-														"value": "(angle(Self.X, Self.Y, lightSource.X,lightSource.Y) * -1) + 180"
+														"value": "((angle(Self.X, Self.Y, lightSource.X,lightSource.Y) * -1) + 180) + angleDiffNum"
 													}
 												}
 											],
@@ -724,7 +749,7 @@
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "number",
-							"functionCopyPicked": true,
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -735,18 +760,18 @@
 									"sid": 135700939092375
 								},
 								{
-									"name": "objectType",
-									"type": "string",
-									"initialValue": "dolls",
-									"comment": "",
-									"sid": 671352863602088
-								},
-								{
 									"name": "effectParamNum",
 									"type": "number",
 									"initialValue": "0",
 									"comment": "",
 									"sid": 844671505732611
+								},
+								{
+									"name": "uid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 747790516173841
 								}
 							],
 							"eventType": "function-block",
@@ -755,38 +780,22 @@
 							"sid": 628991994633022,
 							"children": [
 								{
-									"eventType": "variable",
-									"name": "intensity",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 432378239814608
-								},
-								{
 									"eventType": "script",
-									"script": "const typeObject = runtime.objects[localVars.objectType];\nconst pickedInstances = typeObject.getPickedInstances()\ndebugger;\nconst pickedInstance = pickedInstances[0];\n\nif (pickedInstance) {\n\tconst myEffect = pickedInstance.effects.find((e)=> e.name === localVars.effectName )\n \tif (myEffect) {\n\t\tconst parameterValue = myEffect.getParameter(localVars.effectParamNum);\n\t\tlocalVars.intensity = parameterValue\n\t}\n}"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-function-return-value",
-											"objectClass": "Functions",
-											"sid": 114418769371493,
-											"parameters": {
-												"value": "intensity"
-											}
-										}
-									],
-									"sid": 630584594652553
+									"script": "// THIS IS WHAT BROKE EVERYTHING: be careful using getFirstInstance in JS\n// const typeObject = runtime.objects[localVars.objectType];\n// const pickedInstance = typeObject.getFirstInstance();\n\nconst pickedInstance = runtime.getInstanceByUid(localVars.uid);\nif (pickedInstance) {\n\tconst myEffect = pickedInstance.effects.find((e)=> e.name === localVars.effectName )\n \tif (myEffect) {\n\t\tconst parameterValue = myEffect.getParameter(localVars.effectParamNum);\n\t\truntime.setReturnValue(parameterValue);\n\t}\n}"
 								}
 							]
 						}
 					],
 					"sid": 634265090156054
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Shadow",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 942117125694033
 				}
 			],
 			"sid": 564661993524078
