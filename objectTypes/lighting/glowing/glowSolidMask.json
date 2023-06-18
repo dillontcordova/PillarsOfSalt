@@ -1,18 +1,36 @@
 {
-	"name": "FogGlow",
+	"name": "glowSolidMask",
 	"plugin-id": "Sprite",
-	"sid": 392711536776070,
+	"sid": 596384404003010,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
-	"effectTypes": [
-		{
-			"effectId": "softlight",
-			"name": "SoftLight"
-		}
-	],
+	"effectTypes": [],
 	"animations": {
 		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8411382,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 288106790353973,
+				"name": "dimmer",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
 			{
 				"frames": [
 					{
@@ -23,36 +41,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2916605,
+						"imageSpriteId": 432145,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 590015452355256,
-				"name": "64",
-				"isLooping": false,
-				"isPingPong": false,
-				"repeatCount": 1,
-				"repeatTo": 0,
-				"speed": 0
-			},
-			{
-				"frames": [
-					{
-						"width": 128,
-						"height": 128,
-						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 5083525,
-						"useCollisionPoly": true,
-						"duration": 1
-					}
-				],
-				"sid": 131210999900204,
-				"name": "128",
+				"sid": 833659206598139,
+				"name": "brighter",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

@@ -1711,7 +1711,7 @@
 															"objectClass": "spr_playerActual",
 															"sid": 465723084487042,
 															"parameters": {
-																"object": "par_upgrade2",
+																"object": "par_upgradeComplete",
 																"layer": "Self.LayerName",
 																"image-point": "1",
 																"create-hierarchy": false

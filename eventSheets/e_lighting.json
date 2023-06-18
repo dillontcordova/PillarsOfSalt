@@ -9,37 +9,38 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "variable",
-					"name": "lightingLayer",
-					"type": "string",
-					"initialValue": "lights",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": true,
-					"sid": 995677619125944
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-created",
-							"objectClass": "glow",
-							"sid": 863824773540380
-						}
-					],
-					"actions": [],
-					"sid": 300481830049518,
+					"eventType": "group",
+					"disabled": false,
+					"title": "Glow",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "lightingLayer",
+							"type": "string",
+							"initialValue": "lights",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 163072767342995
+						},
+						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "glowEmitters",
+									"sid": 793503063457553
+								}
+							],
 							"actions": [
 								{
 									"id": "spawn-another-object",
-									"objectClass": "glow",
-									"sid": 770695814013915,
+									"objectClass": "glowEmitters",
+									"sid": 415827850551142,
 									"parameters": {
-										"object": "FogMask",
+										"object": "glowAmbientMask",
 										"layer": "lightingLayer",
 										"image-point": "\"center\"",
 										"create-hierarchy": false
@@ -47,10 +48,10 @@
 								},
 								{
 									"id": "add-child",
-									"objectClass": "glow",
-									"sid": 666840338139019,
+									"objectClass": "glowEmitters",
+									"sid": 382177300440176,
 									"parameters": {
-										"child": "FogMask",
+										"child": "glowAmbientMask",
 										"transform-x": true,
 										"transform-y": true,
 										"transform-w": false,
@@ -63,183 +64,238 @@
 									}
 								}
 							],
-							"sid": 308241552524465,
+							"sid": 839522256215315,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-children",
-											"objectClass": "glow",
-											"sid": 660339606294768,
+											"id": "pick-by-unique-id",
+											"objectClass": "actuals",
+											"sid": 371907902949891,
 											"parameters": {
-												"child": "FogMask",
-												"which": "own"
+												"unique-id": "glowEmitters.UID"
 											}
 										}
 									],
-									"actions": [],
-									"sid": 358353854040604,
-									"children": [
+									"actions": [
 										{
-											"eventType": "comment",
-											"text": "Use the smaller sprite for the rest of the objects."
+											"id": "set-animation",
+											"objectClass": "glowAmbientMask",
+											"sid": 465239612944590,
+											"parameters": {
+												"animation": "\"brighter\"",
+												"from": "beginning"
+											}
 										},
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "actuals",
-													"sid": 385925173068080,
-													"parameters": {
-														"unique-id": "glow.UID"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "FogMask",
-													"sid": 631513265731994,
-													"parameters": {
-														"animation": "\"64\"",
-														"from": "beginning"
-													}
-												}
-											],
-											"sid": 214660483776418
-										},
-										{
-											"eventType": "comment",
-											"text": "Use a slightly bigger sprite for the player object, so it's definitely visible all the time."
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 950048536583492
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "FogMask",
-													"sid": 184299580933182,
-													"parameters": {
-														"animation": "\"128\"",
-														"from": "beginning"
-													}
-												}
-											],
-											"sid": 168286095006739
+											"id": "set-size",
+											"objectClass": "glowAmbientMask",
+											"sid": 569063936546244,
+											"parameters": {
+												"width": "actuals.Height * 4",
+												"height": "actuals.Height * 4"
+											}
 										}
-									]
+									],
+									"sid": 848336568655499
+								},
+								{
+									"eventType": "comment",
+									"text": "Use a slightly smaller glow for non actuals objects"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 528953428213158
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "glowAmbientMask",
+											"sid": 477278659324058,
+											"parameters": {
+												"animation": "\"dimmer\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "glowAmbientMask",
+											"sid": 424397189264473,
+											"parameters": {
+												"width": "actuals.Height* 3",
+												"height": "actuals.Height * 3"
+											}
+										}
+									],
+									"sid": 307063522510811
 								}
 							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-playing",
-							"objectClass": "FogMask",
-							"sid": 797330173085342,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"shrink\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-scale",
-							"objectClass": "FogMask",
-							"sid": 373970230498176,
-							"parameters": {
-								"scale": "Self.Tween.Value(\"shrink\")"
-							}
-						}
-					],
-					"sid": 142642966270613
-				},
-				{
-					"functionName": "initLights",
-					"functionDescription": "",
-					"functionCategory": "lighting",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "darkness",
-							"type": "number",
-							"initialValue": "10",
-							"comment": "",
-							"sid": 828351484032640
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 842008762995693,
-					"children": [
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 784361768377986,
-									"parameters": {
-										"value": "LayerIndex(lightingLayer) = -1"
-									}
+									"id": "on-created",
+									"objectClass": "spawnGlowMask",
+									"sid": 626334579320073
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "throwIf",
-									"sid": 155736396936823,
-									"parameters": [
-										"\"\"",
-										"\"\"",
-										"\"Missing lighting layer '\"& lightingLayer & \"'\""
-									]
+									"id": "spawn-another-object",
+									"objectClass": "spawnGlowMask",
+									"sid": 715321969233581,
+									"parameters": {
+										"object": "glowAmbientMask",
+										"layer": "lightingLayer",
+										"image-point": "\"center\"",
+										"create-hierarchy": false
+									}
 								}
 							],
-							"sid": 233811989111626
+							"sid": 466926838907644,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "glowAmbientMask",
+											"sid": 377746384175620,
+											"parameters": {
+												"animation": "\"dimmer\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "glowAmbientMask",
+											"sid": 924574106607867,
+											"parameters": {
+												"width": "spawnGlowMask.Width",
+												"height": "spawnGlowMask.Height"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "spawnGlowMask",
+											"sid": 487602138905204
+										}
+									],
+									"sid": 830838919596163
+								}
+							]
 						},
 						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
+							"functionName": "initLights",
+							"functionDescription": "",
+							"functionCategory": "lighting",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
 								{
-									"id": "set-layer-force-own-texture",
-									"objectClass": "System",
-									"sid": 462233246365543,
-									"parameters": {
-										"layer": "lightingLayer",
-										"mode": "on"
-									}
-								},
-								{
-									"id": "set-layer-effect-enabled",
-									"objectClass": "System",
-									"sid": 869561477812762,
-									"parameters": {
-										"layer": "lightingLayer",
-										"mode": "enable",
-										"effect": "\"Multiply\""
-									}
+									"name": "darkness",
+									"type": "number",
+									"initialValue": "10",
+									"comment": "",
+									"sid": 828351484032640
 								}
 							],
-							"sid": 636784214192288
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 703485980999840,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 289669929023790,
+											"parameters": {
+												"value": "LayerIndex(lightingLayer) = -1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "throwIf",
+											"sid": 396506759477382,
+											"parameters": [
+												"\"\"",
+												"\"\"",
+												"\"Missing lighting layer '\"& lightingLayer & \"'\""
+											]
+										}
+									],
+									"sid": 936915251339599
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-layer-force-own-texture",
+											"objectClass": "System",
+											"sid": 654758641262190,
+											"parameters": {
+												"layer": "lightingLayer",
+												"mode": "on"
+											}
+										},
+										{
+											"id": "set-layer-effect-enabled",
+											"objectClass": "System",
+											"sid": 803760765897666,
+											"parameters": {
+												"layer": "lightingLayer",
+												"mode": "enable",
+												"effect": "\"Multiply\""
+											}
+										},
+										{
+											"id": "set-layer-opacity",
+											"objectClass": "System",
+											"sid": 766562623311157,
+											"parameters": {
+												"layer": "lightingLayer",
+												"opacity": "darkness"
+											}
+										},
+										{
+											"id": "set-layer-transparent",
+											"objectClass": "System",
+											"sid": 562082975055988,
+											"parameters": {
+												"layer": "lightingLayer",
+												"mode": "opaque"
+											}
+										},
+										{
+											"id": "set-layer-background-color",
+											"objectClass": "System",
+											"sid": 662961570023024,
+											"parameters": {
+												"layer": "lightingLayer",
+												"color": "rgbEx(0, 0, 0)"
+											}
+										}
+									],
+									"sid": 441115530982838
+								}
+							]
 						}
-					]
+					],
+					"sid": 810222749848555
 				},
 				{
 					"eventType": "group",
@@ -248,6 +304,28 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "lightSources",
+									"sid": 325711145159408
+								}
+							],
+							"actions": [
+								{
+									"id": "set-range",
+									"objectClass": "lightSources",
+									"sid": 966198785185564,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"range": "Self.Width * 2"
+									}
+								}
+							],
+							"sid": 667129225895887
+						},
 						{
 							"eventType": "comment",
 							"text": "dynamic rim lights on dolls"
@@ -272,7 +350,7 @@
 									"conditions": [
 										{
 											"id": "pick-nearestfurthest",
-											"objectClass": "lightSource",
+											"objectClass": "lightSources",
 											"sid": 378529984696504,
 											"parameters": {
 												"which": "nearest",
@@ -292,7 +370,7 @@
 													"objectClass": "System",
 													"sid": 591882820835669,
 													"parameters": {
-														"value": "distance(dolls.X, dolls.Y, lightSource.X, lightSource.Y) < 2 * lightSource.Width"
+														"value": "distance(dolls.X, dolls.Y, lightSources.X, lightSources.Y) < 2 * lightSources.Width"
 													}
 												}
 											],
@@ -304,7 +382,7 @@
 													"conditions": [
 														{
 															"id": "has-los-to-object",
-															"objectClass": "lightSource",
+															"objectClass": "lightSources",
 															"sid": 783661496144008,
 															"behaviorType": "LineOfSight",
 															"parameters": {
@@ -535,7 +613,7 @@
 											"sid": 980355673329453,
 											"parameters": {
 												"variable": "potentialIntensity",
-												"value": "clamp(1-(distance(dolls.X, dolls.Y, lightSource.X, lightSource.Y)*0.005), 0, .25)"
+												"value": "clamp(1-(distance(dolls.X, dolls.Y, lightSources.X, lightSources.Y)*0.005), 0, .25)"
 											}
 										},
 										{
@@ -629,7 +707,7 @@
 											"parameters": {
 												"effect": "\"RimLight\"",
 												"parameter-index": "0",
-												"value": "lightSource.ColorValue"
+												"value": "lightSources.ColorValue"
 											}
 										},
 										{
@@ -643,7 +721,7 @@
 											"parameters": {
 												"effect": "\"RimLight\"",
 												"parameter-index": "1",
-												"value": "clamp(\n5-(distance(Self.X, Self.Y, lightSource.X, lightSource.Y)*0.005), 0, 2)"
+												"value": "clamp(\n5-(distance(Self.X, Self.Y, lightSources.X, lightSources.Y)*0.005), 0, 2)"
 											}
 										},
 										{
@@ -653,11 +731,11 @@
 										{
 											"id": "set-effect-parameter",
 											"objectClass": "dolls",
-											"sid": 499295060111331,
+											"sid": 433123414906504,
 											"parameters": {
 												"effect": "\"RimLight\"",
 												"parameter-index": "2",
-												"value": "intensity > -1 ? intensity :  clamp(1-(distance(Self.X, Self.Y, lightSource.X, lightSource.Y)*0.005), 0, .25)"
+												"value": "intensity > -1 ? intensity :  clamp((1-(distance(Self.X, Self.Y, lightSources.X, lightSources.Y)*0.005)), 0, .35)"
 											}
 										}
 									],
@@ -711,7 +789,7 @@
 													"parameters": {
 														"effect": "\"RimLight\"",
 														"parameter-index": "3",
-														"value": "angle(Self.X, Self.Y, lightSource.X,lightSource.Y) - angleDiffNum"
+														"value": "angle(Self.X, Self.Y, lightSources.X,lightSources.Y) - angleDiffNum"
 													}
 												}
 											],
@@ -734,7 +812,7 @@
 													"parameters": {
 														"effect": "\"RimLight\"",
 														"parameter-index": "3",
-														"value": "((angle(Self.X, Self.Y, lightSource.X,lightSource.Y) * -1) + 180) + angleDiffNum"
+														"value": "((angle(Self.X, Self.Y, lightSources.X,lightSources.Y) * -1) + 180) + angleDiffNum"
 													}
 												}
 											],

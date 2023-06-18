@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 34400,
+	"savedWithRelease": 34402,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -269,6 +269,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "shadowcaster",
+			"name": "Shadow caster",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -325,13 +332,6 @@
 			"author": "Somebody / Mikal / skymen",
 			"bundled": false,
 			"version": "1.5.0"
-		},
-		{
-			"type": "effect",
-			"id": "softlight",
-			"name": "Soft light",
-			"author": "Scirra",
-			"bundled": false
 		}
 	],
 	"uniqueId": "n8bngjs1j57",
@@ -443,7 +443,7 @@
 					"par_upgrade",
 					"par_fallFire",
 					"par_smoke",
-					"par_upgrade2",
+					"par_upgradeComplete",
 					"par_fireflies",
 					"par_hit",
 					"par_snow",
@@ -552,16 +552,6 @@
 			},
 			{
 				"items": [
-					"Light",
-					"Darkness",
-					"spr_plantAreaLight",
-					"spr_playerAreaLight"
-				],
-				"subfolders": [],
-				"name": "light"
-			},
-			{
-				"items": [
 					"spr_healthBar",
 					"spr_healthLight",
 					"spr_boardHUD",
@@ -617,11 +607,27 @@
 			},
 			{
 				"items": [
-					"FogGlow",
-					"FogMask",
 					"tb_darkness"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"ambientLightSource",
+							"lampLightSource"
+						],
+						"subfolders": [],
+						"name": "lightSources"
+					},
+					{
+						"items": [
+							"glowAmbientMask",
+							"spawnGlowMask",
+							"glowSolidMask"
+						],
+						"subfolders": [],
+						"name": "glowing"
+					}
+				],
 				"name": "lighting"
 			},
 			{
@@ -670,9 +676,7 @@
 				"name": "dialog"
 			},
 			{
-				"items": [
-					"Sprite4"
-				],
+				"items": [],
 				"subfolders": [],
 				"name": "sandbox"
 			}
@@ -701,10 +705,10 @@
 			"enemyAir",
 			"enemyAirChase",
 			"enemyCrawler",
-			"glow",
+			"glowEmitters",
 			"cameraTargets",
 			"NPC",
-			"lightSource"
+			"lightSources"
 		],
 		"subfolders": []
 	},
@@ -738,7 +742,7 @@
 			"e_camera",
 			"e_player",
 			"e_splashScreen",
-			"e_enemies",
+			"enemies_e",
 			"e_doorsAndKeys",
 			"e_singleton",
 			"e_water",
@@ -748,7 +752,8 @@
 			"e_lighting",
 			"e_traps",
 			"dialog_e",
-			"sandbox_e"
+			"sandbox_e",
+			"sfx_e"
 		],
 		"subfolders": [
 			{
@@ -975,7 +980,22 @@
 					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "ambianceWaterfall.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 972210807380550,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "ambient"
+				}
+			]
 		},
 		"video": {
 			"items": [],

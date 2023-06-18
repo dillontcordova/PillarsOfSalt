@@ -19,7 +19,7 @@
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_enemies"
+			"includeSheet": "enemies_e"
 		},
 		{
 			"eventType": "include",
@@ -40,6 +40,10 @@
 		{
 			"eventType": "include",
 			"includeSheet": "e_eventPoints"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "sfx_e"
 		},
 		{
 			"eventType": "block",

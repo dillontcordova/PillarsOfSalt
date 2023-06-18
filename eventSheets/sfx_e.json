@@ -1,0 +1,458 @@
+{
+	"name": "sfx_e",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "nextSong",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 389913045030063
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SFX",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "stopSound",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "soundTag",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 861457856817160
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 189975929506154,
+							"parameters": {
+								"tag": "soundTag"
+							}
+						}
+					],
+					"sid": 494233317443603
+				},
+				{
+					"functionName": "playSound",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "soundName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 725264778016152
+						},
+						{
+							"name": "isLooping",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 803727359911214
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 388825943997193,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 756443154775410,
+									"parameters": {
+										"variable": "isLooping"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 307806168133309,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 286057889489042,
+											"parameters": {
+												"tag": "soundName"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 275168451895633,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "soundName",
+												"loop": "looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "soundName"
+											}
+										}
+									],
+									"sid": 815666848576059
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 639381350102932
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 863883302580549,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "soundName",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "soundName"
+									}
+								}
+							],
+							"sid": 543317704056644
+						}
+					]
+				},
+				{
+					"functionName": "playSoundVariable",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "soundName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 976347792276338
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 174077428999142,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "soundName",
+								"loop": "not-looping",
+								"volume": "choose(-2, -10, -7)",
+								"stereo-pan": "0",
+								"tag-optional": "soundName"
+							}
+						},
+						{
+							"id": "set-playback-rate",
+							"objectClass": "Audio",
+							"sid": 503626804803545,
+							"parameters": {
+								"tag": "soundName",
+								"playback-rate": "choose(.9, 1, 1.1, 1.2)"
+							}
+						}
+					],
+					"sid": 412037473724308
+				},
+				{
+					"functionName": "playAmbientFromLocation",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "musicName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 969986183901491
+						},
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 334542136768929
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 598451749287294
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 213624027171862,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play-at-position-by-name",
+									"objectClass": "Audio",
+									"sid": 100216879556318,
+									"disabled": true,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "musicName",
+										"loop": "looping",
+										"volume": "-20",
+										"x": "x",
+										"y": "y",
+										"z": "0",
+										"angle": "0",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"ambience\""
+									}
+								},
+								{
+									"id": "play-at-position",
+									"objectClass": "Audio",
+									"sid": 600583558640523,
+									"parameters": {
+										"audio-file": "ambianceWaterfall",
+										"loop": "looping",
+										"volume": "-10",
+										"x": "x",
+										"y": "y",
+										"z": "0",
+										"angle": "0",
+										"inner-angle": "360",
+										"outer-angle": "360",
+										"outer-gain": "0",
+										"tag-optional": "\"ambiance\""
+									}
+								},
+								{
+									"id": "set-listener-object",
+									"objectClass": "Audio",
+									"sid": 226760657668634,
+									"parameters": {
+										"object": "spr_playerActual"
+									}
+								}
+							],
+							"sid": 845787353277538
+						}
+					]
+				},
+				{
+					"functionName": "playMusic",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "musicName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 481954438157684
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 905312934408413,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 871727903681465,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 708908106158596,
+									"parameters": {
+										"variable": "nextSong",
+										"value": "musicName"
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 358519743299666,
+									"parameters": {
+										"tag": "\"music\"",
+										"db": "-20",
+										"duration": "2",
+										"ending": "stop"
+									}
+								}
+							],
+							"sid": 892862524096793
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 959907313559839
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 416476065872758,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "musicName",
+										"loop": "looping",
+										"volume": "-20",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 740280321026218,
+									"parameters": {
+										"tag": "\"music\"",
+										"db": "0",
+										"duration": "5",
+										"ending": "keep-playing"
+									}
+								}
+							],
+							"sid": 126701760670150
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 194750641495315,
+							"parameters": {
+								"tag": "\"music\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 130502399206607,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 703860685230598,
+									"parameters": {
+										"variable": "nextSong",
+										"comparison": 1,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 805981957686746,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "nextSong",
+										"loop": "looping",
+										"volume": "-20",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 990385277881229,
+									"parameters": {
+										"tag": "\"music\"",
+										"db": "0",
+										"duration": "5",
+										"ending": "keep-playing"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 490803287195890,
+									"parameters": {
+										"variable": "nextSong",
+										"value": "\"\""
+									}
+								}
+							],
+							"sid": 826239582474010
+						}
+					]
+				}
+			],
+			"sid": 592066672679262
+		}
+	],
+	"sid": 240620230112845
+}

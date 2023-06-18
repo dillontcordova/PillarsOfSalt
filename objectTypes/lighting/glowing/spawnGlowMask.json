@@ -1,39 +1,30 @@
 {
-	"name": "spr_playerAreaLight",
+	"name": "spawnGlowMask",
 	"plugin-id": "Sprite",
-	"sid": 963948180062823,
+	"sid": 719345270589077,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
-	"effectTypes": [
-		{
-			"effectId": "overlay",
-			"name": "Overlay"
-		},
-		{
-			"effectId": "Mikal_LinearLight",
-			"name": "LinearLight"
-		}
-	],
+	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 64,
-						"height": 64,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6029104,
+						"imageSpriteId": 1778717,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 636644589584516,
-				"name": "Default",
+				"sid": 811077590303863,
+				"name": "32",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

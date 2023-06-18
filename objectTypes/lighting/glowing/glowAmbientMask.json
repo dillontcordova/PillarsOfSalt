@@ -1,5 +1,5 @@
 {
-	"name": "FogMask",
+	"name": "glowAmbientMask",
 	"plugin-id": "Sprite",
 	"sid": 173176248911135,
 	"isGlobal": false,
@@ -9,16 +9,34 @@
 			"behaviorId": "Sin",
 			"name": "Sine",
 			"sid": 531864372802479
-		},
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 929315638414582
 		}
 	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6844542,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 357963629265751,
+				"name": "dimmer",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
 			{
 				"frames": [
 					{
@@ -29,36 +47,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5697940,
-						"useCollisionPoly": true,
-						"duration": 1
-					}
-				],
-				"sid": 357963629265751,
-				"name": "64",
-				"isLooping": false,
-				"isPingPong": false,
-				"repeatCount": 1,
-				"repeatTo": 0,
-				"speed": 0
-			},
-			{
-				"frames": [
-					{
-						"width": 128,
-						"height": 128,
-						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 8752426,
+						"imageSpriteId": 9854376,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
 				"sid": 270737652819622,
-				"name": "128",
+				"name": "brighter",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

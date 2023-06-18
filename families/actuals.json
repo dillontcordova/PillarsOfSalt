@@ -69,6 +69,11 @@
 			"behaviorId": "Tween",
 			"name": "Tween",
 			"sid": 705502713996718
+		},
+		{
+			"behaviorId": "shadowcaster",
+			"name": "ShadowCaster",
+			"sid": 625746886926206
 		}
 	],
 	"effectTypes": [],

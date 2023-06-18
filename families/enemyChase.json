@@ -30,6 +30,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 642073623239077
+		},
+		{
+			"name": "alertCool",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 195519487280616
+		},
+		{
+			"name": "atkCool",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 296607330379411
 		}
 	],
 	"behaviorTypes": [

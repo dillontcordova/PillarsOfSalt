@@ -1,5 +1,5 @@
 {
-	"name": "e_enemies",
+	"name": "enemies_e",
 	"events": [
 		{
 			"eventType": "group",
@@ -1398,26 +1398,6 @@
 							"isActiveOnStart": true,
 							"children": [
 								{
-									"eventType": "variable",
-									"name": "alertCool",
-									"type": "number",
-									"initialValue": "0.75",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": true,
-									"sid": 759249987863145
-								},
-								{
-									"eventType": "variable",
-									"name": "atkCool",
-									"type": "number",
-									"initialValue": "0.75",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": true,
-									"sid": 597833024610026
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -1821,10 +1801,10 @@
 																{
 																	"id": "start-timer",
 																	"objectClass": "enemies",
-																	"sid": 970535395459001,
+																	"sid": 181496151127200,
 																	"behaviorType": "Timer",
 																	"parameters": {
-																		"duration": "alertCool",
+																		"duration": "enemyChase.alertCool",
 																		"type": "once",
 																		"tag": "\"alertCooldown\""
 																	}
@@ -2077,10 +2057,10 @@
 												{
 													"id": "start-timer",
 													"objectClass": "enemies",
-													"sid": 104274644289368,
+													"sid": 716352734308460,
 													"behaviorType": "Timer",
 													"parameters": {
-														"duration": "atkCool",
+														"duration": "enemyChase.atkCool",
 														"type": "once",
 														"tag": "\"chaseAttackCooldown\""
 													}

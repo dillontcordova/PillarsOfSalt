@@ -1,14 +1,14 @@
 {
-	"name": "spr_plantAreaLight",
+	"name": "ambientLightSource",
 	"plugin-id": "Sprite",
-	"sid": 420196489499901,
+	"sid": 378103908447541,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Sin",
 			"name": "Sine",
-			"sid": 178786210514151
+			"sid": 743181318790745
 		}
 	],
 	"effectTypes": [],
@@ -17,37 +17,25 @@
 			{
 				"frames": [
 					{
-						"width": 64,
-						"height": 64,
+						"width": 48,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4518689,
-						"collisionPoly": {
-							"points": [
-								0.109375,
-								0.109375,
-								0.890625,
-								0.109375,
-								0.890625,
-								0.890625,
-								0.109375,
-								0.890625
-							]
-						},
+						"imageSpriteId": 5046516,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 357137195743914,
-				"name": "Default",
+				"sid": 232568557376427,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 8
 			}
 		],
 		"subfolders": []

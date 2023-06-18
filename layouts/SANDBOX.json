@@ -504,7 +504,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Sprite4",
+					"type": "ambientLightSource",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -518,7 +518,7 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "solids",
-								"range": 10000,
+								"range": 200,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -556,7 +556,7 @@
 					}
 				},
 				{
-					"type": "Sprite4",
+					"type": "ambientLightSource",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -570,7 +570,7 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "solids",
-								"range": 10000,
+								"range": 200,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -591,10 +591,10 @@
 						}
 					},
 					"world": {
-						"x": 415.7105526486521,
-						"y": 82.56320021968388,
-						"width": 109.61406174036097,
-						"height": 109.61406174036097,
+						"x": 413.5877524663891,
+						"y": 82.03249410071491,
+						"width": 178.21155550937925,
+						"height": 178.21155550937925,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

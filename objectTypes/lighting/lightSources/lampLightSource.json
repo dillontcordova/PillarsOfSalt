@@ -1,14 +1,14 @@
 {
-	"name": "Light",
+	"name": "lampLightSource",
 	"plugin-id": "Sprite",
-	"sid": 857152707004310,
+	"sid": 185255963501196,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Sin",
 			"name": "Sine",
-			"sid": 728049679673442
+			"sid": 258919470645949
 		}
 	],
 	"effectTypes": [],
@@ -17,21 +17,21 @@
 			{
 				"frames": [
 					{
-						"width": 128,
-						"height": 128,
+						"width": 48,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
-						"originalSource": "C:\\Users\\Henrrique\\Documents\\Henrique\\Meus Games\\Bundle Games Assets\\assets\\light0.png",
+						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2290460,
+						"imageSpriteId": 3024585,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 821064986172562,
-				"name": "Default",
-				"isLooping": true,
+				"sid": 153575026587207,
+				"name": "Animation 1",
+				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,

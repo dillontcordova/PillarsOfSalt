@@ -31,10 +31,20 @@
 					]
 				},
 				{
-					"callFunction": "initLights",
-					"sid": 539115166211678,
+					"callFunction": "playAmbientFromLocation",
+					"sid": 827449723377789,
+					"disabled": true,
 					"parameters": [
-						"30"
+						"\"ambianceWaterfall\"",
+						"45",
+						"800"
+					]
+				},
+				{
+					"callFunction": "initLights",
+					"sid": 329592035234042,
+					"parameters": [
+						"50"
 					]
 				}
 			],
