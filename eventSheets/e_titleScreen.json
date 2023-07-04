@@ -331,15 +331,6 @@
 										"angle": "0",
 										"distance": ".25"
 									}
-								},
-								{
-									"id": "set-layer-opacity",
-									"objectClass": "System",
-									"sid": 627390946817004,
-									"parameters": {
-										"layer": "\"white\"",
-										"opacity": "clamp(0, lerp(LayerOpacity(\"white\"), 100,  dt / 1.5), 99)"
-									}
 								}
 							],
 							"sid": 246427625430649,
@@ -424,116 +415,131 @@
 										}
 									],
 									"sid": 394405563082350
-								},
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Group2",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-layer-opacity",
-											"objectClass": "System",
-											"sid": 823552755202560,
+											"id": "on-tweens-finished",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 646097079865664,
+											"behaviorType": "Tween",
 											"parameters": {
-												"layer": "\"white\"",
-												"comparison": 4,
-												"opacity": "99"
+												"tags": "\"white\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 595613301497566,
-											"parameters": {
-												"variable": "isFadingToBlack",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 965057205723691,
-											"parameters": {
-												"variable": "isWhitening",
-												"value": "false"
-											}
-										},
-										{
 											"id": "set-layer-transparent",
 											"objectClass": "System",
-											"sid": 932385084265135,
+											"sid": 448430555652208,
 											"parameters": {
 												"layer": "\"fade\"",
 												"mode": "opaque"
 											}
 										},
 										{
-											"id": "set-layer-opacity",
-											"objectClass": "System",
-											"sid": 678403514938496,
+											"id": "tween-value",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 511781027757912,
+											"behaviorType": "Tween",
 											"parameters": {
-												"layer": "\"white\"",
-												"opacity": "100"
+												"tags": "\"dark\"",
+												"start-value": "Self.Tween.Value(\"white\")",
+												"end-value": "100",
+												"time": "2",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										}
 									],
-									"sid": 982401974897326
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 954060881344782,
-									"parameters": {
-										"variable": "isFadingToBlack"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-opacity",
-									"objectClass": "System",
-									"sid": 456316490461656,
-									"parameters": {
-										"layer": "\"white\"",
-										"opacity": "lerp(LayerOpacity(\"white\"), 0,  dt * 4)"
-									}
-								}
-							],
-							"sid": 626592266622299,
-							"children": [
+									"sid": 243880247056769
+								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-layer-opacity",
-											"objectClass": "System",
-											"sid": 503993232124234,
+											"id": "is-playing",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 839601076391873,
+											"behaviorType": "Tween",
 											"parameters": {
-												"layer": "\"white\"",
-												"comparison": 3,
-												"opacity": "1"
+												"tags": "\"white\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-layer-opacity",
+											"id": "set-layout-effect-parameter",
 											"objectClass": "System",
-											"sid": 254621554930104,
+											"sid": 413750323001925,
 											"parameters": {
-												"layer": "\"white\"",
-												"opacity": "0"
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "2",
+												"value": "spr_cutSceneSingleton.Tween.Value(\"white\")"
 											}
-										},
+										}
+									],
+									"sid": 435672437869260
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 492185722378010,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"dark\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layout-effect-parameter",
+											"objectClass": "System",
+											"sid": 387169742274284,
+											"parameters": {
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "2",
+												"value": "spr_cutSceneSingleton.Tween.Value(\"dark\")"
+											}
+										}
+									],
+									"sid": 862785072576284
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-tweens-finished",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 842913758652065,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"dark\""
+											}
+										}
+									],
+									"actions": [
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 399894792263645,
+											"sid": 861776993317444,
 											"parameters": {
 												"seconds": "1.0"
 											}
@@ -541,15 +547,16 @@
 										{
 											"id": "go-to-layout-by-name",
 											"objectClass": "System",
-											"sid": 165139357196527,
+											"sid": 430102114766699,
 											"parameters": {
 												"layout": "\"grassLand\""
 											}
 										}
 									],
-									"sid": 227119900978775
+									"sid": 999890311620634
 								}
-							]
+							],
+							"sid": 276565820709737
 						}
 					],
 					"sid": 914967053466793
@@ -617,30 +624,20 @@
 											],
 											"actions": [
 												{
-													"id": "set-layer-opacity",
-													"objectClass": "System",
-													"sid": 395891775786894,
+													"id": "tween-value",
+													"objectClass": "spr_cutSceneSingleton",
+													"sid": 352587014442695,
+													"behaviorType": "Tween",
 													"parameters": {
-														"layer": "\"white\"",
-														"opacity": "0"
-													}
-												},
-												{
-													"id": "set-layer-background-color",
-													"objectClass": "System",
-													"sid": 578061232454384,
-													"parameters": {
-														"layer": "\"white\"",
-														"color": "rgb(255,255,255)"
-													}
-												},
-												{
-													"id": "set-layer-transparent",
-													"objectClass": "System",
-													"sid": 668897878004038,
-													"parameters": {
-														"layer": "\"white\"",
-														"mode": "opaque"
+														"tags": "\"white\"",
+														"start-value": "100",
+														"end-value": "200",
+														"time": "3.5",
+														"ease": "easeinsine",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												},
 												{

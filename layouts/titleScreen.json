@@ -1019,6 +1019,11 @@
 						},
 						"Timer": {
 							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -1429,7 +1434,20 @@
 	],
 	"sid": 944604902301250,
 	"nonworld-instances": [],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "hsladjust",
+			"name": "AdjustHSL",
+			"instance": {
+				"isEnabled": true,
+				"parameters": {
+					"hue": 0,
+					"saturation": 1,
+					"luminosity": 1
+				}
+			}
+		}
+	],
 	"width": 320,
 	"height": 180,
 	"unboundedScrolling": false,
