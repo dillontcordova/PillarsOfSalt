@@ -4,11 +4,32 @@
 	"sid": 281581477004902,
 	"instanceVariables": [
 		{
-			"name": "isRight",
+			"name": "turnTime",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 715857642685752
+		},
+		{
+			"name": "hasArrived",
 			"type": "boolean",
 			"desc": "",
 			"show": true,
-			"sid": 288245469305186
+			"sid": 636988398650218
+		},
+		{
+			"name": "isImpeded",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 493330965781041
+		},
+		{
+			"name": "isThinking",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 464835554378520
 		}
 	],
 	"behaviorTypes": [

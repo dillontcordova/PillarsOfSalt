@@ -37,6 +37,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 464198939583175
+		},
+		{
+			"name": "isRight",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 529271754543156
 		}
 	],
 	"behaviorTypes": [
@@ -69,11 +76,6 @@
 			"behaviorId": "Tween",
 			"name": "Tween",
 			"sid": 705502713996718
-		},
-		{
-			"behaviorId": "shadowcaster",
-			"name": "ShadowCaster",
-			"sid": 625746886926206
 		}
 	],
 	"effectTypes": [],

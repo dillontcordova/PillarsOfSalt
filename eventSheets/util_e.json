@@ -1,5 +1,5 @@
 {
-	"name": "e_util",
+	"name": "util_e",
 	"events": [
 		{
 			"eventType": "variable",
@@ -72,216 +72,362 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "is-in-preview",
 							"objectClass": "System",
-							"sid": 819421724783322,
-							"parameters": {
-								"variable": "isDebugMode"
-							}
+							"sid": 664182438520475
 						}
 					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "txt_debugFPS",
-							"sid": 164163545805333,
-							"parameters": {
-								"text": "(isGfxHigh ? \"High\": \"Low\") & \" GFX, \" & fps & \" FPS, \" & round(cpuutilisation * 100) & \"% CPU, \" & round(gpuutilisation * 100) & \"% GPU\""
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "txt_debug",
-							"sid": 242141099870022,
-							"disabled": true,
-							"parameters": {
-								"text": "dbgMsg"
-							}
-						}
-					],
-					"sid": 140790086670328
-				},
-				{
-					"functionName": "throwIf",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "expression1",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 455827677938847
-						},
-						{
-							"name": "expression2",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 208958008790830
-						},
-						{
-							"name": "msg",
-							"type": "string",
-							"initialValue": "error message",
-							"comment": "",
-							"sid": 729589197453317
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
 					"actions": [],
-					"sid": 613982554565916,
+					"sid": 558069844639297,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 347609826567322,
+									"sid": 741529436228856,
 									"parameters": {
-										"first-value": "expression1",
-										"comparison": 0,
-										"second-value": "expression2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "cancel-fullscreen",
-									"objectClass": "Browser",
-									"sid": 939854104445486
-								},
-								{
-									"id": "alert",
-									"objectClass": "Browser",
-									"sid": 991379847549165,
-									"parameters": {
-										"message": "msg"
-									}
-								},
-								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 234559209719872,
-									"parameters": {
-										"time-scale": "0"
-									}
-								}
-							],
-							"sid": 370488929431400
-						}
-					]
-				},
-				{
-					"functionName": "setDebugText",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "msg",
-							"type": "string",
-							"initialValue": "error message",
-							"comment": "",
-							"sid": 289857513250055
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "txt_debug",
-							"sid": 246500839776696,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 718791005895967,
-							"parameters": {
-								"variable": "dbgMsg",
-								"value": "msg"
-							}
-						}
-					],
-					"sid": 989290169163868
-				},
-				{
-					"functionName": "error",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "errTxt",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 889652494415693
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 805808738613336,
-							"parameters": {
-								"object-to-create": "txt_debug",
-								"layer": "\"HUD\"",
-								"x": "OriginalViewportWidth/2",
-								"y": "OriginalViewportHeight/2",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
-					"sid": 366461154370983,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
-									"sid": 515206611793849,
-									"parameters": {
-										"object": "txt_debug"
+										"variable": "isDebugMode"
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "txt_debug",
-									"sid": 706149970237088,
+									"objectClass": "txt_debugFPS",
+									"sid": 157400046797858,
 									"parameters": {
-										"text": "errTxt"
+										"text": "(isGfxHigh ? \"High\": \"Low\") & \" GFX, \" & fps & \" FPS, \" & round(cpuutilisation * 100) & \"% CPU, \" & round(gpuutilisation * 100) & \"% GPU\""
 									}
 								},
 								{
-									"id": "set-visible",
+									"id": "set-text",
 									"objectClass": "txt_debug",
-									"sid": 770274603263909,
+									"sid": 385435386725438,
+									"disabled": true,
 									"parameters": {
-										"visibility": "visible"
+										"text": "dbgMsg"
 									}
 								}
 							],
-							"sid": 398178646126809
+							"sid": 999442389012334
+						},
+						{
+							"functionName": "throwIf",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "expression1",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 455827677938847
+								},
+								{
+									"name": "expression2",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 208958008790830
+								},
+								{
+									"name": "msg",
+									"type": "string",
+									"initialValue": "error message",
+									"comment": "",
+									"sid": 729589197453317
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 883906707914458,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 517032409916033,
+											"parameters": {
+												"first-value": "expression1",
+												"comparison": 0,
+												"second-value": "expression2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "cancel-fullscreen",
+											"objectClass": "Browser",
+											"sid": 353472791506070
+										},
+										{
+											"id": "alert",
+											"objectClass": "Browser",
+											"sid": 190322252316932,
+											"parameters": {
+												"message": "msg"
+											}
+										},
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 381815108871364,
+											"parameters": {
+												"time-scale": "0"
+											}
+										}
+									],
+									"sid": 309743612279276
+								}
+							]
+						},
+						{
+							"functionName": "setDebugText",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "msg",
+									"type": "string",
+									"initialValue": "error message",
+									"comment": "",
+									"sid": 289857513250055
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "txt_debug",
+									"sid": 674890547911459,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 224134143958090,
+									"parameters": {
+										"variable": "dbgMsg",
+										"value": "msg"
+									}
+								}
+							],
+							"sid": 692563658227995
+						},
+						{
+							"functionName": "error",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "errTxt",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 889652494415693
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 379942290366437,
+									"parameters": {
+										"object-to-create": "txt_debug",
+										"layer": "\"HUD\"",
+										"x": "OriginalViewportWidth/2",
+										"y": "OriginalViewportHeight/2",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 601934943297344,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-last-created",
+											"objectClass": "System",
+											"sid": 776098281521422,
+											"parameters": {
+												"object": "txt_debug"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "txt_debug",
+											"sid": 285473164592420,
+											"parameters": {
+												"text": "errTxt"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "txt_debug",
+											"sid": 779697595444498,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 324501153215552
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "actuals",
+									"sid": 293346955327636
+								}
+							],
+							"actions": [],
+							"sid": 802884862348943,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 705836734510749,
+											"parameters": {
+												"object-to-create": "txt_debug",
+												"layer": "\"characters\"",
+												"x": "actuals.X - actuals.Width/2",
+												"y": "actuals.Y - actuals.health/2",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "actuals",
+											"sid": 172236690064237,
+											"parameters": {
+												"child": "txt_debug",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-z-elevation": true,
+												"transform-visibility": false,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "txt_debug",
+											"sid": 284931797406263,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-font-size",
+											"objectClass": "txt_debug",
+											"sid": 707317057062421,
+											"parameters": {
+												"size-pt": "4"
+											}
+										},
+										{
+											"id": "set-font-color",
+											"objectClass": "txt_debug",
+											"sid": 504413312708897,
+											"disabled": true,
+											"parameters": {
+												"color": "rgba(255,255,255,255)"
+											}
+										}
+									],
+									"sid": 437459630085544
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 412235116866659
+								}
+							],
+							"actions": [],
+							"sid": 577517052034186,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 714611848937703,
+											"parameters": {
+												"object": "actuals"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 527788931831212,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "actuals",
+													"sid": 142834585528938,
+													"parameters": {
+														"child": "txt_debug",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "txt_debug",
+													"sid": 434539990764966,
+													"parameters": {
+														"text": "actuals.FSM.CurrentState"
+													}
+												}
+											],
+											"sid": 217003710041245
+										}
+									]
+								}
+							]
 						}
 					]
 				}

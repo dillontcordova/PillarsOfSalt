@@ -51,9 +51,22 @@
 			"desc": "",
 			"show": true,
 			"sid": 647866911481649
+		},
+		{
+			"name": "swarmDistance",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 768422797832602
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 414561441305090
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"spr_enemyBat"

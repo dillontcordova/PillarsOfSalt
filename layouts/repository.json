@@ -246,6 +246,10 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"turnTime": 1,
+						"hasArrived": false,
+						"isImpeded": false,
+						"isThinking": false,
 						"touchDamage": 1
 					},
 					"behaviors": {
@@ -308,13 +312,6 @@
 						"Tween": {
 							"properties": {
 								"enabled": false
-							}
-						},
-						"ShadowCaster": {
-							"properties": {
-								"height": 1,
-								"tag": "",
-								"enabled": true
 							}
 						},
 						"Timer": {
@@ -399,6 +396,7 @@
 						"isAttacking": false,
 						"isSolid": true,
 						"lockState": "",
+						"isRight": true,
 						"gravity": 0,
 						"gShifting": 0,
 						"zoneId": -1,
@@ -471,13 +469,6 @@
 						"Tween": {
 							"properties": {
 								"enabled": false
-							}
-						},
-						"ShadowCaster": {
-							"properties": {
-								"height": 1,
-								"tag": "",
-								"enabled": true
 							}
 						},
 						"BoundToLayout": {
@@ -958,12 +949,16 @@
 					},
 					"uid": 94,
 					"instanceVariables": {
-						"health": 6,
+						"health": 4,
 						"isInvincible": false,
 						"isAttacking": false,
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"turnTime": 1,
+						"hasArrived": false,
+						"isImpeded": false,
+						"isThinking": false,
 						"touchDamage": 1,
 						"sightRange": 64,
 						"patrolCool": 0.25,
@@ -1032,13 +1027,6 @@
 						"Tween": {
 							"properties": {
 								"enabled": false
-							}
-						},
-						"ShadowCaster": {
-							"properties": {
-								"height": 1,
-								"tag": "",
-								"enabled": true
 							}
 						},
 						"Timer": {
@@ -1586,6 +1574,10 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"turnTime": 1,
+						"hasArrived": false,
+						"isImpeded": false,
+						"isThinking": false,
 						"touchDamage": 1,
 						"origX": -1,
 						"origY": -1,
@@ -1593,12 +1585,13 @@
 						"nextX": -1,
 						"nextY": -1,
 						"origSpeed": -1,
-						"chaseSpeed": 40
+						"chaseSpeed": 60,
+						"swarmDistance": 32
 					},
 					"behaviors": {
 						"MoveTo": {
 							"properties": {
-								"max-speed": 200,
+								"max-speed": 20,
 								"acceleration": 600,
 								"deceleration": 600,
 								"rotate-speed": 0,
@@ -1657,15 +1650,23 @@
 								"enabled": false
 							}
 						},
-						"ShadowCaster": {
-							"properties": {
-								"height": 1,
-								"tag": "",
-								"enabled": true
-							}
-						},
 						"Timer": {
 							"properties": {}
+						},
+						"Pathfinding": {
+							"properties": {
+								"cell-size": 16,
+								"cell-border": -1,
+								"obstacles": "solids",
+								"max-speed": 30,
+								"acceleration": 1800,
+								"deceleration": 1800,
+								"rotate-speed": 135,
+								"rotate-object": false,
+								"diagonals": true,
+								"direct-movement": "anywhere-along-path",
+								"enabled": false
+							}
 						},
 						"LineOfSight": {
 							"properties": {
@@ -2418,6 +2419,92 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "spr_enemyBatDoll",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "hovering",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 248,
+					"instanceVariables": {
+						"startW": 0,
+						"startH": 0,
+						"stepping": 0
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0.25,
+								"angl": 180
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 250,
+						"uid": 248,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 248,
+						"y": 16,
+						"width": 16,
+						"height": 12,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 294636100765550,
@@ -2732,12 +2819,16 @@
 					},
 					"uid": 111,
 					"instanceVariables": {
-						"health": 3,
+						"health": 2,
 						"isInvincible": false,
 						"isAttacking": false,
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"turnTime": 1,
+						"hasArrived": false,
+						"isImpeded": false,
+						"isThinking": false,
 						"touchDamage": 1
 					},
 					"behaviors": {
@@ -2800,13 +2891,6 @@
 						"Tween": {
 							"properties": {
 								"enabled": false
-							}
-						},
-						"ShadowCaster": {
-							"properties": {
-								"height": 1,
-								"tag": "",
-								"enabled": true
 							}
 						},
 						"Timer": {
@@ -3671,92 +3755,6 @@
 					}
 				},
 				{
-					"type": "spr_enemyBatDoll",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "idle",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 248,
-					"instanceVariables": {
-						"startW": 0,
-						"startH": 0,
-						"stepping": 0
-					},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						},
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"effects": {
-						"RimLight": {
-							"isEnabled": false,
-							"parameters": {
-								"clr": [
-									1,
-									1,
-									1,
-									1
-								],
-								"s": 2,
-								"d": 0.25,
-								"angl": 180
-							}
-						}
-					},
-					"sceneGraphData": {
-						"parent-uid": 250,
-						"uid": 248,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 2.220446049250313e-16,
-							"transformH": 2.220446049250313e-16,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 248,
-						"y": 16,
-						"width": 16,
-						"height": 12,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "spr_enemyAirBatSpawn",
 					"properties": {
 						"initially-visible": true,
@@ -3804,6 +3802,10 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"turnTime": 1,
+						"hasArrived": false,
+						"isImpeded": false,
+						"isThinking": false,
 						"touchDamage": 1,
 						"rotateSpeed": 0.2,
 						"crawlSpeed": 30
@@ -3868,13 +3870,6 @@
 						"Tween": {
 							"properties": {
 								"enabled": false
-							}
-						},
-						"ShadowCaster": {
-							"properties": {
-								"height": 1,
-								"tag": "",
-								"enabled": true
 							}
 						},
 						"Timer": {

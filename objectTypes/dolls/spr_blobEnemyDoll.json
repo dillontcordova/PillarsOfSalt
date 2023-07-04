@@ -943,7 +943,7 @@
 					}
 				],
 				"sid": 829375564062391,
-				"name": "walk",
+				"name": "patrol",
 				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,
