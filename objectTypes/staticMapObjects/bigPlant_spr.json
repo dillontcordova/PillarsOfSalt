@@ -1,0 +1,49 @@
+{
+	"name": "bigPlant_spr",
+	"plugin-id": "Sprite",
+	"sid": 365918494365025,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 48,
+						"height": 48,
+						"originX": 0.4791666666666667,
+						"originY": 0.9791666666666666,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3757148,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "light",
+								"x": 0.22916666666666666,
+								"y": 0.1875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 633391370019975,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

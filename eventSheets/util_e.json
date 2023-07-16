@@ -35,21 +35,11 @@
 			"eventType": "variable",
 			"name": "isGfxHigh",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 606905077391526
-		},
-		{
-			"eventType": "variable",
-			"name": "thrownError",
-			"type": "string",
-			"initialValue": "",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 842400830437401
 		},
 		{
 			"eventType": "variable",
@@ -122,18 +112,18 @@
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
-									"name": "expression1",
-									"type": "string",
-									"initialValue": "",
+									"name": "expr1",
+									"type": "number",
+									"initialValue": "-1",
 									"comment": "",
-									"sid": 455827677938847
+									"sid": 795189293904005
 								},
 								{
-									"name": "expression2",
-									"type": "string",
-									"initialValue": "",
+									"name": "expr2",
+									"type": "number",
+									"initialValue": "-1",
 									"comment": "",
-									"sid": 208958008790830
+									"sid": 834320353328893
 								},
 								{
 									"name": "msg",
@@ -154,11 +144,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 517032409916033,
+											"sid": 944750203902011,
 											"parameters": {
-												"first-value": "expression1",
+												"first-value": "expr1",
 												"comparison": 0,
-												"second-value": "expression2"
+												"second-value": "expr2"
 											}
 										}
 									],
@@ -166,12 +156,12 @@
 										{
 											"id": "cancel-fullscreen",
 											"objectClass": "Browser",
-											"sid": 353472791506070
+											"sid": 139033759989463
 										},
 										{
 											"id": "alert",
 											"objectClass": "Browser",
-											"sid": 190322252316932,
+											"sid": 106275731206007,
 											"parameters": {
 												"message": "msg"
 											}
@@ -179,13 +169,13 @@
 										{
 											"id": "set-time-scale",
 											"objectClass": "System",
-											"sid": 381815108871364,
+											"sid": 682495085107366,
 											"parameters": {
 												"time-scale": "0"
 											}
 										}
 									],
-									"sid": 309743612279276
+									"sid": 797939548811392
 								}
 							]
 						},
@@ -303,11 +293,11 @@
 								{
 									"id": "on-created",
 									"objectClass": "actuals",
-									"sid": 293346955327636
+									"sid": 703351288849397
 								}
 							],
 							"actions": [],
-							"sid": 802884862348943,
+							"sid": 788452847339287,
 							"children": [
 								{
 									"eventType": "block",
@@ -316,7 +306,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 705836734510749,
+											"sid": 237397473238132,
 											"parameters": {
 												"object-to-create": "txt_debug",
 												"layer": "\"characters\"",
@@ -329,7 +319,7 @@
 										{
 											"id": "add-child",
 											"objectClass": "actuals",
-											"sid": 172236690064237,
+											"sid": 885564141373674,
 											"parameters": {
 												"child": "txt_debug",
 												"transform-x": true,
@@ -344,32 +334,235 @@
 											}
 										},
 										{
-											"id": "set-visible",
-											"objectClass": "txt_debug",
-											"sid": 284931797406263,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
 											"id": "set-font-size",
 											"objectClass": "txt_debug",
-											"sid": 707317057062421,
+											"sid": 560875815889988,
 											"parameters": {
 												"size-pt": "4"
 											}
 										},
 										{
+											"id": "set-visible",
+											"objectClass": "txt_debug",
+											"sid": 335075579392003,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
 											"id": "set-font-color",
 											"objectClass": "txt_debug",
-											"sid": 504413312708897,
+											"sid": 574309995305254,
 											"disabled": true,
 											"parameters": {
 												"color": "rgba(255,255,255,255)"
 											}
 										}
 									],
-									"sid": 437459630085544
+									"sid": 680657492284657,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 547550991911219,
+													"parameters": {
+														"variable": "isDebugMode"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "txt_debug",
+													"sid": 244858030114965,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 335171138063759
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 233453688493420,
+									"parameters": {
+										"key": 219
+									}
+								},
+								{
+									"id": "on-tap",
+									"objectClass": "Touch",
+									"sid": 166486374296662
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "setDebugMode",
+									"sid": 630730168599361
+								}
+							],
+							"sid": 783073903233234,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 461456279380752,
+									"parameters": {
+										"key": 221
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 341718751493385,
+									"parameters": {
+										"variable": "isGfxHigh"
+									}
+								}
+							],
+							"sid": 501422535544651,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 729912183556093,
+											"parameters": {
+												"variable": "isGfxHigh"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-fullscreen-scaling",
+											"objectClass": "System",
+											"sid": 977659952871943,
+											"parameters": {
+												"fullscreen-scaling": "high-quality"
+											}
+										}
+									],
+									"sid": 452257530841192
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 708368733087447
+										}
+									],
+									"actions": [
+										{
+											"id": "set-fullscreen-scaling",
+											"objectClass": "System",
+											"sid": 916158769037104,
+											"parameters": {
+												"fullscreen-scaling": "low-quality"
+											}
+										}
+									],
+									"sid": 334731536104831
+								}
+							]
+						},
+						{
+							"functionName": "setDebugMode",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 716302733250806,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "toggle-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 418188074373490,
+											"parameters": {
+												"variable": "isDebugMode"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "txt_debugFPS",
+											"sid": 201675112463781,
+											"parameters": {
+												"visibility": "toggle"
+											}
+										}
+									],
+									"sid": 628539649523224
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 699101749941820,
+											"parameters": {
+												"object": "actuals"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 635822563329463,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "actuals",
+													"sid": 516684777125313,
+													"parameters": {
+														"child": "txt_debug",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "txt_debug",
+													"sid": 659936899806442,
+													"parameters": {
+														"visibility": "toggle"
+													}
+												}
+											],
+											"sid": 355036083275752
+										}
+									]
 								}
 							]
 						},
@@ -379,11 +572,19 @@
 								{
 									"id": "every-tick",
 									"objectClass": "System",
-									"sid": 412235116866659
+									"sid": 300328265055515
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 317761381768506,
+									"parameters": {
+										"variable": "isDebugMode"
+									}
 								}
 							],
 							"actions": [],
-							"sid": 577517052034186,
+							"sid": 292623282161491,
 							"children": [
 								{
 									"eventType": "block",
@@ -391,39 +592,56 @@
 										{
 											"id": "for-each",
 											"objectClass": "System",
-											"sid": 714611848937703,
+											"sid": 978694363216564,
 											"parameters": {
 												"object": "actuals"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 527788931831212,
+									"sid": 195110306858139,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "pick-children",
-													"objectClass": "actuals",
-													"sid": 142834585528938,
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 266236785926959,
 													"parameters": {
-														"child": "txt_debug",
-														"which": "own"
+														"variable": "isDebugMode"
 													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 888060527948440,
+											"children": [
 												{
-													"id": "set-text",
-													"objectClass": "txt_debug",
-													"sid": 434539990764966,
-													"parameters": {
-														"text": "actuals.FSM.CurrentState"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "actuals",
+															"sid": 447086779867665,
+															"parameters": {
+																"child": "txt_debug",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "txt_debug",
+															"sid": 411516903806133,
+															"parameters": {
+																"text": "actuals.FSM.CurrentState"
+															}
+														}
+													],
+													"sid": 690217816223317
 												}
-											],
-											"sid": 217003710041245
+											]
 										}
 									]
 								}
@@ -822,6 +1040,81 @@
 						}
 					],
 					"sid": 419591460016814
+				},
+				{
+					"functionName": "getObjectEffectValue",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "effectName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 135700939092375
+						},
+						{
+							"name": "effectParamNum",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 844671505732611
+						},
+						{
+							"name": "uid",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 747790516173841
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 853144363905470,
+					"children": [
+						{
+							"eventType": "script",
+							"script": "// THIS IS WHAT BROKE EVERYTHING: be careful using getFirstInstance in JS\n// const typeObject = runtime.objects[localVars.objectType];\n// const pickedInstance = typeObject.getFirstInstance();\n\nconst pickedInstance = runtime.getInstanceByUid(localVars.uid);\nif (pickedInstance) {\n\tconst myEffect = pickedInstance.effects.find((e)=> e.name === localVars.effectName )\n \tif (myEffect) {\n\t\tconst parameterValue = myEffect.getParameter(localVars.effectParamNum);\n\t\truntime.setReturnValue(parameterValue);\n\t}\n}"
+						}
+					]
+				},
+				{
+					"functionName": "doesLayerEffectExist",
+					"functionDescription": "",
+					"functionCategory": "effect",
+					"functionReturnType": "any",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "layerName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 211879982789104
+						},
+						{
+							"name": "effectName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 577664362665923
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 583959693135212,
+					"children": [
+						{
+							"eventType": "script",
+							"script": "const layer = runtime.layout.getLayer(localVars.layerName);\n\nif(layer){\n\tconst myEffect = layer.effects.find((e)=> e.name === localVars.effectName )\n \tif (myEffect) {\n\t\treturn runtime.setReturnValue(1);\n\t}\n}\nreturn runtime.setReturnValue(0);\n"
+						}
+					]
 				}
 			],
 			"sid": 971677484167875

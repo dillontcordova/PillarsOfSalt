@@ -1,13 +1,13 @@
 {
-	"name": "e_grassLand",
+	"name": "grassLand_e",
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "e_main"
+			"includeSheet": "main_e"
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_lighting"
+			"includeSheet": "lighting_e"
 		},
 		{
 			"eventType": "include",
@@ -31,10 +31,10 @@
 					]
 				},
 				{
-					"callFunction": "initLights",
-					"sid": 308402339832828,
+					"callFunction": "setDarkness",
+					"sid": 290352652944536,
 					"parameters": [
-						"40"
+						"100"
 					]
 				}
 			],

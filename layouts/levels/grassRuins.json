@@ -1097,7 +1097,7 @@
 							}
 						},
 						{
-							"type": "Sprite3",
+							"type": "waterfallSplash_spr",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -1126,7 +1126,7 @@
 							}
 						},
 						{
-							"type": "Sprite3",
+							"type": "waterfallSplash_spr",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -1242,7 +1242,7 @@
 							}
 						},
 						{
-							"type": "Sprite3",
+							"type": "waterfallSplash_spr",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "idle",
@@ -1267,6 +1267,55 @@
 									1
 								],
 								"angle": 3.141592653589793,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "spr_movingPlatformV",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 313,
+							"instanceVariables": {},
+							"behaviors": {
+								"Sine": {
+									"properties": {
+										"movement": "vertical",
+										"wave": "sine",
+										"period": 10,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": 125,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"Jumpthru": {
+									"properties": {
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 264,
+								"y": 896,
+								"width": 48,
+								"height": 8,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
 								"zElevation": 0
 							}
 						}
@@ -1301,55 +1350,6 @@
 				}
 			],
 			"instances": [
-				{
-					"type": "spr_movingPlatformV",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 313,
-					"instanceVariables": {},
-					"behaviors": {
-						"Sine": {
-							"properties": {
-								"movement": "vertical",
-								"wave": "sine",
-								"period": 10,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 125,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						},
-						"Jumpthru": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 264,
-						"y": 896,
-						"width": 48,
-						"height": 8,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
 				{
 					"type": "spr_movingPlatformV",
 					"properties": {
@@ -1923,7 +1923,7 @@
 					}
 				},
 				{
-					"type": "ambientLightSource",
+					"type": "ambientLightAura",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1958,10 +1958,10 @@
 						}
 					},
 					"world": {
-						"x": 417.1929691298195,
-						"y": 897.1929691298195,
-						"width": 112,
-						"height": 112,
+						"x": 432,
+						"y": 896,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2136,6 +2136,58 @@
 						"y": 784,
 						"width": 18,
 						"height": 384,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ambientLightAura",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 376,
+					"instanceVariables": {},
+					"behaviors": {
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 200,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 224,
+						"y": 800,
+						"width": 80,
+						"height": 80,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

@@ -1,5 +1,5 @@
 {
-	"name": "e_main",
+	"name": "main_e",
 	"events": [
 		{
 			"eventType": "include",
@@ -15,7 +15,7 @@
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_player"
+			"includeSheet": "player_e"
 		},
 		{
 			"eventType": "include",
@@ -107,6 +107,19 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 203411309577405,
+					"parameters": {
+						"layer": "\"lights\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "initLighting",
+					"sid": 892975690092425
+				},
 				{
 					"callFunction": "fadeIn",
 					"sid": 160849029032326,

@@ -3,11 +3,11 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "e_main"
+			"includeSheet": "main_e"
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_lighting"
+			"includeSheet": "lighting_e"
 		},
 		{
 			"eventType": "include",
@@ -31,11 +31,10 @@
 					]
 				},
 				{
-					"callFunction": "initLights",
-					"sid": 553026885648885,
-					"disabled": true,
+					"callFunction": "setDarkness",
+					"sid": 198394713548141,
 					"parameters": [
-						"30"
+						"50"
 					]
 				}
 			],

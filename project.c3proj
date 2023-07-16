@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 34402,
+	"savedWithRelease": 35000,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -306,6 +306,13 @@
 		},
 		{
 			"type": "effect",
+			"id": "hsladjust",
+			"name": "Adjust HSL",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "multiply",
 			"name": "Multiply",
 			"author": "Scirra",
@@ -337,33 +344,22 @@
 	"uniqueId": "n8bngjs1j57",
 	"objectTypes": {
 		"items": [
-			"spr_vegetation",
 			"spr_scythe",
 			"9patch_grassLand",
 			"spr_fallCheck",
 			"spr_key",
 			"sf_healthHUD",
 			"sf_jumpHUD",
-			"BigPlant",
-			"spr_platformBridge",
 			"spr_chest",
 			"spr_movingPlatformV",
 			"spr_shootFire",
 			"spr_leafAtmos",
 			"spr_door",
-			"spr_doorSwitch",
-			"Browser",
-			"spr_gear",
 			"Sprite",
 			"Text",
-			"Array",
 			"spr_btnTileScreen",
 			"destructable_tb",
-			"destructableWood_spr",
-			"TimelineController",
-			"testNPC",
-			"dust_par",
-			"pathNode_spr"
+			"testNPC"
 		],
 		"subfolders": [
 			{
@@ -371,7 +367,10 @@
 					"Keyboard",
 					"Gamepad",
 					"Audio",
-					"Touch"
+					"Touch",
+					"TimelineController",
+					"Array",
+					"Browser"
 				],
 				"subfolders": [],
 				"name": "input"
@@ -449,7 +448,8 @@
 					"par_hit",
 					"par_snow",
 					"Particles_splash",
-					"par_refresh"
+					"par_refresh",
+					"dust_par"
 				],
 				"subfolders": [],
 				"name": "particles"
@@ -613,7 +613,7 @@
 				"subfolders": [
 					{
 						"items": [
-							"ambientLightSource",
+							"ambientLightAura",
 							"lampLightSource"
 						],
 						"subfolders": [],
@@ -660,7 +660,7 @@
 			{
 				"items": [
 					"waterfall_spr",
-					"Sprite3"
+					"waterfallSplash_spr"
 				],
 				"subfolders": [],
 				"name": "waterfall"
@@ -680,6 +680,28 @@
 				"items": [],
 				"subfolders": [],
 				"name": "sandbox"
+			},
+			{
+				"items": [
+					"destructableWood_spr",
+					"tikiTallTorch_spr",
+					"spr_platformBridge",
+					"bigPlant_spr",
+					"spr_doorSwitch",
+					"spr_vegetation",
+					"spr_gear",
+					"tikiTallTorch_spr2"
+				],
+				"subfolders": [],
+				"name": "staticMapObjects"
+			},
+			{
+				"items": [
+					"pathNode_spr",
+					"pathLine_spr"
+				],
+				"subfolders": [],
+				"name": "debug"
 			}
 		]
 	},
@@ -709,7 +731,8 @@
 			"glowEmitters",
 			"cameraTargets",
 			"NPC",
-			"lightSources"
+			"lightAura",
+			"lightSource"
 		],
 		"subfolders": []
 	},
@@ -739,9 +762,9 @@
 		"items": [
 			"util_e",
 			"e_squashAndStretch",
-			"e_main",
+			"main_e",
 			"e_camera",
-			"e_player",
+			"player_e",
 			"e_splashScreen",
 			"enemies_e",
 			"e_doorsAndKeys",
@@ -750,7 +773,7 @@
 			"e_titleScreen",
 			"e_eventPoints",
 			"e_pauseMenu",
-			"e_lighting",
+			"lighting_e",
 			"e_traps",
 			"dialog_e",
 			"sfx_e"
@@ -758,7 +781,7 @@
 		"subfolders": [
 			{
 				"items": [
-					"e_grassLand",
+					"grassLand_e",
 					"e_caveLand",
 					"grassRuins_e",
 					"sandbox_e"
@@ -1143,7 +1166,8 @@
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
 		"autoReloadScriptsOnPreview": false,
-		"exportFileStructure": "flat"
+		"exportFileStructure": "flat",
+		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 320,
 	"viewportHeight": 180,

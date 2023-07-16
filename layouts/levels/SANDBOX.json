@@ -265,8 +265,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 507.24157205403,
-						"y": 139.161991488351,
+						"x": 126.79766125340178,
+						"y": 138.8500436460828,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,
@@ -317,190 +317,6 @@
 					}
 				},
 				{
-					"type": "BigPlant",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 346,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 96.44255357514243,
-						"y": 139.05422637209568,
-						"width": 48,
-						"height": 48,
-						"originX": 0.47265625,
-						"originY": 0.9453125,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "spr_enemyBlobSpawn",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 350,
-					"instanceVariables": {
-						"spawnName": "spr_enemyBlob"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 266.77496534639505,
-						"y": 135.75291857787295,
-						"width": 4,
-						"height": 4,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "spr_enemyWormSpawn",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 352,
-					"instanceVariables": {
-						"spawnName": "spr_enemyWorm"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 333.7852478027344,
-						"y": 157.34124755859375,
-						"width": 4,
-						"height": 4,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "spr_enemyGoblinKnifeSpawn",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 353,
-					"instanceVariables": {
-						"spawnName": "spr_enemyGoblinKnife"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 469.2052902709281,
-						"y": 197.30452763620247,
-						"width": 4,
-						"height": 4,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "spr_enemyGoblinKnifeSpawn",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 354,
-					"instanceVariables": {
-						"spawnName": "spr_enemyGoblinKnife"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 404.94783655657864,
-						"y": 192.03206636468087,
-						"width": 4,
-						"height": 4,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "spr_enemyAirBatSpawn",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 370,
-					"instanceVariables": {
-						"spawnName": "spr_enemyBat"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 364.3025817871094,
-						"y": 91.09284210205078,
-						"width": 4,
-						"height": 4,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "pathNode_spr",
 					"properties": {
 						"initially-visible": true,
@@ -524,68 +340,6 @@
 					"world": {
 						"x": 357.09954833984375,
 						"y": -16.937528610229492,
-						"width": 4,
-						"height": 4,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "spr_enemyAirBatSpawn",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 371,
-					"instanceVariables": {
-						"spawnName": "spr_enemyBat"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 272.70536779278325,
-						"y": 86.87824715519056,
-						"width": 4,
-						"height": 4,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "spr_enemyAirBatSpawn",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 372,
-					"instanceVariables": {
-						"spawnName": "spr_enemyBat"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 122.94676925563223,
-						"y": 109.07512244993642,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,
@@ -635,7 +389,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "ambientLightSource",
+					"type": "ambientLightAura",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -670,10 +424,10 @@
 						}
 					},
 					"world": {
-						"x": 85.23949673716052,
-						"y": 101.56787383598595,
-						"width": 109.61406174036097,
-						"height": 109.61406174036097,
+						"x": 392.2948658511981,
+						"y": 190.32054683462138,
+						"width": 51.56080251147864,
+						"height": 51.56080251147864,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -683,87 +437,6 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ambientLightSource",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 351,
-					"instanceVariables": {},
-					"behaviors": {
-						"LineOfSight": {
-							"properties": {
-								"obstacles": "solids",
-								"range": 200,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "size",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 5,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 413.5877524663891,
-						"y": 82.03249410071491,
-						"width": 178.21155550937925,
-						"height": 178.21155550937925,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "glowSolidMask",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "dimmer",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 368,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 400.296513357261,
-						"y": 154.58698044898853,
-						"width": 54.8256316263035,
-						"height": 251.01050691791792,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0.3585406150616095,
 						"zElevation": 0
 					}
 				}
@@ -774,7 +447,7 @@
 					"effectId": "multiply",
 					"name": "Multiply",
 					"instance": {
-						"isEnabled": true,
+						"isEnabled": false,
 						"parameters": {}
 					}
 				},
@@ -792,6 +465,18 @@
 					"instance": {
 						"isEnabled": false,
 						"parameters": {}
+					}
+				},
+				{
+					"effectId": "hsladjust",
+					"name": "AdjustHSL",
+					"instance": {
+						"isEnabled": true,
+						"parameters": {
+							"hue": 0,
+							"saturation": 1,
+							"luminosity": 1
+						}
 					}
 				}
 			],

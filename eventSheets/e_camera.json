@@ -373,10 +373,10 @@
 											"actions": [
 												{
 													"callFunction": "throwIf",
-													"sid": 753174833463591,
+													"sid": 991107351915814,
 													"parameters": [
-														"\"\"",
-														"\"\"",
+														"-1",
+														"-1",
 														"\"Error: zone \" & zoneCtrl_spr.UID & \" does not meet the minimum viewport width/height requirements\""
 													]
 												}

@@ -1,5 +1,5 @@
 {
-	"name": "lightSources",
+	"name": "lightAura",
 	"plugin-id": "Sprite",
 	"sid": 871756531066212,
 	"instanceVariables": [],
@@ -12,7 +12,7 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"ambientLightSource",
+		"ambientLightAura",
 		"lampLightSource"
 	]
 }

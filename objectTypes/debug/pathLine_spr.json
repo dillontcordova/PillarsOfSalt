@@ -1,7 +1,7 @@
 {
-	"name": "BigPlant",
+	"name": "pathLine_spr",
 	"plugin-id": "Sprite",
-	"sid": 365918494365025,
+	"sid": 322533843251694,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,32 +11,25 @@
 			{
 				"frames": [
 					{
-						"width": 48,
-						"height": 48,
-						"originX": 0.47265625,
-						"originY": 0.9453125,
+						"width": 1,
+						"height": 1,
+						"originX": 0,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3757148,
+						"imageSpriteId": 28402,
 						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "center",
-								"x": 0.22916666666666666,
-								"y": 0.1875
-							}
-						],
 						"duration": 1
 					}
 				],
-				"sid": 633391370019975,
-				"name": "Default",
+				"sid": 612614587851248,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 8
 			}
 		],
 		"subfolders": []

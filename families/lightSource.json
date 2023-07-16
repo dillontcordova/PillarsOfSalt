@@ -1,0 +1,13 @@
+{
+	"name": "lightSource",
+	"plugin-id": "Sprite",
+	"sid": 162184997450002,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"tikiTallTorch_spr",
+		"bigPlant_spr",
+		"tikiTallTorch_spr2"
+	]
+}

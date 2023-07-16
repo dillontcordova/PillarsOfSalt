@@ -1480,7 +1480,7 @@
 												{
 													"id": "destroy",
 													"objectClass": "pathNode_spr",
-													"sid": 899310377808295
+													"sid": 473744927302825
 												}
 											],
 											"sid": 701705792126422,
@@ -1489,30 +1489,47 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "repeat",
+															"id": "compare-boolean-eventvar",
 															"objectClass": "System",
-															"sid": 845822344754424,
+															"sid": 688318259138067,
 															"parameters": {
-																"count": "enemyAir.Pathfinding.NodeCount"
+																"variable": "isDebugMode"
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 914731857505635,
+													"children": [
 														{
-															"id": "create-object",
-															"objectClass": "System",
-															"sid": 948485790355168,
-															"parameters": {
-																"object-to-create": "pathNode_spr",
-																"layer": "\"characters\"",
-																"x": "enemyAir.Pathfinding.NodeXAt(loopindex)",
-																"y": "enemyAir.Pathfinding.NodeYAt(loopindex)",
-																"create-hierarchy": false,
-																"template-name": "\"\""
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "repeat",
+																	"objectClass": "System",
+																	"sid": 785057764948759,
+																	"parameters": {
+																		"count": "enemyAir.Pathfinding.NodeCount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 906768796975002,
+																	"parameters": {
+																		"object-to-create": "pathNode_spr",
+																		"layer": "\"characters\"",
+																		"x": "enemyAir.Pathfinding.NodeXAt(loopindex)",
+																		"y": "enemyAir.Pathfinding.NodeYAt(loopindex)",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																}
+															],
+															"sid": 291256108866149
 														}
-													],
-													"sid": 261555254455644
+													]
 												}
 											]
 										}

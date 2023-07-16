@@ -1,5 +1,5 @@
 {
-	"name": "e_player",
+	"name": "player_e",
 	"events": [
 		{
 			"eventType": "comment",
@@ -625,68 +625,6 @@
 									],
 									"sid": 779919690329623,
 									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 233453688493420,
-											"parameters": {
-												"key": 219
-											}
-										},
-										{
-											"id": "on-tap",
-											"objectClass": "Touch",
-											"sid": 166486374296662
-										}
-									],
-									"actions": [
-										{
-											"id": "toggle-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 946099009237638,
-											"parameters": {
-												"variable": "isDebugMode"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "txt_debugFPS",
-											"sid": 626115565746306,
-											"parameters": {
-												"visibility": "toggle"
-											}
-										}
-									],
-									"sid": 783073903233234,
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 201314580619441,
-											"parameters": {
-												"key": 221
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "toggle-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 933918032977629,
-											"parameters": {
-												"variable": "isGfxHigh"
-											}
-										}
-									],
-									"sid": 439003025474573
 								},
 								{
 									"eventType": "block",
