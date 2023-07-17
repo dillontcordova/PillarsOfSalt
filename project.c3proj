@@ -283,14 +283,6 @@
 		},
 		{
 			"type": "effect",
-			"id": "Mikal_LinearLight",
-			"name": "LinearLight",
-			"author": "Mikal",
-			"bundled": false,
-			"version": "1.0.0.0"
-		},
-		{
-			"type": "effect",
 			"id": "RichardLems_RimLight",
 			"name": "Rim Light",
 			"author": "Richard Lems",
@@ -315,13 +307,6 @@
 			"type": "effect",
 			"id": "multiply",
 			"name": "Multiply",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "effect",
-			"id": "overlay",
-			"name": "Overlay",
 			"author": "Scirra",
 			"bundled": false
 		},

@@ -201,8 +201,8 @@
 						"tile-y-spacing": 0
 					},
 					"world": {
-						"x": -287,
-						"y": -67,
+						"x": -288,
+						"y": -64,
 						"width": 1600,
 						"height": 790,
 						"originX": 0,
@@ -398,7 +398,9 @@
 						"live-preview": false
 					},
 					"uid": 345,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"radius": 0
+					},
 					"behaviors": {
 						"LineOfSight": {
 							"properties": {
@@ -424,10 +426,10 @@
 						}
 					},
 					"world": {
-						"x": 392.2948658511981,
-						"y": 190.32054683462138,
-						"width": 51.56080251147864,
-						"height": 51.56080251147864,
+						"x": 408,
+						"y": 128,
+						"width": 96,
+						"height": 96,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -449,34 +451,6 @@
 					"instance": {
 						"isEnabled": false,
 						"parameters": {}
-					}
-				},
-				{
-					"effectId": "overlay",
-					"name": "Overlay",
-					"instance": {
-						"isEnabled": false,
-						"parameters": {}
-					}
-				},
-				{
-					"effectId": "Mikal_LinearLight",
-					"name": "LinearLight",
-					"instance": {
-						"isEnabled": false,
-						"parameters": {}
-					}
-				},
-				{
-					"effectId": "hsladjust",
-					"name": "AdjustHSL",
-					"instance": {
-						"isEnabled": true,
-						"parameters": {
-							"hue": 0,
-							"saturation": 1,
-							"luminosity": 1
-						}
 					}
 				}
 			],

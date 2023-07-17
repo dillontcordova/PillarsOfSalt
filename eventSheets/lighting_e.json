@@ -86,9 +86,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 802125664879779,
+											"sid": 225746271469717,
 											"parameters": {
-												"animation": "\"dim\"",
+												"animation": "\"dimest\"",
 												"from": "beginning"
 											}
 										},
@@ -129,9 +129,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 890944986524679,
+											"sid": 798845673786021,
 											"parameters": {
-												"animation": "\"brighter\"",
+												"animation": "\"dimmer\"",
 												"from": "beginning"
 											}
 										},
@@ -164,9 +164,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 477278659324058,
+											"sid": 953848208289346,
 											"parameters": {
-												"animation": "\"dimmer\"",
+												"animation": "\"brighter\"",
 												"from": "beginning"
 											}
 										},
@@ -405,6 +405,36 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "lowIntensity",
+							"type": "number",
+							"initialValue": "0.04",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 409126588507292
+						},
+						{
+							"eventType": "variable",
+							"name": "highIntensity",
+							"type": "number",
+							"initialValue": "0.25",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 665385753615713
+						},
+						{
+							"eventType": "variable",
+							"name": "maxIntensity",
+							"type": "number",
+							"initialValue": "0.35",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 291159790382361
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -421,12 +451,21 @@
 									"conditions": [],
 									"actions": [
 										{
+											"id": "set-instvar-value",
+											"objectClass": "lightAura",
+											"sid": 879866732280367,
+											"parameters": {
+												"instance-variable": "radius",
+												"value": "lightAura.Width / 2"
+											}
+										},
+										{
 											"id": "set-range",
 											"objectClass": "lightAura",
-											"sid": 733697772992049,
+											"sid": 295262760030768,
 											"behaviorType": "LineOfSight",
 											"parameters": {
-												"range": "170"
+												"range": "clamp(10, lightAura.radius + 10, 200)"
 											}
 										},
 										{
@@ -452,6 +491,11 @@
 									"parameters": {
 										"object": "dolls"
 									}
+								},
+								{
+									"id": "is-on-screen",
+									"objectClass": "dolls",
+									"sid": 623368295039409
 								}
 							],
 							"actions": [],
@@ -469,6 +513,11 @@
 												"x": "dolls.X",
 												"y": "dolls.Y"
 											}
+										},
+										{
+											"id": "is-on-screen",
+											"objectClass": "lightAura",
+											"sid": 798286581689756
 										}
 									],
 									"actions": [
@@ -734,26 +783,6 @@
 								},
 								{
 									"eventType": "variable",
-									"name": "lowestIntensity",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 410259765938330
-								},
-								{
-									"eventType": "variable",
-									"name": "highestIntensity",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 130498714842690
-								},
-								{
-									"eventType": "variable",
 									"name": "finalDistance",
 									"type": "number",
 									"initialValue": "0",
@@ -767,43 +796,21 @@
 									"conditions": [],
 									"actions": [
 										{
-											"type": "comment",
-											"text": "needs to be dynamic"
-										},
-										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 530926071113958,
+											"sid": 208205221556542,
 											"parameters": {
 												"variable": "finalDistance",
-												"value": "32"
+												"value": "lightAura.radius"
 											}
 										},
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 815202199330345,
-											"parameters": {
-												"variable": "lowestIntensity",
-												"value": ".04"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 200738539456303,
-											"parameters": {
-												"variable": "highestIntensity",
-												"value": "0.25"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 978014893571783,
+											"sid": 704394575709130,
 											"parameters": {
 												"variable": "rateOfChange",
-												"value": "(lowestIntensity - highestIntensity) / (lightAura.LineOfSight.Range - finalDistance)"
+												"value": "roundToDp((lowIntensity - highIntensity) / (lightAura.LineOfSight.Range - finalDistance), 5)"
 											}
 										},
 										{
@@ -818,19 +825,19 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 857832935308922,
+											"sid": 129236820082709,
 											"parameters": {
 												"variable": "intensity",
-												"value": "lowestIntensity - ((finalDistance - curDistance) * rateOfChange)"
+												"value": "lowIntensity - (((lightAura.LineOfSight.Range - finalDistance) - curDistance) * rateOfChange)"
 											}
 										},
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 155490024935899,
+											"sid": 887872393286427,
 											"parameters": {
 												"variable": "potentialIntensity",
-												"value": "clamp( lowestIntensity - (((lightAura.LineOfSight.Range - finalDistance) - curDistance) * rateOfChange), 0, highestIntensity)"
+												"value": "clamp( lowIntensity - ((lightAura.LineOfSight.Range - curDistance) * rateOfChange), 0, highIntensity)"
 											}
 										},
 										{
@@ -851,11 +858,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 308870476993003,
+											"sid": 213810179421877,
 											"parameters": {
 												"first-value": "potentialIntensity",
 												"comparison": 4,
-												"second-value": ".23"
+												"second-value": "highIntensity - .01"
 											}
 										}
 									],
@@ -863,10 +870,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 876152131359786,
+											"sid": 273323025830281,
 											"parameters": {
 												"variable": "potentialIntensity",
-												"value": "lerp(curIntensity, .35, 0.1 * 180 * dt)"
+												"value": "lerp(curIntensity, maxIntensity, 0.1 * 180 * dt)"
 											}
 										}
 									],
@@ -874,57 +881,25 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 752021204958515,
-											"parameters": {
-												"variable": "potentialIntensity",
-												"value": "clamp(1-(distance(dolls.X, dolls.Y, lightAura.X, lightAura.Y)*0.005), 0, .25)"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 805444299846541,
-											"parameters": {
-												"variable": "curIntensity",
-												"value": "Functions.getObjectEffectValue(\"RimLight\", 2, dolls.UID)"
-											}
-										}
-									],
-									"sid": 646044174118968,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
+											"id": "else",
 											"objectClass": "System",
-											"sid": 795228027373901,
-											"parameters": {
-												"first-value": "potentialIntensity",
-												"comparison": 4,
-												"second-value": ".05"
-											}
+											"sid": 729392107767478
 										}
 									],
 									"actions": [
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 254018420476398,
+											"sid": 455311160053002,
 											"parameters": {
-												"variable": "intensity",
-												"value": "lerp(curIntensity, potentialIntensity, 0.1 * 180 * dt)"
+												"variable": "potentialIntensity",
+												"value": "lerp(curIntensity, potentialIntensity, 0.1 * 60 * dt)"
 											}
 										}
 									],
-									"sid": 175451084816536,
-									"disabled": true
+									"sid": 367375322484368
 								},
 								{
 									"eventType": "block",
@@ -1002,11 +977,11 @@
 										{
 											"id": "set-effect-parameter",
 											"objectClass": "dolls",
-											"sid": 433123414906504,
+											"sid": 902428757306041,
 											"parameters": {
 												"effect": "\"RimLight\"",
 												"parameter-index": "2",
-												"value": "intensity > -1 ? intensity :  clamp((1-(distance(Self.X, Self.Y, lightAura.X, lightAura.Y)*0.005)), 0, .35)"
+												"value": "intensity"
 											}
 										}
 									],
@@ -1105,6 +1080,7 @@
 							"conditions": [],
 							"actions": [],
 							"sid": 456059244802275,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -1126,7 +1102,8 @@
 											"sid": 215588088804277
 										}
 									],
-									"sid": 724864029073639
+									"sid": 724864029073639,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -1142,6 +1119,7 @@
 									],
 									"actions": [],
 									"sid": 863857728046749,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -1157,6 +1135,7 @@
 											],
 											"actions": [],
 											"sid": 932613721347050,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -1209,7 +1188,8 @@
 															}
 														}
 													],
-													"sid": 456876832926589
+													"sid": 456876832926589,
+													"disabled": true
 												}
 											]
 										}
@@ -1236,7 +1216,16 @@
 									"sid": 192567071165412
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lightSource",
+									"sid": 881581832868470,
+									"parameters": {
+										"frame-number": "random(0, Self.AnimationFrameCount)"
+									}
+								}
+							],
 							"sid": 791034196650292,
 							"children": [
 								{
@@ -1264,27 +1253,35 @@
 												"create-hierarchy": true,
 												"template-name": "\"\""
 											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "lightSource",
+											"sid": 387323018277347,
+											"parameters": {
+												"child": "ambientLightAura",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-a": true,
+												"transform-o": true,
+												"transform-z-elevation": true,
+												"transform-visibility": true,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "ambientLightAura",
+											"sid": 466807586390072,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "inactive"
+											}
 										}
 									],
-									"sid": 322466947923255,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-last-created",
-													"objectClass": "System",
-													"sid": 671669614651178,
-													"parameters": {
-														"object": "lightAura"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 244364641080921,
-											"disabled": true
-										}
-									]
+									"sid": 322466947923255
 								}
 							]
 						}

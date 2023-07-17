@@ -2,7 +2,15 @@
 	"name": "lightAura",
 	"plugin-id": "Sprite",
 	"sid": 871756531066212,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "radius",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 685533301221904
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "LOS",

@@ -4481,7 +4481,9 @@
 						"live-preview": false
 					},
 					"uid": 276,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"radius": 0
+					},
 					"behaviors": {
 						"LineOfSight": {
 							"properties": {
@@ -4501,7 +4503,7 @@
 								"period-offset-random": 0,
 								"magnitude": 5,
 								"magnitude-random": 0,
-								"enabled": true,
+								"enabled": false,
 								"live-preview": false
 							}
 						}
@@ -4509,8 +4511,8 @@
 					"world": {
 						"x": 654,
 						"y": 118,
-						"width": 109.61406174036097,
-						"height": 109.61406174036097,
+						"width": 48,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
