@@ -17,20 +17,20 @@
 			{
 				"frames": [
 					{
-						"width": 48,
-						"height": 48,
+						"width": 256,
+						"height": 256,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5046516,
+						"imageSpriteId": 5330819,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 232568557376427,
-				"name": "Animation 1",
+				"sid": 815425764658499,
+				"name": "idle",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

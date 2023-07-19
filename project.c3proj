@@ -675,7 +675,7 @@
 					"spr_doorSwitch",
 					"spr_vegetation",
 					"spr_gear",
-					"tikiTallTorch_spr2"
+					"tikiTallTorchWall_spr"
 				],
 				"subfolders": [],
 				"name": "staticMapObjects"

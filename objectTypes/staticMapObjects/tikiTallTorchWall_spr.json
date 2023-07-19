@@ -1,5 +1,5 @@
 {
-	"name": "tikiTallTorch_spr2",
+	"name": "tikiTallTorchWall_spr",
 	"plugin-id": "Sprite",
 	"sid": 991869771730065,
 	"isGlobal": false,
@@ -620,8 +620,70 @@
 					}
 				],
 				"sid": 347775299560055,
-				"name": "idle",
+				"name": "on",
 				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			},
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9229143,
+						"collisionPoly": {
+							"points": [
+								0.625,
+								0.16666666666666666,
+								0.75,
+								0.16666666666666666,
+								0.875,
+								0.4166666666666667,
+								1,
+								0.9166666666666666,
+								1,
+								1,
+								0,
+								1,
+								0,
+								0.9166666666666666,
+								0.125,
+								0.4166666666666667,
+								0.25,
+								0.3333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "bottom",
+								"x": 0.5,
+								"y": 1
+							},
+							{
+								"name": "light",
+								"x": 0.5,
+								"y": 0.375
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 703689028980807,
+				"name": "off",
+				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,

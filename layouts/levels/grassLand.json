@@ -1086,13 +1086,15 @@
 					"type": "tikiTallTorch_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 211,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 568,
@@ -1112,16 +1114,18 @@
 					}
 				},
 				{
-					"type": "tikiTallTorch_spr2",
+					"type": "tikiTallTorchWall_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 375,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 30
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1200,
@@ -1141,16 +1145,18 @@
 					}
 				},
 				{
-					"type": "tikiTallTorch_spr2",
+					"type": "tikiTallTorchWall_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 346,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 30
+					},
 					"behaviors": {},
 					"world": {
 						"x": 640,
@@ -1173,13 +1179,15 @@
 					"type": "tikiTallTorch_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 352,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 256,
@@ -1202,13 +1210,15 @@
 					"type": "tikiTallTorch_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 353,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 728,
@@ -1231,13 +1241,15 @@
 					"type": "tikiTallTorch_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 354,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 368,
@@ -1260,13 +1272,15 @@
 					"type": "tikiTallTorch_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 355,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 464,
@@ -1286,16 +1300,18 @@
 					}
 				},
 				{
-					"type": "tikiTallTorch_spr2",
+					"type": "tikiTallTorchWall_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 350,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 30
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1008,
@@ -1315,16 +1331,18 @@
 					}
 				},
 				{
-					"type": "tikiTallTorch_spr2",
+					"type": "tikiTallTorchWall_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 351,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 30
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1200,
@@ -1420,7 +1438,9 @@
 						"live-preview": false
 					},
 					"uid": 80,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 800,

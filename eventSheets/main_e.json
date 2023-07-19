@@ -52,6 +52,7 @@
 					"id": "is-in-preview",
 					"objectClass": "System",
 					"sid": 213126961269959,
+					"disabled": true,
 					"isInverted": true
 				},
 				{

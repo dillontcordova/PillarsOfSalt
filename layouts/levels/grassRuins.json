@@ -1318,6 +1318,130 @@
 								"angle": 0,
 								"zElevation": 0
 							}
+						},
+						{
+							"type": "tikiTallTorchWall_spr",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "on",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 368,
+							"instanceVariables": {
+								"brightness": 30
+							},
+							"behaviors": {},
+							"world": {
+								"x": 704,
+								"y": 960,
+								"width": 8,
+								"height": 24,
+								"originX": 0.5,
+								"originY": 1,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "tikiTallTorchWall_spr",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "on",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 370,
+							"instanceVariables": {
+								"brightness": 30
+							},
+							"behaviors": {},
+							"world": {
+								"x": 896,
+								"y": 960,
+								"width": 8,
+								"height": 24,
+								"originX": 0.5,
+								"originY": 1,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "tikiTallTorch_spr",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "on",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 371,
+							"instanceVariables": {
+								"brightness": 50
+							},
+							"behaviors": {},
+							"world": {
+								"x": 176,
+								"y": 864,
+								"width": 8,
+								"height": 24,
+								"originX": 0.5,
+								"originY": 1,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "tikiTallTorch_spr",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "on",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 372,
+							"instanceVariables": {
+								"brightness": 50
+							},
+							"behaviors": {},
+							"world": {
+								"x": 416,
+								"y": 960,
+								"width": 8,
+								"height": 24,
+								"originX": 0.5,
+								"originY": 1,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
 						}
 					],
 					"sid": 800057976275727,

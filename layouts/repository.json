@@ -919,7 +919,9 @@
 						"live-preview": false
 					},
 					"uid": 79,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 421,
@@ -1743,13 +1745,15 @@
 					"type": "tikiTallTorch_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 156,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 458.39117431640625,
@@ -1769,16 +1773,18 @@
 					}
 				},
 				{
-					"type": "tikiTallTorch_spr2",
+					"type": "tikiTallTorchWall_spr",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "idle",
+						"initial-animation": "on",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 374,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 431.91244667425667,
@@ -4475,7 +4481,7 @@
 					"type": "ambientLightAura",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "idle",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -4511,8 +4517,8 @@
 					"world": {
 						"x": 654,
 						"y": 118,
-						"width": 48,
-						"height": 48,
+						"width": 256,
+						"height": 256,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

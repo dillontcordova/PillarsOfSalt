@@ -2,6 +2,26 @@
 	"name": "lighting_e",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "isLightingOn",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 301801699180556
+		},
+		{
+			"eventType": "variable",
+			"name": "isShadowsOn",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 627484870719445
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Lighting",
@@ -19,9 +39,13 @@
 					"sid": 113119422772515
 				},
 				{
+					"eventType": "comment",
+					"text": "fake light glow around units"
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Glow",
+					"title": "Bloom",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -287,6 +311,15 @@
 									"conditions": [],
 									"actions": [
 										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 255805020273286,
+											"parameters": {
+												"variable": "isLightingOn",
+												"value": "true"
+											}
+										},
+										{
 											"id": "set-group-active",
 											"objectClass": "System",
 											"sid": 409501476306627,
@@ -398,6 +431,10 @@
 					"sid": 810222749848555
 				},
 				{
+					"eventType": "comment",
+					"text": "dynamic rim lights on dolls"
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "Rim Light",
@@ -451,26 +488,8 @@
 									"conditions": [],
 									"actions": [
 										{
-											"id": "set-instvar-value",
-											"objectClass": "lightAura",
-											"sid": 879866732280367,
-											"parameters": {
-												"instance-variable": "radius",
-												"value": "lightAura.Width / 2"
-											}
-										},
-										{
-											"id": "set-range",
-											"objectClass": "lightAura",
-											"sid": 295262760030768,
-											"behaviorType": "LineOfSight",
-											"parameters": {
-												"range": "clamp(10, lightAura.radius + 10, 200)"
-											}
-										},
-										{
-											"type": "comment",
-											"text": "needs to be dynamic"
+											"callFunction": "setLightRadius",
+											"sid": 292441468146938
 										}
 									],
 									"sid": 835587397117424
@@ -478,101 +497,131 @@
 							]
 						},
 						{
-							"eventType": "comment",
-							"text": "dynamic rim lights on dolls"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "for-each",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 307475680680771,
+									"sid": 656205276099383,
 									"parameters": {
-										"object": "dolls"
+										"variable": "isLightingOn"
 									}
-								},
-								{
-									"id": "is-on-screen",
-									"objectClass": "dolls",
-									"sid": 623368295039409
 								}
 							],
 							"actions": [],
-							"sid": 855129072439736,
+							"sid": 732189825004817,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-nearestfurthest",
-											"objectClass": "lightAura",
-											"sid": 378529984696504,
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 113866837866264,
 											"parameters": {
-												"which": "nearest",
-												"x": "dolls.X",
-												"y": "dolls.Y"
+												"object": "dolls"
 											}
 										},
 										{
 											"id": "is-on-screen",
-											"objectClass": "lightAura",
-											"sid": 798286581689756
+											"objectClass": "dolls",
+											"sid": 630693772271064
 										}
 									],
-									"actions": [
-										{
-											"callFunction": "drawLightRadius",
-											"sid": 427267079812839
-										}
-									],
-									"sid": 641638283561479,
+									"actions": [],
+									"sid": 197722619402290,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "evaluate-expression",
-													"objectClass": "System",
-													"sid": 737697176975591,
+													"id": "pick-nearestfurthest",
+													"objectClass": "lightAura",
+													"sid": 663583672017549,
 													"parameters": {
-														"value": "distance(dolls.X, dolls.Y, lightAura.X, lightAura.Y) < lightAura.LineOfSight.Range"
+														"which": "nearest",
+														"x": "dolls.X",
+														"y": "dolls.Y"
 													}
+												},
+												{
+													"id": "is-on-screen",
+													"objectClass": "lightAura",
+													"sid": 910263960526174
 												}
 											],
-											"actions": [],
-											"sid": 498437755883241,
+											"actions": [
+												{
+													"callFunction": "drawLightRadiusLines",
+													"sid": 385283444331477
+												}
+											],
+											"sid": 408622999546398,
 											"children": [
 												{
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "has-los-to-object",
-															"objectClass": "lightAura",
-															"sid": 783661496144008,
-															"behaviorType": "LineOfSight",
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 775457115179995,
 															"parameters": {
-																"object": "dolls",
-																"image-point": "0"
+																"value": "distance(dolls.X, dolls.Y, lightAura.X, lightAura.Y) < lightAura.LineOfSight.Range"
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 110352810919278,
+													"children": [
 														{
-															"id": "set-effect-enabled",
-															"objectClass": "dolls",
-															"sid": 723790126462962,
-															"parameters": {
-																"mode": "enable",
-																"effect": "\"RimLight\""
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "has-los-to-object",
+																	"objectClass": "lightAura",
+																	"sid": 697345558716295,
+																	"behaviorType": "LineOfSight",
+																	"parameters": {
+																		"object": "dolls",
+																		"image-point": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-effect-enabled",
+																	"objectClass": "dolls",
+																	"sid": 227347944485968,
+																	"parameters": {
+																		"mode": "enable",
+																		"effect": "\"RimLight\""
+																	}
+																},
+																{
+																	"callFunction": "fadeInRimLight",
+																	"sid": 559650603375040
+																}
+															],
+															"sid": 792528375730704
 														},
 														{
-															"callFunction": "fadeInRimLight",
-															"sid": 519641251505890
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 972258887953952
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "fadeOutRimLight",
+																	"sid": 243283535375098
+																}
+															],
+															"sid": 281726186376054
 														}
-													],
-													"sid": 283521346362144
+													]
 												},
 												{
 													"eventType": "block",
@@ -580,40 +629,23 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 595247706911047
+															"sid": 442283102330509
 														}
 													],
 													"actions": [
 														{
-															"callFunction": "fadeOutRimLight",
-															"sid": 263143612442320
+															"id": "set-effect-enabled",
+															"objectClass": "dolls",
+															"sid": 443575144224090,
+															"parameters": {
+																"mode": "disable",
+																"effect": "\"RimLight\""
+															}
 														}
 													],
-													"sid": 593276458240534
+													"sid": 902730229164690
 												}
 											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 392983262531292
-												}
-											],
-											"actions": [
-												{
-													"id": "set-effect-enabled",
-													"objectClass": "dolls",
-													"sid": 135420172461525,
-													"parameters": {
-														"mode": "disable",
-														"effect": "\"RimLight\""
-													}
-												}
-											],
-											"sid": 204940822431660
 										}
 									]
 								}
@@ -733,16 +765,6 @@
 							"children": [
 								{
 									"eventType": "variable",
-									"name": "intensity",
-									"type": "number",
-									"initialValue": "-1",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 817460346054495
-								},
-								{
-									"eventType": "variable",
 									"name": "curIntensity",
 									"type": "number",
 									"initialValue": "0",
@@ -820,15 +842,6 @@
 											"parameters": {
 												"variable": "curDistance",
 												"value": "distance(dolls.X, dolls.Y, lightAura.X, lightAura.Y)"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 129236820082709,
-											"parameters": {
-												"variable": "intensity",
-												"value": "lowIntensity - (((lightAura.LineOfSight.Range - finalDistance) - curDistance) * rateOfChange)"
 											}
 										},
 										{
@@ -1069,7 +1082,7 @@
 							]
 						},
 						{
-							"functionName": "drawLightRadius",
+							"functionName": "drawLightRadiusLines",
 							"functionDescription": "",
 							"functionCategory": "debug",
 							"functionReturnType": "none",
@@ -1080,7 +1093,6 @@
 							"conditions": [],
 							"actions": [],
 							"sid": 456059244802275,
-							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -1102,8 +1114,7 @@
 											"sid": 215588088804277
 										}
 									],
-									"sid": 724864029073639,
-									"disabled": true
+									"sid": 724864029073639
 								},
 								{
 									"eventType": "block",
@@ -1119,7 +1130,6 @@
 									],
 									"actions": [],
 									"sid": 863857728046749,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -1135,7 +1145,6 @@
 											],
 											"actions": [],
 											"sid": 932613721347050,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -1188,8 +1197,7 @@
 															}
 														}
 													],
-													"sid": 456876832926589,
-													"disabled": true
+													"sid": 456876832926589
 												}
 											]
 										}
@@ -1199,6 +1207,10 @@
 						}
 					],
 					"sid": 634265090156054
+				},
+				{
+					"eventType": "comment",
+					"text": ""
 				},
 				{
 					"eventType": "group",
@@ -1275,13 +1287,88 @@
 											"id": "set-active",
 											"objectClass": "ambientLightAura",
 											"sid": 466807586390072,
+											"disabled": true,
 											"behaviorType": "Sine",
 											"parameters": {
 												"state": "inactive"
 											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "ambientLightAura",
+											"sid": 294674527311017,
+											"parameters": {
+												"scale": "clamp(lightSource.brightness * .01, .01, 1)"
+											}
 										}
 									],
-									"sid": 322466947923255
+									"sid": 322466947923255,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "lightAura",
+													"sid": 590312567211926,
+													"parameters": {
+														"unique-id": "ambientLightAura.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setLightRadius",
+													"sid": 804543258326478
+												}
+											],
+											"sid": 655445319664157
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "setLightRadius",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 194240016464110,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "lightAura",
+											"sid": 875745219650722,
+											"parameters": {
+												"instance-variable": "radius",
+												"value": "lightAura.Width / 2"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "needs to be more dynamic"
+										},
+										{
+											"id": "set-range",
+											"objectClass": "lightAura",
+											"sid": 738153073085443,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"range": "clamp(160, lightAura.radius + 10, ViewportWidth(lightingLayer) * .66)"
+											}
+										}
+									],
+									"sid": 261725098528696
 								}
 							]
 						}
@@ -1289,12 +1376,32 @@
 					"sid": 618052355578969
 				},
 				{
+					"eventType": "comment",
+					"text": ""
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "Shadow",
 					"description": "",
 					"isActiveOnStart": true,
-					"children": [],
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 799271331490948,
+									"parameters": {
+										"variable": "isShadowsOn"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 529297094614282
+						}
+					],
 					"sid": 942117125694033
 				}
 			],
