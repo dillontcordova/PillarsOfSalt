@@ -1874,7 +1874,7 @@
 									"disabled": false,
 									"title": "dash",
 									"description": "",
-									"isActiveOnStart": false,
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "comment",
@@ -2361,7 +2361,7 @@
 									"disabled": false,
 									"title": "wallJump",
 									"description": "",
-									"isActiveOnStart": false,
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "variable",
@@ -2907,7 +2907,7 @@
 									"disabled": false,
 									"title": "groundPound",
 									"description": "",
-									"isActiveOnStart": false,
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "group",
@@ -3431,7 +3431,7 @@
 									"disabled": false,
 									"title": "shoot",
 									"description": "",
-									"isActiveOnStart": false,
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "variable",

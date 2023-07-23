@@ -646,6 +646,28 @@
 													"sid": 902730229164690
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 188356143380852
+												}
+											],
+											"actions": [
+												{
+													"id": "set-effect-enabled",
+													"objectClass": "dolls",
+													"sid": 892212994701415,
+													"parameters": {
+														"mode": "disable",
+														"effect": "\"RimLight\""
+													}
+												}
+											],
+											"sid": 625125993933040
 										}
 									]
 								}
