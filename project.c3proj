@@ -733,10 +733,10 @@
 		"subfolders": [
 			{
 				"items": [
-					"grassRuins",
 					"caveLand",
-					"SANDBOX",
-					"grassLand"
+					"grassLand",
+					"grassRuins",
+					"SANDBOX"
 				],
 				"subfolders": [],
 				"name": "levels"
@@ -746,20 +746,20 @@
 	"eventSheets": {
 		"items": [
 			"util_e",
-			"e_squashAndStretch",
+			"squashAndStretch_e",
 			"main_e",
-			"e_camera",
+			"camera_e",
 			"player_e",
-			"e_splashScreen",
+			"splashScreen_e",
 			"enemies_e",
-			"e_doorsAndKeys",
-			"e_singleton",
-			"e_water",
-			"e_titleScreen",
-			"e_eventPoints",
-			"e_pauseMenu",
+			"doorsAndKeys_e",
+			"singleton_e",
+			"water_e",
+			"titleScreen_e",
+			"eventPoints_e",
+			"pauseMenu_e",
 			"lighting_e",
-			"e_traps",
+			"traps_e",
 			"dialog_e",
 			"sfx_e"
 		],
@@ -767,7 +767,7 @@
 			{
 				"items": [
 					"grassLand_e",
-					"e_caveLand",
+					"caveLand_e",
 					"grassRuins_e",
 					"sandbox_e"
 				],

@@ -1,5 +1,5 @@
 {
-	"name": "e_camera",
+	"name": "camera_e",
 	"events": [
 		{
 			"eventType": "include",

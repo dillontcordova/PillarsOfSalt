@@ -3,11 +3,11 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "e_camera"
+			"includeSheet": "camera_e"
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_squashAndStretch"
+			"includeSheet": "squashAndStretch_e"
 		},
 		{
 			"eventType": "include",
@@ -23,23 +23,23 @@
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_doorsAndKeys"
+			"includeSheet": "doorsAndKeys_e"
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_singleton"
+			"includeSheet": "singleton_e"
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_water"
+			"includeSheet": "water_e"
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_pauseMenu"
+			"includeSheet": "pauseMenu_e"
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "e_eventPoints"
+			"includeSheet": "eventPoints_e"
 		},
 		{
 			"eventType": "include",

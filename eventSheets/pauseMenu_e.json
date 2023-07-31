@@ -1,5 +1,5 @@
 {
-	"name": "e_pauseMenu",
+	"name": "pauseMenu_e",
 	"events": [
 		{
 			"eventType": "group",

@@ -1,5 +1,5 @@
 {
-	"name": "e_titleScreen",
+	"name": "titleScreen_e",
 	"events": [
 		{
 			"eventType": "group",

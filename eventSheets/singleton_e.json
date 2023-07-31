@@ -1,5 +1,5 @@
 {
-	"name": "e_singleton",
+	"name": "singleton_e",
 	"events": [
 		{
 			"eventType": "group",
