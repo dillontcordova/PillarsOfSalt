@@ -1,0 +1,68 @@
+{
+	"name": "atmoshphereObj_spr",
+	"plugin-id": "Sprite",
+	"sid": 291069705450017,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "colors",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 308061817003755
+		},
+		{
+			"name": "uidStore",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 598047915634443
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 115818762118742
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 284011643175657
+		},
+		{
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 992492253864343
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7727332,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 669189242757108,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}

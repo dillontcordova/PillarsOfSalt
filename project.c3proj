@@ -162,6 +162,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "NoSave",
+			"name": "No save",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Pathfinding",
 			"name": "Pathfinding",
 			"author": "Scirra",
@@ -662,7 +669,10 @@
 				"name": "dialog"
 			},
 			{
-				"items": [],
+				"items": [
+					"atmoshphereObj_spr",
+					"silhouette_spr"
+				],
 				"subfolders": [],
 				"name": "sandbox"
 			},
@@ -761,7 +771,8 @@
 			"lighting_e",
 			"traps_e",
 			"dialog_e",
-			"sfx_e"
+			"sfx_e",
+			"atmospheric_e"
 		],
 		"subfolders": [
 			{

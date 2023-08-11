@@ -1,0 +1,331 @@
+{
+	"name": "atmospheric_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Atmospheric",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "atmoshphereObj_spr",
+							"sid": 715660577168377
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "atmoshphereObj_spr",
+							"sid": 560068463472806,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "atmoshphereObj_spr",
+							"sid": 536036491665588,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.0",
+								"type": "once",
+								"tag": "\"sunsetStart\""
+							}
+						}
+					],
+					"sid": 945486690331866
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "dolls",
+							"sid": 336838357719441
+						}
+					],
+					"actions": [],
+					"sid": 889264841308081,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 903165833231028,
+									"parameters": {
+										"object-to-create": "silhouette_spr",
+										"layer": "\"silohette\"",
+										"x": "dolls.X",
+										"y": "dolls.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "dolls",
+									"sid": 711656389905065,
+									"parameters": {
+										"child": "silhouette_spr",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": true,
+										"transform-o": false,
+										"transform-z-elevation": true,
+										"transform-visibility": true,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "silhouette_spr",
+									"sid": 209425752439348,
+									"parameters": {
+										"color": "rgb(0,0,0)"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "silhouette_spr",
+									"sid": 656713901714968,
+									"parameters": {
+										"opacity": "0"
+									}
+								}
+							],
+							"sid": 230497449112963,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "atmoshphereObj_spr",
+							"sid": 824908469171928,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"sunsetStart\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "slowSunset",
+							"sid": 203165052186586,
+							"parameters": [
+								"5"
+							]
+						}
+					],
+					"sid": 432859973653516
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "atmoshphereObj_spr",
+							"sid": 113592500486431,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"sunset\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 887835667697308,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "Variable1",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 221537915928191
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-opacity",
+									"objectClass": "System",
+									"sid": 422708224485925,
+									"parameters": {
+										"layer": "\"bgColor\"",
+										"opacity": "atmoshphereObj_spr.Opacity"
+									}
+								},
+								{
+									"id": "set-layer-background-color",
+									"objectClass": "System",
+									"sid": 302978852507874,
+									"parameters": {
+										"layer": "\"bgColor\"",
+										"color": "atmoshphereObj_spr.ColorValue"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 111431721222381,
+									"parameters": {
+										"variable": "Variable1",
+										"value": "atmoshphereObj_spr.Tween.Progress(\"sunset opacity\") * 40"
+									}
+								}
+							],
+							"sid": 484883789910613,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 939793878576968,
+											"parameters": {
+												"object": "dolls"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "dolls",
+											"sid": 114726362786501,
+											"parameters": {
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "2",
+												"value": "100 - Variable1"
+											}
+										}
+									],
+									"sid": 629395205440841
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "slowSunset",
+					"functionDescription": "",
+					"functionCategory": "atmospheric",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "settingTime",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 539257930902894
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 390893707962538,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-opacity",
+									"objectClass": "System",
+									"sid": 174183991132141,
+									"parameters": {
+										"layer": "\"bgColor\"",
+										"opacity": "atmoshphereObj_spr.Opacity"
+									}
+								},
+								{
+									"id": "set-layer-background-color",
+									"objectClass": "System",
+									"sid": 583623802767523,
+									"parameters": {
+										"layer": "\"bgColor\"",
+										"color": "atmoshphereObj_spr.ColorValue"
+									}
+								},
+								{
+									"id": "set-layer-transparent",
+									"objectClass": "System",
+									"sid": 629200343803279,
+									"parameters": {
+										"layer": "\"bgColor\"",
+										"mode": "opaque"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 357127252307405,
+									"parameters": {
+										"layer": "\"bgColor\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "atmoshphereObj_spr",
+									"sid": 634805598466329,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"sunset color\"",
+										"property": "offsetColor",
+										"end-value": "rgbEx(255, 0, 255)",
+										"time": "settingTime",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "atmoshphereObj_spr",
+									"sid": 297513759097498,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"sunset opacity\"",
+										"property": "offsetOpacity",
+										"end-value": "20",
+										"time": "settingTime",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 692396400630555
+						}
+					]
+				}
+			],
+			"sid": 687681303698888
+		}
+	],
+	"sid": 770253155181908
+}
