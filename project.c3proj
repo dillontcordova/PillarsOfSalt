@@ -126,6 +126,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "shadowlight",
+			"name": "Shadow light",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
@@ -283,6 +290,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "shadowcaster",
+			"name": "Shadow caster",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -300,6 +314,13 @@
 			"type": "effect",
 			"id": "blurhorizontal",
 			"name": "Blur horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurvertical",
+			"name": "Blur vertical",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -600,7 +621,8 @@
 			},
 			{
 				"items": [
-					"tb_darkness"
+					"tb_darkness",
+					"ambientShadow"
 				],
 				"subfolders": [
 					{
@@ -735,10 +757,7 @@
 		"items": [
 			"construct splash",
 			"titleScreen",
-			"HUD",
-			"repository",
-			"Pause",
-			"dialog"
+			"repository"
 		],
 		"subfolders": [
 			{
@@ -750,6 +769,16 @@
 				],
 				"subfolders": [],
 				"name": "levels"
+			},
+			{
+				"items": [
+					"HUD",
+					"lighting",
+					"Pause",
+					"dialog"
+				],
+				"subfolders": [],
+				"name": "global"
 			}
 		]
 	},

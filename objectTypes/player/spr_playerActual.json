@@ -92,6 +92,11 @@
 			"behaviorId": "Timer",
 			"name": "Timer",
 			"sid": 952342632890869
+		},
+		{
+			"behaviorId": "shadowcaster",
+			"name": "ShadowCaster",
+			"sid": 216161934287870
 		}
 	],
 	"effectTypes": [],

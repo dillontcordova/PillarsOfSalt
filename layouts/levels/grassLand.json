@@ -4086,23 +4086,14 @@
 			"global": false
 		},
 		{
-			"name": "lights",
-			"overriden": 0,
+			"name": "lighting",
+			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 638083017324327,
-			"effectTypes": [
-				{
-					"effectId": "multiply",
-					"name": "Multiply",
-					"instance": {
-						"isEnabled": false,
-						"parameters": {}
-					}
-				}
-			],
+			"sid": 734619396531147,
+			"effectTypes": [],
 			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
+			"isInitiallyInteractive": false,
 			"color": [
 				1,
 				1,

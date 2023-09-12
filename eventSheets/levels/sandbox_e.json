@@ -14,10 +14,6 @@
 			"includeSheet": "traps_e"
 		},
 		{
-			"eventType": "include",
-			"includeSheet": "atmospheric_e"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -36,9 +32,9 @@
 				},
 				{
 					"callFunction": "setDarkness",
-					"sid": 895261490750994,
+					"sid": 434415550067581,
 					"parameters": [
-						"10"
+						"70"
 					]
 				}
 			],

@@ -478,6 +478,13 @@
 						},
 						"Timer": {
 							"properties": {}
+						},
+						"ShadowCaster": {
+							"properties": {
+								"height": 100,
+								"tag": "",
+								"enabled": true
+							}
 						}
 					},
 					"sceneGraphData": {
@@ -4509,13 +4516,13 @@
 						},
 						"Sine": {
 							"properties": {
-								"movement": "size",
-								"wave": "sine",
-								"period": 4,
+								"movement": "value-only",
+								"wave": "square",
+								"period": 0.2,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
-								"magnitude": 5,
+								"magnitude": 1,
 								"magnitude-random": 0,
 								"enabled": false,
 								"live-preview": false
@@ -4527,6 +4534,84 @@
 						"y": 118,
 						"width": 256,
 						"height": 256,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ambientShadow",
+					"properties": {
+						"light-height": 100,
+						"light-radius": 4,
+						"shadow-color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"cast-from": "all",
+						"tag": "",
+						"live-preview": false
+					},
+					"uid": 380,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 710,
+						"y": 334,
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "glowAmbientMask",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "brighter",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 378,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 1,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 1,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 857,
+						"y": 38,
+						"width": 64,
+						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

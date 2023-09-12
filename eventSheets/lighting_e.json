@@ -29,6 +29,234 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "debug"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-preview",
+							"objectClass": "System",
+							"sid": 358578234286067
+						}
+					],
+					"actions": [],
+					"sid": 889284471482019,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 159677553340591
+								}
+							],
+							"actions": [],
+							"sid": 798646047768214,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 983530377545136,
+											"parameters": {
+												"object": "ambientLightAura"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "ambientLightAura",
+											"sid": 383179833523736,
+											"parameters": {
+												"width": "Self.Width + Self.Sine.Value",
+												"height": "Self.Height+ Self.Sine.Value"
+											}
+										}
+									],
+									"sid": 963570879130378,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 490540404743176,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [],
+							"sid": 225852404643523,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 749434003651412,
+											"parameters": {
+												"object": "lightSource"
+											}
+										},
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 222175224774487,
+											"parameters": {
+												"object": "ambientLightAura"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "lightSource",
+											"sid": 408664859048051,
+											"parameters": {
+												"instance-variable": "brightness",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "ambientLightAura",
+											"sid": 352013919976328,
+											"parameters": {
+												"scale": "clamp(lightSource.brightness * .01, .01, 1)"
+											}
+										}
+									],
+									"sid": 153398557193263,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "lightSource",
+													"sid": 392801132737987,
+													"parameters": {
+														"child": "lightAura",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setLightRadius",
+													"sid": 863899393005928
+												}
+											],
+											"sid": 785968731458482,
+											"disabled": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 115326380463049,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [],
+							"sid": 610547107722202,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 598042366160225,
+											"parameters": {
+												"object": "lightSource"
+											}
+										},
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 897151399561942,
+											"parameters": {
+												"object": "ambientLightAura"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "lightSource",
+											"sid": 228037940943439,
+											"parameters": {
+												"instance-variable": "brightness",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "ambientLightAura",
+											"sid": 852713071741542,
+											"parameters": {
+												"scale": "clamp(lightSource.brightness * .01, .01, 1)"
+											}
+										}
+									],
+									"sid": 189898099578256,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "lightSource",
+													"sid": 151797540358536,
+													"parameters": {
+														"child": "lightAura",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setLightRadius",
+													"sid": 844943150655521
+												}
+											],
+											"sid": 442630418769212,
+											"disabled": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
 					"eventType": "variable",
 					"name": "lightingLayer",
 					"type": "string",
@@ -37,6 +265,189 @@
 					"isStatic": false,
 					"isConstant": true,
 					"sid": 113119422772515
+				},
+				{
+					"eventType": "variable",
+					"name": "darknessLayer",
+					"type": "string",
+					"initialValue": "darkness",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 810468298766209
+				},
+				{
+					"eventType": "variable",
+					"name": "lightingParentLayer",
+					"type": "string",
+					"initialValue": "lighting",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 967162485561693
+				},
+				{
+					"functionName": "initLighting",
+					"functionDescription": "",
+					"functionCategory": "lighting",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 394494215155857,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-in-preview",
+									"objectClass": "System",
+									"sid": 368753418592108
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "throwIf",
+									"sid": 564278032472861,
+									"parameters": [
+										"LayerIndex(lightingParentLayer)",
+										"-1",
+										"\"The lighting layer '\"& lightingParentLayer& \"' on layout '\" & LayoutName & \"' is missing\""
+									]
+								},
+								{
+									"callFunction": "throwIf",
+									"sid": 250592871655045,
+									"parameters": [
+										"LayerIndex(lightingLayer)",
+										"-1",
+										"\"The lighting layer '\"& lightingLayer & \"' on layout '\" & LayoutName & \"' is missing\""
+									]
+								},
+								{
+									"callFunction": "throwIf",
+									"sid": 974884486215148,
+									"parameters": [
+										"LayerIndex(darknessLayer)",
+										"-1",
+										"\"The lighting layer '\"& darknessLayer & \"' on layout '\" & LayoutName & \"' is missing\""
+									]
+								},
+								{
+									"callFunction": "throwIf",
+									"sid": 534475319279241,
+									"disabled": true,
+									"parameters": [
+										"Functions.doesLayerEffectExist(lightingLayer, \"Multiply\")",
+										"0",
+										"\"The lighting layer '\"& lightingLayer & \"' on layout '\" & LayoutName & \"' is missing Multiply effect\""
+									]
+								}
+							],
+							"sid": 492050774359666
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 693127282403760,
+									"parameters": {
+										"group-name": "\"Rim Light\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-layer-force-own-texture",
+									"objectClass": "System",
+									"sid": 512247082906622,
+									"parameters": {
+										"layer": "lightingParentLayer",
+										"mode": "on"
+									}
+								},
+								{
+									"id": "set-layer-transparent",
+									"objectClass": "System",
+									"sid": 127989474254905,
+									"parameters": {
+										"layer": "darknessLayer",
+										"mode": "opaque"
+									}
+								},
+								{
+									"id": "set-layer-background-color",
+									"objectClass": "System",
+									"sid": 358717239327449,
+									"parameters": {
+										"layer": "darknessLayer",
+										"color": "rgbEx(0, 0, 0)"
+									}
+								},
+								{
+									"id": "set-layer-opacity",
+									"objectClass": "System",
+									"sid": 893175118147063,
+									"parameters": {
+										"layer": "darknessLayer",
+										"opacity": "90"
+									}
+								},
+								{
+									"id": "set-layer-blend-mode",
+									"objectClass": "System",
+									"sid": 600751549636176,
+									"parameters": {
+										"layer": "lightingLayer",
+										"blend-mode": "source-out"
+									}
+								},
+								{
+									"id": "set-layer-blend-mode",
+									"objectClass": "System",
+									"sid": 885419163469182,
+									"parameters": {
+										"layer": "darknessLayer",
+										"blend-mode": "source-out"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 303326747343132,
+									"parameters": {
+										"layer": "lightingLayer",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 796980558821614,
+									"parameters": {
+										"variable": "isLightingOn",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 114318455760405,
+									"disabled": true,
+									"parameters": {
+										"variable": "isShadowsOn",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 413811430857220
+						}
+					]
 				},
 				{
 					"eventType": "comment",
@@ -110,7 +521,7 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 225746271469717,
+											"sid": 928802108524259,
 											"parameters": {
 												"animation": "\"dimest\"",
 												"from": "beginning"
@@ -153,9 +564,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 798845673786021,
+											"sid": 169869370424433,
 											"parameters": {
-												"animation": "\"dimmer\"",
+												"animation": "\"dimest\"",
 												"from": "beginning"
 											}
 										},
@@ -188,7 +599,7 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 953848208289346,
+											"sid": 105720137698984,
 											"parameters": {
 												"animation": "\"brighter\"",
 												"from": "beginning"
@@ -269,126 +680,6 @@
 							]
 						},
 						{
-							"functionName": "initLighting",
-							"functionDescription": "",
-							"functionCategory": "lighting",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 703485980999840,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"callFunction": "throwIf",
-											"sid": 970178605361030,
-											"parameters": [
-												"LayerIndex(lightingLayer)",
-												"-1",
-												"\"The lighting layer '\"& lightingLayer & \"' on layout '\" & LayoutName & \"' is missing\""
-											]
-										},
-										{
-											"callFunction": "throwIf",
-											"sid": 774725208437502,
-											"parameters": [
-												"Functions.doesLayerEffectExist(lightingLayer, \"Multiply\")",
-												"0",
-												"\"The lighting layer '\"& lightingLayer & \"' on layout '\" & LayoutName & \"' is missing Multiply effect\""
-											]
-										}
-									],
-									"sid": 673040694552087
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 255805020273286,
-											"parameters": {
-												"variable": "isLightingOn",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-group-active",
-											"objectClass": "System",
-											"sid": 409501476306627,
-											"parameters": {
-												"group-name": "\"Rim Light\"",
-												"state": "activated"
-											}
-										},
-										{
-											"id": "set-layer-force-own-texture",
-											"objectClass": "System",
-											"sid": 654758641262190,
-											"parameters": {
-												"layer": "lightingLayer",
-												"mode": "on"
-											}
-										},
-										{
-											"id": "set-layer-effect-enabled",
-											"objectClass": "System",
-											"sid": 803760765897666,
-											"parameters": {
-												"layer": "lightingLayer",
-												"mode": "enable",
-												"effect": "\"Multiply\""
-											}
-										},
-										{
-											"id": "set-layer-transparent",
-											"objectClass": "System",
-											"sid": 562082975055988,
-											"parameters": {
-												"layer": "lightingLayer",
-												"mode": "opaque"
-											}
-										},
-										{
-											"id": "set-layer-background-color",
-											"objectClass": "System",
-											"sid": 662961570023024,
-											"parameters": {
-												"layer": "lightingLayer",
-												"color": "rgbEx(0, 0, 0)"
-											}
-										},
-										{
-											"id": "set-layer-opacity",
-											"objectClass": "System",
-											"sid": 205439291722531,
-											"parameters": {
-												"layer": "lightingLayer",
-												"opacity": "90"
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 839316320876025,
-											"parameters": {
-												"layer": "lightingLayer",
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 441115530982838
-								}
-							]
-						},
-						{
 							"functionName": "setDarkness",
 							"functionDescription": "",
 							"functionCategory": "lighting",
@@ -416,9 +707,9 @@
 										{
 											"id": "set-layer-opacity",
 											"objectClass": "System",
-											"sid": 123119427434498,
+											"sid": 648010228065918,
 											"parameters": {
-												"layer": "lightingLayer",
+												"layer": "darknessLayer",
 												"opacity": "darkness"
 											}
 										}
@@ -431,8 +722,218 @@
 					"sid": 810222749848555
 				},
 				{
-					"eventType": "comment",
-					"text": "dynamic rim lights on dolls"
+					"eventType": "group",
+					"disabled": false,
+					"title": "lightSource",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "lightSource",
+									"sid": 558726563769000
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lightSource",
+									"sid": 221052614653437,
+									"parameters": {
+										"frame-number": "random(0, Self.AnimationFrameCount)"
+									}
+								}
+							],
+							"sid": 989372407458652,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "throwIf",
+											"sid": 132632911844639,
+											"parameters": [
+												"int(str(lightSource.ImagePointX(\"light\")) &  str(lightSource.ImagePointY(\"light\")))",
+												"int(str(lightSource.X) & str(lightSource.Y))",
+												"\"lightSource '\" & lightSource.ObjectTypeName & \"' of uid: '\" & lightSource.UID & \"' missing light origin point\""
+											]
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 324415961020846,
+											"parameters": {
+												"object-to-create": "ambientLightAura",
+												"layer": "lightingLayer",
+												"x": "lightSource.ImagePointX(\"light\")",
+												"y": "lightSource.ImagePointY(\"light\")",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "lightSource",
+											"sid": 523620002399223,
+											"parameters": {
+												"child": "ambientLightAura",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-a": true,
+												"transform-o": true,
+												"transform-z-elevation": true,
+												"transform-visibility": true,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "ambientLightAura",
+											"sid": 152761526357341,
+											"parameters": {
+												"scale": "clamp(lightSource.brightness * .01, .01, 1)"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 696159034982196,
+											"parameters": {
+												"object-to-create": "ambientShadow",
+												"layer": "\"shadowLayer\"",
+												"x": "lightSource.ImagePointX(\"light\")",
+												"y": "lightSource.ImagePointY(\"light\")",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "ambientLightAura",
+											"sid": 431003261242722,
+											"parameters": {
+												"child": "ambientShadow",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-a": true,
+												"transform-o": true,
+												"transform-z-elevation": true,
+												"transform-visibility": true,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "ambientShadow",
+											"sid": 210881576998338,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "ambientLightAura",
+											"sid": 467954292714134,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "active"
+											}
+										}
+									],
+									"sid": 573321558521308,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "lightAura",
+													"sid": 605764411883118,
+													"parameters": {
+														"unique-id": "ambientLightAura.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setLightRadius",
+													"sid": 128743325785587
+												}
+											],
+											"sid": 272505016553746
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "setLightRadius",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 138963383518408,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "lightAura",
+											"sid": 497041017924665,
+											"parameters": {
+												"instance-variable": "radius",
+												"value": "lightAura.Width / 2"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "needs to be more dynamic, 160 seems to be magic number"
+										},
+										{
+											"id": "set-range",
+											"objectClass": "lightAura",
+											"sid": 719483611428908,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"range": "clamp(lightSource.brightness * 300, lightAura.radius + 10, OriginalViewportWidth * .66)"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "needs to be more dynamic, 160 seems to be magic number"
+										},
+										{
+											"id": "set-range",
+											"objectClass": "lightAura",
+											"sid": 627764935129244,
+											"disabled": true,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"range": "clamp(160, lightAura.radius + 10, OriginalViewportWidth * .66)"
+											}
+										}
+									],
+									"sid": 141172332867697
+								}
+							]
+						}
+					],
+					"sid": 968394290293492
 				},
 				{
 					"eventType": "group",
@@ -1231,13 +1732,9 @@
 					"sid": 634265090156054
 				},
 				{
-					"eventType": "comment",
-					"text": ""
-				},
-				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "lightSource",
+					"title": "Shadow",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -1246,168 +1743,30 @@
 							"conditions": [
 								{
 									"id": "on-created",
-									"objectClass": "lightSource",
-									"sid": 192567071165412
+									"objectClass": "ambientShadow",
+									"sid": 847209429523480
 								}
 							],
 							"actions": [
 								{
-									"id": "set-animation-frame",
-									"objectClass": "lightSource",
-									"sid": 881581832868470,
+									"id": "set-cast-from",
+									"objectClass": "ambientShadow",
+									"sid": 243816005867121,
 									"parameters": {
-										"frame-number": "random(0, Self.AnimationFrameCount)"
+										"cast-from": "same-tag"
+									}
+								},
+								{
+									"id": "set-tag",
+									"objectClass": "ambientShadow",
+									"sid": 997167389705049,
+									"parameters": {
+										"tag": "str(Self.UID)"
 									}
 								}
 							],
-							"sid": 791034196650292,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"callFunction": "throwIf",
-											"sid": 656870688505102,
-											"parameters": [
-												"int(str(lightSource.ImagePointX(\"light\")) &  str(lightSource.ImagePointY(\"light\")))",
-												"int(str(lightSource.X) & str(lightSource.Y))",
-												"\"lightSource '\" & lightSource.ObjectTypeName & \"' of uid: '\" & lightSource.UID & \"' missing light origin point\""
-											]
-										},
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 990412641673000,
-											"parameters": {
-												"object-to-create": "ambientLightAura",
-												"layer": "\"lights\"",
-												"x": "lightSource.ImagePointX(\"light\")",
-												"y": "lightSource.ImagePointY(\"light\")",
-												"create-hierarchy": true,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "add-child",
-											"objectClass": "lightSource",
-											"sid": 387323018277347,
-											"parameters": {
-												"child": "ambientLightAura",
-												"transform-x": true,
-												"transform-y": true,
-												"transform-w": true,
-												"transform-h": true,
-												"transform-a": true,
-												"transform-o": true,
-												"transform-z-elevation": true,
-												"transform-visibility": true,
-												"destroy-with-parent": true
-											}
-										},
-										{
-											"id": "set-active",
-											"objectClass": "ambientLightAura",
-											"sid": 466807586390072,
-											"disabled": true,
-											"behaviorType": "Sine",
-											"parameters": {
-												"state": "inactive"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "ambientLightAura",
-											"sid": 294674527311017,
-											"parameters": {
-												"scale": "clamp(lightSource.brightness * .01, .01, 1)"
-											}
-										}
-									],
-									"sid": 322466947923255,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-unique-id",
-													"objectClass": "lightAura",
-													"sid": 590312567211926,
-													"parameters": {
-														"unique-id": "ambientLightAura.UID"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "setLightRadius",
-													"sid": 804543258326478
-												}
-											],
-											"sid": 655445319664157
-										}
-									]
-								}
-							]
+							"sid": 459889950723205
 						},
-						{
-							"functionName": "setLightRadius",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 194240016464110,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "lightAura",
-											"sid": 875745219650722,
-											"parameters": {
-												"instance-variable": "radius",
-												"value": "lightAura.Width / 2"
-											}
-										},
-										{
-											"type": "comment",
-											"text": "needs to be more dynamic"
-										},
-										{
-											"id": "set-range",
-											"objectClass": "lightAura",
-											"sid": 738153073085443,
-											"behaviorType": "LineOfSight",
-											"parameters": {
-												"range": "clamp(160, lightAura.radius + 10, ViewportWidth(lightingLayer) * .66)"
-											}
-										}
-									],
-									"sid": 261725098528696
-								}
-							]
-						}
-					],
-					"sid": 618052355578969
-				},
-				{
-					"eventType": "comment",
-					"text": ""
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Shadow",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
@@ -1421,13 +1780,417 @@
 								}
 							],
 							"actions": [],
-							"sid": 529297094614282
+							"sid": 529297094614282,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "lightAura",
+											"sid": 435448804944722,
+											"parameters": {
+												"which": "nearest",
+												"x": "spr_playerActual.X",
+												"y": "spr_playerActual.Y"
+											}
+										},
+										{
+											"id": "is-on-screen",
+											"objectClass": "lightAura",
+											"sid": 692487207263900
+										}
+									],
+									"actions": [],
+									"sid": 416044684927407,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 578332129220209,
+													"parameters": {
+														"value": "distance(spr_playerActual.X, spr_playerActual.Y, lightAura.X, lightAura.Y) < lightAura.radius"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 961538398313669,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "lightAura",
+															"sid": 804052382493153,
+															"parameters": {
+																"child": "ambientShadow",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 827059657493253,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "has-los-to-object",
+																	"objectClass": "lightAura",
+																	"sid": 987691119693683,
+																	"behaviorType": "LineOfSight",
+																	"parameters": {
+																		"object": "spr_playerActual",
+																		"image-point": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-enabled",
+																	"objectClass": "spr_playerActual",
+																	"sid": 879270096559344,
+																	"behaviorType": "ShadowCaster",
+																	"parameters": {
+																		"state": "enabled"
+																	}
+																},
+																{
+																	"id": "set-tag",
+																	"objectClass": "spr_playerActual",
+																	"sid": 338462339676351,
+																	"behaviorType": "ShadowCaster",
+																	"parameters": {
+																		"tag": "str(ambientShadow.UID)"
+																	}
+																},
+																{
+																	"id": "set-visible",
+																	"objectClass": "ambientShadow",
+																	"sid": 827374076096933,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																},
+																{
+																	"id": "set-layer-effect-enabled",
+																	"objectClass": "System",
+																	"sid": 945738727635235,
+																	"parameters": {
+																		"layer": "\"shadowLayer\"",
+																		"mode": "enable",
+																		"effect": "\"BlurVertical\""
+																	}
+																},
+																{
+																	"callFunction": "fadeInShadow",
+																	"sid": 117755420752582
+																}
+															],
+															"sid": 572987867946404
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 475433922505691
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-visible",
+																	"objectClass": "ambientShadow",
+																	"sid": 463204586056098,
+																	"parameters": {
+																		"visibility": "invisible"
+																	}
+																},
+																{
+																	"id": "set-layer-effect-enabled",
+																	"objectClass": "System",
+																	"sid": 159444536631504,
+																	"parameters": {
+																		"layer": "\"shadowLayer\"",
+																		"mode": "disable",
+																		"effect": "\"BlurVertical\""
+																	}
+																},
+																{
+																	"id": "set-enabled",
+																	"objectClass": "spr_playerActual",
+																	"sid": 437937858187786,
+																	"behaviorType": "ShadowCaster",
+																	"parameters": {
+																		"state": "disabled"
+																	}
+																}
+															],
+															"sid": 261428202810414
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 449474817291361
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "ambientShadow",
+													"sid": 117559689830545,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-layer-effect-enabled",
+													"objectClass": "System",
+													"sid": 845342646886521,
+													"parameters": {
+														"layer": "\"shadowLayer\"",
+														"mode": "disable",
+														"effect": "\"BlurVertical\""
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "spr_playerActual",
+													"sid": 322092448573360,
+													"behaviorType": "ShadowCaster",
+													"parameters": {
+														"state": "disabled"
+													}
+												}
+											],
+											"sid": 820049918475744
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "fadeInShadow",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 310193628297972,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "curIntensity",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 212819910935628
+								},
+								{
+									"eventType": "variable",
+									"name": "curDistance",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 964145980231527
+								},
+								{
+									"eventType": "variable",
+									"name": "potentialIntensity",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 890692853509381
+								},
+								{
+									"eventType": "variable",
+									"name": "distanceDifference",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 379840182105772
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 256554501249305,
+											"parameters": {
+												"variable": "curDistance",
+												"value": "distance(spr_playerActual.X, spr_playerActual.Y, lightAura.X, lightAura.Y)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 211812422167146,
+											"parameters": {
+												"variable": "potentialIntensity",
+												"value": "clamp( lightAura.radius - curDistance, 0, lightAura.radius * .85)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 620310594284063,
+											"parameters": {
+												"variable": "distanceDifference",
+												"value": "lightAura.radius / potentialIntensity"
+											}
+										}
+									],
+									"sid": 580403276763246
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 581918976481776,
+											"parameters": {
+												"first-value": "potentialIntensity",
+												"comparison": 5,
+												"second-value": "lightAura.radius * .75"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 112111093849884,
+											"breakpoint": true,
+											"parameters": {
+												"variable": "distanceDifference",
+												"value": ".85"
+											}
+										}
+									],
+									"sid": 457456757003758,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-height",
+											"objectClass": "spr_playerActual",
+											"sid": 590273344415262,
+											"behaviorType": "ShadowCaster",
+											"parameters": {
+												"height": "100 / distanceDifference"
+											}
+										},
+										{
+											"id": "set-layer-opacity",
+											"objectClass": "System",
+											"sid": 494255719443810,
+											"parameters": {
+												"layer": "\"shadowLayer\"",
+												"opacity": "(Functions.calculateBellCurve(curDistance, lightAura.radius/2, lightAura.radius * .2) / 4)"
+											}
+										},
+										{
+											"id": "set-layer-opacity",
+											"objectClass": "System",
+											"sid": 530026436423404,
+											"disabled": true,
+											"parameters": {
+												"layer": "\"shadowLayer\"",
+												"opacity": "25 - ((100 / distanceDifference) / 8)"
+											}
+										}
+									],
+									"sid": 770417642792826
+								}
+							]
 						}
 					],
 					"sid": 942117125694033
 				}
 			],
 			"sid": 564661993524078
+		},
+		{
+			"functionName": "calculateBellCurve",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "curDistance",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 501213235989690
+				},
+				{
+					"name": "peakDistance",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 112280805319399
+				},
+				{
+					"name": "variance",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 586734082884211
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 291899977558740,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 177098283179842,
+							"parameters": {
+								"value": "100 * (exp( -(( curDistance - peakDistance) ^ 2) / (2 * variance ^ 2)))"
+							}
+						}
+					],
+					"sid": 237555062468064
+				}
+			]
 		}
 	],
 	"sid": 397859464194922

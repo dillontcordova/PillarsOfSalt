@@ -299,7 +299,69 @@
 					"behaviors": {},
 					"world": {
 						"x": 408,
-						"y": 208,
+						"y": 216,
+						"width": 8,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "tikiTallTorch_spr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "on",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 377,
+					"instanceVariables": {
+						"brightness": 50
+					},
+					"behaviors": {},
+					"world": {
+						"x": 520,
+						"y": 160,
+						"width": 8,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "tikiTallTorch_spr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "on",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 379,
+					"instanceVariables": {
+						"brightness": 50
+					},
+					"behaviors": {},
+					"world": {
+						"x": 40,
+						"y": 112,
 						"width": 8,
 						"height": 24,
 						"originX": 0.5,
@@ -515,101 +577,14 @@
 			"global": false
 		},
 		{
-			"name": "lights",
-			"overriden": 0,
+			"name": "lighting",
+			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 930447403719239,
-			"effectTypes": [
-				{
-					"effectId": "multiply",
-					"name": "Multiply",
-					"instance": {
-						"isEnabled": false,
-						"parameters": {}
-					}
-				}
-			],
-			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
-			"color": [
-				1,
-				1,
-				1,
-				0.5
-			],
-			"backgroundColor": [
-				0,
-				0,
-				0,
-				1
-			],
-			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
-			"forceOwnTexture": false,
-			"renderingMode": "3d",
-			"drawOrder": "z-order",
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"zElevation": 0,
-			"global": false
-		},
-		{
-			"name": "Layer 0",
-			"overriden": 0,
-			"subLayers": [],
-			"instances": [
-				{
-					"type": "atmoshphereObj_spr",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 376,
-					"instanceVariables": {
-						"colors": "255,255,255|255,236,178|249,216,161|255,174,164|203,124,162|160,99,137|104,73,113",
-						"uidStore": 1
-					},
-					"behaviors": {
-						"Timer": {
-							"properties": {}
-						},
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"NoSave": {
-							"properties": {}
-						}
-					},
-					"world": {
-						"x": 232,
-						"y": -16,
-						"width": 16,
-						"height": 16,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
-			"sid": 819842174012237,
+			"sid": 359450839211067,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
+			"isInitiallyInteractive": false,
 			"color": [
 				1,
 				1,
@@ -626,7 +601,7 @@
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,

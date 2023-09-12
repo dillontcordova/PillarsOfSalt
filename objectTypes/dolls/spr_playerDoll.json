@@ -1564,7 +1564,7 @@
 				],
 				"sid": 732711716210555,
 				"name": "wallSlide",
-				"isLooping": false,
+				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
