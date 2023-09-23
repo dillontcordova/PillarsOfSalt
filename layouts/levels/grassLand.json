@@ -1628,6 +1628,37 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "tikiTallTorch_spr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "on",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 395,
+					"instanceVariables": {
+						"brightness": 50
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1520,
+						"y": 752,
+						"width": 8,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 989341856487743,
@@ -3415,8 +3446,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 208,
-						"y": 160,
+						"x": 1392,
+						"y": 736,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,

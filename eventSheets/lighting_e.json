@@ -261,9 +261,9 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 978014187340270,
+									"sid": 623054828220817,
 									"parameters": {
-										"key": 107
+										"key": 187
 									}
 								}
 							],
@@ -289,9 +289,9 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 139636863688467,
+									"sid": 713835018444849,
 									"parameters": {
-										"key": 109
+										"key": 189
 									}
 								}
 							],
