@@ -111,15 +111,11 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 203411309577405,
+					"sid": 230262293085727,
 					"parameters": {
-						"layer": "\"lights\"",
+						"layer": "\"lighting\"",
 						"visibility": "invisible"
 					}
-				},
-				{
-					"callFunction": "initLighting",
-					"sid": 892975690092425
 				},
 				{
 					"callFunction": "fadeIn",

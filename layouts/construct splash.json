@@ -78,6 +78,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "center",
 						"wrapping": "word",
+						"icon-set": -1,
 						"initially-visible": false,
 						"origin": "top-left",
 						"read-aloud": false
@@ -223,5 +224,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": null
+	"eventSheet": "splashScreen_e"
 }

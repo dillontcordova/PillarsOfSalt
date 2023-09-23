@@ -59,7 +59,8 @@
 								"y": 0.375
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -110,7 +111,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -161,7 +163,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -214,7 +217,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -263,7 +267,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -312,7 +317,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -363,7 +369,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -414,7 +421,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -465,7 +473,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -518,7 +527,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -567,7 +577,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 8,
@@ -616,7 +627,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 666431856501693,
@@ -625,7 +637,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 10
+				"speed": 16
 			},
 			{
 				"frames": [
@@ -678,7 +690,8 @@
 								"y": 0.375
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 150994536634692,

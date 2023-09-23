@@ -51,7 +51,8 @@
 								"y": 0
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 23,
@@ -80,7 +81,8 @@
 								"y": 0
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 23,
@@ -109,7 +111,8 @@
 								"y": 0
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 23,
@@ -150,7 +153,8 @@
 								"y": 0
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 448625156571740,

@@ -30,7 +30,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "debug"
+					"text": "debug lighting"
 				},
 				{
 					"eventType": "block",
@@ -43,7 +43,6 @@
 					],
 					"actions": [],
 					"sid": 889284471482019,
-					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -56,7 +55,6 @@
 							],
 							"actions": [],
 							"sid": 798646047768214,
-							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -81,8 +79,7 @@
 											}
 										}
 									],
-									"sid": 963570879130378,
-									"disabled": true
+									"sid": 963570879130378
 								}
 							]
 						},
@@ -100,7 +97,6 @@
 							],
 							"actions": [],
 							"sid": 225852404643523,
-							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -124,12 +120,12 @@
 									],
 									"actions": [
 										{
-											"id": "add-to-instvar",
+											"id": "set-instvar-value",
 											"objectClass": "lightSource",
-											"sid": 408664859048051,
+											"sid": 215567954841197,
 											"parameters": {
 												"instance-variable": "brightness",
-												"value": "1"
+												"value": "clamp(Self.brightness + 1, 0, 100)"
 											}
 										},
 										{
@@ -142,7 +138,6 @@
 										}
 									],
 									"sid": 153398557193263,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -163,8 +158,7 @@
 													"sid": 863899393005928
 												}
 											],
-											"sid": 785968731458482,
-											"disabled": true
+											"sid": 785968731458482
 										}
 									]
 								}
@@ -173,6 +167,11 @@
 						{
 							"eventType": "block",
 							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 628953635244733
+								},
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
@@ -184,7 +183,6 @@
 							],
 							"actions": [],
 							"sid": 610547107722202,
-							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -208,12 +206,12 @@
 									],
 									"actions": [
 										{
-											"id": "subtract-from-instvar",
+											"id": "set-instvar-value",
 											"objectClass": "lightSource",
-											"sid": 228037940943439,
+											"sid": 633287793656732,
 											"parameters": {
 												"instance-variable": "brightness",
-												"value": "1"
+												"value": "clamp(Self.brightness - 1, 0, 100)"
 											}
 										},
 										{
@@ -226,7 +224,6 @@
 										}
 									],
 									"sid": 189898099578256,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -247,12 +244,67 @@
 													"sid": 844943150655521
 												}
 											],
-											"sid": 442630418769212,
-											"disabled": true
+											"sid": 442630418769212
 										}
 									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 870857669991554
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 978014187340270,
+									"parameters": {
+										"key": 107
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "setDarkness",
+									"sid": 918943814046960,
+									"parameters": [
+										"clamp(LayerOpacity(darknessLayer) + 1, 0, 100)"
+									]
+								}
+							],
+							"sid": 635367853312704
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 758875745309520
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 139636863688467,
+									"parameters": {
+										"key": 109
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "setDarkness",
+									"sid": 745962294655118,
+									"parameters": [
+										"clamp(LayerOpacity(darknessLayer) - 1, -1, 100)"
+									]
+								}
+							],
+							"sid": 584254262846439
 						}
 					]
 				},
@@ -392,10 +444,10 @@
 								{
 									"id": "set-layer-opacity",
 									"objectClass": "System",
-									"sid": 893175118147063,
+									"sid": 640639368668829,
 									"parameters": {
 										"layer": "darknessLayer",
-										"opacity": "90"
+										"opacity": "20"
 									}
 								},
 								{
@@ -414,6 +466,24 @@
 									"parameters": {
 										"layer": "darknessLayer",
 										"blend-mode": "source-out"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 799855393487811,
+									"parameters": {
+										"layer": "lightingParentLayer",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 385027493117428,
+									"parameters": {
+										"layer": "darknessLayer",
+										"visibility": "visible"
 									}
 								},
 								{
@@ -446,6 +516,199 @@
 								}
 							],
 							"sid": 413811430857220
+						}
+					]
+				},
+				{
+					"functionName": "setDarkness",
+					"functionDescription": "",
+					"functionCategory": "lighting",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "darkness",
+							"type": "number",
+							"initialValue": "10",
+							"comment": "",
+							"sid": 681535696966310
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 751040462696704,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 584298821566665,
+									"parameters": {
+										"variable": "darkness",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "disable lighting"
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 528201618641259,
+									"parameters": {
+										"layer": "lightingParentLayer",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 701227004653603,
+									"parameters": {
+										"variable": "isLightingOn",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 471744805933614,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 977814197167007,
+											"parameters": {
+												"object": "dolls"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-effect-enabled",
+											"objectClass": "dolls",
+											"sid": 393082523959357,
+											"parameters": {
+												"mode": "disable",
+												"effect": "\"RimLight\""
+											}
+										}
+									],
+									"sid": 783319319673519
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 232531966963945
+								}
+							],
+							"actions": [],
+							"sid": 703073153524282,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 570627509621524,
+											"parameters": {
+												"variable": "isLightingOn"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "initLighting",
+											"sid": 324071762548359
+										}
+									],
+									"sid": 208250702830849
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-layer-opacity",
+											"objectClass": "System",
+											"sid": 502764626049663,
+											"parameters": {
+												"layer": "darknessLayer",
+												"opacity": "darkness"
+											}
+										}
+									],
+									"sid": 616516056779543
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "calculateBellCurve",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "curDistance",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 501213235989690
+						},
+						{
+							"name": "peakDistance",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 112280805319399
+						},
+						{
+							"name": "variance",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 586734082884211
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 613688911789722,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 554192773649475,
+									"parameters": {
+										"value": "100 * (exp( -(( curDistance - peakDistance) ^ 2) / (2 * variance ^ 2)))"
+									}
+								}
+							],
+							"sid": 174651411855320
 						}
 					]
 				},
@@ -521,9 +784,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 928802108524259,
+											"sid": 411882602919384,
 											"parameters": {
-												"animation": "\"dimest\"",
+												"animation": "\"dimmer\"",
 												"from": "beginning"
 											}
 										},
@@ -564,9 +827,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 169869370424433,
+											"sid": 470792319555157,
 											"parameters": {
-												"animation": "\"dimest\"",
+												"animation": "\"brighter\"",
 												"from": "beginning"
 											}
 										},
@@ -599,9 +862,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "glowAmbientMask",
-											"sid": 105720137698984,
+											"sid": 702258831437830,
 											"parameters": {
-												"animation": "\"brighter\"",
+												"animation": "\"dimmer\"",
 												"from": "beginning"
 											}
 										},
@@ -676,45 +939,6 @@
 										}
 									],
 									"sid": 830838919596163
-								}
-							]
-						},
-						{
-							"functionName": "setDarkness",
-							"functionDescription": "",
-							"functionCategory": "lighting",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [
-								{
-									"name": "darkness",
-									"type": "number",
-									"initialValue": "10",
-									"comment": "",
-									"sid": 681535696966310
-								}
-							],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 185703154503874,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-layer-opacity",
-											"objectClass": "System",
-											"sid": 648010228065918,
-											"parameters": {
-												"layer": "darknessLayer",
-												"opacity": "darkness"
-											}
-										}
-									],
-									"sid": 415130186468989
 								}
 							]
 						}
@@ -804,6 +1028,7 @@
 											"id": "create-object",
 											"objectClass": "System",
 											"sid": 696159034982196,
+											"disabled": true,
 											"parameters": {
 												"object-to-create": "ambientShadow",
 												"layer": "\"shadowLayer\"",
@@ -817,6 +1042,7 @@
 											"id": "add-child",
 											"objectClass": "ambientLightAura",
 											"sid": 431003261242722,
+											"disabled": true,
 											"parameters": {
 												"child": "ambientShadow",
 												"transform-x": true,
@@ -834,6 +1060,7 @@
 											"id": "set-visible",
 											"objectClass": "ambientShadow",
 											"sid": 210881576998338,
+											"disabled": true,
 											"parameters": {
 												"visibility": "invisible"
 											}
@@ -901,13 +1128,23 @@
 											}
 										},
 										{
+											"id": "set-range",
+											"objectClass": "lightAura",
+											"sid": 198480743272986,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"range": "clamp(lightSource.brightness * OriginalViewportWidth/100, lightAura.radius + 10, OriginalViewportWidth * .66)"
+											}
+										},
+										{
 											"type": "comment",
 											"text": "needs to be more dynamic, 160 seems to be magic number"
 										},
 										{
 											"id": "set-range",
 											"objectClass": "lightAura",
-											"sid": 719483611428908,
+											"sid": 622618680525981,
+											"disabled": true,
 											"behaviorType": "LineOfSight",
 											"parameters": {
 												"range": "clamp(lightSource.brightness * 300, lightAura.radius + 10, OriginalViewportWidth * .66)"
@@ -1614,31 +1851,15 @@
 							"functionParameters": [],
 							"eventType": "function-block",
 							"conditions": [],
-							"actions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "pathLine_spr",
+									"sid": 542385492238761
+								}
+							],
 							"sid": 456059244802275,
 							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "lightAura",
-											"sid": 437173393536405,
-											"parameters": {
-												"child": "pathLine_spr",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "pathLine_spr",
-											"sid": 215588088804277
-										}
-									],
-									"sid": 724864029073639
-								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -1733,7 +1954,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "Shadow",
 					"description": "",
 					"isActiveOnStart": true,
@@ -1765,7 +1986,8 @@
 									}
 								}
 							],
-							"sid": 459889950723205
+							"sid": 459889950723205,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1781,6 +2003,7 @@
 							],
 							"actions": [],
 							"sid": 529297094614282,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -1803,6 +2026,7 @@
 									],
 									"actions": [],
 									"sid": 416044684927407,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -1818,6 +2042,7 @@
 											],
 											"actions": [],
 											"sid": 961538398313669,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -1834,6 +2059,7 @@
 													],
 													"actions": [],
 													"sid": 827059657493253,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -1891,7 +2117,8 @@
 																	"sid": 117755420752582
 																}
 															],
-															"sid": 572987867946404
+															"sid": 572987867946404,
+															"disabled": true
 														},
 														{
 															"eventType": "block",
@@ -1931,7 +2158,8 @@
 																	}
 																}
 															],
-															"sid": 261428202810414
+															"sid": 261428202810414,
+															"disabled": true
 														}
 													]
 												}
@@ -1975,7 +2203,8 @@
 													}
 												}
 											],
-											"sid": 820049918475744
+											"sid": 820049918475744,
+											"disabled": true
 										}
 									]
 								}
@@ -1993,6 +2222,7 @@
 							"conditions": [],
 							"actions": [],
 							"sid": 310193628297972,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "variable",
@@ -2066,7 +2296,8 @@
 											}
 										}
 									],
-									"sid": 580403276763246
+									"sid": 580403276763246,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -2094,8 +2325,7 @@
 											}
 										}
 									],
-									"sid": 457456757003758,
-									"disabled": true
+									"sid": 457456757003758
 								},
 								{
 									"eventType": "block",
@@ -2130,7 +2360,8 @@
 											}
 										}
 									],
-									"sid": 770417642792826
+									"sid": 770417642792826,
+									"disabled": true
 								}
 							]
 						}
@@ -2139,58 +2370,6 @@
 				}
 			],
 			"sid": 564661993524078
-		},
-		{
-			"functionName": "calculateBellCurve",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "number",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "curDistance",
-					"type": "number",
-					"initialValue": "-1",
-					"comment": "",
-					"sid": 501213235989690
-				},
-				{
-					"name": "peakDistance",
-					"type": "number",
-					"initialValue": "-1",
-					"comment": "",
-					"sid": 112280805319399
-				},
-				{
-					"name": "variance",
-					"type": "number",
-					"initialValue": "-1",
-					"comment": "",
-					"sid": 586734082884211
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 291899977558740,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-function-return-value",
-							"objectClass": "Functions",
-							"sid": 177098283179842,
-							"parameters": {
-								"value": "100 * (exp( -(( curDistance - peakDistance) ^ 2) / (2 * variance ^ 2)))"
-							}
-						}
-					],
-					"sid": 237555062468064
-				}
-			]
 		}
 	],
 	"sid": 397859464194922

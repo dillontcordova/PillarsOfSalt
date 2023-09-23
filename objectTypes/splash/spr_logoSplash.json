@@ -43,7 +43,8 @@
 								"y": 0.5
 							}
 						],
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 64,
@@ -55,7 +56,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 4499509,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 163738222575385,

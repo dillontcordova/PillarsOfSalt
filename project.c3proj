@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 35000,
+	"savedWithRelease": 35800,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -61,6 +61,14 @@
 			"name": "9-patch",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Overboy_Utils",
+			"name": "Utils",
+			"author": "Overboy",
+			"bundled": false,
+			"version": "1.2"
 		},
 		{
 			"type": "plugin",
@@ -372,7 +380,8 @@
 			"Text",
 			"spr_btnTileScreen",
 			"destructable_tb",
-			"testNPC"
+			"testNPC",
+			"Utils"
 		],
 		"subfolders": [
 			{
@@ -621,8 +630,7 @@
 			},
 			{
 				"items": [
-					"tb_darkness",
-					"ambientShadow"
+					"tb_darkness"
 				],
 				"subfolders": [
 					{
@@ -641,6 +649,13 @@
 						],
 						"subfolders": [],
 						"name": "glowing"
+					},
+					{
+						"items": [
+							"ambientShadow"
+						],
+						"subfolders": [],
+						"name": "shadow"
 					}
 				],
 				"name": "lighting"
