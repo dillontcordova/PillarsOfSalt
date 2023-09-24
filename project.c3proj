@@ -652,7 +652,8 @@
 					},
 					{
 						"items": [
-							"ambientShadow"
+							"ambientShadow",
+							"shadow"
 						],
 						"subfolders": [],
 						"name": "shadow"

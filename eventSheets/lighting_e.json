@@ -508,7 +508,6 @@
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 114318455760405,
-									"disabled": true,
 									"parameters": {
 										"variable": "isShadowsOn",
 										"value": "true"
@@ -1954,7 +1953,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": true,
+					"disabled": false,
 					"title": "Shadow",
 					"description": "",
 					"isActiveOnStart": true,
@@ -1988,6 +1987,74 @@
 							],
 							"sid": 459889950723205,
 							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "dolls",
+									"sid": 840011476940356
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 252031242680641,
+									"disabled": true,
+									"parameters": {
+										"variable": "isShadowsOn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 313786779890177,
+									"parameters": {
+										"object-to-create": "shadow",
+										"layer": "\"shadows\"",
+										"x": "dolls.X",
+										"y": "dolls.Y",
+										"create-hierarchy": true,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "dolls",
+									"sid": 775847966147177,
+									"parameters": {
+										"child": "shadow",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-o": false,
+										"transform-z-elevation": false,
+										"transform-visibility": true,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "shadow",
+									"sid": 915739921731436,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-height",
+									"objectClass": "shadow",
+									"sid": 583125884467748,
+									"parameters": {
+										"height": "dolls.Height"
+									}
+								}
+							],
+							"sid": 946030777731062
 						},
 						{
 							"eventType": "block",
@@ -2211,6 +2278,209 @@
 							]
 						},
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 969366788090401,
+									"parameters": {
+										"variable": "isShadowsOn"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 968780336572485,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 612149956453898,
+											"parameters": {
+												"object": "dolls"
+											}
+										},
+										{
+											"id": "is-on-screen",
+											"objectClass": "dolls",
+											"sid": 858449508071629
+										}
+									],
+									"actions": [],
+									"sid": 976322072436222,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-nearestfurthest",
+													"objectClass": "lightAura",
+													"sid": 882645655617559,
+													"parameters": {
+														"which": "nearest",
+														"x": "dolls.X",
+														"y": "dolls.Y"
+													}
+												},
+												{
+													"id": "is-on-screen",
+													"objectClass": "lightAura",
+													"sid": 482460687984123
+												}
+											],
+											"actions": [],
+											"sid": 214770262971098,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 952609634316462,
+															"parameters": {
+																"value": "distance(dolls.X, dolls.Y, lightAura.X, lightAura.Y) < lightAura.radius"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 589827289137436,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-children",
+																	"objectClass": "dolls",
+																	"sid": 378438324516736,
+																	"parameters": {
+																		"child": "shadow",
+																		"which": "own"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 484388892072417,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "has-los-to-object",
+																			"objectClass": "lightAura",
+																			"sid": 123333005908702,
+																			"behaviorType": "LineOfSight",
+																			"parameters": {
+																				"object": "dolls",
+																				"image-point": "0"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-visible",
+																			"objectClass": "shadow",
+																			"sid": 700739266073584,
+																			"parameters": {
+																				"visibility": "visible"
+																			}
+																		},
+																		{
+																			"id": "set-layer-effect-enabled",
+																			"objectClass": "System",
+																			"sid": 595666276173685,
+																			"disabled": true,
+																			"parameters": {
+																				"layer": "\"shadowLayer\"",
+																				"mode": "enable",
+																				"effect": "\"BlurVertical\""
+																			}
+																		},
+																		{
+																			"callFunction": "fadeInShadow2",
+																			"sid": 570277023115448
+																		}
+																	],
+																	"sid": 314025232844686
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 620930110311848
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-visible",
+																			"objectClass": "shadow",
+																			"sid": 898045587664113,
+																			"parameters": {
+																				"visibility": "invisible"
+																			}
+																		},
+																		{
+																			"id": "set-layer-effect-enabled",
+																			"objectClass": "System",
+																			"sid": 187413933162585,
+																			"disabled": true,
+																			"parameters": {
+																				"layer": "\"shadowLayer\"",
+																				"mode": "disable",
+																				"effect": "\"BlurVertical\""
+																			}
+																		}
+																	],
+																	"sid": 352844241575125
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 947217717212921
+														}
+													],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "shadow",
+															"sid": 191579363683913,
+															"parameters": {
+																"visibility": "invisible"
+															}
+														},
+														{
+															"id": "set-layer-effect-enabled",
+															"objectClass": "System",
+															"sid": 530937893540132,
+															"disabled": true,
+															"parameters": {
+																"layer": "\"shadowLayer\"",
+																"mode": "disable",
+																"effect": "\"BlurVertical\""
+															}
+														}
+													],
+													"sid": 480353155332602
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
 							"functionName": "fadeInShadow",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -2362,6 +2632,138 @@
 									],
 									"sid": 770417642792826,
 									"disabled": true
+								}
+							]
+						},
+						{
+							"functionName": "fadeInShadow2",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 759800527357224,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "curDistance",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 533630754952448
+								},
+								{
+									"eventType": "variable",
+									"name": "potentialIntensity",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 797215683436373
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 454178115543872,
+											"parameters": {
+												"variable": "curDistance",
+												"value": "distance(spr_playerActual.X, spr_playerActual.Y, lightAura.X, lightAura.Y)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 196799639956036,
+											"parameters": {
+												"variable": "potentialIntensity",
+												"value": "clamp( lightAura.radius - curDistance, 0, lightAura.radius * .85)"
+											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "shadow",
+											"sid": 816667394547467,
+											"parameters": {
+												"width": "potentialIntensity"
+											}
+										},
+										{
+											"id": "set-angle-toward-position",
+											"objectClass": "shadow",
+											"sid": 705626003982760,
+											"parameters": {
+												"x": "lightAura.X",
+												"y": "lightAura.Y"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "pathNode_spr",
+											"sid": 326793510755043,
+											"disabled": true
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 437691679695621,
+											"disabled": true,
+											"parameters": {
+												"object-to-create": "pathNode_spr",
+												"layer": "\"characters\"",
+												"x": "shadow.X+ potentialIntensity * cos(shadow.angle-180)",
+												"y": "shadow.Y+ potentialIntensity * sin(shadow.angle-180)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "cast-ray",
+											"objectClass": "shadow",
+											"sid": 231325277678812,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"from-x": "Self.X",
+												"from-y": "Self.Y",
+												"to-x": "Self.X+ potentialIntensity * cos(Self.angle-180)",
+												"to-y": "Self.Y+ potentialIntensity * sin(Self.angle-180)",
+												"use-collision-cells": true
+											}
+										}
+									],
+									"sid": 491796565279990
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "ray-intersected",
+											"objectClass": "shadow",
+											"sid": 998910313089993,
+											"behaviorType": "LineOfSight"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-width",
+											"objectClass": "shadow",
+											"sid": 763474560548928,
+											"parameters": {
+												"width": "Self.LineOfSight.HitDistance"
+											}
+										}
+									],
+									"sid": 228400530504716
 								}
 							]
 						}
