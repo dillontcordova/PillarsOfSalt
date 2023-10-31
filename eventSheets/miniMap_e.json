@@ -1418,12 +1418,33 @@
 							"sid": 292671592160143,
 							"children": [
 								{
+									"eventType": "variable",
+									"name": "distX",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 758198492746109
+								},
+								{
+									"eventType": "variable",
+									"name": "distY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 258922793388607
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
 											"id": "every-x-seconds",
 											"objectClass": "System",
 											"sid": 531077502411463,
+											"disabled": true,
 											"parameters": {
 												"interval-seconds": ".04"
 											}
@@ -1493,13 +1514,31 @@
 											"conditions": [],
 											"actions": [
 												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 999116951230579,
+													"parameters": {
+														"variable": "distX",
+														"value": "(OriginalViewportWidth / 2) - LayerToLayerX(mapLayer, \"cutout\", spr_playerActual_icon.X, spr_playerActual_icon.Y)"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 439352967612405,
+													"parameters": {
+														"variable": "distY",
+														"value": "(OriginalViewportHeight / 2) - LayerToLayerY(mapLayer, \"cutout\", spr_playerActual_icon.X, spr_playerActual_icon.Y)"
+													}
+												},
+												{
 													"id": "set-position",
 													"objectClass": "miniMap",
-													"sid": 306436699644267,
-													"disabled": true,
+													"sid": 740693615696488,
+													"breakpoint": true,
 													"parameters": {
-														"x": "Self.X + (scrollx - spr_playerActual_icon.X) ",
-														"y": "Self.Y + (scrolly - spr_playerActual_icon.Y)"
+														"x": "Self.X + distX",
+														"y": "Self.Y + distY"
 													}
 												}
 											],

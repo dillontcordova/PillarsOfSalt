@@ -91,6 +91,7 @@
 							"id": "request-fullscreen",
 							"objectClass": "Browser",
 							"sid": 762257526016650,
+							"disabled": true,
 							"parameters": {
 								"mode": "stretch-letterbox-scale",
 								"navigation-ui": "hide"
