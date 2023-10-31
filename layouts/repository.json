@@ -5,7 +5,91 @@
 			"name": "Layer 1",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "miniMap",
+					"properties": {
+						"resolution-mode": "auto",
+						"initially-visible": true,
+						"origin": "top-left",
+						"antialiasing": "off"
+					},
+					"uid": 401,
+					"instanceVariables": {
+						"pScale": 0,
+						"pScaleFov": 0,
+						"pOrigX": 0,
+						"pOrigY": 0,
+						"pHeightDiff": 0,
+						"pWidthDiff": 0,
+						"scale": 0.5
+					},
+					"behaviors": {},
+					"world": {
+						"x": -26,
+						"y": 531,
+						"width": 100,
+						"height": 100,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0
+					}
+				},
+				{
+					"type": "minmap_tm",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 400,
+					"instanceVariables": {},
+					"behaviors": {},
+					"ownData": {
+						"tilemapData": {
+							"width": 14,
+							"height": 11,
+							"max-width": 52,
+							"max-height": 20,
+							"data": "1040x0"
+						},
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": -157,
+						"y": 403,
+						"width": 229,
+						"height": 185,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 247372021778095,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -27,7 +111,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2033,7 +2117,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -3100,7 +3184,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -3474,7 +3558,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -4514,7 +4598,7 @@
 								"use-collision-cells": true
 							}
 						},
-						"Sine": {
+						"SineValue": {
 							"properties": {
 								"movement": "value-only",
 								"wave": "square",
@@ -4549,7 +4633,7 @@
 				{
 					"type": "ambientShadow",
 					"properties": {
-						"light-height": 100,
+						"light-height": 0,
 						"light-radius": 4,
 						"shadow-color": [
 							0,
@@ -4565,8 +4649,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 710,
-						"y": 334,
+						"x": 682.1547241150716,
+						"y": 359.1275716803608,
 						"width": 50,
 						"height": 50,
 						"originX": 0.5,
@@ -4630,7 +4714,7 @@
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 396,
@@ -4684,7 +4768,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",

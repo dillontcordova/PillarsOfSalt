@@ -12,7 +12,7 @@
 			"sid": 467990066674114
 		},
 		{
-			"name": "hasVisited",
+			"name": "wasTouched",
 			"type": "boolean",
 			"desc": "",
 			"show": true,

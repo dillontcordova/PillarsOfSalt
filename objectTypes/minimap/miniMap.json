@@ -1,0 +1,59 @@
+{
+	"name": "miniMap",
+	"plugin-id": "DrawingCanvas",
+	"sid": 774893573619738,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "pScale",
+			"type": "number",
+			"desc": "regardless of how big/small the tm is, it will resize it to the same miniMap size (based on cutout to viewport ratio).",
+			"show": false,
+			"sid": 974889044577740
+		},
+		{
+			"name": "pScaleFov",
+			"type": "number",
+			"desc": "viewport to tm ratio scale to determine height and width discrepencies as they wont always perfectly be equal to viewport",
+			"show": false,
+			"sid": 934608601680384
+		},
+		{
+			"name": "pOrigX",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 441208476101702
+		},
+		{
+			"name": "pOrigY",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 160839971495952
+		},
+		{
+			"name": "pHeightDiff",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 692956714626444
+		},
+		{
+			"name": "pWidthDiff",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 902479863254690
+		},
+		{
+			"name": "scale",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 593359091846058
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

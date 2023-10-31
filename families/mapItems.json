@@ -1,0 +1,11 @@
+{
+	"name": "mapItems",
+	"plugin-id": "Sprite",
+	"sid": 695782254627782,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_playerActual"
+	]
+}

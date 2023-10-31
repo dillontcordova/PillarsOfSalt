@@ -1,0 +1,11 @@
+{
+	"name": "mapIcons",
+	"plugin-id": "Sprite",
+	"sid": 483482243842969,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_playerActual_icon"
+	]
+}

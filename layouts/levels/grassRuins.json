@@ -31,7 +31,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -104,7 +104,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -177,7 +177,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -250,7 +250,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -291,7 +291,7 @@
 			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -398,7 +398,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -480,7 +480,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -1619,6 +1619,68 @@
 								"angle": 0,
 								"zElevation": 0
 							}
+						},
+						{
+							"type": "tikiTallTorchWall_spr",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "on",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 353,
+							"instanceVariables": {
+								"brightness": 30
+							},
+							"behaviors": {},
+							"world": {
+								"x": 168,
+								"y": 960,
+								"width": 8,
+								"height": 24,
+								"originX": 0.5,
+								"originY": 1,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "tikiTallTorchSmall_spr",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "on",
+								"initial-frame": 3,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 354,
+							"instanceVariables": {
+								"brightness": 15
+							},
+							"behaviors": {},
+							"world": {
+								"x": 800,
+								"y": 976,
+								"width": 8,
+								"height": 12,
+								"originX": 0.5,
+								"originY": 1,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
 						}
 					],
 					"sid": 800057976275727,
@@ -1642,7 +1704,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -1820,7 +1882,40 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "shadows",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 440224180243677,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -1853,7 +1948,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -1949,7 +2044,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2067,7 +2162,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2149,7 +2244,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2182,7 +2277,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2341,7 +2436,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2374,7 +2469,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": true,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2454,7 +2549,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2482,7 +2577,7 @@
 							"uid": 315,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false,
+								"wasTouched": false,
 								"isTarget": false,
 								"mode": -1
 							},
@@ -2516,7 +2611,7 @@
 							"uid": 320,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false,
+								"wasTouched": false,
 								"isTarget": false,
 								"mode": -1
 							},
@@ -2550,7 +2645,7 @@
 							"uid": 321,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false,
+								"wasTouched": false,
 								"isTarget": true,
 								"mode": 5
 							},
@@ -2584,7 +2679,7 @@
 							"uid": 309,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false,
+								"wasTouched": false,
 								"isTarget": false,
 								"mode": -1
 							},
@@ -2618,7 +2713,7 @@
 							"uid": 310,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false,
+								"wasTouched": false,
 								"isTarget": false,
 								"mode": -1
 							},
@@ -2652,7 +2747,7 @@
 							"uid": 376,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false,
+								"wasTouched": false,
 								"isTarget": false,
 								"mode": -1
 							},
@@ -2686,7 +2781,7 @@
 							"uid": 381,
 							"instanceVariables": {
 								"area": "",
-								"hasVisited": false,
+								"wasTouched": false,
 								"isTarget": false,
 								"mode": -1
 							},
@@ -2730,7 +2825,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -2763,7 +2858,7 @@
 					"parallaxY": 1,
 					"scaleRate": 1,
 					"forceOwnTexture": false,
-					"renderingMode": "3d",
+					"renderingMode": "2d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,
 					"blendMode": "normal",
@@ -2793,7 +2888,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2826,7 +2921,7 @@
 			"parallaxY": 0,
 			"scaleRate": 0,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -2859,9 +2954,9 @@
 			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
-			"useRenderCells": false,
+			"useRenderCells": true,
 			"blendMode": "normal",
 			"zElevation": 0,
 			"global": false

@@ -1,0 +1,1519 @@
+{
+	"name": "miniMap_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MiniMap",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "isMap",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 660110072146315
+				},
+				{
+					"eventType": "variable",
+					"name": "isOpenMap",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 291669816135104
+				},
+				{
+					"eventType": "variable",
+					"name": "isDrawing",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 575165557418076
+				},
+				{
+					"eventType": "variable",
+					"name": "mapWidth",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 531924399483015
+				},
+				{
+					"eventType": "variable",
+					"name": "mapHeight",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 129432735160792
+				},
+				{
+					"eventType": "variable",
+					"name": "mapLayer",
+					"type": "string",
+					"initialValue": "map",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 166088187154291
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 595441472880858,
+							"parameters": {
+								"variable": "isMap"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 223757434928855,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 389275761506400
+								}
+							],
+							"actions": [],
+							"sid": 550048195031203,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "spr_playerActual",
+											"sid": 261514271801164,
+											"parameters": {
+												"object": "zoneCtrl_spr"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spr_playerActual",
+											"sid": 984242023704752,
+											"parameters": {
+												"instance-variable": "zoneId",
+												"value": "zoneCtrl_spr.UID"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "zoneCtrl_spr",
+											"sid": 340833986122057,
+											"parameters": {
+												"instance-variable": "wasTouched",
+												"value": "true"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 232431317227358,
+											"parameters": {
+												"object-to-create": "miniMap",
+												"layer": "mapLayer",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 886926405673148
+										},
+										{
+											"id": "set-size",
+											"objectClass": "miniMap",
+											"sid": 364896999974595,
+											"parameters": {
+												"width": "OriginalViewportWidth",
+												"height": "OriginalViewportHeight"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "miniMap",
+											"sid": 182223525266323,
+											"parameters": {
+												"x": "scrollx  - (Self.Width / 2)",
+												"y": "scrolly  - (Self.Height / 2)"
+											}
+										},
+										{
+											"callFunction": "drawNewTmMiniMap",
+											"sid": 924196433284499,
+											"parameters": [
+												"\"116,114\""
+											]
+										}
+									],
+									"sid": 800969923046910
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "mapItems",
+									"sid": 497708447094514
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object-by-name",
+									"objectClass": "System",
+									"sid": 409378697628070,
+									"parameters": {
+										"object-name": "mapItems.ObjectTypeName & \"_icon\"",
+										"layer": "mapLayer",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 908798223747294,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-last-created",
+											"objectClass": "System",
+											"sid": 611470456987451,
+											"parameters": {
+												"object": "mapIcons"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-child",
+											"objectClass": "mapItems",
+											"sid": 470046934590264,
+											"parameters": {
+												"child": "mapIcons",
+												"transform-x": false,
+												"transform-y": false,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-o": false,
+												"transform-z-elevation": false,
+												"transform-visibility": false,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "mapIcons",
+											"sid": 512837126284083,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "mapIcons",
+											"sid": 715773851281565,
+											"parameters": {
+												"collisions": "disabled"
+											}
+										}
+									],
+									"sid": 566507589229979
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "spr_playerActual",
+									"sid": 677308678543778,
+									"parameters": {
+										"object": "zoneCtrl_spr"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_playerActual",
+									"sid": 959406504382398,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "zoneId",
+										"comparison": 1,
+										"value": "zoneCtrl_spr.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_playerActual",
+									"sid": 513931837928876,
+									"parameters": {
+										"instance-variable": "zoneId",
+										"value": "zoneCtrl_spr.UID"
+									}
+								}
+							],
+							"sid": 260361736942200,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "zoneCtrl_spr",
+											"sid": 685135829693179,
+											"parameters": {
+												"instance-variable": "wasTouched"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "zoneCtrl_spr",
+											"sid": 691259794594925,
+											"parameters": {
+												"instance-variable": "wasTouched",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "drawNewTmMiniMap",
+											"sid": 597885915915945,
+											"parameters": [
+												"\"116,114\""
+											]
+										}
+									],
+									"sid": 416556424846991
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Map Ctrls",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-floor",
+											"objectClass": "spr_playerActual",
+											"sid": 502070010171032,
+											"behaviorType": "Platform"
+										}
+									],
+									"actions": [],
+									"sid": 984433839156647,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 751647913294587,
+													"parameters": {
+														"variable": "isOpenMap"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 340711496774492,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 951720563812679,
+															"parameters": {
+																"key": 77
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "showMiniMap",
+															"sid": 519693216704453
+														}
+													],
+													"sid": 453781589642236
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 751961202526040
+												},
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 908931934443160,
+													"parameters": {
+														"variable": "isOpenMap"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "drawMapIcons",
+													"sid": 234730580126764
+												}
+											],
+											"sid": 563141842579254
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-released",
+											"objectClass": "Keyboard",
+											"sid": 537479729455749,
+											"parameters": {
+												"key": 77
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "spr_playerActual",
+											"sid": 322833548351093,
+											"behaviorType": "Platform",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "hideMiniMap",
+											"sid": 956142700209381
+										}
+									],
+									"sid": 389558718565947,
+									"isOrBlock": true
+								}
+							],
+							"sid": 310509055140374
+						},
+						{
+							"functionName": "drawNewTmMiniMap",
+							"functionDescription": "",
+							"functionCategory": "MiniMap",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "ignoreTiles",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 650644844264884
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 932770555782799,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 533870890211783,
+											"parameters": {
+												"variable": "isDrawing"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 166411678009059,
+											"parameters": {
+												"variable": "isDrawing",
+												"value": "true"
+											}
+										},
+										{
+											"id": "split-string",
+											"objectClass": "Array",
+											"sid": 582254366616890,
+											"parameters": {
+												"string": "ignoreTiles",
+												"separator": "\",\"",
+												"type": "number"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 564199684096223,
+											"parameters": {
+												"object-to-create": "minmap_tm",
+												"layer": "tm_platform.LayerName",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 527753938007917
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "minmap_tm",
+											"sid": 646581135050475,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "minmap_tm",
+											"sid": 664448655458478,
+											"parameters": {
+												"width": "LayoutWidth",
+												"height": "LayoutHeight"
+											}
+										}
+									],
+									"sid": 526726394105270,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "repeatedly draw columns of tiles as on minimap, creating two tm's. one as the lvl and the other to be made into a minimap"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 402491316136384,
+													"parameters": {
+														"count": "tm_platform.MapDisplayWidth"
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "draw a vertical line"
+												},
+												{
+													"callFunction": "drawTmColumn",
+													"sid": 710844539654479,
+													"parameters": [
+														"loopindex"
+													]
+												}
+											],
+											"sid": 632538692707131
+										},
+										{
+											"eventType": "comment",
+											"text": "scale up to take a snapshot to scale down. canvas is weird"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "setZBasedOnFOV",
+													"sid": 380253167911503
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "miniMap",
+													"sid": 316809700953678,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "miniMap",
+													"sid": 959053993063115,
+													"parameters": {
+														"instance-variable": "pScale",
+														"value": "max(mapWidth / OriginalViewportWidth, mapHeight / OriginalViewportHeight) / (OriginalViewportWidth / (cutOut.Width * miniMap.scale))"
+													}
+												},
+												{
+													"type": "comment",
+													"text": "start the taking of a snapshot"
+												},
+												{
+													"id": "set-size",
+													"objectClass": "miniMap",
+													"sid": 153508355874113,
+													"parameters": {
+														"width": "OriginalViewportWidth",
+														"height": "OriginalViewportHeight"
+													}
+												},
+												{
+													"id": "move-to-layer",
+													"objectClass": "miniMap",
+													"sid": 487617875219607,
+													"parameters": {
+														"layer": "tm_platform.LayerName"
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "miniMap",
+													"sid": 318981293148981,
+													"parameters": {
+														"x": "scrollx  - (Self.Width / 2)",
+														"y": "scrolly  - (Self.Height / 2)"
+													}
+												},
+												{
+													"id": "clear-canvas",
+													"objectClass": "miniMap",
+													"sid": 798787304202834,
+													"parameters": {
+														"color": "rgba(0,0,0, 0)"
+													}
+												},
+												{
+													"id": "paste-object",
+													"objectClass": "miniMap",
+													"sid": 570270418500488,
+													"parameters": {
+														"object": "minmap_tm",
+														"effects": "without-effects"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 492509672819489
+												},
+												{
+													"type": "comment",
+													"text": "end the taking of a snapshot"
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "minmap_tm",
+													"sid": 535825116797212,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "minmap_tm",
+													"sid": 911003198584457
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "miniMap",
+													"sid": 102160375822641,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"type": "comment",
+													"text": "start move to correct position"
+												},
+												{
+													"id": "move-to-layer",
+													"objectClass": "miniMap",
+													"sid": 789686012607389,
+													"parameters": {
+														"layer": "mapLayer"
+													}
+												},
+												{
+													"callFunction": "setMiniMapOrigPos",
+													"sid": 359518518409094,
+													"parameters": [
+														"cutOut.X",
+														"cutOut.Y"
+													]
+												},
+												{
+													"id": "set-position",
+													"objectClass": "miniMap",
+													"sid": 339286160144645,
+													"parameters": {
+														"x": "Self.pOrigX",
+														"y": "Self.pOrigY"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "miniMap",
+													"sid": 276657533675692,
+													"parameters": {
+														"width": "miniMap.Width * miniMap.pScale",
+														"height": "miniMap.Height * miniMap.pScale"
+													}
+												},
+												{
+													"type": "comment",
+													"text": "end move to correct position"
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 445984519647721,
+													"parameters": {
+														"variable": "isDrawing",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-layer-parallax",
+													"objectClass": "System",
+													"sid": 620408060924039,
+													"parameters": {
+														"layer": "mapLayer",
+														"parallax-x": "100 * ((mapWidth / LayoutWidth) * (miniMap.pScaleFov * miniMap.pScale))",
+														"parallax-y": "100 * ((mapHeight / LayoutHeight)* (miniMap.pScaleFov * miniMap.pScale))"
+													}
+												}
+											],
+											"sid": 993226793451112
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "drawTmColumn",
+							"functionDescription": "",
+							"functionCategory": "MiniMap",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "i",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 608476444825730
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 233888807239658,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "J",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 536082238747980
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 800042514856761,
+											"parameters": {
+												"count": "tm_platform.MapDisplayHeight"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "draw a vertical line"
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 292743833280090,
+											"parameters": {
+												"variable": "J",
+												"value": "loopindex"
+											}
+										}
+									],
+									"sid": 263284196099749,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "if not empty space, draw"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "tm_platform",
+													"sid": 886907569861941,
+													"parameters": {
+														"tile-x": "i",
+														"tile-y": "J",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 347651176293006,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "canDraw",
+													"type": "boolean",
+													"initialValue": "true",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 219514193903307
+												},
+												{
+													"eventType": "variable",
+													"name": "X",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 943736812749484
+												},
+												{
+													"eventType": "variable",
+													"name": "Y",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 928844419288402
+												},
+												{
+													"eventType": "variable",
+													"name": "uid",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 611441707763495
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-overlapping-point",
+															"objectClass": "System",
+															"sid": 578968681201372,
+															"parameters": {
+																"object": "zoneCtrl_spr",
+																"x": "tm_platform.TileToPositionX(i)",
+																"y": "tm_platform.TileToPositionY(J)"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 119248709427107,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "zoneCtrl_spr",
+																	"sid": 939546550505746,
+																	"parameters": {
+																		"instance-variable": "wasTouched"
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 195523731753345,
+																	"parameters": {
+																		"variable": "canDraw",
+																		"value": "false"
+																	}
+																}
+															],
+															"sid": 634622266256447
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 231442615327312,
+															"parameters": {
+																"variable": "canDraw"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 424990101174852,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 844852817997513,
+																	"parameters": {
+																		"name": "\"\"",
+																		"start-index": "0",
+																		"end-index": "Array.Count"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 182073861236742,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-tile-at",
+																			"objectClass": "tm_platform",
+																			"sid": 809666659765156,
+																			"parameters": {
+																				"tile-x": "i",
+																				"tile-y": "J",
+																				"comparison": 0,
+																				"tile": "Array.At(loopindex)"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 208271661342194,
+																			"parameters": {
+																				"variable": "canDraw",
+																				"value": "false"
+																			}
+																		},
+																		{
+																			"id": "stop-loop",
+																			"objectClass": "System",
+																			"sid": 666473037499738
+																		}
+																	],
+																	"sid": 577625663105106
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "comment",
+													"text": "draw rectangle as \"pixels\" on minimap"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 863108686243406,
+															"parameters": {
+																"variable": "canDraw"
+															}
+														}
+													],
+													"actions": [
+														{
+															"type": "comment",
+															"text": "TileToPosition gets the center of the tiles XY. so have of tile must be subtracted from the equation along with scal taken into account"
+														},
+														{
+															"id": "set-tile-with-brush",
+															"objectClass": "minmap_tm",
+															"sid": 590024578858170,
+															"parameters": {
+																"tile-x": "i",
+																"tile-y": "J",
+																"brush": {
+																	"objectClassName": "minmap_tm",
+																	"brushName": "normal"
+																}
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 363640091929999,
+															"parameters": {
+																"variable": "mapWidth",
+																"value": "max(mapWidth, (i+1) * tm_platform.TileWidth)"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 252260836258236,
+															"parameters": {
+																"variable": "mapHeight",
+																"value": "max(mapHeight, (J+1) * tm_platform.TileHeight)"
+															}
+														}
+													],
+													"sid": 146703090102103
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "setZBasedOnFOV",
+							"functionDescription": "",
+							"functionCategory": "MiniMap",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "minmap_tm",
+									"sid": 568718125572444,
+									"parameters": {
+										"x": "scrollx - mapWidth/2",
+										"y": "scrolly - mapHeight/2"
+									}
+								}
+							],
+							"sid": 693105719095367,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "requiredZ",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 597916340904822
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 925824527152227,
+											"parameters": {
+												"first-value": "mapHeight",
+												"comparison": 4,
+												"second-value": "mapWidth"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 914636943578859,
+											"parameters": {
+												"variable": "requiredZ",
+												"value": "-(1 - mapHeight / OriginalViewportHeight) * 3DCamera.DefaultCameraZ\n"
+											}
+										}
+									],
+									"sid": 802336467909233
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 445086570249239
+										}
+									],
+									"actions": [],
+									"sid": 342703149502245,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 413597767937089,
+													"parameters": {
+														"first-value": "OriginalViewportWidth / OriginalViewportHeight",
+														"comparison": 4,
+														"second-value": "mapWidth / mapHeight"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 389265676235595,
+													"parameters": {
+														"variable": "requiredZ",
+														"value": "-(1 - mapHeight / OriginalViewportHeight) * 3DCamera.DefaultCameraZ\n"
+													}
+												}
+											],
+											"sid": 129539280638168
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 487230244215872
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 234765945156294,
+													"parameters": {
+														"variable": "requiredZ",
+														"value": "- (1 -mapWidth / OriginalViewportWidth) * 3DCamera.DefaultCameraZ\n"
+													}
+												}
+											],
+											"sid": 363561671059858
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-z-elevation",
+											"objectClass": "minmap_tm",
+											"sid": 955302279311037,
+											"parameters": {
+												"z": "-requiredZ"
+											}
+										}
+									],
+									"sid": 421707226751627
+								}
+							]
+						},
+						{
+							"functionName": "setMiniMapOrigPos",
+							"functionDescription": "",
+							"functionCategory": "MiniMap",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "origX",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 811851638926957
+								},
+								{
+									"name": "origY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 464953505381535
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 175851007869300,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "miniMap",
+											"sid": 173392546975724,
+											"parameters": {
+												"instance-variable": "pScaleFov",
+												"value": "min(OriginalViewportWidth / mapWidth, OriginalViewportHeight / mapHeight)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "miniMap",
+											"sid": 252188983744159,
+											"parameters": {
+												"instance-variable": "pHeightDiff",
+												"value": "((OriginalViewportHeight - (miniMap.pScaleFov * mapHeight)) / 2) * miniMap.pScale"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "miniMap",
+											"sid": 267917891178582,
+											"parameters": {
+												"instance-variable": "pWidthDiff",
+												"value": "((OriginalViewportWidth - (miniMap.pScaleFov * mapWidth)) / 2) * miniMap.pScale"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "miniMap",
+											"sid": 390553898777707,
+											"parameters": {
+												"instance-variable": "pOrigX",
+												"value": "origX - miniMap.pWidthDiff"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "miniMap",
+											"sid": 881635399832763,
+											"parameters": {
+												"instance-variable": "pOrigY",
+												"value": "origY - miniMap.pHeightDiff"
+											}
+										}
+									],
+									"sid": 707012828198440
+								}
+							]
+						},
+						{
+							"functionName": "showMiniMap",
+							"functionDescription": "",
+							"functionCategory": "MiniMap",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 396766489310151,
+									"parameters": {
+										"variable": "isOpenMap",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 729920870208609,
+									"parameters": {
+										"layer": "\"MINIMAP\"",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 802156490974898,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 871090708820245,
+											"parameters": {
+												"object": "mapItems"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 844298691583631,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "mapItems",
+													"sid": 210282806033335,
+													"parameters": {
+														"object": "zoneCtrl_spr"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "zoneCtrl_spr",
+													"sid": 518727827898997,
+													"parameters": {
+														"instance-variable": "wasTouched"
+													}
+												},
+												{
+													"id": "pick-children",
+													"objectClass": "mapItems",
+													"sid": 412782222807951,
+													"parameters": {
+														"child": "mapIcons",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "mapIcons",
+													"sid": 902548609363604,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 239741225113209
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "hideMiniMap",
+							"functionDescription": "",
+							"functionCategory": "MiniMap",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 493363214831742,
+									"parameters": {
+										"layer": "\"MINIMAP\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 290795565970025,
+									"parameters": {
+										"variable": "isOpenMap",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 562943429303810,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 836356188553004,
+											"parameters": {
+												"object": "mapIcons"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "mapIcons",
+											"sid": 563143535739592,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 575110934012836
+								}
+							]
+						},
+						{
+							"functionName": "drawMapIcons",
+							"functionDescription": "",
+							"functionCategory": "MiniMap",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 292671592160143,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 531077502411463,
+											"parameters": {
+												"interval-seconds": ".04"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 181861156199252,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 141177285584567,
+													"parameters": {
+														"object": "mapItems"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 377270184117028,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "mapItems",
+															"sid": 432974785412918,
+															"parameters": {
+																"child": "mapIcons",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-position",
+															"objectClass": "mapIcons",
+															"sid": 277561074722682,
+															"parameters": {
+																"x": "cutOut.X + (mapItems.X * (miniMap.pScaleFov * miniMap.pScale)) - (miniMap.pOrigX - miniMap.X)",
+																"y": "cutOut.Y + (mapItems.Y * (miniMap.pScaleFov * miniMap.pScale)) -(miniMap.pOrigY - miniMap.Y)"
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "mapIcons",
+															"sid": 742423763734520,
+															"parameters": {
+																"scale": "miniMap.pScaleFov * miniMap.pScale"
+															}
+														},
+														{
+															"id": "move-to-top",
+															"objectClass": "mapIcons",
+															"sid": 300727471736053
+														}
+													],
+													"sid": 760257594591538
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "miniMap",
+													"sid": 306436699644267,
+													"disabled": true,
+													"parameters": {
+														"x": "Self.X + (scrollx - spr_playerActual_icon.X) ",
+														"y": "Self.Y + (scrolly - spr_playerActual_icon.Y)"
+													}
+												}
+											],
+											"sid": 971688266068470
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 142780060036956
+		}
+	],
+	"sid": 538479554717037
+}

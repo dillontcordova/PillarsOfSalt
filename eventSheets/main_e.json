@@ -46,6 +46,10 @@
 			"includeSheet": "sfx_e"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "miniMap_e"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

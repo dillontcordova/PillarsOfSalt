@@ -9,6 +9,7 @@
 		"tm_grassLand",
 		"tm_staryNight",
 		"tm_platform",
-		"all_tm"
+		"all_tm",
+		"minmap_tm"
 	]
 }

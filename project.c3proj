@@ -36,8 +36,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Camera3D",
+			"name": "3D camera",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Dictionary",
 			"name": "Dictionary",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "DrawingCanvas",
+			"name": "Drawing canvas",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -68,7 +82,7 @@
 			"name": "Utils",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "2.1"
+			"version": "1.2"
 		},
 		{
 			"type": "plugin",
@@ -381,7 +395,9 @@
 			"spr_btnTileScreen",
 			"destructable_tb",
 			"testNPC",
-			"Utils"
+			"Utils",
+			"ShadowLight",
+			"Sprite2"
 		],
 		"subfolders": [
 			{
@@ -392,7 +408,8 @@
 					"Touch",
 					"TimelineController",
 					"Array",
-					"Browser"
+					"Browser",
+					"3DCamera"
 				],
 				"subfolders": [],
 				"name": "input"
@@ -664,7 +681,7 @@
 			{
 				"items": [
 					"spr_boids",
-					"Sprite2"
+					"boidGroup_spr"
 				],
 				"subfolders": [],
 				"name": "fauna"
@@ -723,7 +740,8 @@
 					"spr_doorSwitch",
 					"spr_vegetation",
 					"spr_gear",
-					"tikiTallTorchWall_spr"
+					"tikiTallTorchWall_spr",
+					"tikiTallTorchSmall_spr"
 				],
 				"subfolders": [],
 				"name": "staticMapObjects"
@@ -735,6 +753,16 @@
 				],
 				"subfolders": [],
 				"name": "debug"
+			},
+			{
+				"items": [
+					"cutOut",
+					"spr_playerActual_icon",
+					"minmap_tm",
+					"miniMap"
+				],
+				"subfolders": [],
+				"name": "minimap"
 			}
 		]
 	},
@@ -765,14 +793,15 @@
 			"cameraTargets",
 			"NPC",
 			"lightAura",
-			"lightSource"
+			"lightSource",
+			"mapIcons",
+			"mapItems"
 		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
 			"construct splash",
-			"titleScreen",
 			"repository"
 		],
 		"subfolders": [
@@ -791,10 +820,18 @@
 					"HUD",
 					"lighting",
 					"Pause",
-					"dialog"
+					"dialog",
+					"MiniMap"
 				],
 				"subfolders": [],
 				"name": "global"
+			},
+			{
+				"items": [
+					"titleScreen"
+				],
+				"subfolders": [],
+				"name": "UI"
 			}
 		]
 	},
@@ -817,7 +854,8 @@
 			"traps_e",
 			"dialog_e",
 			"sfx_e",
-			"atmospheric_e"
+			"atmospheric_e",
+			"miniMap_e"
 		],
 		"subfolders": [
 			{
@@ -1164,7 +1202,7 @@
 		"authorWebsite": "",
 		"appId": "",
 		"pixelRounding": false,
-		"zAxisScale": "normalized",
+		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-integer-scale",
