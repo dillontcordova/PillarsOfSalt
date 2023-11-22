@@ -156,7 +156,8 @@
 										{
 											"id": "cancel-fullscreen",
 											"objectClass": "Browser",
-											"sid": 139033759989463
+											"sid": 139033759989463,
+											"breakpoint": true
 										},
 										{
 											"id": "alert",
@@ -1113,6 +1114,33 @@
 						{
 							"eventType": "script",
 							"script": "const layer = runtime.layout.getLayer(localVars.layerName);\n\nif(layer){\n\tconst myEffect = layer.effects.find((e)=> e.name === localVars.effectName )\n \tif (myEffect) {\n\t\treturn runtime.setReturnValue(1);\n\t}\n}\nreturn runtime.setReturnValue(0);\n"
+						}
+					]
+				},
+				{
+					"functionName": "getLayerOpacity",
+					"functionDescription": "",
+					"functionCategory": "layer",
+					"functionReturnType": "any",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "layerName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 373207842533500
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 129803432253993,
+					"children": [
+						{
+							"eventType": "script",
+							"script": "const layer = runtime.layout.getLayer(localVars.layerName);\ndebugger;\nif(layer){\n\treturn runtime.setReturnValue(layer.opacity * 100);\n}\nreturn runtime.setReturnValue(0);\n"
 						}
 					]
 				}

@@ -44,7 +44,8 @@
 					"callFunction": "setDarkness",
 					"sid": 663158658770939,
 					"parameters": [
-						"70"
+						"70",
+						"0"
 					]
 				}
 			],

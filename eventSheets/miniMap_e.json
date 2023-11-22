@@ -372,6 +372,10 @@
 													],
 													"actions": [
 														{
+															"callFunction": "drawMapIcons",
+															"sid": 638747786741318
+														},
+														{
 															"callFunction": "showMiniMap",
 															"sid": 519693216704453
 														}

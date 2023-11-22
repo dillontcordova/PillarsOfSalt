@@ -1,57 +1,46 @@
 {
-	"name": "spr_gameSingleton",
+	"name": "eventTrigger",
 	"plugin-id": "Sprite",
-	"sid": 906502428621476,
-	"isGlobal": true,
+	"sid": 233864907147926,
+	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "levelDarkness",
-			"type": "number",
+			"name": "triggerName",
+			"type": "string",
 			"desc": "",
 			"show": true,
-			"sid": 613467609385968
-		}
-	],
-	"behaviorTypes": [
+			"sid": 939219840405276
+		},
 		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 918010249902391
+			"name": "value",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 912815755933882
 		}
 	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 768706,
-						"collisionPoly": {
-							"points": [
-								1,
-								1,
-								0,
-								1,
-								0,
-								0,
-								1,
-								0
-							]
-						},
+						"imageSpriteId": 1731745,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 136759713925458,
-				"name": "Animation 1",
+				"sid": 697429460928346,
+				"name": "idle",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

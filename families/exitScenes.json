@@ -9,12 +9,19 @@
 			"desc": "",
 			"show": true,
 			"sid": 656559871761061
+		},
+		{
+			"name": "level",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 507829405829643
 		}
 	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"spr_sceneExitLeft",
-		"spr_sceneExitRight"
+		"spr_sceneExitRight",
+		"spr_sceneExitLeft"
 	]
 }

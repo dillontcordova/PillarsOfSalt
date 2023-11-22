@@ -46,6 +46,18 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "light",
+								"x": 0.5,
+								"y": 0.8125
+							},
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -79,6 +91,18 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "light",
+								"x": 0.5,
+								"y": 0.8125
+							},
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}

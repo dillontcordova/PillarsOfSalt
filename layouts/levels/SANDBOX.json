@@ -26,7 +26,11 @@
 								"isTarget": false,
 								"mode": -1
 							},
-							"behaviors": {},
+							"behaviors": {
+								"Persist": {
+									"properties": {}
+								}
+							},
 							"world": {
 								"x": 0,
 								"y": 0,
@@ -60,7 +64,11 @@
 								"isTarget": false,
 								"mode": -1
 							},
-							"behaviors": {},
+							"behaviors": {
+								"Persist": {
+									"properties": {}
+								}
+							},
 							"world": {
 								"x": 720,
 								"y": 50,

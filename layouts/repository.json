@@ -4015,7 +4015,7 @@
 					}
 				},
 				{
-					"type": "spr_sceneExitLeft",
+					"type": "spr_sceneExitRight",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -4025,7 +4025,8 @@
 					},
 					"uid": 50,
 					"instanceVariables": {
-						"gotoUid": -1
+						"gotoUid": -1,
+						"level": ""
 					},
 					"behaviors": {},
 					"world": {
@@ -4236,6 +4237,11 @@
 							"properties": {
 								"active": true,
 								"start-state": "Off"
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -4743,6 +4749,67 @@
 							1
 						],
 						"angle": 6.274682420602017,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_playerActual_icon",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 402,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 47,
+						"y": 512,
+						"width": 10,
+						"height": 15,
+						"originX": 0.6,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "eventTrigger",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 346,
+					"instanceVariables": {
+						"triggerName": "",
+						"value": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 270,
+						"y": 497,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}

@@ -480,6 +480,11 @@
 										"active": true,
 										"start-state": "Off"
 									}
+								},
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
 								}
 							},
 							"world": {

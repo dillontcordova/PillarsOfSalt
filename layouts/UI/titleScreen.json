@@ -7,35 +7,6 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "spr_villageProps",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 5,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 260,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 122,
-						"y": 136,
-						"width": 100,
-						"height": 39,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "tb_titleBackground",
 					"properties": {
 						"initially-visible": true,
@@ -165,7 +136,9 @@
 						"live-preview": false
 					},
 					"uid": 301,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightness": 50
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -183,7 +156,7 @@
 						}
 					},
 					"sceneGraphData": {
-						"parent-uid": 263,
+						"parent-uid": 241,
 						"uid": 301,
 						"flags": {
 							"x": true,
@@ -238,86 +211,10 @@
 					},
 					"uid": 242,
 					"instanceVariables": {},
-					"behaviors": {
-						"Sine": {
-							"properties": {
-								"movement": "angle",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 1,
-								"period-offset-random": 0,
-								"magnitude": 2,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
-						},
-						"Sine2": {
-							"properties": {
-								"movement": "vertical",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 1,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
+					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": null,
+						"parent-uid": 241,
 						"uid": 242,
-						"children": [
-							{
-								"uid": 262,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 241,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 263,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								}
-							}
-						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -334,8 +231,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -371,9 +268,38 @@
 					},
 					"uid": 262,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
 					"sceneGraphData": {
-						"parent-uid": 242,
+						"parent-uid": 241,
 						"uid": 262,
 						"flags": {
 							"x": true,
@@ -430,25 +356,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 242,
+						"parent-uid": 241,
 						"uid": 263,
-						"children": [
-							{
-								"uid": 301,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								}
-							}
-						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -536,10 +445,101 @@
 					},
 					"uid": 241,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 1,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
 					"sceneGraphData": {
-						"parent-uid": 242,
+						"parent-uid": null,
 						"uid": 241,
+						"children": [
+							{
+								"uid": 301,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 242,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 262,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 263,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -556,8 +556,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 2.220446049250313e-16,
-							"transformH": 2.220446049250313e-16,
+							"transformW": 0,
+							"transformH": 0,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -663,9 +663,9 @@
 						"originX": 0,
 						"originY": 0,
 						"color": [
-							0.09019607843137255,
-							0.023529411764705882,
-							0.13725490196078433,
+							0.6078431372549019,
+							0.6078431372549019,
+							0.6078431372549019,
 							1
 						],
 						"angle": 0,

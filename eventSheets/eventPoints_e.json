@@ -75,119 +75,85 @@
 									"id": "wait-for-previous-actions",
 									"objectClass": "System",
 									"sid": 459537586789662
+								},
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 341362725129360,
+									"parameters": {
+										"layout": "exitScenes.level"
+									}
 								}
 							],
-							"sid": 424807472086969,
-							"children": [
+							"sid": 424807472086969
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "tmp code. hard coded atm"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_playerActual",
+							"sid": 973346379653733,
+							"parameters": {
+								"object": "eventTrigger"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 289891644167338,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"eventType": "comment",
-									"text": "add logic to check a dbl array of the map and add to the XY element position to change to that layout"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 845654994923500,
-											"parameters": {
-												"variable": "dir",
-												"comparison": 0,
-												"value": "\"Left\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "go-to-layout",
-											"objectClass": "System",
-											"sid": 109994238371699,
-											"parameters": {
-												"layout": "grassLand"
-											}
-										}
-									],
-									"sid": 675016148366902
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 315489211338039,
-											"parameters": {
-												"variable": "dir",
-												"comparison": 0,
-												"value": "\"Right\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "go-to-layout",
-											"objectClass": "System",
-											"sid": 455924964907391,
-											"parameters": {
-												"layout": "caveLand"
-											}
-										}
-									],
-									"sid": 110004255306995
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 282395835445308,
-											"parameters": {
-												"variable": "dir",
-												"comparison": 0,
-												"value": "\"Up\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "go-to-nextprevious-layout",
-											"objectClass": "System",
-											"sid": 810108855125247,
-											"parameters": {
-												"which": "next"
-											}
-										}
-									],
-									"sid": 113168866774600
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 859297208024045,
-											"parameters": {
-												"variable": "dir",
-												"comparison": 0,
-												"value": "\"Down\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "go-to-nextprevious-layout",
-											"objectClass": "System",
-											"sid": 848531133566275,
-											"parameters": {
-												"which": "next"
-											}
-										}
-									],
-									"sid": 701636299952924
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 706955120301790,
+									"parameters": {
+										"first-value": "Functions.getDarkness",
+										"comparison": 0,
+										"second-value": "70"
+									}
 								}
-							]
+							],
+							"actions": [
+								{
+									"callFunction": "setDarkness",
+									"sid": 574408815456533,
+									"parameters": [
+										"1",
+										".3"
+									]
+								}
+							],
+							"sid": 582972545762435
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 482436336181043
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "setDarkness",
+									"sid": 595580329223497,
+									"parameters": [
+										"70",
+										".5"
+									]
+								}
+							],
+							"sid": 754295389903442
 						}
 					]
 				},

@@ -91,7 +91,6 @@
 							"id": "request-fullscreen",
 							"objectClass": "Browser",
 							"sid": 762257526016650,
-							"disabled": true,
 							"parameters": {
 								"mode": "stretch-letterbox-scale",
 								"navigation-ui": "hide"
@@ -117,6 +116,7 @@
 					"id": "set-layer-visible",
 					"objectClass": "System",
 					"sid": 230262293085727,
+					"disabled": true,
 					"parameters": {
 						"layer": "\"lighting\"",
 						"visibility": "invisible"

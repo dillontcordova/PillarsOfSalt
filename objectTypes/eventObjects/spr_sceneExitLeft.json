@@ -1,7 +1,7 @@
 {
 	"name": "spr_sceneExitLeft",
 	"plugin-id": "Sprite",
-	"sid": 439987262600533,
+	"sid": 616392570665384,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9720805,
+						"imageSpriteId": 4301679,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "spawn",
-								"x": 1.5625,
+								"x": -0.5625,
 								"y": 1
 							}
 						],
@@ -31,7 +31,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 466233541166642,
+				"sid": 523251908186477,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

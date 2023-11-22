@@ -92,15 +92,6 @@
 										"type": "once",
 										"tag": "\"spawn\""
 									}
-								},
-								{
-									"id": "request-fullscreen",
-									"objectClass": "Browser",
-									"sid": 895527688425672,
-									"parameters": {
-										"mode": "stretch-integer-letterbox-scale",
-										"navigation-ui": "hide"
-									}
 								}
 							],
 							"sid": 347273021615804
@@ -322,19 +313,32 @@
 										"angle": "180",
 										"distance": ".5"
 									}
-								},
-								{
-									"id": "move-at-angle",
-									"objectClass": "spr_playerCutScene",
-									"sid": 259330032049908,
-									"parameters": {
-										"angle": "0",
-										"distance": ".25"
-									}
 								}
 							],
 							"sid": 246427625430649,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-children",
+											"objectClass": "spr_villageProps",
+											"sid": 238469807721379
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "spr_villageProps",
+											"sid": 252742217563587,
+											"parameters": {
+												"angle": "0",
+												"distance": ".25"
+											}
+										}
+									],
+									"sid": 946594979859194
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -547,9 +551,9 @@
 										{
 											"id": "go-to-layout-by-name",
 											"objectClass": "System",
-											"sid": 430102114766699,
+											"sid": 948775413745185,
 											"parameters": {
-												"layout": "\"grassLand\""
+												"layout": "\"grassRuins\""
 											}
 										}
 									],
@@ -801,6 +805,28 @@
 									"sid": 701603093364260
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 380514500777953
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 895527688425672,
+									"parameters": {
+										"mode": "stretch-integer-letterbox-scale",
+										"navigation-ui": "hide"
+									}
+								}
+							],
+							"sid": 994286728011234
 						}
 					],
 					"sid": 329329195204866

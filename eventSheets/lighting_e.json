@@ -272,7 +272,8 @@
 									"callFunction": "setDarkness",
 									"sid": 918943814046960,
 									"parameters": [
-										"clamp(LayerOpacity(darknessLayer) + 1, 0, 100)"
+										"clamp(LayerOpacity(darknessLayer) + 1, 0, 100)",
+										"0"
 									]
 								}
 							],
@@ -300,7 +301,8 @@
 									"callFunction": "setDarkness",
 									"sid": 745962294655118,
 									"parameters": [
-										"clamp(LayerOpacity(darknessLayer) - 1, -1, 100)"
+										"clamp(LayerOpacity(darknessLayer) - 1, -1, 100)",
+										"0"
 									]
 								}
 							],
@@ -532,6 +534,13 @@
 							"initialValue": "10",
 							"comment": "",
 							"sid": 681535696966310
+						},
+						{
+							"name": "fadeTime",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 548375313329189
 						}
 					],
 					"eventType": "function-block",
@@ -647,9 +656,27 @@
 											"id": "set-layer-opacity",
 											"objectClass": "System",
 											"sid": 502764626049663,
+											"disabled": true,
 											"parameters": {
 												"layer": "darknessLayer",
 												"opacity": "darkness"
+											}
+										},
+										{
+											"id": "tween-value",
+											"objectClass": "spr_gameSingleton",
+											"sid": 389169213625517,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"layerOpacity\"",
+												"start-value": "Functions.getLayerOpacity(darknessLayer)",
+												"end-value": "darkness",
+												"time": "fadeTime",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										}
 									],
@@ -658,6 +685,54 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "spr_gameSingleton",
+							"sid": 230122305876636,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"layerOpacity\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-opacity",
+							"objectClass": "System",
+							"sid": 752540994819265,
+							"parameters": {
+								"layer": "darknessLayer",
+								"opacity": "spr_gameSingleton.Tween.Value(\"layerOpacity\")"
+							}
+						}
+					],
+					"sid": 280259957764308
+				},
+				{
+					"functionName": "getDarkness",
+					"functionDescription": "",
+					"functionCategory": "lighting",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 479163583002316,
+							"parameters": {
+								"value": "Functions.getLayerOpacity(darknessLayer)"
+							}
+						}
+					],
+					"sid": 416009381835146
 				},
 				{
 					"functionName": "calculateBellCurve",
@@ -978,11 +1053,11 @@
 									"actions": [
 										{
 											"callFunction": "throwIf",
-											"sid": 132632911844639,
+											"sid": 271784641183512,
 											"parameters": [
-												"int(str(lightSource.ImagePointX(\"light\")) &  str(lightSource.ImagePointY(\"light\")))",
-												"int(str(lightSource.X) & str(lightSource.Y))",
-												"\"lightSource '\" & lightSource.ObjectTypeName & \"' of uid: '\" & lightSource.UID & \"' missing light origin point\""
+												"int(lightSource.ImagePointX(\"light\") -  lightSource.ImagePointY(\"light\"))",
+												"int(lightSource.X - lightSource.Y)",
+												"\"lightSource '\" & lightSource.ObjectTypeName & \"' of uid: '\" & lightSource.UID & \"' missing light origin point \""
 											]
 										},
 										{
