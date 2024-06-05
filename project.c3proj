@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 36800,
+	"savedWithRelease": 38802,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -1194,6 +1194,10 @@
 				"subfolders": []
 			}
 		]
+	},
+	"flowcharts": {
+		"items": [],
+		"subfolders": []
 	},
 	"properties": {
 		"description": "",

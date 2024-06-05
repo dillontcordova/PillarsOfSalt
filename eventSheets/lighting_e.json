@@ -2102,7 +2102,7 @@
 							"disabled": true
 						},
 						{
-							"functionName": "fadeInShadow",
+							"functionName": "fadeInShadowOld",
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
@@ -2465,7 +2465,7 @@
 																	}
 																},
 																{
-																	"callFunction": "fadeInShadow",
+																	"callFunction": "fadeInShadowOld",
 																	"sid": 117755420752582
 																}
 															],
@@ -2670,7 +2670,7 @@
 																	],
 																	"actions": [
 																		{
-																			"callFunction": "fadeInShadow2",
+																			"callFunction": "fadeInShadow",
 																			"sid": 370188990731284
 																		}
 																	],
@@ -2729,7 +2729,7 @@
 							]
 						},
 						{
-							"functionName": "fadeInShadow2",
+							"functionName": "fadeInShadow",
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
