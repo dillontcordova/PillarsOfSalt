@@ -48,6 +48,7 @@
 							"effectTypes": [],
 							"isInitiallyVisible": true,
 							"isInitiallyInteractive": true,
+							"isHTMLElementsLayer": false,
 							"color": [
 								1,
 								1,
@@ -111,6 +112,7 @@
 							"effectTypes": [],
 							"isInitiallyVisible": true,
 							"isInitiallyInteractive": true,
+							"isHTMLElementsLayer": false,
 							"color": [
 								1,
 								1,
@@ -203,6 +205,7 @@
 							"effectTypes": [],
 							"isInitiallyVisible": true,
 							"isInitiallyInteractive": true,
+							"isHTMLElementsLayer": false,
 							"color": [
 								1,
 								1,
@@ -373,6 +376,7 @@
 							"effectTypes": [],
 							"isInitiallyVisible": true,
 							"isInitiallyInteractive": true,
+							"isHTMLElementsLayer": false,
 							"color": [
 								1,
 								1,
@@ -403,6 +407,7 @@
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
 					"color": [
 						1,
 						1,
@@ -547,6 +552,7 @@
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
 					"color": [
 						1,
 						1,
@@ -595,6 +601,7 @@
 								"horizontal-alignment": "left",
 								"vertical-alignment": "top",
 								"wrapping": "word",
+								"text-direction": "ltr",
 								"icon-set": -1,
 								"initially-visible": false,
 								"origin": "top-left",
@@ -678,6 +685,7 @@
 								"horizontal-alignment": "left",
 								"vertical-alignment": "top",
 								"wrapping": "word",
+								"text-direction": "ltr",
 								"icon-set": -1,
 								"initially-visible": false,
 								"origin": "top-left",
@@ -737,6 +745,7 @@
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
 					"color": [
 						1,
 						1,
@@ -826,6 +835,7 @@
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
 					"color": [
 						1,
 						1,
@@ -889,6 +899,7 @@
 					"effectTypes": [],
 					"isInitiallyVisible": false,
 					"isInitiallyInteractive": false,
+					"isHTMLElementsLayer": false,
 					"color": [
 						1,
 						1,
@@ -930,6 +941,7 @@
 			],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": false,
+			"isHTMLElementsLayer": false,
 			"color": [
 				1,
 				1,

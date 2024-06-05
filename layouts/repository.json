@@ -22,7 +22,7 @@
 						"pOrigY": 0,
 						"pHeightDiff": 0,
 						"pWidthDiff": 0,
-						"scale": 0.5
+						"scale": 0.3
 					},
 					"behaviors": {},
 					"world": {
@@ -38,7 +38,8 @@
 							1,
 							1
 						],
-						"angle": 0
+						"angle": 0,
+						"zElevation": 0
 					}
 				},
 				{
@@ -94,6 +95,7 @@
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
 			"color": [
 				1,
 				1,
@@ -2100,6 +2102,7 @@
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
 			"color": [
 				1,
 				1,
@@ -3167,6 +3170,7 @@
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
 			"color": [
 				1,
 				1,
@@ -3541,6 +3545,7 @@
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
 			"color": [
 				1,
 				1,
@@ -4767,8 +4772,8 @@
 					"world": {
 						"x": 47,
 						"y": 512,
-						"width": 10,
-						"height": 15,
+						"width": 20,
+						"height": 30,
 						"originX": 0.6,
 						"originY": 1,
 						"color": [
@@ -4812,12 +4817,91 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "boatMan_spr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 260,
+					"instanceVariables": {
+						"startW": 0,
+						"startH": 0,
+						"stepping": 0,
+						"name": "dillon",
+						"convoCursor": 0,
+						"hasMet": false
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Persist": {
+							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0,
+								"angl": 180
+							}
+						}
+					},
+					"world": {
+						"x": 358.72386601510186,
+						"y": 348.0194034265554,
+						"width": 23,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 850694002844475,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
 			"color": [
 				1,
 				1,

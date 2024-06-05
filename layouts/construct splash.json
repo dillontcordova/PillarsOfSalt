@@ -78,6 +78,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "center",
 						"wrapping": "word",
+						"text-direction": "ltr",
 						"icon-set": -1,
 						"initially-visible": false,
 						"origin": "top-left",
@@ -173,6 +174,7 @@
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
 			"color": [
 				1,
 				1,
