@@ -397,7 +397,8 @@
 			"testNPC",
 			"Utils",
 			"ShadowLight",
-			"Sprite2"
+			"Sprite2",
+			"boatMan_spr"
 		],
 		"subfolders": [
 			{
