@@ -319,6 +319,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "skymen_tiled_sprite",
+			"name": "tiled_sprite",
+			"author": "skymen",
+			"bundled": false,
+			"version": "1.0.0.7"
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -397,8 +405,10 @@
 			"testNPC",
 			"Utils",
 			"ShadowLight",
-			"Sprite2",
-			"boatMan_spr"
+			"screenCrosshair_spr",
+			"boatMan_spr",
+			"spikeWoodTrap_spr_tb",
+			"spikeWood_spr_tb"
 		],
 		"subfolders": [
 			{
@@ -1254,7 +1264,7 @@
 		"exportFileStructure": "flat",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 320,
-	"viewportHeight": 180,
+	"viewportWidth": 640,
+	"viewportHeight": 360,
 	"firstLayout": "construct splash"
 }

@@ -11,14 +11,14 @@
 			{
 				"frames": [
 					{
-						"width": 256,
-						"height": 256,
+						"width": 512,
+						"height": 512,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 728403,
+						"imageSpriteId": 1084402,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -35,27 +35,27 @@
 			{
 				"frames": [
 					{
-						"width": 256,
-						"height": 256,
+						"width": 512,
+						"height": 512,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1630940,
+						"imageSpriteId": 1524529,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					},
 					{
-						"width": 256,
-						"height": 256,
+						"width": 512,
+						"height": 512,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9401461,
+						"imageSpriteId": 2966629,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

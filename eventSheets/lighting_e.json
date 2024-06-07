@@ -2877,9 +2877,9 @@
 										{
 											"id": "set-width",
 											"objectClass": "shadow",
-											"sid": 177050094166810,
+											"sid": 349284668667336,
 											"parameters": {
-												"width": "clamp(resultWidth, 16, resultWidth)"
+												"width": "clamp(resultWidth, spr_playerDoll.Width, resultWidth)"
 											}
 										},
 										{

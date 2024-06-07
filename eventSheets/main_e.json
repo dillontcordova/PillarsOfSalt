@@ -244,6 +244,32 @@
 				}
 			],
 			"sid": 441132441068413
+		},
+		{
+			"eventType": "comment",
+			"text": "for the purpose of rounding just the camera, so that when switching to low gfx, there is no camera jerk between the two states"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 576950991594342
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "spr_camera",
+					"sid": 690246907336380,
+					"parameters": {
+						"x": "round(Self.X)",
+						"y": "round(Self.Y)"
+					}
+				}
+			],
+			"sid": 669172375887678
 		}
 	],
 	"sid": 809440588065565
