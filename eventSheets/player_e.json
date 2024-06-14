@@ -2658,10 +2658,10 @@
 												{
 													"id": "set-max-fall-speed",
 													"objectClass": "spr_playerActual",
-													"sid": 559021462966677,
+													"sid": 734798051678434,
 													"behaviorType": "Platform",
 													"parameters": {
-														"max-fall-speed": "500"
+														"max-fall-speed": "spr_playerSingleton.defaultMaxFallSpeed"
 													}
 												},
 												{
@@ -2705,10 +2705,10 @@
 												{
 													"id": "set-max-fall-speed",
 													"objectClass": "spr_playerActual",
-													"sid": 562464382972979,
+													"sid": 383061542480192,
 													"behaviorType": "Platform",
 													"parameters": {
-														"max-fall-speed": "50"
+														"max-fall-speed": "spr_playerSingleton.defaultMaxFallSpeed * .1"
 													}
 												},
 												{
@@ -2775,9 +2775,9 @@
 											"children": [
 												{
 													"eventType": "variable",
-													"name": "jumpStrength",
+													"name": "wallJumpStrength",
 													"type": "number",
-													"initialValue": "200",
+													"initialValue": "-1",
 													"comment": "",
 													"isStatic": false,
 													"isConstant": false,
@@ -2795,12 +2795,29 @@
 															]
 														},
 														{
+															"type": "comment",
+															"text": "was magic 200"
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 801448995981844,
+															"parameters": {
+																"variable": "wallJumpStrength",
+																"value": "spr_playerSingleton.defaultJumpStrength * 1.5625"
+															}
+														},
+														{
+															"type": "comment",
+															"text": "was magic 250"
+														},
+														{
 															"id": "set-vector-y",
 															"objectClass": "spr_playerActual",
-															"sid": 581346907792531,
+															"sid": 318443594440104,
 															"behaviorType": "Platform",
 															"parameters": {
-																"vector-y": "-250"
+																"vector-y": "-(spr_playerSingleton.defaultJumpStrength * 1.953125)"
 															}
 														},
 														{
@@ -2809,7 +2826,7 @@
 															"sid": 108979961156496,
 															"behaviorType": "Platform",
 															"parameters": {
-																"max-speed": "jumpStrength"
+																"max-speed": "wallJumpStrength"
 															}
 														}
 													],
@@ -2835,7 +2852,7 @@
 															"sid": 382293111376492,
 															"behaviorType": "Platform",
 															"parameters": {
-																"vector-x": "jumpStrength"
+																"vector-x": "wallJumpStrength"
 															}
 														}
 													],
@@ -2861,7 +2878,7 @@
 															"sid": 931855594631574,
 															"behaviorType": "Platform",
 															"parameters": {
-																"vector-x": "-jumpStrength"
+																"vector-x": "-wallJumpStrength"
 															}
 														}
 													],
@@ -2882,10 +2899,10 @@
 														{
 															"id": "set-max-speed",
 															"objectClass": "spr_playerActual",
-															"sid": 701849864189981,
+															"sid": 283068439532765,
 															"behaviorType": "Platform",
 															"parameters": {
-																"max-speed": "125"
+																"max-speed": "spr_playerSingleton.defaultMaxSpeed"
 															}
 														}
 													],
@@ -4007,19 +4024,19 @@
 												{
 													"id": "set-acceleration",
 													"objectClass": "spr_playerActual",
-													"sid": 699416815395661,
+													"sid": 364196150768125,
 													"behaviorType": "Platform",
 													"parameters": {
-														"acceleration": "400"
+														"acceleration": "round(spr_playerSingleton.defaultAcceleration * 0.533)"
 													}
 												},
 												{
 													"id": "set-deceleration",
 													"objectClass": "spr_playerActual",
-													"sid": 937411310352547,
+													"sid": 133388119664380,
 													"behaviorType": "Platform",
 													"parameters": {
-														"deceleration": "500"
+														"deceleration": "round(spr_playerSingleton.defaultDeceleration * 0.5)"
 													}
 												}
 											],

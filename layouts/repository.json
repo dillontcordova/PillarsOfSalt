@@ -509,12 +509,12 @@
 						},
 						"Platform": {
 							"properties": {
-								"max-speed": 125,
-								"acceleration": 750,
-								"deceleration": 1000,
-								"jump-strength": 128,
-								"gravity": 850,
-								"max-fall-speed": 500,
+								"max-speed": 250,
+								"acceleration": 1500,
+								"deceleration": 2000,
+								"jump-strength": 256,
+								"gravity": 1700,
+								"max-fall-speed": 1000,
 								"double-jump": false,
 								"jump-sustain": 128,
 								"default-controls": false,
@@ -619,10 +619,10 @@
 						}
 					},
 					"world": {
-						"x": 371,
-						"y": 181,
-						"width": 10,
-						"height": 15,
+						"x": 368,
+						"y": 176,
+						"width": 20,
+						"height": 30,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -2313,10 +2313,10 @@
 						}
 					},
 					"world": {
-						"x": 371,
-						"y": 173,
-						"width": 12,
-						"height": 16,
+						"x": 368,
+						"y": 160,
+						"width": 24,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
