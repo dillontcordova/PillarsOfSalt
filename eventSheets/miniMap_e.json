@@ -460,6 +460,16 @@
 							"sid": 932770555782799,
 							"children": [
 								{
+									"eventType": "variable",
+									"name": "isSwitchScaleBack",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 213000424239760
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -472,264 +482,340 @@
 											"isInverted": true
 										}
 									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 166411678009059,
-											"parameters": {
-												"variable": "isDrawing",
-												"value": "true"
-											}
-										},
-										{
-											"id": "split-string",
-											"objectClass": "Array",
-											"sid": 582254366616890,
-											"parameters": {
-												"string": "ignoreTiles",
-												"separator": "\",\"",
-												"type": "number"
-											}
-										},
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 564199684096223,
-											"parameters": {
-												"object-to-create": "minmap_tm",
-												"layer": "tm_platform.LayerName",
-												"x": "0",
-												"y": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
-											"objectClass": "System",
-											"sid": 527753938007917
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "minmap_tm",
-											"sid": 646581135050475,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "minmap_tm",
-											"sid": 664448655458478,
-											"parameters": {
-												"width": "LayoutWidth",
-												"height": "LayoutHeight"
-											}
-										}
-									],
+									"actions": [],
 									"sid": 526726394105270,
 									"children": [
-										{
-											"eventType": "comment",
-											"text": "repeatedly draw columns of tiles as on minimap, creating two tm's. one as the lvl and the other to be made into a minimap"
-										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "repeat",
+													"id": "compare-boolean-eventvar",
 													"objectClass": "System",
-													"sid": 402491316136384,
+													"sid": 577660775257274,
 													"parameters": {
-														"count": "tm_platform.MapDisplayWidth"
-													}
+														"variable": "isGfxHigh"
+													},
+													"isInverted": true
 												}
 											],
 											"actions": [
 												{
-													"type": "comment",
-													"text": "draw a vertical line"
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 613139693279561,
+													"parameters": {
+														"variable": "isSwitchScaleBack",
+														"value": "true"
+													}
 												},
 												{
-													"callFunction": "drawTmColumn",
-													"sid": 710844539654479,
-													"parameters": [
-														"loopindex"
-													]
+													"id": "set-fullscreen-scaling",
+													"objectClass": "System",
+													"sid": 332439317362389,
+													"parameters": {
+														"fullscreen-scaling": "high-quality"
+													}
 												}
 											],
-											"sid": 632538692707131
-										},
-										{
-											"eventType": "comment",
-											"text": "scale up to take a snapshot to scale down. canvas is weird"
+											"sid": 332596461193528
 										},
 										{
 											"eventType": "block",
 											"conditions": [],
 											"actions": [
 												{
-													"callFunction": "setZBasedOnFOV",
-													"sid": 380253167911503
-												},
-												{
-													"id": "set-visible",
-													"objectClass": "miniMap",
-													"sid": 316809700953678,
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 901542562413348,
 													"parameters": {
-														"visibility": "invisible"
+														"variable": "isDrawing",
+														"value": "true"
 													}
 												},
 												{
-													"id": "set-instvar-value",
-													"objectClass": "miniMap",
-													"sid": 959053993063115,
+													"id": "set-fullscreen-scaling",
+													"objectClass": "System",
+													"sid": 592014620269924,
 													"parameters": {
-														"instance-variable": "pScale",
-														"value": "max(mapWidth / OriginalViewportWidth, mapHeight / OriginalViewportHeight) / (OriginalViewportWidth / (cutOut.Width * miniMap.scale))"
+														"fullscreen-scaling": "high-quality"
 													}
 												},
 												{
-													"type": "comment",
-													"text": "start the taking of a snapshot"
-												},
-												{
-													"id": "set-size",
-													"objectClass": "miniMap",
-													"sid": 153508355874113,
+													"id": "split-string",
+													"objectClass": "Array",
+													"sid": 486977274229656,
 													"parameters": {
-														"width": "OriginalViewportWidth",
-														"height": "OriginalViewportHeight"
+														"string": "ignoreTiles",
+														"separator": "\",\"",
+														"type": "number"
 													}
 												},
 												{
-													"id": "move-to-layer",
-													"objectClass": "miniMap",
-													"sid": 487617875219607,
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 436968792169454,
 													"parameters": {
-														"layer": "tm_platform.LayerName"
-													}
-												},
-												{
-													"id": "set-position",
-													"objectClass": "miniMap",
-													"sid": 318981293148981,
-													"parameters": {
-														"x": "scrollx  - (Self.Width / 2)",
-														"y": "scrolly  - (Self.Height / 2)"
-													}
-												},
-												{
-													"id": "clear-canvas",
-													"objectClass": "miniMap",
-													"sid": 798787304202834,
-													"parameters": {
-														"color": "rgba(0,0,0, 0)"
-													}
-												},
-												{
-													"id": "paste-object",
-													"objectClass": "miniMap",
-													"sid": 570270418500488,
-													"parameters": {
-														"object": "minmap_tm",
-														"effects": "without-effects"
+														"object-to-create": "minmap_tm",
+														"layer": "tm_platform.LayerName",
+														"x": "0",
+														"y": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												},
 												{
 													"id": "wait-for-previous-actions",
 													"objectClass": "System",
-													"sid": 492509672819489
-												},
-												{
-													"type": "comment",
-													"text": "end the taking of a snapshot"
+													"sid": 345151536674742
 												},
 												{
 													"id": "set-visible",
 													"objectClass": "minmap_tm",
-													"sid": 535825116797212,
+													"sid": 928046831395356,
 													"parameters": {
 														"visibility": "invisible"
 													}
 												},
 												{
-													"id": "destroy",
-													"objectClass": "minmap_tm",
-													"sid": 911003198584457
-												},
-												{
-													"id": "set-visible",
-													"objectClass": "miniMap",
-													"sid": 102160375822641,
-													"parameters": {
-														"visibility": "visible"
-													}
-												},
-												{
-													"type": "comment",
-													"text": "start move to correct position"
-												},
-												{
-													"id": "move-to-layer",
-													"objectClass": "miniMap",
-													"sid": 789686012607389,
-													"parameters": {
-														"layer": "mapLayer"
-													}
-												},
-												{
-													"callFunction": "setMiniMapOrigPos",
-													"sid": 359518518409094,
-													"parameters": [
-														"cutOut.X",
-														"cutOut.Y"
-													]
-												},
-												{
-													"id": "set-position",
-													"objectClass": "miniMap",
-													"sid": 339286160144645,
-													"parameters": {
-														"x": "Self.pOrigX",
-														"y": "Self.pOrigY"
-													}
-												},
-												{
 													"id": "set-size",
-													"objectClass": "miniMap",
-													"sid": 276657533675692,
+													"objectClass": "minmap_tm",
+													"sid": 939009713012338,
 													"parameters": {
-														"width": "miniMap.Width * miniMap.pScale",
-														"height": "miniMap.Height * miniMap.pScale"
-													}
-												},
-												{
-													"type": "comment",
-													"text": "end move to correct position"
-												},
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 445984519647721,
-													"parameters": {
-														"variable": "isDrawing",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-layer-parallax",
-													"objectClass": "System",
-													"sid": 620408060924039,
-													"parameters": {
-														"layer": "mapLayer",
-														"parallax-x": "100 * ((mapWidth / LayoutWidth) * (miniMap.pScaleFov * miniMap.pScale))",
-														"parallax-y": "100 * ((mapHeight / LayoutHeight)* (miniMap.pScaleFov * miniMap.pScale))"
+														"width": "LayoutWidth",
+														"height": "LayoutHeight"
 													}
 												}
 											],
-											"sid": 993226793451112
+											"sid": 829141612567387,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "repeatedly draw columns of tiles as on minimap, creating two tm's. one as the lvl and the other to be made into a minimap"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "repeat",
+															"objectClass": "System",
+															"sid": 960782700853722,
+															"parameters": {
+																"count": "tm_platform.MapDisplayWidth"
+															}
+														}
+													],
+													"actions": [
+														{
+															"type": "comment",
+															"text": "draw a vertical line"
+														},
+														{
+															"callFunction": "drawTmColumn",
+															"sid": 493422045618551,
+															"parameters": [
+																"loopindex"
+															]
+														}
+													],
+													"sid": 181022112318901
+												},
+												{
+													"eventType": "comment",
+													"text": "scale up to take a snapshot to scale down. canvas is weird"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "setZBasedOnFOV",
+															"sid": 322231759280594
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "miniMap",
+															"sid": 888803386225470,
+															"parameters": {
+																"visibility": "invisible"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "miniMap",
+															"sid": 487276350619071,
+															"parameters": {
+																"instance-variable": "pScale",
+																"value": "max(mapWidth / OriginalViewportWidth, mapHeight / OriginalViewportHeight) / (OriginalViewportWidth / (cutOut.Width * miniMap.scale))"
+															}
+														},
+														{
+															"type": "comment",
+															"text": "start the taking of a snapshot"
+														},
+														{
+															"id": "set-size",
+															"objectClass": "miniMap",
+															"sid": 834095712564269,
+															"parameters": {
+																"width": "OriginalViewportWidth",
+																"height": "OriginalViewportHeight"
+															}
+														},
+														{
+															"id": "move-to-layer",
+															"objectClass": "miniMap",
+															"sid": 668278217334365,
+															"parameters": {
+																"layer": "tm_platform.LayerName"
+															}
+														},
+														{
+															"id": "set-position",
+															"objectClass": "miniMap",
+															"sid": 374132662669810,
+															"parameters": {
+																"x": "scrollx  - (Self.Width / 2)",
+																"y": "scrolly  - (Self.Height / 2)"
+															}
+														},
+														{
+															"id": "clear-canvas",
+															"objectClass": "miniMap",
+															"sid": 244869009717814,
+															"parameters": {
+																"color": "rgba(0,0,0, 0)"
+															}
+														},
+														{
+															"id": "paste-object",
+															"objectClass": "miniMap",
+															"sid": 823214372206877,
+															"parameters": {
+																"object": "minmap_tm",
+																"effects": "without-effects"
+															}
+														},
+														{
+															"id": "wait-for-previous-actions",
+															"objectClass": "System",
+															"sid": 548594205621846
+														},
+														{
+															"type": "comment",
+															"text": "end the taking of a snapshot"
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "minmap_tm",
+															"sid": 378868519829524,
+															"parameters": {
+																"visibility": "invisible"
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "minmap_tm",
+															"sid": 721752016889557
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "miniMap",
+															"sid": 303663510615262,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"type": "comment",
+															"text": "start move to correct position"
+														},
+														{
+															"id": "move-to-layer",
+															"objectClass": "miniMap",
+															"sid": 861697270945899,
+															"parameters": {
+																"layer": "mapLayer"
+															}
+														},
+														{
+															"callFunction": "setMiniMapOrigPos",
+															"sid": 493760791472678,
+															"parameters": [
+																"cutOut.X",
+																"cutOut.Y"
+															]
+														},
+														{
+															"id": "set-position",
+															"objectClass": "miniMap",
+															"sid": 697156756173643,
+															"parameters": {
+																"x": "Self.pOrigX",
+																"y": "Self.pOrigY"
+															}
+														},
+														{
+															"id": "set-size",
+															"objectClass": "miniMap",
+															"sid": 912797940396143,
+															"parameters": {
+																"width": "miniMap.Width * miniMap.pScale",
+																"height": "miniMap.Height * miniMap.pScale"
+															}
+														},
+														{
+															"type": "comment",
+															"text": "end move to correct position"
+														},
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 980101723410310,
+															"parameters": {
+																"variable": "isDrawing",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-layer-parallax",
+															"objectClass": "System",
+															"sid": 647038011364216,
+															"parameters": {
+																"layer": "mapLayer",
+																"parallax-x": "100 * ((mapWidth / LayoutWidth) * (miniMap.pScaleFov * miniMap.pScale))",
+																"parallax-y": "100 * ((mapHeight / LayoutHeight)* (miniMap.pScaleFov * miniMap.pScale))"
+															}
+														}
+													],
+													"sid": 503438613490908,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 310798192765212,
+																	"parameters": {
+																		"variable": "isSwitchScaleBack"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-fullscreen-scaling",
+																	"objectClass": "System",
+																	"sid": 902273559582813,
+																	"parameters": {
+																		"fullscreen-scaling": "low-quality"
+																	}
+																}
+															],
+															"sid": 396790113453559
+														}
+													]
+												}
+											]
 										}
 									]
 								}
@@ -1535,7 +1621,6 @@
 													"id": "set-position",
 													"objectClass": "miniMap",
 													"sid": 740693615696488,
-													"breakpoint": true,
 													"parameters": {
 														"x": "Self.X + distX",
 														"y": "Self.Y + distY"
