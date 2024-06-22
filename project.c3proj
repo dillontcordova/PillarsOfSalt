@@ -93,6 +93,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -420,7 +427,8 @@
 					"TimelineController",
 					"Array",
 					"Browser",
-					"3DCamera"
+					"3DCamera",
+					"PlatformInfo"
 				],
 				"subfolders": [],
 				"name": "input"

@@ -896,12 +896,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 972056829498764,
+							"sid": 893000161768777,
 							"parameters": {
 								"object-to-create": "spr_leafAtmos",
 								"layer": "\"fgCharacters\"",
-								"x": "ViewportLeft(\"fgCharacters\") + random(427)",
-								"y": "ViewportTop(\"fgCharacters\") - random(64)",
+								"x": "ViewportLeft(\"fgCharacters\") + random(OriginalViewportWidth * 1.33)",
+								"y": "ViewportTop(\"fgCharacters\") - random(OriginalViewportHeight * .355)",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
@@ -961,86 +961,149 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 419591460016814,
+					"children": [
 						{
-							"id": "set-layer-effect-enabled",
-							"objectClass": "System",
-							"sid": 290922842819247,
-							"parameters": {
-								"layer": "\"HUD\"",
-								"mode": "enable",
-								"effect": "\"Pixellate\""
-							}
+							"eventType": "variable",
+							"name": "subtlePixelDistort",
+							"type": "number",
+							"initialValue": "35",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 802107498512369
 						},
 						{
-							"id": "set-layer-effect-parameter",
-							"objectClass": "System",
-							"sid": 129665659261261,
-							"parameters": {
-								"layer": "\"HUD\"",
-								"effect": "\"Pixellate\"",
-								"parameter-index": "0",
-								"value": "35"
-							}
+							"eventType": "variable",
+							"name": "harshPixelDistort",
+							"type": "number",
+							"initialValue": "75",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 103722394100230
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 415463476151650,
-							"parameters": {
-								"seconds": "dur / 3"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 680738334033078,
+									"parameters": {
+										"variable": "isGfxHigh"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 818833002318995,
+									"parameters": {
+										"variable": "subtlePixelDistort",
+										"value": "subtlePixelDistort / 3"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 370960673020389,
+									"parameters": {
+										"variable": "harshPixelDistort",
+										"value": "harshPixelDistort / 3"
+									}
+								}
+							],
+							"sid": 404604005052735
 						},
 						{
-							"id": "set-layer-effect-parameter",
-							"objectClass": "System",
-							"sid": 304321665857750,
-							"parameters": {
-								"layer": "\"HUD\"",
-								"effect": "\"Pixellate\"",
-								"parameter-index": "0",
-								"value": "75"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 445520122925623,
-							"parameters": {
-								"seconds": "dur / 3"
-							}
-						},
-						{
-							"id": "set-layer-effect-parameter",
-							"objectClass": "System",
-							"sid": 151114949695120,
-							"parameters": {
-								"layer": "\"HUD\"",
-								"effect": "\"Pixellate\"",
-								"parameter-index": "0",
-								"value": "35"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 706373927803645,
-							"parameters": {
-								"seconds": "dur / 3"
-							}
-						},
-						{
-							"id": "set-layer-effect-enabled",
-							"objectClass": "System",
-							"sid": 346325581962574,
-							"parameters": {
-								"layer": "\"HUD\"",
-								"mode": "disable",
-								"effect": "\"Pixellate\""
-							}
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-effect-enabled",
+									"objectClass": "System",
+									"sid": 922696656708543,
+									"parameters": {
+										"layer": "\"HUD\"",
+										"mode": "enable",
+										"effect": "\"Pixellate\""
+									}
+								},
+								{
+									"id": "set-layer-effect-parameter",
+									"objectClass": "System",
+									"sid": 370154916357748,
+									"parameters": {
+										"layer": "\"HUD\"",
+										"effect": "\"Pixellate\"",
+										"parameter-index": "0",
+										"value": "subtlePixelDistort"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 250450277990897,
+									"parameters": {
+										"seconds": "dur / 3"
+									}
+								},
+								{
+									"id": "set-layer-effect-parameter",
+									"objectClass": "System",
+									"sid": 192064591122609,
+									"parameters": {
+										"layer": "\"HUD\"",
+										"effect": "\"Pixellate\"",
+										"parameter-index": "0",
+										"value": "harshPixelDistort"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 909792855526993,
+									"parameters": {
+										"seconds": "dur / 3"
+									}
+								},
+								{
+									"id": "set-layer-effect-parameter",
+									"objectClass": "System",
+									"sid": 657430544457138,
+									"parameters": {
+										"layer": "\"HUD\"",
+										"effect": "\"Pixellate\"",
+										"parameter-index": "0",
+										"value": "subtlePixelDistort"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 929796539273170,
+									"parameters": {
+										"seconds": "dur / 3"
+									}
+								},
+								{
+									"id": "set-layer-effect-enabled",
+									"objectClass": "System",
+									"sid": 580672318229252,
+									"parameters": {
+										"layer": "\"HUD\"",
+										"mode": "disable",
+										"effect": "\"Pixellate\""
+									}
+								}
+							],
+							"sid": 158740602387393
 						}
-					],
-					"sid": 419591460016814
+					]
 				},
 				{
 					"functionName": "getObjectEffectValue",

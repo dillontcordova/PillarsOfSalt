@@ -867,8 +867,8 @@
 					"world": {
 						"x": 285,
 						"y": 259,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -1748,8 +1748,8 @@
 					"world": {
 						"x": 458.39117431640625,
 						"y": 367.5743713378906,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1777,10 +1777,10 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 431.91244667425667,
-						"y": 368.3096117644861,
-						"width": 8,
-						"height": 24,
+						"x": 422,
+						"y": 368,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -2383,9 +2383,9 @@
 					},
 					"world": {
 						"x": 616,
-						"y": 196,
-						"width": 8,
-						"height": 8,
+						"y": 210,
+						"width": 16,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2428,8 +2428,8 @@
 					"world": {
 						"x": 623,
 						"y": 249,
-						"width": 5,
-						"height": 5,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2461,8 +2461,8 @@
 					"world": {
 						"x": 639,
 						"y": 249,
-						"width": 5,
-						"height": 5,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3913,8 +3913,8 @@
 					"world": {
 						"x": 339,
 						"y": 129,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -4880,10 +4880,10 @@
 						}
 					},
 					"world": {
-						"x": 358.72386601510186,
-						"y": 348.0194034265554,
-						"width": 23,
-						"height": 32,
+						"x": 336,
+						"y": 384,
+						"width": 46,
+						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -4982,6 +4982,37 @@
 						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "tikiTallTorchSmall_spr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "on",
+						"initial-frame": 3,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 422,
+					"instanceVariables": {
+						"brightness": 7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 406,
+						"y": 410,
+						"width": 16,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,

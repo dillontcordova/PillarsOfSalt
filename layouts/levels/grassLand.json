@@ -1097,8 +1097,8 @@
 					"world": {
 						"x": 936,
 						"y": 712,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1128,8 +1128,8 @@
 					"world": {
 						"x": 1280,
 						"y": 368,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1159,8 +1159,8 @@
 					"world": {
 						"x": 2016,
 						"y": 496,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1190,8 +1190,8 @@
 					"world": {
 						"x": 160,
 						"y": 800,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1221,8 +1221,8 @@
 					"world": {
 						"x": 320,
 						"y": 1344,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1252,8 +1252,8 @@
 					"world": {
 						"x": 432,
 						"y": 528,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1283,8 +1283,8 @@
 					"world": {
 						"x": 1712,
 						"y": 1056,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1314,8 +1314,8 @@
 					"world": {
 						"x": 2400,
 						"y": 560,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1345,8 +1345,8 @@
 					"world": {
 						"x": 1072,
 						"y": 1024,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1376,8 +1376,8 @@
 					"world": {
 						"x": 2416,
 						"y": 1120,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1407,8 +1407,8 @@
 					"world": {
 						"x": 896,
 						"y": 448,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1845,14 +1845,14 @@
 					},
 					"uid": 415,
 					"instanceVariables": {
-						"brightness": 7
+						"brightness": 14
 					},
 					"behaviors": {},
 					"world": {
 						"x": 416,
 						"y": 320,
-						"width": 8,
-						"height": 12,
+						"width": 16,
+						"height": 24,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1882,8 +1882,8 @@
 					"world": {
 						"x": 2704,
 						"y": 1088,
-						"width": 8,
-						"height": 24,
+						"width": 16,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -2381,11 +2381,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2406,8 +2406,8 @@
 					"world": {
 						"x": 1232,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2441,11 +2441,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2466,8 +2466,8 @@
 					"world": {
 						"x": 1264,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2501,11 +2501,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2526,8 +2526,8 @@
 					"world": {
 						"x": 1424,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2561,11 +2561,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2586,8 +2586,8 @@
 					"world": {
 						"x": 1392,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2621,11 +2621,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2646,8 +2646,8 @@
 					"world": {
 						"x": 1344,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2681,11 +2681,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2706,8 +2706,8 @@
 					"world": {
 						"x": 1312,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2741,11 +2741,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2766,8 +2766,8 @@
 					"world": {
 						"x": 496,
 						"y": 320,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2801,11 +2801,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2826,8 +2826,8 @@
 					"world": {
 						"x": 768,
 						"y": 416,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2861,11 +2861,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2886,8 +2886,8 @@
 					"world": {
 						"x": 672,
 						"y": 272,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2921,11 +2921,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -2946,8 +2946,8 @@
 					"world": {
 						"x": 1440,
 						"y": 416,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -2981,11 +2981,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3006,8 +3006,8 @@
 					"world": {
 						"x": 1488,
 						"y": 416,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3041,11 +3041,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3066,8 +3066,8 @@
 					"world": {
 						"x": 1144,
 						"y": 576,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3101,11 +3101,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3126,8 +3126,8 @@
 					"world": {
 						"x": 1216,
 						"y": 576,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3161,11 +3161,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3186,8 +3186,8 @@
 					"world": {
 						"x": 1104,
 						"y": 544,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3221,11 +3221,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3246,8 +3246,8 @@
 					"world": {
 						"x": 880,
 						"y": 528,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3281,11 +3281,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3306,8 +3306,8 @@
 					"world": {
 						"x": 320,
 						"y": 1344,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3341,11 +3341,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3366,8 +3366,8 @@
 					"world": {
 						"x": 400,
 						"y": 1344,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3401,11 +3401,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3426,8 +3426,8 @@
 					"world": {
 						"x": 240,
 						"y": 1344,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3510,11 +3510,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3535,8 +3535,8 @@
 					"world": {
 						"x": 1520,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3570,11 +3570,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3595,8 +3595,8 @@
 					"world": {
 						"x": 544,
 						"y": 320,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -3630,11 +3630,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -3655,8 +3655,8 @@
 					"world": {
 						"x": 448,
 						"y": 320,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -4081,9 +4081,9 @@
 					},
 					"world": {
 						"x": 400,
-						"y": 304,
-						"width": 23,
-						"height": 32,
+						"y": 288,
+						"width": 46,
+						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -4117,11 +4117,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -4142,8 +4142,8 @@
 					"world": {
 						"x": 1312,
 						"y": 1088,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -4243,11 +4243,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -4268,8 +4268,8 @@
 					"world": {
 						"x": 1360,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -4303,11 +4303,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -4328,8 +4328,8 @@
 					"world": {
 						"x": 1248,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -4363,11 +4363,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -4388,8 +4388,8 @@
 					"world": {
 						"x": 1296,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -4423,11 +4423,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -4448,8 +4448,8 @@
 					"world": {
 						"x": 1312,
 						"y": 400,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -4483,11 +4483,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -4508,8 +4508,8 @@
 					"world": {
 						"x": 272,
 						"y": 1344,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -4543,11 +4543,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -4568,8 +4568,8 @@
 					"world": {
 						"x": 352,
 						"y": 1344,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -4603,11 +4603,11 @@
 							"properties": {
 								"movement": "value-only",
 								"wave": "sine",
-								"period": 2,
+								"period": 2.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 5,
-								"magnitude": 2,
+								"magnitude": 8,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -4628,8 +4628,8 @@
 					"world": {
 						"x": 304,
 						"y": 1344,
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
