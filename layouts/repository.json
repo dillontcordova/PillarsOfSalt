@@ -46,8 +46,8 @@
 					"type": "minmap_tm",
 					"properties": {
 						"initially-visible": true,
-						"tile-width": 16,
-						"tile-height": 16,
+						"tile-width": 32,
+						"tile-height": 32,
 						"tile-x-offset": 0,
 						"tile-y-offset": 0,
 						"tile-x-spacing": 0,
@@ -61,14 +61,14 @@
 					"behaviors": {},
 					"ownData": {
 						"tilemapData": {
-							"width": 14,
-							"height": 11,
+							"width": 7,
+							"height": 5,
 							"max-width": 52,
 							"max-height": 20,
 							"data": "1040x0"
 						},
-						"tile-width": 16,
-						"tile-height": 16,
+						"tile-width": 32,
+						"tile-height": 32,
 						"tile-x-offset": 0,
 						"tile-y-offset": 0,
 						"tile-x-spacing": 0,
