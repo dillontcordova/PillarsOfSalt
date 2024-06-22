@@ -3807,7 +3807,7 @@
 									"objectClass": "enemies",
 									"sid": 624210244086526,
 									"parameters": {
-										"object": "deathOnTouch"
+										"object": "deathOnTouch_tb"
 									}
 								}
 							],

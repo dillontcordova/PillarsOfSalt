@@ -1056,7 +1056,15 @@
 													"objectClass": "spr_playerActual",
 													"sid": 406106248370202,
 													"parameters": {
-														"object": "deathOnTouch"
+														"object": "deathOnTouch_tb"
+													}
+												},
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "spr_playerActual",
+													"sid": 180115801304671,
+													"parameters": {
+														"object": "deathOnTouch_spr"
 													}
 												}
 											],
@@ -1075,7 +1083,8 @@
 													"sid": 118638376570214
 												}
 											],
-											"sid": 849090669153928
+											"sid": 849090669153928,
+											"isOrBlock": true
 										},
 										{
 											"eventType": "block",

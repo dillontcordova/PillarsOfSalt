@@ -415,7 +415,8 @@
 			"screenCrosshair_spr",
 			"boatMan_spr",
 			"spikeWoodTrap_spr_tb",
-			"spikeWood_spr_tb"
+			"spikeWood_spr_tb",
+			"9patch"
 		],
 		"subfolders": [
 			{
@@ -761,7 +762,8 @@
 					"spr_vegetation",
 					"spr_gear",
 					"tikiTallTorchWall_spr",
-					"tikiTallTorchSmall_spr"
+					"tikiTallTorchSmall_spr",
+					"spr_platformBridge2"
 				],
 				"subfolders": [],
 				"name": "staticMapObjects"
@@ -803,7 +805,7 @@
 			"enemyChase",
 			"doors",
 			"keys",
-			"deathOnTouch",
+			"deathOnTouch_tb",
 			"exitScenes",
 			"tileMaps",
 			"enemyAir",
@@ -815,7 +817,8 @@
 			"lightAura",
 			"lightSource",
 			"mapIcons",
-			"mapItems"
+			"mapItems",
+			"deathOnTouch_spr"
 		],
 		"subfolders": []
 	},
