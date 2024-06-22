@@ -11,14 +11,14 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3866454,
+						"imageSpriteId": 3892651,
 						"collisionPoly": {
 							"points": [
 								0.3125,
@@ -36,14 +36,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1939046,
+						"imageSpriteId": 9466820,
 						"collisionPoly": {
 							"points": [
 								0.25,
@@ -61,27 +61,27 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7858172,
+						"imageSpriteId": 9758233,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6010195,
+						"imageSpriteId": 1184693,
 						"collisionPoly": {
 							"points": [
 								0.1875,
@@ -99,14 +99,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4819190,
+						"imageSpriteId": 5110414,
 						"collisionPoly": {
 							"points": [
 								0.1875,
@@ -125,7 +125,7 @@
 					}
 				],
 				"sid": 841493577397830,
-				"name": "Animation 2",
+				"name": "idle",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

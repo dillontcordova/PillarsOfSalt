@@ -11,14 +11,14 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9206468,
+						"imageSpriteId": 9165213,
 						"collisionPoly": {
 							"points": [
 								0.5,
@@ -42,14 +42,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2561801,
+						"imageSpriteId": 9671507,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -67,14 +67,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5676635,
+						"imageSpriteId": 6276914,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -92,14 +92,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9108101,
+						"imageSpriteId": 2009195,
 						"collisionPoly": {
 							"points": [
 								0.6875,
@@ -121,14 +121,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2321836,
+						"imageSpriteId": 6901750,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -152,14 +152,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3211380,
+						"imageSpriteId": 2188090,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -185,14 +185,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9755901,
+						"imageSpriteId": 9800395,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -218,14 +218,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8120875,
+						"imageSpriteId": 1733475,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -251,14 +251,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6639549,
+						"imageSpriteId": 8433501,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -284,14 +284,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1802437,
+						"imageSpriteId": 5115639,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -315,14 +315,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4607126,
+						"imageSpriteId": 5716554,
 						"collisionPoly": {
 							"points": [
 								0.5,
@@ -346,14 +346,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6634346,
+						"imageSpriteId": 9084324,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -373,14 +373,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8681,
+						"imageSpriteId": 9184033,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -398,14 +398,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7052810,
+						"imageSpriteId": 3044575,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -434,14 +434,14 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6319094,
+						"imageSpriteId": 7014424,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -467,14 +467,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3018291,
+						"imageSpriteId": 250374,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -500,14 +500,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5599741,
+						"imageSpriteId": 700246,
 						"collisionPoly": {
 							"points": [
 								0.6875,
@@ -533,14 +533,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4611647,
+						"imageSpriteId": 3186589,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -558,14 +558,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1929639,
+						"imageSpriteId": 7172261,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -583,14 +583,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9276412,
+						"imageSpriteId": 1090272,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -608,14 +608,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 709651,
+						"imageSpriteId": 2069918,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -632,14 +632,14 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6476528,
+						"imageSpriteId": 8422639,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -665,14 +665,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 542725,
+						"imageSpriteId": 6600032,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -698,14 +698,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 878350,
+						"imageSpriteId": 328516,
 						"collisionPoly": {
 							"points": [
 								0.8125,
@@ -731,14 +731,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4325305,
+						"imageSpriteId": 5203226,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -764,14 +764,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5381182,
+						"imageSpriteId": 4912103,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -808,14 +808,14 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8547091,
+						"imageSpriteId": 9928444,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -841,14 +841,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5425633,
+						"imageSpriteId": 3695392,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -874,14 +874,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2197424,
+						"imageSpriteId": 5132408,
 						"collisionPoly": {
 							"points": [
 								0.8125,
@@ -907,14 +907,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7332233,
+						"imageSpriteId": 4375632,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -940,14 +940,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 16,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2160124,
+						"imageSpriteId": 4371052,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -984,14 +984,14 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6536590,
+						"imageSpriteId": 1898691,
 						"collisionPoly": {
 							"points": [
 								0.5,
@@ -1015,14 +1015,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 440799,
+						"imageSpriteId": 9387648,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -1040,14 +1040,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4541923,
+						"imageSpriteId": 1126658,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -1065,14 +1065,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6817023,
+						"imageSpriteId": 7890911,
 						"collisionPoly": {
 							"points": [
 								0.6875,
@@ -1094,14 +1094,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4237172,
+						"imageSpriteId": 924991,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -1125,14 +1125,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2833670,
+						"imageSpriteId": 3198042,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -1158,14 +1158,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 772318,
+						"imageSpriteId": 8615867,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -1191,14 +1191,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8260969,
+						"imageSpriteId": 132777,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -1224,14 +1224,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3215466,
+						"imageSpriteId": 3289993,
 						"collisionPoly": {
 							"points": [
 								0.875,
@@ -1257,14 +1257,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4047166,
+						"imageSpriteId": 7504556,
 						"collisionPoly": {
 							"points": [
 								0.75,
@@ -1288,14 +1288,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3354387,
+						"imageSpriteId": 325706,
 						"collisionPoly": {
 							"points": [
 								0.5,
@@ -1319,14 +1319,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1566630,
+						"imageSpriteId": 8781727,
 						"collisionPoly": {
 							"points": [
 								0.9375,
@@ -1346,14 +1346,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6927967,
+						"imageSpriteId": 1601650,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -1371,14 +1371,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4303373,
+						"imageSpriteId": 9151300,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -1396,14 +1396,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7353274,
+						"imageSpriteId": 7632145,
 						"collisionPoly": {
 							"points": [
 								0.5,
@@ -1421,14 +1421,14 @@
 						"tag": ""
 					},
 					{
-						"width": 16,
-						"height": 24,
+						"width": 32,
+						"height": 48,
 						"originX": 0.5,
 						"originY": 0.7083333333333334,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9425340,
+						"imageSpriteId": 3901983,
 						"collisionPoly": {
 							"points": [
 								0.5,

@@ -22,14 +22,14 @@
 			{
 				"frames": [
 					{
-						"width": 10,
-						"height": 10,
+						"width": 20,
+						"height": 20,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2263730,
+						"imageSpriteId": 2016236,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

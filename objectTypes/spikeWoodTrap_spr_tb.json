@@ -64,7 +64,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "free"
 					},
 					{
 						"width": 32,
@@ -89,7 +89,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "free"
 					},
 					{
 						"width": 32,
@@ -279,7 +279,7 @@
 					}
 				],
 				"sid": 558971804779700,
-				"name": "Animation 1",
+				"name": "idle",
 				"isLooping": true,
 				"isPingPong": true,
 				"repeatCount": 1,

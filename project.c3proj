@@ -710,7 +710,7 @@
 				"items": [
 					"spr_suspendedTrap",
 					"spr_trapHanger",
-					"9patch",
+					"trapBar_9patch",
 					"spr_suspendedTrapSpawn"
 				],
 				"subfolders": [],

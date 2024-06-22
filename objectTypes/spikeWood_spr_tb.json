@@ -96,7 +96,7 @@
 					}
 				],
 				"sid": 511261750832125,
-				"name": "Animation 1",
+				"name": "idle",
 				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,
