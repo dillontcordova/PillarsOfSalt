@@ -33,7 +33,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
 						"width": 48,
@@ -58,7 +58,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
 						"width": 48,
@@ -83,7 +83,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
 						"width": 48,
@@ -108,7 +108,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					}
 				],
 				"sid": 759509100759031,
@@ -144,7 +144,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
 						"width": 48,
@@ -169,7 +169,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
 						"width": 48,
@@ -194,7 +194,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
 						"width": 48,
@@ -219,7 +219,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					}
 				],
 				"sid": 212297464458885,

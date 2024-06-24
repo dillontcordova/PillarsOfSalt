@@ -1,0 +1,89 @@
+{
+	"name": "breakAparts_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Break Aparts",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "breakable",
+							"sid": 565701835469510,
+							"parameters": {
+								"object": "spr_meleeSlashTileMap"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 377205534496064,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "first break apart"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "pieceApartBreakable",
+									"sid": 161638680476291
+								}
+							],
+							"sid": 391432752015135
+						},
+						{
+							"eventType": "comment",
+							"text": "then change animation"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "breakable",
+									"sid": 348611877236743,
+									"parameters": {
+										"animation": "Self.AnimationName & \"Cut\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 145994721663788
+						}
+					]
+				},
+				{
+					"functionName": "pieceApartBreakable",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 643406609999425,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 196445959558032
+						}
+					]
+				}
+			],
+			"sid": 639154967286904
+		}
+	],
+	"sid": 438404129637243
+}

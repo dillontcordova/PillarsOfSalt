@@ -414,8 +414,6 @@
 			"ShadowLight",
 			"screenCrosshair_spr",
 			"boatMan_spr",
-			"spikeWoodTrap_spr_tb",
-			"spikeWood_spr_tb",
 			"9patch"
 		],
 		"subfolders": [
@@ -720,7 +718,9 @@
 					"spr_suspendedTrap",
 					"spr_trapHanger",
 					"trapBar_9patch",
-					"spr_suspendedTrapSpawn"
+					"spr_suspendedTrapSpawn",
+					"spikeWood_spr_tb",
+					"spikeWoodTrap_spr_tb"
 				],
 				"subfolders": [],
 				"name": "traps"
@@ -818,7 +818,9 @@
 			"lightSource",
 			"mapIcons",
 			"mapItems",
-			"deathOnTouch_spr"
+			"deathOnTouch_spr",
+			"traps",
+			"breakable"
 		],
 		"subfolders": []
 	},
@@ -878,7 +880,8 @@
 			"dialog_e",
 			"sfx_e",
 			"atmospheric_e",
-			"miniMap_e"
+			"miniMap_e",
+			"breakAparts_e"
 		],
 		"subfolders": [
 			{

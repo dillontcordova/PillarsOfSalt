@@ -58,6 +58,92 @@
 						}
 					],
 					"sid": 383712418036051
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "traps",
+							"sid": 645496461952494,
+							"parameters": {
+								"object": "spr_playerActual"
+							}
+						},
+						{
+							"id": "compare-animation-frame-tag",
+							"objectClass": "traps",
+							"sid": 855670076354951,
+							"parameters": {
+								"comparison": 0,
+								"tag": "\"pain\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 936827320821480,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "traps",
+									"sid": 681735571375159,
+									"parameters": {
+										"instance-variable": "isRespawnHit"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 647311616697459,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "spr_playerActual",
+											"sid": 491488069186317,
+											"parameters": {
+												"instance-variable": "isSafe"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "safeSpotRespawn",
+											"sid": 128139042448550,
+											"parameters": [
+												"1"
+											]
+										}
+									],
+									"sid": 771009800725531
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 412481581539703
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "playerHit",
+									"sid": 379813832106027,
+									"parameters": [
+										"traps.damage"
+									]
+								}
+							],
+							"sid": 158655036233000
+						}
+					]
 				}
 			],
 			"sid": 536069839792915

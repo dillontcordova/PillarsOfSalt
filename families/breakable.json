@@ -1,0 +1,11 @@
+{
+	"name": "breakable",
+	"plugin-id": "Sprite",
+	"sid": 314197860861866,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_vegetation"
+	]
+}

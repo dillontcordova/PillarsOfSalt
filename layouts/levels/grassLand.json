@@ -1129,6 +1129,57 @@
 								"angle": 0,
 								"zElevation": 0
 							}
+						},
+						{
+							"type": "spikeWoodTrap_spr_tb",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 5,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 433,
+							"instanceVariables": {
+								"isRespawnHit": false,
+								"damage": 1
+							},
+							"behaviors": {
+								"tiled_sprite": {
+									"properties": {
+										"wrap-horizontal": "repeat",
+										"wrap-vertical": "mirror",
+										"image-offset-x": 0,
+										"image-offset-y": 0,
+										"image-scale-x": 1,
+										"image-scale-y": 1,
+										"image-angle": 0,
+										"enable-randomization": false,
+										"x-random": 1,
+										"y-random": 1,
+										"angle-random": 1,
+										"blend-margin-x": 0.1,
+										"blend-margin-y": 0.1,
+										"asset-loading": "force"
+									}
+								}
+							},
+							"world": {
+								"x": 1520,
+								"y": 1040,
+								"width": 96,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
 						}
 					],
 					"sid": 646567993949426,
@@ -2503,11 +2554,14 @@
 						"initially-visible": true,
 						"initial-animation": "idleSmall",
 						"initial-frame": 0,
-						"enable-collisions": false,
+						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 388,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"isRespawnHit": false,
+						"damage": 1
+					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": 420,
@@ -2683,21 +2737,6 @@
 									"d": true,
 									"sm": "normal"
 								}
-							},
-							{
-								"uid": 421,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								}
 							}
 						],
 						"flags": {
@@ -2732,73 +2771,6 @@
 						"height": 20,
 						"originX": 0.5,
 						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "tb_respawnTouchBox",
-					"properties": {
-						"initially-visible": false,
-						"origin": "top",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 421,
-					"instanceVariables": {},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 420,
-						"uid": 421,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 2.220446049250313e-16,
-							"transformH": 2.220446049250313e-16,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 888,
-						"y": 404,
-						"width": 40,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -2956,8 +2928,8 @@
 						}
 					},
 					"world": {
-						"x": 1232,
-						"y": 400,
+						"x": 1136,
+						"y": 416,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -3016,8 +2988,8 @@
 						}
 					},
 					"world": {
-						"x": 1264,
-						"y": 400,
+						"x": 1456,
+						"y": 544,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -3076,8 +3048,8 @@
 						}
 					},
 					"world": {
-						"x": 1424,
-						"y": 400,
+						"x": 1960,
+						"y": 576,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -3136,8 +3108,8 @@
 						}
 					},
 					"world": {
-						"x": 1392,
-						"y": 400,
+						"x": 2104,
+						"y": 576,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -3196,8 +3168,8 @@
 						}
 					},
 					"world": {
-						"x": 1344,
-						"y": 400,
+						"x": 1376,
+						"y": 544,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -3616,8 +3588,8 @@
 						}
 					},
 					"world": {
-						"x": 1144,
-						"y": 576,
+						"x": 1136,
+						"y": 544,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -3796,8 +3768,8 @@
 						}
 					},
 					"world": {
-						"x": 880,
-						"y": 528,
+						"x": 936,
+						"y": 448,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -4027,8 +3999,8 @@
 					"world": {
 						"x": 320,
 						"y": 1168,
-						"width": 32,
-						"height": 8,
+						"width": 64,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -4085,8 +4057,8 @@
 						}
 					},
 					"world": {
-						"x": 1520,
-						"y": 400,
+						"x": 1832,
+						"y": 448,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -4818,8 +4790,8 @@
 						}
 					},
 					"world": {
-						"x": 1360,
-						"y": 400,
+						"x": 2024,
+						"y": 576,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -4878,8 +4850,8 @@
 						}
 					},
 					"world": {
-						"x": 1248,
-						"y": 400,
+						"x": 968,
+						"y": 448,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -4938,8 +4910,8 @@
 						}
 					},
 					"world": {
-						"x": 1296,
-						"y": 400,
+						"x": 1280,
+						"y": 544,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -4998,8 +4970,8 @@
 						}
 					},
 					"world": {
-						"x": 1312,
-						"y": 400,
+						"x": 2160,
+						"y": 576,
 						"width": 32,
 						"height": 32,
 						"originX": 0,
@@ -5178,8 +5150,8 @@
 						}
 					},
 					"world": {
-						"x": 304,
-						"y": 1344,
+						"x": 392,
+						"y": 800,
 						"width": 32,
 						"height": 32,
 						"originX": 0,

@@ -1070,17 +1070,11 @@
 											],
 											"actions": [
 												{
-													"id": "set-boolean-instvar",
-													"objectClass": "spr_playerActual",
-													"sid": 515228445121703,
-													"parameters": {
-														"instance-variable": "isSafe",
-														"value": "false"
-													}
-												},
-												{
 													"callFunction": "safeSpotRespawn",
-													"sid": 118638376570214
+													"sid": 118638376570214,
+													"parameters": [
+														"1"
+													]
 												}
 											],
 											"sid": 849090669153928,
@@ -1171,10 +1165,10 @@
 														{
 															"id": "set-eventvar-value",
 															"objectClass": "System",
-															"sid": 122810764916049,
+															"sid": 757312999909684,
 															"parameters": {
 																"variable": "safeX",
-																"value": "(playerX - (playerX % 16)) + 8"
+																"value": "(playerX - (playerX % 32)) + 16"
 															}
 														}
 													],
@@ -1247,15 +1241,32 @@
 											"functionReturnType": "none",
 											"functionCopyPicked": true,
 											"functionIsAsync": false,
-											"functionParameters": [],
+											"functionParameters": [
+												{
+													"name": "damage",
+													"type": "number",
+													"initialValue": "1",
+													"comment": "",
+													"sid": 282041766756581
+												}
+											],
 											"eventType": "function-block",
 											"conditions": [],
 											"actions": [
 												{
+													"id": "set-boolean-instvar",
+													"objectClass": "spr_playerActual",
+													"sid": 521368244133870,
+													"parameters": {
+														"instance-variable": "isSafe",
+														"value": "false"
+													}
+												},
+												{
 													"callFunction": "playerTakeDamage",
-													"sid": 602109042388001,
+													"sid": 549394134370912,
 													"parameters": [
-														"1",
+														"damage",
 														false
 													]
 												}

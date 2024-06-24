@@ -2485,7 +2485,10 @@
 						"live-preview": false
 					},
 					"uid": 188,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"isRespawnHit": false,
+						"damage": 1
+					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": 190,
@@ -4901,12 +4904,15 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "idle",
-						"initial-frame": 0,
+						"initial-frame": 5,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 416,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"isRespawnHit": false,
+						"damage": 1
+					},
 					"behaviors": {
 						"tiled_sprite": {
 							"properties": {
@@ -4928,8 +4934,8 @@
 						}
 					},
 					"world": {
-						"x": 521.9552001953125,
-						"y": 371.92431640625,
+						"x": 502,
+						"y": 384,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,

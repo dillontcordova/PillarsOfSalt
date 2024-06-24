@@ -50,6 +50,10 @@
 			"includeSheet": "miniMap_e"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "breakAparts_e"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
