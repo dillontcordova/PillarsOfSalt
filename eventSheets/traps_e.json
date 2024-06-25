@@ -26,7 +26,8 @@
 								"object": "spr_trapHanger",
 								"layer": "\"bgCharacters\"",
 								"image-point": "0",
-								"create-hierarchy": true
+								"create-hierarchy": true,
+								"template-name": "\"\""
 							}
 						},
 						{

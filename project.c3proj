@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 38802,
+	"savedWithRelease": 39700,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -82,7 +82,7 @@
 			"name": "Utils",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "2.1"
+			"version": "1.2"
 		},
 		{
 			"type": "plugin",
@@ -785,6 +785,14 @@
 				],
 				"subfolders": [],
 				"name": "minimap"
+			},
+			{
+				"items": [
+					"brokenPiece_canvas",
+					"center_spr"
+				],
+				"subfolders": [],
+				"name": "breakables"
 			}
 		]
 	},
@@ -1262,7 +1270,6 @@
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
-		"compositingMode": "standard",
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"renderingMode": "auto",

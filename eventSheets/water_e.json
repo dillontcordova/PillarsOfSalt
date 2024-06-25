@@ -80,7 +80,7 @@
 						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "platerWater",
+							"title": "splaterWater",
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [
@@ -137,12 +137,13 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "spr_boxFloat",
-											"sid": 473486637442011,
+											"sid": 903034737969557,
 											"parameters": {
 												"object": "Particles_splash",
-												"layer": "spr_boxFloat.LayerName",
+												"layer": "spr_playerActual.LayerName",
 												"image-point": "0",
-												"create-hierarchy": false
+												"create-hierarchy": false,
+												"template-name": "\"\""
 											}
 										},
 										{
@@ -151,6 +152,19 @@
 											"sid": 864569825811851,
 											"parameters": {
 												"angle": "270"
+											}
+										},
+										{
+											"id": "move-to-top",
+											"objectClass": "Particles_splash",
+											"sid": 872386234071624
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Particles_splash",
+											"sid": 580992885286157,
+											"parameters": {
+												"color": "tb_water.ColorValue"
 											}
 										}
 									],
@@ -186,8 +200,7 @@
 											}
 										}
 									],
-									"sid": 539893370004174,
-									"disabled": true
+									"sid": 539893370004174
 								}
 							],
 							"sid": 432468087344805
@@ -366,7 +379,8 @@
 																"object": "Particles_splash",
 																"layer": "spr_boxFloat.LayerName",
 																"image-point": "\"splash\"",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{

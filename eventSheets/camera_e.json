@@ -105,7 +105,8 @@
 								"object": "spr_visibilityBounding",
 								"layer": "Self.LayerName",
 								"image-point": "0",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{

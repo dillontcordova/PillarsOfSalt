@@ -1648,7 +1648,8 @@
 																"object": "par_upgrade",
 																"layer": "Self.LayerName",
 																"image-point": "1",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -1672,7 +1673,8 @@
 																"object": "par_upgradeComplete",
 																"layer": "Self.LayerName",
 																"image-point": "1",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -2344,7 +2346,8 @@
 														"object": "par_refresh",
 														"layer": "\"fgCharacters\"",
 														"image-point": "\"center\"",
-														"create-hierarchy": false
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												},
 												{
@@ -3327,7 +3330,8 @@
 																"object": "par_fallFire",
 																"layer": "\"map\"",
 																"image-point": "2",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -3534,7 +3538,8 @@
 																"object": "spr_shootFire",
 																"layer": "Self.LayerName",
 																"image-point": "\"shoot\"",
-																"create-hierarchy": true
+																"create-hierarchy": true,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -5608,7 +5613,8 @@
 																				"object": "spr_meleeSlash",
 																				"layer": "dolls.LayerName",
 																				"image-point": "\"atkPoint\"",
-																				"create-hierarchy": true
+																				"create-hierarchy": true,
+																				"template-name": "\"\""
 																			}
 																		},
 																		{
@@ -5846,7 +5852,8 @@
 														"object": "spr_hitMark",
 														"layer": "Self.LayerName",
 														"image-point": "\"contact\"",
-														"create-hierarchy": false
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												},
 												{
@@ -5888,7 +5895,8 @@
 																"object": "par_hit",
 																"layer": "spr_meleeSlash.LayerName",
 																"image-point": "0",
-																"create-hierarchy": false
+																"create-hierarchy": false,
+																"template-name": "\"\""
 															}
 														},
 														{
@@ -6054,7 +6062,10 @@
 										{
 											"id": "reset-global-variables",
 											"objectClass": "System",
-											"sid": 651444513149081
+											"sid": 651444513149081,
+											"parameters": {
+												"reset-static": false
+											}
 										},
 										{
 											"callFunction": "gameOver",

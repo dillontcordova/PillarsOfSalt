@@ -180,7 +180,8 @@
 										"object": "spr_logoBullet",
 										"layer": "0",
 										"image-point": "1",
-										"create-hierarchy": false
+										"create-hierarchy": false,
+										"template-name": "\"\""
 									}
 								},
 								{

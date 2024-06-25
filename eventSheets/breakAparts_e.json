@@ -9,80 +9,715 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "pieceCount",
+					"type": "number",
+					"initialValue": "4",
+					"comment": "best as 4 || 9 || 16",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 237176542779461
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-collision-with-another-object",
+							"id": "is-overlapping-another-object",
 							"objectClass": "breakable",
-							"sid": 565701835469510,
+							"sid": 622723948220618,
 							"parameters": {
 								"object": "spr_meleeSlashTileMap"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 369190821091385
 						}
 					],
-					"actions": [],
-					"sid": 377205534496064,
+					"actions": [
+						{
+							"callFunction": "breakApart",
+							"sid": 314967141130432,
+							"parameters": [
+								"pieceCount",
+								false
+							]
+						}
+					],
+					"sid": 793045948266604
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 869878922685790,
+							"parameters": {
+								"key": 82
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 457030191595614
+						}
+					],
+					"sid": 260817760674842
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "brokenPiece_canvas",
+							"sid": 677437266088336,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"pasted\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "applybrokenForce",
+							"sid": 872477856198359,
+							"parameters": [
+								true
+							]
+						}
+					],
+					"sid": 342004469318904
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Group1",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "first break apart"
+							"text": "if floating"
 						},
 						{
 							"eventType": "block",
-							"conditions": [],
-							"actions": [
+							"conditions": [
 								{
-									"callFunction": "pieceApartBreakable",
-									"sid": 161638680476291
-								}
-							],
-							"sid": 391432752015135
-						},
-						{
-							"eventType": "comment",
-							"text": "then change animation"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "breakable",
-									"sid": 348611877236743,
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "brokenPiece_canvas",
+									"sid": 569883608319561,
 									"parameters": {
-										"animation": "Self.AnimationName & \"Cut\"",
-										"from": "beginning"
+										"instance-variable": "isBroken"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "brokenPiece_canvas",
+									"sid": 317013950993590,
+									"parameters": {
+										"instance-variable": "isFloat"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 518118182048602,
+									"parameters": {
+										"interval-seconds": ".01"
 									}
 								}
 							],
-							"sid": 145994721663788
-						}
-					]
-				},
-				{
-					"functionName": "pieceApartBreakable",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": true,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 643406609999425,
-					"children": [
+							"actions": [
+								{
+									"id": "apply-force-at-angle",
+									"objectClass": "brokenPiece_canvas",
+									"sid": 583256514017636,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force": "(Self.Width * Self.Height) / 300",
+										"angle": "Self.angleForce",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 962507290325198
+						},
 						{
-							"eventType": "block",
+							"functionName": "applybrokenForce",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "isFloat",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 347114836268739
+								}
+							],
+							"eventType": "function-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 196445959558032
+							"sid": 637710910607758,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "start-fade",
+											"objectClass": "brokenPiece_canvas",
+											"sid": 247725597984905,
+											"behaviorType": "Fade"
+										},
+										{
+											"id": "enabledisable-collisions",
+											"objectClass": "brokenPiece_canvas",
+											"sid": 824042582148013,
+											"behaviorType": "Physics",
+											"parameters": {
+												"object": "brokenPiece_canvas",
+												"state": "disable"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "brokenPiece_canvas",
+											"sid": 703625417378702,
+											"behaviorType": "Physics",
+											"parameters": {
+												"mode": "enabled"
+											}
+										},
+										{
+											"id": "set-prevent-rotation",
+											"objectClass": "brokenPiece_canvas",
+											"sid": 881169011213363,
+											"behaviorType": "Physics",
+											"parameters": {
+												"setting": "prevent-rotations"
+											}
+										}
+									],
+									"sid": 668815680928912,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 106509916302163,
+													"parameters": {
+														"variable": "isFloat"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 292739071626790,
+													"parameters": {
+														"instance-variable": "angleForce",
+														"value": "random(225, 315)"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 414459041536407,
+													"parameters": {
+														"instance-variable": "isFloat",
+														"value": "true"
+													}
+												},
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 358366391736090,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "(Self.Width * Self.Height) / 500",
+														"angle": "Self.angleForce",
+														"image-point": "0"
+													}
+												}
+											],
+											"sid": 689024629604679
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 432690814140977
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 711300165270860,
+													"parameters": {
+														"instance-variable": "angleForce",
+														"value": "-90"
+													}
+												},
+												{
+													"id": "enabledisable-collisions",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 259891389555794,
+													"behaviorType": "Physics",
+													"parameters": {
+														"object": "brokenPiece_canvas",
+														"state": "enable"
+													}
+												},
+												{
+													"id": "apply-force-at-angle",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 349447568875964,
+													"behaviorType": "Physics",
+													"parameters": {
+														"force": "(Self.Width * Self.Height) / 500",
+														"angle": "Self.angleForce",
+														"image-point": "0"
+													}
+												}
+											],
+											"sid": 448375307589062
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 747452334317255,
+													"parameters": {
+														"seconds": ".1"
+													}
+												},
+												{
+													"id": "set-prevent-rotation",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 175605080103615,
+													"behaviorType": "Physics",
+													"parameters": {
+														"setting": "dont-prevent-rotations"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 848223540727007,
+													"parameters": {
+														"instance-variable": "isBroken",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 886040117149715
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "breakApart",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": true,
+							"functionParameters": [
+								{
+									"name": "divide",
+									"type": "number",
+									"initialValue": "4",
+									"comment": "",
+									"sid": 530291507267652
+								},
+								{
+									"name": "isMessy",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 518237600366649
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 823301503696361,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "compNum",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 891115470588752
+								},
+								{
+									"eventType": "variable",
+									"name": "cWidth",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 477007230973021
+								},
+								{
+									"eventType": "variable",
+									"name": "cArea",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 920087030287206
+								},
+								{
+									"eventType": "variable",
+									"name": "xLoopLength",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 237940997378542
+								},
+								{
+									"eventType": "variable",
+									"name": "yLoopLength",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 602427713611843
+								},
+								{
+									"eventType": "variable",
+									"name": "topLeftX",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 864538189962791
+								},
+								{
+									"eventType": "variable",
+									"name": "topLeftY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 224498835410345
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 399750440575346,
+											"parameters": {
+												"variable": "cArea",
+												"value": "(breakable.Width * breakable.Height) / divide"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 523307478583163,
+											"parameters": {
+												"variable": "cWidth",
+												"value": "sqrt(cArea)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 832810685673038,
+											"parameters": {
+												"variable": "xLoopLength",
+												"value": "ceil(breakable.Width / cWidth)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 808824153698572,
+											"parameters": {
+												"variable": "yLoopLength",
+												"value": "floor(breakable.Height / cWidth)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 790030016474840,
+											"parameters": {
+												"variable": "topLeftX",
+												"value": "breakable.X - breakable.Width/2"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 653237817082801,
+											"parameters": {
+												"variable": "topLeftY",
+												"value": "breakable.Y - breakable.Height/2"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 960809555745237,
+											"parameters": {
+												"object-to-create": "center_spr",
+												"layer": "breakable.LayerName",
+												"x": "breakable.ImagePointX(0)",
+												"y": "breakable.ImagePointY(0)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 439194191743437,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-last-created",
+													"objectClass": "System",
+													"sid": 196259222436226,
+													"parameters": {
+														"object": "center_spr"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "add-child",
+													"objectClass": "breakable",
+													"sid": 285134150922109,
+													"parameters": {
+														"child": "center_spr",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": true,
+														"transform-o": false,
+														"transform-z-elevation": false,
+														"transform-visibility": false,
+														"destroy-with-parent": true
+													}
+												}
+											],
+											"sid": 287905116103799,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for",
+															"objectClass": "System",
+															"sid": 133348889881581,
+															"parameters": {
+																"name": "\"outerXLoop\"",
+																"start-index": "0",
+																"end-index": "xLoopLength-1"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 700005109151292,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 511505904019761,
+																	"parameters": {
+																		"name": "\"innerYLoop\"",
+																		"start-index": "0",
+																		"end-index": "xLoopLength - 1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 210418926876922,
+																	"parameters": {
+																		"object-to-create": "brokenPiece_canvas",
+																		"layer": "breakable.LayerName",
+																		"x": "topLeftX + (cWidth / 2) + loopindex(\"outerXLoop\") * cWidth",
+																		"y": "topLeftY + (cWidth / 2) + loopindex(\"innerYLoop\") * cWidth",
+																		"create-hierarchy": true,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "add-child",
+																	"objectClass": "center_spr",
+																	"sid": 733787066746821,
+																	"parameters": {
+																		"child": "brokenPiece_canvas",
+																		"transform-x": true,
+																		"transform-y": true,
+																		"transform-w": false,
+																		"transform-h": false,
+																		"transform-a": true,
+																		"transform-o": false,
+																		"transform-z-elevation": false,
+																		"transform-visibility": false,
+																		"destroy-with-parent": false
+																	}
+																},
+																{
+																	"id": "set-size",
+																	"objectClass": "brokenPiece_canvas",
+																	"sid": 459733179631271,
+																	"parameters": {
+																		"width": "cWidth",
+																		"height": "cWidth"
+																	}
+																}
+															],
+															"sid": 859315317167392
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "center_spr",
+															"sid": 403099688187961,
+															"parameters": {
+																"child": "brokenPiece_canvas",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 864122604063850,
+													"children": [
+														{
+															"eventType": "comment",
+															"text": "apply angle early so that the pieces fall immediately and paste become sloppy and misaligned. bug now equals feature!"
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 522975389445320,
+																	"parameters": {
+																		"variable": "isMessy"
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-angle",
+																	"objectClass": "center_spr",
+																	"sid": 941303043720660,
+																	"parameters": {
+																		"angle": "breakable.Angle"
+																	}
+																}
+															],
+															"sid": 560288021939267
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "paste-object",
+																	"objectClass": "brokenPiece_canvas",
+																	"sid": 593960217245396,
+																	"parameters": {
+																		"object": "breakable",
+																		"effects": "with-effects"
+																	}
+																},
+																{
+																	"id": "wait-for-previous-actions",
+																	"objectClass": "System",
+																	"sid": 244037098354010
+																},
+																{
+																	"id": "destroy",
+																	"objectClass": "breakable",
+																	"sid": 728056873722995
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "breakable",
+																	"sid": 100890537877897,
+																	"parameters": {
+																		"animation": "Self.AnimationName & \"Cut\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "start-timer",
+																	"objectClass": "brokenPiece_canvas",
+																	"sid": 741494756709674,
+																	"behaviorType": "Timer",
+																	"parameters": {
+																		"duration": "0",
+																		"type": "once",
+																		"tag": "\"pasted\""
+																	}
+																}
+															],
+															"sid": 480048830459396
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
 						}
-					]
+					],
+					"sid": 728594522523012
 				}
 			],
-			"sid": 639154967286904
+			"sid": 184812215946840
 		}
 	],
 	"sid": 438404129637243

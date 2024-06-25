@@ -3986,7 +3986,7 @@
 						"initially-visible": true,
 						"live-preview": false,
 						"speed": 200,
-						"size": 1,
+						"size": 3,
 						"opacity": 100,
 						"grow-rate": 0,
 						"x-randomiser": 20,
@@ -4000,7 +4000,7 @@
 						"life-speed-randomiser": 500,
 						"opacity-randomiser": 50,
 						"destroy-mode": "fade-to-invisible",
-						"timeout": 0.4
+						"timeout": 0.5
 					},
 					"uid": 189,
 					"instanceVariables": {},
@@ -4805,8 +4805,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 270,
-						"y": 497,
+						"x": 638,
+						"y": 314,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -5113,6 +5113,66 @@
 						"y": 486,
 						"width": 16,
 						"height": 106,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "brokenPiece_canvas",
+					"properties": {
+						"resolution-mode": "auto",
+						"initially-visible": true,
+						"origin": "top-left",
+						"antialiasing": "off"
+					},
+					"uid": 421,
+					"instanceVariables": {
+						"angleForce": 0,
+						"isBroken": false,
+						"isFloat": false
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "bounding-box",
+								"prevent-rotation": false,
+								"density": 1.3,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": true,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 122,
+						"y": 472,
+						"width": 100,
+						"height": 100,
 						"originX": 0,
 						"originY": 0,
 						"color": [
