@@ -38,9 +38,9 @@
 			"sid": 626796381386626
 		},
 		{
-			"behaviorId": "Timer",
-			"name": "Timer",
-			"sid": 735837090916058
+			"behaviorId": "overboy_signals",
+			"name": "Signals",
+			"sid": 472776154399581
 		}
 	],
 	"effectTypes": []

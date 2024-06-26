@@ -22,38 +22,9 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "breakable",
-							"sid": 622723948220618,
-							"parameters": {
-								"object": "spr_meleeSlashTileMap"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 369190821091385
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "breakApart",
-							"sid": 314967141130432,
-							"parameters": [
-								"pieceCount",
-								false
-							]
-						}
-					],
-					"sid": 793045948266604
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 869878922685790,
+							"sid": 982916715981144,
 							"parameters": {
 								"key": 82
 							}
@@ -63,34 +34,97 @@
 						{
 							"id": "restart-layout",
 							"objectClass": "System",
-							"sid": 457030191595614
+							"sid": 449557606183099
 						}
 					],
-					"sid": 260817760674842
+					"sid": 396990590325607
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-timer",
-							"objectClass": "brokenPiece_canvas",
-							"sid": 677437266088336,
-							"behaviorType": "Timer",
+							"id": "on-collision-with-another-object",
+							"objectClass": "breakable",
+							"sid": 761596295979051,
 							"parameters": {
-								"tag": "\"pasted\""
+								"object": "spr_meleeSlashTileMap"
 							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "breakable",
+							"sid": 583191582264880,
+							"parameters": {
+								"instance-variable": "isBroken"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
-							"callFunction": "applybrokenForce",
-							"sid": 872477856198359,
+							"callFunction": "breakApart",
+							"sid": 314967141130432,
 							"parameters": [
-								true
+								"pieceCount"
 							]
 						}
 					],
-					"sid": 342004469318904
+					"sid": 793045948266604
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "OnSignal",
+							"objectClass": "brokenPiece_canvas",
+							"sid": 656721936528719,
+							"behaviorType": "Signals",
+							"parameters": {
+								"name": "\"pasted\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 342004469318904,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "breakable",
+									"sid": 342752178969488,
+									"parameters": {
+										"unique-id": "int(brokenPiece_canvas.Signals.Param(0))"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "breakable",
+									"sid": 324545451980499,
+									"parameters": {
+										"animation": "Self.AnimationName & \"Cut\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "breakable",
+									"sid": 579225154697745,
+									"parameters": {
+										"frame-number": "choose(0,1,2)"
+									}
+								},
+								{
+									"callFunction": "applybrokenForce",
+									"sid": 661329702828737
+								}
+							],
+							"sid": 271063108935916
+						}
+					]
 				},
 				{
 					"eventType": "group",
@@ -100,26 +134,22 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "if floating"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "brokenPiece_canvas",
+									"sid": 973276113521052,
+									"parameters": {
+										"instance-variable": "isFloat"
+									}
+								},
 								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "brokenPiece_canvas",
 									"sid": 569883608319561,
 									"parameters": {
 										"instance-variable": "isBroken"
-									}
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "brokenPiece_canvas",
-									"sid": 317013950993590,
-									"parameters": {
-										"instance-variable": "isFloat"
 									}
 								},
 								{
@@ -153,15 +183,7 @@
 							"functionReturnType": "none",
 							"functionCopyPicked": true,
 							"functionIsAsync": false,
-							"functionParameters": [
-								{
-									"name": "isFloat",
-									"type": "boolean",
-									"initialValue": "false",
-									"comment": "",
-									"sid": 347114836268739
-								}
-							],
+							"functionParameters": [],
 							"eventType": "function-block",
 							"conditions": [],
 							"actions": [],
@@ -184,6 +206,16 @@
 											"behaviorType": "Physics",
 											"parameters": {
 												"object": "brokenPiece_canvas",
+												"state": "disable"
+											}
+										},
+										{
+											"id": "enabledisable-collisions",
+											"objectClass": "brokenPiece_canvas",
+											"sid": 845505855385353,
+											"behaviorType": "Physics",
+											"parameters": {
+												"object": "spr_playerActual",
 												"state": "disable"
 											}
 										},
@@ -212,11 +244,11 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 106509916302163,
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "breakable",
+													"sid": 907459346177125,
 													"parameters": {
-														"variable": "isFloat"
+														"instance-variable": "isFloat"
 													}
 												}
 											],
@@ -237,17 +269,6 @@
 													"parameters": {
 														"instance-variable": "isFloat",
 														"value": "true"
-													}
-												},
-												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "brokenPiece_canvas",
-													"sid": 358366391736090,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "(Self.Width * Self.Height) / 500",
-														"angle": "Self.angleForce",
-														"image-point": "0"
 													}
 												}
 											],
@@ -301,6 +322,17 @@
 											"conditions": [],
 											"actions": [
 												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 399813491929155,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "(Self.Width * Self.Height) / 500",
+														"angle": "Self.angleForce",
+														"image-point": "0"
+													}
+												},
+												{
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 747452334317255,
@@ -319,8 +351,17 @@
 												},
 												{
 													"id": "set-boolean-instvar",
+													"objectClass": "breakable",
+													"sid": 413325322721080,
+													"parameters": {
+														"instance-variable": "isBroken",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
 													"objectClass": "brokenPiece_canvas",
-													"sid": 848223540727007,
+													"sid": 667752967449617,
 													"parameters": {
 														"instance-variable": "isBroken",
 														"value": "true"
@@ -347,13 +388,6 @@
 									"initialValue": "4",
 									"comment": "",
 									"sid": 530291507267652
-								},
-								{
-									"name": "isMessy",
-									"type": "boolean",
-									"initialValue": "false",
-									"comment": "",
-									"sid": 518237600366649
 								}
 							],
 							"eventType": "function-block",
@@ -501,6 +535,14 @@
 												"create-hierarchy": false,
 												"template-name": "\"\""
 											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "center_spr",
+											"sid": 298362682958610,
+											"parameters": {
+												"visibility": "invisible"
+											}
 										}
 									],
 									"sid": 439194191743437,
@@ -638,13 +680,12 @@
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "compare-boolean-eventvar",
-																	"objectClass": "System",
-																	"sid": 522975389445320,
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "breakable",
+																	"sid": 541445287145225,
 																	"parameters": {
-																		"variable": "isMessy"
-																	},
-																	"isInverted": true
+																		"instance-variable": "isMessy"
+																	}
 																}
 															],
 															"actions": [
@@ -673,33 +714,26 @@
 																	}
 																},
 																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 467164643210760,
+																	"parameters": {
+																		"seconds": "0"
+																	}
+																},
+																{
 																	"id": "wait-for-previous-actions",
 																	"objectClass": "System",
 																	"sid": 244037098354010
 																},
 																{
-																	"id": "destroy",
-																	"objectClass": "breakable",
-																	"sid": 728056873722995
-																},
-																{
-																	"id": "set-animation",
-																	"objectClass": "breakable",
-																	"sid": 100890537877897,
-																	"parameters": {
-																		"animation": "Self.AnimationName & \"Cut\"",
-																		"from": "beginning"
-																	}
-																},
-																{
-																	"id": "start-timer",
+																	"id": "CallSignalWithParams",
 																	"objectClass": "brokenPiece_canvas",
-																	"sid": 741494756709674,
-																	"behaviorType": "Timer",
+																	"sid": 691167421081263,
+																	"behaviorType": "Signals",
 																	"parameters": {
-																		"duration": "0",
-																		"type": "once",
-																		"tag": "\"pasted\""
+																		"signal_name": "\"pasted\"",
+																		"parameters": "str(breakable.UID)"
 																	}
 																}
 															],

@@ -1203,7 +1203,7 @@
 					"children": [
 						{
 							"eventType": "script",
-							"script": "const layer = runtime.layout.getLayer(localVars.layerName);\ndebugger;\nif(layer){\n\treturn runtime.setReturnValue(layer.opacity * 100);\n}\nreturn runtime.setReturnValue(0);\n"
+							"script": "const layer = runtime.layout.getLayer(localVars.layerName);\nif(layer){\n\treturn runtime.setReturnValue(layer.opacity * 100);\n}\nreturn runtime.setReturnValue(0);\n"
 						}
 					]
 				}

@@ -312,6 +312,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "overboy_signals",
+			"name": "Signals",
+			"author": "Overboy",
+			"bundled": false,
+			"version": "1.0"
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",

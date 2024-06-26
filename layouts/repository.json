@@ -825,13 +825,17 @@
 					"type": "spr_vegetation",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Back02",
+						"initial-animation": "Back",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 60,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"isMessy": true,
+						"isFloat": true,
+						"isBroken": false
+					},
 					"behaviors": {
 						"Tween": {
 							"properties": {
@@ -852,6 +856,232 @@
 								"live-preview": false
 							}
 						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "grass",
+						"sourceTemplateName": "",
+						"replicaHierarchyInSyncWithTemplate": false,
+						"templatePropagateHierarchyChanges": true,
+						"replicaIgnoreTemplateHierarchyChanges": false,
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "isMessy",
+												"state": true
+											},
+											{
+												"iv": "isFloat",
+												"state": true
+											},
+											{
+												"iv": "isBroken",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Sine",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": [
+									{
+										"key": "SkendPow",
+										"state": [
+											[
+												"skend",
+												true
+											],
+											[
+												"power",
+												true
+											],
+											[
+												"angle",
+												true
+											],
+											[
+												"object-angle",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
 					},
 					"effects": {
 						"SkendPow": {
@@ -5130,7 +5360,7 @@
 					"properties": {
 						"resolution-mode": "auto",
 						"initially-visible": true,
-						"origin": "top-left",
+						"origin": "center",
 						"antialiasing": "off"
 					},
 					"uid": 421,
@@ -5164,17 +5394,17 @@
 								"live-preview": false
 							}
 						},
-						"Timer": {
+						"Signals": {
 							"properties": {}
 						}
 					},
 					"world": {
-						"x": 122,
-						"y": 472,
+						"x": 206,
+						"y": 492,
 						"width": 100,
 						"height": 100,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

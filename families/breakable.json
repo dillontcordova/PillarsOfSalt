@@ -2,7 +2,29 @@
 	"name": "breakable",
 	"plugin-id": "Sprite",
 	"sid": 314197860861866,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "isMessy",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 925017018828738
+		},
+		{
+			"name": "isFloat",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 190241522942236
+		},
+		{
+			"name": "isBroken",
+			"type": "boolean",
+			"desc": "",
+			"show": false,
+			"sid": 334498966847764
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
