@@ -2935,6 +2935,12 @@
 										}
 									],
 									"sid": 691165473577245,
+									"text-color": [
+										0,
+										0.4627450980392157,
+										0.9607843137254902,
+										1
+									],
 									"background-color": [
 										0.7333333333333333,
 										0.7333333333333333,
@@ -3116,7 +3122,13 @@
 													]
 												}
 											],
-											"sid": 994757849919260
+											"sid": 994757849919260,
+											"text-color": [
+												0.30980392156862746,
+												0.27058823529411763,
+												0.8901960784313725,
+												1
+											]
 										},
 										{
 											"eventType": "block",
@@ -3460,6 +3472,12 @@
 										}
 									],
 									"sid": 141125447060550,
+									"text-color": [
+										0.30980392156862746,
+										0.27058823529411763,
+										0.8901960784313725,
+										1
+									],
 									"background-color": [
 										0.23529411764705882,
 										0.8666666666666667,
@@ -3791,6 +3809,12 @@
 										}
 									],
 									"sid": 939432335829019,
+									"text-color": [
+										0.9058823529411765,
+										0.050980392156862744,
+										0.792156862745098,
+										1
+									],
 									"background-color": [
 										0.9333333333333333,
 										0.6705882352941176,
@@ -3879,7 +3903,7 @@
 											"conditions": [
 												{
 													"id": "is-on-screen",
-													"objectClass": "spr_vegetation",
+													"objectClass": "breezySprites",
 													"sid": 696310614768059
 												}
 											],
@@ -3892,14 +3916,14 @@
 														{
 															"id": "is-overlapping-another-object",
 															"objectClass": "spr_playerActual",
-															"sid": 200227981758863,
+															"sid": 423987006423773,
 															"parameters": {
-																"object": "spr_vegetation"
+																"object": "breezySprites"
 															}
 														}
 													],
 													"actions": [],
-													"sid": 689078296139189,
+													"sid": 875152228415548,
 													"children": [
 														{
 															"eventType": "block",
@@ -3907,13 +3931,13 @@
 																{
 																	"id": "is-moving",
 																	"objectClass": "spr_playerActual",
-																	"sid": 711932978911254,
+																	"sid": 656953418882623,
 																	"behaviorType": "Platform"
 																},
 																{
 																	"id": "is-playing",
-																	"objectClass": "spr_vegetation",
-																	"sid": 563722570172928,
+																	"objectClass": "breezySprites",
+																	"sid": 178858854092365,
 																	"behaviorType": "Tween",
 																	"parameters": {
 																		"tags": "\"Swing\""
@@ -3924,8 +3948,8 @@
 															"actions": [
 																{
 																	"id": "tween-one-property",
-																	"objectClass": "spr_vegetation",
-																	"sid": 343636933059514,
+																	"objectClass": "breezySprites",
+																	"sid": 991503096308035,
 																	"behaviorType": "Tween",
 																	"parameters": {
 																		"tags": "\"Swing\"",
@@ -3940,7 +3964,7 @@
 																	}
 																}
 															],
-															"sid": 276182453851580
+															"sid": 625278377768781
 														}
 													]
 												},
@@ -3950,19 +3974,19 @@
 														{
 															"id": "every-tick",
 															"objectClass": "System",
-															"sid": 281224721138360
+															"sid": 917826968752029
 														}
 													],
 													"actions": [],
-													"sid": 674453050684820,
+													"sid": 495600641636183,
 													"children": [
 														{
 															"eventType": "block",
 															"conditions": [
 																{
 																	"id": "is-playing",
-																	"objectClass": "spr_vegetation",
-																	"sid": 202034109755046,
+																	"objectClass": "breezySprites",
+																	"sid": 592659196908781,
 																	"behaviorType": "Tween",
 																	"parameters": {
 																		"tags": "\"Swing\""
@@ -3973,8 +3997,8 @@
 															"actions": [
 																{
 																	"id": "set-effect-parameter",
-																	"objectClass": "spr_vegetation",
-																	"sid": 739063447337883,
+																	"objectClass": "breezySprites",
+																	"sid": 616160123371895,
 																	"parameters": {
 																		"effect": "\"SkendPow\"",
 																		"parameter-index": "0",
@@ -3982,7 +4006,7 @@
 																	}
 																}
 															],
-															"sid": 412975674803941
+															"sid": 706084262076588
 														}
 													]
 												}

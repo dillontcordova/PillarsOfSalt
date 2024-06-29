@@ -351,18 +351,18 @@
 								"edges": "stretch",
 								"fill": "stretch",
 								"initially-visible": true,
-								"origin": "top-left",
+								"origin": "top",
 								"seams": "overlap"
 							},
 							"uid": 432,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 1639.029437251523,
-								"y": 1159.029437251523,
+								"x": 1624,
+								"y": 1156,
 								"width": 16,
-								"height": 760,
-								"originX": 0,
+								"height": 744,
+								"originX": 0.5,
 								"originY": 0,
 								"color": [
 									1,
@@ -447,7 +447,7 @@
 							"type": "spr_platformBridge2",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "idle",
+								"initial-animation": "hang",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -485,6 +485,14 @@
 										"magnitude": -360,
 										"magnitude-random": 0,
 										"enabled": true,
+										"live-preview": false
+									}
+								},
+								"Rotate": {
+									"properties": {
+										"speed": 180,
+										"acceleration": 0,
+										"enabled": false,
 										"live-preview": false
 									}
 								}
@@ -536,11 +544,11 @@
 							},
 							"world": {
 								"x": 1360,
-								"y": 936,
+								"y": 896,
 								"width": 128,
 								"height": 128,
-								"originX": 0.5,
-								"originY": 0.5,
+								"originX": 0.4921875,
+								"originY": 0.1484375,
 								"color": [
 									1,
 									1,
@@ -555,7 +563,7 @@
 							"type": "spr_platformBridge2",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "idle",
+								"initial-animation": "hang",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -593,6 +601,14 @@
 										"magnitude": -360,
 										"magnitude-random": 0,
 										"enabled": true,
+										"live-preview": false
+									}
+								},
+								"Rotate": {
+									"properties": {
+										"speed": 180,
+										"acceleration": 0,
+										"enabled": false,
 										"live-preview": false
 									}
 								}
@@ -644,178 +660,11 @@
 							},
 							"world": {
 								"x": 1360,
-								"y": 936,
+								"y": 896,
 								"width": 128,
 								"height": 128,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "spr_platformBridge2",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "idle",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 429,
-							"instanceVariables": {},
-							"behaviors": {
-								"Jumpthru": {
-									"properties": {
-										"enabled": true
-									}
-								},
-								"SineH": {
-									"properties": {
-										"movement": "horizontal",
-										"wave": "sawtooth",
-										"period": 6,
-										"period-random": 0,
-										"period-offset": 2,
-										"period-offset-random": 0,
-										"magnitude": -360,
-										"magnitude-random": 0,
-										"enabled": true,
-										"live-preview": false
-									}
-								},
-								"SineV": {
-									"properties": {
-										"movement": "vertical",
-										"wave": "sawtooth",
-										"period": 6,
-										"period-random": 0,
-										"period-offset": 2,
-										"period-offset-random": 0,
-										"magnitude": -360,
-										"magnitude-random": 0,
-										"enabled": true,
-										"live-preview": false
-									}
-								}
-							},
-							"sceneGraphData": {
-								"parent-uid": null,
-								"uid": 429,
-								"children": [
-									{
-										"uid": 430,
-										"flags": {
-											"x": true,
-											"y": true,
-											"z": true,
-											"w": true,
-											"h": true,
-											"a": true,
-											"o": false,
-											"v": false,
-											"d": true,
-											"sm": "normal"
-										}
-									}
-								],
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								},
-								"preview": {
-									"transformX": 0,
-									"transformY": 0,
-									"transformZElevation": 0,
-									"transformW": 0,
-									"transformH": 0,
-									"transformA": 0,
-									"transformSX": 0,
-									"transformSY": 0,
-									"transformO": 0,
-									"previewSceneGraph": false
-								}
-							},
-							"world": {
-								"x": 1360,
-								"y": 936,
-								"width": 128,
-								"height": 128,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "tikiTallTorchSmall_spr",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "on",
-								"initial-frame": 3,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 426,
-							"instanceVariables": {
-								"brightness": 30
-							},
-							"behaviors": {},
-							"sceneGraphData": {
-								"parent-uid": 424,
-								"uid": 426,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								},
-								"preview": {
-									"transformX": 0,
-									"transformY": 0,
-									"transformZElevation": 0,
-									"transformW": 2.220446049250313e-16,
-									"transformH": 2.220446049250313e-16,
-									"transformA": 0,
-									"transformSX": 0,
-									"transformSY": 0,
-									"transformO": 0,
-									"previewSceneGraph": false
-								}
-							},
-							"world": {
-								"x": 1360,
-								"y": 992,
-								"width": 16,
-								"height": 24,
-								"originX": 0.5,
-								"originY": 1,
+								"originX": 0.4921875,
+								"originY": 0.1484375,
 								"color": [
 									1,
 									1,
@@ -934,6 +783,1009 @@
 								"height": 24,
 								"originX": 0.5,
 								"originY": 1,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "tikiTallTorchSmall_spr",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "on",
+								"initial-frame": 3,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 426,
+							"instanceVariables": {
+								"brightness": 30
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 424,
+								"uid": 426,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1360,
+								"y": 992,
+								"width": 16,
+								"height": 24,
+								"originX": 0.5,
+								"originY": 1,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "spr_platformBridge2",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "hang",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 429,
+							"instanceVariables": {},
+							"behaviors": {
+								"Jumpthru": {
+									"properties": {
+										"enabled": true
+									}
+								},
+								"SineH": {
+									"properties": {
+										"movement": "horizontal",
+										"wave": "sawtooth",
+										"period": 6,
+										"period-random": 0,
+										"period-offset": 2,
+										"period-offset-random": 0,
+										"magnitude": -360,
+										"magnitude-random": 0,
+										"enabled": true,
+										"live-preview": false
+									}
+								},
+								"SineV": {
+									"properties": {
+										"movement": "vertical",
+										"wave": "sawtooth",
+										"period": 6,
+										"period-random": 0,
+										"period-offset": 2,
+										"period-offset-random": 0,
+										"magnitude": -360,
+										"magnitude-random": 0,
+										"enabled": true,
+										"live-preview": false
+									}
+								},
+								"Rotate": {
+									"properties": {
+										"speed": 180,
+										"acceleration": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 429,
+								"children": [
+									{
+										"uid": 430,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1360,
+								"y": 896,
+								"width": 128,
+								"height": 128,
+								"originX": 0.4921875,
+								"originY": 0.1484375,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "9patch",
+							"properties": {
+								"left-margin": 16,
+								"right-margin": 16,
+								"top-margin": 16,
+								"bottom-margin": 16,
+								"edges": "stretch",
+								"fill": "stretch",
+								"initially-visible": true,
+								"origin": "top",
+								"seams": "overlap"
+							},
+							"uid": 457,
+							"instanceVariables": {},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 465,
+								"uid": 457,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1632,
+								"y": 928,
+								"width": 16,
+								"height": 104,
+								"originX": 0.5,
+								"originY": 0,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 3.141592653589793,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "spr_platformBridge2",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 458,
+							"instanceVariables": {},
+							"behaviors": {
+								"Jumpthru": {
+									"properties": {
+										"enabled": true
+									}
+								},
+								"SineH": {
+									"properties": {
+										"movement": "horizontal",
+										"wave": "sawtooth",
+										"period": 4,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": 200,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"SineV": {
+									"properties": {
+										"movement": "vertical",
+										"wave": "sawtooth",
+										"period": 4,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": -200,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"Rotate": {
+									"properties": {
+										"speed": -65,
+										"acceleration": 0,
+										"enabled": true,
+										"live-preview": false
+									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": 465,
+								"uid": 458,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1632,
+								"y": 824,
+								"width": 128,
+								"height": 16,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "9patch",
+							"properties": {
+								"left-margin": 16,
+								"right-margin": 16,
+								"top-margin": 16,
+								"bottom-margin": 16,
+								"edges": "stretch",
+								"fill": "stretch",
+								"initially-visible": true,
+								"origin": "top",
+								"seams": "overlap"
+							},
+							"uid": 459,
+							"instanceVariables": {},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 465,
+								"uid": 459,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1632,
+								"y": 928,
+								"width": 16,
+								"height": 104,
+								"originX": 0.5,
+								"originY": 0,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 4.71238898038469,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "9patch",
+							"properties": {
+								"left-margin": 16,
+								"right-margin": 16,
+								"top-margin": 16,
+								"bottom-margin": 16,
+								"edges": "stretch",
+								"fill": "stretch",
+								"initially-visible": true,
+								"origin": "top",
+								"seams": "overlap"
+							},
+							"uid": 460,
+							"instanceVariables": {},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 465,
+								"uid": 460,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1632,
+								"y": 928,
+								"width": 16,
+								"height": 104,
+								"originX": 0.5,
+								"originY": 0,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 1.5707963267948966,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "9patch",
+							"properties": {
+								"left-margin": 16,
+								"right-margin": 16,
+								"top-margin": 16,
+								"bottom-margin": 16,
+								"edges": "stretch",
+								"fill": "stretch",
+								"initially-visible": true,
+								"origin": "top",
+								"seams": "overlap"
+							},
+							"uid": 461,
+							"instanceVariables": {},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 465,
+								"uid": 461,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1632,
+								"y": 928,
+								"width": 16,
+								"height": 104,
+								"originX": 0.5,
+								"originY": 0,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "spr_platformBridge2",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 462,
+							"instanceVariables": {},
+							"behaviors": {
+								"Jumpthru": {
+									"properties": {
+										"enabled": true
+									}
+								},
+								"SineH": {
+									"properties": {
+										"movement": "horizontal",
+										"wave": "sawtooth",
+										"period": 4,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": 200,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"SineV": {
+									"properties": {
+										"movement": "vertical",
+										"wave": "sawtooth",
+										"period": 4,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": -200,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"Rotate": {
+									"properties": {
+										"speed": -65,
+										"acceleration": 0,
+										"enabled": true,
+										"live-preview": false
+									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": 465,
+								"uid": 462,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1736,
+								"y": 928,
+								"width": 128,
+								"height": 16,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "spr_platformBridge2",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 463,
+							"instanceVariables": {},
+							"behaviors": {
+								"Jumpthru": {
+									"properties": {
+										"enabled": true
+									}
+								},
+								"SineH": {
+									"properties": {
+										"movement": "horizontal",
+										"wave": "sawtooth",
+										"period": 4,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": 200,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"SineV": {
+									"properties": {
+										"movement": "vertical",
+										"wave": "sawtooth",
+										"period": 4,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": -200,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"Rotate": {
+									"properties": {
+										"speed": -65,
+										"acceleration": 0,
+										"enabled": true,
+										"live-preview": false
+									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": 465,
+								"uid": 463,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1632,
+								"y": 1024,
+								"width": 128,
+								"height": 16,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "spr_platformBridge2",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "idle",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 464,
+							"instanceVariables": {},
+							"behaviors": {
+								"Jumpthru": {
+									"properties": {
+										"enabled": true
+									}
+								},
+								"SineH": {
+									"properties": {
+										"movement": "horizontal",
+										"wave": "sawtooth",
+										"period": 4,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": 200,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"SineV": {
+									"properties": {
+										"movement": "vertical",
+										"wave": "sawtooth",
+										"period": 4,
+										"period-random": 0,
+										"period-offset": 0,
+										"period-offset-random": 0,
+										"magnitude": -200,
+										"magnitude-random": 0,
+										"enabled": false,
+										"live-preview": false
+									}
+								},
+								"Rotate": {
+									"properties": {
+										"speed": -65,
+										"acceleration": 0,
+										"enabled": true,
+										"live-preview": false
+									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": 465,
+								"uid": 464,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 2.220446049250313e-16,
+									"transformH": 2.220446049250313e-16,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1528,
+								"y": 928,
+								"width": 128,
+								"height": 16,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "Sprite2",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 465,
+							"instanceVariables": {},
+							"behaviors": {
+								"Rotate": {
+									"properties": {
+										"speed": 65,
+										"acceleration": 0,
+										"enabled": true,
+										"live-preview": false
+									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 465,
+								"children": [
+									{
+										"uid": 457,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 458,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 459,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 460,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 461,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 462,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 463,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 464,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1632,
+								"y": 928,
+								"width": 32,
+								"height": 32,
+								"originX": 0.5,
+								"originY": 0.5,
 								"color": [
 									1,
 									1,
@@ -1550,8 +2402,8 @@
 					"world": {
 						"x": 96,
 						"y": 800,
-						"width": 16,
-						"height": 8,
+						"width": 32,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -2916,7 +3768,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -2931,11 +3783,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -2948,6 +3795,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -3011,15 +3863,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -3054,6 +3897,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -3234,7 +4086,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -3249,11 +4101,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -3266,6 +4113,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -3329,15 +4181,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -3372,6 +4215,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -3552,7 +4404,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -3567,11 +4419,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -3584,6 +4431,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -3647,15 +4499,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -3690,6 +4533,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -3870,7 +4722,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -3885,11 +4737,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -3902,6 +4749,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -3965,15 +4817,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -4008,6 +4851,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -4188,7 +5040,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -4203,11 +5055,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -4220,6 +5067,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -4283,15 +5135,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -4326,6 +5169,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -4506,7 +5358,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -4521,11 +5373,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -4538,6 +5385,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -4601,15 +5453,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -4644,6 +5487,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -4824,7 +5676,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -4839,11 +5691,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -4856,6 +5703,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -4919,15 +5771,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -4962,6 +5805,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -5142,7 +5994,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -5157,11 +6009,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -5174,6 +6021,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -5237,15 +6089,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -5280,6 +6123,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -5460,7 +6312,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -5475,11 +6327,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -5492,6 +6339,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -5555,15 +6407,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -5598,6 +6441,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -5778,7 +6630,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -5793,11 +6645,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -5810,6 +6657,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -5873,15 +6725,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -5916,6 +6759,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -6096,7 +6948,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -6111,11 +6963,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -6128,6 +6975,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -6191,15 +7043,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -6234,6 +7077,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -6414,7 +7266,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -6429,11 +7281,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -6446,6 +7293,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -6509,15 +7361,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -6552,6 +7395,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -6732,7 +7584,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -6747,11 +7599,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -6764,6 +7611,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -6827,15 +7679,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -6870,6 +7713,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -7050,7 +7902,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -7065,11 +7917,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -7082,6 +7929,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -7145,15 +7997,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -7188,6 +8031,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -7368,7 +8220,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -7383,11 +8235,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -7400,6 +8247,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -7463,15 +8315,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -7506,6 +8349,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -7686,7 +8538,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -7701,11 +8553,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -7718,6 +8565,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -7781,15 +8633,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -7824,6 +8667,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -8004,7 +8856,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -8019,11 +8871,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -8036,6 +8883,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -8099,15 +8951,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -8142,6 +8985,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -8371,7 +9223,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -8386,11 +9238,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -8403,6 +9250,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -8466,15 +9318,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -8509,6 +9352,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -8689,7 +9541,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -8704,11 +9556,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -8721,6 +9568,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -8784,15 +9636,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -8827,6 +9670,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -9007,7 +9859,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -9022,11 +9874,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -9039,6 +9886,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -9102,15 +9954,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -9145,6 +9988,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -9325,7 +10177,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -9340,11 +10192,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -9357,6 +10204,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -9420,15 +10272,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -9463,6 +10306,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -9643,7 +10495,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -9658,11 +10510,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -9675,6 +10522,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -9738,15 +10590,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -9781,6 +10624,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -9961,7 +10813,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -9976,11 +10828,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -9993,6 +10840,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -10056,15 +10908,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -10099,6 +10942,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -10279,7 +11131,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -10294,11 +11146,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -10311,6 +11158,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -10374,15 +11226,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -10417,6 +11260,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -10597,7 +11449,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -10612,11 +11464,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -10629,6 +11476,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -10689,7 +11541,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -10704,11 +11556,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -10721,6 +11568,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -10781,7 +11633,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -10796,11 +11648,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -10813,6 +11660,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -10873,7 +11725,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -10888,11 +11740,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -10905,6 +11752,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -10965,7 +11817,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -10980,11 +11832,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -10997,6 +11844,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -11057,7 +11909,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -11072,11 +11924,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -11089,6 +11936,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -11149,7 +12001,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -11164,11 +12016,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -11181,6 +12028,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -11241,7 +12093,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -11256,11 +12108,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -11273,6 +12120,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -11333,7 +12185,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -11348,11 +12200,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -11365,6 +12212,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -11918,7 +12770,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Front",
@@ -11933,11 +12785,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -11950,6 +12797,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -12013,15 +12865,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -12056,6 +12899,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -12219,7 +13071,7 @@
 						}
 					},
 					"world": {
-						"x": 2024,
+						"x": 2016,
 						"y": 580,
 						"width": 32,
 						"height": 32,
@@ -12236,7 +13088,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Front",
@@ -12251,11 +13103,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -12268,6 +13115,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -12331,15 +13183,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -12374,6 +13217,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -12554,7 +13406,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Front",
@@ -12569,11 +13421,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -12586,6 +13433,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -12649,15 +13501,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -12692,6 +13535,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -12872,7 +13724,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Front",
@@ -12887,11 +13739,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -12904,6 +13751,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -12967,15 +13819,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -13010,6 +13853,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -13190,7 +14042,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Front",
@@ -13205,11 +14057,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -13222,6 +14069,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -13285,15 +14137,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -13328,6 +14171,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -13508,7 +14360,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Front",
@@ -13523,11 +14375,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -13540,6 +14387,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -13603,15 +14455,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -13646,6 +14489,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -13826,7 +14678,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Back",
@@ -13841,11 +14693,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -13858,6 +14705,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -13921,15 +14773,6 @@
 								"id": "behavior",
 								"component": [
 									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									},
-									{
 										"key": "Sine",
 										"state": [
 											[
@@ -13964,6 +14807,15 @@
 												"magnitude-random",
 												true
 											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Tween",
+										"state": [
 											[
 												"enabled",
 												true
@@ -14421,7 +15273,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Front",
@@ -14436,11 +15288,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -14453,6 +15300,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -14496,7 +15348,7 @@
 						}
 					},
 					"world": {
-						"x": 2080,
+						"x": 2072,
 						"y": 580,
 						"width": 32,
 						"height": 32,
@@ -14513,7 +15365,7 @@
 					}
 				},
 				{
-					"type": "spr_vegetation",
+					"type": "spr_grassTall",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Front",
@@ -14528,11 +15380,6 @@
 						"isBroken": false
 					},
 					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
 						"Sine": {
 							"properties": {
 								"movement": "value-only",
@@ -14545,6 +15392,11 @@
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},

@@ -892,56 +892,99 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 270299245864074,
+					"children": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 893000161768777,
-							"parameters": {
-								"object-to-create": "spr_leafAtmos",
-								"layer": "\"fgCharacters\"",
-								"x": "ViewportLeft(\"fgCharacters\") + random(OriginalViewportWidth * 1.33)",
-								"y": "ViewportTop(\"fgCharacters\") - random(OriginalViewportHeight * .355)",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
+							"eventType": "variable",
+							"name": "colorVal",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 133858576821196
 						},
 						{
-							"id": "set-scale",
-							"objectClass": "spr_leafAtmos",
-							"sid": 831566205486825,
-							"parameters": {
-								"scale": "random(.7, .85, 1)"
-							}
-						},
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "spr_leafAtmos",
-							"sid": 442953692669586,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "115"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "spr_leafAtmos",
-							"sid": 175274373491012,
-							"parameters": {
-								"animation": "choose(\"Default\",\"Default2\")",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-animation-speed",
-							"objectClass": "spr_leafAtmos",
-							"sid": 277882373731581,
-							"parameters": {
-								"speed": "3 + random(10)"
-							}
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 781760669030791,
+									"parameters": {
+										"object-to-create": "spr_leafAtmos",
+										"layer": "\"fgCharacters\"",
+										"x": "ViewportLeft(\"fgCharacters\") + random(OriginalViewportWidth * 1.33)",
+										"y": "ViewportTop(\"fgCharacters\") - random(OriginalViewportHeight * .355)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "spr_leafAtmos",
+									"sid": 522699640800831,
+									"parameters": {
+										"scale": "random(.7, .85, 1)"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "spr_leafAtmos",
+									"sid": 583229810029041,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "115"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "spr_leafAtmos",
+									"sid": 680401812135655,
+									"parameters": {
+										"animation": "choose(\"Default\",\"Default2\")",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-speed",
+									"objectClass": "spr_leafAtmos",
+									"sid": 559651783808265,
+									"parameters": {
+										"speed": "3 + random(10)"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "spr_leafAtmos",
+									"sid": 823071177833971,
+									"parameters": {
+										"z": "int(random(400))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 949919335958000,
+									"parameters": {
+										"variable": "colorVal",
+										"value": "floor(100 - clamp((spr_leafAtmos.ZElevation / 4)+ 20, 20, 100))"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "spr_leafAtmos",
+									"sid": 416684787394157,
+									"parameters": {
+										"color": "rgbEx(colorVal, colorVal, colorVal)"
+									}
+								}
+							],
+							"sid": 294550692859207
 						}
-					],
-					"sid": 270299245864074
+					]
 				},
 				{
 					"functionName": "pixellateHUD",

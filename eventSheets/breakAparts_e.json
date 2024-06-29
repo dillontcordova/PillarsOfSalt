@@ -101,9 +101,14 @@
 							],
 							"actions": [
 								{
+									"id": "remove-from-parent",
+									"objectClass": "brokenPiece_canvas",
+									"sid": 540846261263702
+								},
+								{
 									"id": "set-animation",
 									"objectClass": "breakable",
-									"sid": 324545451980499,
+									"sid": 740829727360285,
 									"parameters": {
 										"animation": "Self.AnimationName & \"Cut\"",
 										"from": "beginning"
@@ -220,21 +225,21 @@
 											}
 										},
 										{
+											"id": "set-prevent-rotation",
+											"objectClass": "brokenPiece_canvas",
+											"sid": 383455416246170,
+											"behaviorType": "Physics",
+											"parameters": {
+												"setting": "prevent-rotations"
+											}
+										},
+										{
 											"id": "set-enabled",
 											"objectClass": "brokenPiece_canvas",
 											"sid": 703625417378702,
 											"behaviorType": "Physics",
 											"parameters": {
 												"mode": "enabled"
-											}
-										},
-										{
-											"id": "set-prevent-rotation",
-											"objectClass": "brokenPiece_canvas",
-											"sid": 881169011213363,
-											"behaviorType": "Physics",
-											"parameters": {
-												"setting": "prevent-rotations"
 											}
 										}
 									],
@@ -270,6 +275,17 @@
 														"instance-variable": "isFloat",
 														"value": "true"
 													}
+												},
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "brokenPiece_canvas",
+													"sid": 203972724940478,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "(Self.Width * Self.Height) / 500",
+														"angle": "Self.angleForce",
+														"image-point": "0"
+													}
 												}
 											],
 											"sid": 689024629604679
@@ -287,29 +303,19 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "brokenPiece_canvas",
-													"sid": 711300165270860,
+													"sid": 445599520711830,
 													"parameters": {
 														"instance-variable": "angleForce",
-														"value": "-90"
+														"value": "random(180)"
 													}
 												},
 												{
-													"id": "enabledisable-collisions",
+													"id": "apply-impulse-at-angle",
 													"objectClass": "brokenPiece_canvas",
-													"sid": 259891389555794,
+													"sid": 634265268358149,
 													"behaviorType": "Physics",
 													"parameters": {
-														"object": "brokenPiece_canvas",
-														"state": "enable"
-													}
-												},
-												{
-													"id": "apply-force-at-angle",
-													"objectClass": "brokenPiece_canvas",
-													"sid": 349447568875964,
-													"behaviorType": "Physics",
-													"parameters": {
-														"force": "(Self.Width * Self.Height) / 500",
+														"impulse": "(Self.Width * Self.Height) / 800",
 														"angle": "Self.angleForce",
 														"image-point": "0"
 													}
@@ -321,17 +327,6 @@
 											"eventType": "block",
 											"conditions": [],
 											"actions": [
-												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "brokenPiece_canvas",
-													"sid": 399813491929155,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "(Self.Width * Self.Height) / 500",
-														"angle": "Self.angleForce",
-														"image-point": "0"
-													}
-												},
 												{
 													"id": "wait",
 													"objectClass": "System",

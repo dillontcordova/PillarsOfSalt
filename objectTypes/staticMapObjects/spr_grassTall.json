@@ -1,27 +1,11 @@
 {
-	"name": "spr_vegetation",
+	"name": "spr_grassTall",
 	"plugin-id": "Sprite",
 	"sid": 694138390025512,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 789415958548345
-		},
-		{
-			"behaviorId": "Sin",
-			"name": "Sine",
-			"sid": 148263773086089
-		}
-	],
-	"effectTypes": [
-		{
-			"effectId": "skendpow",
-			"name": "SkendPow"
-		}
-	],
+	"behaviorTypes": [],
+	"effectTypes": [],
 	"animations": {
 		"items": [
 			{

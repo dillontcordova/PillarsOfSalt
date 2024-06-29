@@ -418,11 +418,11 @@
 			"spr_btnTileScreen",
 			"destructable_tb",
 			"testNPC",
-			"Utils",
 			"ShadowLight",
 			"screenCrosshair_spr",
 			"boatMan_spr",
-			"9patch"
+			"9patch",
+			"Sprite2"
 		],
 		"subfolders": [
 			{
@@ -435,10 +435,11 @@
 					"Array",
 					"Browser",
 					"3DCamera",
-					"PlatformInfo"
+					"PlatformInfo",
+					"Utils"
 				],
 				"subfolders": [],
-				"name": "input"
+				"name": "system"
 			},
 			{
 				"items": [
@@ -767,7 +768,7 @@
 					"spr_platformBridge",
 					"bigPlant_spr",
 					"spr_doorSwitch",
-					"spr_vegetation",
+					"spr_grassTall",
 					"spr_gear",
 					"tikiTallTorchWall_spr",
 					"tikiTallTorchSmall_spr",
@@ -836,7 +837,8 @@
 			"mapItems",
 			"deathOnTouch_spr",
 			"traps",
-			"breakable"
+			"breakable",
+			"breezySprites"
 		],
 		"subfolders": []
 	},
