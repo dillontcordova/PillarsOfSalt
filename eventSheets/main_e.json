@@ -54,6 +54,10 @@
 			"includeSheet": "breakAparts_e"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "platforms_e"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

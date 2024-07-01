@@ -1,0 +1,89 @@
+{
+	"name": "platformRail_spr",
+	"plugin-id": "Sprite",
+	"sid": 432306392031940,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "platformCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 933560813070238
+		},
+		{
+			"name": "cycleInSeconds",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 683579595627238
+		},
+		{
+			"name": "pingPong",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 315339171613643
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 90,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1635948,
+						"collisionPoly": {
+							"points": [
+								1,
+								0,
+								1,
+								1,
+								0,
+								1,
+								0,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "center",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "front",
+								"x": 1,
+								"y": 0.5
+							},
+							{
+								"name": "back",
+								"x": 0,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 270850156564134,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}

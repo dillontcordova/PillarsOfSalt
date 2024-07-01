@@ -1,5 +1,5 @@
 {
-	"name": "9patch",
+	"name": "platformBar_9patch",
 	"plugin-id": "NinePatch",
 	"sid": 853839915269165,
 	"isGlobal": false,
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 2111968,
+		"imageSpriteId": 2022813,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

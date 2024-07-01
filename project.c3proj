@@ -82,7 +82,7 @@
 			"name": "Utils",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "1.2"
+			"version": "2.1"
 		},
 		{
 			"type": "plugin",
@@ -316,7 +316,7 @@
 			"name": "Signals",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "1.0"
+			"version": "1.2"
 		},
 		{
 			"type": "behavior",
@@ -409,7 +409,6 @@
 			"sf_healthHUD",
 			"sf_jumpHUD",
 			"spr_chest",
-			"spr_movingPlatformV",
 			"spr_shootFire",
 			"spr_leafAtmos",
 			"spr_door",
@@ -420,9 +419,7 @@
 			"testNPC",
 			"ShadowLight",
 			"screenCrosshair_spr",
-			"boatMan_spr",
-			"9patch",
-			"Sprite2"
+			"boatMan_spr"
 		],
 		"subfolders": [
 			{
@@ -771,8 +768,7 @@
 					"spr_grassTall",
 					"spr_gear",
 					"tikiTallTorchWall_spr",
-					"tikiTallTorchSmall_spr",
-					"spr_platformBridge2"
+					"tikiTallTorchSmall_spr"
 				],
 				"subfolders": [],
 				"name": "staticMapObjects"
@@ -802,6 +798,18 @@
 				],
 				"subfolders": [],
 				"name": "breakables"
+			},
+			{
+				"items": [
+					"platformBar_9patch",
+					"platformSpinning_spr",
+					"spr_movingPlatformV",
+					"platformRail_spr",
+					"platformFollower_spr",
+					"spr_platform"
+				],
+				"subfolders": [],
+				"name": "platforms"
 			}
 		]
 	},
@@ -899,7 +907,8 @@
 			"sfx_e",
 			"atmospheric_e",
 			"miniMap_e",
-			"breakAparts_e"
+			"breakAparts_e",
+			"platforms_e"
 		],
 		"subfolders": [
 			{

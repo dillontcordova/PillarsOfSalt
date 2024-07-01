@@ -1,14 +1,14 @@
 {
-	"name": "Sprite2",
+	"name": "platformFollower_spr",
 	"plugin-id": "Sprite",
-	"sid": 229540975361833,
+	"sid": 184038176476878,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Rotate",
-			"name": "Rotate",
-			"sid": 992045648283670
+			"behaviorId": "Sin",
+			"name": "SineFW",
+			"sid": 333108605349463
 		}
 	],
 	"effectTypes": [],
@@ -17,32 +17,20 @@
 			{
 				"frames": [
 					{
-						"width": 32,
-						"height": 32,
+						"width": 16,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 370367,
-						"collisionPoly": {
-							"points": [
-								0.265625,
-								0.015625,
-								0.765625,
-								0.015625,
-								0.765625,
-								0.984375,
-								0.265625,
-								0.984375
-							]
-						},
+						"imageSpriteId": 5041973,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 686084141245267,
+				"sid": 578090338915629,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

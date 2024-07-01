@@ -1,0 +1,516 @@
+{
+	"name": "platforms_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Platforms",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "platformSpinning_spr",
+							"sid": 881983841380291
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "platformSpinning_spr",
+							"sid": 257974144230496,
+							"parameters": {
+								"animation": "\"templateFrame\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 519427719459555,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "angleDividen",
+							"type": "number",
+							"initialValue": "360",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 281113521736197
+						},
+						{
+							"eventType": "variable",
+							"name": "curAngle",
+							"type": "number",
+							"initialValue": "360",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 998515204859333
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 959516589120534,
+									"parameters": {
+										"variable": "angleDividen",
+										"value": "angleDividen / platformSpinning_spr.platformCount"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 889355267245694,
+									"parameters": {
+										"variable": "curAngle",
+										"value": "angleDividen"
+									}
+								}
+							],
+							"sid": 124009550461819
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 831524341415446,
+									"parameters": {
+										"name": "\"createPlatforms\"",
+										"start-index": "1",
+										"end-index": "platformSpinning_spr.platformCount"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 115311011398894,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "platformSpinning_spr",
+											"sid": 663014103925803,
+											"parameters": {
+												"object": "platformBar_9patch",
+												"layer": "Self.LayerName",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-height",
+											"objectClass": "platformBar_9patch",
+											"sid": 610722689123446,
+											"parameters": {
+												"height": "platformSpinning_spr.Height / 2"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 614480265982869,
+											"parameters": {
+												"variable": "curAngle",
+												"value": "angleDividen + curAngle"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "platformSpinning_spr",
+											"sid": 421916915823700,
+											"parameters": {
+												"child": "platformBar_9patch",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-z-elevation": true,
+												"transform-visibility": true,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "platformSpinning_spr",
+											"sid": 219379877144501,
+											"parameters": {
+												"object": "spr_platform",
+												"layer": "Self.LayerName",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"idle\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "spr_platform",
+											"sid": 478958639484289,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "spr_platform",
+											"sid": 137245289576003,
+											"parameters": {
+												"x": "platformBar_9patch.BBoxRight - platformBar_9patch.Width / 2",
+												"y": "platformBar_9patch.BBoxBottom"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "platformBar_9patch",
+											"sid": 139698215827114,
+											"parameters": {
+												"child": "spr_platform",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-z-elevation": true,
+												"transform-visibility": true,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "platformBar_9patch",
+											"sid": 226461282231075,
+											"parameters": {
+												"angle": "curAngle"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "spr_platform",
+											"sid": 326834776509946,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "spr_platform",
+											"sid": 690854281615583,
+											"behaviorType": "Rotate",
+											"parameters": {
+												"speed": "platformSpinning_spr.Rotate.Speed * -1"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "spr_platform",
+											"sid": 690070104463222,
+											"behaviorType": "Rotate",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 289142197865684
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "platformSpinning_spr",
+									"sid": 507216154512652,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "platformSpinning_spr",
+									"sid": 362184872449063
+								}
+							],
+							"sid": 960799594676777
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "platformRail_spr",
+							"sid": 993529610806030
+						}
+					],
+					"actions": [],
+					"sid": 736372145555317,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "offset",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 697333243847879
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 306615041557055,
+									"parameters": {
+										"variable": "offset",
+										"value": "1 / platformRail_spr.platformCount"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "platformRail_spr",
+									"sid": 678336601805251,
+									"parameters": {
+										"object": "platformBar_9patch",
+										"layer": "Self.LayerName",
+										"image-point": "\"front\"",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-height",
+									"objectClass": "platformBar_9patch",
+									"sid": 788215099930643,
+									"parameters": {
+										"height": "platformRail_spr.Width"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "platformBar_9patch",
+									"sid": 113815311789634,
+									"parameters": {
+										"angle": "platformRail_spr.Angle +90"
+									}
+								}
+							],
+							"sid": 940436417798807
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 765532065041693,
+									"parameters": {
+										"name": "\"createPlatforms\"",
+										"start-index": "1",
+										"end-index": "platformRail_spr.platformCount"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 171996870101495,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "platformRail_spr",
+											"sid": 675587134346333,
+											"parameters": {
+												"object": "platformFollower_spr",
+												"layer": "Self.LayerName",
+												"image-point": "\"center\"",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "platformFollower_spr",
+											"sid": 720142930786661,
+											"parameters": {
+												"angle": "platformRail_spr.Angle"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "platformFollower_spr",
+											"sid": 208887680007091,
+											"parameters": {
+												"object": "spr_platform",
+												"layer": "Self.LayerName",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"idle\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "platformFollower_spr",
+											"sid": 863287971650517,
+											"parameters": {
+												"child": "spr_platform",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-z-elevation": true,
+												"transform-visibility": false,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "spr_platform",
+											"sid": 531331387271690,
+											"parameters": {
+												"animation": "\"hang\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "spr_platform",
+											"sid": 393288834918422,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "platformFollower_spr",
+											"sid": 218036506152856,
+											"behaviorType": "SineFW",
+											"parameters": {
+												"state": "active"
+											}
+										},
+										{
+											"id": "set-magnitude",
+											"objectClass": "platformFollower_spr",
+											"sid": 819702647958441,
+											"behaviorType": "SineFW",
+											"parameters": {
+												"magnitude": "platformRail_spr.Width / 2"
+											}
+										},
+										{
+											"id": "set-cycle-position",
+											"objectClass": "platformFollower_spr",
+											"sid": 424899853032978,
+											"behaviorType": "SineFW",
+											"parameters": {
+												"cycle-position": "offset * loopindex"
+											}
+										}
+									],
+									"sid": 409118536387293,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "platformRail_spr",
+													"sid": 499876501251436,
+													"parameters": {
+														"instance-variable": "pingPong"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-wave",
+													"objectClass": "platformFollower_spr",
+													"sid": 389564637361396,
+													"behaviorType": "SineFW",
+													"parameters": {
+														"wave": "sine"
+													}
+												},
+												{
+													"id": "set-period",
+													"objectClass": "platformFollower_spr",
+													"sid": 522931310831057,
+													"behaviorType": "SineFW",
+													"parameters": {
+														"period": "platformRail_spr.cycleInSeconds * 2"
+													}
+												}
+											],
+											"sid": 363952220165201
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 101043631564888
+												}
+											],
+											"actions": [
+												{
+													"id": "set-period",
+													"objectClass": "platformFollower_spr",
+													"sid": 781379440084291,
+													"behaviorType": "SineFW",
+													"parameters": {
+														"period": "platformRail_spr.cycleInSeconds"
+													}
+												}
+											],
+											"sid": 231940651317572
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "platformRail_spr",
+									"sid": 101511109268131
+								}
+							],
+							"sid": 560368678081353
+						}
+					]
+				}
+			],
+			"sid": 600780517068877
+		}
+	],
+	"sid": 629042208837674
+}
