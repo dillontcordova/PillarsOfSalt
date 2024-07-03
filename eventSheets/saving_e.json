@@ -1,0 +1,88 @@
+{
+	"name": "saving_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Saving",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 818747695208610,
+							"parameters": {
+								"key": 84
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 958923261660999,
+							"parameters": {
+								"slot": "\"mysave\""
+							}
+						}
+					],
+					"sid": 334309140678124
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 717276181598557,
+							"parameters": {
+								"key": 89
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "System",
+							"sid": 357553245587808,
+							"parameters": {
+								"slot": "\"mysave\""
+							}
+						}
+					],
+					"sid": 977551497997741
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-save-complete",
+							"objectClass": "System",
+							"sid": 499997349151520
+						}
+					],
+					"actions": [],
+					"sid": 589329914456092
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-load-complete",
+							"objectClass": "System",
+							"sid": 194548506784083
+						}
+					],
+					"actions": [],
+					"sid": 756580568853323
+				}
+			],
+			"sid": 665715943700742
+		}
+	],
+	"sid": 422166667608341
+}

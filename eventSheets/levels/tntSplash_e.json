@@ -1,0 +1,275 @@
+{
+	"name": "tntSplash_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TEANTSPLASH",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 128537143325591
+						},
+						{
+							"id": "on-any-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 225724330128005,
+							"parameters": {
+								"gamepad": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 156743989713738,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "skip"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-any-playing",
+									"objectClass": "TimelineController",
+									"sid": 758045664537398,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 260066313699172,
+									"parameters": {
+										"seconds": ".1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 270703384662238
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 370937174208705,
+									"parameters": {
+										"layout": "grassLand"
+									}
+								}
+							],
+							"sid": 329978594214905
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": ""
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-keyframe-reached",
+							"objectClass": "TimelineController",
+							"sid": 811027601762155,
+							"parameters": {
+								"tags": "\"animation\"",
+								"match": "any-tags"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "teantCupLogo_spr",
+							"sid": 554317793179219,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 179723094777667
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "teantCupLogo_spr",
+							"sid": 749308119230414,
+							"parameters": {
+								"animation": "\"idle\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-value",
+							"objectClass": "teantCupLogo_spr",
+							"sid": 158541010464128,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"light\"",
+								"start-value": "100",
+								"end-value": "200",
+								"time": ".2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "yes",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 462290918890942
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "teantCupLogo_spr",
+							"sid": 778905228374455,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"light\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 351816609666719,
+							"parameters": {
+								"effect": "\"AdjustHSL\"",
+								"parameter-index": "2",
+								"value": "teantCupLogo_spr.Tween.Value(\"light\")"
+							}
+						}
+					],
+					"sid": 882228470916720
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-ping-pong",
+							"objectClass": "teantCupLogo_spr",
+							"sid": 293333652879116,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"light\"",
+								"state": "start"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "logoSplash_txt",
+							"sid": 638276650334172,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 988092125929202
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "teantCupLogo_spr",
+							"sid": 768314641779928,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"light\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 741767891102160,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "teantCupLogo_spr",
+							"sid": 681717013482016,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"menu fade\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 219756420604937
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "teantCupLogo_spr",
+							"sid": 962804543489816,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"menu\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-fade",
+							"objectClass": "logoSplash_txt",
+							"sid": 965404771014592,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 942862407114957,
+							"parameters": {
+								"seconds": ".5"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 693833746440491,
+							"parameters": {
+								"layout": "grassLand"
+							}
+						}
+					],
+					"sid": 490938776012401
+				}
+			],
+			"sid": 343546630983926
+		}
+	],
+	"sid": 785895207085589
+}

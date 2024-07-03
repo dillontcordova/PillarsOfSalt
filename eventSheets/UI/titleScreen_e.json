@@ -425,7 +425,7 @@
 						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "Group2",
+							"title": "MenuTweens",
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [
@@ -718,9 +718,14 @@
 									],
 									"actions": [
 										{
+											"id": "cancel-fullscreen",
+											"objectClass": "Browser",
+											"sid": 862031585438425
+										},
+										{
 											"id": "close",
 											"objectClass": "Browser",
-											"sid": 980806763284610
+											"sid": 111153516228306
 										}
 									],
 									"sid": 159317854781897

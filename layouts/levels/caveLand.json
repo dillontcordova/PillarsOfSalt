@@ -5748,7 +5748,14 @@
 		}
 	],
 	"sid": 692810843494375,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "JSON",
+			"properties": {},
+			"uid": 426,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 1600,
 	"height": 1008,

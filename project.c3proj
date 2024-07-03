@@ -57,6 +57,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "FileSystem",
+			"name": "File system",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -66,6 +73,13 @@
 			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -82,7 +96,7 @@
 			"name": "Utils",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "2.1"
+			"version": "1.2"
 		},
 		{
 			"type": "plugin",
@@ -316,7 +330,7 @@
 			"name": "Signals",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "1.2"
+			"version": "1.0"
 		},
 		{
 			"type": "behavior",
@@ -397,6 +411,14 @@
 			"author": "Somebody / Mikal / skymen",
 			"bundled": false,
 			"version": "1.5.0"
+		},
+		{
+			"type": "effect",
+			"id": "skymen_BetterOutline",
+			"name": "Better Outline",
+			"author": "skymen",
+			"bundled": false,
+			"version": "2.0.0.3"
 		}
 	],
 	"uniqueId": "n8bngjs1j57",
@@ -419,7 +441,10 @@
 			"testNPC",
 			"ShadowLight",
 			"screenCrosshair_spr",
-			"boatMan_spr"
+			"boatMan_spr",
+			"logoSplash_txt",
+			"teantCupLogo_spr",
+			"poweredBy_txt"
 		],
 		"subfolders": [
 			{
@@ -433,7 +458,10 @@
 					"Browser",
 					"3DCamera",
 					"PlatformInfo",
-					"Utils"
+					"Utils",
+					"LocalStorage",
+					"JSON",
+					"FileSystem"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -852,20 +880,9 @@
 	},
 	"layouts": {
 		"items": [
-			"construct splash",
 			"repository"
 		],
 		"subfolders": [
-			{
-				"items": [
-					"caveLand",
-					"grassLand",
-					"grassRuins",
-					"SANDBOX"
-				],
-				"subfolders": [],
-				"name": "levels"
-			},
 			{
 				"items": [
 					"HUD",
@@ -876,6 +893,18 @@
 				],
 				"subfolders": [],
 				"name": "global"
+			},
+			{
+				"items": [
+					"constructSplash",
+					"tntSplash",
+					"caveLand",
+					"grassLand",
+					"grassRuins",
+					"SANDBOX"
+				],
+				"subfolders": [],
+				"name": "levels"
 			},
 			{
 				"items": [
@@ -893,22 +922,17 @@
 			"main_e",
 			"camera_e",
 			"player_e",
-			"splashScreen_e",
 			"enemies_e",
 			"doorsAndKeys_e",
 			"singleton_e",
 			"water_e",
-			"titleScreen_e",
 			"eventPoints_e",
-			"pauseMenu_e",
-			"lighting_e",
 			"traps_e",
-			"dialog_e",
 			"sfx_e",
 			"atmospheric_e",
-			"miniMap_e",
 			"breakAparts_e",
-			"platforms_e"
+			"platforms_e",
+			"saving_e"
 		],
 		"subfolders": [
 			{
@@ -916,10 +940,29 @@
 					"grassLand_e",
 					"caveLand_e",
 					"grassRuins_e",
-					"sandbox_e"
+					"sandbox_e",
+					"tntSplash_e",
+					"constructSplash_e"
 				],
 				"subfolders": [],
 				"name": "levels"
+			},
+			{
+				"items": [
+					"lighting_e",
+					"pauseMenu_e",
+					"dialog_e",
+					"miniMap_e"
+				],
+				"subfolders": [],
+				"name": "global"
+			},
+			{
+				"items": [
+					"titleScreen_e"
+				],
+				"subfolders": [],
+				"name": "UI"
 			}
 		]
 	},
@@ -1238,7 +1281,8 @@
 	},
 	"timelines": {
 		"items": [
-			"Timeline 1"
+			"Timeline 1",
+			"teant"
 		],
 		"subfolders": [
 			{
@@ -1306,5 +1350,5 @@
 	},
 	"viewportWidth": 640,
 	"viewportHeight": 360,
-	"firstLayout": "construct splash"
+	"firstLayout": "constructSplash"
 }

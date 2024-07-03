@@ -12,7 +12,7 @@
 						"initially-visible": true,
 						"origin": "top-left",
 						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
+						"wrap-vertical": "clamp-to-edge",
 						"image-offset-x": 0,
 						"image-offset-y": 0,
 						"image-scale-x": 1,
@@ -35,8 +35,8 @@
 					"world": {
 						"x": 0,
 						"y": 0,
-						"width": 320,
-						"height": 156,
+						"width": 640,
+						"height": 360,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -55,7 +55,7 @@
 						"initially-visible": true,
 						"origin": "top-left",
 						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
+						"wrap-vertical": "clamp-to-edge",
 						"image-offset-x": 0,
 						"image-offset-y": 0,
 						"image-scale-x": 1,
@@ -76,10 +76,10 @@
 						}
 					},
 					"world": {
-						"x": 320,
+						"x": 640,
 						"y": 0,
-						"width": 320,
-						"height": 156,
+						"width": 640,
+						"height": 360,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -136,7 +136,7 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 301,
+					"uid": 241,
 					"instanceVariables": {
 						"brightness": 50
 					},
@@ -145,7 +145,7 @@
 							"properties": {
 								"movement": "angle",
 								"wave": "sine",
-								"period": 5,
+								"period": 1.5,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
@@ -157,8 +157,8 @@
 						}
 					},
 					"sceneGraphData": {
-						"parent-uid": 241,
-						"uid": 301,
+						"parent-uid": 301,
+						"uid": 241,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -175,8 +175,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -185,69 +185,12 @@
 						}
 					},
 					"world": {
-						"x": 179,
-						"y": 54,
+						"x": 244,
+						"y": 124,
 						"width": 26,
 						"height": 64,
 						"originX": 0.5,
 						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "spr_playerCutScene",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 242,
-					"instanceVariables": {},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 241,
-						"uid": 242,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 116,
-						"y": 116,
-						"width": 24,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -300,7 +243,7 @@
 						}
 					},
 					"sceneGraphData": {
-						"parent-uid": 241,
+						"parent-uid": 301,
 						"uid": 262,
 						"flags": {
 							"x": true,
@@ -328,10 +271,10 @@
 						}
 					},
 					"world": {
-						"x": 88,
-						"y": 124,
-						"width": 40,
-						"height": 40,
+						"x": 112,
+						"y": 264,
+						"width": 70,
+						"height": 70,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -357,8 +300,65 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 241,
+						"parent-uid": 301,
 						"uid": 263,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 216,
+						"y": 192,
+						"width": 84,
+						"height": 192,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_playerCutScene",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 242,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 301,
+						"uid": 242,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -385,10 +385,10 @@
 						}
 					},
 					"world": {
-						"x": 164,
-						"y": 92,
-						"width": 84,
-						"height": 192,
+						"x": 154,
+						"y": 252,
+						"width": 68,
+						"height": 88,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -445,18 +445,18 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 241,
+					"uid": 301,
 					"instanceVariables": {},
 					"behaviors": {
 						"Sine": {
 							"properties": {
 								"movement": "vertical",
 								"wave": "sine",
-								"period": 4,
+								"period": 2,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
-								"magnitude": 2,
+								"magnitude": 1,
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
@@ -466,11 +466,11 @@
 							"properties": {
 								"movement": "angle",
 								"wave": "sine",
-								"period": 4,
+								"period": 2,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
-								"magnitude": 1,
+								"magnitude": 2,
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
@@ -479,25 +479,10 @@
 					},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 241,
+						"uid": 301,
 						"children": [
 							{
-								"uid": 301,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 242,
+								"uid": 241,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -540,6 +525,21 @@
 									"d": true,
 									"sm": "normal"
 								}
+							},
+							{
+								"uid": 242,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
 							}
 						],
 						"flags": {
@@ -568,9 +568,9 @@
 						}
 					},
 					"world": {
-						"x": 122.5,
-						"y": 136,
-						"width": 192,
+						"x": 148,
+						"y": 284,
+						"width": 170,
 						"height": 70,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -652,17 +652,17 @@
 								"meshColumns": 50,
 								"meshRows": 2,
 								"isAutoWavesEnabled": true,
-								"waveLength": 60,
-								"period": 2,
-								"magnitude": 1
+								"waveLength": 120,
+								"period": 1,
+								"magnitude": 2
 							}
 						}
 					},
 					"world": {
 						"x": 0,
-						"y": 148,
-						"width": 320,
-						"height": 32,
+						"y": 304,
+						"width": 640,
+						"height": 56,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -723,10 +723,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 508,
-						"y": 88,
-						"width": 330.5859375,
-						"height": 181.40625,
+						"x": 1016,
+						"y": 180,
+						"width": 660,
+						"height": 362,
 						"originX": 0.5648351648351648,
 						"originY": 0.5,
 						"color": [
@@ -794,7 +794,7 @@
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
-								"magnitude": 155,
+								"magnitude": 320,
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
@@ -802,10 +802,10 @@
 						}
 					},
 					"world": {
-						"x": 156,
-						"y": 104,
-						"width": 640,
-						"height": 208,
+						"x": 274,
+						"y": 208,
+						"width": 1280,
+						"height": 416,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -875,8 +875,8 @@
 					"world": {
 						"x": 324,
 						"y": 0,
-						"width": 74,
-						"height": 180,
+						"width": 148,
+						"height": 360,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -950,8 +950,8 @@
 					"behaviors": {},
 					"world": {
 						"x": 0,
-						"y": 156,
-						"width": 320,
+						"y": 336,
+						"width": 640,
 						"height": 24,
 						"originX": 0,
 						"originY": 0,
@@ -992,7 +992,7 @@
 					"world": {
 						"x": 0,
 						"y": 0,
-						"width": 320,
+						"width": 640,
 						"height": 24,
 						"originX": 0,
 						"originY": 0,
@@ -1150,10 +1150,10 @@
 						}
 					},
 					"world": {
-						"x": 224,
+						"x": 488,
 						"y": 0,
-						"width": 76,
-						"height": 180,
+						"width": 152,
+						"height": 360,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -1209,10 +1209,10 @@
 						}
 					},
 					"world": {
-						"x": 264,
-						"y": 44,
-						"width": 48,
-						"height": 16,
+						"x": 564,
+						"y": 80,
+						"width": 128,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1268,10 +1268,10 @@
 						}
 					},
 					"world": {
-						"x": 264,
-						"y": 88,
-						"width": 48,
-						"height": 16,
+						"x": 564,
+						"y": 180,
+						"width": 128,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1327,10 +1327,10 @@
 						}
 					},
 					"world": {
-						"x": 264,
-						"y": 132,
-						"width": 48,
-						"height": 16,
+						"x": 564,
+						"y": 276,
+						"width": 128,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1458,8 +1458,8 @@
 			}
 		}
 	],
-	"width": 320,
-	"height": 180,
+	"width": 640,
+	"height": 360,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,

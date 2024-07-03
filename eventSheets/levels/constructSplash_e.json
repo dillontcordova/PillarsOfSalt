@@ -1,5 +1,5 @@
 {
-	"name": "splashScreen_e",
+	"name": "constructSplash_e",
 	"events": [
 		{
 			"eventType": "group",
@@ -29,6 +29,14 @@
 					],
 					"actions": [
 						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 767199909398484,
+							"parameters": {
+								"scale": "2"
+							}
+						},
+						{
 							"id": "set-opacity",
 							"objectClass": "txt_logo",
 							"sid": 628443390482300,
@@ -50,6 +58,30 @@
 							"sid": 584729173320465,
 							"parameters": {
 								"layout": "repository"
+							}
+						},
+						{
+							"id": "load-layout-images",
+							"objectClass": "System",
+							"sid": 948617006563298,
+							"parameters": {
+								"layout": "titleScreen"
+							}
+						},
+						{
+							"id": "load-layout-images",
+							"objectClass": "System",
+							"sid": 522150733262117,
+							"parameters": {
+								"layout": "constructSplash"
+							}
+						},
+						{
+							"id": "load-layout-images",
+							"objectClass": "System",
+							"sid": 700517285854360,
+							"parameters": {
+								"layout": "tntSplash"
 							}
 						},
 						{
@@ -302,22 +334,76 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 380312269193896
+						},
+						{
+							"id": "on-any-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 689705866833979,
+							"parameters": {
+								"gamepad": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 843766265141053,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "skip"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-loading-images",
+									"objectClass": "System",
+									"sid": 452767319368225,
+									"isInverted": true
+								},
+								{
+									"id": "preloads-complete",
+									"objectClass": "Audio",
+									"sid": 417043011208745
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 147992929251137,
+									"parameters": {
+										"layout": "tntSplash"
+									}
+								}
+							],
+							"sid": 845696855509223
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-destroyed",
 							"objectClass": "spr_logoSplash",
-							"sid": 627446248163713
+							"sid": 506743788170863
 						}
 					],
 					"actions": [
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 633860775816263,
+							"sid": 729368101700221,
 							"parameters": {
-								"layout": "titleScreen"
+								"layout": "tntSplash"
 							}
 						}
 					],
-					"sid": 984441601736174
+					"sid": 506338358999583
 				}
 			],
 			"sid": 538317468235304
