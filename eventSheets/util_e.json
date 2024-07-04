@@ -1190,6 +1190,40 @@
 					]
 				},
 				{
+					"functionName": "getLayoutEffectValue",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "effectName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 871316394329357
+						},
+						{
+							"name": "effectParamNum",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 177556564775556
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 509010185183217,
+					"children": [
+						{
+							"eventType": "script",
+							"script": "const layout = runtime.layout;\n\nif (layout) {\n\tconst myEffect = layout.effects.find((e)=> e.name === localVars.effectName )\n \tif (myEffect) {\n\t\tconst parameterValue = myEffect.getParameter(localVars.effectParamNum);\n\t\truntime.setReturnValue(parameterValue);\n\t}\n}"
+						}
+					]
+				},
+				{
 					"functionName": "doesLayerEffectExist",
 					"functionDescription": "",
 					"functionCategory": "effect",

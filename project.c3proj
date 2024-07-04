@@ -419,6 +419,13 @@
 			"author": "skymen",
 			"bundled": false,
 			"version": "2.0.0.3"
+		},
+		{
+			"type": "effect",
+			"id": "warpripple",
+			"name": "Warp ripple",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "n8bngjs1j57",
@@ -444,7 +451,8 @@
 			"boatMan_spr",
 			"logoSplash_txt",
 			"teantCupLogo_spr",
-			"poweredBy_txt"
+			"poweredBy_txt",
+			"saveShrine_spr"
 		],
 		"subfolders": [
 			{
@@ -480,7 +488,6 @@
 			{
 				"items": [
 					"tb_fade",
-					"tb_spikes",
 					"tb_spikesCave",
 					"tb_respawnTouchBox",
 					"bg_treeline_"
@@ -1150,7 +1157,22 @@
 					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "impulsewarehouse.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 141107127277545,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "effects"
+				}
+			]
 		},
 		"music": {
 			"items": [
@@ -1281,8 +1303,8 @@
 	},
 	"timelines": {
 		"items": [
-			"Timeline 1",
-			"teant"
+			"teant",
+			"Timeline 1"
 		],
 		"subfolders": [
 			{
