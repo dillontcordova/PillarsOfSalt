@@ -85,6 +85,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
@@ -96,7 +103,7 @@
 			"name": "Utils",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "1.2"
+			"version": "2.1"
 		},
 		{
 			"type": "plugin",
@@ -330,7 +337,7 @@
 			"name": "Signals",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "1.0"
+			"version": "1.2"
 		},
 		{
 			"type": "behavior",
@@ -449,9 +456,6 @@
 			"ShadowLight",
 			"screenCrosshair_spr",
 			"boatMan_spr",
-			"logoSplash_txt",
-			"teantCupLogo_spr",
-			"poweredBy_txt",
 			"saveShrine_spr"
 		],
 		"subfolders": [
@@ -469,7 +473,8 @@
 					"Utils",
 					"LocalStorage",
 					"JSON",
-					"FileSystem"
+					"FileSystem",
+					"Mouse"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -578,7 +583,10 @@
 			{
 				"items": [
 					"spr_logoBullet",
-					"spr_logoSplash"
+					"spr_logoSplash",
+					"teantCupLogo_spr",
+					"logoSplash_txt",
+					"poweredBy_txt"
 				],
 				"subfolders": [],
 				"name": "splash"
@@ -600,7 +608,6 @@
 					"spr_visibilityBounding",
 					"spr_meleeSlash",
 					"spr_hitMark",
-					"spr_playerSingleton",
 					"spr_meleeSlashTileMap"
 				],
 				"subfolders": [],
@@ -624,10 +631,12 @@
 					"spr_gameSingleton",
 					"spr_gamepadSingleton",
 					"dict_states",
-					"spr_cutSceneSingleton"
+					"spr_cutSceneSingleton",
+					"spr_playerSingleton",
+					"spr_audioSingleton"
 				],
 				"subfolders": [],
-				"name": "stateMachine"
+				"name": "singletons"
 			},
 			{
 				"items": [
@@ -855,7 +864,7 @@
 			"actuals",
 			"dolls",
 			"upgrades",
-			"destructibles",
+			"poundGround",
 			"enemies",
 			"spawnPoints",
 			"enemyPatrol",
@@ -881,7 +890,9 @@
 			"deathOnTouch_spr",
 			"traps",
 			"breakable",
-			"breezySprites"
+			"breezySprites",
+			"backgrounds",
+			"destructables"
 		],
 		"subfolders": []
 	},
@@ -894,7 +905,6 @@
 				"items": [
 					"HUD",
 					"lighting",
-					"Pause",
 					"dialog",
 					"MiniMap"
 				],
@@ -905,6 +915,7 @@
 				"items": [
 					"constructSplash",
 					"tntSplash",
+					"titleScreen",
 					"caveLand",
 					"grassLand",
 					"grassRuins",
@@ -915,7 +926,7 @@
 			},
 			{
 				"items": [
-					"titleScreen"
+					"Pause"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -949,7 +960,8 @@
 					"grassRuins_e",
 					"sandbox_e",
 					"tntSplash_e",
-					"constructSplash_e"
+					"constructSplash_e",
+					"titleScreen_e"
 				],
 				"subfolders": [],
 				"name": "levels"
@@ -957,7 +969,6 @@
 			{
 				"items": [
 					"lighting_e",
-					"pauseMenu_e",
 					"dialog_e",
 					"miniMap_e"
 				],
@@ -966,7 +977,7 @@
 			},
 			{
 				"items": [
-					"titleScreen_e"
+					"pauseMenu_e"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -1171,6 +1182,44 @@
 					],
 					"subfolders": [],
 					"name": "effects"
+				},
+				{
+					"items": [
+						{
+							"name": "saveWarp.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 497599416330661,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PowerUp1Low.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 162710584137894,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PowerUp5High.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 358389088851290,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "loadWarp.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 871606431988801,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "saving"
 				}
 			]
 		},
@@ -1196,6 +1245,14 @@
 					"name": "grassTheme.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 195885692896863,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Vast-Places_Looping.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 828041604941332,
 					"file-info": {
 						"purpose": "none"
 					}

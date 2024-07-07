@@ -1,24 +1,18 @@
 {
-	"name": "spr_gameSingleton",
+	"name": "spr_gamepadSingleton",
 	"plugin-id": "Sprite",
-	"sid": 906502428621476,
-	"isGlobal": true,
+	"sid": 274279219273133,
+	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "levelDarkness",
-			"type": "number",
+			"name": "dir",
+			"type": "string",
 			"desc": "",
 			"show": true,
-			"sid": 613467609385968
+			"sid": 868129218666927
 		}
 	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 918010249902391
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -32,7 +26,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 768706,
+						"imageSpriteId": 7850124,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -50,7 +44,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 136759713925458,
+				"sid": 738533908331911,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -2,7 +2,15 @@
 	"name": "glowEmitters",
 	"plugin-id": "Sprite",
 	"sid": 899719656294180,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "brightnessFrame",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 750871092058264
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [

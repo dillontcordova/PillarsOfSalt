@@ -59,9 +59,9 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 370937174208705,
+									"sid": 146528707320576,
 									"parameters": {
-										"layout": "grassLand"
+										"layout": "titleScreen"
 									}
 								}
 							],
@@ -259,9 +259,9 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 693833746440491,
+							"sid": 416889285123606,
 							"parameters": {
-								"layout": "grassLand"
+								"layout": "titleScreen"
 							}
 						}
 					],

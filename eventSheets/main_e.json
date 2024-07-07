@@ -80,7 +80,6 @@
 			],
 			"actions": [],
 			"sid": 768688139209811,
-			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -108,11 +107,54 @@
 								"mode": "stretch-letterbox-scale",
 								"navigation-ui": "hide"
 							}
+						},
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 692948784575937,
+							"parameters": {
+								"cursor-style": "none"
+							}
 						}
 					],
 					"sid": 424915564339929,
-					"disabled": true,
 					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-resized",
+					"objectClass": "Browser",
+					"sid": 164311106597800
+				}
+			],
+			"actions": [],
+			"sid": 159495973781255,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 696592636361960,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 975171814240413,
+							"parameters": {
+								"cursor-style": "normal"
+							}
+						}
+					],
+					"sid": 820467504400451
 				}
 			]
 		},

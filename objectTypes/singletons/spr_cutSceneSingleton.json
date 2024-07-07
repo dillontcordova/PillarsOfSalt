@@ -1,18 +1,16 @@
 {
-	"name": "spr_gamepadSingleton",
+	"name": "spr_cutSceneSingleton",
 	"plugin-id": "Sprite",
-	"sid": 274279219273133,
+	"sid": 937324124672346,
 	"isGlobal": false,
-	"instanceVariables": [
+	"instanceVariables": [],
+	"behaviorTypes": [
 		{
-			"name": "dir",
-			"type": "string",
-			"desc": "",
-			"show": true,
-			"sid": 868129218666927
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 750560852200361
 		}
 	],
-	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -26,7 +24,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3421282,
+						"imageSpriteId": 111283,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -44,7 +42,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 738533908331911,
+				"sid": 172087591382854,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

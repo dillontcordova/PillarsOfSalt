@@ -2,6 +2,10 @@
 	"name": "titleScreen_e",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "saving_e"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "titleScreen",
@@ -27,6 +31,16 @@
 					"isStatic": true,
 					"isConstant": false,
 					"sid": 940405949960325
+				},
+				{
+					"eventType": "variable",
+					"name": "isCanContinue",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 728131487034108
 				},
 				{
 					"eventType": "variable",
@@ -77,9 +91,10 @@
 							"actions": [
 								{
 									"callFunction": "playMusic",
-									"sid": 833481468116068,
+									"sid": 220965287876660,
 									"parameters": [
-										"\"titleTheme\""
+										"\"titleTheme\"",
+										"0"
 									]
 								},
 								{
@@ -92,9 +107,101 @@
 										"type": "once",
 										"tag": "\"spawn\""
 									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 761642549168991,
+									"parameters": {
+										"key": "\"mysavefile\""
+									}
 								}
 							],
 							"sid": 347273021615804
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-end-of-layout",
+									"objectClass": "System",
+									"sid": 760439198441222
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-transparent",
+									"objectClass": "System",
+									"sid": 455910609952302,
+									"parameters": {
+										"layer": "\"fade\"",
+										"mode": "transparent"
+									}
+								},
+								{
+									"id": "set-layout-effect-parameter",
+									"objectClass": "System",
+									"sid": 858927962167166,
+									"parameters": {
+										"effect": "\"AdjustHSL\"",
+										"parameter-index": "2",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 750862587432825
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 337648042174484,
+									"parameters": {
+										"key": "\"mysavefile\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 551888456126141,
+									"parameters": {
+										"variable": "isCanContinue",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 184552952109221,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 341734850958304,
+											"parameters": {
+												"object": "spr_btnTileScreen",
+												"expression": "spr_btnTileScreen.btnId = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "spr_btnTileScreen",
+											"sid": 469200516206542,
+											"parameters": {
+												"opacity": "100"
+											}
+										}
+									],
+									"sid": 777111086186094
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -149,28 +256,6 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-on-screen",
-									"objectClass": "spr_titleTrees",
-									"sid": 810527583747267
-								}
-							],
-							"actions": [
-								{
-									"id": "move-at-angle",
-									"objectClass": "spr_titleTrees",
-									"sid": 990866476022362,
-									"parameters": {
-										"angle": "180",
-										"distance": ".25"
-									}
-								}
-							],
-							"sid": 190975713452154
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
 									"id": "every-tick",
 									"objectClass": "System",
 									"sid": 858342906206400
@@ -189,6 +274,167 @@
 							],
 							"sid": 855757722950056,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "spr_titleTrees",
+											"sid": 272659182332612
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "spr_titleTrees",
+											"sid": 503333695485849,
+											"parameters": {
+												"angle": "180",
+												"distance": ".25"
+											}
+										}
+									],
+									"sid": 196956390064995
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 936773829165118,
+											"parameters": {
+												"variable": "isWhitening"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "bg_godlight",
+											"sid": 319635746775262,
+											"parameters": {
+												"angle": "180",
+												"distance": ".5"
+											}
+										},
+										{
+											"id": "move-at-angle",
+											"objectClass": "bg_godlight",
+											"sid": 299657666965434,
+											"parameters": {
+												"angle": "180",
+												"distance": ".5"
+											}
+										}
+									],
+									"sid": 914102309145238,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-children",
+													"objectClass": "spr_villageProps",
+													"sid": 925167357420610
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "spr_villageProps",
+													"sid": 653425022209080,
+													"parameters": {
+														"angle": "0",
+														"distance": ".25"
+													}
+												}
+											],
+											"sid": 445611823039866
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "tb_cutOut",
+													"sid": 997758346908233,
+													"parameters": {
+														"instance-variable": "fadeDirection",
+														"comparison": 0,
+														"value": "\"up\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "tb_cutOut",
+													"sid": 633621434809610,
+													"parameters": {
+														"angle": "270",
+														"distance": ".5"
+													}
+												}
+											],
+											"sid": 704154400098892
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "tb_cutOut",
+													"sid": 678952053286590,
+													"parameters": {
+														"instance-variable": "fadeDirection",
+														"comparison": 0,
+														"value": "\"down\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "tb_cutOut",
+													"sid": 341766664536921,
+													"parameters": {
+														"angle": "90",
+														"distance": ".5"
+													}
+												}
+											],
+											"sid": 686587550999645
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "tb_cutOut",
+													"sid": 710557989211885,
+													"parameters": {
+														"instance-variable": "fadeDirection",
+														"comparison": 0,
+														"value": "\"right\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "tb_cutOut",
+													"sid": 951527257764609,
+													"parameters": {
+														"angle": "0",
+														"distance": ".5"
+													}
+												}
+											],
+											"sid": 629261708999254
+										}
+									]
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -284,151 +530,39 @@
 							]
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 748975355471366,
-									"parameters": {
-										"variable": "isWhitening"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "move-at-angle",
-									"objectClass": "bg_godlight",
-									"sid": 485561941740519,
-									"parameters": {
-										"angle": "180",
-										"distance": ".5"
-									}
-								},
-								{
-									"id": "move-at-angle",
-									"objectClass": "bg_godlight",
-									"sid": 402766543225048,
-									"parameters": {
-										"angle": "180",
-										"distance": ".5"
-									}
-								}
-							],
-							"sid": 246427625430649,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "has-children",
-											"objectClass": "spr_villageProps",
-											"sid": 238469807721379
-										}
-									],
-									"actions": [
-										{
-											"id": "move-at-angle",
-											"objectClass": "spr_villageProps",
-											"sid": 252742217563587,
-											"parameters": {
-												"angle": "0",
-												"distance": ".25"
-											}
-										}
-									],
-									"sid": 946594979859194
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "tb_cutOut",
-											"sid": 163123066882031,
-											"parameters": {
-												"instance-variable": "fadeDirection",
-												"comparison": 0,
-												"value": "\"up\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "move-at-angle",
-											"objectClass": "tb_cutOut",
-											"sid": 141108488197524,
-											"parameters": {
-												"angle": "270",
-												"distance": ".5"
-											}
-										}
-									],
-									"sid": 896622169993141
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "tb_cutOut",
-											"sid": 341188638129334,
-											"parameters": {
-												"instance-variable": "fadeDirection",
-												"comparison": 0,
-												"value": "\"down\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "move-at-angle",
-											"objectClass": "tb_cutOut",
-											"sid": 939210843641017,
-											"parameters": {
-												"angle": "90",
-												"distance": ".5"
-											}
-										}
-									],
-									"sid": 769562163087119
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "tb_cutOut",
-											"sid": 803804662826594,
-											"parameters": {
-												"instance-variable": "fadeDirection",
-												"comparison": 0,
-												"value": "\"right\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "move-at-angle",
-											"objectClass": "tb_cutOut",
-											"sid": 118037702018165,
-											"parameters": {
-												"angle": "0",
-												"distance": ".5"
-											}
-										}
-									],
-									"sid": 394405563082350
-								}
-							]
-						},
-						{
 							"eventType": "group",
 							"disabled": false,
 							"title": "MenuTweens",
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 898759062673072,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"white\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layout-effect-parameter",
+											"objectClass": "System",
+											"sid": 162338257277812,
+											"parameters": {
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "2",
+												"value": "spr_cutSceneSingleton.Tween.Value(\"white\")"
+											}
+										}
+									],
+									"sid": 770882962952832
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -455,10 +589,10 @@
 										{
 											"id": "tween-value",
 											"objectClass": "spr_cutSceneSingleton",
-											"sid": 511781027757912,
+											"sid": 652633654014718,
 											"behaviorType": "Tween",
 											"parameters": {
-												"tags": "\"dark\"",
+												"tags": "\"dark newGame\"",
 												"start-value": "Self.Tween.Value(\"white\")",
 												"end-value": "100",
 												"time": "2",
@@ -471,33 +605,6 @@
 										}
 									],
 									"sid": 243880247056769
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-playing",
-											"objectClass": "spr_cutSceneSingleton",
-											"sid": 839601076391873,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"white\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-layout-effect-parameter",
-											"objectClass": "System",
-											"sid": 413750323001925,
-											"parameters": {
-												"effect": "\"AdjustHSL\"",
-												"parameter-index": "2",
-												"value": "spr_cutSceneSingleton.Tween.Value(\"white\")"
-											}
-										}
-									],
-									"sid": 435672437869260
 								},
 								{
 									"eventType": "block",
@@ -532,10 +639,10 @@
 										{
 											"id": "on-tweens-finished",
 											"objectClass": "spr_cutSceneSingleton",
-											"sid": 842913758652065,
+											"sid": 788240364960779,
 											"behaviorType": "Tween",
 											"parameters": {
-												"tags": "\"dark\""
+												"tags": "\"newGame\""
 											}
 										}
 									],
@@ -549,15 +656,6 @@
 											}
 										},
 										{
-											"id": "go-to-layout-by-name",
-											"objectClass": "System",
-											"sid": 948775413745185,
-											"disabled": true,
-											"parameters": {
-												"layout": "\"grassRuins\""
-											}
-										},
-										{
 											"id": "go-to-layout",
 											"objectClass": "System",
 											"sid": 926710457456385,
@@ -567,6 +665,27 @@
 										}
 									],
 									"sid": 999890311620634
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-tweens-finished",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 737603990954343,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"continueGame\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "loadFromSaveFile",
+											"sid": 340117559873246
+										}
+									],
+									"sid": 139545460873057
 								}
 							],
 							"sid": 276565820709737
@@ -590,6 +709,14 @@
 									"sid": 473512364054695,
 									"parameters": {
 										"key": 13
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 425668694705356,
+									"parameters": {
+										"key": 75
 									}
 								}
 							],
@@ -636,6 +763,14 @@
 												}
 											],
 											"actions": [
+												{
+													"id": "remove-item",
+													"objectClass": "LocalStorage",
+													"sid": 539980295779344,
+													"parameters": {
+														"key": "\"mysavefile\""
+													}
+												},
 												{
 													"id": "tween-value",
 													"objectClass": "spr_cutSceneSingleton",
@@ -694,7 +829,25 @@
 											}
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "tween-value",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 657565861227051,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"dark continueGame\"",
+												"start-value": "100",
+												"end-value": "0",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
 									"sid": 770065278761780
 								},
 								{
@@ -730,7 +883,8 @@
 									],
 									"sid": 159317854781897
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -742,39 +896,67 @@
 									"parameters": {
 										"key": 38
 									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 469101025653177,
+									"parameters": {
+										"key": 87
+									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 719761954679701,
+									"parameters": {
+										"variable": "selection",
+										"value": "Utils.wrap(selection + 1, 0, 3)"
+									}
+								}
+							],
 							"sid": 373232888497437,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
+											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 955172596367390,
+											"sid": 867664618037893,
 											"parameters": {
-												"first-value": "selection + 1",
-												"comparison": 3,
-												"second-value": "2"
+												"variable": "selection",
+												"comparison": 0,
+												"value": "1"
 											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 836678470806736,
+											"parameters": {
+												"variable": "isCanContinue"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
 										{
-											"id": "add-to-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 502734259601223,
+											"sid": 212271800384886,
 											"parameters": {
 												"variable": "selection",
-												"value": "1"
+												"value": "Utils.wrap(selection + 1, 0, 3)"
 											}
 										}
 									],
-									"sid": 142173737987403
+									"sid": 472924320676269
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -786,39 +968,67 @@
 									"parameters": {
 										"key": 40
 									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 722380334452881,
+									"parameters": {
+										"key": 83
+									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 750233909392311,
+									"parameters": {
+										"variable": "selection",
+										"value": "Utils.wrap(selection  - 1, 0, 3)"
+									}
+								}
+							],
 							"sid": 207150349190156,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
+											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 757700165387538,
+											"sid": 555327182940069,
 											"parameters": {
-												"first-value": "selection + 1",
-												"comparison": 5,
-												"second-value": "0"
+												"variable": "selection",
+												"comparison": 0,
+												"value": "1"
 											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 873571906842364,
+											"parameters": {
+												"variable": "isCanContinue"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
 										{
-											"id": "subtract-from-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 619322446850740,
+											"sid": 799212103128504,
 											"parameters": {
 												"variable": "selection",
-												"value": "1"
+												"value": "Utils.wrap(selection  - 1, 0, 3)"
 											}
 										}
 									],
-									"sid": 701603093364260
+									"sid": 490447966162997
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -838,9 +1048,53 @@
 										"mode": "stretch-integer-letterbox-scale",
 										"navigation-ui": "hide"
 									}
+								},
+								{
+									"id": "set-cursor-style",
+									"objectClass": "Mouse",
+									"sid": 288649872783814,
+									"parameters": {
+										"cursor-style": "none"
+									}
 								}
 							],
 							"sid": 994286728011234
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-resized",
+									"objectClass": "Browser",
+									"sid": 705761271258837
+								}
+							],
+							"actions": [],
+							"sid": 646797706724341,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-fullscreen",
+											"objectClass": "Browser",
+											"sid": 122647387103861,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-cursor-style",
+											"objectClass": "Mouse",
+											"sid": 966162140974646,
+											"parameters": {
+												"cursor-style": "normal"
+											}
+										}
+									],
+									"sid": 503367512764258
+								}
+							]
 						}
 					],
 					"sid": 329329195204866

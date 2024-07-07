@@ -28,6 +28,9 @@
 					"uid": 199,
 					"instanceVariables": {},
 					"behaviors": {
+						"NoSave": {
+							"properties": {}
+						},
 						"Sine": {
 							"properties": {
 								"movement": "vertical",

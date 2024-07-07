@@ -2967,7 +2967,7 @@
 													"conditions": [
 														{
 															"id": "is-visible",
-															"objectClass": "destructibles",
+															"objectClass": "poundGround",
 															"sid": 986092491821121
 														}
 													],
@@ -2997,14 +2997,14 @@
 																			"objectClass": "spr_playerActual",
 																			"sid": 710358099740413,
 																			"parameters": {
-																				"object": "destructibles"
+																				"object": "poundGround"
 																			}
 																		}
 																	],
 																	"actions": [
 																		{
 																			"id": "destroy",
-																			"objectClass": "destructibles",
+																			"objectClass": "poundGround",
 																			"sid": 559839783890377
 																		},
 																		{
@@ -3031,7 +3031,7 @@
 																	"objectClass": "spr_playerActual",
 																	"sid": 327660011807896,
 																	"parameters": {
-																		"object": "destructibles",
+																		"object": "poundGround",
 																		"offset-x": "0",
 																		"offset-y": "2"
 																	}
@@ -3052,7 +3052,7 @@
 																	"actions": [
 																		{
 																			"id": "set-active",
-																			"objectClass": "destructibles",
+																			"objectClass": "poundGround",
 																			"sid": 995998445928496,
 																			"behaviorType": "Sine",
 																			"parameters": {
@@ -3107,7 +3107,7 @@
 																		},
 																		{
 																			"id": "set-active",
-																			"objectClass": "destructibles",
+																			"objectClass": "poundGround",
 																			"sid": 191006466978644,
 																			"behaviorType": "Sine",
 																			"parameters": {
@@ -3127,6 +3127,12 @@
 												0.30980392156862746,
 												0.27058823529411763,
 												0.8901960784313725,
+												1
+											],
+											"background-color": [
+												0.8784313725490196,
+												0.8941176470588236,
+												0.12941176470588237,
 												1
 											]
 										},
@@ -5377,6 +5383,10 @@
 											"isOrBlock": true
 										},
 										{
+											"eventType": "comment",
+											"text": ""
+										},
+										{
 											"eventType": "block",
 											"conditions": [
 												{
@@ -5425,9 +5435,9 @@
 												{
 													"id": "on-collision-with-another-object",
 													"objectClass": "spr_meleeSlashTileMap",
-													"sid": 949230940868792,
+													"sid": 992841450138992,
 													"parameters": {
-														"object": "destructable_tb"
+														"object": "destructables"
 													}
 												}
 											],
@@ -5440,9 +5450,9 @@
 														{
 															"id": "evaluate-expression",
 															"objectClass": "System",
-															"sid": 506883693377472,
+															"sid": 287018843734906,
 															"parameters": {
-																"value": "Functions.isDblCollisionAtk(destructable_tb.UID)"
+																"value": "Functions.isDblCollisionAtk(destructables.UID)"
 															},
 															"isInverted": true
 														}
@@ -5450,10 +5460,10 @@
 													"actions": [
 														{
 															"callFunction": "meleeAtkJuice",
-															"sid": 509139584768526,
+															"sid": 553697976779961,
 															"parameters": [
 																"-1",
-																"destructable_tb.UID"
+																"destructables.UID"
 															]
 														},
 														{
@@ -5465,6 +5475,10 @@
 												}
 											],
 											"isOrBlock": true
+										},
+										{
+											"eventType": "comment",
+											"text": ""
 										},
 										{
 											"eventType": "block",
@@ -5721,8 +5735,8 @@
 															"conditions": [
 																{
 																	"id": "compare-instance-variable",
-																	"objectClass": "destructable_tb",
-																	"sid": 207341867011800,
+																	"objectClass": "destructables",
+																	"sid": 510468533149384,
 																	"parameters": {
 																		"instance-variable": "health",
 																		"comparison": 0,
@@ -5734,8 +5748,8 @@
 															"actions": [
 																{
 																	"id": "subtract-from-instvar",
-																	"objectClass": "destructable_tb",
-																	"sid": 880335398215028,
+																	"objectClass": "destructables",
+																	"sid": 471264643155278,
 																	"parameters": {
 																		"instance-variable": "health",
 																		"value": "1"
@@ -5749,8 +5763,8 @@
 															"conditions": [
 																{
 																	"id": "compare-instance-variable",
-																	"objectClass": "destructable_tb",
-																	"sid": 489739207728141,
+																	"objectClass": "destructables",
+																	"sid": 618845004839724,
 																	"parameters": {
 																		"instance-variable": "health",
 																		"comparison": 2,
@@ -5758,41 +5772,18 @@
 																	}
 																}
 															],
-															"actions": [],
-															"sid": 197015289330488,
-															"children": [
+															"actions": [
 																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "pick-parent",
-																			"objectClass": "destructable_tb",
-																			"sid": 357439967537593,
-																			"parameters": {
-																				"parent": "destructableWood_spr",
-																				"which": "top"
-																			}
-																		}
-																	],
-																	"actions": [
-																		{
-																			"id": "set-animation",
-																			"objectClass": "destructableWood_spr",
-																			"sid": 419206347918923,
-																			"parameters": {
-																				"animation": "\"break\"",
-																				"from": "beginning"
-																			}
-																		},
-																		{
-																			"id": "destroy",
-																			"objectClass": "destructable_tb",
-																			"sid": 483850997959185
-																		}
-																	],
-																	"sid": 393574627144957
+																	"id": "set-animation",
+																	"objectClass": "destructables",
+																	"sid": 842246942042346,
+																	"parameters": {
+																		"animation": "\"break\"",
+																		"from": "beginning"
+																	}
 																}
-															]
+															],
+															"sid": 197015289330488
 														}
 													]
 												}
@@ -5914,11 +5905,11 @@
 														{
 															"id": "spawn-another-object",
 															"objectClass": "spr_meleeSlash",
-															"sid": 393261824929291,
+															"sid": 286652503308329,
 															"parameters": {
 																"object": "par_hit",
 																"layer": "spr_meleeSlash.LayerName",
-																"image-point": "0",
+																"image-point": "\"contact\"",
 																"create-hierarchy": false,
 																"template-name": "\"\""
 															}
@@ -6038,104 +6029,6 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "spr_playerActual",
-									"sid": 553594923015252,
-									"parameters": {
-										"child": "dolls",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 768142674792515,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-animation-finished",
-											"objectClass": "dolls",
-											"sid": 305128097565156,
-											"parameters": {
-												"animation": "\"death\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "fadeOut",
-											"sid": 162677829857858,
-											"parameters": [
-												"1"
-											]
-										},
-										{
-											"id": "wait-for-previous-actions",
-											"objectClass": "System",
-											"sid": 170719444324491
-										},
-										{
-											"id": "destroy",
-											"objectClass": "spr_playerActual",
-											"sid": 221962740306363
-										},
-										{
-											"id": "reset-global-variables",
-											"objectClass": "System",
-											"sid": 651444513149081,
-											"parameters": {
-												"reset-static": false
-											}
-										},
-										{
-											"callFunction": "gameOver",
-											"sid": 592535246760623
-										},
-										{
-											"type": "comment",
-											"text": "e_main does a fadeIn on start of layout"
-										}
-									],
-									"sid": 730396852113169
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-arrived",
-									"objectClass": "spr_playerActual",
-									"sid": 965191931395383,
-									"behaviorType": "MoveTo"
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "setAnimation",
-									"sid": 908635069385255,
-									"parameters": [
-										"\"death\"",
-										"spr_playerActual.UID"
-									]
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 998977043444125,
-									"parameters": {
-										"variable": "isPlayerInGame",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 636295091435721
-						},
-						{
 							"functionName": "playerDeath",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -6146,7 +6039,7 @@
 							"eventType": "function-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 471276038617977,
+							"sid": 766328100893360,
 							"children": [
 								{
 									"eventType": "block",
@@ -6154,7 +6047,7 @@
 										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 238946999250285,
+											"sid": 672978391725257,
 											"parameters": {
 												"value": "Functions.setStateGateway(\"death\")"
 											}
@@ -6163,7 +6056,7 @@
 									"actions": [
 										{
 											"callFunction": "playSound",
-											"sid": 742970180867642,
+											"sid": 703096034995324,
 											"parameters": [
 												"\"heroDeath\"",
 												false
@@ -6172,7 +6065,7 @@
 										{
 											"id": "set-collisions-enabled",
 											"objectClass": "spr_playerActual",
-											"sid": 462607238049142,
+											"sid": 171696557043718,
 											"parameters": {
 												"collisions": "disabled"
 											}
@@ -6180,7 +6073,7 @@
 										{
 											"id": "set-ignoring-input",
 											"objectClass": "spr_playerActual",
-											"sid": 122347954429442,
+											"sid": 827847944655623,
 											"behaviorType": "Platform",
 											"parameters": {
 												"input": "start-ignoring"
@@ -6189,7 +6082,7 @@
 										{
 											"id": "set-enabled",
 											"objectClass": "spr_playerActual",
-											"sid": 822010900665218,
+											"sid": 400604742731290,
 											"behaviorType": "Platform",
 											"parameters": {
 												"state": "disabled"
@@ -6198,7 +6091,7 @@
 										{
 											"id": "set-stop-on-solids",
 											"objectClass": "spr_playerActual",
-											"sid": 871713833741513,
+											"sid": 266791929039196,
 											"behaviorType": "MoveTo",
 											"parameters": {
 												"enabled": false
@@ -6207,7 +6100,7 @@
 										{
 											"id": "move-to-position",
 											"objectClass": "spr_playerActual",
-											"sid": 717059739884853,
+											"sid": 332363094110338,
 											"behaviorType": "MoveTo",
 											"parameters": {
 												"x": "scrollx",
@@ -6216,7 +6109,76 @@
 											}
 										}
 									],
-									"sid": 553735945449043
+									"sid": 501404208883614
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-arrived",
+									"objectClass": "spr_playerActual",
+									"sid": 446225665687038,
+									"behaviorType": "MoveTo"
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "setAnimation",
+									"sid": 974940783904432,
+									"parameters": [
+										"\"death\"",
+										"spr_playerActual.UID"
+									]
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 999031399511022,
+									"parameters": {
+										"variable": "isPlayerInGame",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 403818944336535
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "dolls",
+									"sid": 453611150204270,
+									"parameters": {
+										"animation": "\"death\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 565168251745884,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-parent",
+											"objectClass": "dolls",
+											"sid": 141690014117774,
+											"parameters": {
+												"parent": "spr_playerActual",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "gameOver",
+											"sid": 372129880804182
+										}
+									],
+									"sid": 510646820072043
 								}
 							]
 						},
@@ -6226,37 +6188,65 @@
 							"functionCategory": "",
 							"functionReturnType": "none",
 							"functionCopyPicked": false,
-							"functionIsAsync": false,
+							"functionIsAsync": true,
 							"functionParameters": [],
 							"eventType": "function-block",
 							"conditions": [],
-							"actions": [
+							"actions": [],
+							"sid": 262391256242940,
+							"children": [
 								{
-									"id": "destroy",
-									"objectClass": "spr_playerSingleton",
-									"sid": 656695829969707
-								},
-								{
-									"id": "reset-persisted-objects",
-									"objectClass": "System",
-									"sid": 962144803155140
-								},
-								{
-									"id": "restart-layout",
-									"objectClass": "System",
-									"sid": 544292635670738,
-									"disabled": true
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 727856101287059,
-									"parameters": {
-										"layout": "grassLand"
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "fadeOut",
+											"sid": 158561178035726,
+											"parameters": [
+												"1"
+											]
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 179961946298252
+										},
+										{
+											"type": "comment",
+											"text": "THIS caused an issue!!!!!. destroying player messed up lighting on load. there must be a race condition in \"lighting that relies on playerActual to exist"
+										},
+										{
+											"id": "destroy",
+											"objectClass": "spr_playerActual",
+											"sid": 693584921978644,
+											"disabled": true
+										},
+										{
+											"id": "reset-global-variables",
+											"objectClass": "System",
+											"sid": 115164045544052,
+											"parameters": {
+												"reset-static": true
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "spr_playerSingleton",
+											"sid": 850305905782589
+										},
+										{
+											"id": "reset-persisted-objects",
+											"objectClass": "System",
+											"sid": 809027378372502
+										},
+										{
+											"callFunction": "loadFromSaveFile",
+											"sid": 483675855234324
+										}
+									],
+									"sid": 660640652130760
 								}
-							],
-							"sid": 262391256242940
+							]
 						}
 					],
 					"sid": 673736933873361

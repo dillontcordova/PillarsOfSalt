@@ -25,9 +25,10 @@
 			"actions": [
 				{
 					"callFunction": "playMusic",
-					"sid": 105063358038383,
+					"sid": 468661246432268,
 					"parameters": [
-						"\"grassTheme\""
+						"\"grassTheme\"",
+						"0"
 					]
 				},
 				{

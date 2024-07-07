@@ -28,6 +28,9 @@
 					"uid": 269,
 					"instanceVariables": {},
 					"behaviors": {
+						"NoSave": {
+							"properties": {}
+						},
 						"DestroyOutsideLayout": {
 							"properties": {}
 						}
@@ -71,6 +74,9 @@
 					"uid": 270,
 					"instanceVariables": {},
 					"behaviors": {
+						"NoSave": {
+							"properties": {}
+						},
 						"DestroyOutsideLayout": {
 							"properties": {}
 						}
@@ -141,6 +147,14 @@
 						"brightness": 50
 					},
 					"behaviors": {
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
 						"Sine": {
 							"properties": {
 								"movement": "angle",
@@ -1024,13 +1038,16 @@
 								"start-state": "Off"
 							}
 						},
-						"Timer": {
+						"Signals": {
 							"properties": {}
 						},
 						"Tween": {
 							"properties": {
 								"enabled": true
 							}
+						},
+						"Timer": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -1199,8 +1216,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 2.220446049250313e-16,
-							"transformH": 2.220446049250313e-16,
+							"transformW": 0,
+							"transformH": 0,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -1258,8 +1275,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 2.220446049250313e-16,
-							"transformH": 2.220446049250313e-16,
+							"transformW": 0,
+							"transformH": 0,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -1278,7 +1295,7 @@
 							1,
 							1,
 							1,
-							1
+							0.33
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -1317,8 +1334,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 2.220446049250313e-16,
-							"transformH": 2.220446049250313e-16,
+							"transformW": 0,
+							"transformH": 0,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -1331,6 +1348,55 @@
 						"y": 276,
 						"width": 128,
 						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_audioSingleton",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 453,
+					"instanceVariables": {
+						"curMusic": "",
+						"nextMusic": "",
+						"nextVolume": 0,
+						"curVolume": 0
+					},
+					"behaviors": {
+						"FSM": {
+							"properties": {
+								"active": true,
+								"start-state": "Off"
+							}
+						},
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 208,
+						"y": -48,
+						"width": 16,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

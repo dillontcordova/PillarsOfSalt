@@ -1,21 +1,18 @@
 {
-	"name": "spr_cutSceneSingleton",
+	"name": "spr_gameSingleton",
 	"plugin-id": "Sprite",
-	"sid": 937324124672346,
-	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [
+	"sid": 906502428621476,
+	"isGlobal": true,
+	"instanceVariables": [
 		{
-			"behaviorId": "Timer",
-			"name": "Timer",
-			"sid": 750560852200361
-		},
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 148348491579526
+			"name": "levelDarkness",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 613467609385968
 		}
 	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -29,7 +26,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 538736,
+						"imageSpriteId": 1910484,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -47,7 +44,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 172087591382854,
+				"sid": 136759713925458,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

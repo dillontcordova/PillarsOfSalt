@@ -486,6 +486,9 @@
 										"start-state": "Off"
 									}
 								},
+								"Signals": {
+									"properties": {}
+								},
 								"Tween": {
 									"properties": {
 										"enabled": true
@@ -527,6 +530,14 @@
 									"properties": {
 										"active": true,
 										"start-state": "Off"
+									}
+								},
+								"Signals": {
+									"properties": {}
+								},
+								"Tween": {
+									"properties": {
+										"enabled": true
 									}
 								}
 							},
@@ -925,7 +936,57 @@
 					"global": false
 				}
 			],
-			"instances": [],
+			"instances": [
+				{
+					"type": "spr_audioSingleton",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 454,
+					"instanceVariables": {
+						"curMusic": "",
+						"nextMusic": "",
+						"nextVolume": 0,
+						"curVolume": 0
+					},
+					"behaviors": {
+						"FSM": {
+							"properties": {
+								"active": true,
+								"start-state": "Off"
+							}
+						},
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": -12,
+						"y": -40,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 342506092872513,
 			"effectTypes": [
 				{

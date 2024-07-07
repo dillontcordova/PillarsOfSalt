@@ -336,7 +336,8 @@
 						"hasArrived": false,
 						"isImpeded": false,
 						"isThinking": false,
-						"touchDamage": 1
+						"touchDamage": 1,
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"MoveTo": {
@@ -477,12 +478,13 @@
 					},
 					"uid": 47,
 					"instanceVariables": {
-						"health": 20,
+						"health": 1,
 						"isInvincible": false,
 						"isAttacking": false,
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"brightnessFrame": 1,
 						"gravity": 0,
 						"gShifting": 0,
 						"zoneId": -1,
@@ -726,8 +728,8 @@
 						"object": -1,
 						"initially-visible": true,
 						"live-preview": false,
-						"speed": 100,
-						"size": 4,
+						"speed": 150,
+						"size": 8,
 						"opacity": 100,
 						"grow-rate": 0,
 						"x-randomiser": 0,
@@ -736,12 +738,12 @@
 						"size-randomiser": 0,
 						"grow-rate-randomiser": 0,
 						"acceleration": 0,
-						"gravity": 0,
+						"gravity": 300,
 						"angle-randomiser": 0,
 						"life-speed-randomiser": 800,
 						"opacity-randomiser": 0,
 						"destroy-mode": "fade-to-invisible",
-						"timeout": 0.5
+						"timeout": 0.4
 					},
 					"uid": 35,
 					"instanceVariables": {},
@@ -773,7 +775,9 @@
 						"live-preview": false
 					},
 					"uid": 54,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 368,
@@ -1245,7 +1249,16 @@
 					"instanceVariables": {
 						"brightness": 50
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 384,
 						"y": 320,
@@ -1290,7 +1303,8 @@
 						"chaseRange": 100,
 						"chargeStartPos": 0,
 						"alertCool": 0.75,
-						"atkCool": 0.75
+						"atkCool": 0.75,
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"MoveTo": {
@@ -1605,7 +1619,8 @@
 					},
 					"uid": 175,
 					"instanceVariables": {
-						"doorName": "null"
+						"doorName": "null",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Solid": {
@@ -1660,7 +1675,8 @@
 					},
 					"uid": 176,
 					"instanceVariables": {
-						"doorName": "null"
+						"doorName": "null",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Persist": {
@@ -1721,6 +1737,14 @@
 								"active": true,
 								"start-state": "Off"
 							}
+						},
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -1769,7 +1793,8 @@
 						"nextY": -1,
 						"origSpeed": -1,
 						"chaseSpeed": 60,
-						"swarmDistance": 32
+						"swarmDistance": 32,
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"MoveTo": {
@@ -1935,7 +1960,16 @@
 					"instanceVariables": {
 						"brightness": 50
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 458.39117431640625,
 						"y": 367.5743713378906,
@@ -1966,7 +2000,16 @@
 					"instanceVariables": {
 						"brightness": 50
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 422,
 						"y": 368,
@@ -2005,7 +2048,8 @@
 						"hasArrived": false,
 						"isImpeded": false,
 						"isThinking": false,
-						"touchDamage": 1
+						"touchDamage": 1,
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"MoveTo": {
@@ -2158,7 +2202,8 @@
 						"isThinking": false,
 						"touchDamage": 1,
 						"rotateSpeed": 0.2,
-						"crawlSpeed": 30
+						"crawlSpeed": 30,
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"MoveTo": {
@@ -3780,7 +3825,8 @@
 					},
 					"uid": 150,
 					"instanceVariables": {
-						"upgrade": "jump"
+						"upgrade": "jump",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {
@@ -3829,7 +3875,8 @@
 					},
 					"uid": 151,
 					"instanceVariables": {
-						"upgrade": "health"
+						"upgrade": "health",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {
@@ -3878,7 +3925,8 @@
 					},
 					"uid": 152,
 					"instanceVariables": {
-						"upgrade": "pound"
+						"upgrade": "pound",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {
@@ -3927,7 +3975,8 @@
 					},
 					"uid": 153,
 					"instanceVariables": {
-						"upgrade": "shoot"
+						"upgrade": "shoot",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {
@@ -3976,7 +4025,8 @@
 					},
 					"uid": 154,
 					"instanceVariables": {
-						"upgrade": "dash"
+						"upgrade": "dash",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {
@@ -4025,7 +4075,8 @@
 					},
 					"uid": 155,
 					"instanceVariables": {
-						"upgrade": "wallJump"
+						"upgrade": "wallJump",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {
@@ -4437,6 +4488,9 @@
 								"active": true,
 								"start-state": "Off"
 							}
+						},
+						"Signals": {
+							"properties": {}
 						},
 						"Tween": {
 							"properties": {
@@ -5202,7 +5256,16 @@
 					"instanceVariables": {
 						"brightness": 7
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 406,
 						"y": 410,
@@ -6051,12 +6114,27 @@
 					},
 					"uid": 179,
 					"instanceVariables": {
-						"brightness": 30
+						"brightness": 30,
+						"health": -1,
+						"isWaitToConfirm": false
 					},
 					"behaviors": {
+						"Signals": {
+							"properties": {}
+						},
 						"Tween": {
 							"properties": {
 								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 1,
+								"saturation": 1,
+								"luminosity": 1
 							}
 						}
 					},
@@ -6067,6 +6145,55 @@
 						"height": 60,
 						"originX": 0.5,
 						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_audioSingleton",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 452,
+					"instanceVariables": {
+						"curMusic": "",
+						"nextMusic": "",
+						"nextVolume": 0,
+						"curVolume": 0
+					},
+					"behaviors": {
+						"FSM": {
+							"properties": {
+								"active": true,
+								"start-state": "Off"
+							}
+						},
+						"Signals": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 192,
+						"y": 96,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

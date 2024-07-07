@@ -35,7 +35,11 @@
 									},
 									"uid": 48,
 									"instanceVariables": {},
-									"behaviors": {},
+									"behaviors": {
+										"NoSave": {
+											"properties": {}
+										}
+									},
 									"world": {
 										"x": 0,
 										"y": 0,
@@ -109,7 +113,11 @@
 									},
 									"uid": 46,
 									"instanceVariables": {},
-									"behaviors": {},
+									"behaviors": {
+										"NoSave": {
+											"properties": {}
+										}
+									},
 									"world": {
 										"x": 0,
 										"y": 0,
@@ -183,7 +191,11 @@
 									},
 									"uid": 45,
 									"instanceVariables": {},
-									"behaviors": {},
+									"behaviors": {
+										"NoSave": {
+											"properties": {}
+										}
+									},
 									"world": {
 										"x": 0,
 										"y": 0,
@@ -292,7 +304,11 @@
 									},
 									"uid": 53,
 									"instanceVariables": {},
-									"behaviors": {},
+									"behaviors": {
+										"NoSave": {
+											"properties": {}
+										}
+									},
 									"world": {
 										"x": 560,
 										"y": 0,
@@ -1050,7 +1066,8 @@
 							},
 							"uid": 212,
 							"instanceVariables": {
-								"doorName": "door1"
+								"doorName": "door1",
+								"brightnessFrame": 1
 							},
 							"behaviors": {
 								"Solid": {
@@ -1105,7 +1122,8 @@
 							},
 							"uid": 213,
 							"instanceVariables": {
-								"doorName": "door1"
+								"doorName": "door1",
+								"brightnessFrame": 1
 							},
 							"behaviors": {
 								"Persist": {
@@ -1140,7 +1158,8 @@
 							},
 							"uid": 2,
 							"instanceVariables": {
-								"doorName": "null"
+								"doorName": "null",
+								"brightnessFrame": 1
 							},
 							"behaviors": {
 								"Solid": {
@@ -1195,7 +1214,8 @@
 							},
 							"uid": 3,
 							"instanceVariables": {
-								"doorName": "exitLevel"
+								"doorName": "exitLevel",
+								"brightnessFrame": 1
 							},
 							"behaviors": {
 								"Solid": {
@@ -1664,7 +1684,9 @@
 						"live-preview": false
 					},
 					"uid": 206,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 288,
@@ -1693,7 +1715,9 @@
 						"live-preview": false
 					},
 					"uid": 207,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 32,
@@ -1722,7 +1746,9 @@
 						"live-preview": false
 					},
 					"uid": 216,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 352,
@@ -1751,7 +1777,9 @@
 						"live-preview": false
 					},
 					"uid": 217,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 32,
@@ -1780,7 +1808,9 @@
 						"live-preview": false
 					},
 					"uid": 220,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1328,
@@ -1809,7 +1839,9 @@
 						"live-preview": false
 					},
 					"uid": 221,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1376,
@@ -1838,7 +1870,9 @@
 						"live-preview": false
 					},
 					"uid": 222,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1568,
@@ -1867,7 +1901,9 @@
 						"live-preview": false
 					},
 					"uid": 223,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"brightnessFrame": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1312,
@@ -1897,7 +1933,8 @@
 					},
 					"uid": 224,
 					"instanceVariables": {
-						"upgrade": "dash"
+						"upgrade": "dash",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {
@@ -2264,7 +2301,8 @@
 					},
 					"uid": 218,
 					"instanceVariables": {
-						"doorName": "exitLevel"
+						"doorName": "exitLevel",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Persist": {
@@ -2299,7 +2337,8 @@
 					},
 					"uid": 225,
 					"instanceVariables": {
-						"upgrade": "wallJump"
+						"upgrade": "wallJump",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {
@@ -2456,7 +2495,8 @@
 					},
 					"uid": 43,
 					"instanceVariables": {
-						"upgrade": "jump"
+						"upgrade": "jump",
+						"brightnessFrame": 1
 					},
 					"behaviors": {
 						"Sine": {

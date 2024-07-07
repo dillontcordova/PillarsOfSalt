@@ -21,9 +21,10 @@
 			"actions": [
 				{
 					"callFunction": "playMusic",
-					"sid": 759847383954664,
+					"sid": 190308657066619,
 					"parameters": [
-						"\"caveTheme\""
+						"\"caveTheme\"",
+						"0"
 					]
 				},
 				{

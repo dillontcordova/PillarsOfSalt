@@ -11,7 +11,18 @@
 			"sid": 428714721593391
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "overboy_signals",
+			"name": "Signals",
+			"sid": 633296563365140
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 310256082806716
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"tikiTallTorch_spr",
