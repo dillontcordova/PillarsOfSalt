@@ -44,6 +44,27 @@
 			"desc": "",
 			"show": true,
 			"sid": 529271754543156
+		},
+		{
+			"name": "isBouncing",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 172591986632325
+		},
+		{
+			"name": "defaultPlatformSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 967373029965355
+		},
+		{
+			"name": "defaultPlatformDeceleration",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 257681936346897
 		}
 	],
 	"behaviorTypes": [

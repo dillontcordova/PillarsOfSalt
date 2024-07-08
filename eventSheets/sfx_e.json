@@ -370,8 +370,7 @@
 								},
 								{
 									"callFunction": "playNextMusic",
-									"sid": 735370669613255,
-									"breakpoint": true
+									"sid": 735370669613255
 								}
 							],
 							"sid": 136052900950025

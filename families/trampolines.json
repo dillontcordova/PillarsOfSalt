@@ -1,0 +1,30 @@
+{
+	"name": "trampolines",
+	"plugin-id": "Sprite",
+	"sid": 330981214569629,
+	"instanceVariables": [
+		{
+			"name": "bounceSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 675173094957103
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 951326950768767
+		},
+		{
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 241856457233077
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"trampolene_spr"
+	]
+}

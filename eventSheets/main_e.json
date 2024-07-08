@@ -62,6 +62,10 @@
 			"includeSheet": "saving_e"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "trampoline_e"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -80,6 +84,7 @@
 			],
 			"actions": [],
 			"sid": 768688139209811,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -118,6 +123,7 @@
 						}
 					],
 					"sid": 424915564339929,
+					"disabled": true,
 					"isOrBlock": true
 				}
 			]
@@ -244,6 +250,37 @@
 				}
 			],
 			"sid": 526958667038601
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "actuals",
+					"sid": 853959172608185
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "actuals",
+					"sid": 466851108081417,
+					"parameters": {
+						"instance-variable": "defaultPlatformDeceleration",
+						"value": "Self.Platform.Deceleration"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "actuals",
+					"sid": 721314246073303,
+					"parameters": {
+						"instance-variable": "defaultPlatformSpeed",
+						"value": "Self.Platform.MaxSpeed"
+					}
+				}
+			],
+			"sid": 309525836983211
 		},
 		{
 			"eventType": "block",

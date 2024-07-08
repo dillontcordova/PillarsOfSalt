@@ -332,6 +332,9 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"isBouncing": false,
+						"defaultPlatformSpeed": 0,
+						"defaultPlatformDeceleration": 0,
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -484,6 +487,9 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"isBouncing": false,
+						"defaultPlatformSpeed": 0,
+						"defaultPlatformDeceleration": 0,
 						"brightnessFrame": 1,
 						"gravity": 0,
 						"gShifting": 0,
@@ -1293,6 +1299,9 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"isBouncing": false,
+						"defaultPlatformSpeed": 0,
+						"defaultPlatformDeceleration": 0,
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -1781,6 +1790,9 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"isBouncing": false,
+						"defaultPlatformSpeed": 0,
+						"defaultPlatformDeceleration": 0,
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -2044,6 +2056,9 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"isBouncing": false,
+						"defaultPlatformSpeed": 0,
+						"defaultPlatformDeceleration": 0,
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -2196,6 +2211,9 @@
 						"isSolid": true,
 						"lockState": "",
 						"isRight": true,
+						"isBouncing": false,
+						"defaultPlatformSpeed": 0,
+						"defaultPlatformDeceleration": 0,
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -6192,6 +6210,48 @@
 						"y": 96,
 						"width": 16,
 						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "trampolene_spr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 455,
+					"instanceVariables": {
+						"bounceSpeed": 10
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Jumpthru": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 680,
+						"y": 440,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
