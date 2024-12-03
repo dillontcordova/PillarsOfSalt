@@ -1,0 +1,47 @@
+{
+	"name": "brokenPiece_canvas",
+	"plugin-id": "DrawingCanvas",
+	"sid": 913122493667347,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "angleForce",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 887570419633785
+		},
+		{
+			"name": "isBroken",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 430013644157688
+		},
+		{
+			"name": "isFloat",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 425948298027855
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 239685075032609
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 626796381386626
+		},
+		{
+			"behaviorId": "overboy_signals",
+			"name": "Signals",
+			"sid": 472776154399581
+		}
+	],
+	"effectTypes": []
+}

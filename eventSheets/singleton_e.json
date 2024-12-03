@@ -835,6 +835,26 @@
 																				"name0": "\"groundPound\""
 																			},
 																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 886626053195421,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"wallSlide\""
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 158581995531893,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"takeDamage\""
+																			},
+																			"isInverted": true
 																		}
 																	],
 																	"actions": [
@@ -884,6 +904,26 @@
 																			"behaviorType": "FSM",
 																			"parameters": {
 																				"name0": "\"groundPound\""
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 741414581067811,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"dash\""
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 703122287845823,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"takeDamage\""
 																			},
 																			"isInverted": true
 																		}
@@ -945,6 +985,16 @@
 																			"behaviorType": "FSM",
 																			"parameters": {
 																				"name0": "\"dash\""
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 854405236446443,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"takeDamage\""
 																			},
 																			"isInverted": true
 																		}
@@ -1056,6 +1106,16 @@
 																			"behaviorType": "FSM",
 																			"parameters": {
 																				"name0": "\"dash\""
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "compare-current-state",
+																			"objectClass": "spr_playerSingleton",
+																			"sid": 767182455925180,
+																			"behaviorType": "FSM",
+																			"parameters": {
+																				"name0": "\"takeDamage\""
 																			},
 																			"isInverted": true
 																		}

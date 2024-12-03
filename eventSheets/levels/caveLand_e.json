@@ -21,9 +21,10 @@
 			"actions": [
 				{
 					"callFunction": "playMusic",
-					"sid": 759847383954664,
+					"sid": 190308657066619,
 					"parameters": [
-						"\"caveTheme\""
+						"\"caveTheme\"",
+						"0"
 					]
 				},
 				{
@@ -52,7 +53,10 @@
 			"actions": [
 				{
 					"callFunction": "fallingLeaves",
-					"sid": 520651745759310
+					"sid": 520651745759310,
+					"parameters": [
+						"\"\""
+					]
 				}
 			],
 			"sid": 189452850215417,

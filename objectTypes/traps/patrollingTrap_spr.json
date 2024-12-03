@@ -1,0 +1,70 @@
+{
+	"name": "patrollingTrap_spr",
+	"plugin-id": "Sprite",
+	"sid": 214500134997975,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 386767578548648
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7802216,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": "pain"
+					}
+				],
+				"sid": 564035871598324,
+				"name": "Face",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 15
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4809417,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": "pain"
+					}
+				],
+				"sid": 572416777830435,
+				"name": "Flash",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 15
+			}
+		],
+		"subfolders": []
+	}
+}

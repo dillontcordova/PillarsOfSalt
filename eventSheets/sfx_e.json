@@ -2,16 +2,6 @@
 	"name": "sfx_e",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "nextSong",
-			"type": "string",
-			"initialValue": "",
-			"comment": "",
-			"isStatic": true,
-			"isConstant": false,
-			"sid": 389913045030063
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "SFX",
@@ -69,6 +59,13 @@
 							"initialValue": "false",
 							"comment": "",
 							"sid": 803727359911214
+						},
+						{
+							"name": "extraTags",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 817936591186104
 						}
 					],
 					"eventType": "function-block",
@@ -108,14 +105,14 @@
 										{
 											"id": "play-by-name",
 											"objectClass": "Audio",
-											"sid": 275168451895633,
+											"sid": 140166334608731,
 											"parameters": {
 												"folder": "sounds",
 												"audio-file-name": "soundName",
 												"loop": "looping",
 												"volume": "0",
 												"stereo-pan": "0",
-												"tag-optional": "soundName"
+												"tag-optional": "soundName & (extraTags ? (\" \" & extraTags) : \"\")"
 											}
 										}
 									],
@@ -136,14 +133,14 @@
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 863883302580549,
+									"sid": 842803551155867,
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "soundName",
 										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "soundName"
+										"tag-optional": "soundName & (extraTags ? (\" \" & extraTags) : \"\")"
 									}
 								}
 							],
@@ -299,11 +296,37 @@
 							"initialValue": "",
 							"comment": "",
 							"sid": 481954438157684
+						},
+						{
+							"name": "volume",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 722570416711417
 						}
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_audioSingleton",
+							"sid": 571984420924889,
+							"parameters": {
+								"instance-variable": "nextMusic",
+								"value": "musicName"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_audioSingleton",
+							"sid": 174307355382291,
+							"parameters": {
+								"instance-variable": "nextVolume",
+								"value": "volume"
+							}
+						}
+					],
 					"sid": 905312934408413,
 					"children": [
 						{
@@ -312,35 +335,52 @@
 								{
 									"id": "is-tag-playing",
 									"objectClass": "Audio",
-									"sid": 871727903681465,
+									"sid": 733976669995336,
 									"parameters": {
-										"tag": "\"music\""
+										"tag": "spr_audioSingleton.curMusic"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 708908106158596,
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 612844059666217,
 									"parameters": {
-										"variable": "nextSong",
-										"value": "musicName"
+										"tag": "spr_audioSingleton.curMusic",
+										"db": "-30",
+										"duration": "1",
+										"ending": "stop"
 									}
 								},
 								{
-									"id": "fade-volume",
-									"objectClass": "Audio",
-									"sid": 358519743299666,
+									"id": "tween-value",
+									"objectClass": "spr_audioSingleton",
+									"sid": 238720311461721,
+									"behaviorType": "Tween",
 									"parameters": {
-										"tag": "\"music\"",
-										"db": "-20",
-										"duration": "2",
-										"ending": "stop"
+										"tags": "\"musicNext\"",
+										"start-value": "1",
+										"end-value": "100",
+										"time": "1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 941746997683775
+								},
+								{
+									"callFunction": "playNextMusic",
+									"sid": 735370669613255
 								}
 							],
-							"sid": 892862524096793
+							"sid": 136052900950025
 						},
 						{
 							"eventType": "block",
@@ -348,105 +388,107 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 959907313559839
+									"sid": 425331622486444
 								}
 							],
 							"actions": [
 								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 416476065872758,
-									"parameters": {
-										"folder": "music",
-										"audio-file-name": "musicName",
-										"loop": "looping",
-										"volume": "-20",
-										"stereo-pan": "0",
-										"tag-optional": "\"music\""
-									}
-								},
-								{
-									"id": "fade-volume",
-									"objectClass": "Audio",
-									"sid": 740280321026218,
-									"parameters": {
-										"tag": "\"music\"",
-										"db": "0",
-										"duration": "5",
-										"ending": "keep-playing"
-									}
+									"callFunction": "playNextMusic",
+									"sid": 254951661619281
 								}
 							],
-							"sid": 126701760670150
+							"sid": 730571413980988
 						}
 					]
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-tag-playing",
-							"objectClass": "Audio",
-							"sid": 194750641495315,
-							"parameters": {
-								"tag": "\"music\""
-							},
-							"isInverted": true
-						}
-					],
+					"functionName": "playNextMusic",
+					"functionDescription": "",
+					"functionCategory": "sfx",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
 					"actions": [],
-					"sid": 130502399206607,
+					"sid": 878692980698266,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
+							"conditions": [],
+							"actions": [
 								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 703860685230598,
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 970281378434199,
+									"disabled": true,
 									"parameters": {
-										"variable": "nextSong",
-										"comparison": 1,
+										"tag": "spr_audioSingleton.curMusic"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_audioSingleton",
+									"sid": 713860718901757,
+									"parameters": {
+										"instance-variable": "curMusic",
+										"value": "Self.nextMusic"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_audioSingleton",
+									"sid": 263506702975760,
+									"parameters": {
+										"instance-variable": "curVolume",
+										"value": "Self.nextVolume"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_audioSingleton",
+									"sid": 871741843339153,
+									"parameters": {
+										"instance-variable": "nextMusic",
 										"value": "\"\""
 									}
-								}
-							],
-							"actions": [
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_audioSingleton",
+									"sid": 341252545897664,
+									"parameters": {
+										"instance-variable": "nextVolume",
+										"value": "0"
+									}
+								},
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 805981957686746,
+									"sid": 510616528130692,
 									"parameters": {
 										"folder": "music",
-										"audio-file-name": "nextSong",
+										"audio-file-name": "spr_audioSingleton.curMusic",
 										"loop": "looping",
-										"volume": "-20",
+										"volume": "-30",
 										"stereo-pan": "0",
-										"tag-optional": "\"music\""
+										"tag-optional": "spr_audioSingleton.curMusic"
 									}
 								},
 								{
 									"id": "fade-volume",
 									"objectClass": "Audio",
-									"sid": 990385277881229,
+									"sid": 972178040368080,
 									"parameters": {
-										"tag": "\"music\"",
-										"db": "0",
+										"tag": "spr_audioSingleton.curMusic",
+										"db": "spr_audioSingleton.curVolume",
 										"duration": "5",
 										"ending": "keep-playing"
 									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 490803287195890,
-									"parameters": {
-										"variable": "nextSong",
-										"value": "\"\""
-									}
 								}
 							],
-							"sid": 826239582474010
+							"sid": 518304359986094
 						}
 					]
 				}

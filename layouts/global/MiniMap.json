@@ -88,13 +88,17 @@
 								"live-preview": false
 							},
 							"uid": 383,
+							"sid": 628006815673678,
+							"tags": "",
 							"instanceVariables": {},
 							"behaviors": {},
+							"showing": true,
+							"locked": false,
 							"world": {
 								"x": 32,
 								"y": 32,
-								"width": 272,
-								"height": 128,
+								"width": 544,
+								"height": 256,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -169,6 +173,10 @@
 			"global": true
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 782597383662860,
 	"nonworld-instances": [],
 	"effectTypes": [],

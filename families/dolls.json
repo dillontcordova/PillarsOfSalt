@@ -50,6 +50,7 @@
 		"spr_blobEnemyDoll",
 		"spr_enemyBatDoll",
 		"spr_enemyWormDoll",
-		"boatMan_spr"
+		"boatMan_spr",
+		"spr_playerEmptyDoll"
 	]
 }

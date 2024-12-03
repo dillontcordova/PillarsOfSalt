@@ -13,14 +13,15 @@
 	],
 	"effectTypes": [],
 	"image": {
-		"width": 320,
-		"height": 208,
+		"width": 640,
+		"height": 300,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6866467,
+		"fileType": "image/png",
+		"imageSpriteId": 5108720,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

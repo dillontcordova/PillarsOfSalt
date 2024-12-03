@@ -1,0 +1,102 @@
+{
+	"name": "platformSpinning_spr",
+	"plugin-id": "Sprite",
+	"sid": 229540975361833,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "platformCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 492306491927515
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 992045648283670
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 370367,
+						"collisionPoly": {
+							"points": [
+								0.265625,
+								0.015625,
+								0.765625,
+								0.015625,
+								0.765625,
+								0.984375,
+								0.265625,
+								0.984375
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 686084141245267,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			},
+			{
+				"frames": [
+					{
+						"width": 256,
+						"height": 256,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9080864,
+						"collisionPoly": {
+							"points": [
+								0.3905109489051095,
+								0.22321428571428573,
+								0.6240875912408759,
+								0.22321428571428573,
+								0.6240875912408759,
+								0.7767857142857143,
+								0.3905109489051095,
+								0.7767857142857143
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 198065578941773,
+				"name": "templateFrame",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}

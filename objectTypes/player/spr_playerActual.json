@@ -54,13 +54,6 @@
 			"sid": 133260863079197
 		},
 		{
-			"name": "animationLock",
-			"type": "boolean",
-			"desc": "",
-			"show": true,
-			"sid": 778975227064829
-		},
-		{
 			"name": "isSafe",
 			"type": "boolean",
 			"desc": "",
@@ -80,6 +73,20 @@
 			"desc": "",
 			"show": false,
 			"sid": 454119673439912
+		},
+		{
+			"name": "starCount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 957262480183244
+		},
+		{
+			"name": "isCapeDetached",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 561952070334294
 		}
 	],
 	"behaviorTypes": [
@@ -105,14 +112,15 @@
 			{
 				"frames": [
 					{
-						"width": 10,
-						"height": 15,
+						"width": 20,
+						"height": 30,
 						"originX": 0.5,
 						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7648466,
+						"fileType": "image/png",
+						"imageSpriteId": 97128,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -151,14 +159,15 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 9,
+						"width": 32,
+						"height": 18,
 						"originX": 0.5,
 						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1558687,
+						"fileType": "image/png",
+						"imageSpriteId": 2168438,
 						"collisionPoly": {
 							"points": [
 								0,

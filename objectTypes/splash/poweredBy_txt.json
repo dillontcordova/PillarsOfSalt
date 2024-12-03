@@ -1,0 +1,15 @@
+{
+	"name": "poweredBy_txt",
+	"plugin-id": "Text",
+	"sid": 437112540780698,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 630486196129199
+		}
+	],
+	"effectTypes": []
+}

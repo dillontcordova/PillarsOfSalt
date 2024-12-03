@@ -14,7 +14,8 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 447051,
+		"fileType": "image/png",
+		"imageSpriteId": 1600823,
 		"useCollisionPoly": true,
 		"tag": ""
 	},

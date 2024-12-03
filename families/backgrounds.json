@@ -1,0 +1,29 @@
+{
+	"name": "backgrounds",
+	"plugin-id": "TiledBg",
+	"sid": 992240116545892,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 252103121062228
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"TiledBackground8",
+		"TiledBackground7",
+		"TiledBackground5",
+		"TiledBackground6",
+		"TiledBackground3",
+		"TiledBackground4",
+		"TiledBackground2",
+		"TiledBackground10",
+		"TiledBackground",
+		"tb_moonBackground",
+		"tb_titleBackground",
+		"TiledBackground11",
+		"TiledBackground9"
+	]
+}

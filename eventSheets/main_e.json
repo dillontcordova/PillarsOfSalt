@@ -50,6 +50,26 @@
 			"includeSheet": "miniMap_e"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "breakAparts_e"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "platforms_e"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "saving_e"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "trampoline_e"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "yoshiBubble_e"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -95,10 +115,54 @@
 								"mode": "stretch-letterbox-scale",
 								"navigation-ui": "hide"
 							}
+						},
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 692948784575937,
+							"parameters": {
+								"cursor-style": "none"
+							}
 						}
 					],
 					"sid": 424915564339929,
 					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-resized",
+					"objectClass": "Browser",
+					"sid": 164311106597800
+				}
+			],
+			"actions": [],
+			"sid": 159495973781255,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 696592636361960,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 975171814240413,
+							"parameters": {
+								"cursor-style": "normal"
+							}
+						}
+					],
+					"sid": 820467504400451
 				}
 			]
 		},
@@ -124,15 +188,11 @@
 				},
 				{
 					"callFunction": "fadeIn",
-					"sid": 160849029032326,
+					"sid": 923864598024050,
 					"parameters": [
-						"1"
+						"1",
+						true
 					]
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 212723785322964
 				}
 			],
 			"sid": 107338852329282
@@ -193,6 +253,37 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-created",
+					"objectClass": "actuals",
+					"sid": 853959172608185
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "actuals",
+					"sid": 466851108081417,
+					"parameters": {
+						"instance-variable": "defaultPlatformDeceleration",
+						"value": "Self.Platform.Deceleration"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "actuals",
+					"sid": 721314246073303,
+					"parameters": {
+						"instance-variable": "defaultPlatformSpeed",
+						"value": "Self.Platform.MaxSpeed"
+					}
+				}
+			],
+			"sid": 309525836983211
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "spr_visibilityBounding",
 					"sid": 737638759637401,
@@ -244,6 +335,260 @@
 				}
 			],
 			"sid": 441132441068413
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Weather",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-instance-signal",
+							"objectClass": "spr_gameSingleton",
+							"sid": 345625619402718,
+							"parameters": {
+								"tag": "\"playerEnteredRoom\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "weather",
+							"sid": 905776485009238,
+							"parameters": {
+								"x": "ViewportMidX(spr_playerActual.LayerName)",
+								"y": "ViewportTop(spr_playerActual.LayerName)"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "spr_playerActual",
+							"sid": 433130254396963,
+							"parameters": {
+								"child": "weather",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 137107096527948,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "fast-forward",
+							"objectClass": "weather",
+							"sid": 756886526483290,
+							"parameters": {
+								"time": "10"
+							}
+						}
+					],
+					"sid": 313921768527459
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "weatherEffects",
+							"sid": 800253309683198
+						}
+					],
+					"actions": [],
+					"sid": 880835790218905,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "colorVal",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 305017882414111
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-screen",
+									"objectClass": "weatherEffects",
+									"sid": 761230077599033
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "weatherEffects",
+									"sid": 686139684958366,
+									"parameters": {
+										"opacity": "0"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "weatherEffects",
+									"sid": 766385690706044,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"weatherFadeIn\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": ".25",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 218324264311775
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-scale",
+									"objectClass": "weatherEffects",
+									"sid": 592843786433898,
+									"parameters": {
+										"scale": "random(.7, .85, 1)"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "weatherEffects",
+									"sid": 759708533571216,
+									"parameters": {
+										"animation": "choose(\"Default\",\"Default2\")",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "weatherEffects",
+									"sid": 159090408634188,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "115"
+									}
+								},
+								{
+									"id": "set-animation-speed",
+									"objectClass": "weatherEffects",
+									"sid": 677513836726135,
+									"parameters": {
+										"speed": "3 + random(10)"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "weatherEffects",
+									"sid": 944161332116570,
+									"parameters": {
+										"z": "choose(-100, -50, 0, 100, 300, 375, 400)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 276637544459089,
+									"parameters": {
+										"variable": "colorVal",
+										"value": "floor(100 - clamp((weatherEffects.ZElevation / 4)+ 20, 20, 100))"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "weatherEffects",
+									"sid": 128165871646081,
+									"parameters": {
+										"color": "rgbEx(colorVal, colorVal, colorVal)"
+									}
+								}
+							],
+							"sid": 478236302140187,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-z-elevation",
+											"objectClass": "weatherEffects",
+											"sid": 677241063134256,
+											"parameters": {
+												"which": "z-elevation",
+												"comparison": 2,
+												"z-elevation": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "platform not the best layer to use, but it works for now"
+										},
+										{
+											"id": "move-to-layer",
+											"objectClass": "weatherEffects",
+											"sid": 333686362468700,
+											"parameters": {
+												"layer": "\"platform\""
+											}
+										}
+									],
+									"sid": 850249502242812
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 531449522649330
+		},
+		{
+			"eventType": "comment",
+			"text": "for the purpose of rounding just the camera, so that when switching to low gfx, there is no camera jerk between the two states"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 576950991594342
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "spr_camera",
+					"sid": 690246907336380,
+					"parameters": {
+						"x": "round(Self.X)",
+						"y": "round(Self.Y)"
+					}
+				}
+			],
+			"sid": 669172375887678
 		}
 	],
 	"sid": 809440588065565

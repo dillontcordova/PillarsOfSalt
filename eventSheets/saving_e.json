@@ -1,0 +1,1077 @@
+{
+	"name": "saving_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CheckPoint",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "slowTimescale",
+					"type": "number",
+					"initialValue": "0.2",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 626483263240913
+				},
+				{
+					"eventType": "variable",
+					"name": "dtRate",
+					"type": "number",
+					"initialValue": "60",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 900055409284700
+				},
+				{
+					"eventType": "variable",
+					"name": "sfxFrequency",
+					"type": "number",
+					"initialValue": "1000",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 306317589450307
+				},
+				{
+					"eventType": "variable",
+					"name": "sfxMix",
+					"type": "number",
+					"initialValue": "180",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 341349569197249
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Save",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "spr_meleeSlashTileMap",
+									"sid": 765165285772150,
+									"parameters": {
+										"object": "saveShrine_spr"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "spr_meleeSlashTileMap",
+									"sid": 253923065959501,
+									"parameters": {
+										"object": "saveShrine_spr"
+									}
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "saveShrine_spr",
+									"sid": 127883001606831,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"saveAtkCoolDown\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 394148204362440,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "CallSignalWithParams",
+											"objectClass": "saveShrine_spr",
+											"sid": 846612155742932,
+											"behaviorType": "Signals",
+											"parameters": {
+												"signal_name": "\"brightnessChange\"",
+												"parameters": "\"100|.25\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "saveShrine_spr",
+											"sid": 545255781284201,
+											"parameters": {
+												"animation": "\"startSave\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 361458951054376,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "saveShrine_spr",
+											"sid": 269013564793790,
+											"parameters": {
+												"instance-variable": "isWaitToConfirm",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-effect-enabled",
+											"objectClass": "saveShrine_spr",
+											"sid": 488323051963606,
+											"parameters": {
+												"mode": "enable",
+												"effect": "\"AdjustHSL\""
+											}
+										},
+										{
+											"callFunction": "playSound",
+											"sid": 162614899211328,
+											"parameters": [
+												"\"PowerUp1Low\"",
+												false,
+												"\"\""
+											]
+										},
+										{
+											"id": "tween-value",
+											"objectClass": "saveShrine_spr",
+											"sid": 172389003919869,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"saveAtkCoolDown\"",
+												"start-value": "0",
+												"end-value": "1",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "yes",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 968671737816208
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "saveShrine_spr",
+									"sid": 716033417042232,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"saveAtkCoolDown\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 186273668064600,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "saveShrine_spr",
+											"sid": 257064866981866,
+											"parameters": {
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "2",
+												"value": "100 + ((35/100) * (saveShrine_spr.Tween.Progress(\"saveAtkCoolDown\")) * 100)"
+											}
+										}
+									],
+									"sid": 856356350119664
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tweens-finished",
+									"objectClass": "saveShrine_spr",
+									"sid": 653037700330300,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"saveAtkCoolDown\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "saveShrine_spr",
+									"sid": 381683294340654,
+									"parameters": {
+										"instance-variable": "isWaitToConfirm",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 452820168562681,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "saveShrine_spr",
+											"sid": 585588935472376,
+											"parameters": {
+												"animation": "\"saving\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setCheckPointToIdle",
+											"sid": 553266497153019
+										}
+									],
+									"sid": 118100095064373
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "spr_meleeSlashTileMap",
+									"sid": 983542354945926,
+									"parameters": {
+										"object": "saveShrine_spr"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "saveShrine_spr",
+									"sid": 494699784161631,
+									"parameters": {
+										"instance-variable": "isWaitToConfirm"
+									}
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "saveShrine_spr",
+									"sid": 524272034641363,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"saving\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 262203038668727,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-ignoring-input",
+											"objectClass": "spr_playerActual",
+											"sid": 995352048915417,
+											"behaviorType": "Platform",
+											"parameters": {
+												"input": "start-ignoring"
+											}
+										},
+										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 798184030327367,
+											"parameters": {
+												"object": "saveShrine_spr",
+												"time-scale": "1.0"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "saveShrine_spr",
+											"sid": 982270993775906,
+											"parameters": {
+												"animation": "\"saving\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"callFunction": "playSound",
+											"sid": 907908482610658,
+											"parameters": [
+												"\"saveWarp\"",
+												false,
+												"\"\""
+											]
+										},
+										{
+											"id": "add-filter-effect",
+											"objectClass": "Audio",
+											"sid": 752015189344488,
+											"parameters": {
+												"tag": "\"music\"",
+												"type": "low-pass",
+												"frequency": "sfxFrequency",
+												"detune": "0",
+												"q": "1",
+												"gain": "0",
+												"mix": "100"
+											}
+										},
+										{
+											"id": "add-convolution-effect",
+											"objectClass": "Audio",
+											"sid": 709008745169332,
+											"parameters": {
+												"tag": "\"music\"",
+												"audio": "impulsewarehouse",
+												"level": "normalize",
+												"mix": "sfxMix"
+											}
+										},
+										{
+											"type": "comment",
+											"text": ""
+										},
+										{
+											"id": "set-layout-effect-enabled",
+											"objectClass": "System",
+											"sid": 462145525975716,
+											"parameters": {
+												"mode": "enable",
+												"effect": "\"WarpRipple\""
+											}
+										},
+										{
+											"id": "set-layout-effect-parameter",
+											"objectClass": "System",
+											"sid": 625929825390912,
+											"parameters": {
+												"effect": "\"WarpRipple\"",
+												"parameter-index": "1",
+												"value": "8"
+											}
+										},
+										{
+											"id": "tween-value",
+											"objectClass": "saveShrine_spr",
+											"sid": 166402023810313,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"saving\"",
+												"start-value": "1",
+												"end-value": "slowTimescale",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 578390682212145
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "saveShrine_spr",
+									"sid": 690218127346065,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"saving\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 770176984984006,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 477694161882449,
+											"parameters": {
+												"time-scale": "saveShrine_spr.Tween.Value(\"saving\")"
+											}
+										},
+										{
+											"id": "set-playback-rate",
+											"objectClass": "Audio",
+											"sid": 994410348054899,
+											"parameters": {
+												"tag": "\"music\"",
+												"playback-rate": "timescale"
+											}
+										},
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "saveShrine_spr",
+											"sid": 965884750132882,
+											"parameters": {
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "0",
+												"value": "saveShrine_spr.Tween.Progress(\"saving\") * 100"
+											}
+										},
+										{
+											"id": "set-layout-effect-parameter",
+											"objectClass": "System",
+											"sid": 189366745110410,
+											"disabled": true,
+											"parameters": {
+												"effect": "\"WarpRipple\"",
+												"parameter-index": "1",
+												"value": ".08 * saveShrine_spr.Tween.Progress(\"saving\")"
+											}
+										},
+										{
+											"id": "set-master-volume",
+											"objectClass": "Audio",
+											"sid": 261523506281848,
+											"disabled": true,
+											"parameters": {
+												"db": "-(20 - (20 * timescale))"
+											}
+										},
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "Audio",
+											"sid": 673056494861927,
+											"disabled": true,
+											"parameters": {
+												"tag": "\"music\"",
+												"index": "0",
+												"parameter": "filterphaser-frequency",
+												"value": "90",
+												"ramp": "step",
+												"time": "0"
+											}
+										},
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "Audio",
+											"sid": 409578643210486,
+											"disabled": true,
+											"parameters": {
+												"tag": "\"music\"",
+												"index": "1",
+												"parameter": "mix",
+												"value": "90",
+												"ramp": "step",
+												"time": "0"
+											}
+										}
+									],
+									"sid": 323510869113613
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tweens-finished",
+									"objectClass": "saveShrine_spr",
+									"sid": 173561552520330,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"saving\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "save",
+									"objectClass": "System",
+									"sid": 681627227784795,
+									"parameters": {
+										"slot": "\"mysave\""
+									}
+								}
+							],
+							"sid": 983274965571818
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-save-complete",
+									"objectClass": "System",
+									"sid": 801400590573639
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 692605516566377,
+									"parameters": {
+										"key": "\"mysavefile\"",
+										"value": "SaveStateJSON"
+									}
+								},
+								{
+									"callFunction": "restoreFromSave",
+									"sid": 781906729084195
+								}
+							],
+							"sid": 979003017447157
+						}
+					],
+					"sid": 147126119682361
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Load",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 742888036927782,
+									"parameters": {
+										"key": 89
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "loadFromSaveFile",
+									"sid": 539890047574638
+								}
+							],
+							"sid": 434693662648124
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-get",
+									"objectClass": "LocalStorage",
+									"sid": 753121260906017,
+									"parameters": {
+										"key": "\"mysavefile\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 498975759772199,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 152371450833969,
+											"parameters": {
+												"first-value": "LocalStorage.ItemValue",
+												"comparison": 1,
+												"second-value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "load-from-json",
+											"objectClass": "System",
+											"sid": 426678037638708,
+											"parameters": {
+												"json": "LocalStorage.ItemValue"
+											}
+										}
+									],
+									"sid": 474380307014280
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 840728334003495
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 308431709216880,
+											"parameters": {
+												"layout": "titleScreen"
+											}
+										}
+									],
+									"sid": 534584598855595
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-load-failed",
+									"objectClass": "System",
+									"sid": 652580922006268
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 656790161048273,
+									"parameters": {
+										"layout": "titleScreen"
+									}
+								}
+							],
+							"sid": 292977070656335,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-load-complete",
+									"objectClass": "System",
+									"sid": 168842749602392
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "restoreFromSave",
+									"sid": 617865135877796
+								},
+								{
+									"callFunction": "fadeIn",
+									"sid": 882932956941852,
+									"parameters": [
+										".33",
+										false
+									]
+								}
+							],
+							"sid": 161462596689267
+						},
+						{
+							"eventType": "comment",
+							"text": "Restore"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "saveShrine_spr",
+									"sid": 351892812263813,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"restoring\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 668609170609658,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 677252936307304,
+											"parameters": {
+												"time-scale": "saveShrine_spr.Tween.Value(\"restoring\")"
+											}
+										},
+										{
+											"id": "set-playback-rate",
+											"objectClass": "Audio",
+											"sid": 585605613430768,
+											"parameters": {
+												"tag": "\"music\"",
+												"playback-rate": "timescale"
+											}
+										},
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "saveShrine_spr",
+											"sid": 792388439063508,
+											"parameters": {
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "0",
+												"value": "saveShrine_spr.Tween.Progress(\"restoring\") * 100"
+											}
+										},
+										{
+											"id": "set-master-volume",
+											"objectClass": "Audio",
+											"sid": 862906146218838,
+											"disabled": true,
+											"parameters": {
+												"db": "-(20 - (20 * timescale))"
+											}
+										}
+									],
+									"sid": 712834173104352
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 379943029867683,
+											"parameters": {
+												"first-value": "saveShrine_spr.Tween.Progress(\"\")",
+												"comparison": 0,
+												"second-value": "50"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "saveShrine_spr",
+											"sid": 992435411418877,
+											"parameters": {
+												"animation": "\"load\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 220952301706117,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tweens-finished",
+									"objectClass": "saveShrine_spr",
+									"sid": 253092965120617,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"restoring\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 133140346880439,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 455189744127359,
+											"parameters": {
+												"time-scale": "1"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "saveShrine_spr",
+											"sid": 508433790409850,
+											"parameters": {
+												"animation": "\"load\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-playback-rate",
+											"objectClass": "Audio",
+											"sid": 903052408326754,
+											"parameters": {
+												"tag": "\"music\"",
+												"playback-rate": "timescale"
+											}
+										},
+										{
+											"id": "set-master-volume",
+											"objectClass": "Audio",
+											"sid": 630881785670058,
+											"disabled": true,
+											"parameters": {
+												"db": "-(20 - (20 * timescale))"
+											}
+										},
+										{
+											"id": "remove-all-effects",
+											"objectClass": "Audio",
+											"sid": 321687267753216,
+											"parameters": {
+												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-effect-enabled",
+											"objectClass": "saveShrine_spr",
+											"sid": 155234171292120,
+											"parameters": {
+												"mode": "disable",
+												"effect": "\"AdjustHSL\""
+											}
+										},
+										{
+											"id": "set-layout-effect-enabled",
+											"objectClass": "System",
+											"sid": 165184311349860,
+											"parameters": {
+												"mode": "disable",
+												"effect": "\"WarpRipple\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "saveShrine_spr",
+											"sid": 422587560583937,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-ignoring-input",
+											"objectClass": "spr_playerActual",
+											"sid": 401633008133921,
+											"behaviorType": "Platform",
+											"parameters": {
+												"input": "stop-ignoring"
+											}
+										},
+										{
+											"callFunction": "setCheckPointToIdle",
+											"sid": 630342840845132
+										}
+									],
+									"sid": 585875565482401
+								}
+							]
+						}
+					],
+					"sid": 420684653938088
+				},
+				{
+					"functionName": "loadFromSaveFile",
+					"functionDescription": "",
+					"functionCategory": "saving",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 602626169631529,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 251825886425710,
+									"parameters": {
+										"key": "\"mysavefile\""
+									}
+								}
+							],
+							"sid": 990073328816339
+						}
+					]
+				},
+				{
+					"functionName": "restoreFromSave",
+					"functionDescription": "",
+					"functionCategory": "saving",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 564133704964220,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 300176603619489,
+									"parameters": {
+										"time-scale": "slowTimescale"
+									}
+								},
+								{
+									"callFunction": "playSound",
+									"sid": 349547593816357,
+									"parameters": [
+										"\"loadWarp\"",
+										false,
+										"\"\""
+									]
+								},
+								{
+									"id": "add-filter-effect",
+									"objectClass": "Audio",
+									"sid": 463812579783153,
+									"parameters": {
+										"tag": "\"music\"",
+										"type": "low-pass",
+										"frequency": "sfxFrequency",
+										"detune": "0",
+										"q": "1",
+										"gain": "0",
+										"mix": "100"
+									}
+								},
+								{
+									"id": "add-convolution-effect",
+									"objectClass": "Audio",
+									"sid": 687951115386531,
+									"parameters": {
+										"tag": "\"music\"",
+										"audio": "impulsewarehouse",
+										"level": "normalize",
+										"mix": "sfxMix"
+									}
+								},
+								{
+									"id": "restore-object-time-scale",
+									"objectClass": "System",
+									"sid": 176191008511398,
+									"disabled": true,
+									"parameters": {
+										"object": "saveShrine_spr"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "saveShrine_spr",
+									"sid": 934993137209360,
+									"parameters": {
+										"animation": "\"load\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "saveShrine_spr",
+									"sid": 260389212516247,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"restoring\"",
+										"start-value": "slowTimescale",
+										"end-value": "1",
+										"time": "1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 601378152879956
+						}
+					]
+				},
+				{
+					"functionName": "setCheckPointToIdle",
+					"functionDescription": "",
+					"functionCategory": "saving",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 359397259004860,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "CallSignalWithParams",
+									"objectClass": "saveShrine_spr",
+									"sid": 395705578577055,
+									"behaviorType": "Signals",
+									"parameters": {
+										"signal_name": "\"brightnessChange\"",
+										"parameters": "\"30|.25\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "saveShrine_spr",
+									"sid": 402296756514873,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "restore-object-time-scale",
+									"objectClass": "System",
+									"sid": 684260229318155,
+									"parameters": {
+										"object": "saveShrine_spr"
+									}
+								}
+							],
+							"sid": 126746329119018
+						}
+					]
+				}
+			],
+			"sid": 989462559640144
+		}
+	],
+	"sid": 422166667608341
+}

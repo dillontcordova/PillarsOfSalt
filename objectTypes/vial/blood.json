@@ -1,0 +1,33 @@
+{
+	"name": "blood",
+	"plugin-id": "TiledBg",
+	"sid": 234000865080601,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aekiroWater",
+			"name": "Water",
+			"sid": 316868758743308
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 678471804591990
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 64,
+		"height": 64,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 7060705,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

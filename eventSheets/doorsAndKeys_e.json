@@ -27,7 +27,8 @@
 					"sid": 422276310485678,
 					"parameters": [
 						"\"switch\"",
-						false
+						false,
+						"\"\""
 					]
 				},
 				{
@@ -69,7 +70,8 @@
 							"sid": 207598111022472,
 							"parameters": [
 								"\"doorOpen1\"",
-								false
+								false,
+								"\"\""
 							]
 						},
 						{
@@ -104,7 +106,8 @@
 					"sid": 251411649115438,
 					"parameters": [
 						"\"doorOpen2\"",
-						false
+						false,
+						"\"\""
 					]
 				},
 				{

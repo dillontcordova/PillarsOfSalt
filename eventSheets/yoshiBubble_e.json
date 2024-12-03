@@ -1,0 +1,2739 @@
+{
+	"name": "yoshiBubble_e",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "util_e"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Cape Yoshi Effect",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "dangerMinimum",
+					"type": "number",
+					"initialValue": "10",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 781446558507664
+				},
+				{
+					"eventType": "variable",
+					"name": "textSizeDefault",
+					"type": "number",
+					"initialValue": "1.5",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 842329968327497
+				},
+				{
+					"eventType": "variable",
+					"name": "textSizeMax",
+					"type": "number",
+					"initialValue": "2",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 333195051826475
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "star debug spawning",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 182465024021627,
+									"parameters": {
+										"mouse-button": "left"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 244751112409285,
+									"parameters": {
+										"interval-seconds": ".1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 149684855300670,
+									"parameters": {
+										"object-to-create": "star_spr",
+										"layer": "spr_playerActual.LayerName",
+										"x": "Mouse.X",
+										"y": "Mouse.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 734042217136224,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-last-created",
+											"objectClass": "System",
+											"sid": 687696266459135,
+											"parameters": {
+												"object": "star_spr"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "star_spr",
+											"sid": 679869216995036,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "choose(0, 180)"
+											}
+										}
+									],
+									"sid": 777669555199974
+								}
+							]
+						}
+					],
+					"sid": 818890095998410
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "star collisions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "star_spr",
+									"sid": 124709896456700,
+									"parameters": {
+										"object": "spr_playerActual"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "star_spr",
+									"sid": 697776215041558
+								},
+								{
+									"callFunction": "setStarCount",
+									"sid": 823826666174123,
+									"parameters": [
+										"spr_playerActual.starCount + 1"
+									]
+								}
+							],
+							"sid": 259571876235906,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "cloak_spr",
+											"sid": 233323025396637,
+											"parameters": {
+												"instance-variable": "isRegen"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "startRegenCount",
+											"sid": 826758983257892
+										}
+									],
+									"sid": 786265096181153
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 441906605400475
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "startDeathCount",
+											"sid": 644093315534583
+										}
+									],
+									"sid": 248418885554240
+								}
+							]
+						}
+					],
+					"sid": 173880652341500
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "created",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "spr_playerDoll",
+									"sid": 725752394008469
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 685604607728423,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "spr_playerActual",
+									"sid": 754832433703267,
+									"parameters": {
+										"object": "cloak_spr",
+										"layer": "Self.LayerName",
+										"image-point": "\"top\"",
+										"create-hierarchy": true,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "spr_playerActual",
+									"sid": 245509073464043,
+									"parameters": {
+										"object": "spr_playerEmptyDoll",
+										"layer": "Self.LayerName",
+										"image-point": "\"center\"",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "spr_playerActual",
+									"sid": 866032048935757,
+									"parameters": {
+										"child": "spr_playerEmptyDoll",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": true,
+										"transform-o": false,
+										"transform-z-elevation": true,
+										"transform-visibility": false,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 319343077272681,
+									"parameters": {
+										"object-to-create": "bubbleCollision",
+										"layer": "spr_playerActual.LayerName",
+										"x": "ViewportMidX(0)",
+										"y": "ViewportMidY(0)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"callFunction": "cloakAttachInit",
+									"sid": 705232520764491
+								}
+							],
+							"sid": 206898415529982
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "cloak_spr",
+									"sid": 764664480173111
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "cloak_spr",
+									"sid": 736685781378116,
+									"parameters": {
+										"object": "cloakArrow_spr",
+										"layer": "Self.LayerName",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "cloakArrow_spr",
+									"sid": 998471867426085,
+									"parameters": {
+										"x": "cloak_spr.X",
+										"y": "cloak_spr.Y"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "cloakArrow_spr",
+									"sid": 634481463958653,
+									"parameters": {
+										"opacity": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "cloak_spr",
+									"sid": 355496094621884,
+									"parameters": {
+										"instance-variable": "defaultSpeed",
+										"value": "cloak_spr.Bullet.Speed"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "cloak_spr",
+									"sid": 662860525669244,
+									"parameters": {
+										"child": "cloakArrow_spr",
+										"transform-x": false,
+										"transform-y": false,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-o": true,
+										"transform-z-elevation": true,
+										"transform-visibility": true,
+										"destroy-with-parent": true
+									}
+								}
+							],
+							"sid": 840789982949758
+						}
+					],
+					"sid": 942196341974640
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "events",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "spr_playerActual",
+									"sid": 846959553777702,
+									"parameters": {
+										"object": "cloak_spr"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "spr_meleeSlash",
+									"sid": 141882214535879,
+									"parameters": {
+										"object": "cloak_spr"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 490123956046640,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "spr_playerActual",
+											"sid": 954243696517331,
+											"parameters": {
+												"instance-variable": "isCapeDetached"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "attachCloak",
+											"sid": 387938809566257
+										}
+									],
+									"sid": 587328102212429
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tweens-finished",
+									"objectClass": "spr_playerActual",
+									"sid": 968317385893999,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"regenStart\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "cloak_spr",
+									"sid": 695776821989858,
+									"parameters": {
+										"instance-variable": "isRegen",
+										"value": "true"
+									}
+								},
+								{
+									"callFunction": "startRegenCount",
+									"sid": 454249945324316
+								}
+							],
+							"sid": 648884923637644
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tweens-finished",
+									"objectClass": "spr_playerActual",
+									"sid": 872230638013499,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"detached dying\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "immobilizePlayer",
+									"sid": 132706200017061,
+									"parameters": [
+										"\"death\""
+									]
+								},
+								{
+									"callFunction": "setStarCount",
+									"sid": 648016138770353,
+									"parameters": [
+										"0"
+									]
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "spr_playerActual",
+									"sid": 101688226737216,
+									"parameters": {
+										"instance-variable": "isCapeDetached",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 756376815876450,
+									"parameters": {
+										"animation": "\"death\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "cloak_spr",
+									"sid": 364767977143840,
+									"parameters": {
+										"animation": "\"death\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "cloakBubble",
+									"sid": 419265634703415,
+									"parameters": {
+										"animation": "\"pop\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"callFunction": "playSound",
+									"sid": 532790385998574,
+									"parameters": [
+										"\"bubblePop\"",
+										false,
+										"\"cloak cloakUnite\""
+									]
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "cloak_spr",
+									"sid": 387076649076665,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"Brightness\""
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "spr_playerActual",
+									"sid": 129465833840748,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"cape detached capeFade\"",
+										"start-value": "0",
+										"end-value": "100",
+										"time": "3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 190677193152150
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tweens-finished",
+									"objectClass": "spr_playerActual",
+									"sid": 251495490532811,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"stunDetach\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "cloak_spr",
+									"sid": 589132775052074,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "Self.defaultSpeed"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 602311570382900,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"callFunction": "mobilizePlayer",
+									"sid": 435762937964350,
+									"parameters": [
+										"\"takeDamage\""
+									]
+								},
+								{
+									"id": "flash",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 308445693186327,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": ".75"
+									}
+								}
+							],
+							"sid": 974342721970894,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "playerDied",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "spr_playerActual",
+											"sid": 883257336824799,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"detached capeFade\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-effect-parameter",
+											"objectClass": "cloak_spr",
+											"sid": 132283928985702,
+											"parameters": {
+												"effect": "\"Brightness\"",
+												"parameter-index": "0",
+												"value": "100 + spr_playerDoll.Tween.Value(\"detached capeFade\") * 2"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "cloakArrow_spr",
+											"sid": 540055876300035,
+											"parameters": {
+												"opacity": "Self.Opacity - spr_playerActual.Tween.Value(\"detached capeFade\")"
+											}
+										}
+									],
+									"sid": 280950635197731
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "cloakBubble",
+											"sid": 547555807145309,
+											"parameters": {
+												"animation": "\"pop\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "cloakBubble",
+											"sid": 104333980623564,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 554295406340010
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "spr_playerEmptyDoll",
+											"sid": 587477179064779,
+											"parameters": {
+												"animation": "\"death\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "playerDeath",
+											"sid": 899461488540756
+										}
+									],
+									"sid": 237751886138156
+								}
+							],
+							"sid": 703478156875458
+						}
+					],
+					"sid": 466527115639593
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "spr_playerEmptyDoll",
+							"sid": 724086409611432,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"playerShine\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "spr_playerEmptyDoll",
+							"sid": 331731000789432,
+							"parameters": {
+								"effect": "\"AdjustHSL\"",
+								"parameter-index": "2",
+								"value": "spr_playerEmptyDoll.Tween.Value(\"playerShine\")"
+							}
+						}
+					],
+					"sid": 655297091517501,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "spr_playerEmptyDoll",
+							"sid": 957827591428579,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"playerShine\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "spr_playerEmptyDoll",
+							"sid": 518445516227205,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "spr_playerEmptyDoll",
+							"sid": 611488712637080,
+							"parameters": {
+								"effect": "\"AdjustHSL\"",
+								"parameter-index": "2",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "spr_playerDoll",
+							"sid": 877175968322092,
+							"parameters": {
+								"effect": "\"AdjustHSL\"",
+								"parameter-index": "2",
+								"value": "200"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "spr_playerDoll",
+							"sid": 935411592889815,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "spr_playerDoll",
+							"sid": 416045211395715,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cloak playerShine\"",
+								"start-value": "200",
+								"end-value": "100",
+								"time": ".33",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 654617971993439,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "spr_playerDoll",
+							"sid": 173104551322019,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"playerShine\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "spr_playerDoll",
+							"sid": 684391872667722,
+							"parameters": {
+								"effect": "\"AdjustHSL\"",
+								"parameter-index": "2",
+								"value": "spr_playerDoll.Tween.Value(\"playerShine\")"
+							}
+						}
+					],
+					"sid": 279871538166355,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "spr_playerDoll",
+							"sid": 718051205265790,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"playerShine\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "cloakAttachComplete",
+							"sid": 551177817908923
+						}
+					],
+					"sid": 633680558477264,
+					"isOrBlock": true
+				},
+				{
+					"functionName": "pauseAll",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "pauseTime",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 543264678241425
+						},
+						{
+							"name": "isPlayerAnimating",
+							"type": "boolean",
+							"initialValue": "true",
+							"comment": "",
+							"sid": 884164171118772
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 828738618615645,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "ignoreInput",
+									"sid": 795641427324842
+								},
+								{
+									"id": "pause-all-tweens",
+									"objectClass": "dolls",
+									"sid": 115706380143168,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "pause-all-tweens",
+									"objectClass": "actuals",
+									"sid": 932199330455573,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "pause-resume-all-timers",
+									"objectClass": "enemies",
+									"sid": 763007734045406,
+									"behaviorType": "Timer",
+									"parameters": {
+										"state": "paused"
+									}
+								},
+								{
+									"id": "pause-resume-all-timers",
+									"objectClass": "spr_playerActual",
+									"sid": 938934330433905,
+									"behaviorType": "Timer",
+									"parameters": {
+										"state": "paused"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 908823741562079,
+									"parameters": {
+										"time-scale": "0"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 214816246358694,
+									"parameters": {
+										"object": "tb_fade",
+										"time-scale": "1.0"
+									}
+								}
+							],
+							"sid": 807234398433066,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 122431128423836,
+											"parameters": {
+												"variable": "isPlayerAnimating"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 599495672631260,
+											"parameters": {
+												"object": "spr_playerDoll",
+												"time-scale": "1.0"
+											}
+										},
+										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 847989397928252,
+											"parameters": {
+												"object": "spr_playerEmptyDoll",
+												"time-scale": "1.0"
+											}
+										}
+									],
+									"sid": 547884669060135
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 769991179068402,
+									"parameters": {
+										"variable": "pauseTime",
+										"comparison": 4,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 338443243940650,
+									"parameters": {
+										"seconds": "pauseTime"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 106978341617235
+								},
+								{
+									"callFunction": "unpauseAll",
+									"sid": 748224531401911
+								}
+							],
+							"sid": 611376991286175
+						}
+					]
+				},
+				{
+					"functionName": "unpauseAll",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 618680949935703,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 299948704241662,
+									"parameters": {
+										"time-scale": "1.0"
+									}
+								},
+								{
+									"id": "restore-object-time-scale",
+									"objectClass": "System",
+									"sid": 227633715795649,
+									"parameters": {
+										"object": "spr_playerDoll"
+									}
+								},
+								{
+									"id": "restore-object-time-scale",
+									"objectClass": "System",
+									"sid": 683122622534403,
+									"parameters": {
+										"object": "spr_playerEmptyDoll"
+									}
+								},
+								{
+									"id": "restore-object-time-scale",
+									"objectClass": "System",
+									"sid": 166616281134288,
+									"parameters": {
+										"object": "tb_fade"
+									}
+								},
+								{
+									"id": "resume-all-tweens",
+									"objectClass": "dolls",
+									"sid": 667388769040755,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "resume-all-tweens",
+									"objectClass": "actuals",
+									"sid": 796891004898610,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "pause-resume-all-timers",
+									"objectClass": "enemies",
+									"sid": 136764837246409,
+									"behaviorType": "Timer",
+									"parameters": {
+										"state": "resumed"
+									}
+								},
+								{
+									"id": "pause-resume-all-timers",
+									"objectClass": "spr_playerActual",
+									"sid": 798660219228758,
+									"behaviorType": "Timer",
+									"parameters": {
+										"state": "resumed"
+									}
+								},
+								{
+									"callFunction": "listenInput",
+									"sid": 977183486788527
+								}
+							],
+							"sid": 989640623384906
+						}
+					]
+				},
+				{
+					"functionName": "stunHit",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 790392827588171,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 399779992168185,
+									"parameters": {
+										"value": "Functions.setStateGateway(\"takeDamage\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "immobilizePlayer",
+									"sid": 149903028238782,
+									"parameters": [
+										"\"takeDamage\""
+									]
+								},
+								{
+									"callFunction": "dettachCape",
+									"sid": 669425918786097
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 687645687012843,
+									"parameters": {
+										"animation": "\"stunned\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "spr_playerActual",
+									"sid": 495786399341575,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"stunDetach\"",
+										"start-value": "0",
+										"end-value": "1",
+										"time": "Functions.getAnimTime(spr_playerEmptyDoll.AnimationName)",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 560412316415882
+						}
+					]
+				},
+				{
+					"functionName": "attachCloak",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 815629874788960,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "cloakAttachInit",
+									"sid": 721608779908648
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 530189012488043,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "spr_playerDoll",
+									"sid": 738651854021500,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "pause attach cutscene here"
+								},
+								{
+									"callFunction": "pauseAll",
+									"sid": 335535513061801,
+									"parameters": [
+										"-1",
+										true
+									]
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 974953897774629,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"playerShine\"",
+										"start-value": "100",
+										"end-value": "200",
+										"time": ".33",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "on this event finished, cloakAttachComplete() is called"
+								}
+							],
+							"sid": 473912826890606
+						}
+					]
+				},
+				{
+					"functionName": "cloakAttachInit",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 812832288193948,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "stopSound",
+									"sid": 501897110237373,
+									"parameters": [
+										"\"cloak\""
+									]
+								},
+								{
+									"callFunction": "playSound",
+									"sid": 431251897603751,
+									"parameters": [
+										"\"reUniteCloak\"",
+										false,
+										"\"cloak cloakUnite\""
+									]
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "cloak_spr",
+									"sid": 991163952806801,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"callFunction": "stopCapeTweens",
+									"sid": 960148138262102,
+									"parameters": [
+										"CurrentEventNumber"
+									]
+								},
+								{
+									"callFunction": "setStarCount",
+									"sid": 347335333382672,
+									"parameters": [
+										"clamp(spr_playerActual.starCount, 1, 30)"
+									]
+								},
+								{
+									"callFunction": "setVialTextScale",
+									"sid": 363825563358212,
+									"parameters": [
+										"1.5"
+									]
+								},
+								{
+									"callFunction": "setVialTextOpacity",
+									"sid": 440073246721185,
+									"parameters": [
+										"50"
+									]
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "cloak_spr",
+									"sid": 452598440975604,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "cloak_spr",
+									"sid": 537969967668836,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "spr_playerActual",
+									"sid": 555360978587395,
+									"parameters": {
+										"child": "cloak_spr",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": false,
+										"transform-a": true,
+										"transform-o": true,
+										"transform-z-elevation": true,
+										"transform-visibility": false,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "cloak_spr",
+									"sid": 199740788547336,
+									"parameters": {
+										"x": "spr_playerActual.ImagePointX(1)",
+										"y": "spr_playerActual.ImagePointY(1)"
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 770950466247767,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 247942415821457,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "spr_playerDoll",
+									"sid": 799417381523831,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "instance-signal",
+									"objectClass": "spr_playerActual",
+									"sid": 546515205677622,
+									"parameters": {
+										"tag": "\"clockAttached\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "spr_playerActual",
+									"sid": 266547775997913,
+									"parameters": {
+										"instance-variable": "isCapeDetached",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "cloakBubble",
+									"sid": 195614778870406,
+									"parameters": {
+										"animation": "\"pop\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 512661503411877
+						}
+					]
+				},
+				{
+					"functionName": "cloakAttachComplete",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 764101225645439,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "unpauseAll",
+									"sid": 376543905727492
+								},
+								{
+									"type": "comment",
+									"text": "end scene"
+								},
+								{
+									"callFunction": "playSound",
+									"sid": 255561417811728,
+									"parameters": [
+										"\"bubblePop\"",
+										false,
+										"\"cloak cloakUnite\""
+									]
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "spr_playerDoll",
+									"sid": 654477750272094,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"callFunction": "setInvincible",
+									"sid": 959183653343741,
+									"parameters": [
+										"1",
+										"0"
+									]
+								},
+								{
+									"id": "flash",
+									"objectClass": "spr_playerDoll",
+									"sid": 561083278459237,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1"
+									}
+								}
+							],
+							"sid": 105694317400151,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_playerActual",
+											"sid": 381530577332950,
+											"parameters": {
+												"instance-variable": "starCount",
+												"comparison": 2,
+												"value": "dangerMinimum"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-value",
+											"objectClass": "spr_playerActual",
+											"sid": 596077254724957,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"cape regenStart\"",
+												"start-value": "0",
+												"end-value": "100",
+												"time": "2",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 103696840521339
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 191081419719404
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "playSound",
+											"sid": 268737814468398,
+											"parameters": [
+												"\"windChimeDing\"",
+												false,
+												"\"cloak\""
+											]
+										}
+									],
+									"sid": 689652204686892
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "dettachCape",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 908175512635120,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "spr_playerActual",
+									"sid": 878757369368767,
+									"parameters": {
+										"instance-variable": "isCapeDetached"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "spr_playerActual",
+									"sid": 148945468913885,
+									"parameters": {
+										"child": "cloak_spr",
+										"which": "own"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "spr_playerActual",
+									"sid": 135223724586572,
+									"parameters": {
+										"child": "spr_playerDoll",
+										"which": "own"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "spr_playerActual",
+									"sid": 717569518142576,
+									"parameters": {
+										"child": "spr_playerEmptyDoll",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "stopSound",
+									"sid": 264148237973159,
+									"parameters": [
+										"\"cloak\""
+									]
+								},
+								{
+									"id": "remove-child",
+									"objectClass": "spr_playerActual",
+									"sid": 713374519021231,
+									"parameters": {
+										"child": "cloak_spr"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 730848260236179,
+									"disabled": true,
+									"parameters": {
+										"layer": "\"vial\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "lose cape animation"
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "spr_playerDoll",
+									"sid": 624283144309176,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "spr_playerDoll",
+									"sid": 861331272506449,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "cloak_spr",
+									"sid": 942361234336520,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "spr_playerEmptyDoll",
+									"sid": 351547920421224,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "cloakBubble",
+									"sid": 407741737439858,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "cloakBubble",
+									"sid": 440503681127632,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "cloak_spr",
+									"sid": 354377571003374,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(spr_playerActual.Platform.VectorX, spr_playerActual.Platform.VectorY, 0,0)"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "cloak_spr",
+									"sid": 685983235350382,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "Self.defaultSpeed * 2.5"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "cloak_spr",
+									"sid": 665969430641123,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"callFunction": "playSound",
+									"sid": 814852606654302,
+									"parameters": [
+										"\"joltAlert\"",
+										false,
+										"\"cloak cloakAlert\""
+									]
+								},
+								{
+									"callFunction": "playSound",
+									"sid": 771187075308922,
+									"parameters": [
+										"\"bgLifeDrain\"",
+										true,
+										"\"cloak cloakAlert\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 852253071359551,
+									"parameters": {
+										"seconds": ".5"
+									}
+								},
+								{
+									"callFunction": "playSound",
+									"sid": 656673870212820,
+									"parameters": [
+										"\"fgLifeDrain\"",
+										true,
+										"\"cloak cloakAlert\""
+									]
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "spr_playerActual",
+									"sid": 282135929104719,
+									"parameters": {
+										"instance-variable": "isCapeDetached",
+										"value": "true"
+									}
+								},
+								{
+									"callFunction": "startDeathCount",
+									"sid": 964783528029478
+								},
+								{
+									"callFunction": "setVialTextOpacity",
+									"sid": 515249595540158,
+									"parameters": [
+										"100"
+									]
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "vial",
+									"sid": 265678688812428,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 347841469736876
+						}
+					]
+				},
+				{
+					"functionName": "startDeathCount",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "deathTextColor",
+							"sid": 192344889557575
+						}
+					],
+					"sid": 225312807424974,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "spr_playerActual",
+									"sid": 864732966576881,
+									"parameters": {
+										"instance-variable": "isCapeDetached"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "stopCapeTweens",
+									"sid": 579665597236706,
+									"parameters": [
+										"CurrentEventNumber"
+									]
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "spr_playerActual",
+									"sid": 903940773851113,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"cape detached dying\"",
+										"start-value": "(spr_playerActual.starCount / dangerMinimum) * 100",
+										"end-value": "0",
+										"time": "spr_playerActual.starCount",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"callFunction": "deathTextTween",
+									"sid": 171645265452061
+								}
+							],
+							"sid": 656340914307948
+						}
+					]
+				},
+				{
+					"functionName": "startRegenCount",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "deathTextColor",
+							"sid": 537655917061289
+						}
+					],
+					"sid": 427831259213396,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "cloak_spr",
+									"sid": 719922221285967,
+									"parameters": {
+										"instance-variable": "isRegen"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "stopCapeTweens",
+									"sid": 133301682454310,
+									"parameters": [
+										"CurrentEventNumber"
+									]
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "spr_playerActual",
+									"sid": 404321588305809,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"cape attached regen\"",
+										"start-value": "spr_playerActual.starCount * 10",
+										"end-value": "100",
+										"time": "(dangerMinimum - spr_playerActual.starCount) * 3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"callFunction": "regenTextTween",
+									"sid": 807318862525602
+								}
+							],
+							"sid": 220102097305155
+						}
+					]
+				},
+				{
+					"functionName": "setStarCount",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "count",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 521384452508522
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 132614669539255,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_playerActual",
+									"sid": 704302534385197,
+									"parameters": {
+										"instance-variable": "starCount",
+										"value": "clamp(count, 0, 30)"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "deathCount_sprText",
+									"sid": 819279904074492,
+									"parameters": {
+										"text": "spr_playerActual.starCount"
+									}
+								},
+								{
+									"id": "set-height",
+									"objectClass": "blood",
+									"sid": 962833636256831,
+									"parameters": {
+										"height": "Self.ImageHeight * (spr_playerActual.starCount / dangerMinimum)\n"
+									}
+								},
+								{
+									"callFunction": "deathTextColor",
+									"sid": 300639056282672
+								}
+							],
+							"sid": 394948059059715
+						}
+					]
+				},
+				{
+					"functionName": "setVialTextScale",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "scale",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"sid": 373725433889817
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 675637173216312,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-scale",
+									"objectClass": "deathCount_sprText",
+									"sid": 767109744593985,
+									"parameters": {
+										"scale": "scale"
+									}
+								}
+							],
+							"sid": 468980575185784
+						}
+					]
+				},
+				{
+					"functionName": "setVialTextOpacity",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "opacity",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"sid": 369186078193111
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 526048561986584,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "deathCount_sprText",
+									"sid": 446299568858013,
+									"parameters": {
+										"opacity": "opacity"
+									}
+								}
+							],
+							"sid": 368842281794875
+						}
+					]
+				},
+				{
+					"functionName": "deathTextColor",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 229687235194604,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "cloakArrow_spr",
+									"sid": 810813299000544,
+									"parameters": {
+										"color": "rgbEx(200 - spr_playerActual.starCount * dangerMinimum * 2, spr_playerActual.starCount * dangerMinimum, 0)"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "deathCount_sprText",
+									"sid": 436405477559037,
+									"parameters": {
+										"color": "rgbEx(200 - spr_playerActual.starCount * dangerMinimum * 2, spr_playerActual.starCount * dangerMinimum, 0)"
+									}
+								}
+							],
+							"sid": 853349992829994
+						}
+					]
+				},
+				{
+					"functionName": "deathTextTween",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-value",
+							"objectClass": "spr_playerActual",
+							"sid": 578504805945282,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cape detached ping\"",
+								"start-value": "textSizeDefault",
+								"end-value": "textSizeMax",
+								"time": ".5",
+								"ease": "easeinoutelastic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "yes",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 971327551389117
+				},
+				{
+					"functionName": "regenTextTween",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-value",
+							"objectClass": "spr_playerActual",
+							"sid": 177456202937613,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cape attached ping\"",
+								"start-value": "textSizeDefault",
+								"end-value": "textSizeMax",
+								"time": "1.5",
+								"ease": "easeinoutelastic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "yes",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 310537136247213
+				},
+				{
+					"functionName": "stopCapeTweens",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "prevLine",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 288241785830782
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "stop-tweens",
+							"objectClass": "spr_playerActual",
+							"sid": 435189225100208,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cape\""
+							}
+						}
+					],
+					"sid": 857792456997640
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Great Cape escape",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-ended",
+									"objectClass": "Audio",
+									"sid": 379633884196333,
+									"parameters": {
+										"tag": "\"cloak windChimeDing\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "spr_playerActual",
+									"sid": 170943850368399,
+									"parameters": {
+										"instance-variable": "isCapeDetached"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "vial",
+									"sid": 129518114606560,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 489041889603491
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-enabled",
+									"objectClass": "cloak_spr",
+									"sid": 261861130716783,
+									"behaviorType": "Bullet"
+								}
+							],
+							"actions": [],
+							"sid": 824968940340573,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "spr_playerActual",
+											"sid": 996423100383314,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"capeFade\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-offset-angle",
+											"objectClass": "cloakArrow_spr",
+											"sid": 723936559914890,
+											"behaviorType": "Orbit",
+											"parameters": {
+												"angle": "angle(cloak_spr.X, cloak_spr.y, spr_playerActual.X, spr_playerActual.Y)"
+											}
+										},
+										{
+											"id": "set-target",
+											"objectClass": "cloakArrow_spr",
+											"sid": 807607705092645,
+											"behaviorType": "Orbit",
+											"parameters": {
+												"x": "clamp(cloak_spr.X, ViewportLeft(spr_playerActual.LayerName), ViewportRight(spr_playerActual.LayerName))",
+												"y": "clamp(cloak_spr.y, ViewportTop(spr_playerActual.LayerName), ViewportBottom(spr_playerActual.LayerName))"
+											}
+										}
+									],
+									"sid": 391608666897902,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "cloak_spr",
+													"sid": 767556018168921,
+													"parameters": {
+														"object": "tb_water"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "cloak_spr",
+													"sid": 614342058252648,
+													"parameters": {
+														"x": "Self.X",
+														"y": "tb_water.Y - Self.Height/2"
+													}
+												},
+												{
+													"id": "bounce-off-object",
+													"objectClass": "cloak_spr",
+													"sid": 109332721405109,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"object": "tb_water"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "cloakArrow_spr",
+													"sid": 676333252148530,
+													"parameters": {
+														"opacity": "lerp(Self.Opacity, 0, .1 * 120 * dt)"
+													}
+												}
+											],
+											"sid": 566704800164712
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 155541019820628
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "cloak_spr",
+													"sid": 704070181399668,
+													"parameters": {
+														"object": "bubbleCollision"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "cloak_spr",
+													"sid": 920394212068896,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "anglelerp(Self.Bullet.AngleOfMotion, angle(bubbleCollision.X, bubbleCollision.Y, Self.X, Self.Y), .1 * 2 * dt)"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "cloakArrow_spr",
+													"sid": 193682867073141,
+													"parameters": {
+														"opacity": "lerp(Self.Opacity, 0, .1 * 120 * dt)"
+													}
+												}
+											],
+											"sid": 867299398555172
+										},
+										{
+											"eventType": "comment",
+											"text": "out of reach bubble"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 155259162154137
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "cloak_spr",
+													"sid": 429377814834502,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "anglelerp(Self.Bullet.AngleOfMotion, angle(Self.X, Self.Y, bubbleCollision.X, bubbleCollision.Y), .1 * 10 * dt)"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "cloakArrow_spr",
+													"sid": 948643848325989,
+													"parameters": {
+														"opacity": "lerp(Self.Opacity, 100, .1 * 60 * dt)"
+													}
+												}
+											],
+											"sid": 847905406650922
+										},
+										{
+											"eventType": "comment",
+											"text": ""
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 715818365054334,
+													"parameters": {
+														"first-value": "cloak_spr.Bullet.AngleOfMotion",
+														"comparison": 5,
+														"second-value": "-90"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 837712257377833,
+													"parameters": {
+														"first-value": "cloak_spr.Bullet.AngleOfMotion",
+														"comparison": 2,
+														"second-value": "90"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "cloak_spr",
+													"sid": 191558077606651,
+													"parameters": {
+														"state": "not-mirrored"
+													}
+												}
+											],
+											"sid": 346047292973674
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 847133814432105
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "cloak_spr",
+													"sid": 990973013166787,
+													"parameters": {
+														"state": "mirrored"
+													}
+												}
+											],
+											"sid": 636966862284562
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "spr_playerActual",
+									"sid": 449625792253787,
+									"parameters": {
+										"instance-variable": "isCapeDetached"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 290597926145205,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "spr_playerActual",
+											"sid": 320895941163757,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"detached dying\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "deathTextColor",
+											"sid": 896737571139702
+										},
+										{
+											"id": "set-height",
+											"objectClass": "blood",
+											"sid": 652751190734749,
+											"parameters": {
+												"height": "Self.ImageHeight * (spr_playerActual.Tween.Value(\"detached dying\") / 100)"
+											}
+										}
+									],
+									"sid": 909988934780173
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "spr_playerActual",
+											"sid": 586459523483759,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"detached ping\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setVialTextScale",
+											"sid": 129407575598389,
+											"parameters": [
+												"spr_playerActual.Tween.Value(\"detached ping\")"
+											]
+										}
+									],
+									"sid": 972891167762103
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-tweens-ping-pong",
+											"objectClass": "spr_playerActual",
+											"sid": 656191417935083,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"detached ping\"",
+												"state": "start"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setStarCount",
+											"sid": 964302304908396,
+											"parameters": [
+												"spr_playerActual.starCount - 1"
+											]
+										}
+									],
+									"sid": 890571868710563,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "spr_playerActual",
+													"sid": 935157497090743,
+													"parameters": {
+														"instance-variable": "starCount",
+														"comparison": 2,
+														"value": "10"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playSound",
+													"sid": 840059365716861,
+													"parameters": [
+														"\"alertTick\"",
+														false,
+														"\"cloak cloakAlert\""
+													]
+												}
+											],
+											"sid": 931069123906591
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-tweens-ping-pong",
+											"objectClass": "spr_playerActual",
+											"sid": 834836199075657,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"detached ping\"",
+												"state": "end"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "deathTextTween",
+											"sid": 584165414792819
+										}
+									],
+									"sid": 352208281937781
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 359374954080840
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "cloak_spr",
+									"sid": 557641489192063,
+									"parameters": {
+										"instance-variable": "isRegen"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 122388347999583,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_playerActual",
+											"sid": 655437206687277,
+											"parameters": {
+												"instance-variable": "starCount",
+												"comparison": 5,
+												"value": "dangerMinimum"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "regen has completed"
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "cloak_spr",
+											"sid": 579272032842865,
+											"parameters": {
+												"instance-variable": "isRegen",
+												"value": "false"
+											}
+										},
+										{
+											"callFunction": "setVialTextScale",
+											"sid": 925376021520411,
+											"parameters": [
+												"deathCount_sprText.defaultScaleSize"
+											]
+										},
+										{
+											"callFunction": "playSound",
+											"sid": 599342115074348,
+											"parameters": [
+												"\"windChimeDing\"",
+												false,
+												"\"cloak\""
+											]
+										}
+									],
+									"sid": 199421523741957
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 622590521137532
+										}
+									],
+									"actions": [],
+									"sid": 414300026993720,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-playing",
+													"objectClass": "spr_playerActual",
+													"sid": 839476312251278,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"attached regen\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "deathTextColor",
+													"sid": 420704256930376
+												},
+												{
+													"id": "set-height",
+													"objectClass": "blood",
+													"sid": 592338688290306,
+													"parameters": {
+														"height": "Self.ImageHeight * (spr_playerActual.Tween.Value(\"attached regen\") / 100)"
+													}
+												}
+											],
+											"sid": 152188078799630
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-playing",
+													"objectClass": "spr_playerActual",
+													"sid": 465527594079162,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"attached ping\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setVialTextScale",
+													"sid": 416243505655739,
+													"parameters": [
+														"spr_playerActual.Tween.Value(\"attached ping\")"
+													]
+												}
+											],
+											"sid": 347809235246443
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-tweens-ping-pong",
+													"objectClass": "spr_playerActual",
+													"sid": 370534415695617,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"attached ping\"",
+														"state": "start"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setStarCount",
+													"sid": 812197982604891,
+													"parameters": [
+														"spr_playerActual.starCount + 1"
+													]
+												}
+											],
+											"sid": 603031466317353
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-tweens-ping-pong",
+													"objectClass": "spr_playerActual",
+													"sid": 161753764298399,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"attached ping\"",
+														"state": "end"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "regenTextTween",
+													"sid": 222867814079053
+												}
+											],
+											"sid": 829206648857730
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 524608416645742
+				}
+			],
+			"sid": 808059568087506
+		}
+	],
+	"sid": 579507529915394
+}

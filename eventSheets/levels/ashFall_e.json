@@ -1,0 +1,47 @@
+{
+	"name": "ashFall_e",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "main_e"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "lighting_e"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "traps_e"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 378394850215932
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "playMusic",
+					"sid": 275468142777740,
+					"parameters": [
+						"\"grassTheme\"",
+						"0"
+					]
+				},
+				{
+					"callFunction": "setDarkness",
+					"sid": 500228652733019,
+					"parameters": [
+						"50",
+						"0"
+					]
+				}
+			],
+			"sid": 341242738567849
+		}
+	],
+	"sid": 991371330412820
+}
