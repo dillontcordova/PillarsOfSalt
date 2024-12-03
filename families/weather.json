@@ -1,0 +1,11 @@
+{
+	"name": "weather",
+	"plugin-id": "Particles",
+	"sid": 949981827864930,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"par_snow"
+	]
+}

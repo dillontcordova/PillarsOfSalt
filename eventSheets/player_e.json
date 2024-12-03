@@ -1070,7 +1070,7 @@
 											],
 											"actions": [
 												{
-													"callFunction": "safeSpotRespawn",
+													"callFunction": "respawnOnSafeSpot",
 													"sid": 118638376570214,
 													"parameters": [
 														"1"
@@ -1206,26 +1206,6 @@
 																		"instance-variable": "lastSafeSpaceY",
 																		"value": "spr_playerActual.Y"
 																	}
-																},
-																{
-																	"id": "destroy",
-																	"objectClass": "spr_shootFire",
-																	"sid": 524403779756940,
-																	"disabled": true
-																},
-																{
-																	"id": "create-object",
-																	"objectClass": "System",
-																	"sid": 312106338789457,
-																	"disabled": true,
-																	"parameters": {
-																		"object-to-create": "spr_shootFire",
-																		"layer": "\"fgCharacters\"",
-																		"x": "safeX",
-																		"y": "spr_playerActual.Y",
-																		"create-hierarchy": false,
-																		"template-name": "\"\""
-																	}
 																}
 															],
 															"sid": 907130673769980
@@ -1235,7 +1215,7 @@
 											]
 										},
 										{
-											"functionName": "safeSpotRespawn",
+											"functionName": "respawnOnSafeSpot",
 											"functionDescription": "",
 											"functionCategory": "",
 											"functionReturnType": "none",
@@ -1261,14 +1241,6 @@
 														"instance-variable": "isSafe",
 														"value": "false"
 													}
-												},
-												{
-													"callFunction": "playerTakeDamage",
-													"sid": 549394134370912,
-													"parameters": [
-														"damage",
-														false
-													]
 												}
 											],
 											"sid": 431606241026714,
@@ -1285,26 +1257,7 @@
 															}
 														}
 													],
-													"actions": [
-														{
-															"id": "set-object-time-scale",
-															"objectClass": "System",
-															"sid": 227335761714995,
-															"parameters": {
-																"object": "actuals",
-																"time-scale": "0"
-															}
-														},
-														{
-															"id": "set-object-time-scale",
-															"objectClass": "System",
-															"sid": 951291728863507,
-															"parameters": {
-																"object": "dolls",
-																"time-scale": "0"
-															}
-														}
-													],
+													"actions": [],
 													"sid": 361861185145392,
 													"children": [
 														{
@@ -1321,6 +1274,22 @@
 																}
 															],
 															"actions": [
+																{
+																	"callFunction": "pauseAll",
+																	"sid": 623494035251145,
+																	"parameters": [
+																		"-1",
+																		false
+																	]
+																},
+																{
+																	"callFunction": "playerTakeDamage",
+																	"sid": 234237495538236,
+																	"parameters": [
+																		"damage",
+																		false
+																	]
+																},
 																{
 																	"callFunction": "fadeOut",
 																	"sid": 159349041295902,
@@ -1363,6 +1332,7 @@
 																	"id": "set-animation",
 																	"objectClass": "dolls",
 																	"sid": 693622852800536,
+																	"disabled": true,
 																	"parameters": {
 																		"animation": "\"idle\"",
 																		"from": "beginning"
@@ -1390,57 +1360,28 @@
 																	"callFunction": "fadeIn",
 																	"sid": 368965469338343,
 																	"parameters": [
-																		".5"
+																		".5",
+																		false
 																	]
 																},
 																{
 																	"id": "wait-for-previous-actions",
 																	"objectClass": "System",
 																	"sid": 267392338753632
+																},
+																{
+																	"callFunction": "unpauseAll",
+																	"sid": 909911904864697
+																},
+																{
+																	"callFunction": "resetLockState",
+																	"sid": 775701770856335,
+																	"parameters": [
+																		"\"safeRespawn\""
+																	]
 																}
 															],
-															"sid": 574932892488936,
-															"children": [
-																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "pick-all",
-																			"objectClass": "System",
-																			"sid": 264220279444756,
-																			"parameters": {
-																				"object": "dolls"
-																			}
-																		}
-																	],
-																	"actions": [
-																		{
-																			"id": "restore-object-time-scale",
-																			"objectClass": "System",
-																			"sid": 590469084861079,
-																			"parameters": {
-																				"object": "actuals"
-																			}
-																		},
-																		{
-																			"id": "restore-object-time-scale",
-																			"objectClass": "System",
-																			"sid": 852492088572161,
-																			"parameters": {
-																				"object": "dolls"
-																			}
-																		},
-																		{
-																			"callFunction": "resetLockState",
-																			"sid": 208993070789514,
-																			"parameters": [
-																				"\"safeRespawn\""
-																			]
-																		}
-																	],
-																	"sid": 917973282315988
-																}
-															]
+															"sid": 574932892488936
 														}
 													]
 												}
@@ -1611,7 +1552,8 @@
 															"sid": 955996984232115,
 															"parameters": [
 																"\"heroAbsorb\"",
-																false
+																false,
+																"\"\""
 															]
 														},
 														{
@@ -1906,7 +1848,7 @@
 											"eventType": "variable",
 											"name": "dashRate",
 											"type": "number",
-											"initialValue": "250",
+											"initialValue": "450",
 											"comment": "",
 											"isStatic": true,
 											"isConstant": false,
@@ -1978,17 +1920,105 @@
 															"sid": 953353296087462,
 															"children": [
 																{
+																	"eventType": "variable",
+																	"name": "degree",
+																	"type": "number",
+																	"initialValue": "0",
+																	"comment": "",
+																	"isStatic": false,
+																	"isConstant": false,
+																	"sid": 659359605700864
+																},
+																{
 																	"eventType": "block",
 																	"conditions": [
 																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 293359897262493,
+																			"parameters": {
+																				"key": 83
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-eventvar-value",
+																			"objectClass": "System",
+																			"sid": 473894854246263,
+																			"parameters": {
+																				"variable": "degree",
+																				"value": "90"
+																			}
+																		},
+																		{
+																			"id": "set-vector-x",
+																			"objectClass": "spr_playerActual",
+																			"sid": 428579891231117,
+																			"behaviorType": "Platform",
+																			"parameters": {
+																				"vector-x": "0"
+																			}
+																		}
+																	],
+																	"sid": 499979598194697
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 552706901914782
+																		},
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 323123401480558,
+																			"parameters": {
+																				"key": 87
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-eventvar-value",
+																			"objectClass": "System",
+																			"sid": 320385970437026,
+																			"parameters": {
+																				"variable": "degree",
+																				"value": "270"
+																			}
+																		},
+																		{
+																			"id": "set-vector-x",
+																			"objectClass": "spr_playerActual",
+																			"sid": 119580956207539,
+																			"behaviorType": "Platform",
+																			"parameters": {
+																				"vector-x": "0"
+																			}
+																		}
+																	],
+																	"sid": 169303774895822
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 905364311152936
+																		},
+																		{
 																			"id": "is-mirrored",
 																			"objectClass": "dolls",
-																			"sid": 833254152852917
+																			"sid": 571126208582958
 																		},
 																		{
 																			"id": "is-by-wall",
 																			"objectClass": "spr_playerActual",
-																			"sid": 486438484471167,
+																			"sid": 375516256380593,
 																			"behaviorType": "Platform",
 																			"parameters": {
 																				"side": "left"
@@ -1998,27 +2028,25 @@
 																	],
 																	"actions": [
 																		{
-																			"callFunction": "startDash",
-																			"sid": 536334226058179,
-																			"parameters": [
-																				"180"
-																			]
-																		},
-																		{
-																			"id": "wait-for-previous-actions",
+																			"id": "set-eventvar-value",
 																			"objectClass": "System",
-																			"sid": 665442841006418
-																		},
-																		{
-																			"callFunction": "cancelDash",
-																			"sid": 740032084355564
+																			"sid": 558887839813724,
+																			"parameters": {
+																				"variable": "degree",
+																				"value": "180"
+																			}
 																		}
 																	],
-																	"sid": 499979598194697
+																	"sid": 614867466388799
 																},
 																{
 																	"eventType": "block",
 																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 754174617437936
+																		},
 																		{
 																			"id": "is-mirrored",
 																			"objectClass": "dolls",
@@ -2038,23 +2066,42 @@
 																	],
 																	"actions": [
 																		{
-																			"callFunction": "startDash",
-																			"sid": 379951740148117,
-																			"parameters": [
-																				"0"
-																			]
-																		},
-																		{
-																			"id": "wait-for-previous-actions",
+																			"id": "set-eventvar-value",
 																			"objectClass": "System",
-																			"sid": 113706409882089
-																		},
-																		{
-																			"callFunction": "cancelDash",
-																			"sid": 947163418728395
+																			"sid": 634042812449241,
+																			"parameters": {
+																				"variable": "degree",
+																				"value": "0"
+																			}
 																		}
 																	],
 																	"sid": 819677771815304
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"callFunction": "startDash",
+																			"sid": 962375224086680,
+																			"parameters": [
+																				"degree"
+																			]
+																		},
+																		{
+																			"id": "wait",
+																			"objectClass": "System",
+																			"sid": 360074268433011,
+																			"parameters": {
+																				"seconds": ".2"
+																			}
+																		},
+																		{
+																			"callFunction": "cancelDash",
+																			"sid": 227114620699271
+																		}
+																	],
+																	"sid": 665813344661856
 																}
 															]
 														}
@@ -2100,13 +2147,69 @@
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 682952849979071,
+													"children": [
 														{
-															"callFunction": "cancelDash",
-															"sid": 708838511404984
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 738775178036633,
+																	"parameters": {
+																		"first-value": "spr_playerActual.Bullet.AngleOfMotion",
+																		"comparison": 0,
+																		"second-value": "0"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 373164282092076,
+																	"parameters": {
+																		"first-value": "spr_playerActual.Bullet.AngleOfMotion",
+																		"comparison": 0,
+																		"second-value": "180"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 103853372586493,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "evaluate-expression",
+																			"objectClass": "System",
+																			"sid": 661029106391419,
+																			"parameters": {
+																				"value": "Functions.setStateGateway(\"dash\")"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "cancelDash",
+																			"sid": 654772444941745
+																		},
+																		{
+																			"id": "log",
+																			"objectClass": "Browser",
+																			"sid": 844996630796036,
+																			"parameters": {
+																				"type": "log",
+																				"message": "\"CANCEL\""
+																			}
+																		}
+																	],
+																	"sid": 330491368657467
+																}
+															],
+															"isOrBlock": true
 														}
 													],
-													"sid": 682952849979071,
 													"isOrBlock": true
 												}
 											]
@@ -2116,8 +2219,8 @@
 											"functionDescription": "",
 											"functionCategory": "ability",
 											"functionReturnType": "none",
-											"functionCopyPicked": false,
-											"functionIsAsync": true,
+											"functionCopyPicked": true,
+											"functionIsAsync": false,
 											"functionParameters": [
 												{
 													"name": "degree",
@@ -2150,7 +2253,8 @@
 															"sid": 406873558513256,
 															"parameters": [
 																"\"heroDash\"",
-																false
+																false,
+																"\"\""
 															]
 														},
 														{
@@ -2233,30 +2337,6 @@
 															"parameters": {
 																"angle": "degree"
 															}
-														},
-														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 360074268433011,
-															"parameters": {
-																"seconds": ".2"
-															}
-														},
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "spr_playerActual",
-															"sid": 457498817714737,
-															"parameters": {
-																"instance-variable": "isDashing",
-																"value": "false"
-															}
-														},
-														{
-															"callFunction": "resetLockState",
-															"sid": 208265642100239,
-															"parameters": [
-																"\"dash\""
-															]
 														}
 													],
 													"sid": 243132754293344
@@ -2273,47 +2353,71 @@
 											"functionParameters": [],
 											"eventType": "function-block",
 											"conditions": [],
-											"actions": [
+											"actions": [],
+											"sid": 637956355178291,
+											"children": [
 												{
-													"id": "set-enabled",
-													"objectClass": "spr_playerActual",
-													"sid": 742273142787564,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"state": "disabled"
-													}
-												},
-												{
-													"id": "set-gravity",
-													"objectClass": "spr_playerActual",
-													"sid": 312028986506534,
-													"behaviorType": "Platform",
-													"parameters": {
-														"gravity": "spr_playerSingleton.defaultGravity"
-													}
-												},
-												{
-													"id": "set-ignoring-input",
-													"objectClass": "spr_playerActual",
-													"sid": 719895829213227,
-													"behaviorType": "Platform",
-													"parameters": {
-														"input": "stop-ignoring"
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "spr_playerActual",
-													"sid": 112737243801932,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "timeout",
-														"type": "once",
-														"tag": "\"dashCoolDown\""
-													}
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "spr_playerActual",
+															"sid": 953100426652934,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"state": "disabled"
+															}
+														},
+														{
+															"id": "set-gravity",
+															"objectClass": "spr_playerActual",
+															"sid": 312500706774679,
+															"behaviorType": "Platform",
+															"parameters": {
+																"gravity": "spr_playerSingleton.defaultGravity"
+															}
+														},
+														{
+															"id": "set-ignoring-input",
+															"objectClass": "spr_playerActual",
+															"sid": 938329991286055,
+															"behaviorType": "Platform",
+															"parameters": {
+																"input": "stop-ignoring"
+															}
+														},
+														{
+															"id": "start-timer",
+															"objectClass": "spr_playerActual",
+															"sid": 856351783427801,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "timeout",
+																"type": "once",
+																"tag": "\"dashCoolDown\""
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "spr_playerActual",
+															"sid": 643677283507006,
+															"parameters": {
+																"instance-variable": "isDashing",
+																"value": "false"
+															}
+														},
+														{
+															"callFunction": "resetLockState",
+															"sid": 766351735471571,
+															"parameters": [
+																"\"dash\""
+															]
+														}
+													],
+													"sid": 604337783172292
 												}
-											],
-											"sid": 637956355178291
+											]
 										},
 										{
 											"eventType": "block",
@@ -2722,7 +2826,8 @@
 													"sid": 337774072708908,
 													"parameters": [
 														"\"heroWallSlide\"",
-														true
+														true,
+														"\"\""
 													]
 												},
 												{
@@ -2790,7 +2895,8 @@
 													"sid": 734394034538185,
 													"parameters": [
 														"\"heroWallJump\"",
-														false
+														false,
+														"\"\""
 													]
 												}
 											],
@@ -3182,9 +3288,9 @@
 												{
 													"id": "on-key-pressed",
 													"objectClass": "Keyboard",
-													"sid": 319026365337720,
+													"sid": 991085547590858,
 													"parameters": {
-														"key": 83
+														"key": 85
 													}
 												},
 												{
@@ -3268,12 +3374,21 @@
 															"parameters": {
 																"value": "Functions.setStateGateway(\"groundPound\")"
 															}
+														},
+														{
+															"id": "pick-children",
+															"objectClass": "spr_playerActual",
+															"sid": 534904690177175,
+															"parameters": {
+																"child": "dolls",
+																"which": "own"
+															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-animation",
-															"objectClass": "spr_playerDoll",
+															"objectClass": "dolls",
 															"sid": 513984271150548,
 															"parameters": {
 																"animation": "\"groundPound\"",
@@ -3377,10 +3492,10 @@
 														{
 															"id": "set-gravity",
 															"objectClass": "spr_playerActual",
-															"sid": 992135528471377,
+															"sid": 776446948570179,
 															"behaviorType": "Platform",
 															"parameters": {
-																"gravity": "850"
+																"gravity": "spr_playerSingleton.defaultGravity"
 															}
 														},
 														{
@@ -4703,6 +4818,14 @@
 															"objectClass": "dolls",
 															"sid": 988951066543845,
 															"behaviorType": "Flash"
+														},
+														{
+															"id": "on-instance-signal",
+															"objectClass": "spr_playerActual",
+															"sid": 635516547136277,
+															"parameters": {
+																"tag": "\"clockAttached\""
+															}
 														}
 													],
 													"actions": [
@@ -4716,7 +4839,8 @@
 															}
 														}
 													],
-													"sid": 247066400593947
+													"sid": 247066400593947,
+													"isOrBlock": true
 												}
 											]
 										},
@@ -4759,6 +4883,7 @@
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 377426366131244,
+													"disabled": true,
 													"parameters": {
 														"seconds": "delay"
 													}
@@ -4767,6 +4892,7 @@
 													"id": "flash",
 													"objectClass": "dolls",
 													"sid": 104759835946685,
+													"disabled": true,
 													"behaviorType": "Flash",
 													"parameters": {
 														"on-time": "0.1",
@@ -4856,36 +4982,16 @@
 											"children": [
 												{
 													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 540084479808265,
-															"parameters": {
-																"variable": "damage",
-																"comparison": 4,
-																"value": "0"
-															}
-														}
-													],
+													"conditions": [],
 													"actions": [
 														{
 															"callFunction": "playSound",
 															"sid": 921766044056422,
 															"parameters": [
 																"\"heroDamage\"",
-																false
+																false,
+																"\"\""
 															]
-														},
-														{
-															"id": "goto-state",
-															"objectClass": "spr_playerActual",
-															"sid": 780636379466200,
-															"disabled": true,
-															"behaviorType": "FSM",
-															"parameters": {
-																"name0": "\"takeDamge\""
-															}
 														},
 														{
 															"id": "subtract-from-instvar",
@@ -4918,127 +5024,67 @@
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "compare-instance-variable",
+																	"id": "pick-children",
 																	"objectClass": "spr_playerActual",
-																	"sid": 530176118857325,
+																	"sid": 408479229942804,
 																	"parameters": {
-																		"instance-variable": "health",
-																		"comparison": 2,
-																		"value": "1"
+																		"child": "spr_playerDoll",
+																		"which": "own"
+																	}
+																},
+																{
+																	"id": "pick-by-unique-id",
+																	"objectClass": "dolls",
+																	"sid": 534735560983723,
+																	"parameters": {
+																		"unique-id": "spr_playerDoll.UID"
 																	}
 																}
 															],
-															"actions": [
-																{
-																	"callFunction": "playerDeath",
-																	"sid": 792059711798060
-																}
-															],
-															"sid": 229674020760552
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "else",
-																	"objectClass": "System",
-																	"sid": 105290472969138
-																}
-															],
 															"actions": [],
-															"sid": 567052487984405,
+															"sid": 332610580804397,
 															"children": [
 																{
 																	"eventType": "block",
 																	"conditions": [
 																		{
-																			"id": "pick-children",
-																			"objectClass": "spr_playerActual",
-																			"sid": 217445411555620,
+																			"id": "compare-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 963197748613237,
 																			"parameters": {
-																				"child": "dolls",
-																				"which": "own"
+																				"variable": "setInvincible"
 																			}
 																		}
 																	],
-																	"actions": [],
-																	"sid": 498901403403214,
-																	"children": [
+																	"actions": [
 																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "compare-boolean-eventvar",
-																					"objectClass": "System",
-																					"sid": 977862647456568,
-																					"parameters": {
-																						"variable": "setInvincible"
-																					}
-																				}
-																			],
-																			"actions": [
-																				{
-																					"callFunction": "setInvincible",
-																					"sid": 713216178690457,
-																					"parameters": [
-																						"1",
-																						"0"
-																					]
-																				}
-																			],
-																			"sid": 399495358618568
+																			"callFunction": "setInvincible",
+																			"sid": 221170366970674,
+																			"parameters": [
+																				"1",
+																				"0"
+																			]
+																		}
+																	],
+																	"sid": 972663677714258
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"callFunction": "stunHit",
+																			"sid": 526774899027623
 																		},
 																		{
-																			"eventType": "block",
-																			"conditions": [],
-																			"actions": [
-																				{
-																					"id": "set-enabled",
-																					"objectClass": "spr_playerActual",
-																					"sid": 837404637528197,
-																					"behaviorType": "Platform",
-																					"parameters": {
-																						"state": "disabled"
-																					}
-																				},
-																				{
-																					"id": "stop-animation",
-																					"objectClass": "dolls",
-																					"sid": 140351796747178
-																				},
-																				{
-																					"id": "wait",
-																					"objectClass": "System",
-																					"sid": 283344788856022,
-																					"parameters": {
-																						"seconds": ".2"
-																					}
-																				},
-																				{
-																					"id": "set-enabled",
-																					"objectClass": "spr_playerActual",
-																					"sid": 245330442293164,
-																					"behaviorType": "Platform",
-																					"parameters": {
-																						"state": "enabled"
-																					}
-																				},
-																				{
-																					"id": "wait-for-previous-actions",
-																					"objectClass": "System",
-																					"sid": 552409896547049
-																				},
-																				{
-																					"callFunction": "resetLockState",
-																					"sid": 847877757556542,
-																					"parameters": [
-																						"\"takeDamage\""
-																					]
-																				}
-																			],
-																			"sid": 936884162010966
+																			"callFunction": "resetLockState",
+																			"sid": 900417965886057,
+																			"parameters": [
+																				"\"takeDamage\""
+																			]
 																		}
-																	]
+																	],
+																	"sid": 694967172969220
 																}
 															]
 														}
@@ -5595,7 +5641,8 @@
 																	"sid": 765593627566992,
 																	"parameters": [
 																		"choose(\"heroSword1\", \"heroSword2\", \"heroSword3\")",
-																		false
+																		false,
+																		"\"\""
 																	]
 																},
 																{
@@ -5606,14 +5653,6 @@
 																		"instance-variable": "isAttacking",
 																		"value": "true"
 																	}
-																},
-																{
-																	"callFunction": "setAnimation",
-																	"sid": 728783353174833,
-																	"parameters": [
-																		"\"attack\"",
-																		"spr_playerActual.UID"
-																	]
 																},
 																{
 																	"id": "start-timer",
@@ -5630,68 +5669,241 @@
 															"sid": 611599869015320,
 															"children": [
 																{
+																	"eventType": "variable",
+																	"name": "curPlayerDollUid",
+																	"type": "number",
+																	"initialValue": "0",
+																	"comment": "",
+																	"isStatic": false,
+																	"isConstant": false,
+																	"sid": 539453482893864
+																},
+																{
 																	"eventType": "block",
 																	"conditions": [
 																		{
-																			"id": "pick-children",
+																			"id": "is-boolean-instance-variable-set",
 																			"objectClass": "spr_playerActual",
-																			"sid": 976211625451986,
+																			"sid": 574163020328498,
 																			"parameters": {
-																				"child": "dolls",
-																				"which": "own"
+																				"instance-variable": "isCapeDetached"
 																			}
 																		}
 																	],
 																	"actions": [
 																		{
-																			"id": "spawn-another-object",
-																			"objectClass": "dolls",
-																			"sid": 222574465191664,
+																			"id": "set-eventvar-value",
+																			"objectClass": "System",
+																			"sid": 135307266816636,
 																			"parameters": {
-																				"object": "spr_meleeSlash",
-																				"layer": "dolls.LayerName",
-																				"image-point": "\"atkPoint\"",
-																				"create-hierarchy": true,
-																				"template-name": "\"\""
-																			}
-																		},
-																		{
-																			"id": "pin-to-object-imagepoint",
-																			"objectClass": "spr_meleeSlash",
-																			"sid": 566074581999644,
-																			"behaviorType": "Pin",
-																			"parameters": {
-																				"pin-to": "dolls",
-																				"image-point": "\"atkPoint\"",
-																				"angle": true,
-																				"width-type": "no",
-																				"height-type": "no",
-																				"z": false
+																				"variable": "curPlayerDollUid",
+																				"value": "spr_playerEmptyDoll.UID"
 																			}
 																		}
 																	],
+																	"sid": 381385742935685
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 522138348394729
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-eventvar-value",
+																			"objectClass": "System",
+																			"sid": 973007740271731,
+																			"parameters": {
+																				"variable": "curPlayerDollUid",
+																				"value": "spr_playerDoll.UID"
+																			}
+																		}
+																	],
+																	"sid": 592028563586483
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-by-unique-id",
+																			"objectClass": "dolls",
+																			"sid": 866333078099631,
+																			"parameters": {
+																				"unique-id": "curPlayerDollUid"
+																			}
+																		}
+																	],
+																	"actions": [],
 																	"sid": 496184218786480,
 																	"children": [
+																		{
+																			"eventType": "variable",
+																			"name": "dir",
+																			"type": "string",
+																			"initialValue": "",
+																			"comment": "",
+																			"isStatic": false,
+																			"isConstant": false,
+																			"sid": 675086735603257
+																		},
 																		{
 																			"eventType": "block",
 																			"conditions": [
 																				{
-																					"id": "is-mirrored",
-																					"objectClass": "dolls",
-																					"sid": 875164139835680
+																					"id": "key-is-down",
+																					"objectClass": "Keyboard",
+																					"sid": 973583561927641,
+																					"parameters": {
+																						"key": 87
+																					}
 																				}
 																			],
 																			"actions": [
 																				{
-																					"id": "set-mirrored",
-																					"objectClass": "spr_meleeSlash",
-																					"sid": 491998900289803,
+																					"id": "set-eventvar-value",
+																					"objectClass": "System",
+																					"sid": 325067822675885,
 																					"parameters": {
-																						"state": "mirrored"
+																						"variable": "dir",
+																						"value": "\"Up\""
 																					}
 																				}
 																			],
-																			"sid": 490768371097552
+																			"sid": 681801170473607
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [],
+																			"actions": [
+																				{
+																					"callFunction": "setAnimation",
+																					"sid": 933235304821119,
+																					"parameters": [
+																						"\"attack\" & dir",
+																						"spr_playerActual.UID"
+																					]
+																				},
+																				{
+																					"id": "spawn-another-object",
+																					"objectClass": "dolls",
+																					"sid": 631674526017291,
+																					"parameters": {
+																						"object": "spr_meleeSlash",
+																						"layer": "dolls.LayerName",
+																						"image-point": "\"atkPoint\"",
+																						"create-hierarchy": true,
+																						"template-name": "\"\""
+																					}
+																				},
+																				{
+																					"id": "add-child",
+																					"objectClass": "dolls",
+																					"sid": 909818471893371,
+																					"parameters": {
+																						"child": "spr_meleeSlash",
+																						"transform-x": true,
+																						"transform-y": true,
+																						"transform-w": false,
+																						"transform-h": false,
+																						"transform-a": true,
+																						"transform-o": false,
+																						"transform-z-elevation": false,
+																						"transform-visibility": false,
+																						"destroy-with-parent": true
+																					}
+																				}
+																			],
+																			"sid": 519557269706218,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "is-mirrored",
+																							"objectClass": "dolls",
+																							"sid": 686781087715842
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-mirrored",
+																							"objectClass": "spr_meleeSlash",
+																							"sid": 482501276492418,
+																							"parameters": {
+																								"state": "mirrored"
+																							}
+																						}
+																					],
+																					"sid": 883408289479222
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "compare-eventvar",
+																							"objectClass": "System",
+																							"sid": 890358546257497,
+																							"parameters": {
+																								"variable": "dir",
+																								"comparison": 0,
+																								"value": "\"Up\""
+																							}
+																						}
+																					],
+																					"actions": [],
+																					"sid": 431459037796606,
+																					"children": [
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "is-mirrored",
+																									"objectClass": "dolls",
+																									"sid": 444112185572651
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "set-angle-toward-position",
+																									"objectClass": "spr_meleeSlash",
+																									"sid": 372425284013189,
+																									"parameters": {
+																										"x": "spr_meleeSlash.X",
+																										"y": "spr_meleeSlash.Y + 50"
+																									}
+																								}
+																							],
+																							"sid": 603042191712341
+																						},
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "else",
+																									"objectClass": "System",
+																									"sid": 666541044928434
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "set-angle-toward-position",
+																									"objectClass": "spr_meleeSlash",
+																									"sid": 980242335022663,
+																									"parameters": {
+																										"x": "spr_meleeSlash.X",
+																										"y": "spr_meleeSlash.Y - 50"
+																									}
+																								}
+																							],
+																							"sid": 520671688188072
+																						}
+																					]
+																				}
+																			]
 																		}
 																	]
 																}
@@ -6059,7 +6271,8 @@
 											"sid": 703096034995324,
 											"parameters": [
 												"\"heroDeath\"",
-												false
+												false,
+												"\"\""
 											]
 										},
 										{
@@ -6252,7 +6465,7 @@
 					"sid": 673736933873361
 				},
 				{
-					"functionName": "immobilizePlayer",
+					"functionName": "ignoreInput",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -6262,77 +6475,37 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
-					"sid": 321814976245802,
+					"sid": 164508263194314,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 271950920476673,
-									"parameters": {
-										"value": "Functions.setStateGateway(\"cutScene\")"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 287577972602279,
+									"sid": 838927871648001,
 									"parameters": {
 										"group-name": "\"Input\"",
 										"state": "deactivated"
 									}
 								},
 								{
-									"callFunction": "playerToDefaultState",
-									"sid": 899532412297170
-								},
-								{
-									"id": "stop-all-timers",
-									"objectClass": "spr_playerActual",
-									"sid": 347393264484117,
-									"disabled": true,
-									"behaviorType": "Timer"
-								},
-								{
-									"id": "set-vector-x",
-									"objectClass": "spr_playerActual",
-									"sid": 641014327909989,
-									"disabled": true,
-									"behaviorType": "Platform",
-									"parameters": {
-										"vector-x": "0"
-									}
-								},
-								{
-									"id": "set-vector-y",
-									"objectClass": "spr_playerActual",
-									"sid": 382785402658204,
-									"disabled": true,
-									"behaviorType": "Platform",
-									"parameters": {
-										"vector-y": "0"
-									}
-								},
-								{
 									"id": "set-ignoring-input",
 									"objectClass": "spr_playerActual",
-									"sid": 653072179676968,
+									"sid": 842181341011654,
 									"behaviorType": "Platform",
 									"parameters": {
 										"input": "start-ignoring"
 									}
 								}
 							],
-							"sid": 590324341389331
+							"sid": 947983687185672
 						}
 					]
 				},
 				{
-					"functionName": "mobilizePlayer",
+					"functionName": "listenInput",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -6342,7 +6515,7 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
-					"sid": 998455569627122,
+					"sid": 352934860329481,
 					"children": [
 						{
 							"eventType": "block",
@@ -6365,12 +6538,93 @@
 									"parameters": {
 										"input": "stop-ignoring"
 									}
+								}
+							],
+							"sid": 988931342151947
+						}
+					]
+				},
+				{
+					"functionName": "immobilizePlayer",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "state",
+							"type": "string",
+							"initialValue": "cutScene",
+							"comment": "",
+							"sid": 186194701893620
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 321814976245802,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 889229424257937,
+									"parameters": {
+										"value": "Functions.setStateGateway(state)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ignoreInput",
+									"sid": 496387237225299
+								},
+								{
+									"callFunction": "playerToDefaultState",
+									"sid": 899532412297170
+								}
+							],
+							"sid": 590324341389331
+						}
+					]
+				},
+				{
+					"functionName": "mobilizePlayer",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "state",
+							"type": "string",
+							"initialValue": "cutScene",
+							"comment": "",
+							"sid": 450150449895996
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 998455569627122,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "listenInput",
+									"sid": 503013892238766
 								},
 								{
 									"callFunction": "resetLockState",
-									"sid": 492770045988287,
+									"sid": 406871310076872,
 									"parameters": [
-										"\"cutScene\""
+										"state"
 									]
 								}
 							],

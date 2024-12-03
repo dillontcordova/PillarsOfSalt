@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 39700,
+	"savedWithRelease": 41600,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -192,6 +192,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
 			"author": "Scirra",
@@ -229,6 +236,13 @@
 			"type": "behavior",
 			"id": "NoSave",
 			"name": "No save",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Orbit",
+			"name": "Orbit",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -400,6 +414,13 @@
 		},
 		{
 			"type": "effect",
+			"id": "brightness",
+			"name": "Brightness",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "hsladjust",
 			"name": "Adjust HSL",
 			"author": "Scirra",
@@ -465,7 +486,12 @@
 			"screenCrosshair_spr",
 			"boatMan_spr",
 			"saveShrine_spr",
-			"trampolene_spr"
+			"trampolene_spr",
+			"Sprite2",
+			"yellowClues_spr",
+			"asd",
+			"Particles",
+			"spr_snowAtmos"
 		],
 		"subfolders": [
 			{
@@ -780,7 +806,14 @@
 					"trapBar_9patch",
 					"spr_suspendedTrapSpawn",
 					"spikeWood_spr_tb",
-					"spikeWoodTrap_spr_tb"
+					"spikeWoodTrap_spr_tb",
+					"patrollingTrap_spr",
+					"FlashEffect",
+					"thwompTrap_spr",
+					"ceilingTrap_spr",
+					"RecoverDebris",
+					"RailPath",
+					"ImpactSmoke"
 				],
 				"subfolders": [],
 				"name": "traps"
@@ -864,6 +897,24 @@
 				],
 				"subfolders": [],
 				"name": "platforms"
+			},
+			{
+				"items": [
+					"blood",
+					"bubbleCollision",
+					"bubbles",
+					"cloak_spr",
+					"cloakArrow_spr",
+					"deathCount_sprText",
+					"enemy",
+					"spr_playerEmptyDoll",
+					"star_spr",
+					"vial",
+					"cloakBubble",
+					"vialMask_spr"
+				],
+				"subfolders": [],
+				"name": "vial"
 			}
 		]
 	},
@@ -903,7 +954,10 @@
 			"breezySprites",
 			"backgrounds",
 			"destructables",
-			"trampolines"
+			"trampolines",
+			"trapPatrolling",
+			"weatherEffects",
+			"weather"
 		],
 		"subfolders": []
 	},
@@ -930,7 +984,8 @@
 					"caveLand",
 					"grassLand",
 					"grassRuins",
-					"SANDBOX"
+					"SANDBOX",
+					"ashFall"
 				],
 				"subfolders": [],
 				"name": "levels"
@@ -962,7 +1017,8 @@
 			"breakAparts_e",
 			"platforms_e",
 			"saving_e",
-			"trampoline_e"
+			"trampoline_e",
+			"yoshiBubble_e"
 		],
 		"subfolders": [
 			{
@@ -973,7 +1029,8 @@
 					"sandbox_e",
 					"tntSplash_e",
 					"constructSplash_e",
-					"titleScreen_e"
+					"titleScreen_e",
+					"ashFall_e"
 				],
 				"subfolders": [],
 				"name": "levels"
@@ -1232,6 +1289,68 @@
 					],
 					"subfolders": [],
 					"name": "saving"
+				},
+				{
+					"items": [
+						{
+							"name": "reUniteCloak.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 279912414247495,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "alertTick.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 861831304302024,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "bgLifeDrain.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 535781417047392,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "joltAlert.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 960102057653274,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "fgLifeDrain.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 514820201996815,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "windChimeDing.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 635703381963281,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "bubblePop.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 707247914523233,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "cloakSounds"
 				}
 			]
 		},
@@ -1435,7 +1554,6 @@
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "flat",
 		"uidAllocationMode": "increment"
 	},

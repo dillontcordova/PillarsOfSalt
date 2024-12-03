@@ -33,9 +33,9 @@
 				},
 				{
 					"callFunction": "setDarkness",
-					"sid": 665532381143833,
+					"sid": 542995641155508,
 					"parameters": [
-						"80",
+						"30",
 						"0"
 					]
 				}
@@ -57,10 +57,14 @@
 			"actions": [
 				{
 					"callFunction": "fallingLeaves",
-					"sid": 601661423561878
+					"sid": 307648951978714,
+					"parameters": [
+						"\"spr_leafAtmos\""
+					]
 				}
 			],
-			"sid": 137425984290210
+			"sid": 137425984290210,
+			"disabled": true
 		}
 	],
 	"sid": 747973494409028

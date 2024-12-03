@@ -26,6 +26,8 @@
 						"blend-margin-y": 0.1
 					},
 					"uid": 269,
+					"sid": 792957463907301,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -35,6 +37,8 @@
 							"properties": {}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 0,
 						"y": 0,
@@ -72,6 +76,8 @@
 						"blend-margin-y": 0.1
 					},
 					"uid": 270,
+					"sid": 864205998714420,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -81,6 +87,8 @@
 							"properties": {}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 640,
 						"y": 0,
@@ -143,6 +151,8 @@
 						"live-preview": false
 					},
 					"uid": 241,
+					"sid": 521835341351101,
+					"tags": "",
 					"instanceVariables": {
 						"brightness": 50
 					},
@@ -198,6 +208,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 244,
 						"y": 124,
@@ -225,6 +237,8 @@
 						"live-preview": false
 					},
 					"uid": 262,
+					"sid": 521139095515766,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Sine": {
@@ -284,6 +298,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 112,
 						"y": 264,
@@ -311,6 +327,8 @@
 						"live-preview": false
 					},
 					"uid": 263,
+					"sid": 538145412277867,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -341,6 +359,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 216,
 						"y": 192,
@@ -368,6 +388,8 @@
 						"live-preview": false
 					},
 					"uid": 242,
+					"sid": 880963203473385,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -398,6 +420,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 154,
 						"y": 252,
@@ -460,6 +484,8 @@
 						"live-preview": false
 					},
 					"uid": 301,
+					"sid": 571471365281935,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Sine": {
@@ -581,6 +607,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 148,
 						"y": 284,
@@ -653,6 +681,8 @@
 						"blend-margin-y": 0.1
 					},
 					"uid": 259,
+					"sid": 471992839265131,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Water": {
@@ -672,6 +702,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 0,
 						"y": 304,
@@ -734,8 +766,12 @@
 						"live-preview": false
 					},
 					"uid": 261,
+					"sid": 795465993077578,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 1016,
 						"y": 180,
@@ -798,6 +834,8 @@
 						"live-preview": false
 					},
 					"uid": 264,
+					"sid": 524981974521801,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Sine": {
@@ -815,6 +853,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 274,
 						"y": 208,
@@ -877,6 +917,8 @@
 						"live-preview": false
 					},
 					"uid": 265,
+					"sid": 190735871395284,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Timer": {
@@ -886,6 +928,8 @@
 							"properties": {}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 324,
 						"y": 0,
@@ -958,10 +1002,14 @@
 						"blend-margin-y": 0.1
 					},
 					"uid": 266,
+					"sid": 334894406056020,
+					"tags": "",
 					"instanceVariables": {
 						"fadeDirection": "down"
 					},
 					"behaviors": {},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 0,
 						"y": 336,
@@ -999,10 +1047,14 @@
 						"blend-margin-y": 0.1
 					},
 					"uid": 267,
+					"sid": 917983620664137,
+					"tags": "",
 					"instanceVariables": {
 						"fadeDirection": "up"
 					},
 					"behaviors": {},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 0,
 						"y": 0,
@@ -1030,6 +1082,8 @@
 						"live-preview": false
 					},
 					"uid": 268,
+					"sid": 703107529948007,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"FSM": {
@@ -1050,6 +1104,8 @@
 							"properties": {}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 176,
 						"y": -48,
@@ -1087,6 +1143,8 @@
 						"blend-margin-y": 0.1
 					},
 					"uid": 271,
+					"sid": 668794334290863,
+					"tags": "",
 					"instanceVariables": {
 						"fadeDirection": "right"
 					},
@@ -1166,6 +1224,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 488,
 						"y": 0,
@@ -1193,6 +1253,8 @@
 						"live-preview": false
 					},
 					"uid": 272,
+					"sid": 562513972106833,
+					"tags": "",
 					"instanceVariables": {
 						"btnId": 2
 					},
@@ -1225,6 +1287,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 564,
 						"y": 80,
@@ -1252,6 +1316,8 @@
 						"live-preview": false
 					},
 					"uid": 273,
+					"sid": 472983226961673,
+					"tags": "",
 					"instanceVariables": {
 						"btnId": 1
 					},
@@ -1284,6 +1350,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 564,
 						"y": 180,
@@ -1311,6 +1379,8 @@
 						"live-preview": false
 					},
 					"uid": 274,
+					"sid": 220759420525604,
+					"tags": "",
 					"instanceVariables": {
 						"btnId": 0
 					},
@@ -1343,6 +1413,8 @@
 							"previewSceneGraph": false
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 564,
 						"y": 276,
@@ -1370,6 +1442,8 @@
 						"live-preview": false
 					},
 					"uid": 453,
+					"sid": 468226531983319,
+					"tags": "",
 					"instanceVariables": {
 						"curMusic": "",
 						"nextMusic": "",
@@ -1392,6 +1466,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 208,
 						"y": -48,
@@ -1508,6 +1584,10 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 944604902301250,
 	"nonworld-instances": [],
 	"effectTypes": [

@@ -5,6 +5,8 @@
 	"singleglobal-inst": {
 		"type": "FileSystem",
 		"properties": {},
-		"uid": 427
+		"uid": 427,
+		"sid": 673142206155131,
+		"tags": ""
 	}
 }

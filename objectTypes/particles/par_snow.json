@@ -4,17 +4,24 @@
 	"sid": 133666885256184,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 783859097503184
+		}
+	],
 	"effectTypes": [],
 	"image": {
-		"width": 2,
-		"height": 2,
+		"width": 9,
+		"height": 9,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6114658,
+		"fileType": "image/png",
+		"imageSpriteId": 7581575,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

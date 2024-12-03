@@ -1,0 +1,33 @@
+{
+	"name": "weatherEffects",
+	"plugin-id": "Sprite",
+	"sid": 478372981967518,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 291812919352723
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 387579838966214
+		},
+		{
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 985554540016992
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 170663559081759
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_leafAtmos",
+		"spr_snowAtmos"
+	]
+}

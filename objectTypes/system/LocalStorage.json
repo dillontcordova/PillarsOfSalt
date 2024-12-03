@@ -4,7 +4,11 @@
 	"sid": 257009240560548,
 	"singleglobal-inst": {
 		"type": "LocalStorage",
-		"properties": {},
-		"uid": 90
+		"properties": {
+			"in-memory-only": false
+		},
+		"uid": 90,
+		"sid": 986044655992943,
+		"tags": ""
 	}
 }

@@ -20,6 +20,8 @@
 								"live-preview": false
 							},
 							"uid": 344,
+							"sid": 288173974793583,
+							"tags": "",
 							"instanceVariables": {
 								"area": "",
 								"wasTouched": false,
@@ -31,6 +33,8 @@
 									"properties": {}
 								}
 							},
+							"showing": true,
+							"locked": false,
 							"world": {
 								"x": 0,
 								"y": 0,
@@ -58,6 +62,8 @@
 								"live-preview": false
 							},
 							"uid": 398,
+							"sid": 386721585303109,
+							"tags": "",
 							"instanceVariables": {
 								"area": "",
 								"wasTouched": false,
@@ -69,6 +75,8 @@
 									"properties": {}
 								}
 							},
+							"showing": true,
+							"locked": false,
 							"world": {
 								"x": 720,
 								"y": 50,
@@ -141,12 +149,16 @@
 								"blend-margin-y": 0.1
 							},
 							"uid": 348,
+							"sid": 923580215442253,
+							"tags": "",
 							"instanceVariables": {},
 							"behaviors": {
 								"NoSave": {
 									"properties": {}
 								}
 							},
+							"showing": true,
+							"locked": false,
 							"world": {
 								"x": 528.6258424056601,
 								"y": 44.97932225760441,
@@ -313,6 +325,8 @@
 						"drawing-mode": "top-to-right"
 					},
 					"uid": 341,
+					"sid": 463224229086631,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Solid": {
@@ -351,6 +365,8 @@
 						"tile-x-spacing": 0,
 						"tile-y-spacing": 0
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": -288,
 						"y": -64,
@@ -377,6 +393,8 @@
 						"live-preview": false
 					},
 					"uid": 345,
+					"sid": 584442259829019,
+					"tags": "",
 					"instanceVariables": {
 						"brightness": 50
 					},
@@ -390,6 +408,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 328,
 						"y": 144,
@@ -417,6 +437,8 @@
 						"live-preview": false
 					},
 					"uid": 377,
+					"sid": 738022385745698,
+					"tags": "",
 					"instanceVariables": {
 						"brightness": 50
 					},
@@ -430,6 +452,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 440,
 						"y": 144,
@@ -457,6 +481,8 @@
 						"live-preview": false
 					},
 					"uid": 379,
+					"sid": 393310792650628,
+					"tags": "",
 					"instanceVariables": {
 						"brightness": 50
 					},
@@ -470,6 +496,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 40,
 						"y": 112,
@@ -497,6 +525,8 @@
 						"live-preview": false
 					},
 					"uid": 397,
+					"sid": 130740628553062,
+					"tags": "",
 					"instanceVariables": {
 						"brightness": 50
 					},
@@ -510,6 +540,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 384,
 						"y": 208,
@@ -600,23 +632,27 @@
 					"type": "spr_playerSpawn",
 					"properties": {
 						"initially-visible": false,
-						"initial-animation": "Animation 1",
+						"initial-animation": "idle",
 						"initial-frame": 0,
 						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 342,
+					"sid": 467438817884470,
+					"tags": "",
 					"instanceVariables": {
 						"spawnName": "spr_playerActual"
 					},
 					"behaviors": {},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 126.79766125340178,
 						"y": 138.8500436460828,
-						"width": 4,
-						"height": 4,
+						"width": 24,
+						"height": 32,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -637,6 +673,8 @@
 						"live-preview": false
 					},
 					"uid": 343,
+					"sid": 652141905311755,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"ScrollTo": {
@@ -645,6 +683,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 95.20877949595409,
 						"y": 110.26537517449833,
@@ -672,6 +712,8 @@
 						"live-preview": false
 					},
 					"uid": 369,
+					"sid": 699807024409566,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Rotate": {
@@ -683,6 +725,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 357.09954833984375,
 						"y": -16.937528610229492,
@@ -765,6 +809,10 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 649082510869506,
 	"nonworld-instances": [],
 	"effectTypes": [],

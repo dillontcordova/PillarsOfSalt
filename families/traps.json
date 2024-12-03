@@ -22,6 +22,8 @@
 	"effectTypes": [],
 	"members": [
 		"spikeWoodTrap_spr_tb",
-		"spr_suspendedTrap"
+		"spr_suspendedTrap",
+		"patrollingTrap_spr",
+		"thwompTrap_spr"
 	]
 }

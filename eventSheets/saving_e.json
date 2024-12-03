@@ -142,7 +142,8 @@
 											"sid": 162614899211328,
 											"parameters": [
 												"\"PowerUp1Low\"",
-												false
+												false,
+												"\"\""
 											]
 										},
 										{
@@ -320,7 +321,8 @@
 											"sid": 907908482610658,
 											"parameters": [
 												"\"saveWarp\"",
-												false
+												false,
+												"\"\""
 											]
 										},
 										{
@@ -678,7 +680,8 @@
 									"callFunction": "fadeIn",
 									"sid": 882932956941852,
 									"parameters": [
-										".33"
+										".33",
+										false
 									]
 								}
 							],
@@ -948,7 +951,8 @@
 									"sid": 349547593816357,
 									"parameters": [
 										"\"loadWarp\"",
-										false
+										false,
+										"\"\""
 									]
 								},
 								{

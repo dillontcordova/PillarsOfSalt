@@ -36,6 +36,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
+		"fileType": "image/png",
 		"imageSpriteId": 9985410,
 		"useCollisionPoly": true,
 		"tag": ""

@@ -16,6 +16,8 @@
 						"live-preview": false
 					},
 					"uid": 26,
+					"sid": 480632250052648,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Fade": {
@@ -42,6 +44,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 160,
 						"y": 80,
@@ -85,6 +89,8 @@
 						"read-aloud": false
 					},
 					"uid": 27,
+					"sid": 352776381558093,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Fade": {
@@ -103,6 +109,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 112,
 						"y": 64,
@@ -130,6 +138,8 @@
 						"live-preview": false
 					},
 					"uid": 28,
+					"sid": 270695001080968,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Rotate": {
@@ -152,6 +162,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 112,
 						"y": -16,
@@ -195,6 +207,8 @@
 						"read-aloud": false
 					},
 					"uid": 428,
+					"sid": 279436593190234,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Fade": {
@@ -208,6 +222,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 96,
 						"y": 112,
@@ -256,12 +272,18 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 786403176236908,
 	"nonworld-instances": [
 		{
 			"type": "dict_states",
 			"properties": {},
 			"uid": 166,
+			"sid": 820491675925421,
+			"tags": "",
 			"instanceVariables": {}
 		},
 		{
@@ -272,6 +294,8 @@
 				"depth": 1
 			},
 			"uid": 247,
+			"sid": 113642997209803,
+			"tags": "",
 			"instanceVariables": {}
 		}
 	],

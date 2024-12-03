@@ -26,6 +26,8 @@
 						"blend-margin-y": 0.1
 					},
 					"uid": 199,
+					"sid": 797257041961405,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -46,6 +48,15 @@
 							}
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 797257041961405,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 0,
 						"y": -112,
@@ -73,6 +84,8 @@
 						"live-preview": false
 					},
 					"uid": 196,
+					"sid": 743266911608838,
+					"tags": "",
 					"instanceVariables": {
 						"selected": "resume"
 					},
@@ -105,6 +118,15 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 743266911608838,
+						"expanded": false,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 64,
 						"y": 80,
@@ -142,6 +164,8 @@
 						"read-aloud": false
 					},
 					"uid": 193,
+					"sid": 779719407574702,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -219,6 +243,15 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 779719407574702,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 0,
 						"y": 16,
@@ -246,6 +279,8 @@
 						"live-preview": false
 					},
 					"uid": 194,
+					"sid": 351535589343312,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -276,6 +311,15 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 351535589343312,
+						"expanded": false,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 64,
 						"y": 144,
@@ -303,6 +347,8 @@
 						"live-preview": false
 					},
 					"uid": 195,
+					"sid": 586087116104478,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -333,6 +379,15 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 586087116104478,
+						"expanded": false,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 64,
 						"y": 80,
@@ -381,6 +436,25 @@
 			"global": true
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [
+			{
+				"sid": 797257041961405,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 779719407574702,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			}
+		],
+		"subfolders": []
+	},
 	"sid": 456235695286968,
 	"nonworld-instances": [],
 	"effectTypes": [],

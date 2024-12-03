@@ -50,6 +50,8 @@
 						"live-preview": false
 					},
 					"uid": 430,
+					"sid": 601844795380092,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Tween": {
@@ -58,6 +60,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 320,
 						"y": 96,
@@ -149,6 +153,8 @@
 						"read-aloud": false
 					},
 					"uid": 429,
+					"sid": 743308405964412,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Fade": {
@@ -184,6 +190,8 @@
 							}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 160,
 						"y": 272,
@@ -232,6 +240,10 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 722010679178471,
 	"nonworld-instances": [],
 	"effectTypes": [

@@ -131,7 +131,8 @@
 											"sid": 877816511234140,
 											"parameters": [
 												"\"stepWaterSplash\"",
-												false
+												false,
+												"\"\""
 											]
 										},
 										{
@@ -357,7 +358,8 @@
 															"sid": 640074897558135,
 															"parameters": [
 																"\"dunkWaterSplash\"",
-																false
+																false,
+																"\"\""
 															]
 														},
 														{

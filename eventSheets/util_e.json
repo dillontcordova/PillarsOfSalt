@@ -337,9 +337,9 @@
 										{
 											"id": "set-font-size",
 											"objectClass": "txt_debug",
-											"sid": 560875815889988,
+											"sid": 897136405637579,
 											"parameters": {
-												"size-pt": "4"
+												"size-pt": "10"
 											}
 										},
 										{
@@ -630,17 +630,55 @@
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 690217816223317,
+													"children": [
 														{
-															"id": "set-text",
-															"objectClass": "txt_debug",
-															"sid": 411516903806133,
-															"parameters": {
-																"text": "actuals.FSM.CurrentState"
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-unique-id",
+																	"objectClass": "spr_playerActual",
+																	"sid": 661452481647783,
+																	"parameters": {
+																		"unique-id": "actuals.UID"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "txt_debug",
+																	"sid": 295617945972998,
+																	"parameters": {
+																		"text": "spr_playerSingleton.FSM.CurrentState"
+																	}
+																}
+															],
+															"sid": 607129933511328
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 857834394384680
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "txt_debug",
+																	"sid": 552777468502249,
+																	"parameters": {
+																		"text": "actuals.FSM.CurrentState"
+																	}
+																}
+															],
+															"sid": 232574519044944
 														}
-													],
-													"sid": 690217816223317
+													]
 												}
 											]
 										}
@@ -687,7 +725,8 @@
 							"callFunction": "fadeIn",
 							"sid": 905874039873874,
 							"parameters": [
-								"1"
+								"1",
+								false
 							]
 						},
 						{
@@ -736,7 +775,19 @@
 							"actions": [
 								{
 									"callFunction": "immobilizePlayer",
-									"sid": 264154869291933
+									"sid": 628971086110274,
+									"parameters": [
+										"\"cutScene\""
+									]
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 203110344192851,
+									"parameters": {
+										"object": "tb_fade",
+										"time-scale": "1.0"
+									}
 								},
 								{
 									"id": "set-opacity",
@@ -752,6 +803,23 @@
 									"sid": 105270733726370,
 									"parameters": {
 										"visibility": "visible"
+									}
+								},
+								{
+									"id": "pause-all-tweens",
+									"objectClass": "spr_playerActual",
+									"sid": 399905097815310,
+									"disabled": true,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "pause-resume-all-timers",
+									"objectClass": "spr_playerActual",
+									"sid": 773109478861639,
+									"disabled": true,
+									"behaviorType": "Timer",
+									"parameters": {
+										"state": "paused"
 									}
 								},
 								{
@@ -790,6 +858,13 @@
 							"initialValue": "1",
 							"comment": "",
 							"sid": 985221230744583
+						},
+						{
+							"name": "isEnterRoom",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 796701031965437
 						}
 					],
 					"eventType": "function-block",
@@ -813,13 +888,11 @@
 							],
 							"actions": [
 								{
-									"callFunction": "immobilizePlayer",
-									"sid": 456255714884343,
-									"disabled": true
-								},
-								{
 									"callFunction": "mobilizePlayer",
-									"sid": 702046429609486
+									"sid": 702046429609486,
+									"parameters": [
+										"\"cutScene\""
+									]
 								},
 								{
 									"id": "set-opacity",
@@ -835,6 +908,21 @@
 									"sid": 346988081804561,
 									"parameters": {
 										"visibility": "visible"
+									}
+								},
+								{
+									"id": "resume-all-tweens",
+									"objectClass": "spr_playerActual",
+									"sid": 543617276365678,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "pause-resume-all-timers",
+									"objectClass": "spr_playerActual",
+									"sid": 386106535997640,
+									"behaviorType": "Timer",
+									"parameters": {
+										"state": "resumed"
 									}
 								},
 								{
@@ -866,9 +954,43 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
+								},
+								{
+									"id": "restore-object-time-scale",
+									"objectClass": "System",
+									"sid": 583110758198107,
+									"parameters": {
+										"object": "tb_fade"
+									}
 								}
 							],
-							"sid": 913618338135800
+							"sid": 913618338135800,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 332653716181531,
+											"parameters": {
+												"variable": "isEnterRoom"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "instance-signal",
+											"objectClass": "spr_gameSingleton",
+											"sid": 119769007041985,
+											"parameters": {
+												"tag": "\"playerEnteredRoom\""
+											}
+										}
+									],
+									"sid": 632127867874183
+								}
+							]
 						}
 					]
 				}
@@ -889,100 +1011,158 @@
 					"functionReturnType": "none",
 					"functionCopyPicked": false,
 					"functionIsAsync": false,
-					"functionParameters": [],
+					"functionParameters": [
+						{
+							"name": "effectName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 711921450265230
+						}
+					],
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
 					"sid": 270299245864074,
 					"children": [
 						{
-							"eventType": "variable",
-							"name": "colorVal",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 133858576821196
-						},
-						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
-									"id": "create-object",
+									"id": "create-object-by-name",
 									"objectClass": "System",
-									"sid": 781760669030791,
+									"sid": 243936044023214,
 									"parameters": {
-										"object-to-create": "spr_leafAtmos",
+										"object-name": "effectName",
 										"layer": "\"fgCharacters\"",
 										"x": "ViewportLeft(\"fgCharacters\") + random(OriginalViewportWidth * 1.33)",
 										"y": "ViewportTop(\"fgCharacters\") - random(OriginalViewportHeight * .355)",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
-								},
-								{
-									"id": "set-scale",
-									"objectClass": "spr_leafAtmos",
-									"sid": 522699640800831,
-									"parameters": {
-										"scale": "random(.7, .85, 1)"
-									}
-								},
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "spr_leafAtmos",
-									"sid": 583229810029041,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "115"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "spr_leafAtmos",
-									"sid": 680401812135655,
-									"parameters": {
-										"animation": "choose(\"Default\",\"Default2\")",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation-speed",
-									"objectClass": "spr_leafAtmos",
-									"sid": 559651783808265,
-									"parameters": {
-										"speed": "3 + random(10)"
-									}
-								},
-								{
-									"id": "set-z-elevation",
-									"objectClass": "spr_leafAtmos",
-									"sid": 823071177833971,
-									"parameters": {
-										"z": "int(random(400))"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 949919335958000,
-									"parameters": {
-										"variable": "colorVal",
-										"value": "floor(100 - clamp((spr_leafAtmos.ZElevation / 4)+ 20, 20, 100))"
-									}
-								},
-								{
-									"id": "set-default-color",
-									"objectClass": "spr_leafAtmos",
-									"sid": 416684787394157,
-									"parameters": {
-										"color": "rgbEx(colorVal, colorVal, colorVal)"
-									}
 								}
 							],
-							"sid": 294550692859207
+							"sid": 294550692859207,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "colorVal",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 655628365777815
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-last-created",
+											"objectClass": "System",
+											"sid": 505691997730830,
+											"parameters": {
+												"object": "weatherEffects"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-scale",
+											"objectClass": "weatherEffects",
+											"sid": 581754765326182,
+											"parameters": {
+												"scale": "random(.7, .85, 1)"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "weatherEffects",
+											"sid": 918989962127500,
+											"parameters": {
+												"animation": "choose(\"Default\",\"Default2\")",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "weatherEffects",
+											"sid": 951026368449198,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "115"
+											}
+										},
+										{
+											"id": "set-animation-speed",
+											"objectClass": "weatherEffects",
+											"sid": 667043314513466,
+											"parameters": {
+												"speed": "3 + random(10)"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "weatherEffects",
+											"sid": 751455562425653,
+											"parameters": {
+												"z": "choose(-100, -50, 0, 100, 300, 375, 400)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 462900008796024,
+											"parameters": {
+												"variable": "colorVal",
+												"value": "floor(100 - clamp((weatherEffects.ZElevation / 4)+ 20, 20, 100))"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "weatherEffects",
+											"sid": 230966492211904,
+											"parameters": {
+												"color": "rgbEx(colorVal, colorVal, colorVal)"
+											}
+										}
+									],
+									"sid": 886977168526000,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-z-elevation",
+													"objectClass": "weatherEffects",
+													"sid": 271840493147131,
+													"parameters": {
+														"which": "z-elevation",
+														"comparison": 2,
+														"z-elevation": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "platform not the best layer to use, but it works for now"
+												},
+												{
+													"id": "move-to-layer",
+													"objectClass": "weatherEffects",
+													"sid": 153184383109469,
+													"parameters": {
+														"layer": "\"platform\""
+													}
+												}
+											],
+											"sid": 901292059566193
+										}
+									]
+								}
+							]
 						}
 					]
 				},
@@ -1283,6 +1463,109 @@
 							"script": "const layer = runtime.layout.getLayer(localVars.layerName);\nif(layer){\n\treturn runtime.setReturnValue(layer.opacity * 100);\n}\nreturn runtime.setReturnValue(0);\n"
 						}
 					]
+				},
+				{
+					"functionName": "getAnimTime",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "animation",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 468728871165221
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 952668090681750,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "oldAnimationName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 140525153032497
+						},
+						{
+							"eventType": "variable",
+							"name": "animTime",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 397788640411675
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "uidexists",
+									"objectClass": "UIDTo",
+									"sid": 518994911324621,
+									"parameters": {
+										"uid0": "dolls.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 616341265834419,
+									"parameters": {
+										"variable": "oldAnimationName",
+										"value": "dolls.AnimationName"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "dolls",
+									"sid": 484614138234228,
+									"parameters": {
+										"animation": "animation",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 722695724784552,
+									"parameters": {
+										"variable": "animTime",
+										"value": "(1 / dolls.AnimationSpeed) * dolls.AnimationFrameCount"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "dolls",
+									"sid": 851802211736342,
+									"parameters": {
+										"animation": "oldAnimationName",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 115750204283334,
+									"parameters": {
+										"value": "animTime"
+									}
+								}
+							],
+							"sid": 166836887540791
+						}
+					]
 				}
 			],
 			"sid": 971677484167875
@@ -1421,12 +1704,193 @@
 			"sid": 681113663432652
 		},
 		{
+			"functionName": "asd",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Parameter0",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 881550263732107
+				},
+				{
+					"name": "Parameter1",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 554306477293075
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 251431309806340,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 437593074536995,
+							"parameters": {
+								"type": "log",
+								"message": "\"HELLLLLOOOOOOOOO!!!!!! \" & Parameter1\n"
+							}
+						}
+					],
+					"sid": 643923820655612
+				}
+			]
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "misc",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"functionName": "playFnAfterSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "soundName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 326604814086804
+						},
+						{
+							"name": "extraTags",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 134491001675491
+						},
+						{
+							"name": "isLooping",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 926917162793594
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 931753264304703,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 987659402115360,
+									"parameters": {
+										"variable": "isLooping"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "playSound",
+									"sid": 474434037470765,
+									"parameters": [
+										"soundName",
+										true,
+										"extraTags"
+									]
+								}
+							],
+							"sid": 748311803684780
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 133380997631440
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "playSound",
+									"sid": 603007080760447,
+									"parameters": [
+										"soundName",
+										false,
+										"extraTags"
+									]
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "spr_audioSingleton",
+									"sid": 188995191162285,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "soundName",
+										"start-value": "0",
+										"end-value": "1",
+										"time": "int(Audio.Duration(soundName))",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 740767684876886
+						}
+					]
+				},
+				{
+					"functionName": "callJsFuntion",
+					"functionDescription": "",
+					"functionCategory": "util",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "fnName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "name of the function to call",
+							"sid": 743205347196236
+						},
+						{
+							"name": "params",
+							"type": "string",
+							"initialValue": "",
+							"comment": "params as a string with (,) delimiter",
+							"sid": 753253914487879
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 622851208984100,
+					"children": [
+						{
+							"eventType": "script",
+							"script": "// Parse parameters if passed as JSON string\nconst functionName = localVars.fnName;\nconst parsedParams = localVars.params?.split(',') || [];\n\n// Call the JavaScript function dynamically\nconst result = runtime.callFunction(functionName, ...parsedParams);\nreturn result;\n// return runtime.setReturnValue(result);\n// console.log(`Function \"${functionName}\" does not exist.`);\n"
+						}
+					]
+				},
 				{
 					"eventType": "group",
 					"disabled": false,

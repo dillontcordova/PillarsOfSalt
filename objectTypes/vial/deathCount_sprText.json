@@ -1,0 +1,30 @@
+{
+	"name": "deathCount_sprText",
+	"plugin-id": "Spritefont2",
+	"sid": 364685243620620,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "defaultScaleSize",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 489149862482164
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 156,
+		"height": 154,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 6003613,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

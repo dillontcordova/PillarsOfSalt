@@ -16,6 +16,8 @@
 						"live-preview": false
 					},
 					"uid": 364,
+					"sid": 106075257256487,
+					"tags": "",
 					"instanceVariables": {
 						"name": "dillon",
 						"convoCursor": 0,
@@ -26,6 +28,8 @@
 							"properties": {}
 						}
 					},
+					"showing": true,
+					"locked": false,
 					"world": {
 						"x": 224,
 						"y": 156,
@@ -74,6 +78,10 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 963992491531859,
 	"nonworld-instances": [],
 	"effectTypes": [],

@@ -18,6 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 1996945,
 						"collisionPoly": {
 							"points": [
@@ -51,6 +52,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 4374999,
 						"collisionPoly": {
 							"points": [
@@ -84,6 +86,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 7109614,
 						"collisionPoly": {
 							"points": [
@@ -117,6 +120,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 9332824,
 						"collisionPoly": {
 							"points": [
@@ -150,6 +154,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 4300364,
 						"collisionPoly": {
 							"points": [
@@ -183,6 +188,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 2888205,
 						"collisionPoly": {
 							"points": [
@@ -227,6 +233,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 6054603,
 						"collisionPoly": {
 							"points": [
@@ -260,6 +267,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 1602017,
 						"useCollisionPoly": true,
 						"duration": 1,
@@ -273,6 +281,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 510034,
 						"collisionPoly": {
 							"points": [
@@ -302,6 +311,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 3479699,
 						"useCollisionPoly": true,
 						"duration": 1,
@@ -315,6 +325,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 8668200,
 						"collisionPoly": {
 							"points": [

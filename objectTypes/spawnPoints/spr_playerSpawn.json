@@ -11,21 +11,22 @@
 			{
 				"frames": [
 					{
-						"width": 4,
-						"height": 4,
+						"width": 24,
+						"height": 32,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4333308,
+						"fileType": "image/png",
+						"imageSpriteId": 2313357,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
 				"sid": 190875433545315,
-				"name": "Animation 1",
+				"name": "idle",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

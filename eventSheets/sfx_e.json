@@ -59,6 +59,13 @@
 							"initialValue": "false",
 							"comment": "",
 							"sid": 803727359911214
+						},
+						{
+							"name": "extraTags",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 817936591186104
 						}
 					],
 					"eventType": "function-block",
@@ -98,14 +105,14 @@
 										{
 											"id": "play-by-name",
 											"objectClass": "Audio",
-											"sid": 275168451895633,
+											"sid": 140166334608731,
 											"parameters": {
 												"folder": "sounds",
 												"audio-file-name": "soundName",
 												"loop": "looping",
 												"volume": "0",
 												"stereo-pan": "0",
-												"tag-optional": "soundName"
+												"tag-optional": "soundName & (extraTags ? (\" \" & extraTags) : \"\")"
 											}
 										}
 									],
@@ -126,14 +133,14 @@
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 863883302580549,
+									"sid": 842803551155867,
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "soundName",
 										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "soundName"
+										"tag-optional": "soundName & (extraTags ? (\" \" & extraTags) : \"\")"
 									}
 								}
 							],
