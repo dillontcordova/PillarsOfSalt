@@ -22,6 +22,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
+		"fileType": "image/png",
 		"imageSpriteId": 98339,
 		"useCollisionPoly": true,
 		"tag": ""

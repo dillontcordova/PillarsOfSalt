@@ -24,7 +24,7 @@
 							"name": "mag",
 							"type": "number",
 							"initialValue": "0",
-							"comment": "",
+							"comment": "pixels to scroll chaotically from target viewpoint",
 							"sid": 817717529186504
 						},
 						{
@@ -105,16 +105,17 @@
 								"object": "spr_visibilityBounding",
 								"layer": "Self.LayerName",
 								"image-point": "0",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
 							"id": "set-size",
 							"objectClass": "spr_visibilityBounding",
-							"sid": 959597010574055,
+							"sid": 679654824320060,
 							"parameters": {
-								"width": "ViewportWidth(Self.LayerNumber) + ViewportWidth(Self.LayerNumber) / 2",
-								"height": "ViewportHeight(Self.LayerNumber) + ViewportHeight(Self.LayerNumber) / 2"
+								"width": "OriginalViewportWidth + OriginalViewportWidth / 2",
+								"height": "OriginalViewportHeight + OriginalViewportHeight / 2"
 							}
 						},
 						{
@@ -281,19 +282,19 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 479744592330685,
+									"sid": 766911713732559,
 									"parameters": {
 										"variable": "vpW",
-										"value": "ViewportWidth(0)/2"
+										"value": "OriginalViewportWidth / 2"
 									}
 								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 887974798479359,
+									"sid": 138220158449178,
 									"parameters": {
 										"variable": "vpH",
-										"value": "ViewportHeight(0)/2"
+										"value": "OriginalViewportHeight / 2"
 									}
 								},
 								{
@@ -354,19 +355,19 @@
 												{
 													"id": "compare-height",
 													"objectClass": "zoneCtrl_spr",
-													"sid": 983023693173230,
+													"sid": 880339033362894,
 													"parameters": {
 														"comparison": 2,
-														"height": "ViewportHeight(0)"
+														"height": "OriginalViewportHeight"
 													}
 												},
 												{
 													"id": "compare-width",
 													"objectClass": "zoneCtrl_spr",
-													"sid": 633791832844557,
+													"sid": 857988171053206,
 													"parameters": {
 														"comparison": 2,
-														"width": "ViewportWidth(0)"
+														"width": "OriginalViewportWidth"
 													}
 												}
 											],
@@ -904,7 +905,8 @@
 																			"callFunction": "fadeIn",
 																			"sid": 484333838765113,
 																			"parameters": [
-																				".6"
+																				".6",
+																				false
 																			]
 																		},
 																		{

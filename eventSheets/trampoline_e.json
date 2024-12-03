@@ -1,0 +1,389 @@
+{
+	"name": "trampoline_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Trampoline",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "trampolines",
+							"sid": 208695748650995,
+							"parameters": {
+								"object": "actuals"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "actuals",
+							"sid": 476963945599346,
+							"disabled": true,
+							"parameters": {
+								"instance-variable": "isBouncing"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 115845951739815,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "radionAngle",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 166692490684085
+						},
+						{
+							"eventType": "variable",
+							"name": "tmpMaxSpeed",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 422405049971362
+						},
+						{
+							"eventType": "variable",
+							"name": "airTime",
+							"type": "number",
+							"initialValue": "0.33",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 233511281054544
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 288530381043804,
+									"parameters": {
+										"variable": "radionAngle",
+										"value": "trampolines.Angle - 90"
+									}
+								},
+								{
+									"id": "set-vector-x",
+									"objectClass": "actuals",
+									"sid": 183867407810113,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-x": "cos(radionAngle) * trampolines.bounceSpeed"
+									}
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "actuals",
+									"sid": 614893157539383,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-y": "sin(radionAngle) * trampolines.bounceSpeed"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "actuals",
+									"sid": 152353563789741,
+									"behaviorType": "Tween",
+									"parameters": {
+										"mode": "enabled"
+									}
+								},
+								{
+									"id": "stop-tweens",
+									"objectClass": "actuals",
+									"sid": 303221811899933,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"bounceSpeed bounceDecel\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "actuals",
+									"sid": 650280281706360,
+									"parameters": {
+										"instance-variable": "isBouncing",
+										"value": "true"
+									}
+								},
+								{
+									"callFunction": "stopBouncing",
+									"sid": 818395909817951
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 286400341609748,
+									"parameters": {
+										"variable": "tmpMaxSpeed",
+										"value": "sqrt(actuals.Platform.VectorX^2 + actuals.Platform.VectorY^2)"
+									}
+								},
+								{
+									"type": "comment",
+									"text": ""
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "actuals",
+									"sid": 541385789667399,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"bounceDecel\"",
+										"start-value": "0",
+										"end-value": "actuals.Platform.Deceleration",
+										"time": "airTime",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "actuals",
+									"sid": 509716858145344,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"bounceSpeed\"",
+										"start-value": "tmpMaxSpeed",
+										"end-value": "actuals.Platform.MaxSpeed",
+										"time": "airTime\n",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "actuals",
+									"sid": 673729926154146,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "tmpMaxSpeed"
+									}
+								},
+								{
+									"id": "set-deceleration",
+									"objectClass": "actuals",
+									"sid": 338505400384709,
+									"behaviorType": "Platform",
+									"parameters": {
+										"deceleration": "0"
+									}
+								}
+							],
+							"sid": 232112318700198,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "trampolines",
+											"sid": 889940599984164,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"bounceSquash\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "trampolines",
+											"sid": 891009735479456,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"bounceSquash\"",
+												"property": "size",
+												"end-x": "Self.ImageWidth + (Self.ImageWidth * .5)",
+												"end-y": "Self.ImageHeight - (Self.ImageHeight * .25)",
+												"time": ".1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "yes",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 506637931520403
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "actuals",
+							"sid": 929308445621180,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"bounceDecel\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-deceleration",
+							"objectClass": "actuals",
+							"sid": 142774300392671,
+							"behaviorType": "Platform",
+							"parameters": {
+								"deceleration": "Self.Tween.Value(\"bounceDecel\")"
+							}
+						}
+					],
+					"sid": 514017670712712
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "actuals",
+							"sid": 277256680584036,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"bounceSpeed\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "actuals",
+							"sid": 461516875249977,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "Self.Tween.Value(\"bounceSpeed\")"
+							}
+						}
+					],
+					"sid": 411845213366208
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "actuals",
+							"sid": 195895747721088,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"bounceSpeed\""
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "actuals",
+							"sid": 331257430381119,
+							"parameters": {
+								"object": "tm_platform"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 451393376838792,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "actuals",
+									"sid": 851428164309232,
+									"parameters": {
+										"instance-variable": "isBouncing"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "actuals",
+									"sid": 200174167697992,
+									"parameters": {
+										"instance-variable": "isBouncing",
+										"value": "false"
+									}
+								},
+								{
+									"callFunction": "stopBouncing",
+									"sid": 445830820290438
+								}
+							],
+							"sid": 305178718917935
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"functionName": "stopBouncing",
+					"functionDescription": "",
+					"functionCategory": "trampoline",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 316795113378910,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-deceleration",
+									"objectClass": "actuals",
+									"sid": 648332596041721,
+									"behaviorType": "Platform",
+									"parameters": {
+										"deceleration": "Self.defaultPlatformDeceleration"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "actuals",
+									"sid": 141790855495828,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "Self.defaultPlatformSpeed"
+									}
+								}
+							],
+							"sid": 944186766089386
+						}
+					]
+				}
+			],
+			"sid": 756303565235191
+		}
+	],
+	"sid": 956303893398210
+}

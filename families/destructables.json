@@ -1,0 +1,20 @@
+{
+	"name": "destructables",
+	"plugin-id": "Sprite",
+	"sid": 463548214610948,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 195758610516137
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"destructableWood_spr",
+		"saveShrine_spr"
+	]
+}

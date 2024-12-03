@@ -1,0 +1,52 @@
+{
+	"name": "trapPatrolling",
+	"plugin-id": "Sprite",
+	"sid": 338666012245964,
+	"instanceVariables": [
+		{
+			"name": "speed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 751808398284438
+		},
+		{
+			"name": "initialAngle",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 492104937814154
+		},
+		{
+			"name": "cooldown",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 900257370128657
+		},
+		{
+			"name": "increment",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 456695436490945
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 911358023667594
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 781881506649979
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"patrollingTrap_spr",
+		"thwompTrap_spr"
+	]
+}

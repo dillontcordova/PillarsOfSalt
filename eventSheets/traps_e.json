@@ -26,7 +26,8 @@
 								"object": "spr_trapHanger",
 								"layer": "\"bgCharacters\"",
 								"image-point": "0",
-								"create-hierarchy": true
+								"create-hierarchy": true,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -58,9 +59,1101 @@
 						}
 					],
 					"sid": 383712418036051
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "traps",
+							"sid": 645496461952494,
+							"parameters": {
+								"object": "spr_playerActual"
+							}
+						},
+						{
+							"id": "compare-animation-frame-tag",
+							"objectClass": "traps",
+							"sid": 855670076354951,
+							"parameters": {
+								"comparison": 0,
+								"tag": "\"pain\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 936827320821480,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "traps",
+									"sid": 681735571375159,
+									"parameters": {
+										"instance-variable": "isRespawnHit"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 647311616697459,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "spr_playerActual",
+											"sid": 491488069186317,
+											"parameters": {
+												"instance-variable": "isSafe"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "respawnOnSafeSpot",
+											"sid": 128139042448550,
+											"parameters": [
+												"1"
+											]
+										}
+									],
+									"sid": 771009800725531
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 412481581539703
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "playerHit",
+									"sid": 379813832106027,
+									"parameters": [
+										"traps.damage"
+									]
+								}
+							],
+							"sid": 158655036233000
+						}
+					]
 				}
 			],
 			"sid": 536069839792915
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PatrollingTrap",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "In order to instantly start the patrolling trap routine, start a \"blank\" timer, so the rest of the events are triggered right away."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "trapPatrolling",
+							"sid": 249380919109410
+						}
+					],
+					"actions": [
+						{
+							"id": "add-obstacle",
+							"objectClass": "trapPatrolling",
+							"sid": 489152600261938,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"obstacle": "tm_platform"
+							}
+						},
+						{
+							"id": "add-obstacle",
+							"objectClass": "trapPatrolling",
+							"sid": 463232826339950,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"obstacle": "spr_playerActual"
+							}
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "trapPatrolling",
+							"sid": 766787640135135,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cooldown\"",
+								"start-value": "0",
+								"end-value": "100",
+								"time": "0",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 558032826609185
+				},
+				{
+					"eventType": "comment",
+					"text": "Once the cooldown is over, cast a ray forward and move towards the hit position."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 408676176705010,
+							"parameters": {
+								"interval-seconds": ".1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 304046499679510,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "trapPatrolling",
+									"sid": 826398582354106,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"cooldown\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "trapPatrolling",
+									"sid": 930559644975258,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"move\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "cast-ray",
+									"objectClass": "trapPatrolling",
+									"sid": 687533133916973,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"from-x": "Self.X",
+										"from-y": "Self.Y",
+										"to-x": "Self.X + cos(Self.InitialAngle) * Self.LineOfSight.Range",
+										"to-y": "Self.Y + sin(Self.InitialAngle) * Self.LineOfSight.Range",
+										"use-collision-cells": true
+									}
+								}
+							],
+							"sid": 462648134511871,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "ray-intersected",
+											"objectClass": "trapPatrolling",
+											"sid": 415482907887139,
+											"behaviorType": "LineOfSight"
+										}
+									],
+									"actions": [
+										{
+											"customAction": "patrollingHit",
+											"objectClass": "trapPatrolling",
+											"sid": 765750174021354
+										}
+									],
+									"sid": 359828394292583
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "After the movement is done, restart the cooldown and display a flash effect."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "trapPatrolling",
+							"sid": 636837693500502,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"move\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Restart the cooldown."
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "trapPatrolling",
+							"sid": 999411000893059,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"cooldown\"",
+								"start-value": "0",
+								"end-value": "100",
+								"time": "Self.Cooldown",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Update the angle."
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "trapPatrolling",
+							"sid": 914835516601349,
+							"parameters": {
+								"instance-variable": "initialAngle",
+								"value": "Self.Increment"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Display flash effect."
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "trapPatrolling",
+							"sid": 567813798806702,
+							"parameters": {
+								"animation": "\"Flash\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 508422836575127,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-screen",
+									"objectClass": "trapPatrolling",
+									"sid": 417421374747878
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "cameraShake",
+									"sid": 380868421874513,
+									"parameters": [
+										"5",
+										".1"
+									]
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "trapPatrolling",
+									"sid": 369966779480477,
+									"parameters": {
+										"object": "FlashEffect",
+										"layer": "trapPatrolling.LayerName",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 476893030734553
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Reset the animation to display the standard face."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "trapPatrolling",
+							"sid": 541496578574450,
+							"parameters": {
+								"animation": "\"Flash\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "trapPatrolling",
+							"sid": 197030483423732,
+							"parameters": {
+								"animation": "\"Face\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 670089763042582
+				},
+				{
+					"eventType": "comment",
+					"text": "Destroy the flash effect after its animation is over, to prevent any sort of CPU overload."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "FlashEffect",
+							"sid": 100531334016243,
+							"parameters": {
+								"animation": "\"Default\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "FlashEffect",
+							"sid": 132132858887782
+						}
+					],
+					"sid": 371548904925345
+				},
+				{
+					"eventType": "comment",
+					"text": ""
+				},
+				{
+					"aceType": "action",
+					"aceName": "patrollingHit",
+					"objectClass": "trapPatrolling",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "custom-ace-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 392701517141752,
+							"parameters": {
+								"type": "log",
+								"message": "\"override\""
+							}
+						}
+					],
+					"sid": 797788585722229
+				},
+				{
+					"aceType": "action",
+					"aceName": "patrollingHit",
+					"objectClass": "patrollingTrap_spr",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "custom-ace-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 560123465299540,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "tm_platform",
+									"sid": 499463584711191,
+									"parameters": {
+										"unique-id": "patrollingTrap_spr.LineOfSight.HitUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 219177023314909,
+									"parameters": {
+										"type": "log",
+										"message": "\"Parent: \" & patrollingTrap_spr.UID"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "patrollingTrap_spr",
+									"sid": 920510121217748,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"move\"",
+										"property": "position",
+										"end-x": "Self.LineOfSight.HitX + (cos(Self.InitialAngle + 180) * (Self.Width / 2))",
+										"end-y": "Self.LineOfSight.HitY + (sin(Self.InitialAngle + 180) * (Self.Height / 2))",
+										"time": "distance(Self.X, Self.Y, Self.LineOfSight.HitX, Self.LineOfSight.HitY) / Self.Speed",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 751781562422280
+						}
+					]
+				},
+				{
+					"aceType": "action",
+					"aceName": "patrollingHit",
+					"objectClass": "thwompTrap_spr",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "custom-ace-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 162126184612542,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "spr_playerActual",
+									"sid": 707150564420631,
+									"parameters": {
+										"unique-id": "thwompTrap_spr.LineOfSight.HitUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 309697893465645,
+									"parameters": {
+										"type": "log",
+										"message": "\"Child: \" & thwompTrap_spr.UID"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "thwompTrap_spr",
+									"sid": 765469432246955,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"move\"",
+										"property": "position",
+										"end-x": "Self.LineOfSight.HitX + (cos(Self.InitialAngle + 180) * (Self.Width / 2))",
+										"end-y": "Self.LineOfSight.HitY + (sin(Self.InitialAngle + 180) * (Self.Height / 2))",
+										"time": "distance(Self.X, Self.Y, Self.LineOfSight.HitX, Self.LineOfSight.HitY) / Self.Speed",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 191780260439210
+						}
+					]
+				}
+			],
+			"sid": 371640295648527
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CeilingTrap",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Setup the ceiling trap by storing multiple values that will be useful later for creating its movement sequences."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 229622226996769
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Store the ceiling trap initial X position."
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 857828915815669,
+							"parameters": {
+								"instance-variable": "initialX",
+								"value": "Self.X"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Store the ceiling trap initial Y position."
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 562984510875024,
+							"parameters": {
+								"instance-variable": "initialY",
+								"value": "Self.Y"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Cast a ray downwards to calculate the distante between the ceiling trap and the ground."
+						},
+						{
+							"id": "cast-ray",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 228869512205272,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"from-x": "Self.X",
+								"from-y": "Self.Y",
+								"to-x": "Self.X + cos(Self.Angle) * Self.LineOfSight.Range",
+								"to-y": "Self.Y + sin(Self.Angle) * Self.LineOfSight.Range",
+								"use-collision-cells": true
+							}
+						}
+					],
+					"sid": 447432498933859,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Proceed once the ray has intersected with a solid object (in this case, the ground)."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "ray-intersected",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 885500855870468,
+									"behaviorType": "LineOfSight"
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Store the ground X position."
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 360720118785428,
+									"parameters": {
+										"instance-variable": "groundX",
+										"value": "Self.LineOfSight.HitX + (-cos(Self.Angle) * (Self.Width / 2))\n"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Store the ground Y position."
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 252931535436746,
+									"parameters": {
+										"instance-variable": "groundY",
+										"value": "Self.LineOfSight.HitY + (-sin(Self.Angle) * (Self.Height / 2))\n"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 284369254347496,
+									"parameters": {
+										"object": "RailPath",
+										"layer": "Self.LayerName",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 999404902040492
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Setup the rail path by adjusting its height and positoin."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "RailPath",
+							"sid": 146385728616200
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Positionate the rail path on top of the ceiling trap."
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "RailPath",
+							"sid": 845936687331741,
+							"parameters": {
+								"object": "ceilingTrap_spr",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Move the rail path below every other object in the scene."
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "RailPath",
+							"sid": 653287967598343
+						},
+						{
+							"type": "comment",
+							"text": "Move the rail path below every other object in the scene."
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "RailPath",
+							"sid": 533548225180146,
+							"parameters": {
+								"angle": "ceilingTrap_spr.Angle - 90"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Cast a ray downwards to calculate the distante between the ceiling trap and the ground."
+						},
+						{
+							"id": "cast-ray",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 840720477168578,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"from-x": "Self.X",
+								"from-y": "Self.Y",
+								"to-x": "Self.X + cos(Self.Angle) * Self.LineOfSight.Range",
+								"to-y": "Self.Y + sin(Self.Angle) * Self.LineOfSight.Range",
+								"use-collision-cells": true
+							}
+						}
+					],
+					"sid": 866994275530835,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Use the distance between the rail path and the ray hit to define the rail path height, making sure it matches the ceiling trap movement cycle."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "ray-intersected",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 733744087157063,
+									"behaviorType": "LineOfSight"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-height",
+									"objectClass": "RailPath",
+									"sid": 949710677946660,
+									"parameters": {
+										"height": "distance(Self.X, Self.Y, ceilingTrap_spr.LineOfSight.HitX, ceilingTrap_spr.LineOfSight.HitY) - (ceilingTrap_spr.Height / 2)"
+									}
+								}
+							],
+							"sid": 497028566986901
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Setup the recover debris by pinning it to the ceiling trap."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "RecoverDebris",
+							"sid": 687932972600296
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "RecoverDebris",
+							"sid": 556873358533742,
+							"parameters": {
+								"object": "ceilingTrap_spr",
+								"image-point-optional": "\"Bottom\""
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "RecoverDebris",
+							"sid": 931172421565995,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "ceilingTrap_spr",
+								"mode": "position-only"
+							}
+						}
+					],
+					"sid": 525875713281813
+				},
+				{
+					"eventType": "comment",
+					"text": "If the player is overlapping the rail path (is below the ceiling trap) and the ceiling trap is not currently active, make the ceiling trap stomp the ground."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "spr_playerActual",
+							"sid": 190759025579758,
+							"parameters": {
+								"object": "RailPath"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 899214385036679,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 819350610855459,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"GroundCooldown\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 246643403041254,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Stomp\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 315572824298446,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Recover\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 461697703656963,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Stomp\"",
+										"property": "position",
+										"end-x": "Self.groundX",
+										"end-y": "Self.groundY",
+										"time": "Self.travelTime",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 670032462693485
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "After stomping the ground, spawn some impact smoke particles and wait a bit before recovering with a cooldown timer."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 899526315908115,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Stomp\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 715635063630355,
+							"parameters": {
+								"object": "ImpactSmoke",
+								"layer": "Self.LayerName",
+								"image-point": "\"Bottom\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "ImpactSmoke",
+							"sid": 185679797221729
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "ImpactSmoke",
+							"sid": 644274428618885,
+							"parameters": {
+								"angle": "270"
+							}
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 354551491766235,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"GroundCooldown\"",
+								"start-value": "0",
+								"end-value": "0",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 461758759744852,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-screen",
+									"objectClass": "ceilingTrap_spr",
+									"sid": 288468738247570
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "cameraShake",
+									"sid": 391849435238176,
+									"parameters": [
+										"5",
+										".1"
+									]
+								}
+							],
+							"sid": 948727183207844
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Once the cooldown timer is over, make the ceiling trap recover and activate the recover debris particles."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 664475247544394,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"GroundCooldown\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 842268955400303,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Recover\"",
+								"property": "position",
+								"end-x": "Self.initialX",
+								"end-y": "Self.InitialY",
+								"time": "Self.TravelTime*2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 609096549037013,
+							"parameters": {
+								"object": "RecoverDebris",
+								"layer": "Self.LayerName",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "RecoverDebris",
+							"sid": 200703326051036,
+							"parameters": {
+								"angle": "ceilingTrap_spr.Angle + 180"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "RecoverDebris",
+							"sid": 677590612304842
+						},
+						{
+							"id": "set-rate",
+							"objectClass": "RecoverDebris",
+							"sid": 208875116899387,
+							"parameters": {
+								"rate": "4"
+							}
+						}
+					],
+					"sid": 544657296263990
+				},
+				{
+					"eventType": "comment",
+					"text": "As soon as the recover is over, disable the recover debris particles."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "ceilingTrap_spr",
+							"sid": 556828282961749,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Recover\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate",
+							"objectClass": "RecoverDebris",
+							"sid": 972247045950344,
+							"parameters": {
+								"rate": "0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "RecoverDebris",
+							"sid": 563844143965825
+						}
+					],
+					"sid": 214157084178164
+				},
+				{
+					"eventType": "comment",
+					"text": "Restart the game if the player collides with a ceiling trap (game over)."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_playerActual",
+							"sid": 807002791605104,
+							"parameters": {
+								"object": "ceilingTrap_spr"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 629913365278650
+						}
+					],
+					"sid": 565488777427294,
+					"disabled": true
+				}
+			],
+			"sid": 950822624337293
 		}
 	],
 	"sid": 801083671271850

@@ -1,0 +1,27 @@
+{
+	"name": "breezySprites",
+	"plugin-id": "Sprite",
+	"sid": 503506649580336,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 609621214707604
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 462425178006883
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "skendpow",
+			"name": "SkendPow"
+		}
+	],
+	"members": [
+		"spr_grassTall"
+	]
+}

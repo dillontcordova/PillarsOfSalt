@@ -1,0 +1,154 @@
+{
+	"name": "ceilingTrap_spr",
+	"plugin-id": "Sprite",
+	"sid": 554229892280800,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "initialY",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 785478783147580
+		},
+		{
+			"name": "groundY",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 248889598392710
+		},
+		{
+			"name": "travelTime",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 265303039996218
+		},
+		{
+			"name": "groundX",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 435595733410912
+		},
+		{
+			"name": "initialX",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 499630825393687
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 687729782802379
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 256718452770772
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 394343599342237
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8139194,
+						"collisionPoly": {
+							"points": [
+								0.84375,
+								0.1875,
+								0.84375,
+								0.8125,
+								0.15625,
+								0.8125,
+								0.15625,
+								0.1875
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Bottom",
+								"x": 0,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 353900548781125,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7688391,
+						"collisionPoly": {
+							"points": [
+								0.84375,
+								0.1875,
+								0.84375,
+								0.8125,
+								0.15625,
+								0.8125,
+								0.15625,
+								0.1875
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Bottom",
+								"x": 0,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 653862591767325,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

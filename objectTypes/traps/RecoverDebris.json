@@ -1,0 +1,28 @@
+{
+	"name": "RecoverDebris",
+	"plugin-id": "Particles",
+	"sid": 336816736905714,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 941450298641827
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 16,
+		"height": 16,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 9480212,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"name": "traps",
+	"plugin-id": "Sprite",
+	"sid": 778021155954079,
+	"instanceVariables": [
+		{
+			"name": "isRespawnHit",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 843988615468724
+		},
+		{
+			"name": "damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 226598548682464
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spikeWoodTrap_spr_tb",
+		"spr_suspendedTrap",
+		"patrollingTrap_spr",
+		"thwompTrap_spr"
+	]
+}

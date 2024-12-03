@@ -2924,18 +2924,9 @@
 													"sid": 402299098901833,
 													"parameters": [
 														"\"enemyDamage\"",
-														false
+														false,
+														"\"\""
 													]
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "actuals",
-													"sid": 936655490584206,
-													"disabled": true,
-													"parameters": {
-														"instance-variable": "isInvincible",
-														"value": "true"
-													}
 												},
 												{
 													"id": "subtract-from-instvar",
@@ -3014,16 +3005,6 @@
 															"sid": 352251849279027,
 															"parameters": {
 																"color": "rgbEx(100,100,100)"
-															}
-														},
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "actuals",
-															"sid": 544593426184080,
-															"disabled": true,
-															"parameters": {
-																"instance-variable": "isInvincible",
-																"value": "false"
 															}
 														}
 													],
@@ -3807,7 +3788,7 @@
 									"objectClass": "enemies",
 									"sid": 624210244086526,
 									"parameters": {
-										"object": "deathOnTouch"
+										"object": "deathOnTouch_tb"
 									}
 								}
 							],

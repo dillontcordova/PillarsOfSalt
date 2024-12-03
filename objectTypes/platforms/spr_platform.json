@@ -1,0 +1,109 @@
+{
+	"name": "spr_platform",
+	"plugin-id": "Sprite",
+	"sid": 325130406295302,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 575196203395256
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "SineH",
+			"sid": 439772198902134
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "SineV",
+			"sid": 393963617979880
+		},
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 916115115401292
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3352108,
+						"collisionPoly": {
+							"points": [
+								0.828125,
+								0.4375,
+								0.828125,
+								0.8125,
+								0.171875,
+								0.8125,
+								0.171875,
+								0.4375
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 534316959672545,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			},
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 128,
+						"originX": 0.4921875,
+						"originY": 0.1484375,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7184800,
+						"collisionPoly": {
+							"points": [
+								0.828125,
+								0.921875,
+								0.828125,
+								0.96875,
+								0.171875,
+								0.96875,
+								0.171875,
+								0.921875
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 455956756146832,
+				"name": "hang",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			}
+		],
+		"subfolders": []
+	}
+}

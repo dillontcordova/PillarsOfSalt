@@ -17,40 +17,43 @@
 			{
 				"frames": [
 					{
-						"width": 5,
-						"height": 5,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9739455,
+						"fileType": "image/png",
+						"imageSpriteId": 4508895,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					},
 					{
-						"width": 5,
-						"height": 5,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 140121,
+						"fileType": "image/png",
+						"imageSpriteId": 9983814,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					},
 					{
-						"width": 5,
-						"height": 5,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4291623,
+						"fileType": "image/png",
+						"imageSpriteId": 4793839,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -68,14 +71,15 @@
 						"tag": ""
 					},
 					{
-						"width": 5,
-						"height": 5,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7124427,
+						"fileType": "image/png",
+						"imageSpriteId": 7342169,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -93,14 +97,15 @@
 						"tag": ""
 					},
 					{
-						"width": 5,
-						"height": 5,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 331535,
+						"fileType": "image/png",
+						"imageSpriteId": 4835158,
 						"collisionPoly": {
 							"points": [
 								1,

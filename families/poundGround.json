@@ -1,0 +1,17 @@
+{
+	"name": "poundGround",
+	"plugin-id": "NinePatch",
+	"sid": 740363652324699,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 365270774146045
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"9patch_grassLand"
+	]
+}

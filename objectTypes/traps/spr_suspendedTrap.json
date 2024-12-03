@@ -11,14 +11,15 @@
 			{
 				"frames": [
 					{
-						"width": 24,
-						"height": 33,
+						"width": 48,
+						"height": 66,
 						"originX": 0.5,
 						"originY": 0.03030303030303025,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9639205,
+						"fileType": "image/png",
+						"imageSpriteId": 9900561,
 						"collisionPoly": {
 							"points": [
 								0.041666666666666664,
@@ -33,17 +34,18 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
-						"width": 24,
-						"height": 33,
+						"width": 48,
+						"height": 66,
 						"originX": 0.5,
 						"originY": 0.03030303030303025,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5862937,
+						"fileType": "image/png",
+						"imageSpriteId": 3299796,
 						"collisionPoly": {
 							"points": [
 								0.08333333333333333,
@@ -58,17 +60,18 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
-						"width": 24,
-						"height": 33,
+						"width": 48,
+						"height": 66,
 						"originX": 0.5,
 						"originY": 0.03030303030303025,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6347930,
+						"fileType": "image/png",
+						"imageSpriteId": 3416510,
 						"collisionPoly": {
 							"points": [
 								0.08333333333333333,
@@ -83,17 +86,18 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
-						"width": 24,
-						"height": 33,
+						"width": 48,
+						"height": 66,
 						"originX": 0.5,
 						"originY": 0.03030303030303025,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2245034,
+						"fileType": "image/png",
+						"imageSpriteId": 4809245,
 						"collisionPoly": {
 							"points": [
 								0.9166666666666667,
@@ -108,7 +112,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					}
 				],
 				"sid": 759509100759031,
@@ -122,14 +126,15 @@
 			{
 				"frames": [
 					{
-						"width": 24,
-						"height": 21,
+						"width": 48,
+						"height": 42,
 						"originX": 0.5,
 						"originY": 0.047619047619047616,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9919931,
+						"fileType": "image/png",
+						"imageSpriteId": 4011546,
 						"collisionPoly": {
 							"points": [
 								0.041666666666666664,
@@ -144,17 +149,18 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
-						"width": 24,
-						"height": 21,
+						"width": 48,
+						"height": 42,
 						"originX": 0.5,
 						"originY": 0.047619047619047616,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8642166,
+						"fileType": "image/png",
+						"imageSpriteId": 4682639,
 						"collisionPoly": {
 							"points": [
 								0.08333333333333333,
@@ -169,17 +175,18 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
-						"width": 24,
-						"height": 21,
+						"width": 48,
+						"height": 42,
 						"originX": 0.5,
 						"originY": 0.047619047619047616,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6855718,
+						"fileType": "image/png",
+						"imageSpriteId": 4730841,
 						"collisionPoly": {
 							"points": [
 								0.08333333333333333,
@@ -194,17 +201,18 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					},
 					{
-						"width": 24,
-						"height": 21,
+						"width": 48,
+						"height": 42,
 						"originX": 0.5,
 						"originY": 0.047619047619047616,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8549037,
+						"fileType": "image/png",
+						"imageSpriteId": 7142049,
 						"collisionPoly": {
 							"points": [
 								0.9166666666666666,
@@ -219,7 +227,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "pain"
 					}
 				],
 				"sid": 212297464458885,
@@ -240,6 +248,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 2870314,
 						"collisionPoly": {
 							"points": [
@@ -269,6 +278,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 8184991,
 						"collisionPoly": {
 							"points": [
@@ -298,6 +308,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 6851179,
 						"collisionPoly": {
 							"points": [

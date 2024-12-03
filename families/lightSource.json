@@ -11,13 +11,25 @@
 			"sid": 428714721593391
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "overboy_signals",
+			"name": "Signals",
+			"sid": 633296563365140
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 310256082806716
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"tikiTallTorch_spr",
 		"bigPlant_spr",
 		"tikiTallTorchWall_spr",
 		"tikiTallTorchSmall_spr",
-		"spr_woodenLantern2"
+		"spr_woodenLantern2",
+		"saveShrine_spr"
 	]
 }

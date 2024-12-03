@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 38802,
+	"savedWithRelease": 41600,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -57,6 +57,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "FileSystem",
+			"name": "File system",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -71,10 +78,32 @@
 		},
 		{
 			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Overboy_UID2Prop",
+			"name": "UIDTo",
+			"author": "Overboy",
+			"bundled": false,
+			"version": "0.1.0.2"
 		},
 		{
 			"type": "plugin",
@@ -88,6 +117,13 @@
 			"type": "plugin",
 			"id": "Particles",
 			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -156,6 +192,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
 			"author": "Scirra",
@@ -193,6 +236,13 @@
 			"type": "behavior",
 			"id": "NoSave",
 			"name": "No save",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Orbit",
+			"name": "Orbit",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -305,6 +355,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "overboy_signals",
+			"name": "Signals",
+			"author": "Overboy",
+			"bundled": false,
+			"version": "1.2"
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -316,6 +374,14 @@
 			"name": "Shadow caster",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "skymen_tiled_sprite",
+			"name": "tiled_sprite",
+			"author": "skymen",
+			"bundled": false,
+			"version": "1.0.0.7"
 		},
 		{
 			"type": "behavior",
@@ -348,6 +414,13 @@
 		},
 		{
 			"type": "effect",
+			"id": "brightness",
+			"name": "Brightness",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "hsladjust",
 			"name": "Adjust HSL",
 			"author": "Scirra",
@@ -374,6 +447,21 @@
 			"author": "Somebody / Mikal / skymen",
 			"bundled": false,
 			"version": "1.5.0"
+		},
+		{
+			"type": "effect",
+			"id": "skymen_BetterOutline",
+			"name": "Better Outline",
+			"author": "skymen",
+			"bundled": false,
+			"version": "2.0.0.3"
+		},
+		{
+			"type": "effect",
+			"id": "warpripple",
+			"name": "Warp ripple",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "n8bngjs1j57",
@@ -386,7 +474,6 @@
 			"sf_healthHUD",
 			"sf_jumpHUD",
 			"spr_chest",
-			"spr_movingPlatformV",
 			"spr_shootFire",
 			"spr_leafAtmos",
 			"spr_door",
@@ -395,10 +482,16 @@
 			"spr_btnTileScreen",
 			"destructable_tb",
 			"testNPC",
-			"Utils",
 			"ShadowLight",
+			"screenCrosshair_spr",
+			"boatMan_spr",
+			"saveShrine_spr",
+			"trampolene_spr",
 			"Sprite2",
-			"boatMan_spr"
+			"yellowClues_spr",
+			"asd",
+			"Particles",
+			"spr_snowAtmos"
 		],
 		"subfolders": [
 			{
@@ -410,10 +503,17 @@
 					"TimelineController",
 					"Array",
 					"Browser",
-					"3DCamera"
+					"3DCamera",
+					"PlatformInfo",
+					"Utils",
+					"LocalStorage",
+					"JSON",
+					"FileSystem",
+					"Mouse",
+					"UIDTo"
 				],
 				"subfolders": [],
-				"name": "input"
+				"name": "system"
 			},
 			{
 				"items": [
@@ -429,7 +529,6 @@
 			{
 				"items": [
 					"tb_fade",
-					"tb_spikes",
 					"tb_spikesCave",
 					"tb_respawnTouchBox",
 					"bg_treeline_"
@@ -520,7 +619,10 @@
 			{
 				"items": [
 					"spr_logoBullet",
-					"spr_logoSplash"
+					"spr_logoSplash",
+					"teantCupLogo_spr",
+					"logoSplash_txt",
+					"poweredBy_txt"
 				],
 				"subfolders": [],
 				"name": "splash"
@@ -542,7 +644,6 @@
 					"spr_visibilityBounding",
 					"spr_meleeSlash",
 					"spr_hitMark",
-					"spr_playerSingleton",
 					"spr_meleeSlashTileMap"
 				],
 				"subfolders": [],
@@ -566,10 +667,12 @@
 					"spr_gameSingleton",
 					"spr_gamepadSingleton",
 					"dict_states",
-					"spr_cutSceneSingleton"
+					"spr_cutSceneSingleton",
+					"spr_playerSingleton",
+					"spr_audioSingleton"
 				],
 				"subfolders": [],
-				"name": "stateMachine"
+				"name": "singletons"
 			},
 			{
 				"items": [
@@ -700,8 +803,17 @@
 				"items": [
 					"spr_suspendedTrap",
 					"spr_trapHanger",
-					"9patch",
-					"spr_suspendedTrapSpawn"
+					"trapBar_9patch",
+					"spr_suspendedTrapSpawn",
+					"spikeWood_spr_tb",
+					"spikeWoodTrap_spr_tb",
+					"patrollingTrap_spr",
+					"FlashEffect",
+					"thwompTrap_spr",
+					"ceilingTrap_spr",
+					"RecoverDebris",
+					"RailPath",
+					"ImpactSmoke"
 				],
 				"subfolders": [],
 				"name": "traps"
@@ -740,7 +852,7 @@
 					"spr_platformBridge",
 					"bigPlant_spr",
 					"spr_doorSwitch",
-					"spr_vegetation",
+					"spr_grassTall",
 					"spr_gear",
 					"tikiTallTorchWall_spr",
 					"tikiTallTorchSmall_spr"
@@ -765,6 +877,44 @@
 				],
 				"subfolders": [],
 				"name": "minimap"
+			},
+			{
+				"items": [
+					"brokenPiece_canvas",
+					"center_spr"
+				],
+				"subfolders": [],
+				"name": "breakables"
+			},
+			{
+				"items": [
+					"platformBar_9patch",
+					"platformSpinning_spr",
+					"spr_movingPlatformV",
+					"platformRail_spr",
+					"platformFollower_spr",
+					"spr_platform"
+				],
+				"subfolders": [],
+				"name": "platforms"
+			},
+			{
+				"items": [
+					"blood",
+					"bubbleCollision",
+					"bubbles",
+					"cloak_spr",
+					"cloakArrow_spr",
+					"deathCount_sprText",
+					"enemy",
+					"spr_playerEmptyDoll",
+					"star_spr",
+					"vial",
+					"cloakBubble",
+					"vialMask_spr"
+				],
+				"subfolders": [],
+				"name": "vial"
 			}
 		]
 	},
@@ -775,7 +925,7 @@
 			"actuals",
 			"dolls",
 			"upgrades",
-			"destructibles",
+			"poundGround",
 			"enemies",
 			"spawnPoints",
 			"enemyPatrol",
@@ -785,7 +935,7 @@
 			"enemyChase",
 			"doors",
 			"keys",
-			"deathOnTouch",
+			"deathOnTouch_tb",
 			"exitScenes",
 			"tileMaps",
 			"enemyAir",
@@ -797,31 +947,29 @@
 			"lightAura",
 			"lightSource",
 			"mapIcons",
-			"mapItems"
+			"mapItems",
+			"deathOnTouch_spr",
+			"traps",
+			"breakable",
+			"breezySprites",
+			"backgrounds",
+			"destructables",
+			"trampolines",
+			"trapPatrolling",
+			"weatherEffects",
+			"weather"
 		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"construct splash",
 			"repository"
 		],
 		"subfolders": [
 			{
 				"items": [
-					"caveLand",
-					"grassLand",
-					"grassRuins",
-					"SANDBOX"
-				],
-				"subfolders": [],
-				"name": "levels"
-			},
-			{
-				"items": [
 					"HUD",
 					"lighting",
-					"Pause",
 					"dialog",
 					"MiniMap"
 				],
@@ -830,7 +978,21 @@
 			},
 			{
 				"items": [
-					"titleScreen"
+					"constructSplash",
+					"tntSplash",
+					"titleScreen",
+					"caveLand",
+					"grassLand",
+					"grassRuins",
+					"SANDBOX",
+					"ashFall"
+				],
+				"subfolders": [],
+				"name": "levels"
+			},
+			{
+				"items": [
+					"Pause"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -844,20 +1006,19 @@
 			"main_e",
 			"camera_e",
 			"player_e",
-			"splashScreen_e",
 			"enemies_e",
 			"doorsAndKeys_e",
 			"singleton_e",
 			"water_e",
-			"titleScreen_e",
 			"eventPoints_e",
-			"pauseMenu_e",
-			"lighting_e",
 			"traps_e",
-			"dialog_e",
 			"sfx_e",
 			"atmospheric_e",
-			"miniMap_e"
+			"breakAparts_e",
+			"platforms_e",
+			"saving_e",
+			"trampoline_e",
+			"yoshiBubble_e"
 		],
 		"subfolders": [
 			{
@@ -865,10 +1026,30 @@
 					"grassLand_e",
 					"caveLand_e",
 					"grassRuins_e",
-					"sandbox_e"
+					"sandbox_e",
+					"tntSplash_e",
+					"constructSplash_e",
+					"titleScreen_e",
+					"ashFall_e"
 				],
 				"subfolders": [],
 				"name": "levels"
+			},
+			{
+				"items": [
+					"lighting_e",
+					"dialog_e",
+					"miniMap_e"
+				],
+				"subfolders": [],
+				"name": "global"
+			},
+			{
+				"items": [
+					"pauseMenu_e"
+				],
+				"subfolders": [],
+				"name": "UI"
 			}
 		]
 	},
@@ -1056,7 +1237,122 @@
 					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "impulsewarehouse.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 141107127277545,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "effects"
+				},
+				{
+					"items": [
+						{
+							"name": "saveWarp.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 497599416330661,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PowerUp1Low.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 162710584137894,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PowerUp5High.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 358389088851290,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "loadWarp.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 871606431988801,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "saving"
+				},
+				{
+					"items": [
+						{
+							"name": "reUniteCloak.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 279912414247495,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "alertTick.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 861831304302024,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "bgLifeDrain.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 535781417047392,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "joltAlert.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 960102057653274,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "fgLifeDrain.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 514820201996815,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "windChimeDing.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 635703381963281,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "bubblePop.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 707247914523233,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "cloakSounds"
+				}
+			]
 		},
 		"music": {
 			"items": [
@@ -1080,6 +1376,14 @@
 					"name": "grassTheme.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 195885692896863,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Vast-Places_Looping.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 828041604941332,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -1187,6 +1491,7 @@
 	},
 	"timelines": {
 		"items": [
+			"teant",
 			"Timeline 1"
 		],
 		"subfolders": [
@@ -1207,7 +1512,7 @@
 		"authorEmail": "dillontcordova@gmail.com",
 		"authorWebsite": "",
 		"appId": "",
-		"pixelRounding": false,
+		"pixelRounding": true,
 		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": true,
@@ -1238,7 +1543,6 @@
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
-		"compositingMode": "standard",
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"renderingMode": "auto",
@@ -1250,11 +1554,10 @@
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "flat",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 320,
-	"viewportHeight": 180,
-	"firstLayout": "construct splash"
+	"viewportWidth": 640,
+	"viewportHeight": 360,
+	"firstLayout": "constructSplash"
 }

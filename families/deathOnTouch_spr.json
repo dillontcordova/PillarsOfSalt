@@ -1,0 +1,11 @@
+{
+	"name": "deathOnTouch_spr",
+	"plugin-id": "Sprite",
+	"sid": 703700962375172,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spikeWood_spr_tb"
+	]
+}

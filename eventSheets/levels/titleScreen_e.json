@@ -1,0 +1,1107 @@
+{
+	"name": "titleScreen_e",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "saving_e"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "titleScreen",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "selection",
+					"type": "number",
+					"initialValue": "2",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 962560474153838
+				},
+				{
+					"eventType": "variable",
+					"name": "isWhitening",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 940405949960325
+				},
+				{
+					"eventType": "variable",
+					"name": "isCanContinue",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 728131487034108
+				},
+				{
+					"eventType": "variable",
+					"name": "isFadingToBlack",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 243139328216247
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "backgoundVisuals",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "clampLow",
+							"type": "number",
+							"initialValue": "6",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 849918824889022
+						},
+						{
+							"eventType": "variable",
+							"name": "clampHigh",
+							"type": "number",
+							"initialValue": "17",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 320995813745624
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 510551206350022
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "playMusic",
+									"sid": 220965287876660,
+									"parameters": [
+										"\"titleTheme\"",
+										"0"
+									]
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "spr_cutSceneSingleton",
+									"sid": 871467707489907,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "random(clampLow,clampHigh)",
+										"type": "once",
+										"tag": "\"spawn\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 761642549168991,
+									"parameters": {
+										"key": "\"mysavefile\""
+									}
+								}
+							],
+							"sid": 347273021615804
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-end-of-layout",
+									"objectClass": "System",
+									"sid": 760439198441222
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-transparent",
+									"objectClass": "System",
+									"sid": 455910609952302,
+									"parameters": {
+										"layer": "\"fade\"",
+										"mode": "transparent"
+									}
+								},
+								{
+									"id": "set-layout-effect-parameter",
+									"objectClass": "System",
+									"sid": 858927962167166,
+									"parameters": {
+										"effect": "\"AdjustHSL\"",
+										"parameter-index": "2",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 750862587432825
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 337648042174484,
+									"parameters": {
+										"key": "\"mysavefile\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 551888456126141,
+									"parameters": {
+										"variable": "isCanContinue",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 184552952109221,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 341734850958304,
+											"parameters": {
+												"object": "spr_btnTileScreen",
+												"expression": "spr_btnTileScreen.btnId = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "spr_btnTileScreen",
+											"sid": 469200516206542,
+											"parameters": {
+												"opacity": "100"
+											}
+										}
+									],
+									"sid": 777111086186094
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "spr_cutSceneSingleton",
+									"sid": 990288378888025,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"spawn\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 172218225367513,
+									"parameters": {
+										"object-to-create": "spr_titleTrees",
+										"layer": "\"fg\"",
+										"x": "LayoutWidth-1",
+										"y": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "spr_titleTrees",
+									"sid": 148967659246762,
+									"parameters": {
+										"frame-number": "random(0, 7)"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "spr_cutSceneSingleton",
+									"sid": 316678620775037,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "random(clampLow,clampHigh)",
+										"type": "once",
+										"tag": "\"spawn\""
+									}
+								}
+							],
+							"sid": 372251499314561
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 858342906206400
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "tb_titleBackground",
+									"sid": 693933759622603,
+									"parameters": {
+										"angle": "180",
+										"distance": ".1"
+									}
+								}
+							],
+							"sid": 855757722950056,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "spr_titleTrees",
+											"sid": 272659182332612
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "spr_titleTrees",
+											"sid": 503333695485849,
+											"parameters": {
+												"angle": "180",
+												"distance": ".25"
+											}
+										}
+									],
+									"sid": 196956390064995
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 936773829165118,
+											"parameters": {
+												"variable": "isWhitening"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "bg_godlight",
+											"sid": 319635746775262,
+											"parameters": {
+												"angle": "180",
+												"distance": ".5"
+											}
+										},
+										{
+											"id": "move-at-angle",
+											"objectClass": "bg_godlight",
+											"sid": 299657666965434,
+											"parameters": {
+												"angle": "180",
+												"distance": ".5"
+											}
+										}
+									],
+									"sid": 914102309145238,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-children",
+													"objectClass": "spr_villageProps",
+													"sid": 925167357420610
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "spr_villageProps",
+													"sid": 653425022209080,
+													"parameters": {
+														"angle": "0",
+														"distance": ".25"
+													}
+												}
+											],
+											"sid": 445611823039866
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "tb_cutOut",
+													"sid": 997758346908233,
+													"parameters": {
+														"instance-variable": "fadeDirection",
+														"comparison": 0,
+														"value": "\"up\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "tb_cutOut",
+													"sid": 633621434809610,
+													"parameters": {
+														"angle": "270",
+														"distance": ".5"
+													}
+												}
+											],
+											"sid": 704154400098892
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "tb_cutOut",
+													"sid": 678952053286590,
+													"parameters": {
+														"instance-variable": "fadeDirection",
+														"comparison": 0,
+														"value": "\"down\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "tb_cutOut",
+													"sid": 341766664536921,
+													"parameters": {
+														"angle": "90",
+														"distance": ".5"
+													}
+												}
+											],
+											"sid": 686587550999645
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "tb_cutOut",
+													"sid": 710557989211885,
+													"parameters": {
+														"instance-variable": "fadeDirection",
+														"comparison": 0,
+														"value": "\"right\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-at-angle",
+													"objectClass": "tb_cutOut",
+													"sid": 951527257764609,
+													"parameters": {
+														"angle": "0",
+														"distance": ".5"
+													}
+												}
+											],
+											"sid": 629261708999254
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-outside-layout",
+											"objectClass": "tb_titleBackground",
+											"sid": 186740678565090
+										}
+									],
+									"actions": [],
+									"sid": 944869447751157,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 903734536062266
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 922982217948587,
+													"parameters": {
+														"object-to-create": "tb_titleBackground",
+														"layer": "0",
+														"x": "LayoutWidth-1",
+														"y": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												}
+											],
+											"sid": 844259938902510
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_btnTileScreen",
+											"sid": 246363290782232,
+											"parameters": {
+												"instance-variable": "btnId",
+												"comparison": 0,
+												"value": "selection"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "spr_btnTileScreen",
+											"sid": 752739970352400,
+											"parameters": {
+												"frame-number": "1"
+											}
+										}
+									],
+									"sid": 351904953218328
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_btnTileScreen",
+											"sid": 636541388764651,
+											"parameters": {
+												"instance-variable": "btnId",
+												"comparison": 1,
+												"value": "selection"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "spr_btnTileScreen",
+											"sid": 370119921799839,
+											"parameters": {
+												"frame-number": "0"
+											}
+										}
+									],
+									"sid": 912950086505122
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "MenuTweens",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 898759062673072,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"white\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layout-effect-parameter",
+											"objectClass": "System",
+											"sid": 162338257277812,
+											"parameters": {
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "2",
+												"value": "spr_cutSceneSingleton.Tween.Value(\"white\")"
+											}
+										}
+									],
+									"sid": 770882962952832
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-tweens-finished",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 646097079865664,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"white\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-transparent",
+											"objectClass": "System",
+											"sid": 448430555652208,
+											"parameters": {
+												"layer": "\"fade\"",
+												"mode": "opaque"
+											}
+										},
+										{
+											"id": "tween-value",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 652633654014718,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"dark newGame\"",
+												"start-value": "Self.Tween.Value(\"white\")",
+												"end-value": "100",
+												"time": "2",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 243880247056769
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 492185722378010,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"dark\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layout-effect-parameter",
+											"objectClass": "System",
+											"sid": 387169742274284,
+											"parameters": {
+												"effect": "\"AdjustHSL\"",
+												"parameter-index": "2",
+												"value": "spr_cutSceneSingleton.Tween.Value(\"dark\")"
+											}
+										}
+									],
+									"sid": 862785072576284
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-tweens-finished",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 788240364960779,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"newGame\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 861776993317444,
+											"parameters": {
+												"seconds": "1.0"
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 926710457456385,
+											"parameters": {
+												"layout": "grassLand"
+											}
+										}
+									],
+									"sid": 999890311620634
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-tweens-finished",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 737603990954343,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"continueGame\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "loadFromSaveFile",
+											"sid": 340117559873246
+										}
+									],
+									"sid": 139545460873057
+								}
+							],
+							"sid": 276565820709737
+						}
+					],
+					"sid": 914967053466793
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "MenuInput",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 473512364054695,
+									"parameters": {
+										"key": 13
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 425668694705356,
+									"parameters": {
+										"key": 75
+									}
+								}
+							],
+							"actions": [],
+							"sid": 243799784540742,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 337900775149092,
+											"parameters": {
+												"variable": "selection",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 370941449127859,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 824300119187155,
+													"parameters": {
+														"variable": "isWhitening"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 369594090693341,
+													"parameters": {
+														"variable": "isFadingToBlack"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "remove-item",
+													"objectClass": "LocalStorage",
+													"sid": 539980295779344,
+													"parameters": {
+														"key": "\"mysavefile\""
+													}
+												},
+												{
+													"id": "tween-value",
+													"objectClass": "spr_cutSceneSingleton",
+													"sid": 352587014442695,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"white\"",
+														"start-value": "100",
+														"end-value": "200",
+														"time": "3.5",
+														"ease": "easeinsine",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 524626572033861,
+													"parameters": {
+														"variable": "isWhitening",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "bg_godlight",
+													"sid": 638733866245069,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 209108898265585
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 469107560084073
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 329696911717775,
+											"parameters": {
+												"variable": "selection",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-value",
+											"objectClass": "spr_cutSceneSingleton",
+											"sid": 657565861227051,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"dark continueGame\"",
+												"start-value": "100",
+												"end-value": "0",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 770065278761780
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 236670371843040
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 582579259182757,
+											"parameters": {
+												"variable": "selection",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "cancel-fullscreen",
+											"objectClass": "Browser",
+											"sid": 862031585438425
+										},
+										{
+											"id": "close",
+											"objectClass": "Browser",
+											"sid": 111153516228306
+										}
+									],
+									"sid": 159317854781897
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 808045984007145,
+									"parameters": {
+										"key": 38
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 469101025653177,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 719761954679701,
+									"parameters": {
+										"variable": "selection",
+										"value": "Utils.wrap(selection + 1, 0, 3)"
+									}
+								}
+							],
+							"sid": 373232888497437,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 867664618037893,
+											"parameters": {
+												"variable": "selection",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 836678470806736,
+											"parameters": {
+												"variable": "isCanContinue"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 212271800384886,
+											"parameters": {
+												"variable": "selection",
+												"value": "Utils.wrap(selection + 1, 0, 3)"
+											}
+										}
+									],
+									"sid": 472924320676269
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 975874380091781,
+									"parameters": {
+										"key": 40
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 722380334452881,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 750233909392311,
+									"parameters": {
+										"variable": "selection",
+										"value": "Utils.wrap(selection  - 1, 0, 3)"
+									}
+								}
+							],
+							"sid": 207150349190156,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 555327182940069,
+											"parameters": {
+												"variable": "selection",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 873571906842364,
+											"parameters": {
+												"variable": "isCanContinue"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 799212103128504,
+											"parameters": {
+												"variable": "selection",
+												"value": "Utils.wrap(selection  - 1, 0, 3)"
+											}
+										}
+									],
+									"sid": 490447966162997
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 380514500777953
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 895527688425672,
+									"parameters": {
+										"mode": "stretch-integer-letterbox-scale",
+										"navigation-ui": "hide"
+									}
+								},
+								{
+									"id": "set-cursor-style",
+									"objectClass": "Mouse",
+									"sid": 288649872783814,
+									"parameters": {
+										"cursor-style": "none"
+									}
+								}
+							],
+							"sid": 994286728011234
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-resized",
+									"objectClass": "Browser",
+									"sid": 705761271258837
+								}
+							],
+							"actions": [],
+							"sid": 646797706724341,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-fullscreen",
+											"objectClass": "Browser",
+											"sid": 122647387103861,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-cursor-style",
+											"objectClass": "Mouse",
+											"sid": 966162140974646,
+											"parameters": {
+												"cursor-style": "normal"
+											}
+										}
+									],
+									"sid": 503367512764258
+								}
+							]
+						}
+					],
+					"sid": 329329195204866
+				}
+			],
+			"sid": 650999953493208
+		}
+	],
+	"sid": 848361008467525
+}

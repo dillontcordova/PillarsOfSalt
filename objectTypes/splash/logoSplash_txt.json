@@ -1,0 +1,24 @@
+{
+	"name": "logoSplash_txt",
+	"plugin-id": "Text",
+	"sid": 876408505034677,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 834039477583859
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "skymen_BetterOutline",
+			"name": "BetterOutline"
+		},
+		{
+			"effectId": "pixellate",
+			"name": "Pixellate"
+		}
+	]
+}

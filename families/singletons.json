@@ -8,6 +8,16 @@
 			"behaviorId": "aaXe_FSM",
 			"name": "FSM",
 			"sid": 580586507158048
+		},
+		{
+			"behaviorId": "overboy_signals",
+			"name": "Signals",
+			"sid": 475461799064434
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 749665610338508
 		}
 	],
 	"effectTypes": [],
@@ -15,6 +25,7 @@
 		"spr_playerSingleton",
 		"spr_gameSingleton",
 		"spr_gamepadSingleton",
-		"spr_cutSceneSingleton"
+		"spr_cutSceneSingleton",
+		"spr_audioSingleton"
 	]
 }

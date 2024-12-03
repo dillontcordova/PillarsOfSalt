@@ -1,0 +1,13 @@
+{
+	"name": "deathOnTouch_tb",
+	"plugin-id": "TiledBg",
+	"sid": 883728379088902,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"tb_water",
+		"tb_spikesCave",
+		"tb_respawnTouchBox"
+	]
+}
