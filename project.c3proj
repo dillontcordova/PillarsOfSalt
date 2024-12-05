@@ -103,7 +103,7 @@
 			"name": "UIDTo",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "0.1.0.2"
+			"version": "1.3"
 		},
 		{
 			"type": "plugin",
@@ -111,7 +111,7 @@
 			"name": "Utils",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "2.1"
+			"version": "1.2"
 		},
 		{
 			"type": "plugin",
@@ -360,6 +360,14 @@
 			"author": "Overboy",
 			"bundled": false,
 			"version": "1.2"
+		},
+		{
+			"type": "behavior",
+			"id": "piranha305_fsm",
+			"name": "FSM",
+			"author": "piranha305",
+			"bundled": false,
+			"version": "1.0.0.3"
 		},
 		{
 			"type": "behavior",
@@ -1018,7 +1026,8 @@
 			"platforms_e",
 			"saving_e",
 			"trampoline_e",
-			"yoshiBubble_e"
+			"yoshiBubble_e",
+			"state_e"
 		],
 		"subfolders": [
 			{

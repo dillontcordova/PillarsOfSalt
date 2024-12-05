@@ -1,0 +1,1156 @@
+{
+	"name": "state_e",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "State",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "OnStateEnter",
+							"objectClass": "actuals",
+							"sid": 632091044102579,
+							"behaviorType": "FSMMain",
+							"parameters": {
+								"state": "\"default\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "GoToState",
+							"objectClass": "actuals",
+							"sid": 213549667225219,
+							"behaviorType": "FSMMain",
+							"parameters": {
+								"state": "\"idle\""
+							}
+						}
+					],
+					"sid": 422790042705778
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "dolls",
+							"sid": 924640228333105
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "actuals",
+							"sid": 635754611302030,
+							"parameters": {
+								"instance-variable": "lockState",
+								"value": "actuals.FSMMain.CurrentState"
+							}
+						}
+					],
+					"sid": 820857962990600
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "OnStateChange",
+							"objectClass": "actuals",
+							"sid": 827506339625952,
+							"behaviorType": "FSMMain"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "actuals",
+							"sid": 975247196347643,
+							"parameters": {
+								"instance-variable": "lockState",
+								"value": "actuals.FSMMain.CurrentState"
+							}
+						}
+					],
+					"sid": 692963859526459,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "actuals",
+									"sid": 401375492874767,
+									"parameters": {
+										"child": "dolls",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "dolls",
+									"sid": 919284802283727,
+									"parameters": {
+										"animation": "actuals.FSMMain.CurrentState",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 110501703925706
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "OnStateChange",
+							"objectClass": "actuals",
+							"sid": 333917193988694,
+							"behaviorType": "FSMSub"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "actuals",
+							"sid": 507574883234108,
+							"parameters": {
+								"instance-variable": "lockState",
+								"value": "actuals.FSMSub.CurrentState"
+							}
+						}
+					],
+					"sid": 219237399907824,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "actuals",
+									"sid": 666768663244107,
+									"parameters": {
+										"child": "dolls",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "dolls",
+									"sid": 419748833970433,
+									"parameters": {
+										"animation": "actuals.FSMSub.CurrentState",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 368927777539102
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "updateState",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 143134923283062,
+									"parameters": {
+										"object": "actuals"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "actuals",
+									"sid": 961487542004975,
+									"parameters": {
+										"child": "dolls",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 967033035699325,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 477945812597395,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"idle\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "idle",
+											"objectClass": "actuals",
+											"sid": 627846928084118
+										}
+									],
+									"sid": 170906337357721,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Looking Around: For enemies on patrol.\nWaiting: For players or enemies in a static position."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 452316913917852,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"lookingAround\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "lookingAround",
+													"objectClass": "actuals",
+													"sid": 909754377944302
+												}
+											],
+											"sid": 955579533597718
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 287878437014457,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"turnAround\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "turnAround",
+													"objectClass": "actuals",
+													"sid": 809744853587916
+												}
+											],
+											"sid": 660687488351595
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 798448238687750
+												},
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 620585501925707,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"waiting\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "waiting",
+													"objectClass": "actuals",
+													"sid": 735527441756378
+												}
+											],
+											"sid": 284846112020935
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 670179225697356
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 129811948182078,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"move\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "move",
+											"objectClass": "actuals",
+											"sid": 494644383671182
+										}
+									],
+									"sid": 719387675603343,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Walking: General movement.\nSprinting: Faster movement for the player or chase behavior for enemies.\nPatrolling: For enemies following a predefined path."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 155650047164114,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"walking\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "walking",
+													"objectClass": "actuals",
+													"sid": 322999088564361
+												}
+											],
+											"sid": 640448461330212
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 358885700669745
+												},
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 394917257620720,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"springting\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "sprinting",
+													"objectClass": "actuals",
+													"sid": 705031629905913
+												}
+											],
+											"sid": 684444430797388
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 644078463733565
+												},
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 976759866980171,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"patrolling\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "patrolling",
+													"objectClass": "actuals",
+													"sid": 466090312438296
+												}
+											],
+											"sid": 855095624500509
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 289228085983862
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 907987192630542,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"attack\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "attack",
+											"objectClass": "actuals",
+											"sid": 626501685326628
+										}
+									],
+									"sid": 862289371320992,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Melee: Close-range attacks.\nRanged: Projectile-based attacks.\nCharging: For powerful attacks that take time to execute."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 189046427798541,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"melee\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "melee",
+													"objectClass": "actuals",
+													"sid": 729835783774727
+												}
+											],
+											"sid": 371490730044435
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 147932695931588
+												},
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 693153467132859,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"ranged\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "ranged",
+													"objectClass": "actuals",
+													"sid": 444839395986789
+												}
+											],
+											"sid": 487744142611430
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 867759732228950
+												},
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 909090278619480,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"charging\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "charging",
+													"objectClass": "actuals",
+													"sid": 558484267128453
+												}
+											],
+											"sid": 730303132834570
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 606486171727466
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 929601844027510,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"hurt\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "hurt",
+											"objectClass": "actuals",
+											"sid": 118035346941873
+										}
+									],
+									"sid": 631482121171757,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Stagger: Temporary inability to act.\nKnocked Down: Requires recovery."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 900126979412700,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"stagger\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "stagger",
+													"objectClass": "actuals",
+													"sid": 624089859225125
+												}
+											],
+											"sid": 688651337669382
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 280844699977156
+												},
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 181342881345552,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"knockedDown\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "knockedDown",
+													"objectClass": "actuals",
+													"sid": 476577904753355
+												}
+											],
+											"sid": 223747997461595
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 394831986719613
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 727564872883268,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"die\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "die",
+											"objectClass": "actuals",
+											"sid": 918358182906644
+										}
+									],
+									"sid": 796661423811754,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Fade Out: Vanishing over time.\nCollapse: Falling to the ground."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 557565665031504,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"fadeOut\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "fadeOut",
+													"objectClass": "actuals",
+													"sid": 226389382045156
+												}
+											],
+											"sid": 399426087470503
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 463766258370567
+												},
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 327021128844250,
+													"behaviorType": "FSMSub",
+													"parameters": {
+														"state": "\"collapse\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "collapse",
+													"objectClass": "actuals",
+													"sid": 460550229995932
+												}
+											],
+											"sid": 901181727265863
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 474788867576174
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "State Actions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"aceType": "action",
+							"aceName": "idle",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 929547517807254
+						},
+						{
+							"aceType": "action",
+							"aceName": "lookingAround",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 276413043182588,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "dolls",
+											"sid": 743585990787183,
+											"parameters": {
+												"comparison": 0,
+												"number": "Self.AnimationFrameCount"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setState",
+											"sid": 588968661298103,
+											"parameters": [
+												"\"turnAround\"",
+												"actuals.UID"
+											]
+										}
+									],
+									"sid": 328809022826290
+								}
+							]
+						},
+						{
+							"aceType": "action",
+							"aceName": "turnAround",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 893849308063398,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "dolls",
+											"sid": 333854464708474,
+											"parameters": {
+												"comparison": 0,
+												"number": "Self.AnimationFrameCount"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setState",
+											"sid": 100611261880433,
+											"parameters": [
+												"\"patrolling\"",
+												"actuals.UID"
+											]
+										}
+									],
+									"sid": 247135571815252
+								}
+							]
+						},
+						{
+							"aceType": "action",
+							"aceName": "waiting",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 198481813871165
+						},
+						{
+							"aceType": "action",
+							"aceName": "move",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 137815665163152
+						},
+						{
+							"aceType": "action",
+							"aceName": "walking",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 807851056307949
+						},
+						{
+							"aceType": "action",
+							"aceName": "sprinting",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 760678845895300
+						},
+						{
+							"aceType": "action",
+							"aceName": "patrolling",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 590987480395405,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemies",
+											"sid": 180585272433338,
+											"parameters": {
+												"unique-id": "actuals.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "patrolling",
+											"objectClass": "enemies",
+											"sid": 590280216015371
+										}
+									],
+									"sid": 747275063778949
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 626935992249964
+										}
+									],
+									"actions": [],
+									"sid": 523944231782724
+								}
+							]
+						},
+						{
+							"aceType": "action",
+							"aceName": "patrolling",
+							"objectClass": "enemies",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 992193044163292,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "enemyGroundMove",
+											"sid": 207333372134398
+										}
+									],
+									"sid": 886018099374263
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 504076906599804,
+											"parameters": {
+												"value": "Functions.checkBoundaryCollision"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setState",
+											"sid": 937590978239419,
+											"parameters": [
+												"\"lookingAround\"",
+												"actuals.UID"
+											]
+										}
+									],
+									"sid": 864016514833778
+								}
+							]
+						},
+						{
+							"aceType": "action",
+							"aceName": "patrolling",
+							"objectClass": "enemyChase",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 361239726622834,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "enemyGroundMove",
+											"sid": 195248799996600
+										}
+									],
+									"sid": 999582832404632
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 576399208586746,
+											"parameters": {
+												"value": "Functions.checkBoundaryCollision"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setState",
+											"sid": 560083478227609,
+											"parameters": [
+												"\"lookingAround\"",
+												"actuals.UID"
+											]
+										}
+									],
+									"sid": 420153628154551
+								}
+							]
+						},
+						{
+							"aceType": "action",
+							"aceName": "attack",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 299979301248037
+						},
+						{
+							"aceType": "action",
+							"aceName": "melee",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 528881419261433
+						},
+						{
+							"aceType": "action",
+							"aceName": "ranged",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 866772534879176
+						},
+						{
+							"aceType": "action",
+							"aceName": "charging",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 919604016991384
+						},
+						{
+							"aceType": "action",
+							"aceName": "hurt",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 213298954106629
+						},
+						{
+							"aceType": "action",
+							"aceName": "stagger",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 235766220437240
+						},
+						{
+							"aceType": "action",
+							"aceName": "knockedDown",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 756463699034979
+						},
+						{
+							"aceType": "action",
+							"aceName": "die",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 307709075167274
+						},
+						{
+							"aceType": "action",
+							"aceName": "fadeOut",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 179703843032289
+						},
+						{
+							"aceType": "action",
+							"aceName": "collapse",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 635799855993587
+						}
+					],
+					"sid": 340591431920485
+				}
+			],
+			"sid": 914854699260668
+		}
+	],
+	"sid": 559266537727566
+}

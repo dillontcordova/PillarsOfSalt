@@ -97,6 +97,16 @@
 			"behaviorId": "Tween",
 			"name": "Tween",
 			"sid": 705502713996718
+		},
+		{
+			"behaviorId": "piranha305_fsm",
+			"name": "FSMMain",
+			"sid": 601270826793114
+		},
+		{
+			"behaviorId": "piranha305_fsm",
+			"name": "FSMSub",
+			"sid": 694780482704999
 		}
 	],
 	"effectTypes": [],
