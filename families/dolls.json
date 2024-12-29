@@ -23,6 +23,13 @@
 			"desc": "set to 1 when in animation step",
 			"show": true,
 			"sid": 378506876616822
+		},
+		{
+			"name": "heldFrameNum",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 672566340273439
 		}
 	],
 	"behaviorTypes": [
@@ -51,6 +58,8 @@
 		"spr_enemyBatDoll",
 		"spr_enemyWormDoll",
 		"boatMan_spr",
-		"spr_playerEmptyDoll"
+		"spr_playerEmptyDoll",
+		"spr_blobDumbDoll",
+		"spr_goblinChargeDoll"
 	]
 }

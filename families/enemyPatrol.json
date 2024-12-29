@@ -6,8 +6,10 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"spr_enemyGround",
+		"spr_enemySlug",
 		"spr_enemyBlob",
-		"spr_enemyGoblinKnife"
+		"spr_enemyGoblinKnife",
+		"spr_enemyBlobDumb",
+		"spr_enemyGoblinCharge"
 	]
 }

@@ -627,7 +627,7 @@
 									"properties": {
 										"initially-visible": true,
 										"initial-animation": "Animation 1",
-										"initial-frame": 1,
+										"initial-frame": 0,
 										"enable-collisions": false,
 										"live-preview": false
 									},
@@ -1291,6 +1291,69 @@
 					"global": false
 				},
 				{
+					"name": "mask",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [],
+					"sid": 620157266901808,
+					"effectTypes": [
+						{
+							"effectId": "blurhorizontal",
+							"name": "BlurHorizontal",
+							"instance": {
+								"isEnabled": true,
+								"parameters": {
+									"intensity": 1
+								}
+							}
+						},
+						{
+							"effectId": "blurvertical",
+							"name": "BlurVertical",
+							"instance": {
+								"isEnabled": true,
+								"parameters": {
+									"intensity": 1
+								}
+							}
+						},
+						{
+							"effectId": "darken",
+							"name": "Darken",
+							"instance": {
+								"isEnabled": true,
+								"parameters": {}
+							}
+						}
+					],
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": false,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 0,
+					"parallaxY": 0,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "2d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
 					"name": "fade",
 					"overriden": 0,
 					"subLayers": [],
@@ -1547,7 +1610,7 @@
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 0,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,

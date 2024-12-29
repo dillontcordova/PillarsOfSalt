@@ -671,8 +671,17 @@
 																	"id": "set-text",
 																	"objectClass": "txt_debug",
 																	"sid": 552777468502249,
+																	"disabled": true,
 																	"parameters": {
 																		"text": "actuals.FSM.CurrentState"
+																	}
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "txt_debug",
+																	"sid": 221170626343676,
+																	"parameters": {
+																		"text": "actuals.FSMMain.CurrentState & \"\n\" &actuals.queuedState\n"
 																	}
 																}
 															],

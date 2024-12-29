@@ -3876,7 +3876,7 @@
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 0,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,

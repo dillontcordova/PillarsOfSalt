@@ -1,0 +1,11 @@
+{
+	"name": "enemyDumb",
+	"plugin-id": "Sprite",
+	"sid": 192123070023123,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyBlobDumb"
+	]
+}

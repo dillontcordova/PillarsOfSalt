@@ -305,6 +305,7 @@
 											],
 											"actions": [],
 											"sid": 336080614932810,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -328,6 +329,7 @@
 													],
 													"actions": [],
 													"sid": 954387831532143,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "comment",
@@ -348,6 +350,7 @@
 															],
 															"actions": [],
 															"sid": 288102601758639,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -380,7 +383,8 @@
 																			}
 																		}
 																	],
-																	"sid": 404968086144382
+																	"sid": 404968086144382,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -406,6 +410,7 @@
 																		}
 																	],
 																	"sid": 356911365885099,
+																	"disabled": true,
 																	"isOrBlock": true
 																}
 															]
@@ -444,6 +449,7 @@
 																}
 															],
 															"sid": 296182932171417,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -467,7 +473,8 @@
 																			]
 																		}
 																	],
-																	"sid": 686686449628415
+																	"sid": 686686449628415,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -488,7 +495,8 @@
 																			]
 																		}
 																	],
-																	"sid": 306201892518550
+																	"sid": 306201892518550,
+																	"disabled": true
 																}
 															]
 														},
@@ -516,6 +524,7 @@
 															],
 															"actions": [],
 															"sid": 220841910228524,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -566,6 +575,7 @@
 																		}
 																	],
 																	"sid": 180585682921852,
+																	"disabled": true,
 																	"isOrBlock": true
 																},
 																{
@@ -599,7 +609,8 @@
 																			"sid": 249285365902631
 																		}
 																	],
-																	"sid": 265321441595389
+																	"sid": 265321441595389,
+																	"disabled": true
 																}
 															]
 														},
@@ -627,6 +638,7 @@
 															],
 															"actions": [],
 															"sid": 636763139154757,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -649,7 +661,8 @@
 																			"sid": 723416672045654
 																		}
 																	],
-																	"sid": 997876785664252
+																	"sid": 997876785664252,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -682,7 +695,8 @@
 																			]
 																		}
 																	],
-																	"sid": 930870405204221
+																	"sid": 930870405204221,
+																	"disabled": true
 																}
 															]
 														}
@@ -702,6 +716,7 @@
 											],
 											"actions": [],
 											"sid": 595962449814399,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -726,7 +741,8 @@
 															}
 														}
 													],
-													"sid": 655937196222768
+													"sid": 655937196222768,
+													"disabled": true
 												}
 											],
 											"isOrBlock": true
@@ -743,6 +759,7 @@
 											],
 											"actions": [],
 											"sid": 637947711468179,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -767,7 +784,8 @@
 															}
 														}
 													],
-													"sid": 798179891115985
+													"sid": 798179891115985,
+													"disabled": true
 												}
 											],
 											"isOrBlock": true
@@ -956,8 +974,7 @@
 												}
 											],
 											"actions": [],
-											"sid": 173465958366380,
-											"disabled": true
+											"sid": 173465958366380
 										},
 										{
 											"eventType": "block",
@@ -973,6 +990,7 @@
 											],
 											"actions": [],
 											"sid": 724801108558015,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -1004,6 +1022,7 @@
 													],
 													"actions": [],
 													"sid": 893160683153431,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -1020,6 +1039,7 @@
 															],
 															"actions": [],
 															"sid": 706382068064680,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -1045,7 +1065,8 @@
 																			]
 																		}
 																	],
-																	"sid": 785520720107369
+																	"sid": 785520720107369,
+																	"disabled": true
 																}
 															]
 														},
@@ -1069,6 +1090,7 @@
 															],
 															"actions": [],
 															"sid": 263247562037463,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -1085,6 +1107,7 @@
 																	],
 																	"actions": [],
 																	"sid": 639598763779648,
+																	"disabled": true,
 																	"children": [
 																		{
 																			"eventType": "block",
@@ -1110,7 +1133,8 @@
 																					]
 																				}
 																			],
-																			"sid": 235240438950111
+																			"sid": 235240438950111,
+																			"disabled": true
 																		},
 																		{
 																			"eventType": "block",
@@ -1186,7 +1210,8 @@
 																					]
 																				}
 																			],
-																			"sid": 491855108805933
+																			"sid": 491855108805933,
+																			"disabled": true
 																		}
 																	]
 																}
@@ -1212,6 +1237,7 @@
 															],
 															"actions": [],
 															"sid": 932181562430194,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -1242,7 +1268,8 @@
 																			}
 																		}
 																	],
-																	"sid": 426759650136696
+																	"sid": 426759650136696,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -1260,6 +1287,7 @@
 																	],
 																	"actions": [],
 																	"sid": 156226678434665,
+																	"disabled": true,
 																	"children": [
 																		{
 																			"eventType": "comment",
@@ -1287,7 +1315,8 @@
 																					]
 																				}
 																			],
-																			"sid": 477526220805532
+																			"sid": 477526220805532,
+																			"disabled": true
 																		}
 																	]
 																},
@@ -1302,6 +1331,7 @@
 																	],
 																	"actions": [],
 																	"sid": 360427350149718,
+																	"disabled": true,
 																	"children": [
 																		{
 																			"eventType": "block",
@@ -1324,7 +1354,8 @@
 																					]
 																				}
 																			],
-																			"sid": 611976553879985
+																			"sid": 611976553879985,
+																			"disabled": true
 																		}
 																	]
 																}
@@ -1350,6 +1381,7 @@
 															],
 															"actions": [],
 															"sid": 360704603126543,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -1418,7 +1450,8 @@
 																			}
 																		}
 																	],
-																	"sid": 980034753584560
+																	"sid": 980034753584560,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -1458,7 +1491,8 @@
 																			]
 																		}
 																	],
-																	"sid": 213708434070499
+																	"sid": 213708434070499,
+																	"disabled": true
 																}
 															]
 														}
@@ -1608,6 +1642,7 @@
 									],
 									"actions": [],
 									"sid": 980301921097709,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -1637,6 +1672,7 @@
 											],
 											"actions": [],
 											"sid": 408743118116193,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -1663,6 +1699,7 @@
 														}
 													],
 													"sid": 498489564697704,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -1685,7 +1722,8 @@
 																	"sid": 469800226497221
 																}
 															],
-															"sid": 942528728932402
+															"sid": 942528728932402,
+															"disabled": true
 														},
 														{
 															"eventType": "block",
@@ -1718,7 +1756,8 @@
 																	]
 																}
 															],
-															"sid": 606993897477396
+															"sid": 606993897477396,
+															"disabled": true
 														}
 													]
 												},
@@ -1742,6 +1781,7 @@
 														}
 													],
 													"sid": 211258394987314,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -1765,7 +1805,8 @@
 																	]
 																}
 															],
-															"sid": 984046049044112
+															"sid": 984046049044112,
+															"disabled": true
 														}
 													]
 												}
@@ -1788,13 +1829,13 @@
 									"children": [
 										{
 											"eventType": "variable",
-											"name": "turnAround",
-											"type": "boolean",
-											"initialValue": "false",
+											"name": "wallOrFall",
+											"type": "number",
+											"initialValue": "0",
 											"comment": "",
 											"isStatic": false,
 											"isConstant": false,
-											"sid": 336007554702555
+											"sid": 773934558116819
 										},
 										{
 											"eventType": "block",
@@ -1816,39 +1857,22 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "is-on-floor",
-															"objectClass": "spr_fallCheck",
-															"sid": 845320612156359,
-															"behaviorType": "Platform",
-															"isInverted": true
-														},
-														{
-															"id": "is-by-wall",
-															"objectClass": "spr_fallCheck",
-															"sid": 655935936741512,
-															"behaviorType": "Platform",
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 361265745976297,
 															"parameters": {
-																"side": "left"
-															}
-														},
-														{
-															"id": "is-by-wall",
-															"objectClass": "spr_fallCheck",
-															"sid": 687552045253882,
-															"behaviorType": "Platform",
-															"parameters": {
-																"side": "right"
+																"value": "Functions.checkWallBounds"
 															}
 														}
 													],
 													"actions": [
 														{
-															"id": "set-boolean-eventvar",
+															"id": "set-eventvar-value",
 															"objectClass": "System",
-															"sid": 758423613226774,
+															"sid": 744745248541570,
 															"parameters": {
-																"variable": "turnAround",
-																"value": "true"
+																"variable": "wallOrFall",
+																"value": "1"
 															}
 														}
 													],
@@ -1857,20 +1881,320 @@
 												},
 												{
 													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 863291681402634
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 168412789348047,
+															"parameters": {
+																"value": "Functions.checkFloorMissing"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 369438626904902,
+															"parameters": {
+																"variable": "wallOrFall",
+																"value": "2"
+															}
+														}
+													],
+													"sid": 217448582101252
+												},
+												{
+													"eventType": "block",
 													"conditions": [],
 													"actions": [
 														{
 															"id": "set-function-return-value",
 															"objectClass": "Functions",
-															"sid": 917285863133490,
+															"sid": 180575510365554,
 															"parameters": {
-																"value": "turnAround"
+																"value": "wallOrFall"
 															}
 														}
 													],
 													"sid": 262158356057673
 												}
 											]
+										}
+									]
+								},
+								{
+									"functionName": "checkFloorMissing",
+									"functionDescription": "",
+									"functionCategory": "enemy",
+									"functionReturnType": "any",
+									"functionCopyPicked": true,
+									"functionIsAsync": false,
+									"functionParameters": [],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 688135613522339,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "turnAround",
+											"type": "boolean",
+											"initialValue": "false",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 822271950746768
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "enemies",
+													"sid": 251701137191986,
+													"parameters": {
+														"child": "spr_fallCheck",
+														"which": "bottom"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "cast-ray",
+													"objectClass": "spr_fallCheck",
+													"sid": 927342805681950,
+													"behaviorType": "LineOfSight",
+													"parameters": {
+														"from-x": "Self.ImagePointX(\"bRight\")",
+														"from-y": "Self.ImagePointY(\"bRight\")",
+														"to-x": "Self.ImagePointX(\"bRight\")",
+														"to-y": "Self.ImagePointY(\"bRight\") + Self.Height*2.5",
+														"use-collision-cells": true
+													}
+												}
+											],
+											"sid": 282143588869078,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "ray-intersected",
+															"objectClass": "spr_fallCheck",
+															"sid": 382995337355961,
+															"behaviorType": "LineOfSight",
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "cast-ray",
+															"objectClass": "spr_fallCheck",
+															"sid": 969396287330286,
+															"behaviorType": "LineOfSight",
+															"parameters": {
+																"from-x": "Self.ImagePointX(\"bLeft\")",
+																"from-y": "Self.ImagePointY(\"bLeft\")",
+																"to-x": "Self.ImagePointX(\"bLeft\")",
+																"to-y": "Self.ImagePointY(\"bLeft\") + Self.Height*2.5",
+																"use-collision-cells": true
+															}
+														}
+													],
+													"sid": 740151493889650,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "ray-intersected",
+																	"objectClass": "spr_fallCheck",
+																	"sid": 635429626460223,
+																	"behaviorType": "LineOfSight",
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 559182431100869,
+																	"parameters": {
+																		"variable": "turnAround",
+																		"value": "true"
+																	}
+																}
+															],
+															"sid": 415712218027807
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 359191648173773,
+													"parameters": {
+														"value": "turnAround"
+													}
+												}
+											],
+											"sid": 152879962001555
+										}
+									]
+								},
+								{
+									"functionName": "checkWallBounds",
+									"functionDescription": "",
+									"functionCategory": "enemy",
+									"functionReturnType": "any",
+									"functionCopyPicked": true,
+									"functionIsAsync": false,
+									"functionParameters": [],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 614728118616978,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "turnAround",
+											"type": "boolean",
+											"initialValue": "false",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 523239168773148
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "enemies",
+													"sid": 757085687455639,
+													"parameters": {
+														"child": "spr_fallCheck",
+														"which": "bottom"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "cast-ray",
+													"objectClass": "spr_fallCheck",
+													"sid": 653073806298886,
+													"behaviorType": "LineOfSight",
+													"parameters": {
+														"from-x": "Self.ImagePointX(\"bRight\")",
+														"from-y": "Self.ImagePointY(\"bRight\")",
+														"to-x": "Self.ImagePointX(\"bRight\") + (actuals.isRight ? 2 : -2)",
+														"to-y": "Self.ImagePointY(\"bRight\")",
+														"use-collision-cells": true
+													}
+												}
+											],
+											"sid": 307212872041282,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "ray-intersected",
+															"objectClass": "spr_fallCheck",
+															"sid": 962266133634423,
+															"behaviorType": "LineOfSight"
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 640137146241216,
+															"parameters": {
+																"first-value": "spr_fallCheck.LineOfSight.HitUID",
+																"comparison": 0,
+																"second-value": "tm_platform.UID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "cast-ray",
+															"objectClass": "spr_fallCheck",
+															"sid": 693921459549064,
+															"behaviorType": "LineOfSight",
+															"parameters": {
+																"from-x": "Self.ImagePointX(\"rTop\")",
+																"from-y": "Self.ImagePointY(\"rTop\")",
+																"to-x": "Self.ImagePointX(\"rTop\") + (actuals.isRight ? 2 : -2)",
+																"to-y": "Self.ImagePointY(\"rTop\")",
+																"use-collision-cells": true
+															}
+														}
+													],
+													"sid": 477914126138104,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "ray-intersected",
+																	"objectClass": "spr_fallCheck",
+																	"sid": 843422813385661,
+																	"behaviorType": "LineOfSight"
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 381036795163019,
+																	"parameters": {
+																		"first-value": "spr_fallCheck.LineOfSight.HitUID",
+																		"comparison": 0,
+																		"second-value": "tm_platform.UID"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 503645789829931,
+																	"parameters": {
+																		"variable": "turnAround",
+																		"value": "true"
+																	}
+																}
+															],
+															"sid": 318386399532332
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 345589976464946,
+													"parameters": {
+														"value": "turnAround"
+													}
+												}
+											],
+											"sid": 625841823010292
 										}
 									]
 								},
@@ -1964,6 +2288,15 @@
 											"parameters": {
 												"obstacle": "spr_playerActual"
 											}
+										},
+										{
+											"id": "add-obstacle",
+											"objectClass": "enemyChase",
+											"sid": 960328361879114,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"obstacle": "tm_platform"
+											}
 										}
 									],
 									"sid": 698433668015415,
@@ -2018,6 +2351,7 @@
 									],
 									"actions": [],
 									"sid": 837622742556995,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -2041,6 +2375,7 @@
 											],
 											"actions": [],
 											"sid": 275324621760350,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -2057,6 +2392,7 @@
 													],
 													"actions": [],
 													"sid": 634009216157499,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -2074,6 +2410,7 @@
 															],
 															"actions": [],
 															"sid": 761002031684502,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -2102,7 +2439,8 @@
 																			}
 																		}
 																	],
-																	"sid": 828421666269122
+																	"sid": 828421666269122,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -2128,7 +2466,8 @@
 																			}
 																		}
 																	],
-																	"sid": 617788476710250
+																	"sid": 617788476710250,
+																	"disabled": true
 																},
 																{
 																	"eventType": "block",
@@ -2161,7 +2500,8 @@
 																			}
 																		}
 																	],
-																	"sid": 994986461644903
+																	"sid": 994986461644903,
+																	"disabled": true
 																}
 															]
 														}
@@ -2187,6 +2527,7 @@
 													],
 													"actions": [],
 													"sid": 682477624885776,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -2221,7 +2562,8 @@
 																	]
 																}
 															],
-															"sid": 471368596004612
+															"sid": 471368596004612,
+															"disabled": true
 														}
 													]
 												},
@@ -2255,6 +2597,7 @@
 														}
 													],
 													"sid": 251138535370681,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "comment",
@@ -2274,7 +2617,7 @@
 															],
 															"actions": [
 																{
-																	"callFunction": "cancelChargeAtPlayer",
+																	"callFunction": "cancelChasePlayer",
 																	"sid": 574815866770285
 																},
 																{
@@ -2287,6 +2630,7 @@
 																}
 															],
 															"sid": 675135789482303,
+															"disabled": true,
 															"isOrBlock": true
 														},
 														{
@@ -2312,7 +2656,7 @@
 															],
 															"actions": [
 																{
-																	"callFunction": "cancelChargeAtPlayer",
+																	"callFunction": "cancelChasePlayer",
 																	"sid": 575282356917807
 																},
 																{
@@ -2324,7 +2668,8 @@
 																	]
 																}
 															],
-															"sid": 706594461159225
+															"sid": 706594461159225,
+															"disabled": true
 														},
 														{
 															"eventType": "comment",
@@ -2345,7 +2690,8 @@
 																	"sid": 149633802164261
 																}
 															],
-															"sid": 223097423154798
+															"sid": 223097423154798,
+															"disabled": true
 														},
 														{
 															"eventType": "comment",
@@ -2365,7 +2711,7 @@
 															],
 															"actions": [
 																{
-																	"callFunction": "cancelChargeAtPlayer",
+																	"callFunction": "cancelChasePlayer",
 																	"sid": 725973087697267
 																},
 																{
@@ -2378,6 +2724,7 @@
 																}
 															],
 															"sid": 520293124515533,
+															"disabled": true,
 															"isOrBlock": true
 														}
 													]
@@ -2402,6 +2749,7 @@
 													],
 													"actions": [],
 													"sid": 979399489271526,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -2419,6 +2767,7 @@
 															],
 															"actions": [],
 															"sid": 320296493174129,
+															"disabled": true,
 															"children": [
 																{
 																	"eventType": "block",
@@ -2444,7 +2793,8 @@
 																			}
 																		}
 																	],
-																	"sid": 399353786433758
+																	"sid": 399353786433758,
+																	"disabled": true
 																}
 															]
 														}
@@ -2455,7 +2805,7 @@
 									]
 								},
 								{
-									"functionName": "cancelChargeAtPlayer",
+									"functionName": "cancelChasePlayer",
 									"functionDescription": "",
 									"functionCategory": "",
 									"functionReturnType": "none",
@@ -2474,10 +2824,10 @@
 												{
 													"id": "set-max-speed",
 													"objectClass": "actuals",
-													"sid": 558027135678092,
+													"sid": 926309404954233,
 													"behaviorType": "Platform",
 													"parameters": {
-														"max-speed": "35"
+														"max-speed": "Self.defaultPlatformSpeed"
 													}
 												},
 												{
@@ -2493,6 +2843,7 @@
 													"id": "start-timer",
 													"objectClass": "enemies",
 													"sid": 716352734308460,
+													"disabled": true,
 													"behaviorType": "Timer",
 													"parameters": {
 														"duration": "enemyChase.atkCool",
@@ -3008,7 +3359,8 @@
 															}
 														}
 													],
-													"sid": 881790608235332
+													"sid": 881790608235332,
+													"disabled": true
 												}
 											]
 										}
@@ -3030,8 +3382,11 @@
 									],
 									"actions": [
 										{
-											"callFunction": "enemyDeath",
-											"sid": 813914134210156
+											"callFunction": "setNewState",
+											"sid": 518843116741119,
+											"parameters": [
+												"\"death\""
+											]
 										}
 									],
 									"sid": 270958224715507
@@ -3476,7 +3831,7 @@
 									"eventType": "variable",
 									"name": "knockback",
 									"type": "number",
-									"initialValue": "250",
+									"initialValue": "500",
 									"comment": "",
 									"isStatic": false,
 									"isConstant": false,
@@ -3809,8 +4164,11 @@
 									],
 									"actions": [
 										{
-											"callFunction": "enemyDeath",
-											"sid": 556498017627863
+											"callFunction": "setNewState",
+											"sid": 857117870151618,
+											"parameters": [
+												"\"death\""
+											]
 										}
 									],
 									"sid": 825659384417052
@@ -3829,14 +4187,6 @@
 							"conditions": [],
 							"actions": [
 								{
-									"callFunction": "setState",
-									"sid": 942364334225211,
-									"parameters": [
-										"\"death\"",
-										"actuals.UID"
-									]
-								},
-								{
 									"id": "set-boolean-instvar",
 									"objectClass": "actuals",
 									"sid": 856909832325564,
@@ -3844,14 +4194,6 @@
 										"instance-variable": "isSolid",
 										"value": "false"
 									}
-								},
-								{
-									"callFunction": "setAnimation",
-									"sid": 918536306146490,
-									"parameters": [
-										"\"death\"",
-										"actuals.UID"
-									]
 								},
 								{
 									"id": "set-enabled",
@@ -3896,83 +4238,15 @@
 									"parameters": {
 										"collisions": "disabled"
 									}
+								},
+								{
+									"id": "stop-all-timers",
+									"objectClass": "enemies",
+									"sid": 174633771878632,
+									"behaviorType": "Timer"
 								}
 							],
-							"sid": 738274488002088,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "actuals",
-											"sid": 574217908612865,
-											"parameters": {
-												"child": "dolls",
-												"which": "own"
-											}
-										},
-										{
-											"id": "pick-by-unique-id",
-											"objectClass": "enemies",
-											"sid": 990245071331839,
-											"parameters": {
-												"unique-id": "actuals.UID"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "stop-all-timers",
-											"objectClass": "enemies",
-											"sid": 305118905081016,
-											"behaviorType": "Timer"
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 868005082639463,
-											"parameters": {
-												"seconds": "(1 / dolls.AnimationSpeed) * dolls.AnimationFrameCount"
-											}
-										},
-										{
-											"callFunction": "dropCurrency",
-											"sid": 715492518034343,
-											"parameters": [
-												"actuals.X",
-												"actuals.Y",
-												"random(1, 5)"
-											]
-										}
-									],
-									"sid": 635207060950305,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-parent",
-													"objectClass": "dolls",
-													"sid": 392975830213319,
-													"parameters": {
-														"parent": "actuals",
-														"which": "top"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "destroy",
-													"objectClass": "actuals",
-													"sid": 301712184498913
-												}
-											],
-											"sid": 548620294793208
-										}
-									]
-								}
-							]
+							"sid": 738274488002088
 						}
 					],
 					"sid": 340440513545161

@@ -1,0 +1,11 @@
+{
+	"name": "enemyCharge",
+	"plugin-id": "Sprite",
+	"sid": 655312737425623,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_enemyGoblinCharge"
+	]
+}

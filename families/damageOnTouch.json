@@ -14,10 +14,12 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"spr_enemyGround",
+		"spr_enemySlug",
 		"spr_enemyGoblinKnife",
 		"spr_enemyBlob",
 		"spr_enemyBat",
-		"spr_enemyWorm"
+		"spr_enemyWorm",
+		"spr_enemyBlobDumb",
+		"spr_enemyGoblinCharge"
 	]
 }

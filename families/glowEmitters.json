@@ -15,7 +15,7 @@
 	"effectTypes": [],
 	"members": [
 		"spr_playerActual",
-		"spr_enemyGround",
+		"spr_enemySlug",
 		"spr_enemyGoblinKnife",
 		"spr_enemyBlob",
 		"spr_enemyBat",
@@ -30,6 +30,8 @@
 		"spr_doorSwitch",
 		"spr_boxFloat",
 		"spr_door",
-		"spr_chest"
+		"spr_chest",
+		"spr_enemyBlobDumb",
+		"spr_enemyGoblinCharge"
 	]
 }

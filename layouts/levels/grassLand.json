@@ -12525,6 +12525,7 @@
 						"startW": 0,
 						"startH": 0,
 						"stepping": 0,
+						"heldFrameNum": 0,
 						"name": "dillon",
 						"convoCursor": 0,
 						"hasMet": false
@@ -16614,7 +16615,7 @@
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 0,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,

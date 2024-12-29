@@ -88,9 +88,59 @@
 						{
 							"callFunction": "playerToDefaultState",
 							"sid": 343689251213270
+						},
+						{
+							"type": "comment",
+							"text": ""
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "spr_playerActual",
+							"sid": 894534201246824,
+							"parameters": {
+								"object": "unBlurMask_spr",
+								"layer": "\"asd\"",
+								"image-point": "0",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
 						}
 					],
-					"sid": 465600045661201
+					"sid": 465600045661201,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-child",
+									"objectClass": "spr_playerActual",
+									"sid": 741771434414135,
+									"parameters": {
+										"child": "unBlurMask_spr",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-o": false,
+										"transform-z-elevation": false,
+										"transform-visibility": false,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "set-blend-mode",
+									"objectClass": "unBlurMask_spr",
+									"sid": 399461494785511,
+									"parameters": {
+										"blend-mode": "copy"
+									}
+								}
+							],
+							"sid": 860284336535610
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -5411,8 +5461,16 @@
 																	]
 																},
 																{
+																	"callFunction": "setNewState",
+																	"sid": 166359202884761,
+																	"parameters": [
+																		"\"hurt\""
+																	]
+																},
+																{
 																	"callFunction": "enemyHit",
-																	"sid": 617889894759231,
+																	"sid": 687907211907930,
+																	"disabled": true,
 																	"parameters": [
 																		"1",
 																		"spr_playerActual.UID",

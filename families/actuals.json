@@ -14,57 +14,78 @@
 			"name": "isInvincible",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 577493474893203
 		},
 		{
 			"name": "isAttacking",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 423453846903031
 		},
 		{
 			"name": "isSolid",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 317757995550536
 		},
 		{
 			"name": "lockState",
 			"type": "string",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 464198939583175
 		},
 		{
 			"name": "isRight",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 529271754543156
 		},
 		{
 			"name": "isBouncing",
 			"type": "boolean",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 172591986632325
 		},
 		{
 			"name": "defaultPlatformSpeed",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 967373029965355
 		},
 		{
 			"name": "defaultPlatformDeceleration",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 257681936346897
+		},
+		{
+			"name": "isAnimationFinished",
+			"type": "boolean",
+			"desc": "",
+			"show": false,
+			"sid": 972472632695780
+		},
+		{
+			"name": "isQueueCheck",
+			"type": "boolean",
+			"desc": "",
+			"show": false,
+			"sid": 149362691341519
+		},
+		{
+			"name": "queuedState",
+			"type": "string",
+			"desc": "",
+			"show": false,
+			"sid": 256695796507448
 		}
 	],
 	"behaviorTypes": [
@@ -101,21 +122,23 @@
 		{
 			"behaviorId": "piranha305_fsm",
 			"name": "FSMMain",
-			"sid": 601270826793114
+			"sid": 694780482704999
 		},
 		{
 			"behaviorId": "piranha305_fsm",
-			"name": "FSMSub",
-			"sid": 694780482704999
+			"name": "FSMLock",
+			"sid": 964968981725392
 		}
 	],
 	"effectTypes": [],
 	"members": [
 		"spr_playerActual",
-		"spr_enemyGround",
+		"spr_enemySlug",
 		"spr_enemyGoblinKnife",
 		"spr_enemyBlob",
 		"spr_enemyBat",
-		"spr_enemyWorm"
+		"spr_enemyWorm",
+		"spr_enemyBlobDumb",
+		"spr_enemyGoblinCharge"
 	]
 }

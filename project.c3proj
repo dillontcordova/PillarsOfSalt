@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 41600,
+	"savedWithRelease": 41602,
 	"name": "Pillars of Salt",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -103,7 +103,7 @@
 			"name": "UIDTo",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "1.3"
+			"version": "0.1.0.2"
 		},
 		{
 			"type": "plugin",
@@ -111,7 +111,7 @@
 			"name": "Utils",
 			"author": "Overboy",
 			"bundled": false,
-			"version": "1.2"
+			"version": "2.1"
 		},
 		{
 			"type": "plugin",
@@ -429,6 +429,21 @@
 		},
 		{
 			"type": "effect",
+			"id": "darken",
+			"name": "Darken",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "federicoCalchera_goddessRays",
+			"name": "GoddessRays",
+			"author": "Federico Calchera",
+			"bundled": false,
+			"version": "1.1.0.0"
+		},
+		{
+			"type": "effect",
 			"id": "hsladjust",
 			"name": "Adjust HSL",
 			"author": "Scirra",
@@ -445,6 +460,13 @@
 			"type": "effect",
 			"id": "pixellate",
 			"name": "Pixellate",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "replacesolidcolor",
+			"name": "Replace solid color",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -497,9 +519,10 @@
 			"trampolene_spr",
 			"Sprite2",
 			"yellowClues_spr",
-			"asd",
-			"Particles",
-			"spr_snowAtmos"
+			"animationImported_spr",
+			"spr_snowAtmos",
+			"TiledBackground12",
+			"godRays_spr"
 		],
 		"subfolders": [
 			{
@@ -609,7 +632,9 @@
 					"spr_goblinKnifeDoll",
 					"spr_blobEnemyDoll",
 					"spr_enemyBatDoll",
-					"spr_enemyWormDoll"
+					"spr_enemyWormDoll",
+					"spr_blobDumbDoll",
+					"spr_goblinChargeDoll"
 				],
 				"subfolders": [],
 				"name": "dolls"
@@ -637,11 +662,13 @@
 			},
 			{
 				"items": [
-					"spr_enemyGround",
+					"spr_enemySlug",
 					"spr_enemyGoblinKnife",
 					"spr_enemyBlob",
 					"spr_enemyBat",
-					"spr_enemyWorm"
+					"spr_enemyWorm",
+					"spr_enemyBlobDumb",
+					"spr_enemyGoblinCharge"
 				],
 				"subfolders": [],
 				"name": "enemies"
@@ -665,7 +692,9 @@
 					"spr_enemyGoblinKnifeSpawn",
 					"spr_enemyBlobSpawn",
 					"spr_enemyAirBatSpawn",
-					"spr_enemyWormSpawn"
+					"spr_enemyWormSpawn",
+					"spr_enemyBlobSpawn2",
+					"spr_enemyGoblinChargeSpawn"
 				],
 				"subfolders": [],
 				"name": "spawnPoints"
@@ -708,7 +737,8 @@
 					"spr_healthBar",
 					"spr_healthLight",
 					"spr_boardHUD",
-					"spr_vialFg"
+					"spr_vialFg",
+					"unBlurMask_spr"
 				],
 				"subfolders": [],
 				"name": "HUD"
@@ -914,7 +944,6 @@
 					"cloak_spr",
 					"cloakArrow_spr",
 					"deathCount_sprText",
-					"enemy",
 					"spr_playerEmptyDoll",
 					"star_spr",
 					"vial",
@@ -965,7 +994,9 @@
 			"trampolines",
 			"trapPatrolling",
 			"weatherEffects",
-			"weather"
+			"weather",
+			"enemyDumb",
+			"enemyCharge"
 		],
 		"subfolders": []
 	},

@@ -19,10 +19,6 @@
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "enemies_e"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "doorsAndKeys_e"
 		},
 		{
@@ -70,6 +66,14 @@
 			"includeSheet": "yoshiBubble_e"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "enemies_e"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "state_e"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -88,6 +92,7 @@
 			],
 			"actions": [],
 			"sid": 768688139209811,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -126,6 +131,7 @@
 						}
 					],
 					"sid": 424915564339929,
+					"disabled": true,
 					"isOrBlock": true
 				}
 			]

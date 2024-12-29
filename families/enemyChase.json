@@ -55,6 +55,8 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"spr_enemyGoblinKnife"
+		"spr_enemyGoblinKnife",
+		"spr_enemyGoblinCharge",
+		"spr_enemyBlobDumb"
 	]
 }

@@ -72,6 +72,13 @@
 									"properties": {}
 								}
 							},
+							"instanceFolderItem": {
+								"sid": 749165213148927,
+								"expanded": true,
+								"folderName": "",
+								"indexInFolder": -1,
+								"folderNestingLevel": -1
+							},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -154,6 +161,13 @@
 									"properties": {}
 								}
 							},
+							"instanceFolderItem": {
+								"sid": 680252468937442,
+								"expanded": true,
+								"folderName": "",
+								"indexInFolder": -1,
+								"folderNestingLevel": -1
+							},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -235,6 +249,13 @@
 								"NoSave": {
 									"properties": {}
 								}
+							},
+							"instanceFolderItem": {
+								"sid": 219969518384732,
+								"expanded": true,
+								"folderName": "",
+								"indexInFolder": -1,
+								"folderNestingLevel": -1
 							},
 							"showing": true,
 							"locked": false,
@@ -382,7 +403,7 @@
 									"height": 34,
 									"max-width": 212,
 									"max-height": 151,
-									"data": "32x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,23069x0"
+									"data": "32x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,3x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,2,2x1,148x0,3x1,148x0,3,2x1,149x0,2x1,148x0,2,2x1,148x0,3x1,148x0,3x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,3x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,3x1,147x0,2,3x1,147x0,1,0,2x1,147x0,1,0,2x1,146x0,2x1,0,2x1,23069x0"
 								},
 								"tile-width": 32,
 								"tile-height": 32,
@@ -390,6 +411,13 @@
 								"tile-y-offset": 0,
 								"tile-x-spacing": 0,
 								"tile-y-spacing": 0
+							},
+							"instanceFolderItem": {
+								"sid": 397341248866842,
+								"expanded": true,
+								"folderName": "",
+								"indexInFolder": -1,
+								"folderNestingLevel": -1
 							},
 							"showing": true,
 							"locked": false,
@@ -477,6 +505,13 @@
 								"tile-y-offset": 0,
 								"tile-x-spacing": 0,
 								"tile-y-spacing": 0
+							},
+							"instanceFolderItem": {
+								"sid": 336241556265984,
+								"expanded": true,
+								"folderName": "",
+								"indexInFolder": -1,
+								"folderNestingLevel": -1
 							},
 							"showing": true,
 							"locked": false,
@@ -690,8 +725,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 944,
-						"y": 1008,
+						"x": 1584,
+						"y": 976,
 						"width": 24,
 						"height": 32,
 						"originX": 0.5,
@@ -741,6 +776,13 @@
 							"properties": {}
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 306245208780585,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -757,6 +799,174 @@
 							1
 						],
 						"angle": 1.5707963267948966,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyGoblinKnifeSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 500,
+					"sid": 947875188183245,
+					"tags": "",
+					"instanceVariables": {
+						"spawnName": "spr_enemyGoblinKnife"
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 947875188183245,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1472,
+						"y": 1008,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyBlobSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 501,
+					"sid": 540450623630193,
+					"tags": "",
+					"instanceVariables": {
+						"spawnName": "spr_enemyBlob"
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 540450623630193,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1144,
+						"y": 1008,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyBlobSpawn2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 506,
+					"sid": 543994964126270,
+					"tags": "",
+					"instanceVariables": {
+						"spawnName": "spr_enemyBlobDumb"
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 543994964126270,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1776,
+						"y": 976,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyGoblinChargeSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 511,
+					"sid": 873793053243842,
+					"tags": "",
+					"instanceVariables": {
+						"spawnName": "spr_enemyGoblinCharge"
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 873793053243842,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 984,
+						"y": 1008,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}
@@ -814,6 +1024,13 @@
 								"enabled": true
 							}
 						}
+					},
+					"instanceFolderItem": {
+						"sid": 778983393534554,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
 					},
 					"showing": true,
 					"locked": false,
@@ -902,6 +1119,13 @@
 						"tile-y-offset": 0,
 						"tile-x-spacing": 0,
 						"tile-y-spacing": 0
+					},
+					"instanceFolderItem": {
+						"sid": 553735180693428,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
 					},
 					"showing": true,
 					"locked": false,
@@ -1066,7 +1290,74 @@
 			"name": "fg",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "godRays_spr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 512,
+					"sid": 307635713787154,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"GoddessRays": {
+							"isEnabled": true,
+							"parameters": {
+								"angle": 45,
+								"position": 0.1,
+								"spread": 0.5,
+								"cutoff": 0.1,
+								"falloff": 0.4,
+								"edge_fade": 0.15,
+								"speed": 1,
+								"ray1_density": 8,
+								"ray2_density": 30,
+								"ray2_intensity": 0.3,
+								"colorR": [
+									1,
+									0.9,
+									0.65,
+									1
+								],
+								"colorA": 0.8,
+								"seed": 3
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 307635713787154,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1416,
+						"y": 888,
+						"width": 160,
+						"height": 360,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "additive"
+					}
+				}
+			],
 			"sid": 163341251538761,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -1127,6 +1418,13 @@
 								"Persist": {
 									"properties": {}
 								}
+							},
+							"instanceFolderItem": {
+								"sid": 417818636745675,
+								"expanded": true,
+								"folderName": "",
+								"indexInFolder": -1,
+								"folderNestingLevel": -1
 							},
 							"showing": true,
 							"locked": false,
@@ -1586,6 +1884,69 @@
 			"global": false
 		},
 		{
+			"name": "asd",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 565355782594693,
+			"effectTypes": [
+				{
+					"effectId": "darken",
+					"name": "Darken",
+					"instance": {
+						"isEnabled": true,
+						"parameters": {}
+					}
+				},
+				{
+					"effectId": "blurhorizontal",
+					"name": "BlurHorizontal",
+					"instance": {
+						"isEnabled": true,
+						"parameters": {
+							"intensity": 1
+						}
+					}
+				},
+				{
+					"effectId": "blurvertical",
+					"name": "BlurVertical",
+					"instance": {
+						"isEnabled": true,
+						"parameters": {
+							"intensity": 1
+						}
+					}
+				}
+			],
+			"isInitiallyVisible": false,
+			"isInitiallyInteractive": false,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "2d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "HUD",
 			"overriden": 1,
 			"subLayers": [],
@@ -1611,7 +1972,7 @@
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 0,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
@@ -1689,7 +2050,162 @@
 		}
 	],
 	"scene-graphs-folder-root": {
-		"items": [],
+		"items": [
+			{
+				"sid": 749165213148927,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 680252468937442,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 219969518384732,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 397341248866842,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 336241556265984,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 944624667990058,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 306245208780585,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 947875188183245,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 540450623630193,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 543994964126270,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 873793053243842,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 778983393534554,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 553735180693428,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 417818636745675,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 427226145519547,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 267344683144757,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 162628877045708,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 400596053682156,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 192878073378995,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 994442889649327,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 552828178743728,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 307635713787154,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			}
+		],
 		"subfolders": []
 	},
 	"sid": 759397220743831,

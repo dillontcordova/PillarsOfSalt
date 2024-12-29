@@ -9,159 +9,427 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "OnStateEnter",
-							"objectClass": "actuals",
-							"sid": 632091044102579,
-							"behaviorType": "FSMMain",
-							"parameters": {
-								"state": "\"default\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "GoToState",
-							"objectClass": "actuals",
-							"sid": 213549667225219,
-							"behaviorType": "FSMMain",
-							"parameters": {
-								"state": "\"idle\""
-							}
-						}
-					],
-					"sid": 422790042705778
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-any-animation-finished",
-							"objectClass": "dolls",
-							"sid": 924640228333105
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "actuals",
-							"sid": 635754611302030,
-							"parameters": {
-								"instance-variable": "lockState",
-								"value": "actuals.FSMMain.CurrentState"
-							}
-						}
-					],
-					"sid": 820857962990600
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "OnStateChange",
-							"objectClass": "actuals",
-							"sid": 827506339625952,
-							"behaviorType": "FSMMain"
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "actuals",
-							"sid": 975247196347643,
-							"parameters": {
-								"instance-variable": "lockState",
-								"value": "actuals.FSMMain.CurrentState"
-							}
-						}
-					],
-					"sid": 692963859526459,
+					"eventType": "group",
+					"disabled": false,
+					"title": "Init_State",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-children",
-									"objectClass": "actuals",
-									"sid": 401375492874767,
-									"parameters": {
-										"child": "dolls",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
+									"id": "on-any-animation-finished",
 									"objectClass": "dolls",
-									"sid": 919284802283727,
-									"parameters": {
-										"animation": "actuals.FSMMain.CurrentState",
-										"from": "beginning"
-									}
+									"sid": 531851760195152
 								}
 							],
-							"sid": 110501703925706
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "OnStateChange",
-							"objectClass": "actuals",
-							"sid": 333917193988694,
-							"behaviorType": "FSMSub"
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "actuals",
-							"sid": 507574883234108,
-							"parameters": {
-								"instance-variable": "lockState",
-								"value": "actuals.FSMSub.CurrentState"
-							}
-						}
-					],
-					"sid": 219237399907824,
-					"children": [
+							"actions": [],
+							"sid": 152036555517269,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-parent",
+											"objectClass": "dolls",
+											"sid": 940494921551886,
+											"parameters": {
+												"parent": "actuals",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "actuals",
+											"sid": 324336073988755,
+											"parameters": {
+												"instance-variable": "isAnimationFinished",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 934555620800135
+								}
+							]
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-children",
+									"id": "OnStateChange",
 									"objectClass": "actuals",
-									"sid": 666768663244107,
-									"parameters": {
-										"child": "dolls",
-										"which": "own"
-									}
+									"sid": 494534344289801,
+									"behaviorType": "FSMMain"
 								}
 							],
 							"actions": [
 								{
-									"id": "set-animation",
-									"objectClass": "dolls",
-									"sid": 419748833970433,
+									"id": "set-instvar-value",
+									"objectClass": "actuals",
+									"sid": 548460868722784,
 									"parameters": {
-										"animation": "actuals.FSMSub.CurrentState",
-										"from": "beginning"
+										"instance-variable": "lockState",
+										"value": "actuals.FSMMain.CurrentState"
 									}
 								}
 							],
-							"sid": 368927777539102
+							"sid": 999892574082386,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "actuals",
+											"sid": 166085075274769,
+											"parameters": {
+												"child": "dolls",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "actuals",
+											"sid": 501506162886929,
+											"parameters": {
+												"instance-variable": "isAnimationFinished",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "dolls",
+											"sid": 298029657540298,
+											"parameters": {
+												"animation": "actuals.FSMMain.CurrentState",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 261396813817317,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "dolls",
+													"sid": 141603493489215,
+													"parameters": {
+														"animation": "actuals.FSMMain.CurrentState"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 444998864980241,
+													"parameters": {
+														"type": "log",
+														"message": "actuals.FSMMain.CurrentState & \" animation was not found on object: \" & dolls.ObjectTypeName"
+													}
+												}
+											],
+											"sid": 974282699861346
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "actuals",
+													"sid": 353996839963237,
+													"parameters": {
+														"instance-variable": "isRight"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "dolls",
+													"sid": 543375346749475,
+													"parameters": {
+														"state": "not-mirrored"
+													}
+												}
+											],
+											"sid": 186254444282173
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 187914148591350
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "dolls",
+													"sid": 918589183011850,
+													"parameters": {
+														"state": "mirrored"
+													}
+												}
+											],
+											"sid": 759826081054465
+										}
+									]
+								}
+							]
 						}
-					]
+					],
+					"sid": 892870400625441
 				},
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "updateState",
+					"title": "OnEvent_State",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "OnStateTransition",
+									"objectClass": "actuals",
+									"sid": 506250727498612,
+									"behaviorType": "FSMMain",
+									"parameters": {
+										"from": "\"alert\"",
+										"to": "\"chase\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-max-speed",
+									"objectClass": "actuals",
+									"sid": 462245241007012,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "clamp(Self.Platform.MaxSpeed + 70, 0, Self.defaultPlatformSpeed+170)"
+									}
+								}
+							],
+							"sid": 764353710413910
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "OnStateEnter",
+									"objectClass": "actuals",
+									"sid": 110556073961005,
+									"behaviorType": "FSMMain",
+									"parameters": {
+										"state": "\"chase\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-max-speed",
+									"objectClass": "actuals",
+									"sid": 689510423490925,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "clamp(Self.Platform.MaxSpeed + 100, 0, Self.defaultPlatformSpeed+170)"
+									}
+								}
+							],
+							"sid": 422788882314080
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "OnStateEnter",
+									"objectClass": "actuals",
+									"sid": 107566064386078,
+									"behaviorType": "FSMMain",
+									"parameters": {
+										"state": "\"turnAround\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-instvar",
+									"objectClass": "actuals",
+									"sid": 399536283835643,
+									"parameters": {
+										"instance-variable": "isRight"
+									}
+								}
+							],
+							"sid": 363183934690522,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "actuals",
+											"sid": 741961329888990,
+											"parameters": {
+												"child": "dolls",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 658943135668236,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "actuals",
+													"sid": 440747586099512,
+													"parameters": {
+														"instance-variable": "isRight"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "dolls",
+													"sid": 240164969782190,
+													"parameters": {
+														"state": "not-mirrored"
+													}
+												}
+											],
+											"sid": 326611524706001
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 519670826100899
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "dolls",
+													"sid": 169476106838642,
+													"parameters": {
+														"state": "mirrored"
+													}
+												}
+											],
+											"sid": 758677880411832
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "OnStateEnter",
+									"objectClass": "actuals",
+									"sid": 365318487095931,
+									"behaviorType": "FSMMain",
+									"parameters": {
+										"state": "\"hurt\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 435864002020462,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemies",
+											"sid": 301212291835267,
+											"parameters": {
+												"unique-id": "actuals.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "enemyHit",
+											"sid": 503385252603717,
+											"parameters": [
+												"1",
+												"spr_playerActual.UID",
+												"enemies.UID",
+												true
+											]
+										}
+									],
+									"sid": 343381258305879
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "OnStateEnter",
+									"objectClass": "actuals",
+									"sid": 224451482108312,
+									"behaviorType": "FSMMain",
+									"parameters": {
+										"state": "\"death\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 961029213235385,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemies",
+											"sid": 807296509931351,
+											"parameters": {
+												"unique-id": "actuals.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "enemyDeath",
+											"sid": 466342951430735
+										}
+									],
+									"sid": 529484427961699
+								}
+							]
+						}
+					],
+					"sid": 381449753920931
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Update_State",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -171,15 +439,23 @@
 								{
 									"id": "for-each",
 									"objectClass": "System",
-									"sid": 143134923283062,
+									"sid": 926714160679970,
 									"parameters": {
-										"object": "actuals"
+										"object": "enemies"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "actuals",
+									"sid": 686121185675869,
+									"parameters": {
+										"unique-id": "enemies.UID"
 									}
 								},
 								{
 									"id": "pick-children",
 									"objectClass": "actuals",
-									"sid": 961487542004975,
+									"sid": 763265147856827,
 									"parameters": {
 										"child": "dolls",
 										"which": "own"
@@ -187,7 +463,7 @@
 								}
 							],
 							"actions": [],
-							"sid": 967033035699325,
+							"sid": 509965803484834,
 							"children": [
 								{
 									"eventType": "block",
@@ -195,69 +471,38 @@
 										{
 											"id": "CurrentStateIs",
 											"objectClass": "actuals",
-											"sid": 477945812597395,
+											"sid": 110118601923988,
 											"behaviorType": "FSMMain",
 											"parameters": {
 												"state": "\"idle\""
 											}
 										}
 									],
-									"actions": [
-										{
-											"customAction": "idle",
-											"objectClass": "actuals",
-											"sid": 627846928084118
-										}
-									],
-									"sid": 170906337357721,
+									"actions": [],
+									"sid": 279007490726391,
 									"children": [
 										{
-											"eventType": "comment",
-											"text": "Looking Around: For enemies on patrol.\nWaiting: For players or enemies in a static position."
-										},
-										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 452316913917852,
-													"behaviorType": "FSMSub",
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyPatrol",
+													"sid": 142128261903884,
 													"parameters": {
-														"state": "\"lookingAround\""
+														"unique-id": "actuals.UID"
 													}
 												}
 											],
 											"actions": [
 												{
-													"customAction": "lookingAround",
-													"objectClass": "actuals",
-													"sid": 909754377944302
+													"callFunction": "setNewState",
+													"sid": 635619233919689,
+													"parameters": [
+														"\"patrol\""
+													]
 												}
 											],
-											"sid": 955579533597718
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 287878437014457,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"turnAround\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"customAction": "turnAround",
-													"objectClass": "actuals",
-													"sid": 809744853587916
-												}
-											],
-											"sid": 660687488351595
+											"sid": 635569702357498
 										},
 										{
 											"eventType": "block",
@@ -265,26 +510,17 @@
 												{
 													"id": "else",
 													"objectClass": "System",
-													"sid": 798448238687750
-												},
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 620585501925707,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"waiting\""
-													}
+													"sid": 381611858769040
 												}
 											],
 											"actions": [
 												{
-													"customAction": "waiting",
+													"customAction": "idle",
 													"objectClass": "actuals",
-													"sid": 735527441756378
+													"sid": 174115164054682
 												}
 											],
-											"sid": 284846112020935
+											"sid": 396228838742015
 										}
 									]
 								},
@@ -294,52 +530,261 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 670179225697356
+											"sid": 230588140551341
 										},
 										{
 											"id": "CurrentStateIs",
 											"objectClass": "actuals",
-											"sid": 129811948182078,
+											"sid": 337119061991008,
 											"behaviorType": "FSMMain",
 											"parameters": {
-												"state": "\"move\""
+												"state": "\"lookingAround\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"customAction": "move",
+											"customAction": "lookingAround",
 											"objectClass": "actuals",
-											"sid": 494644383671182
+											"sid": 273154043123488
 										}
 									],
-									"sid": 719387675603343,
+									"sid": 812877148908961
+								},
+								{
+									"eventType": "comment",
+									"text": "actor"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 762034372447126
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 421455396536065,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"turnAround\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "turnAround",
+											"objectClass": "actuals",
+											"sid": 790546232568539
+										}
+									],
+									"sid": 806931828988294
+								},
+								{
+									"eventType": "comment",
+									"text": "chase"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 176336980765377
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 170798395642816,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"alert\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 292288318387460,
 									"children": [
 										{
-											"eventType": "comment",
-											"text": "Walking: General movement.\nSprinting: Faster movement for the player or chase behavior for enemies.\nPatrolling: For enemies following a predefined path."
-										},
-										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 155650047164114,
-													"behaviorType": "FSMSub",
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyChase",
+													"sid": 701378182530743,
 													"parameters": {
-														"state": "\"walking\""
+														"unique-id": "actuals.UID"
 													}
 												}
 											],
 											"actions": [
 												{
-													"customAction": "walking",
-													"objectClass": "actuals",
-													"sid": 322999088564361
+													"customAction": "alert",
+													"objectClass": "enemyChase",
+													"sid": 589814590481293
 												}
 											],
-											"sid": 640448461330212
+											"sid": 968707083122842
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "actor"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 837174136370559
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 103893725142241,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"waiting\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "waiting",
+											"objectClass": "actuals",
+											"sid": 604551468030605
+										}
+									],
+									"sid": 457663101032622
+								},
+								{
+									"eventType": "comment",
+									"text": "actor"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 418320367714442
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 858913771622655,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"walking\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "walking",
+											"objectClass": "actuals",
+											"sid": 700733931404641
+										}
+									],
+									"sid": 714560280700329
+								},
+								{
+									"eventType": "comment",
+									"text": "chase'"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 171518262866367
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 795823221040142,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"chase\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 390094817268258,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyChase",
+													"sid": 290139871776399,
+													"parameters": {
+														"unique-id": "actuals.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "chase",
+													"objectClass": "enemyChase",
+													"sid": 216635755126334
+												}
+											],
+											"sid": 171340429860274
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "patrol"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 235103679536779
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 341609915903390,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"patrol\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 585580343508515,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyPatrol",
+													"sid": 236098396357135,
+													"parameters": {
+														"unique-id": "actuals.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "patrol",
+													"objectClass": "actuals",
+													"sid": 646999851408475
+												}
+											],
+											"sid": 559553147682032
 										},
 										{
 											"eventType": "block",
@@ -347,53 +792,19 @@
 												{
 													"id": "else",
 													"objectClass": "System",
-													"sid": 358885700669745
-												},
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 394917257620720,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"springting\""
-													}
+													"sid": 620781055427886
 												}
 											],
 											"actions": [
 												{
-													"customAction": "sprinting",
-													"objectClass": "actuals",
-													"sid": 705031629905913
+													"callFunction": "setNewState",
+													"sid": 112767836526387,
+													"parameters": [
+														"\"idle\""
+													]
 												}
 											],
-											"sid": 684444430797388
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 644078463733565
-												},
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 976759866980171,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"patrolling\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"customAction": "patrolling",
-													"objectClass": "actuals",
-													"sid": 466090312438296
-												}
-											],
-											"sid": 855095624500509
+											"sid": 657011105972844
 										}
 									]
 								},
@@ -403,12 +814,12 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 289228085983862
+											"sid": 476275999408676
 										},
 										{
 											"id": "CurrentStateIs",
 											"objectClass": "actuals",
-											"sid": 907987192630542,
+											"sid": 187789873616226,
 											"behaviorType": "FSMMain",
 											"parameters": {
 												"state": "\"attack\""
@@ -419,92 +830,10 @@
 										{
 											"customAction": "attack",
 											"objectClass": "actuals",
-											"sid": 626501685326628
+											"sid": 233827037669808
 										}
 									],
-									"sid": 862289371320992,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "Melee: Close-range attacks.\nRanged: Projectile-based attacks.\nCharging: For powerful attacks that take time to execute."
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 189046427798541,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"melee\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"customAction": "melee",
-													"objectClass": "actuals",
-													"sid": 729835783774727
-												}
-											],
-											"sid": 371490730044435
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 147932695931588
-												},
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 693153467132859,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"ranged\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"customAction": "ranged",
-													"objectClass": "actuals",
-													"sid": 444839395986789
-												}
-											],
-											"sid": 487744142611430
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 867759732228950
-												},
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 909090278619480,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"charging\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"customAction": "charging",
-													"objectClass": "actuals",
-													"sid": 558484267128453
-												}
-											],
-											"sid": 730303132834570
-										}
-									]
+									"sid": 679428843332741
 								},
 								{
 									"eventType": "block",
@@ -512,12 +841,39 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 606486171727466
+											"sid": 879579516739509
 										},
 										{
 											"id": "CurrentStateIs",
 											"objectClass": "actuals",
-											"sid": 929601844027510,
+											"sid": 278966789671647,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"atkCoolDown\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "atkCoolDown",
+											"objectClass": "actuals",
+											"sid": 356969165646005
+										}
+									],
+									"sid": 278140974156461
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 226095543262039
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 470479994142921,
 											"behaviorType": "FSMMain",
 											"parameters": {
 												"state": "\"hurt\""
@@ -528,65 +884,10 @@
 										{
 											"customAction": "hurt",
 											"objectClass": "actuals",
-											"sid": 118035346941873
+											"sid": 142210453165681
 										}
 									],
-									"sid": 631482121171757,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "Stagger: Temporary inability to act.\nKnocked Down: Requires recovery."
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 900126979412700,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"stagger\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"customAction": "stagger",
-													"objectClass": "actuals",
-													"sid": 624089859225125
-												}
-											],
-											"sid": 688651337669382
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 280844699977156
-												},
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 181342881345552,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"knockedDown\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"customAction": "knockedDown",
-													"objectClass": "actuals",
-													"sid": 476577904753355
-												}
-											],
-											"sid": 223747997461595
-										}
-									]
+									"sid": 137675592686581
 								},
 								{
 									"eventType": "block",
@@ -594,81 +895,115 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 394831986719613
+											"sid": 454771999401965
 										},
 										{
 											"id": "CurrentStateIs",
 											"objectClass": "actuals",
-											"sid": 727564872883268,
+											"sid": 394695470077136,
 											"behaviorType": "FSMMain",
 											"parameters": {
-												"state": "\"die\""
+												"state": "\"death\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"customAction": "die",
+											"customAction": "death",
 											"objectClass": "actuals",
-											"sid": 918358182906644
+											"sid": 155418768323931
 										}
 									],
-									"sid": 796661423811754,
+									"sid": 804876044883746
+								},
+								{
+									"eventType": "comment",
+									"text": "actor"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "CurrentStateInList",
+											"objectClass": "actuals",
+											"sid": 343975050237691,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"states": "\"idle,patrol,walking,waiting,lookingAround,hurt,atkCoolDown\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 394996514183528,
 									"children": [
 										{
-											"eventType": "comment",
-											"text": "Fade Out: Vanishing over time.\nCollapse: Falling to the ground."
-										},
-										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 557565665031504,
-													"behaviorType": "FSMSub",
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyChase",
+													"sid": 622459479531200,
 													"parameters": {
-														"state": "\"fadeOut\""
+														"unique-id": "actuals.UID"
 													}
 												}
 											],
 											"actions": [
 												{
-													"customAction": "fadeOut",
+													"customAction": "lookToChasePlayer",
 													"objectClass": "actuals",
-													"sid": 226389382045156
+													"sid": 369613239057487
 												}
 											],
-											"sid": 399426087470503
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 463766258370567
-												},
-												{
-													"id": "CurrentStateIs",
-													"objectClass": "actuals",
-													"sid": 327021128844250,
-													"behaviorType": "FSMSub",
-													"parameters": {
-														"state": "\"collapse\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"customAction": "collapse",
-													"objectClass": "actuals",
-													"sid": 460550229995932
-												}
-											],
-											"sid": 901181727265863
+											"sid": 291461030655064
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "CurrentStateInList",
+											"objectClass": "actuals",
+											"sid": 864859228222003,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"states": "\"move,patrol,chase,charge,walking\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "move",
+											"objectClass": "actuals",
+											"sid": 708602243501960
+										}
+									],
+									"sid": 246561588868911
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "CurrentStateInList",
+											"objectClass": "actuals",
+											"sid": 835092825677973,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"states": "\"death,atkCoolDown\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"customAction": "checkStateQueue",
+											"objectClass": "actuals",
+											"sid": 456426470839914
+										}
+									],
+									"sid": 464633686876455,
+									"isOrBlock": true
 								}
 							]
 						}
@@ -678,7 +1013,7 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "State Actions",
+					"title": "Actions_State",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -695,7 +1030,32 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 929547517807254
+							"sid": 929547517807254,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "ChancePercent",
+											"objectClass": "Utils",
+											"sid": 441429671194406,
+											"parameters": {
+												"chance": ".5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setNewState",
+											"sid": 796488205505992,
+											"parameters": [
+												"\"lookingAround\""
+											]
+										}
+									],
+									"sid": 628109706655116
+								}
+							]
 						},
 						{
 							"aceType": "action",
@@ -716,22 +1076,20 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-animation-frame",
-											"objectClass": "dolls",
-											"sid": 743585990787183,
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 278778424402420,
 											"parameters": {
-												"comparison": 0,
-												"number": "Self.AnimationFrameCount"
+												"value": "Functions.isAnimationDone"
 											}
 										}
 									],
 									"actions": [
 										{
-											"callFunction": "setState",
-											"sid": 588968661298103,
+											"callFunction": "setNewState",
+											"sid": 883683144396472,
 											"parameters": [
-												"\"turnAround\"",
-												"actuals.UID"
+												"\"turnAround\""
 											]
 										}
 									],
@@ -758,22 +1116,20 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-animation-frame",
-											"objectClass": "dolls",
-											"sid": 333854464708474,
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 737775360302436,
 											"parameters": {
-												"comparison": 0,
-												"number": "Self.AnimationFrameCount"
+												"value": "Functions.isAnimationDone"
 											}
 										}
 									],
 									"actions": [
 										{
-											"callFunction": "setState",
-											"sid": 100611261880433,
+											"callFunction": "setNewState",
+											"sid": 512978541750331,
 											"parameters": [
-												"\"patrolling\"",
-												"actuals.UID"
+												"\"idle\""
 											]
 										}
 									],
@@ -794,7 +1150,109 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 198481813871165
+							"sid": 198481813871165,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 429513841103762,
+											"parameters": {
+												"value": "Functions.isAnimationDone"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 367310101236150,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "ChancePercent",
+													"objectClass": "Utils",
+													"sid": 836778809172448,
+													"parameters": {
+														"chance": "10"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setNewState",
+													"sid": 661104575293176,
+													"parameters": [
+														"\"waiting\""
+													]
+												}
+											],
+											"sid": 562397971927038
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 179798446378007
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setNewState",
+													"sid": 368906631527386,
+													"parameters": [
+														"choose(\"lookingAround\", \"patrol\")"
+													]
+												}
+											],
+											"sid": 228634304170228
+										}
+									]
+								}
+							]
+						},
+						{
+							"aceType": "action",
+							"aceName": "alert",
+							"objectClass": "enemyChase",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 900102603107040,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 798387050737172,
+											"parameters": {
+												"value": "Functions.isAnimationDone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setNewState",
+											"sid": 614041303228765,
+											"parameters": [
+												"\"chase\""
+											]
+										}
+									],
+									"sid": 595652718261577
+								}
+							]
 						},
 						{
 							"aceType": "action",
@@ -808,7 +1266,12 @@
 							"functionParameters": [],
 							"eventType": "custom-ace-block",
 							"conditions": [],
-							"actions": [],
+							"actions": [
+								{
+									"callFunction": "enemyGroundMove",
+									"sid": 207333372134398
+								}
+							],
 							"sid": 137815665163152
 						},
 						{
@@ -828,22 +1291,7 @@
 						},
 						{
 							"aceType": "action",
-							"aceName": "sprinting",
-							"objectClass": "actuals",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "custom-ace-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 760678845895300
-						},
-						{
-							"aceType": "action",
-							"aceName": "patrolling",
+							"aceName": "patrol",
 							"objectClass": "actuals",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -857,44 +1305,89 @@
 							"sid": 590987480395405,
 							"children": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-unique-id",
-											"objectClass": "enemies",
-											"sid": 180585272433338,
-											"parameters": {
-												"unique-id": "actuals.UID"
-											}
-										}
-									],
-									"actions": [
-										{
-											"customAction": "patrolling",
-											"objectClass": "enemies",
-											"sid": 590280216015371
-										}
-									],
-									"sid": 747275063778949
+									"eventType": "variable",
+									"name": "isStateChange",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 464152820879320
+								},
+								{
+									"eventType": "comment",
+									"text": "wall or fall?"
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "else",
+											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 626935992249964
+											"sid": 629755106689882,
+											"parameters": {
+												"value": "Functions.aiBoundDetection"
+											}
 										}
 									],
-									"actions": [],
-									"sid": 523944231782724
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 927798170429623,
+											"parameters": {
+												"variable": "isStateChange",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "setNewState",
+											"sid": 451646839774445,
+											"parameters": [
+												"choose(\"lookingAround\", \"turnAround\")"
+											]
+										}
+									],
+									"sid": 109044380269394
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 867233646733225,
+											"parameters": {
+												"variable": "isStateChange"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "ChancePercent",
+											"objectClass": "Utils",
+											"sid": 172833436617893,
+											"parameters": {
+												"chance": ".1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setNewState",
+											"sid": 987736595844536,
+											"parameters": [
+												"\"waiting\""
+											]
+										}
+									],
+									"sid": 811350997687051
 								}
 							]
 						},
 						{
 							"aceType": "action",
-							"aceName": "patrolling",
-							"objectClass": "enemies",
+							"aceName": "lookToChasePlayer",
+							"objectClass": "actuals",
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
@@ -904,48 +1397,365 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 992193044163292,
+							"sid": 637999703113058,
 							"children": [
 								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"callFunction": "enemyGroundMove",
-											"sid": 207333372134398
-										}
-									],
-									"sid": 886018099374263
+									"eventType": "variable",
+									"name": "nextState",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 907500894508946
+								},
+								{
+									"eventType": "variable",
+									"name": "sightAngle",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 940737779365494
+								},
+								{
+									"eventType": "variable",
+									"name": "isPlayerClose",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 518512769168753
+								},
+								{
+									"eventType": "variable",
+									"name": "degreeRange",
+									"type": "number",
+									"initialValue": "5",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": true,
+									"sid": 348751749160722
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "evaluate-expression",
-											"objectClass": "System",
-											"sid": 504076906599804,
+											"id": "has-los-to-object",
+											"objectClass": "enemyChase",
+											"sid": 383459520155323,
+											"behaviorType": "LineOfSight",
 											"parameters": {
-												"value": "Functions.checkBoundaryCollision"
+												"object": "spr_playerActual",
+												"image-point": "\"center\"\n"
+											}
+										},
+										{
+											"id": "has-los-to-object",
+											"objectClass": "enemyChase",
+											"sid": 176985639073837,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"object": "spr_playerActual",
+												"image-point": "\"top\"\n"
+											}
+										},
+										{
+											"id": "has-los-to-object",
+											"objectClass": "enemyChase",
+											"sid": 883276887451286,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"object": "spr_playerActual",
+												"image-point": "\"bottom\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"callFunction": "setState",
-											"sid": 937590978239419,
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 561263248716267,
+											"parameters": {
+												"variable": "sightAngle",
+												"value": "angle(enemyChase.X, enemyChase.Y, spr_playerActual.ImagePointX(\"center\"), spr_playerActual.ImagePointY(\"center\"))"
+											}
+										}
+									],
+									"sid": 969972796789511,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-within-angle",
+													"objectClass": "System",
+													"sid": 107594807670467,
+													"parameters": {
+														"angle-1": "sightAngle",
+														"within": "degreeRange",
+														"angle-2": "0"
+													}
+												},
+												{
+													"id": "is-within-angle",
+													"objectClass": "System",
+													"sid": 408660578725718,
+													"parameters": {
+														"angle-1": "sightAngle",
+														"within": "degreeRange",
+														"angle-2": "180"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 407582359278236,
+													"parameters": {
+														"variable": "isPlayerClose",
+														"value": "distance(enemyChase.X, enemyChase.Y, spr_playerActual.ImagePointX(\"center\"), spr_playerActual.ImagePointY(\"center\")) <= (enemyChase.LineOfSight.Range / 2)"
+													}
+												}
+											],
+											"sid": 153706323443758,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "actuals",
+															"sid": 219907840179505,
+															"parameters": {
+																"instance-variable": "isRight"
+															}
+														},
+														{
+															"id": "is-within-angle",
+															"objectClass": "System",
+															"sid": 501935473759961,
+															"parameters": {
+																"angle-1": "sightAngle",
+																"within": "degreeRange",
+																"angle-2": "180"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 384454675384351,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 185625881416530,
+																	"parameters": {
+																		"variable": "isPlayerClose",
+																		"comparison": 0,
+																		"value": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 657673038155500,
+																	"parameters": {
+																		"variable": "nextState",
+																		"value": "\"turnAround\""
+																	}
+																}
+															],
+															"sid": 304930103868866
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 182231583380737
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "actuals",
+															"sid": 546143207176391,
+															"parameters": {
+																"instance-variable": "isRight"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-within-angle",
+															"objectClass": "System",
+															"sid": 579272184446096,
+															"parameters": {
+																"angle-1": "sightAngle",
+																"within": "degreeRange",
+																"angle-2": "0"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 727780589650681,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 527500949716822,
+																	"parameters": {
+																		"variable": "isPlayerClose",
+																		"comparison": 0,
+																		"value": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 511757650144808,
+																	"parameters": {
+																		"variable": "nextState",
+																		"value": "\"turnAround\""
+																	}
+																}
+															],
+															"sid": 453533770601144
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 432934820663677
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "enemyChase",
+															"sid": 760134287514802,
+															"parameters": {
+																"instance-variable": "chargeStartPos",
+																"value": "Self.X"
+															}
+														}
+													],
+													"sid": 235146348942395,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "transfer-picking",
+																	"objectClass": "Utils",
+																	"sid": 142206403161020,
+																	"parameters": {
+																		"object1": "actuals",
+																		"object2": "enemyCharge",
+																		"transferType": "filterSOL"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 856020730468451,
+																	"parameters": {
+																		"variable": "nextState",
+																		"value": "\"alert\""
+																	}
+																}
+															],
+															"sid": 688120521368695
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 911074104346293
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 276858602621533,
+																	"parameters": {
+																		"variable": "nextState",
+																		"value": "\"chase\""
+																	}
+																}
+															],
+															"sid": 225296368127405
+														}
+													]
+												}
+											],
+											"isOrBlock": true
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 863875657176466,
+											"parameters": {
+												"variable": "nextState",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "actuals",
+											"sid": 849803670467893,
+											"parameters": {
+												"instance-variable": "queuedState",
+												"value": "nextState"
+											}
+										},
+										{
+											"callFunction": "setNewState",
+											"sid": 618213933503063,
+											"disabled": true,
 											"parameters": [
-												"\"lookingAround\"",
-												"actuals.UID"
+												"nextState"
 											]
 										}
 									],
-									"sid": 864016514833778
+									"sid": 545546031754315
 								}
 							]
 						},
 						{
 							"aceType": "action",
-							"aceName": "patrolling",
+							"aceName": "chase",
 							"objectClass": "enemyChase",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -956,42 +1766,51 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 361239726622834,
+							"sid": 954945243459074,
 							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"callFunction": "enemyGroundMove",
-											"sid": 195248799996600
-										}
-									],
-									"sid": 999582832404632
-								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 576399208586746,
+											"sid": 166032502057823,
 											"parameters": {
-												"value": "Functions.checkBoundaryCollision"
+												"value": "abs(abs(enemyChase.chargeStartPos) - abs(enemyChase.X)) > abs(enemyChase.chaseRange)"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "enemyChase",
+											"sid": 445966646945791,
+											"parameters": {
+												"object": "spr_playerActual"
+											}
+										},
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 774066078251306,
+											"parameters": {
+												"value": "Functions.aiBoundDetection"
 											}
 										}
 									],
 									"actions": [
 										{
-											"callFunction": "setState",
-											"sid": 560083478227609,
+											"callFunction": "cancelChasePlayer",
+											"sid": 969272720201820
+										},
+										{
+											"callFunction": "setNewState",
+											"sid": 725802199354180,
 											"parameters": [
-												"\"lookingAround\"",
-												"actuals.UID"
+												"\"attack\""
 											]
 										}
 									],
-									"sid": 420153628154551
+									"sid": 371470299014314,
+									"isOrBlock": true
 								}
 							]
 						},
@@ -1008,11 +1827,36 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 299979301248037
+							"sid": 299979301248037,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 653521089947098,
+											"parameters": {
+												"value": "Functions.isAnimationDone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setNewState",
+											"sid": 697950925191431,
+											"parameters": [
+												"\"atkCoolDown\""
+											]
+										}
+									],
+									"sid": 268710834248910
+								}
+							]
 						},
 						{
 							"aceType": "action",
-							"aceName": "melee",
+							"aceName": "atkCoolDown",
 							"objectClass": "actuals",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -1023,37 +1867,32 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 528881419261433
-						},
-						{
-							"aceType": "action",
-							"aceName": "ranged",
-							"objectClass": "actuals",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "custom-ace-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 866772534879176
-						},
-						{
-							"aceType": "action",
-							"aceName": "charging",
-							"objectClass": "actuals",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "custom-ace-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 919604016991384
+							"sid": 625884056590041,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 802665502094895,
+											"parameters": {
+												"value": "Functions.isAnimationDone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setNewState",
+											"sid": 888520142422755,
+											"parameters": [
+												"\"idle\""
+											]
+										}
+									],
+									"sid": 401989739625833
+								}
+							]
 						},
 						{
 							"aceType": "action",
@@ -1068,11 +1907,36 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 213298954106629
+							"sid": 213298954106629,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 502040619159481,
+											"parameters": {
+												"value": "Functions.isAnimationDone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setNewState",
+											"sid": 983783470248937,
+											"parameters": [
+												"\"idle\""
+											]
+										}
+									],
+									"sid": 519785581229437
+								}
+							]
 						},
 						{
 							"aceType": "action",
-							"aceName": "stagger",
+							"aceName": "death",
 							"objectClass": "actuals",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -1083,11 +1947,43 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 235766220437240
+							"sid": 307709075167274,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 635014285436697,
+											"parameters": {
+												"value": "Functions.isAnimationDone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "dropCurrency",
+											"sid": 380333905329927,
+											"parameters": [
+												"actuals.X",
+												"actuals.Y",
+												"random(1, 5)"
+											]
+										},
+										{
+											"id": "destroy",
+											"objectClass": "actuals",
+											"sid": 899390456345811
+										}
+									],
+									"sid": 442462860779148
+								}
+							]
 						},
 						{
 							"aceType": "action",
-							"aceName": "knockedDown",
+							"aceName": "checkStateQueue",
 							"objectClass": "actuals",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -1098,55 +1994,780 @@
 							"eventType": "custom-ace-block",
 							"conditions": [],
 							"actions": [],
-							"sid": 756463699034979
-						},
-						{
-							"aceType": "action",
-							"aceName": "die",
-							"objectClass": "actuals",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "custom-ace-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 307709075167274
-						},
-						{
-							"aceType": "action",
-							"aceName": "fadeOut",
-							"objectClass": "actuals",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "custom-ace-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 179703843032289
-						},
-						{
-							"aceType": "action",
-							"aceName": "collapse",
-							"objectClass": "actuals",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "custom-ace-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 635799855993587
+							"sid": 697000998467855,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "nextState",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 986991394737763
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "actuals",
+											"sid": 459103170266617,
+											"parameters": {
+												"instance-variable": "isQueueCheck"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "actuals",
+											"sid": 844656443265443,
+											"parameters": {
+												"instance-variable": "queuedState",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 864547365877382,
+											"parameters": {
+												"variable": "nextState",
+												"value": "actuals.queuedState"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "actuals",
+											"sid": 759885931617779,
+											"parameters": {
+												"instance-variable": "queuedState",
+												"value": "\"\""
+											}
+										},
+										{
+											"callFunction": "setNewState",
+											"sid": 657678115142775,
+											"parameters": [
+												"nextState"
+											]
+										}
+									],
+									"sid": 803571522650318
+								}
+							]
 						}
 					],
 					"sid": 340591431920485
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Functions_State",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "isAnimationDone",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "any",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 135647519030947,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "dolls",
+											"sid": 737490094777058,
+											"parameters": {
+												"animation": "actuals.FSMMain.CurrentState"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "actuals",
+											"sid": 666010602929069,
+											"parameters": {
+												"instance-variable": "isAnimationFinished"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "actuals",
+											"sid": 935279916807415,
+											"parameters": {
+												"instance-variable": "isQueueCheck",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 581586067104519,
+											"parameters": {
+												"value": "1"
+											}
+										}
+									],
+									"sid": 357461937808036
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 889755976340135
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "actuals",
+											"sid": 647704168478899,
+											"parameters": {
+												"instance-variable": "isQueueCheck",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 255890182121117,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 398133687142606
+								}
+							]
+						},
+						{
+							"functionName": "aiBoundDetection",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "any",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 843132510221040,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "wallOrFall",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 443592398296056
+								},
+								{
+									"eventType": "variable",
+									"name": "isBoundFound",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 676607967549124
+								},
+								{
+									"eventType": "comment",
+									"text": "1 === walls && 2 === missingFloor"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 266916531633813,
+											"parameters": {
+												"variable": "wallOrFall",
+												"value": "Functions.checkBoundaryCollision"
+											}
+										}
+									],
+									"sid": 297710956105040
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 357578417649258,
+											"parameters": {
+												"first-value": "wallOrFall",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 842638797125847,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 254682613987508,
+													"parameters": {
+														"first-value": "wallOrFall",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 690793764070218,
+													"parameters": {
+														"variable": "isBoundFound",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 629239042179476
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 718254186067467
+												},
+												{
+													"id": "transfer-picking",
+													"objectClass": "Utils",
+													"sid": 578050897765336,
+													"parameters": {
+														"object1": "actuals",
+														"object2": "enemyDumb",
+														"transferType": "filterSOL"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 831449495050814,
+													"parameters": {
+														"variable": "isBoundFound",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 295548955625892
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 748140879799065,
+											"parameters": {
+												"value": "isBoundFound"
+											}
+										}
+									],
+									"sid": 530405769354270
+								}
+							]
+						},
+						{
+							"functionName": "setNewState",
+							"functionDescription": "",
+							"functionCategory": "state",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "state",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 542680403662347
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 517096749928950,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "canSetState",
+									"type": "boolean",
+									"initialValue": "true",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 803024534171461
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 682611674595631,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 136596415102346,
+											"parameters": {
+												"variable": "canSetState",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 168588048753087,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "CurrentStateIs",
+													"objectClass": "actuals",
+													"sid": 162957051820819,
+													"behaviorType": "FSMMain",
+													"parameters": {
+														"state": "\"death\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 748695848348799,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 760957084901747,
+															"parameters": {
+																"variable": "state",
+																"comparison": 0,
+																"value": "\"patrol\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 535794051771977,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 653663877708478,
+																	"parameters": {
+																		"variable": "canSetState",
+																		"value": "true"
+																	}
+																}
+															],
+															"sid": 716676834293749
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 100729391549113
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 342536765844654,
+															"parameters": {
+																"variable": "state",
+																"comparison": 0,
+																"value": "\"alert\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 621969037114008,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "CurrentStateIs",
+																	"objectClass": "actuals",
+																	"sid": 171869090510133,
+																	"disabled": true,
+																	"behaviorType": "FSMMain",
+																	"parameters": {
+																		"state": "\"patrol\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 781580578753121,
+																	"parameters": {
+																		"variable": "canSetState",
+																		"value": "true"
+																	}
+																}
+															],
+															"sid": 545792993853569
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 368870770815515
+														},
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 460631830936846,
+															"parameters": {
+																"variable": "state",
+																"comparison": 0,
+																"value": "\"charge\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 340168951190420,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "CurrentStateIs",
+																	"objectClass": "actuals",
+																	"sid": 295526921176829,
+																	"behaviorType": "FSMMain",
+																	"parameters": {
+																		"state": "\"alert\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 345159178101198,
+																	"parameters": {
+																		"variable": "canSetState",
+																		"value": "true"
+																	}
+																}
+															],
+															"sid": 868417449108574
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 589875966938913
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 615566947842533,
+															"parameters": {
+																"variable": "canSetState",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 472009805181043
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 638323124252479,
+											"parameters": {
+												"variable": "canSetState"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "GoToState",
+											"objectClass": "actuals",
+											"sid": 423867171488385,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "state"
+											}
+										}
+									],
+									"sid": 610028399712444
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 704752201837176
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 820334222984250,
+											"parameters": {
+												"type": "log",
+												"message": "\"UNABLE TO SET STATE For: \" & actuals.ObjectTypeName & \" \" & actuals.UID "
+											}
+										}
+									],
+									"sid": 145418122978298
+								}
+							]
+						},
+						{
+							"functionName": "setNewLockState",
+							"functionDescription": "",
+							"functionCategory": "state",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "state",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 118794981429033
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 536291957333044,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "canSetState",
+									"type": "boolean",
+									"initialValue": "true",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 179585742548411
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 265877072126626,
+											"behaviorType": "FSMLock",
+											"parameters": {
+												"state": "\"\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 126094179405746,
+											"parameters": {
+												"variable": "canSetState",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 859602582778417,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 951921968539399,
+													"parameters": {
+														"variable": "state",
+														"comparison": 0,
+														"value": "\"charge\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 630382191521787,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "CurrentStateIs",
+															"objectClass": "actuals",
+															"sid": 410414241473713,
+															"behaviorType": "FSMLock",
+															"parameters": {
+																"state": "\"asd\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 375225101854662,
+															"parameters": {
+																"variable": "canSetState",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 923370065342023
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 633541895926183
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 286507490943860,
+													"parameters": {
+														"variable": "canSetState",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 546310980537048
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 984428230239363,
+											"parameters": {
+												"variable": "canSetState"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "GoToState",
+											"objectClass": "actuals",
+											"sid": 831289353138661,
+											"behaviorType": "FSMLock",
+											"parameters": {
+												"state": "state"
+											}
+										}
+									],
+									"sid": 675371089670889
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 353110838569158
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 923158997588096,
+											"parameters": {
+												"type": "log",
+												"message": "\"UNABLE TO SET ~LOCK~ STATE For: \" & actuals.ObjectTypeName & \" \" & actuals.UID "
+											}
+										}
+									],
+									"sid": 908300263384657
+								}
+							]
+						}
+					],
+					"sid": 762717094389729
 				}
 			],
 			"sid": 914854699260668

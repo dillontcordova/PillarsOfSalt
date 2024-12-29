@@ -273,8 +273,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 243,
-						"y": 213,
+						"x": 108,
+						"y": 216,
 						"width": 16,
 						"height": 16,
 						"originX": 0,
@@ -340,7 +340,7 @@
 					}
 				},
 				{
-					"type": "spr_enemyGround",
+					"type": "spr_enemySlug",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -361,6 +361,9 @@
 						"isBouncing": false,
 						"defaultPlatformSpeed": 0,
 						"defaultPlatformDeceleration": 0,
+						"isAnimationFinished": false,
+						"isQueueCheck": true,
+						"queuedState": "",
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -384,10 +387,10 @@
 							"properties": {
 								"max-speed": 50,
 								"acceleration": 1500,
-								"deceleration": 150,
+								"deceleration": 2000,
 								"jump-strength": 128,
-								"gravity": 850,
-								"max-fall-speed": 500,
+								"gravity": 1700,
+								"max-fall-speed": 1000,
 								"double-jump": false,
 								"jump-sustain": 0,
 								"default-controls": false,
@@ -433,10 +436,10 @@
 						"FSMMain": {
 							"properties": {
 								"enabled": true,
-								"initialState": ""
+								"initialState": "idle"
 							}
 						},
-						"FSMSub": {
+						"FSMLock": {
 							"properties": {
 								"enabled": true,
 								"initialState": ""
@@ -532,6 +535,9 @@
 						"isBouncing": false,
 						"defaultPlatformSpeed": 0,
 						"defaultPlatformDeceleration": 0,
+						"isAnimationFinished": false,
+						"isQueueCheck": true,
+						"queuedState": "",
 						"brightnessFrame": 1,
 						"gravity": 0,
 						"gShifting": 0,
@@ -611,10 +617,10 @@
 						"FSMMain": {
 							"properties": {
 								"enabled": true,
-								"initialState": ""
+								"initialState": "idle"
 							}
 						},
-						"FSMSub": {
+						"FSMLock": {
 							"properties": {
 								"enabled": true,
 								"initialState": ""
@@ -1393,14 +1399,17 @@
 						"isBouncing": false,
 						"defaultPlatformSpeed": 0,
 						"defaultPlatformDeceleration": 0,
+						"isAnimationFinished": false,
+						"isQueueCheck": true,
+						"queuedState": "",
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
 						"isThinking": false,
 						"touchDamage": 1,
-						"sightRange": 64,
+						"sightRange": 128,
 						"patrolCool": 0.25,
-						"chaseRange": 100,
+						"chaseRange": 200,
 						"chargeStartPos": 0,
 						"alertCool": 0.75,
 						"atkCool": 0.75,
@@ -1420,12 +1429,12 @@
 						},
 						"Platform": {
 							"properties": {
-								"max-speed": 35,
-								"acceleration": 150,
-								"deceleration": 150,
+								"max-speed": 50,
+								"acceleration": 1500,
+								"deceleration": 2000,
 								"jump-strength": 128,
-								"gravity": 850,
-								"max-fall-speed": 500,
+								"gravity": 1700,
+								"max-fall-speed": 1000,
 								"double-jump": false,
 								"jump-sustain": 0,
 								"default-controls": false,
@@ -1471,10 +1480,10 @@
 						"FSMMain": {
 							"properties": {
 								"enabled": true,
-								"initialState": ""
+								"initialState": "idle"
 							}
 						},
-						"FSMSub": {
+						"FSMLock": {
 							"properties": {
 								"enabled": true,
 								"initialState": ""
@@ -1486,8 +1495,8 @@
 						"LineOfSight": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 0,
-								"cone-of-view": 30,
+								"range": 200,
+								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
 						}
@@ -1630,8 +1639,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 495,
-						"y": 207,
+						"x": 529.7537738108069,
+						"y": 210.29493972674206,
 						"width": 4,
 						"height": 4,
 						"originX": 0.5,
@@ -1714,8 +1723,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 495,
-						"y": 207,
+						"x": 529.7537738108069,
+						"y": 210.29493972674206,
 						"width": 16,
 						"height": 16,
 						"originX": 0,
@@ -1882,8 +1891,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 223,
-						"y": 113,
+						"x": 132,
+						"y": 96,
 						"width": 16,
 						"height": 16,
 						"originX": 0.5,
@@ -1920,6 +1929,9 @@
 						"isBouncing": false,
 						"defaultPlatformSpeed": 0,
 						"defaultPlatformDeceleration": 0,
+						"isAnimationFinished": false,
+						"isQueueCheck": true,
+						"queuedState": "",
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -1951,10 +1963,10 @@
 							"properties": {
 								"max-speed": 50,
 								"acceleration": 1500,
-								"deceleration": 100,
+								"deceleration": 2000,
 								"jump-strength": 0,
-								"gravity": 0,
-								"max-fall-speed": 0,
+								"gravity": 1700,
+								"max-fall-speed": 1000,
 								"double-jump": false,
 								"jump-sustain": 0,
 								"default-controls": false,
@@ -2000,10 +2012,10 @@
 						"FSMMain": {
 							"properties": {
 								"enabled": true,
-								"initialState": ""
+								"initialState": "idle"
 							}
 						},
-						"FSMSub": {
+						"FSMLock": {
 							"properties": {
 								"enabled": true,
 								"initialState": ""
@@ -2210,6 +2222,9 @@
 						"isBouncing": false,
 						"defaultPlatformSpeed": 0,
 						"defaultPlatformDeceleration": 0,
+						"isAnimationFinished": false,
+						"isQueueCheck": true,
+						"queuedState": "",
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -2233,10 +2248,10 @@
 							"properties": {
 								"max-speed": 50,
 								"acceleration": 1500,
-								"deceleration": 150,
+								"deceleration": 2000,
 								"jump-strength": 128,
-								"gravity": 850,
-								"max-fall-speed": 500,
+								"gravity": 1700,
+								"max-fall-speed": 1000,
 								"double-jump": false,
 								"jump-sustain": 0,
 								"default-controls": false,
@@ -2282,10 +2297,10 @@
 						"FSMMain": {
 							"properties": {
 								"enabled": true,
-								"initialState": ""
+								"initialState": "idle"
 							}
 						},
-						"FSMSub": {
+						"FSMLock": {
 							"properties": {
 								"enabled": true,
 								"initialState": ""
@@ -2381,6 +2396,9 @@
 						"isBouncing": false,
 						"defaultPlatformSpeed": 0,
 						"defaultPlatformDeceleration": 0,
+						"isAnimationFinished": false,
+						"isQueueCheck": true,
+						"queuedState": "",
 						"turnTime": 1,
 						"hasArrived": false,
 						"isImpeded": false,
@@ -2406,9 +2424,9 @@
 							"properties": {
 								"max-speed": 330,
 								"acceleration": 1500,
-								"deceleration": 1500,
+								"deceleration": 2000,
 								"jump-strength": 650,
-								"gravity": 1500,
+								"gravity": 1700,
 								"max-fall-speed": 1000,
 								"double-jump": false,
 								"jump-sustain": 0,
@@ -2455,10 +2473,10 @@
 						"FSMMain": {
 							"properties": {
 								"enabled": true,
-								"initialState": ""
+								"initialState": "idle"
 							}
 						},
-						"FSMSub": {
+						"FSMLock": {
 							"properties": {
 								"enabled": true,
 								"initialState": ""
@@ -2516,11 +2534,401 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 280,
+						"x": 236,
 						"y": 160,
 						"width": 16,
 						"height": 40,
 						"originX": 1,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyBlobDumb",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 504,
+					"sid": 975131286679276,
+					"tags": "",
+					"instanceVariables": {
+						"health": 2,
+						"isInvincible": false,
+						"isAttacking": false,
+						"isSolid": true,
+						"lockState": "",
+						"isRight": true,
+						"isBouncing": false,
+						"defaultPlatformSpeed": 0,
+						"defaultPlatformDeceleration": 0,
+						"isAnimationFinished": false,
+						"isQueueCheck": true,
+						"queuedState": "",
+						"turnTime": 1,
+						"hasArrived": false,
+						"isImpeded": false,
+						"isThinking": false,
+						"touchDamage": 1,
+						"sightRange": 128,
+						"patrolCool": 0.25,
+						"chaseRange": 200,
+						"chargeStartPos": 0,
+						"alertCool": 0.75,
+						"atkCool": 0.75,
+						"brightnessFrame": 1
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": false,
+								"stop-on-solids": false,
+								"enabled": false
+							}
+						},
+						"Platform": {
+							"properties": {
+								"max-speed": 50,
+								"acceleration": 1500,
+								"deceleration": 2000,
+								"jump-strength": 128,
+								"gravity": 1700,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 300,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": true,
+								"enabled": false
+							}
+						},
+						"FSM": {
+							"properties": {
+								"active": true,
+								"start-state": "Off"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 3,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"FSMMain": {
+							"properties": {
+								"enabled": true,
+								"initialState": "idle"
+							}
+						},
+						"FSMLock": {
+							"properties": {
+								"enabled": true,
+								"initialState": ""
+							}
+						},
+						"Timer": {
+							"properties": {}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 200,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 504,
+						"children": [
+							{
+								"uid": 502,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 975131286679276,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 520,
+						"y": 168,
+						"width": 32,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.9686274509803922,
+							0.5215686274509804,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyGoblinCharge",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 510,
+					"sid": 488374078221098,
+					"tags": "",
+					"instanceVariables": {
+						"health": 4,
+						"isInvincible": false,
+						"isAttacking": false,
+						"isSolid": true,
+						"lockState": "",
+						"isRight": true,
+						"isBouncing": false,
+						"defaultPlatformSpeed": 0,
+						"defaultPlatformDeceleration": 0,
+						"isAnimationFinished": false,
+						"isQueueCheck": true,
+						"queuedState": "",
+						"turnTime": 1,
+						"hasArrived": false,
+						"isImpeded": false,
+						"isThinking": false,
+						"touchDamage": 1,
+						"sightRange": 192,
+						"patrolCool": 0.25,
+						"chaseRange": 200,
+						"chargeStartPos": 0,
+						"alertCool": 0.75,
+						"atkCool": 0.75,
+						"brightnessFrame": 1
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": false,
+								"stop-on-solids": false,
+								"enabled": false
+							}
+						},
+						"Platform": {
+							"properties": {
+								"max-speed": 75,
+								"acceleration": 1500,
+								"deceleration": 2000,
+								"jump-strength": 128,
+								"gravity": 1700,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 300,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": true,
+								"enabled": false
+							}
+						},
+						"FSM": {
+							"properties": {
+								"active": true,
+								"start-state": "Off"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 3,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": false
+							}
+						},
+						"FSMMain": {
+							"properties": {
+								"enabled": true,
+								"initialState": "idle"
+							}
+						},
+						"FSMLock": {
+							"properties": {
+								"enabled": true,
+								"initialState": ""
+							}
+						},
+						"Timer": {
+							"properties": {}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 200,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 510,
+						"children": [
+							{
+								"uid": 508,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 488374078221098,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 280,
+						"y": 164,
+						"width": 24,
+						"height": 32,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -2582,7 +2990,8 @@
 					"instanceVariables": {
 						"startW": 0,
 						"startH": 0,
-						"stepping": 0
+						"stepping": 0,
+						"heldFrameNum": 0
 					},
 					"behaviors": {
 						"Flash": {
@@ -2689,7 +3098,8 @@
 					"instanceVariables": {
 						"startW": 0,
 						"startH": 0,
-						"stepping": 0
+						"stepping": 0,
+						"heldFrameNum": 0
 					},
 					"behaviors": {
 						"Flash": {
@@ -3276,7 +3686,8 @@
 					"instanceVariables": {
 						"startW": 0,
 						"startH": 0,
-						"stepping": 0
+						"stepping": 0,
+						"heldFrameNum": 0
 					},
 					"behaviors": {
 						"Flash": {
@@ -3366,7 +3777,8 @@
 					"instanceVariables": {
 						"startW": 0,
 						"startH": 0,
-						"stepping": 0
+						"stepping": 0,
+						"heldFrameNum": 0
 					},
 					"behaviors": {
 						"Flash": {
@@ -3473,7 +3885,8 @@
 					"instanceVariables": {
 						"startW": 0,
 						"startH": 0,
-						"stepping": 0
+						"stepping": 0,
+						"heldFrameNum": 0
 					},
 					"behaviors": {
 						"Flash": {
@@ -3580,7 +3993,8 @@
 					"instanceVariables": {
 						"startW": 0,
 						"startH": 0,
-						"stepping": 0
+						"stepping": 0,
+						"heldFrameNum": 0
 					},
 					"behaviors": {
 						"Flash": {
@@ -3639,10 +4053,258 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 272,
+						"x": 228,
 						"y": 160,
 						"width": 16,
 						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_blobDumbDoll",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 502,
+					"sid": 477627441264257,
+					"tags": "",
+					"instanceVariables": {
+						"startW": 0,
+						"startH": 0,
+						"stepping": 0,
+						"heldFrameNum": 0
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0,
+								"angl": 180
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 504,
+						"uid": 502,
+						"children": [
+							{
+								"uid": 503,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": false,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 477627441264257,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 520,
+						"y": 164,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							0.5019607843137255,
+							0.984313725490196,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_goblinChargeDoll",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 508,
+					"sid": 387958679220334,
+					"tags": "",
+					"instanceVariables": {
+						"startW": 0,
+						"startH": 0,
+						"stepping": 0,
+						"heldFrameNum": 0
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"RimLight": {
+							"isEnabled": false,
+							"parameters": {
+								"clr": [
+									1,
+									1,
+									1,
+									1
+								],
+								"s": 2,
+								"d": 0,
+								"angl": 180
+							}
+						},
+						"ReplaceSolidColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									0.34901960784313724,
+									0.4980392156862745,
+									0.11764705882352941,
+									1
+								],
+								"replace-color": [
+									0.4117647058823529,
+									0.36470588235294116,
+									0.592156862745098,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 510,
+						"uid": 508,
+						"children": [
+							{
+								"uid": 509,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": false,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 387958679220334,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 280,
+						"y": 164,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3704,18 +4366,12 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
-						"Platform": {
+						"LineOfSight": {
 							"properties": {
-								"max-speed": 0,
-								"acceleration": 0,
-								"deceleration": 0,
-								"jump-strength": 0,
-								"gravity": 0,
-								"max-fall-speed": 0,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": true
+								"obstacles": "solids",
+								"range": 8,
+								"cone-of-view": 360,
+								"use-collision-cells": true
 							}
 						}
 					},
@@ -3750,8 +4406,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 331,
-						"y": 171,
+						"x": 327,
+						"y": 169,
 						"width": 8,
 						"height": 8,
 						"originX": 0.5,
@@ -3780,18 +4436,12 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
-						"Platform": {
+						"LineOfSight": {
 							"properties": {
-								"max-speed": 0,
-								"acceleration": 0,
-								"deceleration": 0,
-								"jump-strength": 0,
-								"gravity": 0,
-								"max-fall-speed": 0,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": true
+								"obstacles": "solids",
+								"range": 10,
+								"cone-of-view": 360,
+								"use-collision-cells": true
 							}
 						}
 					},
@@ -3823,10 +4473,17 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 769828342108346,
+						"expanded": false,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 448,
+						"x": 444,
 						"y": 182,
 						"width": 8,
 						"height": 8,
@@ -3996,18 +4653,12 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
-						"Platform": {
+						"LineOfSight": {
 							"properties": {
-								"max-speed": 0,
-								"acceleration": 0,
-								"deceleration": 0,
-								"jump-strength": 0,
-								"gravity": 0,
-								"max-fall-speed": 0,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": true
+								"obstacles": "solids",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
 							}
 						}
 					},
@@ -4039,13 +4690,244 @@
 							"previewSceneGraph": false
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 653384234385370,
+						"expanded": false,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 488,
+						"x": 480,
+						"y": 176,
+						"width": 16,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_fallCheck",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 503,
+					"sid": 143209947831018,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 502,
+						"uid": 503,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": false,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 143209947831018,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 528,
+						"y": 176,
+						"width": 16,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyBlobSpawn2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 505,
+					"sid": 327771391053391,
+					"tags": "",
+					"instanceVariables": {
+						"spawnName": "spr_enemyBlobDumb"
+					},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 520,
+						"y": 136,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_fallCheck",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 509,
+					"sid": 211824571844050,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 10,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 508,
+						"uid": 509,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": false,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 211824571844050,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 288,
 						"y": 176,
 						"width": 8,
 						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyGoblinChargeSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 507,
+					"sid": 397228869921023,
+					"tags": "",
+					"instanceVariables": {
+						"spawnName": "spr_enemyGoblinCharge"
+					},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 280,
+						"y": 124,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -4800,7 +5682,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 288,
+						"x": 244,
 						"y": 112,
 						"width": 16,
 						"height": 40,
@@ -4850,8 +5732,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 255,
-						"y": 109,
+						"x": 180,
+						"y": 92,
 						"width": 16,
 						"height": 16,
 						"originX": 0.5,
@@ -5244,8 +6126,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 760,
-						"y": -64,
+						"x": 948,
+						"y": -55,
 						"width": 512,
 						"height": 512,
 						"originX": 0.5,
@@ -5330,8 +6212,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 953.927177605367,
-						"y": 71.8622505986205,
+						"x": 1142,
+						"y": 81,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -5473,6 +6355,7 @@
 						"startW": 0,
 						"startH": 0,
 						"stepping": 0,
+						"heldFrameNum": 0,
 						"name": "dillon",
 						"convoCursor": 0,
 						"hasMet": false
@@ -6631,8 +7514,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 192,
-						"y": 96,
+						"x": 116,
+						"y": 80,
 						"width": 16,
 						"height": 16,
 						"originX": 0.5,
@@ -7503,7 +8386,8 @@
 					"instanceVariables": {
 						"startW": 0,
 						"startH": 0,
-						"stepping": 0
+						"stepping": 0,
+						"heldFrameNum": 0
 					},
 					"behaviors": {
 						"Flash": {
@@ -7632,9 +8516,9 @@
 					"locked": false,
 					"world": {
 						"x": 192,
-						"y": -216,
+						"y": -176,
 						"width": 544,
-						"height": 280,
+						"height": 160,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -7889,11 +8773,11 @@
 					}
 				},
 				{
-					"type": "asd",
+					"type": "animationImported_spr",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 2",
-						"initial-frame": 4,
+						"initial-frame": 0,
 						"enable-collisions": false,
 						"live-preview": false
 					},
@@ -7922,63 +8806,6 @@
 							1,
 							1,
 							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Particles",
-					"properties": {
-						"rate": 5,
-						"spray-cone": 60,
-						"type": "continuous-spray",
-						"object": 851447396433871,
-						"initially-visible": true,
-						"live-preview": false,
-						"speed": 200,
-						"size": 32,
-						"opacity": 100,
-						"grow-rate": 0,
-						"x-randomiser": 0,
-						"y-randomiser": 0,
-						"initial-speed-randomiser": 0,
-						"size-randomiser": 0,
-						"grow-rate-randomiser": 0,
-						"acceleration": -150,
-						"gravity": 0,
-						"angle-randomiser": 0,
-						"life-speed-randomiser": 800,
-						"opacity-randomiser": 0,
-						"destroy-mode": "fade-to-invisible",
-						"timeout": 1
-					},
-					"uid": 483,
-					"sid": 936134231807142,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 936134231807142,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 168,
-						"y": -12,
-						"width": 32,
-						"height": 32,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							0.2,
-							0,
 							1
 						],
 						"angle": 0,
@@ -8060,6 +8887,51 @@
 						],
 						"angle": 0,
 						"zElevation": 0
+					}
+				},
+				{
+					"type": "unBlurMask_spr",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 2",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 498,
+					"sid": 825662041191444,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 825662041191444,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 636,
+						"y": -264,
+						"width": 540,
+						"height": 480,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "copy"
 					}
 				}
 			],
