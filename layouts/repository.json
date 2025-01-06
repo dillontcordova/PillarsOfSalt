@@ -2347,7 +2347,7 @@
 				{
 					"type": "spr_enemyWorm",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "idle",
 						"initial-frame": 0,
 						"enable-collisions": true,
