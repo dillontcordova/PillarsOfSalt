@@ -1594,7 +1594,7 @@
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"exportFileStructure": "flat",
+		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 640,

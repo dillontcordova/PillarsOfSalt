@@ -499,9 +499,9 @@
 								},
 								{
 									"callFunction": "playSound",
-									"sid": 532790385998574,
+									"sid": 299256435495171,
 									"parameters": [
-										"\"bubblePop\"",
+										"\"cloakSounds/bubblePop\"",
 										false,
 										"\"cloak cloakUnite\""
 									]
@@ -1246,9 +1246,9 @@
 								},
 								{
 									"callFunction": "playSound",
-									"sid": 431251897603751,
+									"sid": 575263477024604,
 									"parameters": [
-										"\"reUniteCloak\"",
+										"\"cloakSounds/reUniteCloak\"",
 										false,
 										"\"cloak cloakUnite\""
 									]
@@ -1412,9 +1412,9 @@
 								},
 								{
 									"callFunction": "playSound",
-									"sid": 255561417811728,
+									"sid": 767085910748814,
 									"parameters": [
-										"\"bubblePop\"",
+										"\"cloakSounds/bubblePop\"",
 										false,
 										"\"cloak cloakUnite\""
 									]
@@ -1497,9 +1497,9 @@
 									"actions": [
 										{
 											"callFunction": "playSound",
-											"sid": 268737814468398,
+											"sid": 193702411828036,
 											"parameters": [
-												"\"windChimeDing\"",
+												"\"cloakSounds/windChimeDing\"",
 												false,
 												"\"cloak\""
 											]
@@ -1670,18 +1670,18 @@
 								},
 								{
 									"callFunction": "playSound",
-									"sid": 814852606654302,
+									"sid": 371814514605318,
 									"parameters": [
-										"\"joltAlert\"",
+										"\"cloakSounds/joltAlert\"",
 										false,
 										"\"cloak cloakAlert\""
 									]
 								},
 								{
 									"callFunction": "playSound",
-									"sid": 771187075308922,
+									"sid": 252101804420099,
 									"parameters": [
-										"\"bgLifeDrain\"",
+										"\"cloakSounds/bgLifeDrain\"",
 										true,
 										"\"cloak cloakAlert\""
 									]
@@ -1696,9 +1696,9 @@
 								},
 								{
 									"callFunction": "playSound",
-									"sid": 656673870212820,
+									"sid": 555168928109589,
 									"parameters": [
-										"\"fgLifeDrain\"",
+										"\"cloakSounds/fgLifeDrain\"",
 										true,
 										"\"cloak cloakAlert\""
 									]
@@ -2509,9 +2509,9 @@
 											"actions": [
 												{
 													"callFunction": "playSound",
-													"sid": 840059365716861,
+													"sid": 879329494192398,
 													"parameters": [
-														"\"alertTick\"",
+														"\"cloakSounds/alertTick\"",
 														false,
 														"\"cloak cloakAlert\""
 													]
@@ -2602,9 +2602,9 @@
 										},
 										{
 											"callFunction": "playSound",
-											"sid": 599342115074348,
+											"sid": 955185977637287,
 											"parameters": [
-												"\"windChimeDing\"",
+												"\"cloakSounds/windChimeDing\"",
 												false,
 												"\"cloak\""
 											]
