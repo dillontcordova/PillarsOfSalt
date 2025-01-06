@@ -123,11 +123,6 @@
 			"behaviorId": "piranha305_fsm",
 			"name": "FSMMain",
 			"sid": 694780482704999
-		},
-		{
-			"behaviorId": "piranha305_fsm",
-			"name": "FSMLock",
-			"sid": 964968981725392
 		}
 	],
 	"effectTypes": [],

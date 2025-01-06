@@ -403,7 +403,7 @@
 									"height": 34,
 									"max-width": 212,
 									"max-height": 151,
-									"data": "32x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,3x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,2,2x1,148x0,3x1,148x0,3,2x1,149x0,2x1,148x0,2,2x1,148x0,3x1,148x0,3x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,3x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,3x1,147x0,2,3x1,147x0,1,0,2x1,147x0,1,0,2x1,146x0,2x1,0,2x1,23069x0"
+									"data": "32x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,3x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,149x0,2x1,148x0,2,2x1,148x0,3x1,148x0,3,2x1,149x0,2x1,148x0,2,2x1,148x0,3x1,148x0,3x1,149x0,2x1,142x0,1,6x0,2x1,142x0,1,6x0,2x1,141x0,4x1,4x0,2x1,141x0,1,2x0,1,4x0,2x1,141x0,1,2x0,1,3x0,3x1,141x0,4x1,4x0,2x1,142x0,1,6x0,2x1,142x0,1,6x0,2x1,149x0,2x1,149x0,2x1,148x0,3x1,147x0,2,3x1,147x0,1,0,2x1,147x0,1,0,2x1,146x0,2x1,0,2x1,23069x0"
 								},
 								"tile-width": 32,
 								"tile-height": 32,
@@ -969,6 +969,90 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "spr_enemyWormSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 483,
+					"sid": 474253221453913,
+					"tags": "",
+					"instanceVariables": {
+						"spawnName": "spr_enemyWorm"
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 474253221453913,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1568,
+						"y": 864,
+						"width": 40,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spr_enemyWormSpawn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 513,
+					"sid": 235543044966574,
+					"tags": "",
+					"instanceVariables": {
+						"spawnName": "spr_enemyWorm"
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 235543044966574,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1472,
+						"y": 800,
+						"width": 40,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 683732925334652,
@@ -1340,7 +1424,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1416,
+						"x": 1408,
 						"y": 888,
 						"width": 160,
 						"height": 360,

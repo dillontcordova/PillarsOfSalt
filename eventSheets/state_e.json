@@ -510,6 +510,34 @@
 												{
 													"id": "else",
 													"objectClass": "System",
+													"sid": 176828102667636
+												},
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyCrawler",
+													"sid": 760486655900235,
+													"parameters": {
+														"unique-id": "actuals.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setNewState",
+													"sid": 833837590906428,
+													"parameters": [
+														"\"crawling\""
+													]
+												}
+											],
+											"sid": 286891948276168
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
 													"sid": 381611858769040
 												}
 											],
@@ -552,10 +580,6 @@
 									"sid": 812877148908961
 								},
 								{
-									"eventType": "comment",
-									"text": "actor"
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -581,10 +605,6 @@
 										}
 									],
 									"sid": 806931828988294
-								},
-								{
-									"eventType": "comment",
-									"text": "chase"
 								},
 								{
 									"eventType": "block",
@@ -631,10 +651,6 @@
 									]
 								},
 								{
-									"eventType": "comment",
-									"text": "actor"
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -660,41 +676,6 @@
 										}
 									],
 									"sid": 457663101032622
-								},
-								{
-									"eventType": "comment",
-									"text": "actor"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 418320367714442
-										},
-										{
-											"id": "CurrentStateIs",
-											"objectClass": "actuals",
-											"sid": 858913771622655,
-											"behaviorType": "FSMMain",
-											"parameters": {
-												"state": "\"walking\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"customAction": "walking",
-											"objectClass": "actuals",
-											"sid": 700733931404641
-										}
-									],
-									"sid": 714560280700329
-								},
-								{
-									"eventType": "comment",
-									"text": "chase'"
 								},
 								{
 									"eventType": "block",
@@ -739,10 +720,6 @@
 											"sid": 171340429860274
 										}
 									]
-								},
-								{
-									"eventType": "comment",
-									"text": "patrol"
 								},
 								{
 									"eventType": "block",
@@ -917,8 +894,96 @@
 									"sid": 804876044883746
 								},
 								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 668221715881923
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 900283323844002,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"crawling\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 317741534995316,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyCrawler",
+													"sid": 262764122000602,
+													"parameters": {
+														"unique-id": "actuals.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "crawling",
+													"objectClass": "actuals",
+													"sid": 656018840304678
+												}
+											],
+											"sid": 305231801551602
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 977301671709930
+										},
+										{
+											"id": "CurrentStateIs",
+											"objectClass": "actuals",
+											"sid": 311030649882420,
+											"behaviorType": "FSMMain",
+											"parameters": {
+												"state": "\"rotate\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 921890219678169,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "enemyCrawler",
+													"sid": 512475567898340,
+													"parameters": {
+														"unique-id": "actuals.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "rotate",
+													"objectClass": "actuals",
+													"sid": 237282023823412
+												}
+											],
+											"sid": 505384882803887
+										}
+									]
+								},
+								{
 									"eventType": "comment",
-									"text": "actor"
+									"text": "always run these checks and adjustments"
 								},
 								{
 									"eventType": "block",
@@ -965,10 +1030,10 @@
 										{
 											"id": "CurrentStateInList",
 											"objectClass": "actuals",
-											"sid": 864859228222003,
+											"sid": 609820730122554,
 											"behaviorType": "FSMMain",
 											"parameters": {
-												"states": "\"move,patrol,chase,charge,walking\""
+												"states": "\"move,patrol,chase,charge,crawling\""
 											}
 										}
 									],
@@ -1054,6 +1119,254 @@
 										}
 									],
 									"sid": 628109706655116
+								}
+							]
+						},
+						{
+							"aceType": "action",
+							"aceName": "crawling",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "spr_shootFire",
+									"sid": 250292213515504
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 400634563393436,
+									"parameters": {
+										"object-to-create": "spr_shootFire",
+										"layer": "\"fgCharacters\"",
+										"x": "actuals.ImagePointX(\"center\") + cos(actuals.Angle) * (actuals.Width * .4)",
+										"y": "actuals.ImagePointY(\"top\") + sin(actuals.Angle) * 4",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "spr_shootFire",
+									"sid": 609021634360061,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "spr_shootFire",
+									"sid": 521445287514719,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 390530812686745,
+									"parameters": {
+										"type": "log",
+										"message": "sin(actuals.Angle) * 4"
+									}
+								}
+							],
+							"sid": 182303645532003,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Check if Left image point is NOT overlapping blocks - to maybe turn left"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-overlapping-point",
+											"objectClass": "System",
+											"sid": 952188541106179,
+											"parameters": {
+												"object": "tm_platform",
+												"x": "actuals.ImagePointX(\"F\")",
+												"y": "actuals.ImagePointY(\"F\")"
+											}
+										},
+										{
+											"id": "pick-overlapping-point",
+											"objectClass": "System",
+											"sid": 816800864970512,
+											"disabled": true,
+											"parameters": {
+												"object": "tm_platform",
+												"x": "actuals.ImagePointX(\"center\") + cos(actuals.Angle) * (actuals.Width * .4)",
+												"y": "actuals.ImagePointY(\"center\") + sin(actuals.Angle+90) * (actuals.Height * .25)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "actuals",
+											"sid": 409520386018387,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"move\"",
+												"property": "position",
+												"end-x": "actuals.ImagePointX(\"F\")",
+												"end-y": "actuals.ImagePointY(\"F\")",
+												"time": "enemyCrawler.rotateSpeed",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "actuals",
+											"sid": 395935603875039,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"rotate\"",
+												"property": "offsetAngle",
+												"end-value": "actuals.Angle - 90",
+												"time": "enemyCrawler.rotateSpeed",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"callFunction": "setNewState",
+											"sid": 537052083257210,
+											"parameters": [
+												"\"rotate\""
+											]
+										}
+									],
+									"sid": 309060770778711
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 732564987816046
+										}
+									],
+									"actions": [],
+									"sid": 456462136385625,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "turn left."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-overlapping-point",
+													"objectClass": "System",
+													"sid": 203641175442782,
+													"parameters": {
+														"object": "tm_platform",
+														"x": "actuals.ImagePointX(\"center\") + cos(actuals.Angle+90) * 16",
+														"y": "actuals.ImagePointY(\"center\") + sin(actuals.Angle+90) * 16"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "pick-overlapping-point",
+													"objectClass": "System",
+													"sid": 406179070775022,
+													"parameters": {
+														"object": "tm_platform",
+														"x": "actuals.ImagePointX(\"center\") + cos(actuals.Angle+90) * (16 + actuals.Width/2)",
+														"y": "actuals.ImagePointY(\"center\") + sin(actuals.Angle+90) * (16 + actuals.Height/2)"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-one-property",
+													"objectClass": "actuals",
+													"sid": 599695212730828,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"rotate\"",
+														"property": "offsetAngle",
+														"end-value": "actuals.Angle + 90",
+														"time": "enemyCrawler.rotateSpeed",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"callFunction": "setNewState",
+													"sid": 706101717836637,
+													"parameters": [
+														"\"rotate\""
+													]
+												}
+											],
+											"sid": 612478781009567
+										}
+									]
+								}
+							]
+						},
+						{
+							"aceType": "action",
+							"aceName": "rotate",
+							"objectClass": "actuals",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "custom-ace-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 435729303415245,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-any-playing",
+											"objectClass": "actuals",
+											"sid": 392156392240673,
+											"behaviorType": "Tween",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setNewState",
+											"sid": 837445116217435,
+											"parameters": [
+												"\"crawling\""
+											]
+										}
+									],
+									"sid": 136434813662212
 								}
 							]
 						},
@@ -1266,28 +1579,52 @@
 							"functionParameters": [],
 							"eventType": "custom-ace-block",
 							"conditions": [],
-							"actions": [
-								{
-									"callFunction": "enemyGroundMove",
-									"sid": 207333372134398
-								}
-							],
-							"sid": 137815665163152
-						},
-						{
-							"aceType": "action",
-							"aceName": "walking",
-							"objectClass": "actuals",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "custom-ace-block",
-							"conditions": [],
 							"actions": [],
-							"sid": 807851056307949
+							"sid": 137815665163152,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "enemyCrawler",
+											"sid": 393312568332138,
+											"parameters": {
+												"unique-id": "actuals.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "actuals",
+											"sid": 375840155435539,
+											"parameters": {
+												"angle": "Self.Angle\n",
+												"distance": "enemyCrawler.crawlSpeed* Self.dt"
+											}
+										}
+									],
+									"sid": 435035023379649
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 110601384653619
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "enemyGroundMove",
+											"sid": 576585157788861
+										}
+									],
+									"sid": 477373334761971
+								}
+							]
 						},
 						{
 							"aceType": "action",
@@ -2587,182 +2924,6 @@
 										}
 									],
 									"sid": 145418122978298
-								}
-							]
-						},
-						{
-							"functionName": "setNewLockState",
-							"functionDescription": "",
-							"functionCategory": "state",
-							"functionReturnType": "none",
-							"functionCopyPicked": true,
-							"functionIsAsync": false,
-							"functionParameters": [
-								{
-									"name": "state",
-									"type": "string",
-									"initialValue": "",
-									"comment": "",
-									"sid": 118794981429033
-								}
-							],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 536291957333044,
-							"children": [
-								{
-									"eventType": "variable",
-									"name": "canSetState",
-									"type": "boolean",
-									"initialValue": "true",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 179585742548411
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "CurrentStateIs",
-											"objectClass": "actuals",
-											"sid": 265877072126626,
-											"behaviorType": "FSMLock",
-											"parameters": {
-												"state": "\"\""
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 126094179405746,
-											"parameters": {
-												"variable": "canSetState",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 859602582778417,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 951921968539399,
-													"parameters": {
-														"variable": "state",
-														"comparison": 0,
-														"value": "\"charge\""
-													}
-												}
-											],
-											"actions": [],
-											"sid": 630382191521787,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "CurrentStateIs",
-															"objectClass": "actuals",
-															"sid": 410414241473713,
-															"behaviorType": "FSMLock",
-															"parameters": {
-																"state": "\"asd\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 375225101854662,
-															"parameters": {
-																"variable": "canSetState",
-																"value": "true"
-															}
-														}
-													],
-													"sid": 923370065342023
-												}
-											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 633541895926183
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 286507490943860,
-													"parameters": {
-														"variable": "canSetState",
-														"value": "true"
-													}
-												}
-											],
-											"sid": 546310980537048
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 984428230239363,
-											"parameters": {
-												"variable": "canSetState"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "GoToState",
-											"objectClass": "actuals",
-											"sid": 831289353138661,
-											"behaviorType": "FSMLock",
-											"parameters": {
-												"state": "state"
-											}
-										}
-									],
-									"sid": 675371089670889
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 353110838569158
-										}
-									],
-									"actions": [
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 923158997588096,
-											"parameters": {
-												"type": "log",
-												"message": "\"UNABLE TO SET ~LOCK~ STATE For: \" & actuals.ObjectTypeName & \" \" & actuals.UID "
-											}
-										}
-									],
-									"sid": 908300263384657
 								}
 							]
 						}
